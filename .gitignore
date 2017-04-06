@@ -1,0 +1,24 @@
+.DS_Store
+*.log
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+
+bootstrap
+config
+modules
+plugins/indikator
+plugins/october
+plugins/rainlab
+storage
+themes/demo
+vendor
+.htaccess
+artisan
+index.php
+README.md

@@ -1,0 +1,5 @@
+1.0.1:
+    - First version of ExtContentPlus
+    - create_posts_table.php
+    - create_posts_categories_table.php
+    - update_timestamp_nullable.php

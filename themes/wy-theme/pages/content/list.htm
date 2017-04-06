@@ -1,0 +1,15 @@
+title = "News"
+url = "/content/:page?"
+layout="default"
+
+[newsList]
+postPage='content/post'
+categoryPage='content/category'
+==
+
+<div class="container">
+    <!--{% component 'newsList' %}-->
+    {% partial 'content/list' items=newsList.posts %}
+</div>
+
+

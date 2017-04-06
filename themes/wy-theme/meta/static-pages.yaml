@@ -1,0 +1,10 @@
+static-pages:
+    page-b-c:
+        page-b-c-d: {  }
+    home: {  }
+    projects:
+        projects-websites: {  }
+        projects-applications: {  }
+    about: {  }
+    contact: {  }
+    terms: {  }

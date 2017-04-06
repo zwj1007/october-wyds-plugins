@@ -1,0 +1,23 @@
+<div class="post-list">
+    {% for item in items %}
+    <div class="post">
+        <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
+        <div class="post-info">
+            Posted
+            {% if item.categories.count %} in {% endif %}
+            {% for category in item.categories %}
+            <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %},{% endif %}
+            {% endfor %}
+            on {{ item.publish_at|date('Y-M-d') }}
+        </div>
+        <div class="post-image">
+            <a href="{{ item.url }}"><img src="{{ item.image|media }}" alt="{{ item.title }}"></a>
+        </div>
+        <div class="post-summary">
+            {{ item.summary|raw }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{{ items.render|raw }}

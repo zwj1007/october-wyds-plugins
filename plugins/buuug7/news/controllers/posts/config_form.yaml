@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Post
+
+# Model Form Field configuration
+form: $/buuug7/news/models/post/fields.yaml
+
+# Model Class name
+modelClass: Buuug7\News\Models\Post
+
+# Default redirect location
+defaultRedirect: buuug7/news/posts
+
+# Create page
+create:
+    title: Create Post
+    redirect: buuug7/news/posts/update/:id
+    redirectClose: buuug7/news/posts
+
+# Update page
+update:
+    title: Edit Post
+    redirect: buuug7/news/posts
+    redirectClose: buuug7/news/posts
+
+# Preview page
+preview:
+    title: Preview Post
