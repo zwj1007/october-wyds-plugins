@@ -1,0 +1,32 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+    category:
+
+        # Filter name
+        label: 分类
+
+        # Model Class name
+        modelClass: Buuug7\News\Models\Category
+
+        # Model attribute to display for the name
+        nameFrom: name
+
+        # Apply query scope
+        scope: FilterCategories
+
+    published:
+
+            # Filter name
+            label: rainlab.blog::lang.posts.filter_published
+
+            # Filter type
+            type: switch
+
+            # SQL Conditions
+            conditions:
+                - published <> '1'
+                - published = '1'

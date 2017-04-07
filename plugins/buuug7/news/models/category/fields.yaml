@@ -1,0 +1,25 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    parent_id:
+        label: 父节点
+        type: dropdown
+        emptyOption: ROOT
+    name:
+        label: 名称
+        placeholder: 新名称
+        span: left
+    slug:
+        label: 别名
+        span: right
+        placeholder: 新别名
+        preset: name
+
+    description:
+        label: 描述
+        size: large
+        oc.commentPosition: ''
+        span: full
+        type: textarea

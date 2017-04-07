@@ -2,13 +2,14 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
-use Buuug7\News\Models\Post;
+use Buuug7\News\Models\Category;
+use Illuminate\Support\Facades\Log;
 use October\Rain\Support\Facades\Flash;
 
 /**
- * Posts Back-end Controller
+ * Categories Back-end Controller
  */
-class Posts extends Controller
+class Categories extends Controller
 {
     public $implement = [
         'Backend.Behaviors.FormController',
@@ -18,36 +19,33 @@ class Posts extends Controller
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
 
-    public $bodyClass = 'compact-container';
-
     public function __construct()
     {
         parent::__construct();
 
-        BackendMenu::setContext('Buuug7.News', 'news', 'posts');
+        BackendMenu::setContext('Buuug7.News', 'news', 'categories');
     }
-
 
     public function index_onDelete()
     {
         if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
-
-            foreach ($checkedIds as $postId) {
-                if ((!$post = Post::find($postId)) || !$post->canEdit($this->user)) {
+            foreach ($checkedIds as $categoryId) {
+                if ((!$category = Category::find($categoryId))) {
                     continue;
                 }
-
-                $post->delete();
+                $category->delete();
             }
-
-            Flash::success('成功删除新闻');
+            Flash::success('成功删除');
         }
-
         return $this->listRefresh();
     }
 
-    public function formBeforeCreate($model)
+
+    public function create()
     {
-        $model->user_id = $this->user->id;
+        BackendMenu::setContextSideMenu('new_post');
+        return $this->asExtension('FormController')->create();
     }
+
+
 }

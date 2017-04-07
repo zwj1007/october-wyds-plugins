@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Category
+
+# Model Form Field configuration
+form: $/buuug7/news/models/category/fields.yaml
+
+# Model Class name
+modelClass: Buuug7\News\Models\Category
+
+# Default redirect location
+defaultRedirect: buuug7/news/categories
+
+# Create page
+create:
+    title: Create Category
+    redirect: buuug7/news/categories/update/:id
+    redirectClose: buuug7/news/categories
+
+# Update page
+update:
+    title: Edit Category
+    redirect: buuug7/news/categories
+    redirectClose: buuug7/news/categories
+
+# Preview page
+preview:
+    title: Preview Category

@@ -16,10 +16,10 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'News',
+            'name' => 'News',
             'description' => 'news',
-            'author'      => 'Buuug7',
-            'icon'        => 'icon-leaf'
+            'author' => 'Buuug7',
+            'icon' => 'icon-leaf'
         ];
     }
 
@@ -50,10 +50,8 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return []; // Remove this line to activate
-
         return [
-            'Buuug7\ExtContentPlus\Components\MyComponent' => 'myComponent',
+            'Buuug7\News\Components\MyComponent' => 'myComponent',
         ];
     }
 
@@ -64,12 +62,14 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
-
         return [
-            'buuug7.extcontentplus.some_permission' => [
-                'tab' => 'ExtContentPlus',
-                'label' => 'Some permission'
+            'buuug7.news.access_posts' => [
+                'tab' => '新闻',
+                'label' => '管理新闻'
+            ],
+            'buuug7.news.access_other_posts' => [
+                'tab' => '新闻',
+                'label' => '管理其他人发布的新闻',
             ],
         ];
     }
@@ -83,15 +83,30 @@ class Plugin extends PluginBase
     {
         return [
             'news' => [
-                'label'       => '新闻',
-                'url'         => Backend::url('buuug7/news/posts'),
-                'icon'        => 'icon-leaf',
+                'label' => '新闻',
+                'url' => Backend::url('buuug7/news/posts'),
+                'icon' => 'icon-leaf',
                 'permissions' => ['buuug7.news.*'],
-                'order'       => 500,
-                
+                'order' => 500,
+
                 'sideMenu' => [
                     'new_post' => [
                         'label' => '添加新闻',
+                        'icon' => 'icon-plus',
+                        'url' => Backend::url('buuug7/news/posts/create'),
+                        'permission' => ['buuug7.news.access_posts'],
+                    ],
+                    'posts' => [
+                        'label' => '新闻',
+                        'icon' => 'icon-copy',
+                        'url' => Backend::url('buuug7/news/posts'),
+                        'permission' => ['buuug7.news.access_posts'],
+                    ],
+                    'categories' => [
+                        'label' => '分类',
+                        'icon' => 'icon-list-ul',
+                        'url' => Backend::url('buuug7/news/categories'),
+                        'permission' => ['buuug7.news.access_posts'],
                     ],
                 ],
             ],

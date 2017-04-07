@@ -1,0 +1,11 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: 名称
+        searchable: true
+    post_count:
+        label: 新闻数量
+        sortable: false

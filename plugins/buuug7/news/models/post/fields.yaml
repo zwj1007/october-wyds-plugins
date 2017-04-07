@@ -3,6 +3,87 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    title:
+        label: 标题
+        span: left
+        placeholder: 新标题
+    slug:
+        label: 别名
+        span: right
+        placeholder: 新别名
+        preset:
+            field: title
+            type: slug
+tabs:
+    fields:
+        summary:
+            tab: 概述
+            type: richeditor
+
+        content:
+            tab: 内容
+            type: richeditor
+            size: giant
+
+        images:
+            tab: 附件
+            type: repeater
+            prompt: 新图像
+            form:
+                fields:
+                    img_path:
+                        label: 图像
+                        type: mediafinder
+                        mode: file
+                        span: auto
+                    img_name:
+                        label: 名称
+                        span: auto
+
+        files:
+            tab: 附件
+            type: repeater
+            prompt: 新文件
+            form:
+                fields:
+                    file_path:
+                        label: 文件
+                        type: mediafinder
+                        mode: file
+                        span: auto
+                    file_name:
+                        label: 名称
+                        span: auto
+
+        categories:
+            tab: 分类
+            label: 分类
+            type: relation
+            span: auto
+
+secondaryTabs:
+    fields:
+        image:
+            label: 特色图片
+            type: mediafinder
+            mode: image
+
+        published:
+            label: 发布
+            type: checkbox
+            span: auto
+
+        published_at:
+            label: 发布于
+            type: datepicker
+            model: datetime
+            trigger:
+                action: enable
+                field: published
+                condition: checked
+
+        featured:
+            label: 推荐
+            type: checkbox
+            span: auto
+

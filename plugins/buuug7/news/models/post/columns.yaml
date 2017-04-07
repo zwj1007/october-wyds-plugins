@@ -3,6 +3,26 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
+    title:
+        label: 标题
         searchable: true
+    categories:
+        label: 分类
+        relation: categories
+        select: name
+        searchable: true
+        sortable: false
+    created_at:
+        label: 添加时间
+        type: date
+        invisible: false
+    update_at:
+        label: 更新时间
+        type: date
+        invisible: true
+    published_at:
+        label: 发布时间
+        type: date
+    featured:
+        label: 推荐
+        type: switch
