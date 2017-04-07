@@ -16,16 +16,16 @@ defaultRedirect: buuug7/news/categories
 
 # Create page
 create:
-    title: Create Category
+    title: buuug7.news::lang.news.create_category
     redirect: buuug7/news/categories/update/:id
     redirectClose: buuug7/news/categories
 
 # Update page
 update:
-    title: Edit Category
+    title: buuug7.news::lang.news.edit_category
     redirect: buuug7/news/categories
     redirectClose: buuug7/news/categories
 
 # Preview page
 preview:
-    title: Preview Category
+    title: buuug7.news::lang.news.preview_category

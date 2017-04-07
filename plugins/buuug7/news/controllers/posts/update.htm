@@ -1,7 +1,7 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('buuug7/news/posts') ?>">Posts</a></li>
-        <li><?= e($this->pageTitle) ?></li>
+        <li><a href="<?= Backend::url('buuug7/news/posts') ?>"><?= e(trans('buuug7.news::lang.news.menu_label')) ?></a></li>
+        <li><?= e(trans($this->pageTitle)) ?></li>
     </ul>
 <?php Block::endPut() ?>
 
@@ -69,6 +69,6 @@
 
     <div class="padded-container">
         <p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
-        <p><a href="<?= Backend::url('buuug7/news/posts') ?>" class="btn btn-default">Return to posts list</a></p>
+        <p><a href="<?= Backend::url('buuug7/news/posts') ?>" class="btn btn-default">Return to posts list<?= e(trans('buuug7.news::lang.post.return_to_posts')) ?></a></p>
     </div>
 <?php endif ?>

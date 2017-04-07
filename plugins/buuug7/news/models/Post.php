@@ -1,5 +1,6 @@
 <?php namespace Buuug7\News\Models;
 
+use Backend\Facades\BackendAuth;
 use Carbon\Carbon;
 use Model;
 use Backend\Models\User;
@@ -118,5 +119,27 @@ class Post extends Model
         return $query->whereHas('categories', function ($q) use ($categories) {
             $q->whereIn('id', $categories);
         });
+    }
+
+    /**
+     * Limit visibility of the published-button
+     * @return void
+     */
+    public function filterFields($fields, $context = null)
+    {
+        if (!isset($fields->published, $fields->published_at)) {
+            return;
+        }
+
+        $user = BackendAuth::getUser();
+
+        if (!$user->hasAnyAccess(['buuug7.news.access_publish'])) {
+            $fields->published->hidden = true;
+            $fields->published_at->hidden = true;
+        }
+        else {
+            $fields->published->hidden = false;
+            $fields->published_at->hidden = false;
+        }
     }
 }

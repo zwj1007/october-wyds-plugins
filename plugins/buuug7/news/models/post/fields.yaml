@@ -4,77 +4,77 @@
 
 fields:
     title:
-        label: 标题
+        label: buuug7.news::lang.post.name
         span: left
-        placeholder: 新标题
+        placeholder: buuug7.news::lang.post.name_placeholder
     slug:
-        label: 别名
+        label: buuug7.news::lang.post.slug
         span: right
-        placeholder: 新别名
+        placeholder: buuug7.news::lang.post.slug_placeholder
         preset:
             field: title
             type: slug
 tabs:
     fields:
         summary:
-            tab: 概述
+            tab: buuug7.news::lang.post.summary
             type: richeditor
 
         content:
-            tab: 内容
+            tab: buuug7.news::lang.post.content
             type: richeditor
             size: giant
 
         images:
-            tab: 附件
+            tab: buuug7.news::lang.post.attachments
             type: repeater
-            prompt: 新图像
+            prompt: buuug7.news::lang.post.new_image
             form:
                 fields:
                     img_path:
-                        label: 图像
+                        label: buuug7.news::lang.post.image
                         type: mediafinder
                         mode: file
                         span: auto
                     img_name:
-                        label: 名称
+                        label: buuug7.news::lang.post.name
                         span: auto
 
         files:
-            tab: 附件
+            tab: buuug7.news::lang.post.attachments
             type: repeater
-            prompt: 新文件
+            prompt: buuug7.news::lang.post.new_file
             form:
                 fields:
                     file_path:
-                        label: 文件
+                        label: buuug7.news::lang.post.file
                         type: mediafinder
                         mode: file
                         span: auto
                     file_name:
-                        label: 名称
+                        label: buuug7.news::lang.post.name
                         span: auto
 
         categories:
-            tab: 分类
-            label: 分类
+            tab: buuug7.news::lang.post.category
+            label: buuug7.news::lang.post.category
             type: relation
             span: auto
 
 secondaryTabs:
     fields:
         image:
-            label: 特色图片
+            label: buuug7.news::lang.post.feature_image
             type: mediafinder
             mode: image
 
         published:
-            label: 发布
+            label: buuug7.news::lang.post.published
             type: checkbox
             span: auto
 
         published_at:
-            label: 发布于
+            label: buuug7.news::lang.post.published_at
             type: datepicker
             model: datetime
             trigger:
@@ -83,7 +83,7 @@ secondaryTabs:
                 condition: checked
 
         featured:
-            label: 推荐
+            label: buuug7.news::lang.post.featured
             type: checkbox
             span: auto
 

@@ -18,6 +18,7 @@ class Categories extends Controller
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
+    public $requiredPermissions = ['buuug7.news.access_categories'];
 
     public function __construct()
     {
@@ -39,13 +40,5 @@ class Categories extends Controller
         }
         return $this->listRefresh();
     }
-
-
-    public function create()
-    {
-        BackendMenu::setContextSideMenu('new_post');
-        return $this->asExtension('FormController')->create();
-    }
-
 
 }

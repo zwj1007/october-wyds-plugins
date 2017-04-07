@@ -4,8 +4,18 @@
 
 columns:
     name:
-        label: 名称
+        label: buuug7.news::lang.category.name
         searchable: true
     post_count:
-        label: 新闻数量
+        label: buuug7.news::lang.news.post_count
         sortable: false
+    slug:
+        label: buuug7.news::lang.category.slug
+    created_at:
+        label: buuug7.news::lang.news.created_at
+        type: datetime
+        invisible: true
+    updated_at:
+        label: buuug7.news::lang.news.updated_at
+        type: datetime
+        invisible: true

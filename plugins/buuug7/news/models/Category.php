@@ -20,7 +20,7 @@ class Category extends Model
      */
     public $rules = [
         'name' => 'required',
-        'slug' => 'required|between:3,64|unique:rainlab_blog_categories',
+        'slug' => 'required|between:3,64|unique:buuug7_news_categories',
     ];
 
     /**
@@ -67,7 +67,5 @@ class Category extends Model
         if ($this->parent_id === '') {
             $this->parent_id = null;
         }
-        Log::info($this->parent_id);
     }
-
 }

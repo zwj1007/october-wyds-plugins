@@ -4,21 +4,20 @@
 
 fields:
     parent_id:
-        label: 父节点
+        label: buuug7.news::lang.category.parent_id
         type: dropdown
-        emptyOption: ROOT
     name:
-        label: 名称
-        placeholder: 新名称
+        label: buuug7.news::lang.category.name
+        placeholder: buuug7.news::lang.category.name_placeholder
         span: left
     slug:
-        label: 别名
+        label: buuug7.news::lang.category.slug
         span: right
-        placeholder: 新别名
+        placeholder: buuug7.news::lang.category.slug_placeholder
         preset: name
 
     description:
-        label: 描述
+        label: buuug7.news::lang.category.description
         size: large
         oc.commentPosition: ''
         span: full

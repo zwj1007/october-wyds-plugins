@@ -16,10 +16,11 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name' => 'News',
-            'description' => 'news',
+            'name' => 'buuug7.news::lang.plugin.name',
+            'description' => 'buuug7.news::lang.plugin.description',
             'author' => 'Buuug7',
-            'icon' => 'icon-leaf'
+            'icon' => 'icon-leaf',
+            'homepage' => 'https://github.com/buuug7/news-plugin',
         ];
     }
 
@@ -64,12 +65,20 @@ class Plugin extends PluginBase
     {
         return [
             'buuug7.news.access_posts' => [
-                'tab' => '新闻',
-                'label' => '管理新闻'
+                'tab' => 'buuug7.news::lang.news.tab',
+                'label' => 'buuug7.news::lang.news.access_posts'
+            ],
+            'buuug7.news.access_categories' => [
+                'tab' => 'buuug7.news::lang.news.tab',
+                'label' => 'buuug7.news::lang.news.access_categories'
             ],
             'buuug7.news.access_other_posts' => [
-                'tab' => '新闻',
-                'label' => '管理其他人发布的新闻',
+                'tab' => 'buuug7.news::lang.news.tab',
+                'label' => 'buuug7.news::lang.news.access_other_posts',
+            ],
+            'buuug7.news.access_publish' => [
+                'tab' => 'buuug7.news::lang.news.tab',
+                'label' => 'buuug7.news::lang.news.access_publish',
             ],
         ];
     }
@@ -83,27 +92,27 @@ class Plugin extends PluginBase
     {
         return [
             'news' => [
-                'label' => '新闻',
+                'label' => 'buuug7.news::lang.news.menu_label',
                 'url' => Backend::url('buuug7/news/posts'),
-                'icon' => 'icon-leaf',
+                'icon' => 'icon-newspaper-o',
                 'permissions' => ['buuug7.news.*'],
                 'order' => 500,
 
                 'sideMenu' => [
                     'new_post' => [
-                        'label' => '添加新闻',
+                        'label' => 'buuug7.news::lang.news.new_post',
                         'icon' => 'icon-plus',
                         'url' => Backend::url('buuug7/news/posts/create'),
                         'permission' => ['buuug7.news.access_posts'],
                     ],
                     'posts' => [
-                        'label' => '新闻',
+                        'label' => 'buuug7.news::lang.news.posts',
                         'icon' => 'icon-copy',
                         'url' => Backend::url('buuug7/news/posts'),
                         'permission' => ['buuug7.news.access_posts'],
                     ],
                     'categories' => [
-                        'label' => '分类',
+                        'label' => 'buuug7.news::lang.news.categories',
                         'icon' => 'icon-list-ul',
                         'url' => Backend::url('buuug7/news/categories'),
                         'permission' => ['buuug7.news.access_posts'],

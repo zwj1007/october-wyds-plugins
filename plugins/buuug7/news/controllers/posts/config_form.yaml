@@ -16,13 +16,13 @@ defaultRedirect: buuug7/news/posts
 
 # Create page
 create:
-    title: Create Post
+    title: buuug7.news::lang.news.create_post
     redirect: buuug7/news/posts/update/:id
     redirectClose: buuug7/news/posts
 
 # Update page
 update:
-    title: Edit Post
+    title: buuug7.news::lang.news.edit_post
     redirect: buuug7/news/posts
     redirectClose: buuug7/news/posts
 
