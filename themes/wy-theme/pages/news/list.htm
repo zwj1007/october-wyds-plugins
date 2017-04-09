@@ -1,0 +1,15 @@
+title = "News"
+url = "/news/:slug/:page?"
+layout="default"
+
+[newsPosts]
+categoryFilter = "{{ :slug }}"
+postPage='news/post'
+categoryPage='news/category'
+==
+
+<div class="container">
+    {% component 'newsPosts' %}
+</div>
+
+

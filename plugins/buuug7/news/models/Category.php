@@ -68,4 +68,14 @@ class Category extends Model
             $this->parent_id = null;
         }
     }
+
+    public function setUrl($pageName, $controller)
+    {
+        $params=[
+            'id' => $this->id,
+            'slug' => $this->slug,
+        ];
+
+        return $this->url=$controller->pageUrl($pageName,$params);
+    }
 }

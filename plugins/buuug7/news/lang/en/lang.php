@@ -48,6 +48,7 @@ return [
         'featured' => 'Featured',
         'published_at' => 'Published At',
         'published' => 'Published',
+        'published_validation' => 'Please specify the published date',
     ],
     'categories' => [
         'list_title' => 'Manage the news categories',
@@ -69,5 +70,7 @@ return [
 
     ],
     'settings' => [
+        'post_title' => 'Post',
+        'post_description' => 'Displays a news post on the page.',
     ]
 ];

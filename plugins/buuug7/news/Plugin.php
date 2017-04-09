@@ -52,7 +52,8 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Buuug7\News\Components\MyComponent' => 'myComponent',
+            'Buuug7\News\Components\Post' => 'newsPost',
+            'Buuug7\News\Components\Posts' => 'newsPosts',
         ];
     }
 

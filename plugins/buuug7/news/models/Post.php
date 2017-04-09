@@ -4,6 +4,9 @@ use Backend\Facades\BackendAuth;
 use Carbon\Carbon;
 use Model;
 use Backend\Models\User;
+use ValidationException;
+use Lang;
+use Db;
 
 /**
  * Post Model
@@ -136,10 +139,129 @@ class Post extends Model
         if (!$user->hasAnyAccess(['buuug7.news.access_publish'])) {
             $fields->published->hidden = true;
             $fields->published_at->hidden = true;
-        }
-        else {
+        } else {
             $fields->published->hidden = false;
             $fields->published_at->hidden = false;
         }
     }
+
+    public function afterValidate()
+    {
+        if ($this->published && !$this->published_at) {
+            throw new ValidationException([
+                'published_at' => Lang::get('buuug7.news::lang.post.published_validation')
+            ]);
+        }
+    }
+
+    /**
+     * Lists posts for the front end
+     * @param  array $options Display options
+     * @return self
+     */
+    public function scopeListFrontEnd($query, $options)
+    {
+        /*
+         * Default options
+         */
+        extract(array_merge([
+            'page' => 1,
+            'perPage' => 30,
+            'sort' => 'created_at',
+            'categories' => null,
+            'category' => null,
+            'search' => '',
+            'published' => true,
+        ], $options));
+
+        $searchableFields = ['title', 'slug', 'content'];
+
+        if ($published) {
+            $query->isPublished();
+        }
+
+        /*
+         * sorting
+         * */
+        if (!is_array($sort)) {
+            $sort = [$sort];
+        }
+
+        foreach ($sort as $_sort) {
+            if (in_array($_sort, array_keys(self::$allowedSortingOptions))) {
+                $parts = explode(' ', $_sort);
+                if (count($parts) < 2) {
+                    array_push($parts, 'desc');
+                }
+                list($sortField, $sortDirection) = $parts;
+                if ($sortField == 'random') {
+                    $sortField = Db::raw('RAND()');
+                }
+                $query->orderBy($sortField, $sortDirection);
+            }
+        }
+
+        /*
+         * Search
+         * */
+        $search = trim($search);
+        if (strlen($search)) {
+            $query->searchWhere($search, $searchableFields);
+        }
+
+        /*
+         * Categories
+         * */
+        if ($categories !== null) {
+            if (!is_array($categories)) {
+                $categories = [$categories];
+            }
+            $query->whereHas('categories', function ($q) use ($categories) {
+                $q->whereIn('id', $categories);
+            });
+        }
+
+        /*
+         * category,including children
+         * */
+        if ($category !== null) {
+            $category = Category::find($category);
+
+            $categories = $category->getAllChildrenAndSelf()->lists('id');
+            $query->whereHas('categories', function ($q) use ($categories) {
+                $q->whereIn('id', $categories);
+            });
+        }
+
+        return $query->paginate($perPage, $page);
+
+    }
+
+    /**
+     * Sets the "url" attribute with a URL to this object
+     * @param string $pageName
+     * @param Cms\Classes\Controller $controller
+     */
+    public function setUrl($pageName, $controller)
+    {
+        $params = [
+            'id'   => $this->id,
+            'slug' => $this->slug,
+        ];
+
+        if (array_key_exists('categories', $this->getRelations())) {
+            $params['category'] = $this->categories->count() ? $this->categories->first()->slug : null;
+        }
+
+        //expose published year, month and day as URL parameters
+        if ($this->published) {
+            $params['year'] = $this->published_at->format('Y');
+            $params['month'] = $this->published_at->format('m');
+            $params['day'] = $this->published_at->format('d');
+        }
+
+        return $this->url = $controller->pageUrl($pageName, $params);
+    }
+
+
 }
