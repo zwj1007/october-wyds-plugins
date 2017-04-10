@@ -1,23 +1,23 @@
-<?php namespace Buuug7\News\Models;
+<?php namespace Buuug7\Courses\Models;
 
-use Backend\Facades\BackendAuth;
 use Carbon\Carbon;
 use Model;
-use Backend\Models\User;
 use ValidationException;
+use Backend\Models\User;
+use Backend\Facades\BackendAuth;
 use Lang;
 use Db;
 
 /**
- * Post Model
+ * course Model
  */
-class Post extends Model
+class Course extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'buuug7_news_posts';
+    public $table = 'buuug7_courses_courses';
 
     /**
      * @var array Guarded fields
@@ -29,40 +29,35 @@ class Post extends Model
      */
     protected $fillable = [];
 
-
     protected $jsonable = [
-        'images',
         'files',
     ];
 
     /*
- * Validation
- */
+* Validation
+*/
     public $rules = [
         'title' => 'required',
-        'slug' => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:buuug7_news_posts'],
+        'slug' => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:buuug7_courses_courses'],
         'content' => 'required',
         'summary' => ''
     ];
 
     /**
-     * Relations
+     * @var array Relations
      */
-
+    public $hasOne = [];
+    public $hasMany = [];
     public $belongsTo = [
         'user' => ['Backend\Models\User']
     ];
-
-
     public $belongsToMany = [
         'categories' => [
-            'Buuug7\News\Models\Category',
-            'table' => 'buuug7_news_posts_categories',
+            'Buuug7\Courses\Models\Category',
+            'table' => 'buuug7_courses_courses_categories',
             'order' => 'name',
         ],
     ];
-
-
     /**
      * The attributes on which the post list can be ordered
      * @var array
@@ -107,9 +102,8 @@ class Post extends Model
      */
     public function canEdit(User $user)
     {
-        return ($this->user_id == $user->id) || $user->hasAnyAccess(['buuug7.news.access_other_posts']);
+        return ($this->user_id == $user->id) || $user->hasAnyAccess(['buuug7.courses.access_other_courses']);
     }
-
 
     /**
      * Allows filtering for specifc categories
@@ -136,7 +130,7 @@ class Post extends Model
 
         $user = BackendAuth::getUser();
 
-        if (!$user->hasAnyAccess(['buuug7.news.access_publish'])) {
+        if (!$user->hasAnyAccess(['buuug7.courses.access_publish'])) {
             $fields->published->hidden = true;
             $fields->published_at->hidden = true;
         } else {
@@ -149,7 +143,7 @@ class Post extends Model
     {
         if ($this->published && !$this->published_at) {
             throw new ValidationException([
-                'published_at' => Lang::get('buuug7.news::lang.post.published_validation')
+                'published_at' => Lang::get('buuug7.courses::lang.courses.published_validation')
             ]);
         }
     }
@@ -234,7 +228,6 @@ class Post extends Model
         }
 
         return $query->paginate($perPage, $page);
-
     }
 
     /**

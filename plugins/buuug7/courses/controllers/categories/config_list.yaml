@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/buuug7/news/models/category/columns.yaml
+list: $/buuug7/courses/models/category/columns.yaml
 
 # Model Class name
-modelClass: Buuug7\News\Models\Category
+modelClass: Buuug7\Courses\Models\Category
 
 # List Title
-title: buuug7.news::lang.categories.list_title
+title: buuug7.courses::lang.categories.list_title
 
 # Link URL for each record
-recordUrl: buuug7/news/categories/update/:id
+recordUrl: buuug7/courses/categories/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records
@@ -34,8 +34,6 @@ defaultSort:
 # Display checkboxes next to each record
 showCheckboxes: true
 
-showTree: true
-
 # Toolbar widget configuration
 toolbar:
     # Partial for toolbar buttons
@@ -44,4 +42,3 @@ toolbar:
     # Search widget configuration
     search:
         prompt: backend::lang.list.search_prompt
-

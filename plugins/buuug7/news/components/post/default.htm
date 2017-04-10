@@ -25,7 +25,7 @@
             {% for item in post.images %}
             <div class="col-sm-6 col-md-3">
                 <a href="{{ item.img_path|media }}">
-                    <img src="{{ item.img_path|media }}" alt="{{ item.img_name }}" class="img-responsive">
+                    <img src="{{ item.img_path|media }}" alt="{{ item.img_name }}" class="img-responsive" style="width: 100%">
                 </a>
             </div>
             {% endfor %}
@@ -33,7 +33,7 @@
         {% endif %}
     </div>
 
-    <div class="post-content">
+    <div class="post-content" style="padding:15px 0;">
         {{ post.content|raw }}
     </div>
 

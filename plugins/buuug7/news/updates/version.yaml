@@ -2,7 +2,6 @@
     - First version of ExtContentPlus
     - create_posts_table.php
     - create_posts_categories_table.php
-    - update_timestamp_nullable.php
 1.0.2:
     - update post model and category model
     - seed_all_tables.php

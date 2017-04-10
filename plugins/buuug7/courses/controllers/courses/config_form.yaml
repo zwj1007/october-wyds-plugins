@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Course
+
+# Model Form Field configuration
+form: $/buuug7/courses/models/course/fields.yaml
+
+# Model Class name
+modelClass: Buuug7\Courses\Models\Course
+
+# Default redirect location
+defaultRedirect: buuug7/courses/courses
+
+# Create page
+create:
+    title: buuug7.courses::lang.course.create_course
+    redirect: buuug7/courses/courses/update/:id
+    redirectClose: buuug7/courses/courses
+
+# Update page
+update:
+    title: buuug7.courses::lang.course.edit_course
+    redirect: buuug7/courses/courses
+    redirectClose: buuug7/courses/courses
+
+# Preview page
+preview:
+    title: Preview Course

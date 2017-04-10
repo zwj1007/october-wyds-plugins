@@ -1,5 +1,5 @@
 title = "News"
-url = "/news/:slug/:page?"
+url = "/news/posts/:slug?/:page?"
 layout="default"
 
 [newsPosts]
@@ -8,8 +8,20 @@ postPage='news/post'
 categoryPage='news/category'
 ==
 
+<div class="jumbotron">
+    <div class="container">
+        <h2>All news posts</h2>
+        <p>All news posts show below,you can search by use the post title and slug</p>
+    </div>
+</div>
+
+
 <div class="container">
-    {% component 'newsPosts' %}
+    <div class="row">
+        <div class="col-md-8">
+            {% component 'newsPosts' %}
+        </div>
+    </div>
 </div>
 
 

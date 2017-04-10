@@ -54,6 +54,7 @@ class Plugin extends PluginBase
         return [
             'Buuug7\News\Components\Post' => 'newsPost',
             'Buuug7\News\Components\Posts' => 'newsPosts',
+            'Buuug7\News\Components\Categories' => 'newsCategories',
         ];
     }
 
@@ -97,7 +98,6 @@ class Plugin extends PluginBase
                 'url' => Backend::url('buuug7/news/posts'),
                 'icon' => 'icon-newspaper-o',
                 'permissions' => ['buuug7.news.*'],
-                'order' => 500,
 
                 'sideMenu' => [
                     'new_post' => [

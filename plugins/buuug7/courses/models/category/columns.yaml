@@ -1,0 +1,22 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: buuug7.courses::lang.category.name
+        searchable: true
+    post_count:
+        label: buuug7.courses::lang.courses.post_count
+        sortable: false
+    slug:
+        label: buuug7.courses::lang.category.slug
+    created_at:
+        label: buuug7.courses::lang.courses.created_at
+        type: datetime
+        invisible: true
+    updated_at:
+        label: buuug7.courses::lang.courses.updated_at
+        type: datetime
+        invisible: true
+

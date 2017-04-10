@@ -8,16 +8,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ 'home'|page }}">October Demo</a>
+            <a class="navbar-brand" href="{{ 'home'|page }}">渭源县电子商务公共服务平台</a>
         </div>
         <div class="collapse navbar-collapse navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li class="separator hidden-xs"></li>
-                <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Basic concepts</a></li>
-                <li class="{% if this.page.id == 'ajax' %}active{% endif %}"><a href="{{ 'ajax'|page }}">AJAX framework</a></li>
-                <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Plugin components</a></li>
-                <li class="{% if this.page.id == 'content' %}active{% endif %}"><a href="{{ 'test'|page }}">Test</a></li>
-                <li class="{% if this.page.id == 'test' %}active{% endif %}"><a href="{{ 'blog/list'|page }}">Blog</a></li>
+                <!--<li class="{% if this.page.id == 'test' %}active{% endif %}"><a href="{{ 'blog/list'|page }}">Blog</a></li>-->
+                <!--<li class="{% if this.page.id == 'news-list' %}active{% endif %}"><a href="{{ '/news/categories/dian-shang-zi-xun' }}">电商资讯</a></li>
+                <li class="{% if this.page.id == 'news-category' %}active{% endif %}"><a href="{{ '/news/categories/zheng-ce-jie-du' }}">政策解读</a></li>-->
+                <li class="{{ viewBag.activeMenu == 'dian-shang-zi-xun' ? 'active':'' }}"><a href="{{ '/news/categories/dian-shang-zi-xun' }}">电商资讯</a></li>
+                <li class="{{ viewBag.activeMenu == 'zheng-ce-jie-du' ? 'active':'' }}"><a href="{{ '/news/categories/zheng-ce-jie-du' }}">政策解读</a></li>
         </div>
     </div>
 </nav>

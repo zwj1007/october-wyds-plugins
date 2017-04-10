@@ -1,25 +1,41 @@
 title = "News Category"
-url = "/content/category/:slug/:page?"
+url = "/news/categories/:slug?/:page?"
 layout="default"
 
-[newsList]
+[newsCategories]
+slug = "{{ :slug }}"
+
+[newsPosts]
 categoryFilter = "{{ :slug }}"
-postPage='content/post'
-categoryPage='content/category'
+postPage='news/post'
+categoryPage='news/category'
+postsPerPage = 15
+
+[viewBag]
+activeMenu="{{ :slug }}"
 ==
 function onEnd()
 {
-// Optional - set the page title to the category name
 if ($this->category)
 $this->page->title = $this->category->name;
 }
 ==
 
-{% if not category %}
-<h2>Category not found</h2>
-{% else %}
-<h2>{{ category.name }}</h2>
+<div class="jumbotron">
+    <div class="container">
+        <h2>{{ this.page.title }}</h2>
+    </div>
+</div>
 
-{% partial 'content/list' items=newsList.posts %}
-{% endif %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            {% component 'newsPosts' %}
+        </div>
+        <div class="col-md-4">
+            {% component 'newsCategories' %}
+        </div>
+    </div>
+</div>
+
 

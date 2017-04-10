@@ -1,0 +1,28 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    title:
+        label: buuug7.courses::lang.post.name
+        searchable: true
+    categories:
+        label: buuug7.courses::lang.course.category
+        relation: categories
+        select: name
+        searchable: true
+        sortable: false
+    created_at:
+        label: buuug7.courses::lang.courses.created_at
+        type: date
+        invisible: false
+    update_at:
+        label: buuug7.courses::lang.courses.updated_at
+        type: date
+        invisible: true
+    published_at:
+        label: buuug7.courses::lang.courses.published_at
+        type: date
+    featured:
+        label: buuug7.courses::lang.courses.featured
+        type: switch

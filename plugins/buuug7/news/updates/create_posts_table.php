@@ -17,7 +17,7 @@ class CreatePostsTable extends Migration
             $table->longText('content')->nullable();
             $table->text('image');
             $table->text('files');
-            $table->string('images')->nullable();
+            $table->text('images');
             $table->timestamp('published_at')->nullable();
             $table->boolean('published')->default(false);
             $table->boolean('featured')->default(false);

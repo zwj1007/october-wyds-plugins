@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Tag
+
+# Model Form Field configuration
+form: $/buuug7/courses/models/tag/fields.yaml
+
+# Model Class name
+modelClass: Buuug7\Courses\Models\Tag
+
+# Default redirect location
+defaultRedirect: buuug7/courses/tags
+
+# Create page
+create:
+    title: Create Tag
+    redirect: buuug7/courses/tags/update/:id
+    redirectClose: buuug7/courses/tags
+
+# Update page
+update:
+    title: Edit Tag
+    redirect: buuug7/courses/tags
+    redirectClose: buuug7/courses/tags
+
+# Preview page
+preview:
+    title: Preview Tag

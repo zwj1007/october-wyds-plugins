@@ -3,9 +3,27 @@ url = "/news/post/:slug"
 layout="default"
 
 [newsPost]
-
+==
+function onEnd(){
+if($this->post){
+$this->page->title=$this->post->title;
+$this->page->summary=$this->post->summary;
+}
+}
 ==
 
+<div class="jumbotron">
+    <div class="container">
+        <h2>{{ this.page.title }}</h2>
+        <p>{{ this.page.summary|raw }}</p>
+    </div>
+</div>
+
 <div class="container">
-    {% component 'newsPost' %}
+    <div class="row">
+        <div class="col-md-8">
+            {% component 'newsPost' %}
+        </div>
+    </div>
+
 </div>
