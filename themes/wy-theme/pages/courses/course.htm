@@ -1,0 +1,29 @@
+title = "News Course"
+url = "/courses/course/:slug"
+layout="default"
+
+[coursesCourse]
+==
+function onEnd(){
+if($this->post){
+$this->page->title=$this->post->title;
+$this->page->summary=$this->post->summary;
+}
+}
+==
+
+<div class="jumbotron">
+    <div class="container">
+        <h2>{{ this.page.title }}</h2>
+        <p>{{ this.page.summary|raw }}</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            {% component 'coursesCourse' %}
+        </div>
+    </div>
+
+</div>

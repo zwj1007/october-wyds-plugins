@@ -1,0 +1,45 @@
+{% set post = __SELF__.course %}
+
+<div class="post-detail">
+    <div class="post-title">
+        <h2>{{ post.title }}</h2>
+    </div>
+    <div class="post-info lead">
+        Posted
+        {% if post.categories.count %} in
+        {% for category in post.categories %}
+        <a href="{{ category.url}}">{{ category.name }}</a> {% if not loop.last %},{% endif %}
+        {% endfor%}
+        {% endif %}
+        on {{ post.publish_at|date('Y-M-d') }}
+    </div>
+    <div class="post-image">
+        {% if post.image %}
+        <div class="big-image">
+            <img src="{{ post.image|media }}" alt="{{ post.title }}">
+        </div>
+        {% endif %}
+        {% if post.images %}
+        <div class="row">
+            {% for item in post.images %}
+            <div class="col-sm-6 col-md-3">
+                <a href="{{ item.img_path|media }}">
+                    <img src="{{ item.img_path|media }}" alt="{{ item.img_name }}" class="img-responsive" style="width: 100%">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="post-content" style="padding:15px 0;">
+        {{ post.content|raw }}
+    </div>
+
+    <div class="post-files">
+        {% for item in post.files %}
+        <a href="{{ item.file_path|media }}">{{ item.file_name }}</a>
+        {% if not loop.last %} | {% endif %}
+        {% endfor %}
+    </div>
+</div>

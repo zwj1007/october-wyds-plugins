@@ -1,6 +1,7 @@
 <?php namespace Buuug7\Courses\Models;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 use Model;
 use ValidationException;
 use Backend\Models\User;
@@ -46,8 +47,7 @@ class Course extends Model
     /**
      * @var array Relations
      */
-    public $hasOne = [];
-    public $hasMany = [];
+
     public $belongsTo = [
         'user' => ['Backend\Models\User']
     ];
@@ -57,6 +57,11 @@ class Course extends Model
             'table' => 'buuug7_courses_courses_categories',
             'order' => 'name',
         ],
+        'tags' => [
+            'Buuug7\Courses\Models\Tag',
+            'table' => 'buuug7_courses_tags_courses',
+            'order' => 'name'
+        ]
     ];
     /**
      * The attributes on which the post list can be ordered
@@ -164,6 +169,7 @@ class Course extends Model
             'sort' => 'created_at',
             'categories' => null,
             'category' => null,
+            'tag' => null,
             'search' => '',
             'published' => true,
         ], $options));
@@ -227,6 +233,18 @@ class Course extends Model
             });
         }
 
+        /*
+         * tag
+         * */
+        if ($tag !== null) {
+
+            $tag = Tag::find($tag)->id;
+            $query->whereHas('tags', function ($q) use ($tag) {
+                $q->whereIn('id', [$tag]);
+            });
+        }
+
+
         return $query->paginate($perPage, $page);
     }
 
@@ -238,7 +256,7 @@ class Course extends Model
     public function setUrl($pageName, $controller)
     {
         $params = [
-            'id'   => $this->id,
+            'id' => $this->id,
             'slug' => $this->slug,
         ];
 
@@ -256,5 +274,36 @@ class Course extends Model
         return $this->url = $controller->pageUrl($pageName, $params);
     }
 
+    public function afterDelete()
+    {
+        DB::table('buuug7_courses_tags_courses')->where('course_id', $this->id)->delete();
+    }
+
+    public function scopeFilterTags($query, $tags)
+    {
+        return $query->whereHas('tags', function ($q) use ($tags) {
+            $q->whereIn('id', $tags);
+        });
+    }
+
+    private $_tags = null;
+
+    public function getTags()
+    {
+        if ($this->_tags === null) {
+            $this->_tags = [];
+            $sql = DB::table('buuug7_courses_tags_courses')->where('course_id', $this->id)->get();
+
+            foreach ($sql as $item) {
+                $tag = Tags::whereId($item->tags_id)->first();
+
+                $this->_tags[$item->tags_id] = [
+                    'name' => $tag->name,
+                    'slug' => $tag->slug
+                ];
+            }
+        }
+        return $this->_tags;
+    }
 
 }

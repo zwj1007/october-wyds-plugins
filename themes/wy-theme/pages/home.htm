@@ -2,6 +2,13 @@ title = "首页"
 url = "/"
 layout = "default"
 ==
+function onStart()
+{
+$posts=\Buuug7\News\Models\Post::isPublished()->get();
+$this['posts'] = $posts;
+//var_dump($post);
+}
+==
 <div class="jumbotron">
     <div class="container">
         {% content "welcome.htm" %}
@@ -12,5 +19,11 @@ layout = "default"
     {% content "overview.htm" %}
     <div class="text-center">
         <p><a href="{{ 'news/list'|page }}" class="btn btn-lg btn-default">跳转咨询中心</a></p>
+    </div>
+
+    <div>
+        {% for post in posts%}
+        {{ post.title }}
+        {% endfor %}
     </div>
 </div>

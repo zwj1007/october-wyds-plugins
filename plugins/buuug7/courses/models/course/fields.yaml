@@ -45,6 +45,11 @@ tabs:
             label: buuug7.courses::lang.course.category
             type: relation
             span: auto
+        tags:
+            tab: buuug7.courses::lang.course.category
+            label: buuug7.courses::lang.courses.tags
+            type: relation
+            span: auto
 
 secondaryTabs:
     fields:
@@ -54,21 +59,20 @@ secondaryTabs:
             mode: image
 
         published:
-            label: buuug7.courses::lang.course.published
+            label: buuug7.courses::lang.courses.published
             type: checkbox
             span: auto
 
         published_at:
-            label: buuug7.courses::lang.course.published_at
+            label: buuug7.courses::lang.courses.published_at
             type: datepicker
             model: datetime
-            span: auto
             trigger:
                 action: enable
                 field: published
                 condition: checked
 
         featured:
-            label: buuug7.courses::lang.course.featured
+            label: buuug7.courses::lang.courses.featured
             type: checkbox
             span: auto

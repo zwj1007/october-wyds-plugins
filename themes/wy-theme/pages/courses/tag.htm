@@ -1,0 +1,25 @@
+title = "Courses tag list"
+url = "/courses/tag/:slug?/:page?"
+layout="default"
+
+[coursesTag]
+tagFilter="{{ :slug }}"
+postsPerPage=1
+==
+
+<div class="jumbotron">
+    <div class="container">
+        <h2>Tag list</h2>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            {% component 'coursesTag' %}
+        </div>
+    </div>
+</div>
+
+

@@ -30,8 +30,8 @@ class createTagsTables extends Migration
         Schema::create('buuug7_courses_tags_courses', function ($table) {
             $table->engine = 'InnoDB';
             $table->integer('course_id')->unsigned();
-            $table->integer('tags_id')->unsigned();
-            $table->primary(['course_id', 'tags_id'], 'course_tags_blog');
+            $table->integer('tag_id')->unsigned();
+            $table->primary(['course_id', 'tag_id'], 'courses_tag_course');
         });
     }
 

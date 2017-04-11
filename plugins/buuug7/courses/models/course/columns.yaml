@@ -4,7 +4,7 @@
 
 columns:
     title:
-        label: buuug7.courses::lang.post.name
+        label: buuug7.courses::lang.course.name
         searchable: true
     categories:
         label: buuug7.courses::lang.course.category

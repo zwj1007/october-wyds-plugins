@@ -50,10 +50,12 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return []; // Remove this line to activate
-
         return [
-            'Buuug7\Courses\Components\MyComponent' => 'myComponent',
+            'Buuug7\Courses\Components\Course' => 'coursesCourse',
+            'Buuug7\Courses\Components\Categories' => 'coursesCategories',
+            'Buuug7\Courses\Components\Courses' => 'coursesCourses',
+            'Buuug7\Courses\Components\Tags' => 'coursesTags',
+            'Buuug7\Courses\Components\Tag' => 'coursesTag',
         ];
     }
 
@@ -64,12 +66,39 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
-
         return [
-            'buuug7.courses.some_permission' => [
-                'tab' => 'Courses',
-                'label' => 'Some permission'
+            'buuug7.courses.access_courses' => [
+                'tab' => 'buuug7.courses::lang.courses.tab',
+                'label' => 'buuug7.courses::lang.permission.access_courses'
+            ],
+
+            'buuug7.courses.access_categories' => [
+                'tab' => 'buuug7.courses::lang.courses.tab',
+                'label' => 'buuug7.courses::lang.permission.access_categories'
+            ],
+
+            'buuug7.courses.access_other_courses' => [
+                'tab' => 'buuug7.courses::lang.courses.tab',
+                'label' => 'buuug7.courses::lang.permission.access_other_courses'
+            ],
+
+            'buuug7.courses.access_publish' => [
+                'tab' => 'buuug7.courses::lang.courses.tab',
+                'label' => 'buuug7.courses::lang.permission.access_publish'
+            ],
+
+            'buuug7.courses.access_tags' => [
+                'tab' => 'buuug7.courses::lang.courses.tab',
+                'label' => 'buuug7.courses::lang.permission.access_tags'
+            ],
+
+            'buuug7.courses.create' => [
+                'tab'   => 'buuug7.courses::lang.courses.tab',
+                'label' => 'buuug7.courses::lang.permission.create'
+            ],
+            'buuug7.courses.delete' => [
+                'tab'   => 'buuug7.courses::lang.courses.tab',
+                'label' => 'buuug7.courses::lang.permission.delete'
             ],
         ];
     }
@@ -95,7 +124,7 @@ class Plugin extends PluginBase
                         'url' => Backend::url('buuug7/courses/courses/create'),
                         'permission' => ['buuug7.courses.access_courses'],
                     ],
-                    'posts' => [
+                    'courses' => [
                         'label' => 'buuug7.courses::lang.courses.courses',
                         'icon' => 'icon-copy',
                         'url' => Backend::url('buuug7/courses/courses'),
@@ -103,14 +132,14 @@ class Plugin extends PluginBase
                     ],
                     'categories' => [
                         'label' => 'buuug7.courses::lang.courses.categories',
-                        'icon' => 'icon-list-ul',
+                        'icon' => 'icon-list-ol',
                         'url' => Backend::url('buuug7/courses/categories'),
                         'permission' => ['buuug7.courses.access_courses'],
                     ],
 
                     'tags' => [
                         'label' => 'buuug7.courses::lang.courses.tags',
-                        'icon' => 'icon-list-ul',
+                        'icon' => 'icon-tags',
                         'url' => Backend::url('buuug7/courses/tags'),
                         'permission' => ['buuug7.courses.access_tags'],
                     ],

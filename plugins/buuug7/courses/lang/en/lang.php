@@ -6,23 +6,26 @@ return [
         'description' => 'A courses plugin'
     ],
     'courses' => [
-        'menu_label' => 'News',
-        'new_post' => 'New Post',
-        'posts' => 'Posts',
+        'menu_label' => 'Courses',
+        'new_course' => 'New Course',
+        'courses' => 'Courses',
         'categories' => 'Categories',
-        'tab' => 'News',
-        'access_posts' => 'Manage the courses',
-        'access_categories' => 'Manage the courses categories',
-        'access_other_posts' => 'Manage other users courses',
-        'access_publish' => 'Manager the courses publish',
+        'tab' => 'Courses',
+
         'create_category' => 'Create category',
         'edit_category' => 'Edit category',
-        'create_post' => 'Create course',
-        'edit_post' => 'Edit course',
+        'create_course' => 'Create course',
+        'edit_course' => 'Edit course',
         'preview_category' => 'Preview category',
         'created_at' => 'Created at',
         'updated_at' => 'Updated at',
+        'published_at' => 'Published At',
+        'published' => 'Published',
         'post_count' => 'course count',
+        'filter_published' => 'Filter published courses',
+        'filter_category' => 'Filter category',
+        'tags' => 'Tags',
+        'featured' => 'Featured',
     ],
     'course' => [
         'name' => 'Name',
@@ -39,9 +42,7 @@ return [
         'file' => 'File',
         'category' => 'Category',
         'feature_image' => 'Feature image',
-        'featured' => 'Featured',
-        'published_at' => 'Published At',
-        'published' => 'Published',
+
         'published_validation' => 'Please specify the published date',
     ],
     'categories' => [
@@ -60,6 +61,23 @@ return [
         'delete_confirm' => 'Delete this category?',
         'return_to_categories' => 'Return to the news category list',
     ],
+    'tag' => [
+        'name' => 'Name',
+        'slug' => 'Slug',
+        'description' => 'Description',
+        'image' => 'Image',
+    ],
+
+    'permission' => [
+        'access_courses' => 'Manage the courses',
+        'access_categories' => 'Manage the courses categories',
+        'access_other_courses' => 'Manage other users courses',
+        'access_publish' => 'Manager the courses publish',
+        'access_tags' => 'Manager the tags',
+        'create' => 'Have create permissions',
+        'delete' => 'Have delete permissions',
+    ],
+
     'menuitem' => [
 
     ],

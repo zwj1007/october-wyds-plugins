@@ -16,13 +16,13 @@ defaultRedirect: buuug7/courses/courses
 
 # Create page
 create:
-    title: buuug7.courses::lang.course.create_course
+    title: buuug7.courses::lang.courses.create_course
     redirect: buuug7/courses/courses/update/:id
     redirectClose: buuug7/courses/courses
 
 # Update page
 update:
-    title: buuug7.courses::lang.course.edit_course
+    title: buuug7.courses::lang.courses.edit_course
     redirect: buuug7/courses/courses
     redirectClose: buuug7/courses/courses
 

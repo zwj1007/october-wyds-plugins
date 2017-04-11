@@ -57,6 +57,11 @@ class Courses extends Controller
         return $this->asExtension('FormController')->update($recordId);
     }
 
+    public function formBeforeCreate($model)
+    {
+        $model->user_id = $this->user->id;
+    }
+
     public function create()
     {
         BackendMenu::setContextSideMenu('new_course');

@@ -30,7 +30,7 @@ class Category extends Model
  */
     public $rules = [
         'name' => 'required',
-        'slug' => 'required|between:3,64|unique:buuug7_news_categories',
+        'slug' => 'required|between:3,64|unique:buuug7_courses_categories',
     ];
 
     /**
@@ -38,7 +38,7 @@ class Category extends Model
      */
     public $belongsToMany = [
         'courses' => ['Buuug7\Courses\Models\Course',
-            'table' => 'buuug7_news_posts_categories',
+            'table' => 'buuug7_courses_courses_categories',
             'order' => 'publish_at desc',
             'scope' => 'isPublished',
         ],

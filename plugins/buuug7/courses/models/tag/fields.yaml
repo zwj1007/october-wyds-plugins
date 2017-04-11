@@ -3,6 +3,22 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    name:
+        label: buuug7.courses::lang.tag.name
+        required: ture
+        span: auto
+
+    slug:
+        label: buuug7.courses::lang.tag.slug
+        required: ture
+        preset: name
+        span: auto
+
+    description:
+        label: buuug7.courses::lang.tag.description
+        type: richeditor
+        size: large
+    image:
+        label: buuug7.courses::lang.tag.image
+        type: mediafinder
+        mode: image

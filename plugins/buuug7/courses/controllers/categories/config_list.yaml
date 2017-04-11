@@ -33,7 +33,7 @@ defaultSort:
 
 # Display checkboxes next to each record
 showCheckboxes: true
-
+showTree: true
 # Toolbar widget configuration
 toolbar:
     # Partial for toolbar buttons

@@ -1,0 +1,13 @@
+{% set posts = __SELF__.tags %}
+
+<div class="post-list">
+    {% for post in posts %}
+    <span class="tag"><a href="{{ tagPage }}/{{ post.slug }}">{{ post.name }}</a></span>
+    {% else %}
+    <div class="no-post">
+        {{ noCoursesMessage }}
+    </div>
+    {% endfor %}
+</div>
+
+{{ posts.render|raw }}

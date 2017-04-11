@@ -1,0 +1,25 @@
+title = "Courses"
+url = "/courses/courses/:slug?/:page?"
+layout="default"
+
+[coursesCourses]
+categoryFilter = "{{ :slug }}"
+postsPerPage=1
+==
+
+<div class="jumbotron">
+    <div class="container">
+        <h2>All courses</h2>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            {% component 'coursesCourses' %}
+        </div>
+    </div>
+</div>
+
+

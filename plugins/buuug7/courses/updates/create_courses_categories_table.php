@@ -31,8 +31,8 @@ class CreatePostsCategoriesTable extends Migration
 
     public function down()
     {
-        Schema::drop('buuug7_courses_categories');
-        Schema::drop('buuug7_courses_courses_categories');
+        Schema::dropIfExists('buuug7_courses_categories');
+        Schema::dropIfExists('buuug7_courses_courses_categories');
     }
 
 }

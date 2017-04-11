@@ -6,7 +6,7 @@ columns:
     name:
         label: buuug7.courses::lang.category.name
         searchable: true
-    post_count:
+    course_count:
         label: buuug7.courses::lang.courses.post_count
         sortable: false
     slug:

@@ -7,12 +7,12 @@
  * Desc:
  */
 
-namespace Buuug7\News\Components;
+namespace Buuug7\Courses\Components;
 
 
 use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
-use Buuug7\News\Models\Category as NewsCategory;
+use Buuug7\Courses\Models\Category as CourseCategory;
 use Db;
 use Illuminate\Support\Facades\Log;
 
@@ -26,8 +26,8 @@ class Categories extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'buuug7.news::lang.settings.category_title',
-            'description' => 'buuug7.news::lang.settings.category_description',
+            'name' => 'buuug7.courses::lang.settings.category_title',
+            'description' => 'buuug7.courses::lang.settings.category_description',
         ];
     }
 
@@ -35,23 +35,23 @@ class Categories extends ComponentBase
     {
         return [
             'slug' => [
-                'title' => 'buuug7.news::lang.settings.category_slug',
-                'description' => 'buuug7.news::lang.settings.category_slug_description',
+                'title' => 'buuug7.courses::lang.settings.category_slug',
+                'description' => 'buuug7.courses::lang.settings.category_slug_description',
                 'default' => '{{ :slug }}',
                 'type' => 'string',
             ],
 
             'displayEmpty' => [
-                'title' => 'buuug7.news::lang.settings.category_display_empty',
-                'description' => 'buuug7.news::lang.settings.category_display_empty_description',
+                'title' => 'buuug7.courses::lang.settings.category_display_empty',
+                'description' => 'buuug7.courses::lang.settings.category_display_empty_description',
                 'type' => 'checkbox',
                 'default' => 0,
             ],
             'categoryPage' => [
-                'title' => 'buuug7.news::lang.settings.category_page',
-                'description' => 'buuug7.news::lang.settings.category_page_description',
+                'title' => 'buuug7.courses::lang.settings.category_page',
+                'description' => 'buuug7.courses::lang.settings.category_page_description',
                 'type' => 'dropdown',
-                'default' => 'news/category',
+                'default' => 'courses/category',
             ],
         ];
     }
@@ -70,21 +70,20 @@ class Categories extends ComponentBase
 
     protected function loadCategories()
     {
-        $categories = NewsCategory::orderBy('name');
+        $categories = CourseCategory::orderBy('name');
         if (!$this->property('displayEmpty')) {
             $categories->whereExists(function ($query) {
-                //$prefix = Db::getTablePrefix();
-                //$query
-                    //->select(Db::raw(1));
-                   // ->from('buuug7_news_posts_categories')
-                    //->join('buuug7_news_posts', 'buuug7_news_posts.id', '=', 'buuug7_news_posts_categories.post_id');
+                $prefix = Db::getTablePrefix();
+                $query
+                    ->select(Db::raw(1))
+                    ->from('buuug7_courses_courses_categories')
+                    ->join('buuug7_courses_courses', 'buuug7_courses_courses.id', '=', 'buuug7_courses_courses_categories.course_id');
                     //->whereNotNull('buuug7_news_posts.published')
                    // ->where('buuug7_news_posts.published', '=', 1)
                     //->whereRaw($prefix . 'buuug7_news_categories.id = ' . $prefix . 'buuug7_news_posts_categories.category_id');
             });
 
         }
-
         $categories = $categories->getNested();
         return $this->linkCategories($categories);
     }
