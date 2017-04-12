@@ -14,10 +14,8 @@
             <ul class="nav navbar-nav">
                 <li class="separator hidden-xs"></li>
                 <!--<li class="{% if this.page.id == 'test' %}active{% endif %}"><a href="{{ 'blog/list'|page }}">Blog</a></li>-->
-                <!--<li class="{% if this.page.id == 'news-list' %}active{% endif %}"><a href="{{ '/news/categories/dian-shang-zi-xun' }}">电商资讯</a></li>
-                <li class="{% if this.page.id == 'news-category' %}active{% endif %}"><a href="{{ '/news/categories/zheng-ce-jie-du' }}">政策解读</a></li>-->
-                <li class="{{ viewBag.activeMenu == 'dian-shang-zi-xun' ? 'active':'' }}"><a href="{{ '/news/categories/dian-shang-zi-xun' }}">电商资讯</a></li>
-                <li class="{{ viewBag.activeMenu == 'zheng-ce-jie-du' ? 'active':'' }}"><a href="{{ '/news/categories/zheng-ce-jie-du' }}">政策解读</a></li>
+                <li class="{% if this.page.id == 'dian-shang-dong-tai' %}active {% endif %}"><a href="/dian-shang-dong-tai">电商动态</a></li>
+                <li class="{% if this.page.id == 'zheng-ce-jie-du' %}active {% endif %}"><a href="/zheng-ce-jie-du">政策解读</a></li>
                 <li class="{{ viewBag.activeMenu == 'xian-shang-pei-xun' ? 'active':'' }}"><a href="{{ '/courses/categories' }}">线上培训</a></li>
         </div>
     </div>

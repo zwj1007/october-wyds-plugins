@@ -27,8 +27,8 @@ class Tags extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'buuug7.courses::lang.tag.tag_list_name',
-            'description' => 'show tag list',
+            'name' => '标签组件',
+            'description' => '标签组件',
         ];
     }
 
@@ -36,23 +36,23 @@ class Tags extends ComponentBase
     {
         return [
             'slug' => [
-                'title' => 'buuug7.courses::lang.tag.slug',
+                'title' => '标签别名',
                 'type' => 'string',
                 'default' => '{{ :slug }}',
             ],
             'pageNumber' => [
-                'title' => 'buuug7.courses::lang.courses.pagination',
+                'title' => '页数',
                 'type' => 'string',
                 'default' => '{{ :page }}',
             ],
             'noCoursesMessage' => [
-                'title' => 'buuug7.courses::lang.tag.no_courses_message',
+                'title' => '没有信息提示消息',
                 'type' => 'string',
-                'default' => Lang::get('buuug7.courses::lang.tag.no_courses_message'),
+                'default' => '没有信息',
                 'showExternalParam' => false,
             ],
             'sortOrder' => [
-                'title' => 'buuug7.courses::lang.courses.order',
+                'title' => '排序',
                 'type' => 'dropdown',
                 'options' => [
                     'name asc' => Lang::get('buuug7.sources::lang.sorting.title_asc'),
@@ -67,7 +67,7 @@ class Tags extends ComponentBase
             ],
 
             'tagPage' => [
-                'title' => 'buuug7.courses::lang.tag.tag_page',
+                'title' => '标签页',
                 'type' => 'dropdown',
                 'default' => '/courses/tags',
                 'group' => 'Links',

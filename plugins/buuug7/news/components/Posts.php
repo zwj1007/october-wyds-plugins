@@ -29,8 +29,8 @@ class Posts extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'buuug7.news::lang.settings.posts_title',
-            'description' => 'buuug7.news::lang.setting.posts_description',
+            'name' => '新闻列表',
+            'description' => '显示新闻列表',
         ];
     }
 
@@ -38,47 +38,47 @@ class Posts extends ComponentBase
     {
         return [
             'pageNumber' => [
-                'title' => 'buuug7.news::lang.settings.posts_pagination',
-                'description' => 'buuug7.news::lang.settings.posts_pagination_description',
+                'title' => '分页数',
+                'description' => '新闻列表分页数',
                 'type' => 'string',
                 'default' => '{{ :page }}',
             ],
             'categoryFilter' => [
-                'title' => 'buuug7.news::lang.settings.posts_filter',
-                'description' => 'buuug7.news::lang.settings.posts_filter_description',
+                'title' => '分类过滤',
+                'description' => '通过分类过滤新闻',
                 'type' => 'string',
                 'default' => '',
             ],
             'postsPerPage' => [
-                'title' => 'buuug7.news::lang.settings.posts_per_page',
+                'title' => '每页新闻数量',
                 'type' => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'buuug7.news::lang.settings.posts_per_page_validation',
+                'validationMessage' => '只允许数字',
                 'default' => '10',
             ],
             'noPostsMessage' => [
-                'title' => 'buuug7.news::lang.settings.posts_no_posts',
-                'description' => 'buuug7.news::lang.settings.posts_no_posts_description',
+                'title' => '没有新闻时消息',
+                'description' => '新闻列表中没有一条新闻时显示的提示消息',
                 'type' => 'string',
-                'default' => 'No posts found',
+                'default' => '没有发现新闻',
                 'showExternalParam' => false
             ],
             'sortOrder' => [
-                'title' => 'buuug7.news::lang.settings.posts_order',
-                'description' => 'buuug7.news::lang.settings.posts_order_description',
+                'title' => '新闻排序',
+                'description' => '新闻排序',
                 'type' => 'dropdown',
                 'default' => 'published_at desc'
             ],
             'categoryPage' => [
-                'title' => 'buuug7.news::lang.settings.posts_category',
-                'description' => 'buuug7.news::lang.settings.posts_category_description',
+                'title' => '分类页面',
+                'description' => '分类页面地址',
                 'type' => 'dropdown',
                 'default' => 'news/category',
                 'group' => 'Links',
             ],
             'postPage' => [
-                'title' => 'buuug7.news::lang.settings.posts_post',
-                'description' => 'buuug7.news::lang.settings.posts_post_description',
+                'title' => '新闻页',
+                'description' => '新闻页地址',
                 'type' => 'dropdown',
                 'default' => 'news/post',
                 'group' => 'Links',

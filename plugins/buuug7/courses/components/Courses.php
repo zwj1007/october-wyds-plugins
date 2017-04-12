@@ -29,8 +29,8 @@ class Courses extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'buuug7.news::lang.settings.posts_title',
-            'description' => 'buuug7.news::lang.setting.posts_description',
+            'name' => '课程列表',
+            'description' => '显示课程列表',
         ];
     }
 
@@ -38,47 +38,47 @@ class Courses extends ComponentBase
     {
         return [
             'pageNumber' => [
-                'title' => 'buuug7.news::lang.settings.posts_pagination',
-                'description' => 'buuug7.news::lang.settings.posts_pagination_description',
+                'title' => '页数',
+                'description' => '当前页数',
                 'type' => 'string',
                 'default' => '{{ :page }}',
             ],
             'categoryFilter' => [
-                'title' => 'buuug7.news::lang.settings.posts_filter',
-                'description' => 'buuug7.news::lang.settings.posts_filter_description',
+                'title' => '分类过滤',
+                'description' => '分类过滤',
                 'type' => 'string',
                 'default' => '',
             ],
             'postsPerPage' => [
-                'title' => 'buuug7.news::lang.settings.posts_per_page',
+                'title' => '每页信息数量',
                 'type' => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'buuug7.news::lang.settings.posts_per_page_validation',
+                'validationMessage' => '必须为数字',
                 'default' => '10',
             ],
             'noPostsMessage' => [
-                'title' => 'buuug7.news::lang.settings.posts_no_posts',
-                'description' => 'buuug7.news::lang.settings.posts_no_posts_description',
+                'title' => '没有信息时显示的消息',
+                'description' => '没有信息时显示的消息',
                 'type' => 'string',
                 'default' => 'No posts found',
                 'showExternalParam' => false
             ],
             'sortOrder' => [
-                'title' => 'buuug7.news::lang.settings.posts_order',
-                'description' => 'buuug7.news::lang.settings.posts_order_description',
+                'title' => '排序',
+                'description' => '排序',
                 'type' => 'dropdown',
                 'default' => 'published_at desc'
             ],
             'categoryPage' => [
-                'title' => 'buuug7.news::lang.settings.posts_category',
-                'description' => 'buuug7.news::lang.settings.posts_category_description',
+                'title' => '分类页',
+                'description' => '分类页',
                 'type' => 'dropdown',
                 'default' => 'courses/category',
                 'group' => 'Links',
             ],
             'coursePage' => [
-                'title' => 'buuug7.news::lang.settings.posts_post',
-                'description' => 'buuug7.news::lang.settings.posts_post_description',
+                'title' => '课程页',
+                'description' => '课程页',
                 'type' => 'dropdown',
                 'default' => 'courses/course',
                 'group' => 'Links',

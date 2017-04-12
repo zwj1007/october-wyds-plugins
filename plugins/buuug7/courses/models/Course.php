@@ -39,7 +39,7 @@ class Course extends Model
 */
     public $rules = [
         'title' => 'required',
-        'slug' => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:buuug7_courses_courses'],
+        'slug' => ['required', 'unique:buuug7_courses_courses'],
         'content' => 'required',
         'summary' => ''
     ];
@@ -148,7 +148,7 @@ class Course extends Model
     {
         if ($this->published && !$this->published_at) {
             throw new ValidationException([
-                'published_at' => Lang::get('buuug7.courses::lang.courses.published_validation')
+                'published_at' => '请选择发布日期'
             ]);
         }
     }

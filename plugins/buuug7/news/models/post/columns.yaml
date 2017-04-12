@@ -4,25 +4,25 @@
 
 columns:
     title:
-        label: buuug7.news::lang.post.name
+        label: 标题
         searchable: true
     categories:
-        label: buuug7.news::lang.post.category
+        label: 分类
         relation: categories
         select: name
         searchable: true
         sortable: false
     created_at:
-        label: buuug7.news::lang.news.created_at
+        label: 创建日期
         type: date
         invisible: false
-    update_at:
-        label: buuug7.news::lang.news.updated_at
+    updated_at:
+        label: 更新日期
         type: date
         invisible: true
     published_at:
-        label: buuug7.news::lang.post.published_at
+        label: 发布日期
         type: date
     featured:
-        label: buuug7.news::lang.post.featured
+        label: 推荐
         type: switch

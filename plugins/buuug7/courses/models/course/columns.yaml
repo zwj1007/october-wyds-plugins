@@ -4,25 +4,25 @@
 
 columns:
     title:
-        label: buuug7.courses::lang.course.name
+        label: 标题
         searchable: true
     categories:
-        label: buuug7.courses::lang.course.category
+        label: 分类
         relation: categories
         select: name
         searchable: true
         sortable: false
     created_at:
-        label: buuug7.courses::lang.courses.created_at
+        label: 创建日期
         type: date
         invisible: false
     update_at:
-        label: buuug7.courses::lang.courses.updated_at
+        label: 更新日期
         type: date
         invisible: true
     published_at:
-        label: buuug7.courses::lang.courses.published_at
+        label: 发布日期
         type: date
     featured:
-        label: buuug7.courses::lang.courses.featured
+        label: 推荐
         type: switch

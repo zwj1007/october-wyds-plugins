@@ -33,8 +33,8 @@ class Course extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'buuug7.courses::lang.settings.course_title',
-            'description' => 'buuug7.courses::lang.settings.course_description',
+            'name' => '课程',
+            'description' => '显示单条课程信息',
         ];
     }
 
@@ -42,14 +42,14 @@ class Course extends ComponentBase
     {
         return [
             'slug' => [
-                'title' => 'buuug7.courses::lang.settings.course_slug',
-                'description' => 'buuug7.courses::lang.settings.course_slug_description',
+                'title' => '课程别名',
+                'description' => '课程别名',
                 'default' => '{{ :slug }}',
                 'type' => 'string',
             ],
             'categoryPage' => [
-                'title' => 'buuug7.courses::lang.settings.course_category',
-                'description' => 'buuug7.courses::lang.settings.course_category_description',
+                'title' => '分类页',
+                'description' => '分类页',
                 'type' => 'dropdown',
                 'default' => 'courses/category',
             ],

@@ -16,13 +16,13 @@ defaultRedirect: buuug7/news/categories
 
 # Create page
 create:
-    title: buuug7.news::lang.news.create_category
+    title: 添加分类
     redirect: buuug7/news/categories/update/:id
     redirectClose: buuug7/news/categories
 
 # Update page
 update:
-    title: buuug7.news::lang.news.edit_category
+    title: 编辑分类
     redirect: buuug7/news/categories
     redirectClose: buuug7/news/categories
 

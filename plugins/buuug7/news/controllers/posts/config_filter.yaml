@@ -7,7 +7,7 @@ scopes:
     category:
 
         # Filter name
-        label: buuug7.news::lang.posts.filter_category
+        label: 过滤分类
 
         # Model Class name
         modelClass: Buuug7\News\Models\Category
@@ -21,7 +21,7 @@ scopes:
     published:
 
             # Filter name
-            label: buuug7.news::lang.posts.filter_published
+            label: 过滤发布
 
             # Filter type
             type: switch
@@ -30,3 +30,9 @@ scopes:
             conditions:
                 - published <> '1'
                 - published = '1'
+    featured:
+            label: 过滤推荐
+            type: switch
+            conditions:
+                - featured <> '1'
+                - featured = '1'

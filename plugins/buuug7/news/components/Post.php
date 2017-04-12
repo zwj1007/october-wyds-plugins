@@ -33,8 +33,8 @@ class Post extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'buuug7.news::lang.settings.post_title',
-            'description' => 'buuug7.news::lang.settings.post_description',
+            'name' => '新闻',
+            'description' => '显示单条新闻',
         ];
     }
 
@@ -42,14 +42,14 @@ class Post extends ComponentBase
     {
         return [
             'slug' => [
-                'title' => 'buuug7.news::lang.settings.post_slug',
-                'description' => 'buuug7.news::lang.settings.post_slug_description',
+                'title' => '新闻别名',
+                'description' => '新闻别名',
                 'default' => '{{ :slug }}',
                 'type' => 'string',
             ],
             'categoryPage' => [
-                'title' => 'buuug7.news::lang.settings.post_category',
-                'description' => 'buuug7.news::lang.settings.post_category_description',
+                'title' => '新闻分类页',
+                'description' => '新闻分类页',
                 'type' => 'dropdown',
                 'default' => 'news/category',
             ],

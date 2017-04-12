@@ -16,13 +16,13 @@ defaultRedirect: buuug7/courses/tags
 
 # Create page
 create:
-    title: Create Tag
+    title: 添加标签
     redirect: buuug7/courses/tags/update/:id
     redirectClose: buuug7/courses/tags
 
 # Update page
 update:
-    title: Edit Tag
+    title: 编辑标签
     redirect: buuug7/courses/tags
     redirectClose: buuug7/courses/tags
 

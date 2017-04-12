@@ -40,7 +40,7 @@ class Post extends Model
  */
     public $rules = [
         'title' => 'required',
-        'slug' => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:buuug7_news_posts'],
+        'slug' => ['required', 'unique:buuug7_news_posts'],
         'content' => 'required',
         'summary' => ''
     ];
@@ -149,7 +149,7 @@ class Post extends Model
     {
         if ($this->published && !$this->published_at) {
             throw new ValidationException([
-                'published_at' => Lang::get('buuug7.news::lang.post.published_validation')
+                'published_at' => '请指定发布日期'
             ]);
         }
     }
@@ -245,7 +245,7 @@ class Post extends Model
     public function setUrl($pageName, $controller)
     {
         $params = [
-            'id'   => $this->id,
+            'id' => $this->id,
             'slug' => $this->slug,
         ];
 
@@ -263,5 +263,32 @@ class Post extends Model
         return $this->url = $controller->pageUrl($pageName, $params);
     }
 
+
+    /**
+     * show featured post with limit
+     * @param $query
+     * @param $limit
+     * @return mixed
+     */
+    public function scopeDisplayFeatured($query, $limit)
+    {
+        $query->isPublished();
+        return $query->where('featured', 1)->limit($limit)->get();
+    }
+
+    public function scopeDisplayByCategory($query,$category ,$limit)
+    {
+        $query->isPublished();
+        $query->orderBy('published_at','desc');
+        $category=Category::where('slug',$category)->first();
+        if(!$category){
+            return null;
+        }
+        $categories = $category->getAllChildrenAndSelf()->lists('id');
+        $query->whereHas('categories', function ($q) use ($categories) {
+            $q->whereIn('id', $categories);
+        });
+        return $query->limit($limit)->get();
+    }
 
 }

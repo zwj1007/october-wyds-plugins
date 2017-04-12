@@ -2,14 +2,11 @@ title = "News Category"
 url = "/news/categories/:slug?/:page?"
 layout="default"
 
-[newsCategories]
-slug = "{{ :slug }}"
-
 [newsPosts]
 categoryFilter = "{{ :slug }}"
 postPage='news/post'
 categoryPage='news/category'
-postsPerPage = 15
+postsPerPage = 2
 
 [viewBag]
 activeMenu="{{ :slug }}"
@@ -31,9 +28,6 @@ $this->page->title = $this->category->name;
     <div class="row">
         <div class="col-md-8">
             {% component 'newsPosts' %}
-        </div>
-        <div class="col-md-4">
-            {% component 'newsCategories' %}
         </div>
     </div>
 </div>

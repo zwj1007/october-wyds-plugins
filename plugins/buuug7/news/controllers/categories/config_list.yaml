@@ -9,7 +9,7 @@ list: $/buuug7/news/models/category/columns.yaml
 modelClass: Buuug7\News\Models\Category
 
 # List Title
-title: buuug7.news::lang.categories.list_title
+title: 分类
 
 # Link URL for each record
 recordUrl: buuug7/news/categories/update/:id

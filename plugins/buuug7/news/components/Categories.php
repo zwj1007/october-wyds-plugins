@@ -26,8 +26,8 @@ class Categories extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'buuug7.news::lang.settings.category_title',
-            'description' => 'buuug7.news::lang.settings.category_description',
+            'name' => '新闻分类',
+            'description' => '显示新闻分类',
         ];
     }
 
@@ -35,21 +35,21 @@ class Categories extends ComponentBase
     {
         return [
             'slug' => [
-                'title' => 'buuug7.news::lang.settings.category_slug',
-                'description' => 'buuug7.news::lang.settings.category_slug_description',
+                'title' => '分类别名',
+                'description' => '新闻分类别名',
                 'default' => '{{ :slug }}',
                 'type' => 'string',
             ],
 
             'displayEmpty' => [
-                'title' => 'buuug7.news::lang.settings.category_display_empty',
-                'description' => 'buuug7.news::lang.settings.category_display_empty_description',
+                'title' => '显示空分类',
+                'description' => '是否显示空的分类',
                 'type' => 'checkbox',
                 'default' => 0,
             ],
             'categoryPage' => [
-                'title' => 'buuug7.news::lang.settings.category_page',
-                'description' => 'buuug7.news::lang.settings.category_page_description',
+                'title' => '分类页',
+                'description' => '分类页地址',
                 'type' => 'dropdown',
                 'default' => 'news/category',
             ],

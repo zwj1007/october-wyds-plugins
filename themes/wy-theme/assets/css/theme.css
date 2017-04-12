@@ -513,3 +513,22 @@ img.oc-img-bordered {
   border: solid 10px #CCC;
   box-sizing: content-box;
 }
+
+/*
+ * list group
+ */
+
+.buuug7-no-border{
+  border:none !important;
+}
+.buuug7-no-padding{
+  padding:0 !important;
+}
+a:hover,a:visited{
+  text-decoration: none;
+}
+
+.padding-top-20{
+  padding-top:20px;
+
+}

@@ -16,8 +16,8 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name' => 'Courses',
-            'description' => 'No description provided yet...',
+            'name' => '课程',
+            'description' => '课程管理',
             'author' => 'Buuug7',
             'icon' => 'icon-leaf'
         ];
@@ -68,37 +68,37 @@ class Plugin extends PluginBase
     {
         return [
             'buuug7.courses.access_courses' => [
-                'tab' => 'buuug7.courses::lang.courses.tab',
-                'label' => 'buuug7.courses::lang.permission.access_courses'
+                'tab' => '课程',
+                'label' => '管理课程'
             ],
 
             'buuug7.courses.access_categories' => [
-                'tab' => 'buuug7.courses::lang.courses.tab',
-                'label' => 'buuug7.courses::lang.permission.access_categories'
+                'tab' => '课程',
+                'label' => '管理课程分类'
             ],
 
             'buuug7.courses.access_other_courses' => [
-                'tab' => 'buuug7.courses::lang.courses.tab',
-                'label' => 'buuug7.courses::lang.permission.access_other_courses'
+                'tab' => '课程',
+                'label' => '管理其他人发布的课程'
             ],
 
             'buuug7.courses.access_publish' => [
-                'tab' => 'buuug7.courses::lang.courses.tab',
-                'label' => 'buuug7.courses::lang.permission.access_publish'
+                'tab' => '课程',
+                'label' => '课程发布'
             ],
 
             'buuug7.courses.access_tags' => [
-                'tab' => 'buuug7.courses::lang.courses.tab',
-                'label' => 'buuug7.courses::lang.permission.access_tags'
+                'tab' => '课程',
+                'label' => '课程标签管理'
             ],
 
             'buuug7.courses.create' => [
-                'tab'   => 'buuug7.courses::lang.courses.tab',
-                'label' => 'buuug7.courses::lang.permission.create'
+                'tab'   => '课程',
+                'label' => '添加课程'
             ],
             'buuug7.courses.delete' => [
-                'tab'   => 'buuug7.courses::lang.courses.tab',
-                'label' => 'buuug7.courses::lang.permission.delete'
+                'tab'   => '课程',
+                'label' => '删除课程'
             ],
         ];
     }
@@ -112,33 +112,33 @@ class Plugin extends PluginBase
     {
         return [
             'courses' => [
-                'label' => 'Courses',
+                'label' => '课程',
                 'url' => Backend::url('buuug7/courses/courses'),
                 'icon' => 'icon-book',
                 'permissions' => ['buuug7.courses.*'],
 
                 'sideMenu' => [
                     'new_course' => [
-                        'label' => 'buuug7.courses::lang.courses.new_course',
+                        'label' => '添加课程',
                         'icon' => 'icon-plus',
                         'url' => Backend::url('buuug7/courses/courses/create'),
                         'permission' => ['buuug7.courses.access_courses'],
                     ],
                     'courses' => [
-                        'label' => 'buuug7.courses::lang.courses.courses',
+                        'label' => '课程管理',
                         'icon' => 'icon-copy',
                         'url' => Backend::url('buuug7/courses/courses'),
                         'permission' => ['buuug7.courses.access_courses'],
                     ],
                     'categories' => [
-                        'label' => 'buuug7.courses::lang.courses.categories',
+                        'label' => '课程分类',
                         'icon' => 'icon-list-ol',
                         'url' => Backend::url('buuug7/courses/categories'),
                         'permission' => ['buuug7.courses.access_courses'],
                     ],
 
                     'tags' => [
-                        'label' => 'buuug7.courses::lang.courses.tags',
+                        'label' => '标签管理',
                         'icon' => 'icon-tags',
                         'url' => Backend::url('buuug7/courses/tags'),
                         'permission' => ['buuug7.courses.access_tags'],

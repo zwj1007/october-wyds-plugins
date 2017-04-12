@@ -4,21 +4,21 @@
 
 fields:
     name:
-        label: buuug7.courses::lang.tag.name
+        label: 名称
         required: ture
         span: auto
 
     slug:
-        label: buuug7.courses::lang.tag.slug
+        label: 别名
         required: ture
         preset: name
         span: auto
 
     description:
-        label: buuug7.courses::lang.tag.description
+        label: 描述
         type: richeditor
         size: large
     image:
-        label: buuug7.courses::lang.tag.image
+        label: 特色图片
         type: mediafinder
         mode: image

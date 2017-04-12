@@ -4,19 +4,19 @@
 
 columns:
     name:
-        label: buuug7.courses::lang.category.name
+        label: 名称
         searchable: true
     course_count:
-        label: buuug7.courses::lang.courses.post_count
+        label: 课程数量
         sortable: false
     slug:
-        label: buuug7.courses::lang.category.slug
+        label: 别名
     created_at:
-        label: buuug7.courses::lang.courses.created_at
+        label: 创建日期
         type: datetime
         invisible: true
     updated_at:
-        label: buuug7.courses::lang.courses.updated_at
+        label: 更新日期
         type: datetime
         invisible: true
 

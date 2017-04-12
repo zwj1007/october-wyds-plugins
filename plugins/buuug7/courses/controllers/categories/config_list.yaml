@@ -9,7 +9,7 @@ list: $/buuug7/courses/models/category/columns.yaml
 modelClass: Buuug7\Courses\Models\Category
 
 # List Title
-title: buuug7.courses::lang.categories.list_title
+title: 管理课程分类
 
 # Link URL for each record
 recordUrl: buuug7/courses/categories/update/:id

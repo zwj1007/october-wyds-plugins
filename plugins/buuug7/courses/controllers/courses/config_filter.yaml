@@ -7,7 +7,7 @@ scopes:
     category:
 
         # Filter name
-        label: buuug7.courses::lang.courses.filter_category
+        label: 分类过滤
 
         # Model Class name
         modelClass: Buuug7\News\Models\Category
@@ -21,7 +21,7 @@ scopes:
     published:
 
             # Filter name
-            label: buuug7.courses::lang.courses.filter_published
+            label: 发布过滤
 
             # Filter type
             type: switch

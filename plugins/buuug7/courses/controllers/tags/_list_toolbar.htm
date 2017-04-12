@@ -2,7 +2,7 @@
     <a
         href="<?= Backend::url('buuug7/courses/tags/create') ?>"
         class="btn btn-primary oc-icon-plus">
-        New Tag
+        新标签
     </a>
     <?php if (Buuug7\Courses\Models\Tag::count() > 0): ?>
     <?php if ($this->user->hasAccess('buuug7.courses.delete')): ?>
