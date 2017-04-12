@@ -16,7 +16,7 @@
                 <!--<li class="{% if this.page.id == 'test' %}active{% endif %}"><a href="{{ 'blog/list'|page }}">Blog</a></li>-->
                 <li class="{% if this.page.id == 'dian-shang-dong-tai' %}active {% endif %}"><a href="/dian-shang-dong-tai">电商动态</a></li>
                 <li class="{% if this.page.id == 'zheng-ce-jie-du' %}active {% endif %}"><a href="/zheng-ce-jie-du">政策解读</a></li>
-                <li class="{{ viewBag.activeMenu == 'xian-shang-pei-xun' ? 'active':'' }}"><a href="{{ '/courses/categories' }}">线上培训</a></li>
+                <li class="{% if this.page.id == 'xian-shang-pei-xun' %}active {% endif %}"><a href="/xian-shang-pei-xun">线上培训</a></li>
         </div>
     </div>
 </nav>

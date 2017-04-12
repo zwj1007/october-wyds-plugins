@@ -306,4 +306,45 @@ class Course extends Model
         return $this->_tags;
     }
 
+    public function scopeDisplayByTags($query, $tagsSlug, $limit)
+    {
+        if (!is_array($tagsSlug)) {
+            $tagsSlug = [$tagsSlug];
+        }
+        $tags = Tag::whereIn('slug', $tagsSlug);
+        if (!$tags) {
+            return null;
+        }
+
+        $tags = $tags->get(['id'])->pluck('id');
+        $query->isPublished();
+        $query->whereHas('tags', function ($q) use ($tags) {
+            $q->whereIn('id', $tags);
+        });
+        $query->orderBy('published_at', 'desc');
+
+        return $query->limit($limit)->get();
+        //Log::info($query->get()->toArray());
+    }
+
+    public function scopeDisplayByCategories($query, $categoriesSlug, $limit)
+    {
+        if (!is_array($categoriesSlug)) {
+            $categoriesSlug = [$categoriesSlug];
+        }
+
+        $categories = Category::whereIn('slug', $categoriesSlug);
+
+        if (!$categories) {
+            return null;
+        }
+        $categories = $categories->get(['id'])->pluck('id');
+        $query->isPublished();
+        $query->whereHas('categories', function ($q) use ($categories) {
+            $q->whereIn('id', $categories);
+        });
+        $query->orderBy('published_at', 'desc');
+        return $query->limit($limit)->get();
+    }
+
 }

@@ -1,0 +1,128 @@
+title = "线上培训"
+url = "/xian-shang-pei-xun/:page?"
+layout = "default"
+==
+function onStart(){
+
+// filter by tags
+$this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
+$this['tagReMen']=\Buuug7\Courses\Models\Course::displayByTags(['re-men','tui-jian'],4);
+
+// filter by categories
+$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi','dian-shang-jin-jie-zhi-shi'],4);
+$this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-jin-jie-zhi-shi'],4);
+}
+==
+<div class="jumbotron">
+    <div class="container">
+        <h2>{{ this.page.title }}</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid animi, aspernatur, dicta doloribus eius esse fuga illum modi nemo, neque quae quia quibusdam quidem quo repudiandae saepe sit velit.
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <!--filter by tas-->
+    {% if tagTuiJian %}
+    <div class="row">
+        <div class="page-header">
+            <a href="/courses/tag/tui-jian"><h2>推荐课程</h2></a>
+        </div>
+        {% for post in tagTuiJian %}
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img data-src="#" alt="" src="{{ post.image|media}}">
+                <div class="caption">
+                    <h4 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{{ post.title }}</h4>
+                    <p class="small" style="height:50px;line-height: 2;overflow: hidden;text-overflow: ellipsis">
+                        {{ post.summary|striptags|slice(0,40) }}
+                    </p>
+                    <p>
+                        <a href="/courses/course/{{ post.slug }}" class="btn btn-primary">学习</a>
+                        <a href="#" class="btn btn-default">加入收藏</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if tagReMen %}
+    <div class="row">
+        <div class="page-header">
+            <a href="/courses/tag/re-men"><h2>热门课程</h2></a>
+        </div>
+        {% for post in tagReMen %}
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img data-src="#" alt="" src="{{ post.image|media}}">
+                <div class="caption">
+                    <h4 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{{ post.title }}</h4>
+                    <p class="small" style="height:50px;line-height: 2;overflow: hidden;text-overflow: ellipsis">
+                        {{ post.summary|striptags|slice(0,40) }}
+                    </p>
+                    <p>
+                        <a href="/courses/course/{{ post.slug }}" class="btn btn-primary">学习</a>
+                        <a href="#" class="btn btn-default">加入收藏</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!--filter by categories-->
+    {% if categoryDianShangJiChuZhiShi %}
+    <div class="row">
+        <div class="page-header">
+            <a href="/courses/categories/dian-shang-ji-chu-zhi-shi"><h2>电商基础知识</h2></a>
+        </div>
+        {% for post in categoryDianShangJiChuZhiShi %}
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img data-src="#" alt="" src="{{ post.image|media}}">
+                <div class="caption">
+                    <h4 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{{ post.title }}</h4>
+                    <p class="small" style="height:50px;line-height: 2;overflow: hidden;text-overflow: ellipsis">
+                        {{ post.summary|striptags|slice(0,40) }}
+                    </p>
+                    <p>
+                        <a href="/courses/course/{{ post.slug }}" class="btn btn-primary">学习</a>
+                        <a href="#" class="btn btn-default">加入收藏</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if categoryDianShangJinJieZhiShi %}
+    <div class="row">
+        <div class="page-header">
+            <a href="/courses/categories/dian-shang-jin-jie-zhi-shi"><h2>电商进阶知识</h2></a>
+        </div>
+        {% for post in categoryDianShangJinJieZhiShi %}
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img data-src="#" alt="" src="{{ post.image|media}}">
+                <div class="caption">
+                    <h4 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{{ post.title }}</h4>
+                    <p class="small" style="height:50px;line-height: 2;overflow: hidden;text-overflow: ellipsis">
+                        {{ post.summary|striptags|slice(0,40) }}
+                    </p>
+                    <p>
+                        <a href="/courses/course/{{ post.slug }}" class="btn btn-primary">学习</a>
+                        <a href="#" class="btn btn-default">加入收藏</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+</div>

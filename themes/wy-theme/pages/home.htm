@@ -5,16 +5,24 @@ layout = "default"
 function onStart()
 {
 // 推荐 特色
-$this['featuredPosts']=\Buuug7\News\Models\Post::displayFeatured(15);
+$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(15);
 
 // 电商动态
-$this['dianShangDongTai'] =\Buuug7\News\Models\Post::displayByCategory('dian-shang-dong-tai',5);
+$this['dianShangDongTai'] = \Buuug7\News\Models\Post::displayByCategory('dian-shang-dong-tai',5);
 
-$this['zhenCeJieDu']=\Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie-du',5);
+// 政策解读
+$this['zhenCeJieDu'] = \Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie-du',2);
+
+// 通知公告
+$this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',15);
+
+// 推荐课程
+$this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
+
+// 电商基础知识
+$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi','dian-shang-jin-jie-zhi-shi'],4);
 
 
-$tongZhiGongGaoPosts=\Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',15);
-$this['tongZhiGongGaoPosts'] = $tongZhiGongGaoPosts;
 }
 ==
 <div class="jumbotron">
@@ -104,7 +112,7 @@ $this['tongZhiGongGaoPosts'] = $tongZhiGongGaoPosts;
         {% endif %}
 
         <!--tong-zhi-gong-gao-->
-        {% if tongZhiGongGaoPosts %}
+        {% if tongZhiGongGao %}
         <div class="col-md-6">
             <div class="page-header">
                 <a href="/news/categories/tong-zhi-gong-gao">
@@ -114,7 +122,7 @@ $this['tongZhiGongGaoPosts'] = $tongZhiGongGaoPosts;
             <div class="panel panel-default">
                 <div class="panel-body">
                     <ul class="list-unstyled">
-                        {% for post in tongZhiGongGaoPosts%}
+                        {% for post in tongZhiGongGao %}
                         <li class="padding-top-20">
                             <a href="/news/post/{{ post.slug }}">{{ post.title }}</a> <span class="small">{{ post.created_at |date('Y-m-d')}}</span>
                         </li>
@@ -126,4 +134,57 @@ $this['tongZhiGongGaoPosts'] = $tongZhiGongGaoPosts;
         {% endif %}
 
     </div>
+
+    {% if tagTuiJian %}
+    <div class="row">
+        <div class="page-header">
+            <a href="/courses/tag/tui-jian"><h2>推荐课程</h2></a>
+        </div>
+        {% for post in tagTuiJian %}
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img data-src="#" alt="" src="{{ post.image|media}}">
+                <div class="caption">
+                    <h4 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{{ post.title }}</h4>
+                    <p class="small" style="height:50px;line-height: 2;overflow: hidden;text-overflow: ellipsis">
+                        {{ post.summary|striptags|slice(0,40) }}
+                    </p>
+                    <p>
+                        <a href="/courses/course/{{ post.slug }}" class="btn btn-primary">学习</a>
+                        <a href="#" class="btn btn-default">加入收藏</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!--filter by categories-->
+    {% if categoryDianShangJiChuZhiShi %}
+    <div class="row">
+        <div class="page-header">
+            <a href="/courses/categories/dian-shang-ji-chu-zhi-shi"><h2>电商基础知识</h2></a>
+        </div>
+        {% for post in categoryDianShangJiChuZhiShi %}
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img data-src="#" alt="" src="{{ post.image|media}}">
+                <div class="caption">
+                    <h4 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{{ post.title }}</h4>
+                    <p class="small" style="height:50px;line-height: 2;overflow: hidden;text-overflow: ellipsis">
+                        {{ post.summary|striptags|slice(0,40) }}
+                    </p>
+                    <p>
+                        <a href="/courses/course/{{ post.slug }}" class="btn btn-primary">学习</a>
+                        <a href="#" class="btn btn-default">加入收藏</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+
 </div>

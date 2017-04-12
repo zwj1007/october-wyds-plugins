@@ -18,7 +18,7 @@ tabs:
     fields:
         summary:
             tab: 概述
-            type: richeditor
+            type: textarea
 
         content:
             tab: 内容
@@ -73,6 +73,6 @@ secondaryTabs:
                 condition: checked
 
         featured:
-            label: 推荐
+            label: 特色
             type: checkbox
             span: auto
