@@ -45,6 +45,13 @@ class Tag extends Model
     /**
      * @var array Relations
      */
+    public $belongsToMany = [
+        'courses' => ['Buuug7\Courses\Models\Course',
+            'table' => 'buuug7_courses_tags_courses',
+            'order' => 'publish_at desc',
+            'scope' => 'isPublished',
+        ],
+    ];
 
 
     public function setUrl($pageName, $controller)

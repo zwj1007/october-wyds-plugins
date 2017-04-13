@@ -7,32 +7,31 @@ slug = "{{ :slug }}"
 
 [coursesCourses]
 categoryFilter = "{{ :slug }}"
-postsPerPage = 1
+postsPerPage = 2
 
-[viewBag]
-activeMenu="xian-shang-pei-xun"
 ==
 function onEnd()
 {
 if ($this->category)
 $this->page->title = $this->category->name;
+$this['courses']=$this->courses;
 }
 ==
 
-<div class="jumbotron">
-    <div class="container">
-        <h2>{{ this.page.title }}</h2>
+<div class="container margin-top-20">
+    <div class="jumbotron">
+        <div class="container">
+            <h2>{{ this.page.title }}</h2>
+        </div>
     </div>
 </div>
 
+
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-            {% component 'coursesCourses' %}
-        </div>
-        <div class="col-md-4">
-            {% component 'coursesCategories' %}
-        </div>
+
+        {% partial 'courses/thumbnail-block' posts=courses %}
+
     </div>
 </div>
 

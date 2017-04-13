@@ -50,14 +50,14 @@ tabs:
             label: 标签
             type: relation
             span: auto
-
-secondaryTabs:
-    fields:
         image:
+            tab: 特色图片
             label: 特色图像
             type: mediafinder
             mode: image
 
+secondaryTabs:
+    fields:
         published:
             label: 发布
             type: checkbox

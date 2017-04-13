@@ -11,19 +11,11 @@ $this->page->summary=$this->post->summary;
 }
 }
 ==
-
-<div class="jumbotron">
-    <div class="container">
-        <h2>{{ this.page.title }}</h2>
-        <p>{{ this.page.summary|raw }}</p>
-    </div>
-</div>
-
-<div class="container">
+<div class="container padding-top-20">
     <div class="row">
         <div class="col-md-8">
             {% component 'newsPost' %}
         </div>
     </div>
-
 </div>
+

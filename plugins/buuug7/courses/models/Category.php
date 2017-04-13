@@ -39,7 +39,7 @@ class Category extends Model
     public $belongsToMany = [
         'courses' => ['Buuug7\Courses\Models\Course',
             'table' => 'buuug7_courses_courses_categories',
-            'order' => 'publish_at desc',
+            'order' => 'published_at desc',
             'scope' => 'isPublished',
         ],
     ];

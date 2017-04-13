@@ -13,12 +13,14 @@ $this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCa
 $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-jin-jie-zhi-shi'],4);
 }
 ==
-<div class="jumbotron">
-    <div class="container">
-        <h2>{{ this.page.title }}</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid animi, aspernatur, dicta doloribus eius esse fuga illum modi nemo, neque quae quia quibusdam quidem quo repudiandae saepe sit velit.
-        </p>
+<div class="container margin-top-20">
+    <div class="jumbotron">
+        <div class="container">
+            <h2>{{ this.page.title }}</h2>
+            <p>
+                一站式培训,知识创造财富,电商铸就未来
+            </p>
+        </div>
     </div>
 </div>
 
@@ -29,23 +31,7 @@ $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByC
         <div class="page-header">
             <a href="/courses/tag/tui-jian"><h2>推荐课程</h2></a>
         </div>
-        {% for post in tagTuiJian %}
-        <div class="col-md-3 col-sm-6">
-            <div class="thumbnail">
-                <img data-src="#" alt="" src="{{ post.image|media}}">
-                <div class="caption">
-                    <h4 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{{ post.title }}</h4>
-                    <p class="small" style="height:50px;line-height: 2;overflow: hidden;text-overflow: ellipsis">
-                        {{ post.summary|striptags|slice(0,40) }}
-                    </p>
-                    <p>
-                        <a href="/courses/course/{{ post.slug }}" class="btn btn-primary">学习</a>
-                        <a href="#" class="btn btn-default">加入收藏</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+        {% partial 'courses/thumbnail-block' posts=tagTuiJian %}
     </div>
     {% endif %}
 
@@ -54,23 +40,7 @@ $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByC
         <div class="page-header">
             <a href="/courses/tag/re-men"><h2>热门课程</h2></a>
         </div>
-        {% for post in tagReMen %}
-        <div class="col-md-3 col-sm-6">
-            <div class="thumbnail">
-                <img data-src="#" alt="" src="{{ post.image|media}}">
-                <div class="caption">
-                    <h4 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{{ post.title }}</h4>
-                    <p class="small" style="height:50px;line-height: 2;overflow: hidden;text-overflow: ellipsis">
-                        {{ post.summary|striptags|slice(0,40) }}
-                    </p>
-                    <p>
-                        <a href="/courses/course/{{ post.slug }}" class="btn btn-primary">学习</a>
-                        <a href="#" class="btn btn-default">加入收藏</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+        {% partial 'courses/thumbnail-block' posts=tagReMen %}
     </div>
     {% endif %}
 
@@ -80,23 +50,7 @@ $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByC
         <div class="page-header">
             <a href="/courses/categories/dian-shang-ji-chu-zhi-shi"><h2>电商基础知识</h2></a>
         </div>
-        {% for post in categoryDianShangJiChuZhiShi %}
-        <div class="col-md-3 col-sm-6">
-            <div class="thumbnail">
-                <img data-src="#" alt="" src="{{ post.image|media}}">
-                <div class="caption">
-                    <h4 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{{ post.title }}</h4>
-                    <p class="small" style="height:50px;line-height: 2;overflow: hidden;text-overflow: ellipsis">
-                        {{ post.summary|striptags|slice(0,40) }}
-                    </p>
-                    <p>
-                        <a href="/courses/course/{{ post.slug }}" class="btn btn-primary">学习</a>
-                        <a href="#" class="btn btn-default">加入收藏</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+        {% partial 'courses/thumbnail-block' posts=categoryDianShangJiChuZhiShi %}
     </div>
     {% endif %}
 
@@ -105,23 +59,7 @@ $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByC
         <div class="page-header">
             <a href="/courses/categories/dian-shang-jin-jie-zhi-shi"><h2>电商进阶知识</h2></a>
         </div>
-        {% for post in categoryDianShangJinJieZhiShi %}
-        <div class="col-md-3 col-sm-6">
-            <div class="thumbnail">
-                <img data-src="#" alt="" src="{{ post.image|media}}">
-                <div class="caption">
-                    <h4 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{{ post.title }}</h4>
-                    <p class="small" style="height:50px;line-height: 2;overflow: hidden;text-overflow: ellipsis">
-                        {{ post.summary|striptags|slice(0,40) }}
-                    </p>
-                    <p>
-                        <a href="/courses/course/{{ post.slug }}" class="btn btn-primary">学习</a>
-                        <a href="#" class="btn btn-default">加入收藏</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+        {% partial 'courses/thumbnail-block' posts=categoryDianShangJinJieZhiShi %}
     </div>
     {% endif %}
 

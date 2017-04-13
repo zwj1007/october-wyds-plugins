@@ -64,8 +64,9 @@ class Course extends ComponentBase
 
     public function onRun()
     {
-        $this->categoryPage=$this->page['categoryPage']=$this->property('categoryPage');
-        $this->course=$this->page['course']=$this->loadCourse();
+        $this->categoryPage = $this->page['categoryPage'] = $this->property('categoryPage');
+
+        $this->course = $this->page['course'] = $this->loadCourse();
     }
 
     public function loadCourse()
@@ -73,43 +74,43 @@ class Course extends ComponentBase
         $slug = $this->property('slug');
         $course = new CoursePost();
         $course = $course->where('slug', $slug)->isPublished()->first();
-
+        $courseId = $course->id;
         if ($course && $course->categories->count()) {
             $course->categories->each(function ($category) {
                 $category->setUrl($this->categoryPage, $this->controller);
             });
         }
+
+        $course['relatedCourses'] = $this->relatedCourses($courseId);
+
+        $course['previousSlug'] = $this->previousSlug($courseId);
+        $course['nextSlug'] = $this->nextSlug($courseId);
         return $course;
     }
 
-    public function previousCourse()
+    public function previousSlug($courseId)
     {
-        return $this->getCourseSibling(-1);
+        $previousId = CoursePost::where('id', '<', $courseId)->max('id');
+        if (!$previousId) {
+            return null;
+        }
+        $previousSlug = CoursePost::find($previousId)->slug;
+        return $previousSlug;
     }
 
-    public function nextCourse()
+    public function nextSlug($courseId)
     {
-        return $this->getCourseSibling(1);
+        $nextId = CoursePost::where('id', '>', $courseId)->min('id');
+        if (!$nextId) {
+            return null;
+        }
+        $nextSlug = CoursePost::find($nextId)->slug;
+        return $nextSlug;
     }
 
-    public function getCourseSibling($direction = 1)
+    public function relatedCourses($courseId)
     {
-        if (!$this->course) {
-            return;
-        }
-        $method = $direction === -1 ? 'previousPost' : 'nextPost';
-
-        if(!$course=$this->course->$method()){
-            return;
-        }
-        $postPage=$this->getPage()->getBaseFileName();
-
-        $course->setUrl($postPage,$this->controller);
-
-        $course->categories->each(function($category) {
-            $category->setUrl($this->categoryPage, $this->controller);
-        });
-
+        $course = CoursePost::find($courseId)->categories->first()->courses()->limit(8)->get();
         return $course;
     }
 
