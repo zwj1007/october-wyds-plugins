@@ -55,13 +55,15 @@ class Course extends Model
         'categories' => [
             'Buuug7\Courses\Models\Category',
             'table' => 'buuug7_courses_courses_categories',
-            'order' => 'name',
         ],
         'tags' => [
             'Buuug7\Courses\Models\Tag',
             'table' => 'buuug7_courses_tags_courses',
-            'order' => 'name'
-        ]
+        ],
+        'users' => [
+            'RainLab\User\Models\User',
+            'table' => 'buuug7_user_users_courses',
+        ],
     ];
     /**
      * The attributes on which the post list can be ordered

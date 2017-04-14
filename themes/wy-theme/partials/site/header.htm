@@ -13,10 +13,27 @@
         <div class="collapse navbar-collapse navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li class="separator hidden-xs"></li>
-                <!--<li class="{% if this.page.id == 'test' %}active{% endif %}"><a href="{{ 'blog/list'|page }}">Blog</a></li>-->
-                <li class="{% if this.page.id == 'dian-shang-dong-tai' %}active {% endif %}"><a href="/dian-shang-dong-tai">电商动态</a></li>
-                <li class="{% if this.page.id == 'zheng-ce-jie-du' %}active {% endif %}"><a href="/zheng-ce-jie-du">政策解读</a></li>
-                <li class="{% if this.page.id == 'xian-shang-pei-xun' %}active {% endif %}"><a href="/xian-shang-pei-xun">线上培训</a></li>
+                <li class="{% if this.page.id == 'dian-shang-dong-tai' %}active {% endif %}">
+                    <a href="/dian-shang-dong-tai">电商动态</a></li>
+                <li class="{% if this.page.id == 'zheng-ce-jie-du' %}active {% endif %}">
+                    <a href="/zheng-ce-jie-du">政策解读</a></li>
+                <li class="{% if this.page.id == 'xian-shang-pei-xun' %}active {% endif %}">
+                    <a href="/xian-shang-pei-xun">线上培训</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% if user %}{{ user.name }}{% else %}登陆/注册{% endif %} <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        {% if user %}
+                        <li><a href="/account">账号</a></li>
+                        <li><a href="/shoucang">收藏课程</a></li>
+                        <li><a data-request="onLogout" data-request-data="redirect: '/'">登出</a></li>
+                        {% else %}
+                        <li><a href="/account">登陆</a></li>
+                        <li><a href="/account">注册</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>

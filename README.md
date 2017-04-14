@@ -51,3 +51,12 @@ october plugins
 
 #### 数据统计
 TODO::敬请期待
+
+#### TODO
++ 授权页面不够完善,后续在加验证
+
+#### 更新
++ 2017-04-14
+    + 新添加了用户插件,扩展了用户profile,暂时添加了**phone,mobile,company,address**,以后有新需求在添加
+    + 新添了表`buuug7_user_users_courses`,用来关联用户跟课程,课程收藏
+    + 

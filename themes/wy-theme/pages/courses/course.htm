@@ -5,10 +5,13 @@ layout="default"
 [coursesCourse]
 ==
 function onEnd(){
-if($this->course){
-$this['course']=$this->course;
-//var_dump($this->course->toArray());
+
+$loggedIn = Auth::check();
+if(!$loggedIn){
+return Redirect::to('/account');
 }
+
+//var_dump($this->course->toArray());
 }
 ==
 <div class="container padding-top-20">
@@ -30,10 +33,7 @@ $this['course']=$this->course;
                             {% endfor %}
                         </div>
                         {% endif %}
-
-
                     </div>
-
                 </div>
             </div>
             <div class="col-md-4">
@@ -44,14 +44,20 @@ $this['course']=$this->course;
                             <img src="{{ course.image|media }}" alt="{{ course.title }}" class="img-responsive img-rounded">
                         </div>
                         {% endif %}
-                       <h4> {{ course.title }}</h4>
+                        <h4> {{ course.title }}</h4>
                     </div>
                     <div class="panel-body">
                         <p>
                             {{ course.summary }}
                         </p>
                         <p>
-                            <a href="#" class="btn btn-success"><i class="icon icon-plus"></i> 收藏</a>
+                            {% if course.ifShouCang %}
+                            <a data-request="onDetachShouCang" data-request-data="id:{{course.id}}" class="btn btn-danger"><i class="icon icon-trash"></i>
+                                取消收藏</a>
+                            {% else %}
+                            <a data-request="onShouCang" data-request-data="id:{{course.id}}" class="btn btn-success"><i class="icon icon-plus"></i>
+                                收藏</a>
+                            {% endif %}
                             {% if course.previousSlug %}
                             <a href="/courses/course/{{ course.previousSlug}}" class="btn btn-default"><i class="icon icon-angle-left"></i>
                                 上一课</a>

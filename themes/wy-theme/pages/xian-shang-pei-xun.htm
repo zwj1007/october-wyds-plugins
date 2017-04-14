@@ -3,7 +3,6 @@ url = "/xian-shang-pei-xun/:page?"
 layout = "default"
 ==
 function onStart(){
-
 // filter by tags
 $this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
 $this['tagReMen']=\Buuug7\Courses\Models\Course::displayByTags(['re-men','tui-jian'],4);
@@ -11,6 +10,13 @@ $this['tagReMen']=\Buuug7\Courses\Models\Course::displayByTags(['re-men','tui-ji
 // filter by categories
 $this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi','dian-shang-jin-jie-zhi-shi'],4);
 $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-jin-jie-zhi-shi'],4);
+}
+
+function onEnd(){
+$loggedIn = Auth::check();
+if(!$loggedIn){
+return Redirect::to('/account');
+}
 }
 ==
 <div class="container margin-top-20">

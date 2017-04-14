@@ -2,6 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use RainLab\User\Models\User as UserModel;
 
 /**
  * Courses Plugin Information File
@@ -40,6 +41,9 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
+        UserModel::extend(function ($model){
+            $model->belongsToMany['courses']=['Buuug7\Courses\Models\Course','table' => 'buuug7_user_users_courses',];
+        });
 
     }
 

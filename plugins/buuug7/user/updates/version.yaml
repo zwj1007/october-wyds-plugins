@@ -1,0 +1,5 @@
+1.0.1: First version of User
+1.0.2:
+    - add extra fields
+    - user_add_profile_fields.php
+    - create_users_courses_table.php

@@ -1,4 +1,7 @@
 description = "Default layout"
+
+[session]
+security = "all"
 ==
 <!DOCTYPE html>
 <html>
@@ -21,9 +24,16 @@ description = "Default layout"
         <header id="layout-header">
             {% partial 'site/header' %}
         </header>
-
         <!-- Content -->
         <section id="layout-content">
+            {% flash %}
+            <div class="margin-top-20">
+                <div class="alert alert-{{ type == 'error' ? 'danger' : type }}">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {{ message }}
+                </div>
+            </div>
+            {% endflash %}
             {% page %}
         </section>
 

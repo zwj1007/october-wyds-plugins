@@ -1,18 +1,12 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: buuug7
- * Date: 2017/4/8 0008
- * Time: 下午 4:02
- * Desc:
- */
-
-namespace Buuug7\Courses\Components;
+<?php namespace Buuug7\Courses\Components;
 
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
 use Buuug7\Courses\Models\Course as CoursePost;
 use Illuminate\Support\Facades\Log;
+use RainLab\User\Facades\Auth;
+use Flash;
+use Redirect;
 
 class Course extends ComponentBase
 {
@@ -82,9 +76,9 @@ class Course extends ComponentBase
         }
 
         $course['relatedCourses'] = $this->relatedCourses($courseId);
-
         $course['previousSlug'] = $this->previousSlug($courseId);
         $course['nextSlug'] = $this->nextSlug($courseId);
+        $course['ifShouCang'] = $this->checkShouCang($courseId);
         return $course;
     }
 
@@ -112,6 +106,66 @@ class Course extends ComponentBase
     {
         $course = CoursePost::find($courseId)->categories->first()->courses()->limit(8)->get();
         return $course;
+    }
+
+    /**
+     * 检查给定课程是否收藏
+     * @param $courseId
+     * @return bool|null
+     */
+    public function checkShouCang($courseId)
+    {
+        $check = Auth::check();
+        if (!$check) {
+            return null;
+        }
+
+        $user = Auth::getUser();
+
+        if ($user->courses()->find($courseId)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    /**
+     * 收藏该课程
+     * @param $courseId
+     */
+    public function onShouCang()
+    {
+
+        $check = Auth::check();
+        if (!$check) {
+            return;
+        }
+
+        $courseId = post('id');
+        $user = Auth::getUser();
+        if (!$user->courses()->find($courseId)) {
+            $user->courses()->attach($courseId);
+        }
+        Flash::success('收藏成功');
+        return Redirect::refresh();
+    }
+
+    public function onDetachShouCang()
+    {
+        $check = Auth::check();
+        if (!$check) {
+            return;
+        }
+        $courseId = post('id');
+        $user = Auth::getUser();
+
+        if (!$user->courses()->find($courseId)) {
+            return;
+        }
+        $user->courses()->detach($courseId);
+        Flash::success('成功取消收藏');
+        return Redirect::refresh();
     }
 
 }

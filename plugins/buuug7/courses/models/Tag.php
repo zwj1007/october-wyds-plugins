@@ -53,6 +53,10 @@ class Tag extends Model
         ],
     ];
 
+    public function afterDelete()
+    {
+        $this->courses()->detach();
+    }
 
     public function setUrl($pageName, $controller)
     {
