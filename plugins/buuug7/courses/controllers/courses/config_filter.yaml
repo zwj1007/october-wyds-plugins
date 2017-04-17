@@ -10,7 +10,7 @@ scopes:
         label: 分类过滤
 
         # Model Class name
-        modelClass: Buuug7\News\Models\Category
+        modelClass: Buuug7\Courses\Models\Category
 
         # Model attribute to display for the name
         nameFrom: name
@@ -30,3 +30,8 @@ scopes:
             conditions:
                 - published <> '1'
                 - published = '1'
+    tags:
+            label: 标签过滤
+            modelClass: Buuug7\Courses\Models\Tag
+            nameFrom: name
+            scope: FilterTags

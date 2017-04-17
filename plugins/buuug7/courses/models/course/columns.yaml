@@ -15,8 +15,8 @@ columns:
     created_at:
         label: 创建日期
         type: date
-        invisible: false
-    update_at:
+        invisible: true
+    updated_at:
         label: 更新日期
         type: date
         invisible: true
@@ -26,3 +26,13 @@ columns:
     featured:
         label: 特色
         type: switch
+    user:
+        label: 发布者
+        relation: user
+        valueFrom: first_name
+        searchable: true
+    tags:
+        label: 标签
+        relation: tags
+        valueFrom: name
+        sortable: false

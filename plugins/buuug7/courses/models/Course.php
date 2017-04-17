@@ -35,8 +35,8 @@ class Course extends Model
     ];
 
     /*
-* Validation
-*/
+    * Validation
+    */
     public $rules = [
         'title' => 'required',
         'slug' => ['required', 'unique:buuug7_courses_courses'],

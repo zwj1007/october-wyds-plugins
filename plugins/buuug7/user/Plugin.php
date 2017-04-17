@@ -44,6 +44,8 @@ class Plugin extends PluginBase
                 'b7_company',
                 'b7_address'
             ]);
+            //$model->belongsToMany['courses']=['Buuug7\Courses\Models\Course','table' => 'buuug7_user_users_courses',];
+            $model->hasOne['company']=['Buuug7\User\Models\Company','table' => 'buuug7_user_companies',];
         });
 
         UsersController::extendFormFields(function ($widget) {
@@ -67,6 +69,7 @@ class Plugin extends PluginBase
         return [
             'Buuug7\User\Components\ShouCang' => 'shouCang',
             'Buuug7\User\Components\Account' => 'b7Account',
+            'Buuug7\User\Components\Company' => 'b7Company',
         ];
     }
 
@@ -94,15 +97,20 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
-
         return [
             'user' => [
-                'label' => 'User',
-                'url' => Backend::url('buuug7/user/mycontroller'),
-                'icon' => 'icon-leaf',
+                'label' => '企业用户',
+                'url' => Backend::url('buuug7/user/companies'),
+                'icon' => 'icon-user-plus',
                 'permissions' => ['buuug7.user.*'],
-                'order' => 500,
+                'sideMenu' => [
+                    'companies' => [
+                        'label' => '公司',
+                        'icon' => 'icon-user-plus',
+                        'url' => Backend::url('buuug7/user/companies'),
+                        'permissions' => ['buuug7.user.*'],
+                    ],
+                ],
             ],
         ];
     }

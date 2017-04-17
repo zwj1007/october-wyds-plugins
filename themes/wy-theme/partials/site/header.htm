@@ -15,6 +15,8 @@
                 <li class="separator hidden-xs"></li>
                 <li class="{% if this.page.id == 'dian-shang-dong-tai' %}active {% endif %}">
                     <a href="/dian-shang-dong-tai">电商动态</a></li>
+                <li class="{% if this.page.id == 'tong-zhi-gong-gao' %}active {% endif %}">
+                    <a href="/tong-zhi-gong-gao">通知公告</a></li>
                 <li class="{% if this.page.id == 'zheng-ce-jie-du' %}active {% endif %}">
                     <a href="/zheng-ce-jie-du">政策解读</a></li>
                 <li class="{% if this.page.id == 'xian-shang-pei-xun' %}active {% endif %}">
@@ -25,6 +27,7 @@
                     <ul class="dropdown-menu">
                         {% if user %}
                         <li><a href="/account">账号</a></li>
+                        <li><a href="/user/company">公司</a></li>
                         <li><a href="/shoucang">收藏课程</a></li>
                         <li><a data-request="onLogout" data-request-data="redirect: '/'">登出</a></li>
                         {% else %}

@@ -7,8 +7,10 @@ redirect = "account"
 paramCode = "code"
 [b7Account]
 ==
-
-
+function onStart(){
+//var_dump($this->user);
+}
+==
 <div class="container margin-top-20">
     {% if not user %}
     <div class="row">
@@ -121,20 +123,9 @@ paramCode = "code"
                     </div>
 
                     <div class="form-group">
-                        <label for="accountB7phone">座机号码</label>
-                        <input name="b7_phone" type="text" class="form-control" id="accountB7phone" value="{{ form_value('b7_phone') }}">
-                    </div>
-
-                    <div class="form-group">
                         <label for="accountB7mobile">手机号码</label>
                         <input name="b7_mobile" type="text" class="form-control" id="accountB7mobile" value="{{ form_value('b7_mobile') }}">
                     </div>
-
-                    <div class="form-group">
-                        <label for="accountB7company">公司</label>
-                        <input name="b7_company" type="text" class="form-control" id="accountB7company" value="{{ form_value('b7_company') }}">
-                    </div>
-
 
                     <div class="form-group">
                         <label for="accountB7address">地址</label>
