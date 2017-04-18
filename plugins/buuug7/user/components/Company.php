@@ -33,7 +33,7 @@ class Company extends ComponentBase
     public function init()
     {
         //$user = Auth::getUser();
-        $company=$this->company();
+        $company = $this->company();
         if ($company) {
             $component = $this->addComponent(
                 'NetSTI\Uploader\Components\ImageUploader',
@@ -42,6 +42,8 @@ class Company extends ComponentBase
                     'modelClass' => 'Buuug7\User\Models\Company',
                     'modelKeyColumn' => 'avatar',
                     'deferredBinding' => false,
+                    'imageWidth' => '200',
+                    'imageHeight' => '200',
                 ]
             );
 
@@ -57,6 +59,12 @@ class Company extends ComponentBase
     public function onRun()
     {
         $this->page['company'] = $this->company();
+        $this->page['companies']=$this->listCheckedCompany();
+    }
+
+    public function listCheckedCompany()
+    {
+        return UserCompany::isChecked()->paginate(1);
     }
 
 
@@ -93,6 +101,7 @@ class Company extends ComponentBase
         $company->address = post('address');
         $company->contact_phone = post('contact_phone');
         $company->description = post('description');
+        $company->checked = false;
         $company->status = 'committed';
         $company->user_id = Auth::getUser()->id;
         $company->save();
@@ -104,7 +113,18 @@ class Company extends ComponentBase
 
     public function onUpdateCompany()
     {
-
+        $company = $this->company();
+        $company->name = post('name');
+        $company->slug = post('slug');
+        $company->address = post('address');
+        $company->contact_phone = post('contact_phone');
+        $company->description = post('description');
+        $company->status = 'committed';
+        $company->checked = false;
+        $company->not_passed_message = null;
+        $company->save();
+        Flash::success('信息已经提交');
+        return Redirect::refresh();
     }
 
     public function onDeleteCompany()

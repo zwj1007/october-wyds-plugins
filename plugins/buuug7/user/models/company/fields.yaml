@@ -38,7 +38,7 @@ tabs:
 secondaryTabs:
     fields:
         avatar:
-            label: rainlab.user::lang.user.avatar
+            label: 公司LOGO
             type: fileupload
             mode: image
             imageHeight: 260
@@ -49,7 +49,7 @@ secondaryTabs:
         not_passed_message:
             label: 退回消息
             placeholder: 如何审核不通过,退回用户的反馈消息
-            type: textarea
+            type: markdown
             size: small
         checked:
             label: 审核
