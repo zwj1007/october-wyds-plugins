@@ -1,0 +1,20 @@
+title = '需求'
+url = '/needs/need/:id'
+layout = 'default'
+
+[b7Need]
+==
+
+<div class="container margin-top-60">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h4> {{ need.title }}</h4>
+                    <p>联系电话: {{ need.contact_phone }}</p>
+                    {{ need.description|raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+title = '服务市场'
+url = '/fu-wu-shi-chang'
+layout = 'default'
+
+[b7Need]
+==
+
+<div class="container margin-top-20">
+    <div class="jumbotron">
+        <div class="container">
+            <h2>{{ this.page.title }}</h2>
+            <p>
+                快速发布您个人或者公司的需求
+            </p>
+            <p>
+                <a href="/needs/need/create" class="btn btn-primary"><i class="icon icon-plus"></i> 需求发布</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">最新发布</div>
+                <!-- List group -->
+                <ul class="list-group">
+                    {% for need in needs %}
+                    <li class="list-group-item">
+                        <a href="/needs/need/{{ need.id }}">{{ need.title }}</a>
+                        <span class="small pull-right">{{ need.checked_at|date('Y-m-d') }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

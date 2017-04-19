@@ -1,0 +1,52 @@
+title = '需求'
+url = '/needs'
+layout = 'default'
+
+[b7Need]
+==
+function onEnd(){
+//var_dump($this->userRelatedNeeds);
+}
+==
+
+<div class="container margin-top-60">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    我发布的需求
+                </div>
+                <div class="panel-body">
+                    <a href="/needs/need/create" class="btn btn-success"><i class="icon icon-plus"></i> 发布需求</a>
+                    <div class="table-responsive padding-top-20">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>需求名称</th>
+                                <th>状态</th>
+                                <th>时间</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for need in userRelatedNeeds %}
+                            <tr>
+                                <td><a href="/needs/need/{{ need.id }}">{{ need.title }}</a></td>
+                                <td>{{ need.checked == 0 ? '待审核' : '审核' }}</td>
+                                <td>{{ need.created_at|date }}</td>
+                                <td>
+                                    <a href="/needs/need/{{ need.id }}" class="margin-right-10"><i class="icon icon-eye-open"></i></a>
+                                    <a data-request="onDeleteNeed" data-request-data="id:{{ need.id }}" class="margin-right-10"><i class="icon icon-trash"></i></a>
+                                    <a href="/needs/need/update/{{ need.id }}"><i class="icon icon-pencil"></i></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        {{ userRelatedNeeds.render|raw }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

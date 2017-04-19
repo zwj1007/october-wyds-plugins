@@ -14,34 +14,24 @@ function onEnd(){
         <div class="container">
             <h2>{{ this.page.title }}</h2>
             <p>
-                增加企业曝光率,让每一个电商企业真正成长起来,也是本平台的初衷
+                增加企业曝光率,让每一个电商企业真正成长起来是本平台的初衷
             </p>
         </div>
     </div>
 </div>
 
 <div class="container margin-top-20">
+    <div class="page-header">
+        <a href=""><h2>推荐电商</h2></a>
+    </div>
     <div class="row">
-        <div class="page-header">
-            <a href=""><h2>本地电商</h2></a>
-        </div>
-        {% if companies %}
-        {% for company in companies %}
-        <div class="col-md-2 com-sm-4">
-            <div class="thumbnail">
-                <img data-src="3" alt="" src="{{ company.getAvatarThumb(200) }}">
-                <div class="caption">
-                    <h4>{{ company.name }}</h4>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-        {% endif %}
+        {% partial 'companies/thumbnail-block' companies=featuredCompanies %}
     </div>
 
+    <div class="page-header">
+        <a href="#"><h2>本地电商</h2></a>
+    </div>
     <div class="row">
-        <div class="col-md-12">
-            {{ companies.render|raw }}
-        </div>
+        {% partial 'companies/thumbnail-block' companies=companies %}
     </div>
 </div>

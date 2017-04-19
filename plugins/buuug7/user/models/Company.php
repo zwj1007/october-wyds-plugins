@@ -70,6 +70,11 @@ class Company extends Model
             ->where('checked_at', '<', Carbon::now());
     }
 
+    public function scopeIsFeatured($query)
+    {
+        return $query->where('featured', true);
+    }
+
     public function afterValidate()
     {
         if ($this->checked && !$this->checked_at) {
@@ -86,8 +91,7 @@ class Company extends Model
     {
         if (is_string($options)) {
             $options = ['default' => $options];
-        }
-        elseif (!is_array($options)) {
+        } elseif (!is_array($options)) {
             $options = [];
         }
 
@@ -96,12 +100,11 @@ class Company extends Model
 
         if ($this->avatar) {
             return $this->avatar->getThumb($size, $size, $options);
-        }
-        else {
-            return '//www.gravatar.com/avatar/'.
-                md5(strtolower(trim($this->email))).
-                '?s='.$size.
-                '&d='.urlencode($default);
+        } else {
+            return '//www.gravatar.com/avatar/' .
+                md5(strtolower(trim($this->email))) .
+                '?s=' . $size .
+                '&d=' . urlencode($default);
         }
     }
 
@@ -114,5 +117,10 @@ class Company extends Model
 
         $this->avatar && $this->avatar->delete();
         parent::afterDelete();
+    }
+
+    public function scopeDisplayFeatured($query, $limit)
+    {
+        return $query->isChecked()->isFeatured()->limit($limit)->get();
     }
 }

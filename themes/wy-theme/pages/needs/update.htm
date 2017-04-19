@@ -1,0 +1,20 @@
+title = '需求'
+url = '/needs/need/update/:id'
+layout = 'default'
+
+[b7Need]
+==
+<div class="container margin-top-60">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    发布新需求
+                </div>
+                <div class="panel-body">
+                    {% partial 'needs/need-form' method='onUpdateNeed' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

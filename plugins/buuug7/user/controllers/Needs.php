@@ -4,9 +4,9 @@ use BackendMenu;
 use Backend\Classes\Controller;
 
 /**
- * Companies Back-end Controller
+ * Needs Back-end Controller
  */
-class Companies extends Controller
+class Needs extends Controller
 {
     public $implement = [
         'Backend.Behaviors.FormController',
@@ -16,17 +16,10 @@ class Companies extends Controller
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
 
-    public $requiredPermissions = ['buuug7.user.access_companies'];
-
     public function __construct()
     {
         parent::__construct();
 
-        BackendMenu::setContext('Buuug7.User', 'user', 'companies');
-    }
-
-    public function formBeforeCreate($model)
-    {
-        $model->user_id = $this->user->id;
+        BackendMenu::setContext('Buuug7.User', 'user', 'needs');
     }
 }

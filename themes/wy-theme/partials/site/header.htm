@@ -23,6 +23,8 @@
                     <a href="/xian-shang-pei-xun">线上培训</a></li>
                 <li class="{% if this.page.id == 'ben-di-dian-shang' %}active {% endif %}">
                     <a href="/ben-di-dian-shang">本地电商</a></li>
+                <li class="{% if this.page.id == 'fu-wu-shi-chang' %}active {% endif %}">
+                    <a href="/fu-wu-shi-chang">服务市场</a></li>
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% if user %}{{ user.name }}{% else %}登陆/注册{% endif %} <b class="caret"></b></a>
@@ -31,6 +33,7 @@
                         <li><a href="/account">账号</a></li>
                         <li><a href="/user/company">公司</a></li>
                         <li><a href="/shoucang">收藏课程</a></li>
+                        <li><a href="/needs">我的发布</a></li>
                         <li><a data-request="onLogout" data-request-data="redirect: '/'">登出</a></li>
                         {% else %}
                         <li><a href="/account">登陆</a></li>

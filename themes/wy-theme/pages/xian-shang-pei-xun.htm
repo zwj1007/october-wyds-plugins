@@ -32,39 +32,39 @@ return Redirect::to('/account');
 
 <div class="container">
     <!--filter by tas-->
+    <div class="page-header">
+        <a href="/courses/tag/tui-jian"><h2>推荐课程</h2></a>
+    </div>
     {% if tagTuiJian %}
     <div class="row">
-        <div class="page-header">
-            <a href="/courses/tag/tui-jian"><h2>推荐课程</h2></a>
-        </div>
         {% partial 'courses/thumbnail-block' posts=tagTuiJian %}
     </div>
     {% endif %}
 
     {% if tagReMen %}
+    <div class="page-header">
+        <a href="/courses/tag/re-men"><h2>热门课程</h2></a>
+    </div>
     <div class="row">
-        <div class="page-header">
-            <a href="/courses/tag/re-men"><h2>热门课程</h2></a>
-        </div>
         {% partial 'courses/thumbnail-block' posts=tagReMen %}
     </div>
     {% endif %}
 
     <!--filter by categories-->
     {% if categoryDianShangJiChuZhiShi %}
+    <div class="page-header">
+        <a href="/courses/categories/dian-shang-ji-chu-zhi-shi"><h2>电商基础知识</h2></a>
+    </div>
     <div class="row">
-        <div class="page-header">
-            <a href="/courses/categories/dian-shang-ji-chu-zhi-shi"><h2>电商基础知识</h2></a>
-        </div>
         {% partial 'courses/thumbnail-block' posts=categoryDianShangJiChuZhiShi %}
     </div>
     {% endif %}
 
     {% if categoryDianShangJinJieZhiShi %}
+    <div class="page-header">
+        <a href="/courses/categories/dian-shang-jin-jie-zhi-shi"><h2>电商进阶知识</h2></a>
+    </div>
     <div class="row">
-        <div class="page-header">
-            <a href="/courses/categories/dian-shang-jin-jie-zhi-shi"><h2>电商进阶知识</h2></a>
-        </div>
         {% partial 'courses/thumbnail-block' posts=categoryDianShangJinJieZhiShi %}
     </div>
     {% endif %}

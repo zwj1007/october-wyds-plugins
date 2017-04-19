@@ -44,8 +44,9 @@ class Plugin extends PluginBase
                 'b7_company',
                 'b7_address'
             ]);
-            //$model->belongsToMany['courses']=['Buuug7\Courses\Models\Course','table' => 'buuug7_user_users_courses',];
-            $model->hasOne['company']=['Buuug7\User\Models\Company','table' => 'buuug7_user_companies',];
+
+            $model->hasOne['company'] = ['Buuug7\User\Models\Company', 'table' => 'buuug7_user_companies',];
+            $model->hasMany['need'] = ['Buuug7\User\Models\Need', 'table' => 'buuug7_user_needs',];
         });
 
         UsersController::extendFormFields(function ($widget) {
@@ -70,6 +71,7 @@ class Plugin extends PluginBase
             'Buuug7\User\Components\ShouCang' => 'shouCang',
             'Buuug7\User\Components\Account' => 'b7Account',
             'Buuug7\User\Components\Company' => 'b7Company',
+            'Buuug7\User\Components\Need' => 'b7Need',
         ];
     }
 
@@ -80,12 +82,10 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
-
         return [
-            'buuug7.user.some_permission' => [
-                'tab' => 'User',
-                'label' => 'Some permission'
+            'buuug7.user.access_companies' => [
+                'tab' => '企业',
+                'label' => '企业管理'
             ],
         ];
     }
@@ -99,15 +99,21 @@ class Plugin extends PluginBase
     {
         return [
             'user' => [
-                'label' => '企业用户',
+                'label' => '企业',
                 'url' => Backend::url('buuug7/user/companies'),
                 'icon' => 'icon-user-plus',
                 'permissions' => ['buuug7.user.*'],
                 'sideMenu' => [
                     'companies' => [
-                        'label' => '公司',
+                        'label' => '企业',
                         'icon' => 'icon-user-plus',
                         'url' => Backend::url('buuug7/user/companies'),
+                        'permissions' => ['buuug7.user.*'],
+                    ],
+                    'needs' => [
+                        'label' => '需求',
+                        'icon' => 'icon-file-text',
+                        'url' => Backend::url('buuug7/user/needs'),
                         'permissions' => ['buuug7.user.*'],
                     ],
                 ],

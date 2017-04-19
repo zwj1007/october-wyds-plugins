@@ -3,21 +3,18 @@
 # ===================================
 
 columns:
-    name:
-        label: 公司名称
-        searchable: true
-    slug:
-        label: 公司别名
-        invisible: true
-    address:
-        label: 地址
-        invisible: true
+    title:
+        label: 名称
     contact_phone:
         label: 联系电话
+        invisible: true
     user:
-        label: 用户
+        label: 发布者
         relation: user
         valueFrom: name
+    featured:
+        label: 推荐
+        type: switch
     checked:
         label: 审核
         type: switch
@@ -32,11 +29,3 @@ columns:
         label: 更新日期
         type: date
         invisible: true
-    status:
-        label: 状态
-        type: partial
-        path: ~/plugins/buuug7/user/models/company/_status_column.htm
-    featured:
-        label: 推荐
-        type: switch
-

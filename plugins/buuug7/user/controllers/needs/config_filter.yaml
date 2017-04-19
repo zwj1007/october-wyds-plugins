@@ -16,16 +16,6 @@ scopes:
             conditions:
                 - checked <> '1'
                 - checked = '1'
-    status:
-            label: 状态过滤
-            type: group
-            conditions: status in (:filtered)
-            options:
-                un_committed: 未提交
-                committed: 已提交
-                checking: 审核中
-                passed: 审核通过
-                not_passed: 未审核通过
     featured:
                label: 推荐过滤
                type: switch

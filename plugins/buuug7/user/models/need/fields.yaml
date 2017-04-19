@@ -1,0 +1,31 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: 需求名称
+        disabled: true
+        span: left
+    contact_phone:
+        label: 联系电话
+        disabled: true
+        span: left
+    description:
+        label: 描述
+        disabled: true
+        type: textarea
+    featured:
+        label: 推荐
+        type: checkbox
+    checked:
+        label: 审核
+        type: checkbox
+    checked_at:
+        label: 审核时间
+        type: datepicker
+        model: datetime
+        trigger:
+            action: enable
+            field: checked
+            condition: checked

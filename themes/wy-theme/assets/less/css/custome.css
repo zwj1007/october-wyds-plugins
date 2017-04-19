@@ -132,11 +132,22 @@ a:visited {
 .margin-top-20 {
   margin-top: 20px;
 }
+.margin-top-40 {
+  margin-top: 40px;
+}
+.margin-top-60 {
+  margin-top: 60px;
+}
 .margin-bottom-20 {
   margin-bottom: 20px;
 }
+.margin-left-10 {
+  margin-left: 10px;
+}
+.margin-right-10 {
+  margin-right: 10px;
+}
 .page-header {
-  margin: 20px 15px 20px 15px;
   border-bottom: 1px solid #eeeeee;
 }
 .page-header h2 {

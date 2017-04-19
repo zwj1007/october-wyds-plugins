@@ -13,15 +13,6 @@ class Company extends ComponentBase
 {
     public $canCompany = true;
 
-    public $rules = [
-        'name' => 'required',
-        'slug' => ['required', 'unique:buuug7_user_companies'],
-        'address' => 'required',
-        'contact_phone' => 'required',
-        'description' => 'required',
-        // 'status' => 'required',
-    ];
-
     public function componentDetails()
     {
         return [
@@ -33,7 +24,7 @@ class Company extends ComponentBase
     public function init()
     {
         //$user = Auth::getUser();
-        $company = $this->company();
+        $company = $this->loadUserRelatedCompany();
         if ($company) {
             $component = $this->addComponent(
                 'NetSTI\Uploader\Components\ImageUploader',
@@ -53,25 +44,46 @@ class Company extends ComponentBase
 
     public function defineProperties()
     {
-        return [];
+        return [
+            'slug' => [
+                'title' => '公司别名',
+                'description' => '公司别名',
+                'default' => '{{ :slug }}',
+                'type' => 'string',
+            ],
+        ];
     }
 
     public function onRun()
     {
-        $this->page['company'] = $this->company();
-        $this->page['companies']=$this->listCheckedCompany();
+        $this->page['companies'] = $this->listCheckedCompanies();
+        $this->page['company'] = $this->loadCompany();
+        $this->page['userRelatedCompany'] = $this->loadUserRelatedCompany();
+        $this->page['featuredCompanies'] = $this->listFeaturedCompanies();
     }
 
-    public function listCheckedCompany()
+    public function loadCompany()
     {
-        return UserCompany::isChecked()->paginate(1);
+        $slug = $this->property('slug');
+        $company = UserCompany::where('slug', $slug)->isChecked()->first();
+        return $company;
+    }
+
+    public function listCheckedCompanies()
+    {
+        return UserCompany::isChecked()->orderBy('checked_at', 'desc')->get();
+    }
+
+    public function listFeaturedCompanies()
+    {
+        return UserCompany::isChecked()->isFeatured()->orderBy('checked_at', 'desc')->get();
     }
 
 
     /**
      * return the logged user company information
      */
-    public function company()
+    public function loadUserRelatedCompany()
     {
         if (!Auth::check()) {
             return null;
@@ -86,12 +98,6 @@ class Company extends ComponentBase
         if (!$this->canCompany) {
             throw new ApplicationException('你的账号不允许提交公司认证信息');
         }
-        $data = post();
-
-        /*        $validation = Validator::make($data, $this->rules);
-                if ($validation->fails()) {
-                    throw new ValidationException($validation);
-                }*/
         $company = new UserCompany();
         /*if (!UserCompany::create($data)) {
             throw new ApplicationException('提交数据出错');
@@ -113,7 +119,7 @@ class Company extends ComponentBase
 
     public function onUpdateCompany()
     {
-        $company = $this->company();
+        $company = $this->loadUserRelatedCompany();
         $company->name = post('name');
         $company->slug = post('slug');
         $company->address = post('address');

@@ -1,0 +1,41 @@
+title = '公司'
+url = '/company/:slug'
+layout = 'default'
+
+[b7Company]
+==
+function onEnd(){
+//var_dump($this->company);
+}
+==
+<div class="container margin-top-20">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {{ company.name }}
+                </div>
+                <div class="panel-body">
+                    {{ company.description }}
+                    <dl class="dl-horizontal margin-top-20">
+                        <dt>公司地址</dt>
+                        <dd>{{ company.address }}</dd>
+                        <dt>联系电话</dt>
+                        <dd>{{ company.contact_phone }}</dd>
+                        <dt>推荐企业</dt>
+                        <dd>{{ company.featured ? '是' : '否' }}</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <img src="{{ company.getAvatarThumb(400) }}" alt="" class="img-responsive">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
