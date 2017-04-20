@@ -2,7 +2,10 @@ title = '服务市场'
 url = '/fu-wu-shi-chang'
 layout = 'default'
 
-[b7Need]
+==
+function onStart(){
+$this['checkedNeeds']=\Buuug7\User\Models\Need::displayChecked(5);
+}
 ==
 
 <div class="container margin-top-20">
@@ -27,7 +30,7 @@ layout = 'default'
                 <div class="panel-heading">最新发布</div>
                 <!-- List group -->
                 <ul class="list-group">
-                    {% for need in needs %}
+                    {% for need in checkedNeeds %}
                     <li class="list-group-item">
                         <a href="/needs/need/{{ need.id }}">{{ need.title }}</a>
                         <span class="small pull-right">{{ need.checked_at|date('Y-m-d') }}</span>

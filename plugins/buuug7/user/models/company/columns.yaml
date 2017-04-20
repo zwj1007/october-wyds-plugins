@@ -6,9 +6,6 @@ columns:
     name:
         label: 公司名称
         searchable: true
-    slug:
-        label: 公司别名
-        invisible: true
     address:
         label: 地址
         invisible: true

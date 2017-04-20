@@ -8,21 +8,14 @@ fields:
         disabled: false
         placeholder: 公司名称
         span: left
-    slug:
-        label: 别名
-        span: right
-        placeholder: 公司别名
-        preset:
-            field: name
-            type: slug
     contact_phone:
         label: 电话
         placeholder: 联系电话
-        span: left
+        span: right
     address:
         label: 地址
         disabled: false
-        span: right
+        span: auto
         placeholder: 公司地址
 tabs:
     fields:

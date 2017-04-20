@@ -29,7 +29,7 @@ function onEnd(){
                             </tr>
                             </thead>
                             <tbody>
-                            {% for need in userRelatedNeeds %}
+                            {% for need in needs %}
                             <tr>
                                 <td><a href="/needs/need/{{ need.id }}">{{ need.title }}</a></td>
                                 <td>{{ need.checked == 0 ? '待审核' : '审核' }}</td>

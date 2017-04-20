@@ -2,9 +2,11 @@ title = '需求'
 url = '/needs/need/:id'
 layout = 'default'
 
-[b7Need]
 ==
-
+function onStart(){
+$this['need']=\Buuug7\User\Models\Need::findById($this->param('id'));
+}
+==
 <div class="container margin-top-60">
     <div class="row">
         <div class="col-md-8">

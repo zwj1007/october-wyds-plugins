@@ -30,7 +30,6 @@ class Company extends Model
     */
     public $rules = [
         'name' => 'required',
-        'slug' => ['required', 'unique:buuug7_user_companies'],
         'address' => 'required',
         'contact_phone' => 'required',
         'description' => 'required',
@@ -119,8 +118,18 @@ class Company extends Model
         parent::afterDelete();
     }
 
+    public function scopeDisplayChecked($query, $limit)
+    {
+        return $query->isChecked()->orderBy('checked_at', 'desc')->limit($limit)->get();
+    }
+
     public function scopeDisplayFeatured($query, $limit)
     {
-        return $query->isChecked()->isFeatured()->limit($limit)->get();
+        return $query->isChecked()->isFeatured()->orderBy('checked_at', 'desc')->limit($limit)->get();
+    }
+
+    public static function findById($id)
+    {
+        return self::where(['checked' => true, 'id' => $id,])->first();
     }
 }

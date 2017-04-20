@@ -1,13 +1,13 @@
 title = '公司'
-url = '/company/:slug'
+url = '/company/:id'
 layout = 'default'
 
-[b7Company]
 ==
-function onEnd(){
-//var_dump($this->company);
+function onStart(){
+$this['company']=\Buuug7\User\Models\Company::findById($this->param('id'));
 }
 ==
+
 <div class="container margin-top-20">
     <div class="row">
         <div class="col-md-9">
@@ -25,6 +25,11 @@ function onEnd(){
                         <dt>推荐企业</dt>
                         <dd>{{ company.featured ? '是' : '否' }}</dd>
                     </dl>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    {{ company.detail|raw }}
                 </div>
             </div>
         </div>

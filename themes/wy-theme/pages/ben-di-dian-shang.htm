@@ -2,10 +2,10 @@ title = "本地电商"
 url = "/ben-di-dian-shang"
 layout="default"
 
-[b7Company]
 ==
-function onEnd(){
-//var_dump($this->companies);
+function onStart(){
+$this['companies']=\Buuug7\User\Models\Company::displayChecked(5);
+$this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
 }
 ==
 

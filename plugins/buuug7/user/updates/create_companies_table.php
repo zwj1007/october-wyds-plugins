@@ -12,7 +12,7 @@ class CreateCompaniesTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name')->nullable();
-            $table->string('slug');
+            //$table->string('slug');
             $table->string('address')->nullable();
             $table->string('contact_phone')->nullable();
             //$table->string('logo')->nullable();

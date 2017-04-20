@@ -24,7 +24,7 @@ class Company extends ComponentBase
     public function init()
     {
         //$user = Auth::getUser();
-        $company = $this->loadUserRelatedCompany();
+        $company = $this->loadCompany();
         if ($company) {
             $component = $this->addComponent(
                 'NetSTI\Uploader\Components\ImageUploader',
@@ -44,46 +44,19 @@ class Company extends ComponentBase
 
     public function defineProperties()
     {
-        return [
-            'slug' => [
-                'title' => '公司别名',
-                'description' => '公司别名',
-                'default' => '{{ :slug }}',
-                'type' => 'string',
-            ],
-        ];
+        return [];
     }
 
     public function onRun()
     {
-        $this->page['companies'] = $this->listCheckedCompanies();
         $this->page['company'] = $this->loadCompany();
-        $this->page['userRelatedCompany'] = $this->loadUserRelatedCompany();
-        $this->page['featuredCompanies'] = $this->listFeaturedCompanies();
-    }
-
-    public function loadCompany()
-    {
-        $slug = $this->property('slug');
-        $company = UserCompany::where('slug', $slug)->isChecked()->first();
-        return $company;
-    }
-
-    public function listCheckedCompanies()
-    {
-        return UserCompany::isChecked()->orderBy('checked_at', 'desc')->get();
-    }
-
-    public function listFeaturedCompanies()
-    {
-        return UserCompany::isChecked()->isFeatured()->orderBy('checked_at', 'desc')->get();
     }
 
 
     /**
      * return the logged user company information
      */
-    public function loadUserRelatedCompany()
+    public function loadCompany()
     {
         if (!Auth::check()) {
             return null;
@@ -103,10 +76,10 @@ class Company extends ComponentBase
             throw new ApplicationException('提交数据出错');
         }*/
         $company->name = post('name');
-        $company->slug = post('slug');
         $company->address = post('address');
         $company->contact_phone = post('contact_phone');
         $company->description = post('description');
+        $company->detail=post('detail');
         $company->checked = false;
         $company->status = 'committed';
         $company->user_id = Auth::getUser()->id;
@@ -119,12 +92,12 @@ class Company extends ComponentBase
 
     public function onUpdateCompany()
     {
-        $company = $this->loadUserRelatedCompany();
+        $company = $this->loadCompany();
         $company->name = post('name');
-        $company->slug = post('slug');
         $company->address = post('address');
         $company->contact_phone = post('contact_phone');
         $company->description = post('description');
+        $company->detail=post('detail');
         $company->status = 'committed';
         $company->checked = false;
         $company->not_passed_message = null;

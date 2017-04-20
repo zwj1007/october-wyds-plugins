@@ -34,9 +34,8 @@ class Need extends ComponentBase
 
     public function onRun()
     {
-        $this->page['userRelatedNeeds'] = $this->loadUserRelatedNeeds();
+        $this->page['needs'] = $this->loadNeeds();
         $this->need = $this->page['need'] = $this->loadNeed();
-        $this->page['needs'] = $this->loadCheckedNeedList();
     }
 
     public function loadNeed()
@@ -46,15 +45,10 @@ class Need extends ComponentBase
         return $need;
     }
 
-    public function loadUserRelatedNeeds()
+    public function loadNeeds()
     {
         $user = Auth::getUser();
         return $user->need()->paginate(25);
-    }
-
-    public function loadCheckedNeedList()
-    {
-        return UserNeed::isChecked()->orderBy('checked_at', 'desc')->paginate(15);
     }
 
 

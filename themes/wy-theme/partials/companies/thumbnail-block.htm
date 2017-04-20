@@ -1,7 +1,7 @@
 {% if companies %}
 {% for company in companies %}
 <div class="col-md-2 com-sm-4">
-    <a href="/company/{{ company.slug }}" class="thumbnail">
+    <a href="/company/{{ company.id }}" class="thumbnail">
         <img data-src="3" alt="" src="{{ company.getAvatarThumb(200) }}">
         <div class="caption">
             <h4>{{ company.name }}</h4>
