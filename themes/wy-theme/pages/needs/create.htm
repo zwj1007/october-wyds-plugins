@@ -6,6 +6,10 @@ layout = 'default'
 ==
 function onStart()
 {
+if(!Auth::check()){
+return Redirect::to('/account');
+}
+
 $this->addCss('assets\vendor\summernote-0.8.3-dist\dist\summernote.css');
 $this->addJs('assets/vendor/summernote-0.8.3-dist/dist/summernote.min.js');
 $this->addJs('assets/vendor/summernote-0.8.3-dist/dist/lang/summernote-zh-CN.js');

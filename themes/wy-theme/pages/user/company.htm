@@ -7,9 +7,8 @@ layout="default"
 
 function onStart()
 {
-$loggedIn = Auth::check();
 
-if(!$loggedIn){
+if(!Auth::check()){
     return Redirect::to('/account');
 }
 
