@@ -67,7 +67,7 @@ class Need extends ComponentBase
         $need->contact_phone = post('contact_phone');
         $need->save();
         Flash::success('您的发布已经成功提交!');
-        return Redirect::to('needs/my-need');
+        return Redirect::to('needs');
     }
 
     public function onUpdateNeed()

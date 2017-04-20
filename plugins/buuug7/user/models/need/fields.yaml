@@ -13,8 +13,8 @@ fields:
         span: left
     description:
         label: 描述
-        disabled: true
-        type: textarea
+        disabled: false
+        type: richeditor
     featured:
         label: 推荐
         type: checkbox

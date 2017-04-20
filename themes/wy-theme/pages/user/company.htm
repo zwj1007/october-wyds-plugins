@@ -4,11 +4,18 @@ layout="default"
 
 [b7Company]
 ==
-function onEnd(){
+
+function onStart()
+{
 $loggedIn = Auth::check();
+
 if(!$loggedIn){
-return Redirect::to('/account');
+    return Redirect::to('/account');
 }
+
+$this->addCss('assets\vendor\summernote-0.8.3-dist\dist\summernote.css');
+$this->addJs('assets/vendor/summernote-0.8.3-dist/dist/summernote.min.js');
+$this->addJs('assets/vendor/summernote-0.8.3-dist/dist/lang/summernote-zh-CN.js');
 }
 ==
 
@@ -53,3 +60,5 @@ return Redirect::to('/account');
         </div>
     </div>
 </div>
+
+

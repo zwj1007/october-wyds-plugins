@@ -13,7 +13,7 @@ class CreateNeedsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('title');
-            $table->text('description')->nullable();
+            $table->longText('description')->nullable();
             $table->string('contact_phone')->nullable();
             $table->boolean('featured')->default(0);
             $table->boolean('checked')->default(0);
