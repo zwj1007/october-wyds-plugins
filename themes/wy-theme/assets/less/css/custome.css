@@ -155,6 +155,22 @@ a:visited {
   padding: 0;
   margin: 0;
 }
+.headline {
+  display: block;
+  margin: 10px 0 25px 0;
+  border-bottom: 1px dotted #e4e9f0;
+}
+.headline h2,
+.headline h3,
+.headline h4 {
+  margin: 0 0 -2px 0;
+  padding-bottom: 5px;
+  display: inline-block;
+  border-bottom: 2px solid #dd4b39;
+}
+.headline > h2 {
+  font-size: 22px;
+}
 /*
 * news content page
 */

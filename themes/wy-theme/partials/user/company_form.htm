@@ -22,7 +22,7 @@
 
     <div class="form-group">
         <label for="companyDetail">公司详情</label>
-        <textarea name="detail" rows="8" id="companyDetail" class="form-control">{{ form_value('detail') }}</textarea>
+        <textarea name="detail" id="companyDetail" class="form-control">{{ form_value('detail') }}</textarea>
     </div>
 
     <div class="form-group">
@@ -38,6 +38,7 @@
 <script>
     $("textarea[name='detail']").summernote({
         lang:'zh-CN',
+        height: 200,
         toolbar: [
             ['style', ['style']],
             ['font', ['bold', 'underline', 'clear']],

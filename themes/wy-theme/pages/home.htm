@@ -5,16 +5,16 @@ layout = "default"
 function onStart()
 {
 // 推荐 特色
-$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(15);
+$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(5)->toArray();
 
 // 电商动态
-$this['dianShangDongTai'] = \Buuug7\News\Models\Post::displayByCategory('dian-shang-dong-tai',5);
+$this['dianShangDongTai'] = \Buuug7\News\Models\Post::displayByCategory('dian-shang-dong-tai',4);
 
 // 政策解读
-$this['zhenCeJieDu'] = \Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie-du',2);
+$this['zhenCeJieDu'] = \Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie-du',4);
 
 // 通知公告
-$this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',15);
+$this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',4);
 
 // 推荐课程
 $this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
@@ -24,7 +24,10 @@ $this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCa
 
 // 推荐电商
 $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
+
 }
+
+
 ==
 <div class="container margin-top-20">
     <div class="jumbotron">
@@ -36,130 +39,170 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
 
 
 <div class="container">
-    <div class="row">
-        <!--dian-shang-dong-tai category-->
-        {% if dianShangDongTai %}
-        <div class="col-md-6">
-            <div class="page-header">
-                <a href="{{ '/news/categories/dian-shang-zi-xun' }}"><h2>电商动态</h2></a>
-            </div>
-            <div class="list-group">
-                {% for post in dianShangDongTai %}
-                <a href="/news/post/{{ post.slug }}" class="list-group-item buuug7-no-border buuug7-no-padding">
-                    <h4 class="list-group-item-heading">{{ post.title }}</h4>
-                    <p class="list-group-item-text">{{ post.summary|raw }}</p>
-                </a>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
 
-        <!--featured 推荐-->
-        {% if featuredPosts %}
-        <div class="col-md-6">
-            <div class="page-header">
-                <h2>推荐资讯</h2>
-            </div>
-            <div id="carousel-id" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    {% for post in featuredPosts %}
-                    {% if post.image %}
-                    <li data-target="#carousel-id" data-slide-to="{{ loop.index0 }}" class="{% if loop.index0 == 0 %}active{% endif %}"></li>
-                    {% endif %}
-                    {% endfor %}
-                </ol>
-                <div class="carousel-inner">
-                    {% for post in featuredPosts %}
-                    {% if post.image %}
-                    <div class="item {% if loop.index0 == 0 %}active{% endif %}">
-                        <a href="/news/post/{{ post.slug }}">
-                            <img data-src="" alt="{{ post.title }}" src="{{ post.image|media }}">
-                        </a>
-                        <div class="carousel-caption">
-                            <p>{{ post.title }}</p>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-                <a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                <a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        {% endif %}
+    <!--推荐资讯-->
+    {% if featuredPosts %}
+    <div class="headline">
+        <h2>推荐资讯</h2>
     </div>
-
-    <div class="row">
-        <!--zhen-ce-jie-du category-->
-        {% if zhenCeJieDu %}
-        <div class="col-md-6">
-            <div class="page-header">
-                <a href="/news/categories/zheng-ce-jie-du"><h2>政策解读</h2></a>
-            </div>
-            {% for post in zhenCeJieDu %}
-            <div class="media">
-                {% if post.image %}
-                <a class="media-left" href="/news/post/{{ post.slug }}">
-                    <img src="{{ post.image|media }}" style="width: 160px; height: 90px;">
-                </a>
-                {% endif %}
-                <div class="media-body">
-                    <a href="/news/post/{{ post.slug }}">
-                        <h4 class="media-heading">{{ post.title }}</h4>
+    <div class="row m-b">
+        <div class="col-sm-6">
+            <a class="news-wrap" href="/news/post/{{ featuredPosts[0].slug }}">
+                <img src="{{ featuredPosts[0].image|media }}" alt="{{ featuredPosts[0].title }}" class="img-responsive">
+                <p class="title">{{ featuredPosts[0].title }}</p>
+            </a>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-6">
+                    <a class="news-wrap" href="/news/post/{{ featuredPosts[1].slug }}">
+                        <img src="{{ featuredPosts[1].image|media }}" alt="{{ featuredPosts[1].title }}" class="img-responsive">
+                        <p class="title">{{ featuredPosts[1].title }}</p>
                     </a>
-                    <p>{{ post.summary|raw }}</p>
+                    <p style="width:5px;height: 5px"></p>
+                    <a class="news-wrap" href="/news/post/{{ featuredPosts[2].slug }}">
+                        <img src="{{ featuredPosts[2].image|media }}" alt="{{ featuredPosts[2].title }}" class="img-responsive">
+                        <p class="title">{{ featuredPosts[2].title }}</p>
+                    </a>
                 </div>
-            </div>
-            {% endfor %}
-        </div>
-        {% endif %}
-
-        <!--tong-zhi-gong-gao-->
-        {% if tongZhiGongGao %}
-        <div class="col-md-6">
-            <div class="page-header">
-                <a href="/news/categories/tong-zhi-gong-gao">
-                    <h2>通知公告</h2>
-                </a>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <ul class="list-unstyled">
-                        {% for post in tongZhiGongGao %}
-                        <li class="padding-top-20">
-                            <a href="/news/post/{{ post.slug }}">{{ post.title }}</a> <span class="small">{{ post.created_at |date('Y-m-d')}}</span>
-                        </li>
-                        {% endfor %}
-                    </ul>
+                <div class="col-sm-6">
+                    <a class="news-wrap" href="/news/post/{{ featuredPosts[3].slug }}">
+                        <img src="{{ featuredPosts[3].image|media }}" alt="{{ featuredPosts[3].title }}" class="img-responsive">
+                        <p class="title">{{ featuredPosts[3].title }}</p>
+                    </a>
+                    <p style="width:5px;height: 5px"></p>
+                    <a class="news-wrap" href="/news/post/{{ featuredPosts[4].slug }}">
+                        <img src="{{ featuredPosts[4].image|media }}" alt="{{ featuredPosts[4].title }}" class="img-responsive">
+                        <p class="title">{{ featuredPosts[4].title }}</p>
+                    </a>
                 </div>
             </div>
         </div>
-        {% endif %}
-
     </div>
+    {% endif %}
 
+    <!--电商动态-->
+    {% if dianShangDongTai %}
+    <div class="headline">
+        <a href="{{ '/news/categories/dian-shang-zi-xun' }}"><h2>电商动态</h2></a>
+    </div>
+    <div class="row m-b">
+        {% for post in dianShangDongTai %}
+        <div class="col-md-3 col-sm-4 m-b">
+            <a href="/news/post/{{ post.slug }}">
+                <h4 class="color-primary" style="height:50px;overflow: hidden;line-height: 1.2">{{ post.title|slice(0,20) }}</h4>
+            </a>
+            <p class="small" style="height:65px;overflow:hidden">{{ post.summary|slice(0,50)|raw }}</p>
+            <p class="small color-gray"><i class="fa fa-clock-o"></i> {{ post.published_at|date('Y-m-d H:i:s') }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!--政策解读-->
+    {% if zhenCeJieDu %}
+    <div class="headline">
+        <a href="/news/categories/zheng-ce-jie-du"><h2>政策解读</h2></a>
+    </div>
+    <div class="row">
+        {% for post in zhenCeJieDu %}
+        <div class="col-md-6">
+            <div class="callout callout-yellow">
+                <a href="/news/post/{{ post.slug }}"><h4>{{ post.title }}</h4></a>
+                <p class="size-small">{{ post.summary|raw|slice(0,50) }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!--通知公告-->
+    {% if tongZhiGongGao %}
+    <div class="headline">
+        <a href="/news/categories/tong-zhi-gong-gao"><h2>通知公告</h2></a>
+    </div>
+    <div class="row">
+        {% for post in tongZhiGongGao %}
+        <div class="col-md-3">
+            <a href="/news/post/{{ post.slug }}">{{ post.title }}</a> <span class="small color-gray">{{ post.created_at |date('Y-m-d')}}</span>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!--推荐课程-->
     {% if tagTuiJian %}
-    <div class="page-header">
+    <div class="headline">
         <a href="/courses/tag/tui-jian"><h2>推荐课程</h2></a>
     </div>
     <div class="row">
-        {% partial 'courses/thumbnail-block' posts=tagTuiJian %}
+        {% for post in tagTuiJian %}
+        <div class="col-md-3 col-sm-6 m-b">
+            <div class="easy-block-v1">
+                <div class="easy-block-v1-badge bg-color-primary">推荐</div>
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li class="rounded-x active" data-target="#carousel-example-generic" data-slide-to="0"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img alt="" src="{{ post.image|media}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="overflow-h">
+                    <h3>{{ post.title }}</h3>
+                    <div class="star-vote pull-right">
+                        <ul class="list-inline">
+                            <li><i class="color-primary fa fa-star"></i></li>
+                            <li><i class="color-primary fa fa-star"></i></li>
+                            <li><i class="color-primary fa fa-star"></i></li>
+                            <li><i class="color-primary fa fa-star-half-o"></i></li>
+                            <li><i class="color-primary fa fa-star-o"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    {{ post.summary|striptags|slice(0,40) }}
+                </p>
+                <ul class="list-unstyled">
+                    <li><span class="color-primary">发布时间:</span> <span class="time small">{{ post.published_at }}</span></li>
+                </ul>
+                <a class="btn btn-primary btn-sm" href="/courses/course/{{ post.slug }}">学习</a>
+
+            </div>
+        </div>
+        {% endfor %}
     </div>
     {% endif %}
 
-    <!--filter by categories-->
+
+    <!--电商基础知识-->
     {% if categoryDianShangJiChuZhiShi %}
-    <div class="page-header">
+    <div class="headline">
         <a href="/courses/categories/dian-shang-ji-chu-zhi-shi"><h2>电商基础知识</h2></a>
     </div>
     <div class="row">
-        {% partial 'courses/thumbnail-block' posts=categoryDianShangJiChuZhiShi %}
+        {% for post in categoryDianShangJiChuZhiShi %}
+        <div class="col-md-3 col-sm-6 m-b">
+            <div class="easy-block-v2">
+                <div class="easy-bg-v2 bg-color-success">最新</div>
+                <img alt="{{ post.title }}" src="{{ post.image|media}}">
+                <h4>{{ post.title }}</h4>
+                <ul class="list-unstyled">
+                    <li><span class="color-success">发布时间:</span> <span class="small">{{ post.published_at }}</span></li>
+                </ul>
+                <a class="btn btn-success btn-sm" href="/courses/course/{{ post.slug }}">学习</a>
+                <a class="btn btn-success btn-sm">加入收藏</a>
+            </div>
+        </div>
+        {% endfor %}
     </div>
     {% endif %}
 
-
-    <div class="page-header">
-        <a href="#"><h2>本地电商</h2></a>
+    <!--本地电商-->
+    <div class="headline">
+        <a href="/courses/categories/dian-shang-ji-chu-zhi-shi"><h2>本地电商</h2></a>
     </div>
     <div class="row">
         {% partial 'companies/thumbnail-block' companies=featuredCompanies %}

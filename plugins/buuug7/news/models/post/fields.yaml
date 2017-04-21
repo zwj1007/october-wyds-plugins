@@ -18,7 +18,7 @@ tabs:
     fields:
         summary:
             tab: 概述
-            type: richeditor
+            type: textarea
 
         content:
             tab: 内容
