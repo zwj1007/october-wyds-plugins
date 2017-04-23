@@ -3,3 +3,18 @@
 //
 // Space for any custom mixins used by this application
 //
+
+.li-after-slash() {
+  > li {
+    display: inline-block;
+    font-style: italic;
+    + li:before {
+      padding: 0 5px;
+      color: #ccc;
+      content: '/\00a0';
+    }
+  }
+  > li a {
+    //color:red;
+  }
+}
