@@ -18,6 +18,7 @@ plugins/rainlab
 storage
 themes/demo
 vendor
+!themes/wy-theme/assets/vendor
 .htaccess
 artisan
 index.php
