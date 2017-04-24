@@ -1,0 +1,14 @@
+{% for post in posts %}
+<div class="col-md-3 col-sm-6 m-b">
+    <div class="easy-block-v2">
+        <div class="easy-bg-v2 bg-color-success">{{ tag }}</div>
+        <img alt="{{ post.title }}" src="{{ post.image|media}}">
+        <h4>{{ post.title }}</h4>
+        <ul class="list-unstyled">
+            <li><span class="color-success">发布时间:</span> <span class="small">{{ post.published_at }}</span></li>
+        </ul>
+        <a class="btn btn-success btn-sm" href="/courses/course/{{ post.slug }}">学习</a>
+        <a class="btn btn-success btn-sm">加入收藏</a>
+    </div>
+</div>
+{% endfor %}

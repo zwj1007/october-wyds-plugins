@@ -14,13 +14,13 @@ $this['dianShangDongTai'] = \Buuug7\News\Models\Post::displayByCategory('dian-sh
 $this['zhenCeJieDu'] = \Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie-du',4);
 
 // 通知公告
-$this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',4);
+$this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',9);
 
 // 推荐课程
 $this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
 
 // 电商基础知识
-$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi','dian-shang-jin-jie-zhi-shi'],4);
+$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi'],4);
 
 // 推荐电商
 $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
@@ -29,15 +29,37 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
 
 ==
 
+
 <div class="container m-t">
-    <div class="jumbotron">
+    <div class="jumbotron jumbotron-v1">
         <div class="container">
-            <h2>渭源县电子商务公共服务平台</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            <div class="clearfix">
+                <div class="header-container loaded">
+                    <div class="col-lg-7">
+                        <h1 class="hidden-xs">渭源电商平台</h1>
+                        <h2>渭源县电子商务公共服务平台</h2>
+                        <p>
+                            建设实现 数据统一化、组织网络化、功能社会化、服务产业化、手段现代化
+                            打造一个全县电子商务资源信息集散平台
+                        </p>
+
+                        <a href="#" class="btn btn-primary m-b">快速注册</a>
+                        <a href="#" class="btn btn-danger m-b">登陆</a>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <!--    <div class="jumbotron">
+            <div class="container">
+                <h2>渭源县电子商务公共服务平台</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua.
+                </p>
+            </div>
+        </div>-->
 </div>
 
 
@@ -50,7 +72,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
     </div>
     <div class="row m-b">
         <div class="col-sm-6">
-            <a class="news-wrap" href="/news/post/{{ featuredPosts[0].slug }}">
+            <a class="news-wrap m-b" href="/news/post/{{ featuredPosts[0].slug }}">
                 <img src="{{ featuredPosts[0].image|media }}" alt="{{ featuredPosts[0].title }}" class="img-responsive">
                 <p class="title text-shadow">{{ featuredPosts[0].title }}</p>
             </a>
@@ -93,10 +115,26 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
         {% for post in dianShangDongTai %}
         <div class="col-md-3 col-sm-4 m-b">
             <a href="/news/post/{{ post.slug }}">
-                <h4 class="color-primary" style="height:50px;overflow: hidden;line-height: 1.2">{{ post.title|slice(0,20) }}</h4>
+                <h4 class="color-primary" style="height:50px;overflow: hidden;line-height: 1.2">
+                    {{post.title|slice(0,20)}}
+                </h4>
             </a>
-            <p class="" style="height:70px;overflow:hidden">{{ post.summary|slice(0,50)|raw }}</p>
-            <p class="small color-gray"><i class="fa fa-clock-o"></i> {{ post.published_at|date('Y-m-d H:i:s') }}</p>
+            <small>{{ post.published_at|date('Y,m月 d')}} / by {{ post.user.first_name }}</small>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!--通知公告-->
+    {% if tongZhiGongGao %}
+    <div class="headline">
+        <a href="/news/categories/tong-zhi-gong-gao"><h2>通知公告</h2></a>
+    </div>
+    <div class="owl-carousel owl-carousel-v1 m-b" id="owl-carousel-v1">
+        {% for post in tongZhiGongGao %}
+        <div class="item">
+            <a href="/news/post/{{ post.slug }}"><h4>{{ post.title }}</h4></a>
+            <small>{{ post.published_at|date('Y,m月 d')}} / by {{ post.user.first_name }}</small>
         </div>
         {% endfor %}
     </div>
@@ -109,25 +147,11 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
     </div>
     <div class="row">
         {% for post in zhenCeJieDu %}
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="callout callout-yellow">
                 <a href="/news/post/{{ post.slug }}"><h4>{{ post.title }}</h4></a>
                 <p class="size-small">{{ post.summary|raw|slice(0,50) }}</p>
             </div>
-        </div>
-        {% endfor %}
-    </div>
-    {% endif %}
-
-    <!--通知公告-->
-    {% if tongZhiGongGao %}
-    <div class="headline">
-        <a href="/news/categories/tong-zhi-gong-gao"><h2>通知公告</h2></a>
-    </div>
-    <div class="row">
-        {% for post in tongZhiGongGao %}
-        <div class="col-md-3">
-            <a href="/news/post/{{ post.slug }}">{{ post.title }}</a> <span class="small color-gray">{{ post.created_at |date('Y-m-d')}}</span>
         </div>
         {% endfor %}
     </div>
@@ -139,43 +163,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
         <a href="/courses/tag/tui-jian"><h2>推荐课程</h2></a>
     </div>
     <div class="row">
-        {% for post in tagTuiJian %}
-        <div class="col-md-3 col-sm-6 m-b">
-            <div class="easy-block-v1">
-                <div class="easy-block-v1-badge bg-color-primary">推荐</div>
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li class="rounded-x active" data-target="#carousel-example-generic" data-slide-to="0"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <img alt="" src="{{ post.image|media}}">
-                        </div>
-                    </div>
-                </div>
-                <div class="overflow-h">
-                    <h3>{{ post.title }}</h3>
-                    <div class="star-vote pull-right">
-                        <ul class="list-inline">
-                            <li><i class="color-primary fa fa-star"></i></li>
-                            <li><i class="color-primary fa fa-star"></i></li>
-                            <li><i class="color-primary fa fa-star"></i></li>
-                            <li><i class="color-primary fa fa-star-half-o"></i></li>
-                            <li><i class="color-primary fa fa-star-o"></i></li>
-                        </ul>
-                    </div>
-                </div>
-                <p>
-                    {{ post.summary|striptags|slice(0,40) }}
-                </p>
-                <ul class="list-unstyled">
-                    <li><span class="color-primary">发布时间:</span> <span class="time small">{{ post.published_at }}</span></li>
-                </ul>
-                <a class="btn btn-primary btn-sm" href="/courses/course/{{ post.slug }}">学习</a>
-
-            </div>
-        </div>
-        {% endfor %}
+        {% partial 'courses/block-v2' posts=tagTuiJian tag='推荐' %}
     </div>
     {% endif %}
 
@@ -186,20 +174,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
         <a href="/courses/categories/dian-shang-ji-chu-zhi-shi"><h2>电商基础知识</h2></a>
     </div>
     <div class="row">
-        {% for post in categoryDianShangJiChuZhiShi %}
-        <div class="col-md-3 col-sm-6 m-b">
-            <div class="easy-block-v2">
-                <div class="easy-bg-v2 bg-color-success">最新</div>
-                <img alt="{{ post.title }}" src="{{ post.image|media}}">
-                <h4>{{ post.title }}</h4>
-                <ul class="list-unstyled">
-                    <li><span class="color-success">发布时间:</span> <span class="small">{{ post.published_at }}</span></li>
-                </ul>
-                <a class="btn btn-success btn-sm" href="/courses/course/{{ post.slug }}">学习</a>
-                <a class="btn btn-success btn-sm">加入收藏</a>
-            </div>
-        </div>
-        {% endfor %}
+        {% partial 'courses/block-v1' posts=categoryDianShangJiChuZhiShi tag='最新' %}
     </div>
     {% endif %}
 

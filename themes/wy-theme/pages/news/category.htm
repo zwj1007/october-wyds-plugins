@@ -1,4 +1,4 @@
-title = "News Category"
+title = "栏目"
 url = "/news/categories/:slug?/:page?"
 layout="default"
 
@@ -11,62 +11,82 @@ postsPerPage = 4
 ==
 function onEnd()
 {
-if ($this->category)
-$this->page->title = $this->category->name;
-//var_dump($this->posts);
-}
-==
+// 最新发布
+$this['latestPosts'] = \Buuug7\News\Models\Post::displayLatest(4);
 
-<div class="container m-t">
-    <div class="jumbotron">
-        <div class="container">
-            <h2>{{ this.page.title }}</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-        </div>
+// 推荐 特色
+$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(4);
+
+if ($this->category) $this->page->title = $this->category->name;
+
+}
+
+
+==
+<div class="jumbotron">
+    <div class="container">
+        <h2>{{ this.page.title }}</h2>
+        <p>
+            {{ category.description }}
+        </p>
     </div>
 </div>
 
-
-
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-            {% if posts %}
-            {% for post in posts %}
-            <div class="row post-list">
-                {% if post.image %}
-                <div class="col-sm-4 hidden-xs">
-                    <img class="img-responsive" src="{{ post.image|media }}" alt="{{ post.title }}">
-                </div>
-                {% endif %}
-                <div class="col-sm-8 news-v3">
-                    <div class="buuug7-no-padding">
-                        <ul class="list-inline posted-info">
-                            <li>By {{ post.user.first_name }}</li>
-                            {% if post.categories.count %}
-                            <li>In
-                            {% for category in post.categories %}
-                                {% if loop.index >3 %}
-                                {% else %}
-                                <a href="{{ category.url }}">{{ category.name }}</a>
-                                {% endif %}
-                            {% endfor %}
-                            </li>
-                            {% endif %}
-                            <li>{{ post.published_at|date('Y, m月 d') }}</li>
-                        </ul>
-                        <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-                        <p style="">
-                            {{ post.summary|raw|slice(0,60) }}
-                        </p>
-                    </div>
-                </div>
+        <div class="col-md-9">
+            {% partial 'news/news-list' posts=posts %}
+        </div>
+        <div class="col-md-3">
+
+            <!--最新发布-->
+            {% if latestPosts %}
+            <div class="headline-v2">
+                <h2>最新发布</h2>
             </div>
-            <div class="clearfix m-b"><hr></div>
-            {% endfor %}
-            {{ posts.render|raw }}
+            <ul class="list-unstyled latest-news margin-bottom-50">
+                {% for post in latestPosts %}
+                <li class="m-b">
+                    <h3><a href="/news/post/{{ post.slug }}">{{ post.title|length > 25 ? post.title|slice(0,25)~'...' :
+                                                             post.title }}</a></h3>
+                    <small>{{ post.published_at|date('Y,m月 d')}} / by {{ post.user.first_name }}</small>
+                </li>
+                {% endfor %}
+            </ul>
             {% endif %}
+
+            <!--推荐 特色-->
+            {% if featuredPosts %}
+            <div class="headline-v2">
+                <h2>推荐</h2>
+            </div>
+            <ul class="list-unstyled latest-news margin-bottom-50">
+                {% for post in featuredPosts %}
+                <li class="m-b">
+                    <h3><a href="/news/post/{{ post.slug }}">{{ post.title|length > 25 ? post.title|slice(0,25)~'...' :
+                                                             post.title }}</a></h3>
+                    <small>{{ post.published_at|date('Y,m月 d')}} / by {{ post.user.first_name }}</small>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            <div class="headline-v2">
+                <h2>电商动态</h2>
+            </div>
+            <ul class="list-inline tags-v2 margin-bottom-50">
+                <li><a href="/news/categories/nong-cun-dian-shang">农村电商</a></li>
+                <li><a href="/news/categories/yi-dong-dian-shang">移动电商</a></li>
+                <li><a href="/news/categories/qi-ta-dong-tai">其他动态</a></li>
+            </ul>
+
+            <div class="headline-v2">
+                <h2>政策解读</h2>
+            </div>
+            <ul class="list-inline tags-v2 margin-bottom-50">
+                <li><a href="/news/categories/zheng-ce-dao-xiang">政策导向</a></li>
+                <li><a href="/news/categories/di-fang-zheng-ce">地方政策</a></li>
+            </ul>
         </div>
     </div>
 </div>

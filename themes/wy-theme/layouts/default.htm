@@ -14,7 +14,8 @@ security = "all"
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="generator" content="OctoberCMS">
         <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
-        <link rel="stylesheet" href="{{ 'assets/vendor/font-awesome/css/font-awesome.min.css'|theme }}">
+        <link href="{{ 'assets/vendor/font-awesome/css/font-awesome.min.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/vendor/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min.css'|theme }}" rel="stylesheet">
         <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
         <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
         {% styles %}
@@ -44,8 +45,10 @@ security = "all"
         </footer>
 
         <!-- Scripts -->
-        <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+        <script src="{{ 'assets/vendor/jquery.min.js'|theme }}"></script>
         <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
+        <script src="{{ 'assets/vendor/OwlCarousel2-2.2.1/dist/owl.carousel.min.js'|theme }}"></script>
+        <script src="{{ 'assets/vendor/jquery.backstretch.min.js'|theme }}"></script>
         <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
         {% framework extras %}
         {% scripts %}

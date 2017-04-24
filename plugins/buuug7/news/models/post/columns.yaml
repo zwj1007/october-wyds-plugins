@@ -15,7 +15,7 @@ columns:
     created_at:
         label: 创建日期
         type: date
-        invisible: false
+        invisible: true
     updated_at:
         label: 更新日期
         type: date
@@ -25,4 +25,7 @@ columns:
         type: date
     featured:
         label: 推荐
+        type: switch
+    published:
+        label: 发布
         type: switch

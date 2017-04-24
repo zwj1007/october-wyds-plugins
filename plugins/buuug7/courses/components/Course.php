@@ -104,7 +104,11 @@ class Course extends ComponentBase
 
     public function relatedCourses($courseId)
     {
-        $course = CoursePost::find($courseId)->categories->first()->courses()->limit(8)->get();
+        $course=CoursePost::find($courseId);
+        if(!$course->categories->first()){
+            return null;
+        }
+        $course = $course->categories->first()->courses()->limit(8)->get();
         return $course;
     }
 

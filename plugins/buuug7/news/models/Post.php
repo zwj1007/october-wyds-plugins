@@ -276,12 +276,19 @@ class Post extends Model
         return $query->where('featured', 1)->limit($limit)->get();
     }
 
-    public function scopeDisplayByCategory($query,$category ,$limit)
+    public function scopeDisplayLatest($query, $limit)
     {
         $query->isPublished();
-        $query->orderBy('published_at','desc');
-        $category=Category::where('slug',$category)->first();
-        if(!$category){
+        $query->orderBy('published_at', 'desc');
+        return $query->limit($limit)->get();
+    }
+
+    public function scopeDisplayByCategory($query, $category, $limit)
+    {
+        $query->isPublished();
+        $query->orderBy('published_at', 'desc');
+        $category = Category::where('slug', $category)->first();
+        if (!$category) {
             return null;
         }
         $categories = $category->getAllChildrenAndSelf()->lists('id');
