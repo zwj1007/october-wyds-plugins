@@ -85,13 +85,14 @@ class SeedAllTables extends Seeder
         ]);
 
 
-        Post::create([
+        $post01=Post::create([
             'title' => '国务院关于积极推进“互联网+”行动的指导意见',
             'slug' => '国务院关于积极推进“互联网+”行动的指导意见',
             'summary' => '顺应世界“互联网＋”发展趋势，充分发挥我国互联网的规模优势和应用优势，推动互联网由消费领域向生产领域拓展，加速提升产业发展水平，增强各行业创新能力，构筑经济社会发展新优势和新动能。坚持改革创新和市场需求导向，突出企业的主体作用，大力拓展互联网与经济社会各领域融合的广度和深度。',
             'published' => true,
             'published_at' => Carbon::now(),
-            'image' => '',
+            'featured' => true,
+            'image' => '/news02.jpg',
             'user_id' => 1,
             'images' => [],
             'files' => [],
@@ -112,13 +113,22 @@ class SeedAllTables extends Seeder
             ',
         ]);
 
-        Post::create([
+        $post01->categories()->attach(4);
+        $post01->categories()->attach(5);
+        $post01->categories()->attach(6);
+        $post01->categories()->attach(7);
+        $post01->categories()->attach(8);
+        $post01->categories()->attach(9);
+
+
+        $post02=Post::create([
             'title' => '小心！继微信之后 支付宝也将对提现收费了',
             'slug' => '小心！继微信之后 支付宝也将对提现收费了',
             'summary' => '9月12日消息，支付宝今日对外发布公告表示，因综合经营成本上升，为了持续向用户提供更多优质服务，自2016年10月12日起，将对个人用户超出免费额度的提现收取0.1%的服务费，个人用户每人累计享有2万元基础免费提现额度。在用完基础免费额度后，用户可以使用蚂蚁积分兑换更多免费提现额度。',
             'published' => true,
             'published_at' => Carbon::now(),
-            'image' => '',
+            'featured' => true,
+            'image' => '/news05.jpg',
             'user_id' => 1,
             'images' => [],
             'files' => [],
@@ -132,14 +142,22 @@ class SeedAllTables extends Seeder
             ',
         ]);
 
+        $post02->categories()->attach(4);
+        $post02->categories()->attach(5);
+        $post02->categories()->attach(6);
+        $post02->categories()->attach(7);
+        $post02->categories()->attach(8);
+        $post02->categories()->attach(9);
 
-        Post::create([
+
+        $post03=Post::create([
             'title' => '阿里巴巴拥抱外贸大数据时代 加速向交易型平台转型',
             'slug' => '阿里巴巴拥抱外贸大数据时代 加速向交易型平台转型',
             'summary' => '电商1.0时代，B2B网站作为信息平台无疑帮助不少外贸企业解决了信息的展示和获取问题。随着电商进入2.0时代，单纯作为信息通道B2B网站显然难以满足外贸企业的新要求。如何转型应对？作为外贸B2B电商的领军企业，阿里巴巴的答案是：向交易平台转型，拥抱即将到来的外贸大数据时代。',
             'published' => true,
             'published_at' => Carbon::now(),
-            'image' => '',
+            'featured' => true,
+            'image' => '/news03.jpg',
             'user_id' => 1,
             'images' => [],
             'files' => [],
@@ -167,13 +185,21 @@ class SeedAllTables extends Seeder
             ',
         ]);
 
-        Post::create([
+        $post03->categories()->attach(4);
+        $post03->categories()->attach(5);
+        $post03->categories()->attach(6);
+        $post03->categories()->attach(7);
+        $post03->categories()->attach(8);
+        $post03->categories()->attach(9);
+
+        $post04=Post::create([
             'title' => '进口电商旺季来袭：解决跨境痛点，物流基建是关键',
             'slug' => '进口电商旺季来袭：解决跨境痛点，物流基建是关键',
             'summary' => '每年的下半年，是跨境电商最重要的分水岭，如何在众多对手的夹击中赢得一年的大丰收，是跨境电商最关心的问题。因为在每年的9-12月，国外很多节日是在此期间，并且还会享受较大的折扣力度，就是大家俗称的销售旺季。但是在旺季即将到来之际，跨境电商在兴奋之余，还有些担心...',
             'published' => true,
             'published_at' => Carbon::now(),
-            'image' => '',
+            'featured' => true,
+            'image' => '/news04.jpg',
             'user_id' => 1,
             'images' => [],
             'files' => [],
@@ -198,14 +224,22 @@ class SeedAllTables extends Seeder
             ',
         ]);
 
+        $post04->categories()->attach(4);
+        $post04->categories()->attach(5);
+        $post04->categories()->attach(6);
+        $post04->categories()->attach(7);
+        $post04->categories()->attach(8);
+        $post04->categories()->attach(9);
 
-        Post::create([
+
+        $post05=Post::create([
             'title' => '2016中国网红经济+社交电商平台高峰论坛圆满落幕！',
             'slug' => '2016中国网红经济+社交电商平台高峰论坛圆满落幕！',
             'summary' => '12月10日下午，红动中国—2016中国首届网红经济+社交电商高峰论坛在义乌幸福湖国际会议中心隆重举行。来自全国各地的众多行业负责人、网红大咖、学术专家、自媒体领军人物以及流量达人等齐聚义乌，共商在全球经济低迷状态下如何挖掘“网红经济”商机来助推经济发展大计。',
             'published' => true,
             'published_at' => Carbon::now(),
-            'image' => '',
+            'featured' => true,
+            'image' => '/news01.jpg',
             'user_id' => 1,
             'images' => [],
             'files' => [],
@@ -225,8 +259,15 @@ class SeedAllTables extends Seeder
             ',
         ]);
 
+        $post05->categories()->attach(4);
+        $post05->categories()->attach(5);
+        $post05->categories()->attach(6);
+        $post05->categories()->attach(7);
+        $post05->categories()->attach(8);
+        $post05->categories()->attach(9);
 
-        Post::create([
+
+        $post06=Post::create([
             'title' => '下半年电商发展十大趋势 谁会成为加冕之王？',
             'slug' => '下半年电商发展十大趋势 谁会成为加冕之王？',
             'summary' => '经过资本寒冬的洗礼，今年上半年成为电商行业由资本热捧走向理性的过渡期。记者调查发现，走下神坛的电商并未一蹶不振，反倒变得更加理性。O2O泡沫破裂叫醒了一大批“做梦”的创业投机者，一些定位清晰的垂直电商崭露头角，同时电商企业也更加注重跨界融合。展望下半年，电商行业仍将伴随着倒闭声加速融合与资本化，行业监管也将收紧，此外，伴随着VR、AR、视频直播等新技术的走红，电商领域将迎来一次技术变革潮。',
@@ -268,9 +309,15 @@ class SeedAllTables extends Seeder
             <h4>趋势10：加码“黑科技”</h4>
             <p>解读：能吸引眼球的方式就是好方法。黑科技、新技术拥有高关注度，在社交电商发展趋势下，这也成为电商吸金的法宝。此外，新技术的应用也为电商消费带来新的购物体验。VR技术最大的特点就是“沉浸式体验”，可以将感官体验带入整个消费过程中，注重增强消费者的消费参与感。</p>
             <p>趋势： 电商消费将越来越休闲化、娱乐化、体验化。目前，VR、直播等技术并不完全成熟，但作为流行趋势，如大数据、云计算，今年下半年必将有更多电商企业涉足。不过，怎样将新技术、新理念与传统产业融合，将是电商行业在发展道路上一直面临的挑战。</p>
-
             ',
         ]);
+
+        $post06->categories()->attach(4);
+        $post06->categories()->attach(5);
+        $post06->categories()->attach(6);
+        $post06->categories()->attach(7);
+        $post06->categories()->attach(8);
+        $post06->categories()->attach(9);
 
     }
 }

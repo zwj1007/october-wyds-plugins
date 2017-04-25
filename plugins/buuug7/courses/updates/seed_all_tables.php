@@ -52,12 +52,12 @@ class SeedAllTables extends Seeder
             'description' => '推荐课程',
         ]);
 
-        Course::create([
+        $course01=Course::create([
             'title' => '互联网+农业:理论 实践与问题',
             'slug' => '互联网+农业:理论 实践与问题',
             'published' => true,
             'published_at' => Carbon::now(),
-            'image' => '',
+            'image' => '/course01.jpg',
             'user_Id' => 1,
             'files' => [],
             'summary' => '今年两会上，总理报告中的“互联网+”一亮相便引起热议，各个行业都在讨论互联网加了自己会怎么样。互联网与农业，一个现代一个传统，本来风马牛不相及，但这两年随着互联网技术对农业的渗透，互联网与农业逐渐紧密结合起来，从对农业的深度改造开始，到颠覆农业的传统营销模式，再到互联网公司跨界进入农业生产领域，一场轰轰烈烈的互联网农业盛宴正在上演。',
@@ -98,13 +98,20 @@ class SeedAllTables extends Seeder
             </ul>
             ',
         ]);
+        // attach categories
+        $course01->categories()->attach(2);
+        $course01->categories()->attach(3);
 
-        Course::create([
+        // attach tags
+        $course01->tags()->attach(1);
+        $course01->tags()->attach(2);
+
+        $course02=Course::create([
             'title' => '电子商务入门基础教程',
             'slug' => '电子商务入门基础教程',
             'published' => true,
             'published_at' => Carbon::now(),
-            'image' => '',
+            'image' => '/course02.jpg',
             'user_Id' => 1,
             'files' => [],
             'summary' => '电子商务如何入手？这是每个学习电子商务的新手都会存在的疑问，做电子商务需要的经验是比较多的，编者以下为大家介绍下，希望可以让新手可以走少点弯路。电子商务的新手都会存在的疑问，做电子商务需要的经验是比较多的，编者以下为大家介绍下，希望可以让新手可以走少点弯路。',
@@ -121,12 +128,20 @@ class SeedAllTables extends Seeder
             ',
         ]);
 
-        Course::create([
+        // attach categories
+        $course02->categories()->attach(2);
+        $course02->categories()->attach(3);
+
+        // attach tags
+        $course02->tags()->attach(1);
+        $course02->tags()->attach(2);
+
+        $course03=Course::create([
             'title' => '几种海报的设计方法',
             'slug' => '几种海报的设计方法',
             'published' => true,
             'published_at' => Carbon::now(),
-            'image' => '',
+            'image' => '/course03.jpg',
             'user_Id' => 1,
             'files' => [],
             'summary' => '艺多不压身，多学几种方法用来防身啊！万一你以后的老丈人或者婆婆是开淘宝店铺的呢？不可能？现在互联网这种形势，别说上天了，都快冲出大气层了。',
@@ -135,12 +150,20 @@ class SeedAllTables extends Seeder
             ',
         ]);
 
-        Course::create([
+        // attach categories
+        $course03->categories()->attach(2);
+        $course03->categories()->attach(3);
+
+        // attach tags
+        $course03->tags()->attach(1);
+        $course03->tags()->attach(2);
+
+        $course04=Course::create([
             'title' => '区域电子商务系统构建的阶段和方法',
             'slug' => '区域电子商务系统构建的阶段和方法',
             'published' => true,
             'published_at' => Carbon::now(),
-            'image' => '',
+            'image' => '/course04.jpg',
             'user_Id' => 1,
             'files' => [],
             'summary' => '当淘宝打败ebay，成为C2C电子商务平台的中国霸主的时候，传统企业毫无感知；当淘宝商城（天猫）、京东商城涉足B2C电子商务平台的时候，传统企业依然看不起',
@@ -162,12 +185,20 @@ class SeedAllTables extends Seeder
             ',
         ]);
 
-        Course::create([
+        // attach categories
+        $course04->categories()->attach(2);
+        $course04->categories()->attach(3);
+
+        // attach tags
+        $course04->tags()->attach(1);
+        $course04->tags()->attach(2);
+
+        $course05=Course::create([
             'title' => '农产品互联网品牌打造案例',
             'slug' => '农产品互联网品牌打造案例',
             'published' => true,
             'published_at' => Carbon::now(),
-            'image' => '',
+            'image' => '/course05.jpg',
             'user_Id' => 1,
             'files' => [],
             'summary' => '古时，酒香不怕巷子深，互联网时代，传播格局的巨变以及传播渠道与方式的多元化，根本性的改变了传播路径的变化，企业有好产品还要有好的宣传与营销，可是如何做才是好的传播方式？马云一人就是阿里最好的宣传利器，周鸿祎“语不惊人死不休”却是头条常客，京东早期，刘强东也是四处开火，却在京东转型后要把专业摄影师拍的形象照亲手发到在场的每一个记者手中，大佬们这么玩，却让公司业绩蒸蒸日上，这些法则适合你吗？',
@@ -198,6 +229,14 @@ class SeedAllTables extends Seeder
             </ul>
             ',
         ]);
+
+        // attach categories
+        $course05->categories()->attach(2);
+        $course05->categories()->attach(3);
+
+        // attach tags
+        $course05->tags()->attach(1);
+        $course05->tags()->attach(2);
 
 
     }

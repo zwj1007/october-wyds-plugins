@@ -4,7 +4,7 @@ layout = 'default'
 
 ==
 function onStart(){
-$this['checkedNeeds']=\Buuug7\User\Models\Need::displayChecked(5);
+$this['checkedNeeds']=\Buuug7\User\Models\Need::displayChecked(10);
 }
 ==
 
@@ -33,7 +33,7 @@ $this['checkedNeeds']=\Buuug7\User\Models\Need::displayChecked(5);
                     {% for need in checkedNeeds %}
                     <li class="list-group-item">
                         <a href="/needs/need/{{ need.id }}">{{ need.title }}</a>
-                        <span class="small pull-right">{{ need.checked_at|date('Y-m-d') }}</span>
+                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
                     </li>
                     {% endfor %}
                 </ul>
