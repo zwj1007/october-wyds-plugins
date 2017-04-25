@@ -16,13 +16,13 @@ defaultRedirect: buuug7/user/needs
 
 # Create page
 create:
-    title: Create Need
+    title: 创建
     redirect: buuug7/user/needs/update/:id
     redirectClose: buuug7/user/needs
 
 # Update page
 update:
-    title: Edit Need
+    title: 编辑
     redirect: buuug7/user/needs
     redirectClose: buuug7/user/needs
 

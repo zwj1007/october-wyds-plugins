@@ -9,7 +9,7 @@ function onEnd(){
 }
 ==
 
-<div class="container margin-top-60">
+<div class="container m-t">
     <div class="row">
         <div class="col-md-8">
             <div class="panel panel-default">
@@ -32,7 +32,7 @@ function onEnd(){
                             {% for need in needs %}
                             <tr>
                                 <td><a href="/needs/need/{{ need.id }}">{{ need.title }}</a></td>
-                                <td>{{ need.checked == 0 ? '待审核' : '审核' }}</td>
+                                <td>{{ need.checked == 0 ? '待审核' : '已审核' }}</td>
                                 <td>{{ need.created_at|date }}</td>
                                 <td>
                                     <a href="/needs/need/{{ need.id }}" class="margin-right-10"><i class="icon icon-eye-open"></i></a>

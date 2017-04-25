@@ -16,16 +16,16 @@ defaultRedirect: buuug7/user/companies
 
 # Create page
 create:
-    title: Create Company
+    title: 创建
     redirect: buuug7/user/companies/update/:id
     redirectClose: buuug7/user/companies
 
 # Update page
 update:
-    title: Edit Company
+    title: 编辑
     redirect: buuug7/user/companies
     redirectClose: buuug7/user/companies
 
 # Preview page
 preview:
-    title: Preview Company
+    title: 预览

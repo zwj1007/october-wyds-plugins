@@ -22,8 +22,8 @@ class CreateCompaniesTable extends Migration
             $table->boolean('featured')->default(0);
             $table->boolean('checked')->default(0);
             $table->timestamp('checked_at')->nullable();
-            $table->enum('status', ['un_committed','committed','checking', 'passed', 'not_passed'])->default('un_committed');;
-            $table->text('not_passed_message')->nullable();;
+            $table->enum('status', ['un_committed','committed','checking', 'passed', 'not_passed'])->default('un_committed');
+            $table->text('not_passed_message')->nullable();
             $table->timestamps();
         });
     }

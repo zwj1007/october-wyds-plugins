@@ -77,7 +77,7 @@ img.oc-img-bordered {
 }
 
 .bg-wrap-f7f7f7 {
-  background-color: #f7f7f7;
+  background-color: darken(#f7f7f7,3%);
 }
 
 .text-shadow {
@@ -122,6 +122,10 @@ a:hover, a:visited {
 
 .color-warning {
   color: @brand-warning;
+}
+
+.color-666{
+  color:#666;
 }
 
 .bg-color-primary {
@@ -214,6 +218,22 @@ a:hover, a:visited {
   border-color: rgba(0, 0, 0, 0.2);
 }
 
+.btn-box-tool {
+  padding: 5px;
+  font-size: 12px;
+  background: transparent;
+  color: #97a0b3;
+}
+
+.btn-line {
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  &:hover, &:visited {
+    color: #fff;
+  }
+}
+
 .page-header {
   //margin: 20px 15px 20px 15px;
   border-bottom: 1px solid #eeeeee;
@@ -223,7 +243,6 @@ a:hover, a:visited {
     margin: 0;
   }
 }
-
 
 .news-wrap {
   display: block;

@@ -1,13 +1,17 @@
-.owl-carousel-v1 {
+.owl-carousel-v1,
+.owl-carousel-v2 {
   position: relative;
 }
-.owl-carousel-v1 .owl-nav {
+.owl-carousel-v1 .owl-nav,
+.owl-carousel-v2 .owl-nav {
   position: absolute;
   top: -46px;
   right: 0;
 }
 .owl-carousel-v1 .owl-nav .owl-prev,
-.owl-carousel-v1 .owl-nav .owl-next {
+.owl-carousel-v2 .owl-nav .owl-prev,
+.owl-carousel-v1 .owl-nav .owl-next,
+.owl-carousel-v2 .owl-nav .owl-next {
   display: inline-block;
   margin: 0 2px;
   padding: 0 5px;
@@ -15,6 +19,8 @@
   color: #fff;
 }
 .owl-carousel-v1 .owl-nav .owl-prev i,
-.owl-carousel-v1 .owl-nav .owl-next i {
+.owl-carousel-v2 .owl-nav .owl-prev i,
+.owl-carousel-v1 .owl-nav .owl-next i,
+.owl-carousel-v2 .owl-nav .owl-next i {
   font-size: 22px;
 }

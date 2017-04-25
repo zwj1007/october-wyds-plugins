@@ -5,3 +5,6 @@
     - create_users_courses_table.php
     - create_companies_table.php
     - create_needs_table.php
+1.0.3:
+    - seed all tables
+    - seed_all_tables.php

@@ -1,6 +1,7 @@
 <?php namespace Buuug7\User;
 
 use Backend;
+use Carbon\Carbon;
 use System\Classes\PluginBase;
 use RainLab\User\Models\User as UserModel;
 use RainLab\User\Controllers\Users as UsersController;
@@ -37,6 +38,7 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
+        Carbon::setLocale('zh');
         UserModel::extend(function ($model) {
             $model->addFillable([
                 'b7_phone',
@@ -119,5 +121,25 @@ class Plugin extends PluginBase
                 ],
             ],
         ];
+    }
+
+    public function registerMarkupTags()
+    {
+        return [
+            'filters' => [
+                'time_diff' => [$this, 'makeTimeDiff'],
+            ],
+            'functions' => [
+                // Using an inline closure
+                'helloWorld' => function () {
+                    return 'Hello World!';
+                }
+            ]
+        ];
+    }
+
+    public function makeTimeDiff($text)
+    {
+        return Carbon::parse($text)->diffForHumans();
     }
 }
