@@ -17,7 +17,7 @@ function onEnd(){
                     我发布的需求
                 </div>
                 <div class="panel-body">
-                    <a href="/needs/need/create" class="btn btn-success"><i class="icon icon-plus"></i> 发布需求</a>
+                    <p class="m-b"><a href="/needs/need/create" class="btn btn-success"><i class="icon icon-plus"></i> 发布需求</a></p>
                     <div class="table-responsive padding-top-20">
                         <table class="table table-hover">
                             <thead>
@@ -33,11 +33,11 @@ function onEnd(){
                             <tr>
                                 <td><a href="/needs/need/{{ need.id }}">{{ need.title }}</a></td>
                                 <td>{{ need.checked == 0 ? '待审核' : '已审核' }}</td>
-                                <td>{{ need.created_at|date }}</td>
+                                <td>{{ need.created_at|time_diff }}</td>
                                 <td>
-                                    <a href="/needs/need/{{ need.id }}" class="margin-right-10"><i class="icon icon-eye-open"></i></a>
-                                    <a data-request="onDeleteNeed" data-request-data="id:{{ need.id }}" class="margin-right-10"><i class="icon icon-trash"></i></a>
-                                    <a href="/needs/need/update/{{ need.id }}"><i class="icon icon-pencil"></i></a>
+                                    <a href="/needs/need/{{ need.id }}" class="margin-right-10"><i class="fa fa-eye"></i></a>
+                                    <a data-request="onDeleteNeed" data-request-data="id:{{ need.id }}" class="margin-right-10"><i class="fa fa-trash"></i></a>
+                                    <a href="/needs/need/update/{{ need.id }}"><i class="fa fa-pencil"></i></a>
                                 </td>
                             </tr>
                             {% endfor %}

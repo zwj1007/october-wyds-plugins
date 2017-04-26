@@ -57,6 +57,7 @@ class Need extends ComponentBase
         $need = new UserNeed();
         $need->user_id = Auth::getUser()->id;
         $need->title = post('title');
+        $need->category=post('category');
         $need->description = post('description');
         $need->contact_phone = post('contact_phone');
         $need->save();
@@ -71,6 +72,7 @@ class Need extends ComponentBase
             throw new ApplicationException('应用发生错误,请稍后再试!');
         }
         $need->title = post('title');
+        $need->category=post('category');
         $need->contact_phone = post('contact_phone');
         $need->description = post('description');
         $need->checked = false;
