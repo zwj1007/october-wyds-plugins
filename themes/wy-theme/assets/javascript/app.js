@@ -87,7 +87,8 @@ jQuery(document).ready(function($){
     $(".jumbotron-v1 .container > div").backstretch([
         "themes/wy-theme/assets/images/home-header-bg-1.jpg",
         "themes/wy-theme/assets/images/home-header-bg-2.jpg",
-        "themes/wy-theme/assets/images/home-header-bg-3.jpg"
+        "themes/wy-theme/assets/images/home-header-bg-3.jpg",
+        "themes/wy-theme/assets/images/home-header-bg-4.png",
     ], {duration: 5000});
 
 
