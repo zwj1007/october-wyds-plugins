@@ -682,6 +682,36 @@ a:visited {
   padding: 10px;
   opacity: 0.8;
 }
+@media (max-width: 678px) {
+  .hidden-xxs {
+    display: none !important;
+  }
+}
+.panel-trans {
+  background-color: transparent;
+  border-color: transparent;
+}
+.panel-trans > .panel-heading {
+  color: #333333;
+  background-color: transparent;
+  border-color: #ddd;
+}
+.panel-trans > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: transparent;
+}
+.panel-trans > .panel-heading .badge {
+  color: transparent;
+  background-color: #333333;
+}
+.panel-trans > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: transparent;
+}
+.panel-trans .list-group .list-group-item {
+  background-color: transparent;
+}
+.panel-trans .list-group .list-group-item > a {
+  color: #333333;
+}
 .headline {
   display: block;
   margin: 35px 0 20px 0;

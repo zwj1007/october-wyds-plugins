@@ -256,3 +256,23 @@ a:hover, a:visited {
     opacity: 0.8;
   }
 }
+
+@media (max-width: 678px) {
+  .hidden-xxs {
+    display: none !important;
+  }
+}
+
+.panel-trans{
+  background-color: transparent;
+  .panel-variant(transparent,@gray-dark,transparent,#ddd);
+
+  .list-group{
+    .list-group-item{
+      background-color: transparent;
+    }
+    .list-group-item >a{
+      color:@gray-dark;
+    }
+  }
+}
