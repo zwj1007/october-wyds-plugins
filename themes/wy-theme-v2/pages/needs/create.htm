@@ -1,0 +1,31 @@
+title = '需求'
+url = '/needs/need/create'
+layout = 'default'
+
+[b7Need]
+==
+function onStart()
+{
+if(!Auth::check()){
+return Redirect::to('/account');
+}
+
+$this->addCss('assets\vendor\summernote-0.8.3-dist\dist\summernote.css');
+$this->addJs('assets/vendor/summernote-0.8.3-dist/dist/summernote.min.js');
+$this->addJs('assets/vendor/summernote-0.8.3-dist/dist/lang/summernote-zh-CN.js');
+}
+==
+<div class="container m-t">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    发布新需求
+                </div>
+                <div class="panel-body">
+                    {% partial 'needs/need-form' method='onCreateNeed' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

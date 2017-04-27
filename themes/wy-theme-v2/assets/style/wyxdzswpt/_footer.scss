@@ -1,0 +1,31 @@
+@charset "UTF-8";
+footer {
+  text-align: center;
+  clear: both;
+  height: 295px;
+  font-size: 14px;
+  background-color: $footer-background;
+  color: $nav-color;
+  ul {
+    width: $page-width;
+    overflow: hidden;
+    margin: 0 auto;
+    li {
+      margin: 40px 0 0 0;
+      float: left;
+      text-align: center;
+      width: $page-width/3;
+      img.footer1-img {
+        width: 180px;
+      }
+    }
+
+    li.footer3 {
+      font-size: 22px;
+      color: #758995;
+    }
+  }
+  .footer-bottom {
+    margin-top: 0;
+  }
+}

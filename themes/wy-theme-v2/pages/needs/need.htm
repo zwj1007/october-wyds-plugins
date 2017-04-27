@@ -1,0 +1,29 @@
+title = '需求'
+url = '/needs/need/:id'
+layout = 'default'
+
+==
+function onStart(){
+$this['need']=\Buuug7\User\Models\Need::findById($this->param('id'));
+}
+==
+<div class="container m-t">
+    <div class="row">
+        <div class="col-md-8">
+            {% if need %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {{ need.title }}
+                </div>
+                <div class="panel-body">
+                    <h4 class="lead"> {{ need.title }}</h4>
+                    <p class="lead">联系电话: {{ need.contact_phone }}</p>
+                    {{ need.description|raw }}
+                </div>
+            </div>
+            {% else %}
+            <p class="lead">您的信息正在审核当中.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>

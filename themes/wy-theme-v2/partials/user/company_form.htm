@@ -1,0 +1,53 @@
+<div>
+    {{ form_ajax(method,{ model: company }) }}
+    <div class="form-group">
+        <label for="companyName">公司名称</label>
+        <input type="text" name="name" id="companyName" value="{{ form_value('name') }}" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="companyContactPhone">公司电话</label>
+        <input type="text" name="contact_phone" id="companyContactPhone" value="{{ form_value('contact_phone') }}" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="companyAddress">公司地址</label>
+        <input type="text" name="address" id="companyAddress" value="{{ form_value('address') }}" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="companyDescription">公司简介</label>
+        <textarea name="description" rows="3" id="companyDescription" class="form-control">{{ form_value('description') }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="companyDetail">公司详情</label>
+        <textarea name="detail" id="companyDetail" class="form-control">{{ form_value('detail') }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="#">公司LOGO</label>
+        {% component 'imageUploader' %}
+    </div>
+
+    <button type="submit" class="btn btn-default">保存</button>
+    {{ form_close }}
+</div>
+
+{% put scripts %}
+<script>
+    $("textarea[name='detail']").summernote({
+        lang:'zh-CN',
+        height: 200,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link']],
+            ['view', ['fullscreen']]
+        ],
+    });
+</script>
+{% endput %}
+

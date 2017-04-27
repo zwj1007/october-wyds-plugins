@@ -1,0 +1,70 @@
+@charset "UTF-8";
+.xqfb {
+  .xqfb-title {
+    a {
+      margin-right: 20px;
+      font-size: 16px;
+    }
+  }
+  .xqfb-body {
+    .table {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 25px;
+      thead th {
+        padding: 18px;
+        width: 160px;
+        border-top: 0;
+        border-right: 1px dashed rgba(204, 204, 204, 0.37);
+      }
+      tbody {
+        tr > th, td {
+          padding: 18px;
+          line-height: 1.6;
+          vertical-align: top;
+          border-top: 1px solid #ddd;
+          text-align: center;
+          border-right: 1px dashed rgba(204, 204, 204, 0.37);
+        }
+        .list {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+}
+
+//需求发布的浏览
+.xqfb-browse {
+  .xqfb-browse-title {
+    margin: 0 80px;
+    h3 {
+      padding: 60px 0 0 0;
+      font-size: 22px;
+      letter-spacing: 3px;
+      height: 50px;
+      text-align: center;
+      border-bottom: 1px solid #dddddd;
+    }
+  }
+  .xqfb-browse-body {
+    margin: 30px 180px;
+    padding-bottom: 50px;
+    p {
+      line-height: 55px;
+    }
+    .p-ct {
+      letter-spacing: 3px;
+      font-size: 15px;
+      color: #000000;
+      span {
+        margin-left: 10px;
+        color: #656565;
+        font-size: 12px;
+      }
+    }
+  }
+
+}
+

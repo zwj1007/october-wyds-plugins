@@ -1,0 +1,276 @@
+title = "首页"
+url = "/"
+layout = "default"
+==
+function onStart()
+{
+// 推荐 特色
+$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(5);
+
+// 电商动态
+$this['dianShangDongTai'] = \Buuug7\News\Models\Post::displayByCategory('dian-shang-dong-tai',6);
+
+// 政策解读
+$this['zhenCeJieDu'] = \Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie-du',15);
+
+// 通知公告
+$this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',9);
+
+// 推荐课程
+$this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
+
+// 电商基础知识
+$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi'],4);
+
+// 服务市场
+$this['fuwu']=\Buuug7\User\Models\Need::displayFeatured(12);
+$this['categoryZhaoPin']=\Buuug7\User\Models\Need::displayByCategory('zhaopin',12);
+$this['categoryFangChan']=\Buuug7\User\Models\Need::displayByCategory('fangchan',12);
+$this['categoryErShow']=\Buuug7\User\Models\Need::displayByCategory('ershou',12);
+$this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',12);
+
+
+// 推荐电商 知名企业
+$this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
+
+}
+
+==
+
+<!--电商动态-->
+<section class="box dszx">
+
+    <div class="dszx-left float-left ">
+        {% if dianShangDongTai.count %}
+        <div class="th">
+            <div class="hd">电商动态 <a href="/news/categories/dian-shang-dong-tai"><span>more+</span></a></div>
+            <div class="dd td">
+                <ul>
+                    {% for post in dianShangDongTai %}
+                    <li>
+                        <a href="/news/post/{{ post.slug }}" target="_blank"><span>{{ post.title }}</span></a>
+                        <span class="time">{{ post.published_at|date('Y-m-d') }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if tongZhiGongGao.count %}
+        <div class="th">
+            <div class="hd">通知公告 <a href="dszx-list.html"><span>more+</span></a></div>
+            <div class="dd td1">
+                <ul>
+                    {% for post in tongZhiGongGao %}
+                    <li>
+                        <a href="/news/post/{{ post.slug }}" target="_blank"><span>{{ post.title }}</span></a>
+                        <span class="time">{{ post.published_at|date('Y-m-d') }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    {% if featuredPosts.count %}
+    <div class="dszx-right float-right">
+        <div id="slide">
+            <ul class="list">
+                {% for post in featuredPosts %}
+                <li>
+                    <a href="/news/post/{{ post.slug }}"><img src="{{ post.image|media }}" alt="{{ post.title }}"></a>
+                    <div class="title"><p>{{ post.title }}</p></div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+</section>
+
+<!--政策导向-->
+<section class="box zcdx">
+    <div class="hd"><i>政策解读</i><a href="/news/categories/zheng-ce-jie-du"><span>more+</span></a></div>
+    <div class="dd margin-top-10">
+        <ul>
+            {% for chunk in zhenCeJieDu.chunk(5) %}
+            <li {% if loop.index == 2 %} style="margin: 0 30px" {% endif %}>
+                {% for post in chunk %}
+                {% if loop.index==1 %}
+                <div class="dd-img">
+                    <img class="float-left" src="{{ post.image|media }}" alt="">
+                    <div class="dd-p">
+                        <a href="/news/post/{{ post.slug }}"><p>{{ post.title|slice(0,18) }}</p></a>
+                        <span>{{ post.summary|raw|slice(0,25) }}</span>
+                    </div>
+                </div>
+                {% else %}
+                <ol>
+                    <li>
+                        <a href="/news/post/{{ post.slug }}" target="_blank"><span>{{ post.title }}</span></a>
+                        <span class="time">{{ post.published_at|date('Y-m-d') }}</span>
+                    </li>
+                </ol>
+                {% endif %}
+                {% endfor %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<!--广告位-->
+<section class="box">
+    <a href="#"><img src="/themes/wy-theme-v2/assets/images/gog-1.png" alt=""></a>
+</section>
+
+<!--线上培训-->
+<section class="box xspx">
+    <div class="hd"><i>线上培训</i><a href="/xian-shang-pei-xun"><span>more+</span></a></div>
+    <div class="dd">
+        {% if tagTuiJian.count %}
+        <div class="float-left xspx-left">
+            <ul>
+                {% for post in tagTuiJian %}
+                <li>
+                    <a href="/courses/course/{{ post.slug }}">
+                        <img class="" src="{{ post.image|media }}" alt="">
+                        <p>{{ post.title }}</p>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if categoryDianShangJiChuZhiShi.count %}
+        <div class="float-right xspx-right">
+            <ul>
+                {% for chunk in categoryDianShangJiChuZhiShi.chunk(3) %}
+                <li>
+                    <ol>
+                        {% for post in chunk %}
+                        <li><a href="/courses/course/{{ post.slug }}"><span>{{ post.title }}</span></a></li>
+                        {% endfor %}
+                    </ol>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!--服务市场-->
+<section class="box  fusc">
+    <div class="hd">
+        <i class="">服务市场</i>
+        <ul class="float-right">
+            <li class="active"><a href="#fw-1" data-toggle="tab" aria-expanded="true">推荐</a></li>
+            <li><a href="#fw-2" data-toggle="tab" aria-expanded="false">招聘</a></li>
+            <li><a href="#fw-3" data-toggle="tab" aria-expanded="false">房产</a></li>
+            <li><a href="#fw-4" data-toggle="tab" aria-expanded="false">二手</a></li>
+            <li><a href="#fw-5" data-toggle="tab" aria-expanded="false">其他</a></li>
+        </ul>
+    </div>
+    <div class="dd ">
+        <div class="tab-pane fade active in" id="fw-1">
+            {% for chunk in fuwu.chunk(6) %}
+            <div class="fw-left {% if loop.index==1 %} float-left {% else %} float-right {% endif %}">
+                <ul>
+                    {% for post in chunk %}
+                    <li>
+                        <a href="/needs/need/{{ post.id }}" target="_blank">
+                            <span>{{ post.title }}</span>
+                        </a>
+                        <span class="time">{{ post.checked_at|time_diff }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="tab-pane fade" id="fw-2">
+            {% for chunk in categoryZhaoPin.chunk(6) %}
+            <div class="fw-left {% if loop.index==1 %} float-left {% else %} float-right {% endif %}">
+                <ul>
+                    {% for post in chunk %}
+                    <li>
+                        <a href="/needs/need/{{ post.id }}" target="_blank">
+                            <span>{{ post.title }}</span>
+                        </a>
+                        <span class="time">{{ post.checked_at|time_diff }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="tab-pane fade" id="fw-3">
+            {% for chunk in categoryFangChan.chunk(6) %}
+            <div class="fw-left {% if loop.index==1 %} float-left {% else %} float-right {% endif %}">
+                <ul>
+                    {% for post in chunk %}
+                    <li>
+                        <a href="/needs/need/{{ post.id }}" target="_blank">
+                            <span>{{ post.title }}</span>
+                        </a>
+                        <span class="time">{{ post.checked_at|time_diff }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="tab-pane fade" id="fw-4">
+            {% for chunk in categoryErShow.chunk(6) %}
+            <div class="fw-left {% if loop.index==1 %} float-left {% else %} float-right {% endif %}">
+                <ul>
+                    {% for post in chunk %}
+                    <li>
+                        <a href="/needs/need/{{ post.id }}" target="_blank">
+                            <span>{{ post.title }}</span>
+                        </a>
+                        <span class="time">{{ post.checked_at|time_diff }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="tab-pane fade" id="fw-5">
+            {% for chunk in categoryQiTa.chunk(6) %}
+            <div class="fw-left {% if loop.index==1 %} float-left {% else %} float-right {% endif %}">
+                <ul>
+                    {% for post in chunk %}
+                    <li>
+                        <a href="/needs/need/{{ post.id }}" target="_blank">
+                            <span>{{ post.title }}</span>
+                        </a>
+                        <span class="time">{{ post.checked_at|time_diff }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!--品牌企业-->
+<section class="box ppqy">
+    <div class="hd"><i>品牌企业</i><a href="/ben-di-dian-shang"><span>more+</span></a></div>
+    <div class="dd">
+        {% for chunk in featuredCompanies.chunk(5) %}
+        <ul class="margin-bottom-10">
+            {% for post in chunk %}
+            <li class="margin-right-5">
+                <a href="/company/{{ post.id }}"><img src="{{ post.getAvatarThumb(300) }}" alt=""></a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </div>
+</section>

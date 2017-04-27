@@ -1,0 +1,167 @@
+@charset "UTF-8";
+.cpyx-list {
+  .hd {
+    text-align: left;
+    padding-left: 0;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    background: url(../images/title-1.png) no-repeat center;
+    border-bottom: 0;
+    i {
+      padding: 10px 15px;
+      color: #ffffff;
+      background: $page-color;
+      border-radius: 3px;
+    }
+  }
+  .cpyx-qypp {
+    margin-top: 30px;
+    height: 330px;
+    overflow: hidden;
+    border-bottom: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    border-radius: 4px;
+    .dd {
+      ul {
+        margin-top: 20px;
+        padding-top: 10px;
+        height: 260px;
+        overflow: hidden;
+        padding-left: 20px;
+        li {
+          float: left;
+          border: 1px solid $border-color;
+          margin-bottom: 20px;
+          width: 250px;
+          margin-right: 20px;
+          text-align: center;
+          a img {
+            width: 240px;
+          }
+          a p {
+            color: $border-color;
+          }
+
+        }
+        li:hover {
+          border: 1px solid #ffffff;
+          box-shadow: 3px 3px 8px 8px rgba(93, 93, 93, 0.4);
+          transition: all 0.5s ease;
+
+          a p {
+            color: #333333;
+          }
+        }
+      }
+    }
+  }
+
+  .cpyx-bdds {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    border-radius: 4px;
+    height: 500px;
+    .scrollpic {
+      max-width: 1048px;
+      margin: 20px auto;
+      #mybtns {
+        margin-bottom: 20px;
+        float: right;
+        margin-top: -50px;
+        a {
+          width: 42px;
+          height: 42px;
+          float: left;
+          margin-right: 1px;
+          background-color: #c1c1c1;
+        }
+        a:hover {
+          background-color: #d7000f;
+        }
+        #left {
+          background-image: url(../images/cpyx/qyfc/jt_l.png);
+        }
+        #right {
+          background-image: url(../images/cpyx/qyfc/jt_r.png);
+        }
+      }
+
+      #myscroll {
+        display: block;
+        width: 100%;
+        position: relative;
+        height: 390px;
+        overflow: hidden;
+        #myscrollbox {
+          display: block;
+          float: left;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 1000000px;
+        }
+
+        ul li {
+          display: block;
+          float: left;
+          a {
+            float: left;
+            padding: 0 10px;
+            position: relative;
+            height: 390px;
+            .intro {
+              position: absolute;
+              left: 0;
+              z-index: 10;
+              background-color: rgba(197, 197, 197, 0.8);
+              /*        opacity: 0.7;*/
+              margin: 0 10px;
+              bottom: -121px;
+            }
+            .intro h5 {
+              font-size: 16px;
+              font-weight: bold;
+              padding: 0 47px 0 15px;
+              background: url(../images/cpyx/qyfc/go.png) right no-repeat;
+              width: 180px;
+              line-height: 40px;
+              border-bottom: 1px solid rgba(215, 0, 15, 0.2);
+              i {
+                height: 28px;
+                display: inline-block;
+                overflow: hidden;
+              }
+            }
+            .intro p {
+              font-size: 13px;
+              line-height: 20px;
+              margin: 10px 15px;
+              height: 100px;
+              overflow: hidden;
+            }
+          }
+          a:hover .intro {
+            bottom: 0;
+          }
+        }
+
+      }
+
+      #mybtns a:hover, #myscroll a:hover .intro, a .intro, #myscrollbox {
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+      }
+
+    }
+
+  }
+
+}

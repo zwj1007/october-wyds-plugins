@@ -1,0 +1,216 @@
+@charset "UTF-8";
+.lanmu {
+  //height: 1200px;
+  #afix-lanmu {
+    &.affix {
+      top: 0;
+      position: fixed;
+    }
+    &.affix-bottom {
+      position: absolute;
+    }
+  }
+
+  .list-left {
+    width: 250px;
+    .list-left1 {
+      text-align: center;
+      width: 250px;
+      .hd {
+        margin-top: 10px;
+        color: #555555;
+        letter-spacing: 8px;
+      }
+      .dd {
+        text-align: left;
+        margin-left: 30px;
+        ul li {
+          height: 50px;
+          line-height: 50px;
+          font-size: 16px;
+          a:hover {
+            color: #6d6d6d;
+          }
+        }
+      }
+    }
+    .kj-dszx {
+      margin-bottom: 15px;
+      box-shadow: 1px 2px 20px 1px #CCCCCC;
+      border: 1px solid #f3f3f3;
+      .kj-title {
+
+        border-bottom: 2px solid $nav-background;
+        border-bottom-left-radius: 20%;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 0 15px;
+        height: 32px;
+        line-height: 32px;
+        a {
+          color: #6d6d6d;
+        }
+      }
+      ul {
+        margin-bottom: 10px;
+        li {
+          padding-left: 15px;
+          height: 40px;
+          line-height: 40px;
+          width: 180px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          a {
+            color: #333333;
+
+          }
+
+          .aurora__title::after {
+            text-shadow: 0 0 5px currentColor;
+            font-size: 18px;
+            content: '🔥';
+          }
+
+          .aurora100 {
+            color: red;
+          }
+          .aurora90 {
+            color: #f00000;
+          }
+          .aurora80 {
+            color: #d20000;
+          }
+          .aurora70 {
+            color: #b40000;
+          }
+          .aurora60 {
+            color: #9b0000;
+          }
+          .aurora50 {
+            color: #7b0000;
+          }
+        }
+      }
+
+    }
+    .kjnav-ggo {
+      width: 250px;
+      overflow: hidden;
+      position: relative;
+      span {
+        position: absolute;
+        margin-top: 10px;
+        width: 30px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5);
+        font-size: 12px;
+        line-height: 15px;
+        color: #fff;
+        text-align: center;
+      }
+    }
+
+  }
+
+  .list-right {
+    width: 835px;
+    padding: 0 10px;
+    box-shadow: 1px 2px 20px 1px #CCCCCC;
+    margin-bottom: 40px;
+    .list-right-v1 {
+      margin-top: 20px;
+      text-align: left;
+      height: 160px;
+      overflow: hidden;
+      border-bottom: 1px dashed $border-color;
+      .post-img-wrap {
+        width: 250px;
+        float: left;
+        margin-right: 20px;
+        img {
+          width: 250px;
+          height: 125px;
+        }
+      }
+      .list-post {
+        float: right;
+        min-height: 160px;
+        width: 565px;
+        position: relative;
+        .list-post-title {
+          a {
+            width: 400px;
+            height: 30px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 20px;
+            font-weight: 600;
+            color: rgba(34, 34, 34, 0.84);
+            display: inline-block;
+          }
+        }
+        .list-post-body {
+          height: 100px;
+          overflow: hidden;
+          p {
+            margin: 0;
+            line-height: 35px;
+            text-indent: 2em;
+            color: rgba(56, 73, 94, 0.72);
+          }
+
+        }
+        .xq {
+          float: right;
+          color: $page-color;
+          position: absolute;
+          right: 20px;
+          top: 10px;
+        }
+      }
+      .list-post1 {
+        width: 835px;
+        .list-post-title {
+          margin-left: 20px;
+          a {
+            width: 600px;
+          }
+        }
+        .list-post-body {
+          margin-left: 10px;
+        }
+
+      }
+    }
+    .pagination {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      margin-left: 150px;
+      ul {
+        text-align: center;
+        display: inline-block;
+        li {
+          float: left;
+          margin: 2px;
+          padding: 12px;
+          width: 50px;
+
+        }
+        .active {
+          background: $page-color;
+          a {
+            color: #ffffff;
+          }
+        }
+        li:hover {
+          background: $page-color;
+          a {
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}

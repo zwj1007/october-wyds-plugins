@@ -1,0 +1,17 @@
+{% for post in posts %}
+<div class="col-md-3 col-sm-6">
+    <div class="thumbnail">
+        <img data-src="#" alt="" src="{{ post.image|media}}">
+        <div class="caption">
+            <h4 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{{ post.title }}</h4>
+            <p class="small" style="height:50px;line-height: 2;overflow: hidden;text-overflow: ellipsis">
+                {{ post.summary|striptags|slice(0,40) }}
+            </p>
+            <p>
+                <a href="/courses/course/{{ post.slug }}" class="btn btn-primary">学习</a>
+                <a href="#" class="btn btn-default">加入收藏</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endfor %}

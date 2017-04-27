@@ -1,0 +1,142 @@
+@charset "UTF-8";
+/*
+政策解读
+*/
+.zhcjd {
+  border: 1px solid $border-color;
+  height: 370px;
+  .zhcjd-left {
+    width: 505px;
+    height: 370px;
+    overflow: hidden;
+    .title {
+      text-align: left;
+      position: absolute;
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      background: rgba(36, 68, 81, 0.65);
+      display: inline-block;
+      left: 0;
+      bottom: 0;
+      font-size: 14.4px;
+      color: #fff;
+      padding: 5px 10px 5px 20px;
+      p {
+        width: 350px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin: 0;
+      }
+    }
+    /*轮播导航图标样式，这里的ul.page的page为调用插件时设置的page属性的值,根据需要修改自己想要的样式效果*/
+    #slide ul.page {
+      bottom: 10px;
+      left: 630px;
+      //float: right;
+    }
+
+    /*此处page原理同上 ,轮播导航图标非当前图标样式,*/
+    #slide ul.page li {
+      cursor: pointer;
+      color: #fff;
+      width: 20px;
+      height: 20px;
+      background: #000;
+      text-align: center;
+      margin: 0 5px;
+      border-radius: 50%;
+    }
+    /* 此处page原理同上 ,on为当前图片的图标样式*/
+    #slide ul.page li.on {
+      background: $nav-background
+    }
+  }
+  .zhcjd-right {
+    width: 600px;
+    text-align: left;
+    .dd {
+      height: 370px;
+      overflow: hidden;
+      margin: $margin-5;
+      color: #494546;
+      ul li {
+        height: 40px;
+        line-height: 40px;
+        a {
+          color: #494546;
+          display: inline-block;
+          width: 350px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        a:hover {
+          color: $page-color;
+        }
+        span.time {
+          float: right;
+          color: #777;
+          font-size: 12px;
+          letter-spacing: -0.11em;
+          margin-right: 30px;
+        }
+      }
+
+    }
+  }
+
+}
+
+// 政策导向
+.zhcdx {
+  height: 435px;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  .hd {
+    text-align: left;
+    padding-left: 0;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 2px solid $nav-background;
+    border-radius: 5px;
+    i {
+      padding: 10px 15px;
+      color: #ffffff;
+      background: $page-color;
+      border-radius: 3px;
+    }
+  }
+  .dd {
+    height: 360px;
+    text-align: left;
+    overflow: hidden;
+    margin:30px;
+    color: #494546;
+    ul li {
+      height: 40px;
+      list-style: circle;
+      margin-left: 40px;
+      padding: 0 15px;
+      a {
+        color: #494546;
+        display: inline-block;
+        width: 500px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      a:hover {
+        color: $page-color;
+      }
+      span.time {
+        float: right;
+        color: #777;
+        font-size: 12px;
+        letter-spacing: -0.11em;
+        margin-right: 30px;
+      }
+    }
+  }
+}

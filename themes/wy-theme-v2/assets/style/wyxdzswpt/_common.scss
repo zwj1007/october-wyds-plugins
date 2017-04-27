@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td, header, footer, section, article, nav {
+  padding: 0;
+  margin: 0
+}
+
+body {
+  font-family: "Hiragino Sans GB", "Microsoft YaHei", arial, Tahoma, SimSun, sans-serif;
+  font-size: 14px;
+  color: #444;
+  height: 100%;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+i {
+  font-style: normal;
+}
+
+a:hover, a:link {
+  text-decoration: none;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.box {
+  width: 1120px;
+  margin: $margin-15 auto;
+  .hd {
+    color: #20102A;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px dashed $border-color;
+    padding-left: $padding-15;
+    span {
+      font-size: 14px;
+      font-weight: 100;
+      color: #BBBBBB;
+      float: right;
+      margin-right: $margin-10;
+    }
+  }
+}
+
+.margin-left-right-5 {
+  margin: 0 $margin-5;
+}
+
+.margin-left-5 {
+  margin-left: $margin-5;
+
+}
+
+.margin-right-5 {
+  margin-right: $margin-5;
+
+}
+
+.margin-right-20 {
+  margin-right: 20px;
+}
+
+.margin-bottom-10 {
+  margin-bottom: $margin-10;
+}
+
+.margin-top-10 {
+  margin-top: $margin-10;
+}
+
+.breadcrumb {
+  height: 36px;
+  border-top: 1px solid #EDEDED;
+  border-bottom: 1px solid #EDEDED;
+  li {
+    float: left;
+    margin: 8px 5px;
+    display: inline-block;
+  }
+  a {
+    text-decoration: none;
+    color: #316FBC;
+  }
+  > li + li:before {
+    padding: 0 5px;
+    color: #ccc;
+    content: "/\00a0";
+  }
+}

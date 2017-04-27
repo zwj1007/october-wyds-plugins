@@ -1,0 +1,90 @@
+title = "账号 | 登陆"
+url = '/login/:code?'
+layout= 'default'
+
+[account]
+redirect = "account"
+paramCode = "code"
+==
+
+<div class="content-holder">
+    <div class="box content">
+        <p>
+            <a href="signup.html">
+                注册
+            </a>/
+            <a href="index.html">
+                首页
+            </a>
+        </p>
+        <div class="show-pic">
+            <div class="slider-imgs" id="slider_imgs">
+                <img width="570" height="300" src="/themes/wy-theme-v2/assets/images/login/banner.png">
+            </div>
+            {% if not user %}
+            <div class="login">
+                <form data-request="onSignin" class="form-ct">
+                    <div class="form-body">
+                        <dl>
+                            <dd style="border:1px solid #bdc7d8">
+
+                                <input
+                                        name="login"
+                                        type="text"
+                                        class="text-name"
+                                        id="userSigninLogin"
+                                        placeholder="请输入你的电子邮箱">
+
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dd style="border:1px solid #bdc7d8">
+                                <input
+                                        name="password"
+                                        type="password"
+                                        class="text-pwd"
+                                        id="userSigninPassword"
+                                        placeholder="输入密码">
+                            </dd>
+                        </dl>
+
+                        <dl id="verify_code_div" style="display: none;">
+                            <dd>
+                                <input id="verify" name="verify" type="text" class="text-verify"
+                                       style="width: 70px;"
+                                       placeholder="验证码">
+                            </dd>
+                        </dl>
+                        <dl class="auto-login">
+                            <dd>
+                                &nbsp;<label><input type="checkbox" value=""
+                                                    id="remember_login_state">&nbsp;下次自动登录</label>
+                            </dd>
+                            <dd class="pwd-forget">
+                                <a href="#" target="_blank"
+                                   hidefocus="hidefocus">忘记密码</a>
+                            </dd>
+                        </dl>
+
+                        <dl class="go-login">
+                            <dd>
+                                <input style="float: left; " type="submit" class="btn-smb"
+                                       value="登&nbsp;&nbsp;录" hidefocus="hidefocus">
+                            </dd>
+                        </dl>
+                        <dl class="go-sign-up">
+                            <dd class="pwd-forget">
+                                <span>还没有账号？</span><a href="/register">立即申请！</a>
+                            </dd>
+                        </dl>
+
+                    </div>
+                </form>
+            </div>
+            {% else %}
+            <h4 style="color:red;font-size: 45px;">您已经登陆了</h4>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+title = '需求'
+url = '/needs/category/:slug?'
+layout= 'default'
+
+==
+function onEnd(){
+
+if($this->param('slug')){
+$this['needs']=\Buuug7\User\Models\Need::displayByCategory($this->param('slug'));
+$this->page->title='服务市场 | '.\Buuug7\User\Models\Need::getCategories()[$this->param('slug')];
+}else{
+$this['needs']=\Buuug7\User\Models\Need::displayChecked();
+}
+
+
+//var_dump($this->needs->count());
+}
+==
+
+<div class="jumbotron">
+    <div class="container">
+        <h2>{{ this.page.title }}</h2>
+        <p>All needs show below,you can search by use the post title and slug</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% for chunk in needs.chunk(3) %}
+        <div class="col-md-4 m-b">
+            <ul class="list-unstyled">
+                {% for need in chunk %}
+                <li class="">
+                    <a href="/needs/need/{{ need.id }}"><h4>{{ need.title }}</h4></a>
+                    <small>{{ need.checked_at|time_diff }} / by {{ need.user.name }}</small>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</div>

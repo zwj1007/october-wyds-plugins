@@ -1,0 +1,138 @@
+title = "栏目"
+url = "/news/categories/:slug?/:page?"
+layout="default"
+
+[newsPosts]
+categoryFilter = "{{ :slug }}"
+postPage='news/post'
+categoryPage='news/category'
+postsPerPage = 4
+
+==
+function onEnd()
+{
+// 最新发布
+$this['latestPosts'] = \Buuug7\News\Models\Post::displayLatest(6);
+
+// 推荐 特色
+$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(6);
+
+$this->page->title = $this->category->name;
+}
+
+
+==
+<section class="box">
+    <div class="lanmu">
+        <!--左侧-->
+        <div class="float-left list-left " id="afix-lanmu">
+            <div class="list-left1 kj-dszx">
+                <div class="hd kj-title">
+                    快捷导航
+                </div>
+                <div class="dd">
+                    <ul>
+                        <li><a href="/news/categories/nong-cun-dian-shang">农村电商</a></li>
+                        <li><a href="/news/categories/yi-dong-dian-shang">移动电商</a></li>
+                        <li><a href="/news/categories/qi-ta-dong-tai">其他动态</a></li>
+                        <li><a href="/news/categories/zheng-ce-dao-xiang">政策导向</a></li>
+                        <li><a href="/news/categories/di-fang-zheng-ce">地方政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="kj-dszx">
+                <div class="kj-title">
+                    <a href="javascript:void(0);"> <span>最新发布</span></a>
+                </div>
+                <ul>
+                    {% for post in latestPosts %}
+                    <li>
+                        <i class="aurora__title aurora100"></i>
+                        <a href="/news/post/{{ post.slug }}">
+                            <span>{{ post.title|length > 25 ? post.title|slice(0,25)~'...' :post.title }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="kjnav-ggo">
+                <span>广告</span>
+                <embed src="flash/2.swf" quality="high"
+                       pluginspage="#!"
+                       type="application/x-shockwave-flash" width="250" height="100" wmode="transparent"
+                       title="Adobe Flash Player">
+            </div>
+        </div>
+        <!--右侧-->
+        <div class="float-right list-right">
+            <ol class="breadcrumb">
+                <li><a href="/">首页</a></li>
+                <li class="active">{{ this.page.title }}</li>
+            </ol>
+            {% for post in posts %}
+            {% if post.image %}
+            <div class="list-right-v1 margin-top-10">
+                <div class="post-img-wrap">
+                    <a href="#!">
+                        <img src="{{ post.image|media }}" alt="">
+                    </a>
+
+                </div>
+                <div class="list-post">
+                    <div class="list-post-title">
+                        <a href="{{ post.url }}" rel="bookmark"><span>{{ post.title }}</span></a>
+                    </div>
+                    <div class="list-post-body">
+                        <p>
+                            {{ post.summary}}
+                        </p>
+                    </div>
+                    <a href="{{ post.url }}"> <span class="xq">【详情】</span></a>
+                </div>
+            </div>
+            {% else %}
+            {% endif %}
+            <div class="list-right-v1 margin-top-10">
+                <div class="list-post list-post1">
+                    <div class="list-post-title">
+                        <a href="{{ post.url }}" rel="bookmark"><span>{{ post.title }}</span></a>
+                    </div>
+                    <div class="list-post-body">
+                        <p>
+                            {{ post.summary }}
+                        </p>
+                    </div>
+                    <a href="{{ post.url }}"> <span class="xq">【详情】</span></a>
+                </div>
+            </div>
+            {% endfor %}
+
+            {% if posts.lastPage > 1 %}
+            <div class="pagination">
+                <ul>
+                    {% if posts.currentPage > 1 %}
+                    <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">上一页</a></li>
+                    {% endif %}
+
+                    {% for page in 1..posts.lastPage %}
+                    <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                        <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                    </li>
+                    {% endfor %}
+
+                    {% if posts.lastPage > posts.currentPage %}
+                    <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">下一页</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+</section>
+
+

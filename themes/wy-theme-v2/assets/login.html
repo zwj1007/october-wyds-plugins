@@ -1,0 +1,83 @@
+<html class=" jq-strict">
+<head>
+    <title>用户登录</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style/app.css">
+
+
+</head>
+
+
+<body>
+<div class="content-holder">
+    <div class="box content">
+        <p>
+            <a href="signup.html">
+                注册
+            </a>/
+            <a href="index.html">
+                首页
+            </a>
+        </p>
+        <div class="show-pic">
+            <div class="slider-imgs" id="slider_imgs">
+                <img width="570" height="300" src="images/login/banner.png">
+            </div>
+            <div class="login">
+                <form class="form-ct" action="" method="post" id="login_form" name="login_form">
+                    <div class="form-body">
+                        <dl>
+                            <dd style="border:1px solid #bdc7d8">
+
+                                <input id="account" name="account" type="text" placeholder="用户名/邮箱/手机号"
+                                       class="text-name ">
+
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dd style="border:1px solid #bdc7d8">
+                                <input id="password" name="password" placeholder="密码" type="password"
+                                       class="text-pwd">
+                            </dd>
+                        </dl>
+
+                        <dl id="verify_code_div" style="display: none;">
+                            <dd>
+                                <input id="verify" name="verify" type="text" class="text-verify"
+                                       style="width: 70px;"
+                                       placeholder="验证码">
+                            </dd>
+                        </dl>
+                        <dl class="auto-login">
+                            <dd>
+                                &nbsp;<label><input type="checkbox" value=""
+                                                    id="remember_login_state">&nbsp;下次自动登录</label>
+                            </dd>
+                            <dd class="pwd-forget">
+                                <a href="#" target="_blank"
+                                   hidefocus="hidefocus">忘记密码</a>
+                            </dd>
+                        </dl>
+
+                        <dl class="go-login">
+                            <dd>
+                                <input style="float: left; " type="button" class="btn-smb" onclick="okSubmit()"
+                                       value="登&nbsp;&nbsp;录" hidefocus="hidefocus">
+                            </dd>
+                        </dl>
+                        <dl class="go-sign-up">
+                            <dd class="pwd-forget">
+                                <span>还没有账号？</span><a href="signup.html">立即申请！</a>
+                            </dd>
+                        </dl>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

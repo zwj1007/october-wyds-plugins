@@ -1,0 +1,55 @@
+title = "账号 | 登陆"
+url = '/login/:code?'
+layout= 'default'
+
+[account]
+redirect = "account"
+paramCode = "code"
+==
+
+<div class="container m-t">
+    
+    <div class="row">
+        <div class="col-md-6">
+            {% if not user %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    登 陆
+                </div>
+                <div class="panel-body">
+                    <form data-request="onSignin">
+                        <div class="form-group">
+                            <label for="userSigninLogin">邮箱</label>
+                            <input
+                                    name="login"
+                                    type="text"
+                                    class="form-control"
+                                    id="userSigninLogin"
+                                    placeholder="请输入你的电子邮箱">
+                        </div>
+                        <div class="form-group">
+                            <label for="userSigninPassword">密码</label>
+                            <input
+                                    name="password"
+                                    type="password"
+                                    class="form-control"
+                                    id="userSigninPassword"
+                                    placeholder="输入密码">
+                        </div>
+                        <button type="submit" class="btn btn-default">登陆</button>
+                    </form>
+                </div>
+            </div>
+            {% else %}
+            <div class="callout callout-danger">
+                <h4>您已经登陆啦!</h4>
+                <p class="m-t">你可以返回 <a href="/">首页</a> , 或者 <a href="/account">用户中心</a></p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    
+
+
+</div>

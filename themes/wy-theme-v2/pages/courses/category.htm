@@ -1,0 +1,38 @@
+title = "Courses Category"
+url = "/courses/categories/:slug?/:page?"
+layout="default"
+
+[coursesCategories]
+slug = "{{ :slug }}"
+
+[coursesCourses]
+categoryFilter = "{{ :slug }}"
+postsPerPage = 2
+
+==
+function onEnd()
+{
+if ($this->category)
+$this->page->title = $this->category->name;
+$this['courses']=$this->courses;
+}
+==
+
+<div class="container margin-top-20">
+    <div class="jumbotron">
+        <div class="container">
+            <h2>{{ this.page.title }}</h2>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+
+        {% partial 'courses/thumbnail-block' posts=courses %}
+
+    </div>
+</div>
+
+

@@ -1,0 +1,560 @@
+title = "News Course"
+url = "/courses/course/:slug"
+layout="default"
+
+[coursesCourse]
+==
+function onEnd(){
+
+$loggedIn = Auth::check();
+if(!$loggedIn){
+return Redirect::to('/account');
+}
+
+//var_dump($this->course->toArray());
+}
+==
+<section class="box xspx-rmkc">
+    <div class="float-left video-left ">
+        <span>电商实战:数据分析之店铺成交转化分析</span>
+        <div class="vid-wrapper">
+            <!--         <video controls="" autoplay="" name="media">
+                         <source src="http://img.yweps.org/1a8be05f-9155-4e16-ba7b-d5ddf8d29802.mp4" type="video/mp4">
+                         <source src="http://img.yweps.org/1a8be05f-9155-4e16-ba7b-d5ddf8d29802.mp4" type="video/mp4"/>
+                         <source src="http://img.yweps.org/1a8be05f-9155-4e16-ba7b-d5ddf8d29802.mp4" type="video/webM"/>
+                         <source src="http://img.yweps.org/1a8be05f-9155-4e16-ba7b-d5ddf8d29802.mp4" type="video/ogg"/>
+                         <p>Your browser does not support the video tag.</p>
+                     </video>-->
+            <embed allowscriptaccess="always" allowfullscreen="true"
+                   quality="high" bgcolor="#FFF" wmode="transparent"
+                   src="http://www.yweps.org/js/ckplayer/ckplayer.swf"
+                   flashvars="f=http://img.yweps.org/a5ec23f1-68bf-4986-b837-eba0bee55685.mp4&amp;
+                           c=0&amp;p=2&amp;w=8348253&amp;i=http://img.yweps.org/3713e1f8-415d-4302-8074-2d6f95b91cbe.png&amp;
+                           fs=0&amp;loaded=loadedHandler"
+                   width="760" height="520" name="ckplayer_a1" id="ckplayer_a1" align="middle"
+                   type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+            </embed>
+
+        </div>
+
+        <div class="video-left-bottom">
+            <ul class="float-left">
+                <li>
+                    <a href="#!" class="">
+                        <i class="i1"></i>
+                        <span class="label" data-stat-role="ck">收藏</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" class="">
+                        <i class="i2"></i>
+                        <span class="label" data-stat-role="ck"> 下载</span>
+                    </a>
+                </li>
+
+
+            </ul>
+            <div class="ul-right float-right">
+                <span class="label">分享:</span>
+                <ul class="options">
+                    <li class="li-1"></li>
+                    <li class="li-2"></li>
+                    <li class="li-3"></li>
+                    <li class="li-4"></li>
+                </ul>
+                <ul class="options1">
+                    <li style="margin-left: 30px;margin-right: 5px">
+                        <a href="#!">
+                            <i class="ico-fn-up"></i>
+                            <span class="label" data-stat-role="ck">55</span>
+                        </a>
+                    </li>
+                    <li style="margin-left: 0">
+                        <a href="#!">
+                            <i class="ico-fn-down"></i>
+                            <span class="label" data-stat-role="ck">55</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="float-right video-right">
+        <div class="RV-title">
+            <ul>
+                <li id="a">
+                    <a href="#" onclick="change_div('gsgs')">课程列表
+                        <span>
+                        <i>
+                            <i class="tip_outer"></i>
+                            <i class="tip_inner"></i>
+                        </i>
+                    </span>
+                    </a>
+                </li>
+                <li id="b">
+                    <a href="#" onclick="change_div('gsywly')">收藏列表</a>
+                </li>
+            </ul>
+        </div>
+        <div id="gsgs">
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" rseat="ph_vn0">
+                        电商实战:数据分析之店铺成交转化分析
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" rseat="ph_vn0">
+                        电商实战:数据分析之店铺成交转化分析
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" rseat="ph_vn0">
+                        电商实战:数据分析之店铺成交转化分析
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" rseat="ph_vn0">
+                        电商实战:数据分析之店铺成交转化分析
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" rseat="ph_vn0">
+                        电商实战:数据分析之店铺成交转化分析
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" rseat="ph_vn0">
+                        电商实战:数据分析之店铺成交转化分析
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" rseat="ph_vn0">
+                        电商实战:数据分析之店铺成交转化分析
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" rseat="ph_vn0">
+                        电商实战:数据分析之店铺成交转化分析
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" rseat="ph_vn0">
+                        电商实战:数据分析之店铺成交转化分析
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" rseat="ph_vn0">
+                        电商实战:数据分析之店铺成交转化分析
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="gsywly">
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title1.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" title="《奔跑吧》羊驼是一对？单身鹿晗实力表达不满" rseat="ph_vn0">
+                        《奔跑吧》羊驼是一对？单身鹿晗实力表达不满
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title1.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" title="《奔跑吧》羊驼是一对？单身鹿晗实力表达不满" rseat="ph_vn0">
+                        《奔跑吧》羊驼是一对？单身鹿晗实力表达不满
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title1.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" title="《奔跑吧》羊驼是一对？单身鹿晗实力表达不满" rseat="ph_vn0">
+                        《奔跑吧》羊驼是一对？单身鹿晗实力表达不满
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title1.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" title="《奔跑吧》羊驼是一对？单身鹿晗实力表达不满" rseat="ph_vn0">
+                        《奔跑吧》羊驼是一对？单身鹿晗实力表达不满
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title1.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" title="《奔跑吧》羊驼是一对？单身鹿晗实力表达不满" rseat="ph_vn0">
+                        《奔跑吧》羊驼是一对？单身鹿晗实力表达不满
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title1.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" title="《奔跑吧》羊驼是一对？单身鹿晗实力表达不满" rseat="ph_vn0">
+                        《奔跑吧》羊驼是一对？单身鹿晗实力表达不满
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title1.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" title="《奔跑吧》羊驼是一对？单身鹿晗实力表达不满" rseat="ph_vn0">
+                        《奔跑吧》羊驼是一对？单身鹿晗实力表达不满
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+            <div class="borCon">
+                <div class="pic-left">
+                    <a href="javascript:void(0);" class="piclist_img" rseat="ph_a0" title="">
+                        <img width="116" height="65" alt="" src="images/xspx/title1.jpg ">
+                    </a>
+                </div>
+                <div class="con-right">
+                    <a href="javascript:void(0);" title="《奔跑吧》羊驼是一对？单身鹿晗实力表达不满" rseat="ph_vn0">
+                        《奔跑吧》羊驼是一对？单身鹿晗实力表达不满
+                    </a>
+                    <p class="playcount">
+                        <i class="site-icons icon-playB"></i>
+                        <span data-widget-counter="player" data-pc-albumid="660549600" rseat="ph_pc0"
+                              title="播放">145万</span>
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="box xspx-list yxkc" style="margin: 40px auto">
+    <div class="hd"><i>相关课程</i><a href="#"><span>more+</span></a></div>
+    <div class="dd">
+        <ul>
+            <li>
+                <a href="#" target="_blank">
+                    <img src="images/xspx/test5.png" alt="">
+                </a>
+                <p><a href="xspx-content.html">数据分析之店铺成交转化分析</a></p>
+            </li>
+            <li>
+                <a href="#" target="_blank">
+                    <img src="images/xspx/test6.png" alt="">
+                </a>
+                <p><a href="xspx-content.html">数据分析之店铺成交转化分析</a></p>
+            </li>
+            <li>
+                <a href="#" target="_blank">
+                    <img src="images/xspx/test7.png" alt="">
+                </a>
+                <p><a href="xspx-content.html">数据分析之店铺成交转化分析</a></p>
+            </li>
+
+            <li>
+                <a href="#" target="_blank">
+                    <img src="images/xspx/test8.png" alt="">
+                </a>
+                <p><a href="xspx-content.html">数据分析之店铺成交转化分析</a></p>
+            </li>
+            <li>
+                <a href="#" target="_blank">
+                    <img src="images/xspx/test9.png" alt="">
+                </a>
+                <p><a href="xspx-content.html">数据分析之店铺成交转化分析</a></p>
+            </li>
+            <li>
+                <a href="#" target="_blank">
+                    <img src="images/xspx/test10.png" alt="">
+                </a>
+                <p><a href="xspx-content.html">数据分析之店铺成交转化分析</a></p>
+            </li>
+            <li>
+                <a href="#" target="_blank">
+                    <img src="images/xspx/test11.png" alt="">
+                </a>
+                <p><a href="xspx-content.html">数据分析之店铺成交转化分析</a></p>
+            </li>
+            <li>
+
+                <p><a href="xspx-content.html">数据分析之店铺成交转化分析</a></p>                <a href="#" target="_blank">
+                <img src="images/xspx/test12.png" alt="">
+            </a>
+                <p><a href="xspx-content.html">数据分析之店铺成交转化分析</a></p>
+            </li>
+
+
+        </ul>
+    </div>
+</section>
+
+
+<div class="container m-t">
+    <div class="course-post-detail">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        {{ course.content|raw }}
+
+                        {% if course.files %}
+                        <div class="post-files">
+                            <h4>
+                                附件
+                            </h4>
+                            {% for item in course.files %}
+                            <a href="{{ item.file_path|media }}">{{ item.file_name }}</a>
+                            {% if not loop.last %} | {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {% if course.image %}
+                        <div class="big-image margin-bottom-20">
+                            <img src="{{ course.image|media }}" alt="{{ course.title }}" class="img-responsive img-rounded">
+                        </div>
+                        {% endif %}
+                        <h4> {{ course.title }}</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            {{ course.summary }}
+                        </p>
+                        <p>
+                            {% if course.ifShouCang %}
+                            <a data-request="onDetachShouCang" data-request-data="id:{{course.id}}" class="btn btn-danger"><i class="icon icon-trash"></i>
+                                取消收藏</a>
+                            {% else %}
+                            <a data-request="onShouCang" data-request-data="id:{{course.id}}" class="btn btn-success"><i class="icon icon-plus"></i>
+                                收藏</a>
+                            {% endif %}
+                            {% if course.previousSlug %}
+                            <a href="/courses/course/{{ course.previousSlug}}" class="btn btn-default"><i class="icon icon-angle-left"></i>
+                                上一课</a>
+                            {% endif %}
+                            {% if course.nextSlug %}
+                            <a href="/courses/course/{{ course.nextSlug }}" class="btn btn-default">下一课
+                                <i class="icon icon-angle-right"></i></a>
+                            {% endif %}
+                        </p>
+                        <p>
+                            {% if course.categories.count %}
+                            发布在
+                            {% for category in course.categories %}
+                            <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %},{% endif %}
+                            {% endfor %}
+                            栏目
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+
+                {% if course.relatedCourses %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        相关课程
+                    </div>
+                    <div class="panel-body">
+                        <div class="list-group">
+                            {% for course in course.relatedCourses %}
+                            <a href="/courses/course/{{ course.slug }}" class="list-group-item">{{ course.title }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

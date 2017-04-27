@@ -1,0 +1,124 @@
+title = "线上培训"
+url = "/xian-shang-pei-xun/:page?"
+layout = "default"
+==
+function onStart(){
+// filter by tags
+$this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
+$this['tagReMen']=\Buuug7\Courses\Models\Course::displayByTags(['re-men'],8);
+
+// filter by categories
+$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi'],4);
+$this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-jin-jie-zhi-shi'],4);
+}
+
+function onEnd(){
+
+if(!Auth::check()) return Redirect::to('/account');
+
+}
+==
+
+{% if tagTuiJian.count %}
+<section class="box xspx-list zthd">
+
+    <div class="hd"><i>推荐课程</i><a href="/courses/tag/tui-jian"><span>more+</span></a></div>
+    <div class="dd">
+        <ul>
+            {% for post in tagTuiJian %}
+            <li>
+                <a href="xspx-content.html" target="_blank">
+                    <img src="{{ post.image|media }}" alt="">
+                </a>
+                <p><a href="/courses/course/{{ post.slug }}">{{ post.title }}</a></p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endif %}
+
+{% if tagReMen.count %}
+<section class="box xspx-list yxkc">
+    <div class="hd"><i>热门课程</i><a href="/courses/tag/re-men"><span>more+</span></a></div>
+    <div class="dd">
+        <ul>
+            {% for post in tagReMen %}
+            <li>
+                <a href="#" target="_blank">
+                    <img src="{{ post.image|media }}" alt="{{ post.title }}">
+                </a>
+                <p><a href="/courses/course/{{ post.slug }}">{{ post.title }}</a></p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endif %}
+
+
+{% if categoryDianShangJiChuZhiShi.count %}
+<section class="box xspx-list zthd">
+
+    <div class="hd"><i>电商基础知识</i><a href="/courses/categories/dian-shang-ji-chu-zhi-shi""><span>more+</span></a></div>
+    <div class="dd">
+        <ul>
+            {% for post in categoryDianShangJiChuZhiShi %}
+            <li>
+                <a href="xspx-content.html" target="_blank">
+                    <img src="{{ post.image|media }}" alt="">
+                </a>
+                <p><a href="/courses/course/{{ post.slug }}">{{ post.title }}</a></p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endif %}
+
+{% if categoryDianShangJinJieZhiShi.count %}
+<section class="box xspx-list zthd">
+
+    <div class="hd"><i>电商进阶知识</i><a href="/courses/categories/dian-shang-jin-jie-zhi-shi""><span>more+</span></a></div>
+    <div class="dd">
+        <ul>
+            {% for post in categoryDianShangJinJieZhiShi %}
+            <li>
+                <a href="xspx-content.html" target="_blank">
+                    <img src="{{ post.image|media }}" alt="">
+                </a>
+                <p><a href="/courses/course/{{ post.slug }}">{{ post.title }}</a></p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endif %}
+
+
+<!--帮助服务-->
+<section class="box xspx-list bzfw">
+
+    <div class="hd"><i>帮助服务</i><a href="#"><span>more+</span></a></div>
+
+    <div class="dd">
+        <ul>
+            <li class="fwbz-1 block">
+                <span>使用说明</span>
+                <a href="index-sysm.html">进入</a>
+            </li>
+            <li class="fwbz-2 block">
+                <span>学习活动</span>
+                <a href="index-sysm.html">进入</a>
+            </li>
+            <li class="fwbz-3 block">
+                <span>学习课程</span>
+                <a href="xspx-content.html">进入</a>
+            </li>
+            <li class="fwbz-4 block">
+                <span>联系我们</span>
+                <a href="#!">进入</a>
+            </li>
+        </ul>
+    </div>
+</section>

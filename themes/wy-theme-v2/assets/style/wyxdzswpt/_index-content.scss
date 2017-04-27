@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+.dszx-content {
+  width: 768px;
+  text-align: left;
+  box-shadow: 1px 2px 20px 1px #CCCCCC;
+  border: 1px solid #ededed;
+  margin: 20px 0 40px 0;
+  padding: 5px 15px 10px 15px;
+  h4.title {
+    border-bottom: 1px dashed #B2B2B2;
+    margin: 5px 0;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 21px;
+    font-weight: normal;
+  }
+  p {
+    line-height: 35px;
+    font-size: 15px;
+    margin: 10px 0;
+    color: #333;
+    word-wrap: break-word;
+    padding: 8px 0 0;
+  }
+  p img {
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 15px;
+  }
+}
+
+.dszx-kjnav {
+
+  width: 300px;
+  margin: 20px 0 40px 20px;
+  .kj-dszx {
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    box-shadow: 1px 2px 20px 1px #CCCCCC;
+    border: 1px solid #f3f3f3;
+    .kj-title {
+      margin-bottom: 10px;
+      border-bottom: 2px solid $nav-background;
+      border-bottom-left-radius: 20%;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 0 15px;
+      height: 32px;
+      line-height: 32px;
+      a {
+        color: #6d6d6d;
+      }
+    }
+    ul li {
+      padding-left: 15px;
+      height: 40px;
+      line-height: 40px;
+      width: 230px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      a {
+        color: #333333;
+      }
+
+      .aurora__title::after {
+        text-shadow: 0 0 5px currentColor;
+        font-size: 18px;
+        content: '🔥';
+      }
+
+      .aurora100 {
+        color: red;
+      }
+      .aurora90 {
+        color: #f00000;
+      }
+      .aurora80 {
+        color: #d20000;
+      }
+      .aurora70 {
+        color: #b40000;
+      }
+      .aurora60 {
+        color: #9b0000;
+      }
+      .aurora50 {
+        color: #7b0000;
+      }
+    }
+  }
+  .rmkc {
+    em {
+      margin: 5px 10px 0 0;
+      color: #999999;
+      padding: 0 5px 0 2px;
+    }
+    .topSpan {
+      text-shadow: 0 0 5px currentColor;
+      border: 1px solid $nav-background;
+      border-radius: 50%;
+      color: $nav-background;
+    }
+  }
+
+  .kjnav-ggo {
+    width: 300px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    position: relative;
+    span {
+      position: absolute;
+      width: 30px;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5);
+      font-size: 12px;
+      line-height: 15px;
+      color: #fff;
+      text-align: center;
+    }
+  }
+
+}
+

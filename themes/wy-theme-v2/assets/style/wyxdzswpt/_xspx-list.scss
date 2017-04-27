@@ -1,0 +1,351 @@
+@charset "UTF-8";
+// 线上培训
+.xspx-list {
+
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  border-radius: 5px;
+  .hd {
+    text-align: left;
+    padding-left: 0;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    background: url(../images/title-1.png) no-repeat center;
+    border-bottom: 0;
+    i {
+      padding: 10px 15px;
+      color: #ffffff;
+      background: $page-color;
+      border-radius: 3px;
+    }
+  }
+  .dd {
+    height: 360px;
+    text-align: left;
+    overflow: hidden;
+    margin: 25px 0;
+    color: #494546;
+    ul li {
+      width: 260px;
+      height: 150px;
+      float: left;
+      margin-bottom: 35px;
+      margin-left: 16px;
+      a {
+        position: absolute;
+        img {
+          width: 260px;
+          height: 150px;
+        }
+      }
+      p {
+        position: relative;
+        margin: 0 20px;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 5px;
+        //text-shadow: 1px 1px 3px #000;
+        text-shadow: 3px 1px 8px rgba(37, 85, 146, 0.95);
+        top: 50px;
+        a {
+          color: #ffffff;
+        }
+      }
+
+    }
+  }
+}
+
+.zthd {
+  height: 250px;
+  margin: 30px auto;
+  .dd {
+    height: 200px;
+    ul li a img {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.yxkc {
+  height: 435px;
+  margin: 30px auto;
+  .dd ul li p {
+    top: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.68);
+    a {
+      color: #ffffff;
+    }
+  }
+}
+
+.bzfw {
+  margin: 50px auto;
+  .dd {
+    height: 180px;
+    margin: 25px 15px;
+    ul {
+      li {
+        display: inline;
+        background-color: #fff;
+        margin-top: 10px;
+        //box-shadow: 0 0 5px rgba(93, 93, 93, 0.4);
+        box-shadow: 2px 4px 15px rgba(93, 93, 93, 0.4);
+        padding: 15px 0 0 20px;
+        border-radius: 5px;
+        width: 240px;
+        float: left;
+        height: 145px;
+        margin-left: 10px;
+        a {
+          display: block;
+          width: 72px;
+          margin-top: 20px;
+          border: 1px solid $border-color;
+          border-radius: 50%;
+          padding: 3px 10px;
+          text-align: center;
+          height: 20px;
+          line-height: 20px;
+        }
+        a:hover {
+          box-shadow: 1px 2px 20px 1px #CCCCCC;
+          border: 1px solid #f3f3f3;
+          transition: all 0.5s ease;
+
+        }
+        span {
+          font-size: 22px;
+          color: #444;
+          font-weight: bold;
+          margin-top: 25px;
+          display: block;
+        }
+      }
+      .fwbz-1 {
+        background: #fff url(../images/fwbz1.png) no-repeat right center;
+      }
+      .fwbz-2 {
+        background: #fff url(../images/fwbz2.png) no-repeat right center;
+      }
+      .fwbz-3 {
+        background: #fff url(../images/fwbz3.png) no-repeat right center;
+      }
+      .fwbz-4 {
+        background: #fff url(../images/fwbz4.jpg) no-repeat right center;
+      }
+    }
+  }
+
+}
+
+//线上培训内容页 热门课程
+.xspx-rmkc {
+  height: 631px;
+  overflow: hidden;
+  background: #000000;
+  .video-left {
+    padding-top: 35px;
+    width: 780px;
+    overflow: hidden;
+    span {
+      color: #ffffff;
+      margin: 30px 20px;
+      font-size: 16px;
+      letter-spacing: 3px;
+
+    }
+    .vid-wrapper {
+      margin: 5px 0 0 20px;
+      //position: relative;
+      // padding-top: 60.25%; /*需要用padding来维持16:9比例,也就是9除以16*/
+      // height: 0;
+      video {
+        text-align: left;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%
+
+      }
+    }
+    .video-left-bottom {
+      height: 50px;
+      background: #191919;
+      ul {
+        height: 50px;
+        li {
+          line-height: 50px;
+          float: left;
+          margin: 0 20px;
+          text-align: center;
+          a {
+            span {
+              margin: 0 5px;
+            }
+            i {
+              display: inline-block;
+              width: 15px;
+              height: 15px;
+              margin-bottom: 2px;
+              background-image: url("../images/xspx/ioc.png");
+            }
+            .i1 {
+              background-position: -20px 0;
+            }
+            .i2 {
+              background-position: -40px 0;
+            }
+            .label {
+              font-size: 12px;
+              color: #999;
+              vertical-align: super;
+            }
+
+          }
+          a:hover {
+            .i1 {
+              background-position: -20px -15px;
+            }
+            .i2 {
+              background-position: -40px -15px;
+            }
+          }
+
+        }
+
+      }
+      .ul-right {
+        height: 50px;
+        display: -webkit-box;
+        span {
+          margin-right: 5px;
+          line-height: 50px;
+          font-size: 12px;
+          color: #999;
+          vertical-align: super;
+        }
+        .options {
+          height: 50px;
+          line-height: 50px;
+          li {
+            margin: 12px 5px;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-image: url("../images/xspx/ioc.png");
+          }
+          .li-1 {
+            background-position: 0 -50px;
+          }
+          .li-2 {
+            background-position: -30px -50px
+          }
+          .li-3 {
+            background-position: -60px -50px;
+          }
+          .li-4 {
+            background-position: -90px -50px;
+          }
+          .li-1:hover {
+            background-position: 0 -75px;
+          }
+          .li-2:hover {
+            background-position: -30px -75px;
+          }
+          .li-3:hover {
+            background-position: -60px -75px;
+          }
+          .li-4:hover {
+            background-position: -90px -75px;
+          }
+
+        }
+        .options1 {
+          .ico-fn-up {
+            background-position: -80px 0;
+          }
+          .ico-fn-down {
+            background-position: -100px 0;
+          }
+          .ico-fn-up:hover {
+            background-position: -80px -15px;
+          }
+          .ico-fn-down:hover {
+            background-position: -100px -15px;
+          }
+
+        }
+
+      }
+
+    }
+  }
+  .video-right {
+    height: 600px;
+    background: #191919;
+    padding: 15px 0 15px 15px;
+    .RV-title {
+      border-bottom: 2px solid #272727;
+      height: 33px;
+      ul li {
+        float: left;
+        margin: 0 15px;
+        line-height: 33px;
+        height: 33px;
+        a {
+          color: #ffffff;
+        }
+      }
+    }
+    .borCon {
+      margin: 15px 0;
+      height: 66px;
+      overflow: hidden;
+      .pic-left {
+        display: inline;
+        float: left;
+        margin-right: 10px;
+        width: 116px;
+        .piclist_img {
+          display: block;
+          width: 116px;
+          height: 65px;
+        }
+      }
+      .con-right {
+        margin-right: 8px;
+        color: #666;
+        float: left;
+        margin-top: -2px;
+        position: relative;
+        width: 174px;
+        a {
+          color: #999;
+        }
+      }
+    }
+    #gsgs {
+      height: 581px;
+      overflow: auto;
+
+    }
+    #gsywly {
+      height: 581px;
+      overflow: auto;
+      display: none;
+    }
+
+    li {
+      list-style: none;
+    }
+  }
+
+}
+
+
+
+

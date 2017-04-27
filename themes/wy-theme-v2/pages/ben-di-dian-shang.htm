@@ -1,0 +1,45 @@
+title = "本地电商"
+url = "/ben-di-dian-shang"
+layout="default"
+
+==
+function onStart(){
+$this['companies']=\Buuug7\User\Models\Company::displayChecked(5);
+$this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
+}
+==
+
+<div class="jumbotron">
+    <div class="container">
+        <h2>{{ this.page.title }}</h2>
+        <p>
+            精选优质本地电商
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="headline">
+        <a href=""><h2>推荐电商</h2></a>
+    </div>
+    <div class="row">
+        {% for post in featuredCompanies %}
+        <div class="col-md-2 col-sm-4 col-xs-6 m-b">
+            <a href="/company/{{ post.id }}"><img alt="{{ post.name }}" src="{{ post.getAvatarThumb(300) }}" class="img-responsive"></a>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if companies %}
+    <div class="headline">
+        <a href="#"><h2>本地电商</h2></a>
+    </div>
+    <div class="row">
+        {% for post in companies %}
+        <div class="col-md-2 col-sm-4 col-xs-6 m-b">
+            <a href="/company/{{ post.id }}"><img alt="{{ post.name }}" src="{{ post.getAvatarThumb(300) }}" class="img-responsive"></a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>

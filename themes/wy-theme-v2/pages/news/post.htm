@@ -1,0 +1,79 @@
+title = "News Post"
+url = "/news/post/:slug"
+layout="default"
+
+[newsPost]
+==
+function onEnd(){
+// 最新发布
+$this['latestPosts'] = \Buuug7\News\Models\Post::displayLatest(6);
+
+// 推荐 特色
+$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(6);
+}
+==
+<div class="box">
+    <ol class="breadcrumb">
+        <li><a href="/">首页</a></li>
+        <li>
+            {% for category in post.categories %}
+            <a href="{{ category.url }}">{{ category.name }}</a>&nbsp;
+            {% endfor %}
+        </li>
+        <li class="active">{{ post.title }}</li>
+    </ol>
+    <div class="float-left dszx-content">
+        <h4 class="title">{{ post.title }}</h4>
+        {{ post.content|raw }}
+
+        <div class="post-files">
+            {% for item in post.files %}
+            <a href="{{ item.file_path|media }}">{{ item.file_name }}</a>
+            {% if not loop.last %} | {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="float-right dszx-kjnav">
+        <div class="kj-dszx">
+            <div class="kj-title">
+                <a href="javascript:void(0);"> <span>最新发布</span></a>
+            </div>
+            <ul>
+                {% for post in latestPosts %}
+                <li>
+                    <i class="aurora__title aurora100"></i>
+                    <a href="/news/post/{{ post.slug }}">
+                        <span>{{ post.title|length > 25 ? post.title|slice(0,25)~'...' :post.title }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="kj-dszx rmkc">
+            <div class="kj-title">
+                <a href="xspx-list.html"> <span>推荐</span></a>
+            </div>
+            <ul>
+                {% for post in featuredPosts %}
+                <li>
+                    <em class="topSpan ">{{ loop.index }}</em>
+                    <a href="/news/post/{{ post.slug }}">
+                        <span> {{ post.title|length > 25 ? post.title|slice(0,25)~'...' :post.title }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="kjnav-ggo">
+            <span>广告</span>
+            <embed src="http://imgs.ebrun.com/uploads/2017/04/20170412150338290.swf" quality="high"
+                   pluginspage="#!" width="300" height="200" wmode="transparent">
+        </div>
+        <div class="kjnav-ggo">
+            <span>广告</span>
+            <embed src="flash/1.swf" quality="high"
+                   pluginspage="#!" width="300" height="250" wmode="transparent">
+        </div>
+    </div>
+</div>

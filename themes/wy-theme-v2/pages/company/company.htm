@@ -1,0 +1,46 @@
+title = '公司'
+url = '/company/:id'
+layout = 'default'
+
+==
+function onStart(){
+$this['company']=\Buuug7\User\Models\Company::findById($this->param('id'));
+}
+==
+
+<div class="container m-t">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {{ company.name }}
+                </div>
+                <div class="panel-body">
+                    {{ company.description }}
+                    <dl class="dl-horizontal margin-top-20">
+                        <dt>公司地址</dt>
+                        <dd>{{ company.address }}</dd>
+                        <dt>联系电话</dt>
+                        <dd>{{ company.contact_phone }}</dd>
+                        <dt>推荐企业</dt>
+                        <dd>{{ company.featured ? '是' : '否' }}</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    {{ company.detail|raw }}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <img src="{{ company.getAvatarThumb(400) }}" alt="" class="img-responsive">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
