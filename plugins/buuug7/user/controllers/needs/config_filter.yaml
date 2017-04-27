@@ -22,3 +22,12 @@ scopes:
                conditions:
                   - featured <> '1'
                   - featured = '1'
+    category:
+            label: 分类
+            type: group
+            conditions: category in (:filtered)
+            options:
+                zhaopin: 招聘
+                qita: 其他
+                fangchan: 房产
+                ershou: 二手

@@ -43,7 +43,6 @@ class SeedAllTables extends Seeder
             'user_id' => $user01->id,
             'title' => '急聘初中语文老师',
             'contact_phone' => '18309467501',
-            'category' => 'zhaopin',
             'description' => '
             <h4>职位详情</h4>
             <h5>授课年级</h5>
@@ -70,7 +69,6 @@ class SeedAllTables extends Seeder
             'user_id' => $user01->id,
             'title' => '卢沟桥 晓月苑四里正规精装大两居家电家具全齐随时看拎包住',
             'contact_phone' => '18309467501',
-            'category' => 'fangchan',
             'description' => '
             <h4>租赁方式</h4>
             <p>整租</p>
@@ -96,7 +94,6 @@ class SeedAllTables extends Seeder
             'user_id' => $user01->id,
             'title' => '平面设计',
             'contact_phone' => '18309467501',
-            'category' => 'zhaopin',
             'description' => '
             <h4>职位介绍</h4>
             <p>性别：不限 | 驾照：不要求</p>
@@ -122,7 +119,6 @@ class SeedAllTables extends Seeder
             'user_id' => $user01->id,
             'title' => '急聘平面设计讲师 五险一金双休',
             'contact_phone' => '18309467501',
-            'category' => 'zhaopin',
             'description' => '
             <h4>职位介绍</h4>
             <p>年龄：23-30岁 | 性别：不限 | 驾照：不要求</p>
@@ -152,7 +148,6 @@ class SeedAllTables extends Seeder
             'user_id' => $user01->id,
             'title' => '苹果 iPhone7 Plus 苹果手机7plus 128G转让',
             'contact_phone' => '18309467501',
-            'category' => 'ershou',
             'description' => '
             <dl class="dl-horizontal">
                 <dt>机身颜色</dt>
@@ -211,7 +206,6 @@ class SeedAllTables extends Seeder
             'user_id' => $user02->id,
             'title' => '免费换人 三天试用 上门服务 持证上岗 专业靠谱',
             'contact_phone' => '18309467501',
-            'category' => 'ershou',
             'description' => '
             <dl class="dl-horizontal">
                 <dt>类别</dt>
@@ -246,7 +240,6 @@ class SeedAllTables extends Seeder
             'user_id' => $user02->id,
             'title' => '专业催乳师无痛开奶、催乳、疏通急性乳腺炎上门服务',
             'contact_phone' => '18309467501',
-            'category' => 'ershou',
             'description' => '
             <dl class="dl-horizontal">
                 <dt>类别</dt>
@@ -288,7 +281,6 @@ class SeedAllTables extends Seeder
             'user_id' => $user02->id,
             'title' => '专业承接公寓别墅装修 二手房装修 旧房装修',
             'contact_phone' => '18309467501',
-            'category' => 'ershou',
             'description' => '
             <dl class="dl-horizontal">
                 <dt>类别</dt>
@@ -318,7 +310,6 @@ class SeedAllTables extends Seeder
             'user_id' => $user02->id,
             'title' => '专业中医调理颈椎,专治股骨头坏死,腰间盘突出',
             'contact_phone' => '18309467501',
-            'category' => 'ershou',
             'description' => '
             <dl class="dl-horizontal">
                 <dt>类别</dt>
@@ -380,7 +371,6 @@ class SeedAllTables extends Seeder
             'user_id' => $user02->id,
             'title' => '回收苹果7plus三星华为oppo vivo美图',
             'contact_phone' => '18309467501',
-            'category' => 'ershou',
             'description' => '
             <dl class="dl-horizontal">
                 <dt>类别</dt>
@@ -446,7 +436,6 @@ class SeedAllTables extends Seeder
             'user_id' => $user03->id,
             'title' => '高价回收苹果、三星、小米、华为、ViVO、OPPO',
             'contact_phone' => '18309467501',
-            'category' => 'ershou',
             'description' => '
             <dl class="dl-horizontal">
                 <dt>类别</dt>
@@ -483,7 +472,6 @@ class SeedAllTables extends Seeder
             'user_id' => $user03->id,
             'title' => '十一黄金周微女神洗发汁,发膜,信誉合作',
             'contact_phone' => '18309467501',
-            'category' => 'ershou',
             'description' => '
             <dl class="dl-horizontal">
                 <dt>类别</dt>

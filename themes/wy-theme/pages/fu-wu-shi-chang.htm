@@ -4,7 +4,16 @@ layout = 'default'
 
 ==
 function onStart(){
-$this['checkedNeeds']=\Buuug7\User\Models\Need::displayChecked(10);
+
+$this['checkedNeeds']=\Buuug7\User\Models\Need::displayChecked(8);
+$this['featuredNeeds']=\Buuug7\User\Models\Need::displayFeatured(8);
+
+$this['categoryZhaoPin']=\Buuug7\User\Models\Need::displayByCategory('zhaopin',5);
+$this['categoryFangChan']=\Buuug7\User\Models\Need::displayByCategory('fangchan',5);
+$this['categoryErShow']=\Buuug7\User\Models\Need::displayByCategory('ershou',5);
+$this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',5);
+
+//var_dump($this->categoryZhaoPin->count());
 }
 ==
 
@@ -23,6 +32,7 @@ $this['checkedNeeds']=\Buuug7\User\Models\Need::displayChecked(10);
 </div>
 
 <div class="container">
+    <!--最新 + 推荐-->
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
@@ -31,13 +41,108 @@ $this['checkedNeeds']=\Buuug7\User\Models\Need::displayChecked(10);
                 <!-- List group -->
                 <ul class="list-group">
                     {% for need in checkedNeeds %}
-                    <li class="list-group-item">
-                        <a href="/needs/need/{{ need.id }}">{{ need.title }}</a>
+                    <li class="list-group-item overflow-h text-overflow-ellipsis">
+                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
                         <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
                     </li>
                     {% endfor %}
                 </ul>
             </div>
         </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading"><i class="fa fa-star color-danger"></i> 推荐</div>
+                <!-- List group -->
+                <ul class="list-group">
+                    {% for need in featuredNeeds %}
+                    <li class="list-group-item overflow-h text-overflow-ellipsis">
+                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
+                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--按照分类显示-->
+    <div class="row">
+        {% if categoryZhaoPin.count %}
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    招聘
+                    <a href="/needs/category/zhaopin" class="pull-right">更多 <i class="fa fa-angle-double-right"></i></a>
+                </div>
+                <ul class="list-group">
+                    {% for need in categoryZhaoPin %}
+                    <li class="list-group-item overflow-h text-overflow-ellipsis">
+                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
+                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if categoryFangChan.count %}
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    房产
+                    <a href="/needs/category/fangchan" class="pull-right">更多 <i class="fa fa-angle-double-right"></i></a>
+                </div>
+                <ul class="list-group">
+                    {% for need in categoryFangChan %}
+                    <li class="list-group-item overflow-h text-overflow-ellipsis">
+                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
+                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if categoryErShow.count %}
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    二手
+                    <a href="/needs/category/ershou" class="pull-right">更多 <i class="fa fa-angle-double-right"></i></a>
+                </div>
+                <ul class="list-group">
+                    {% for need in categoryErShow %}
+                    <li class="list-group-item overflow-h text-overflow-ellipsis">
+                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
+                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if categoryQiTa.count %}
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    其他
+                    <a href="/needs/category/qita" class="pull-right">更多 <i class="fa fa-angle-double-right"></i></a>
+                </div>
+                <ul class="list-group">
+                    {% for need in categoryQiTa %}
+                    <li class="list-group-item overflow-h text-overflow-ellipsis">
+                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
+                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>

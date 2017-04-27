@@ -7,6 +7,9 @@ fields:
         label: 需求名称
         disabled: true
         span: left
+    category:
+        label: 分类
+        disabled: true
     contact_phone:
         label: 联系电话
         disabled: true

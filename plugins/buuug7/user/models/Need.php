@@ -71,14 +71,36 @@ class Need extends Model
         return $query->isChecked()->isFeatured()->orderBy('checked_at', 'desc')->limit($limit)->get();
     }
 
-    public function scopeDisplayChecked($query, $limit)
+    public function scopeDisplayChecked($query, $limit=null)
     {
-        return $query->isChecked()->orderBy('checked_at', 'desc')->limit($limit)->get();
+        if($limit){
+            return $query->isChecked()->orderBy('checked_at', 'desc')->limit($limit)->get();
+        }
+        return $query->isChecked()->orderBy('checked_at', 'desc')->paginate(15);
+
     }
 
     public static function findById($id)
     {
         return self::where(['checked' => true, 'id' => $id,])->first();
+    }
+
+    public function scopeDisplayByCategory($query, $categorySlug, $limit = null)
+    {
+        if ($limit) {
+            return $query->isChecked()->where('category', $categorySlug)->orderBy('checked_at', 'desc')->limit($limit)->get();
+        }
+        return $query->isChecked()->where('category', $categorySlug)->orderBy('checked_at', 'desc')->paginate(5);
+    }
+
+    public static function getCategories()
+    {
+        return [
+            'zhaopin' => '招聘',
+            'fangchan' => '房产',
+            'ershou' => '二手',
+            'qita' => '其他',
+        ];
     }
 
 }

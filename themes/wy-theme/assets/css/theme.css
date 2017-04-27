@@ -86,6 +86,15 @@
   word-wrap: break-word;
   word-break: break-word;
 }
+.t-nw {
+  white-space: nowrap;
+}
+.overflow-h {
+  overflow: hidden;
+}
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+}
 .border-none {
   border: 0;
 }
@@ -575,9 +584,6 @@ a:visited {
 }
 .bg-color-warning {
   background-color: #f39c12;
-}
-.overflow-h {
-  overflow: hidden;
 }
 .btn-social {
   position: relative;
