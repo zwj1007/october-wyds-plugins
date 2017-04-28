@@ -936,7 +936,7 @@ a:visited {
   display: inline-block;
   margin: 0 2px;
   padding: 0 5px;
-  background: grey;
+  background: #f39c12;
   color: #fff;
 }
 .owl-carousel-v1 .owl-nav .owl-prev i,
