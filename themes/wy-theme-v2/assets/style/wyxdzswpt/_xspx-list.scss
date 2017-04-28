@@ -346,6 +346,180 @@
 
 }
 
+//线上培训-使用教材的列表页
+
+.syjc-list {
+  box-shadow: 1px 1px 10px 1px rgba(204, 204, 204, 0.33);
+  border: 1px solid #ededed;
+  height: 1200px;
+  overflow: hidden;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  .breadcrumb {
+    border-top: 0;
+    .li-left25 {
+      margin: 8px 5px 8px 35px;
+    }
+  }
+  .book-list {
+    height: 1000px;
+    overflow: hidden;
+    li {
+      float: left;
+      border: 1px solid $border-color;
+      margin: 20px;
+      img {
+        margin: 15px 35px 0 35px;
+        width: 260px;
+        height: 350px;
+      }
+      .des {
+        margin: 0 35px 15px 35px;
+        a {
+          h2 {
+            font-size: 16px;
+            color: #444;
+            margin: 8px 0;
+            line-height: 18px;
+            height: 18px;
+            width: 202px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+        p {
+          line-height: 25px;
+          font-size: 14px;
+          color: #a4a3a3;
+        }
+      }
+    }
+  }
+
+  .pagination {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+    ul {
+      text-align: center;
+      display: inline-block;
+      li {
+        float: left;
+        margin: 2px;
+        padding: 12px;
+        width: 50px;
+      }
+      li:hover {
+        background: #FF4400;
+        a {
+          color: #ffffff;
+        }
+      }
+      .active {
+        background: #FF4400;
+        a {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+}
+
+//线上培训-使用教材的内容页
+.syjc-contend {
+  .book-desc {
+    padding: 15px 40px;
+    .book-top {
+      height: 350px;
+      .book-left {
+        width: 500px;
+        height: 350px;
+        img {
+          float: left;
+          width: 260px;
+          height: 350px;
+          margin-right: 20px;
+        }
+        .des {
+          margin: 30px 0;
+          a {
+            h2 {
+              font-size: 16px;
+              color: #444;
+              margin: 8px 0;
+              line-height: 18px;
+              height: 18px;
+              width: 202px;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+          }
+          p {
+            line-height: 30px;
+            font-size: 14px;
+            color: #a4a3a3;
+          }
+        }
+      }
+      .book-right {
+        height: 320px;
+        overflow: hidden;
+        padding-top: 20px;
+        width: 500px;
+        p {
+          line-height: 38px;
+          margin-top: 15px;
+          text-indent: 2em;
+          text-align: justify;
+          color: #636363;
+        }
+
+      }
+    }
+
+    .book-contend {
+      height: 550px;
+      overflow: hidden;
+      margin-top: 30px;
+      .header {
+        border-bottom: 1px solid #eaeaea;
+        .header-inner {
+          border-left: 3px solid #498d99;
+          padding: 0 15px;
+          line-height: 32px;
+          font-weight: bold;
+          background-color: #eaeaea;
+          display: inline-block;
+        }
+
+      }
+      .book-body {
+        margin: 20px 50px;
+        .headline {
+          margin: 15px 0;
+          font-size: 15px;
+          letter-spacing: 3px;
+          color: #000000;
+        }
+        ul {
+          margin-left: 40px;
+          li {
+            line-height: 40px;
+            width: 800px;
+            overflow: hidden;
+            a {
+              color: #444444;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 
 
 

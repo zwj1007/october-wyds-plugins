@@ -1,0 +1,13 @@
+# ===================================
+#  Extended Profile Field Definitions
+# ===================================
+
+b7_mobile:
+    label: 手机号码
+    tab: 个人资料
+    span: right
+
+b7_address:
+    label: 地址
+    tab: 个人资料
+    span: right

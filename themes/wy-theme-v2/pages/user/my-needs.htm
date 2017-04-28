@@ -9,44 +9,46 @@ function onEnd(){
 }
 ==
 
-<div class="container m-t">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    我发布的需求
-                </div>
-                <div class="panel-body">
-                    <p class="m-b"><a href="/needs/need/create" class="btn btn-success"><i class="icon icon-plus"></i> 发布需求</a></p>
-                    <div class="table-responsive padding-top-20">
-                        <table class="table table-hover">
-                            <thead>
-                            <tr>
-                                <th>需求名称</th>
-                                <th>状态</th>
-                                <th>时间</th>
-                                <th></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {% for need in needs %}
-                            <tr>
-                                <td><a href="/needs/need/{{ need.id }}">{{ need.title }}</a></td>
-                                <td>{{ need.checked == 0 ? '待审核' : '已审核' }}</td>
-                                <td>{{ need.created_at|time_diff }}</td>
-                                <td>
-                                    <a href="/needs/need/{{ need.id }}" class="margin-right-10"><i class="fa fa-eye"></i></a>
-                                    <a data-request="onDeleteNeed" data-request-data="id:{{ need.id }}" class="margin-right-10"><i class="fa fa-trash"></i></a>
-                                    <a href="/needs/need/update/{{ need.id }}"><i class="fa fa-pencil"></i></a>
-                                </td>
-                            </tr>
-                            {% endfor %}
-                            </tbody>
-                        </table>
-                        {{ userRelatedNeeds.render|raw }}
-                    </div>
-                </div>
-            </div>
-        </div>
+<section class="box index-lyzx xqfb ">
+    <div class="lyzx-title xqfb-title">
+        <span>我发布的需求</span>
+        <span class="float-right"><a href="/needs/need/create">发布新需求</a></span>
     </div>
-</div>
+    <div class="lyzx-body xqfb-body ">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th style="width: 600px">需求名称</th>
+                <th>状态</th>
+                <th>时间</th>
+                <th style="width:200px;">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for need in needs %}
+            <tr class="list">
+                <td><a href="/needs/need/{{ need.id }}">{{ need.title }}</a></td>
+                <td>{{ need.checked == 0 ? '待审核' : '已审核' }}</td>
+                <td>{{ need.created_at|time_diff }}</td>
+                <td>
+
+                    <a href="/needs/need/{{ need.id }}" class="margin-right-20">
+                        <img src="/themes/wy-theme-v2/assets/images/xqfb/xqfb1.png" alt="">
+                    </a>
+                    <a data-request="onDeleteNeed" data-request-data="id:{{ need.id }}" data-request-confirm="你确定要删除?" class="margin-right-10">
+                        <img src="/themes/wy-theme-v2/assets/images/xqfb/xqfb2.png" alt="">
+                    </a>
+
+                    <a href="/needs/need/update/{{ need.id }}" class="margin-right-20">
+                        <img src="/themes/wy-theme-v2/assets/images/xqfb/xqfb3.png" alt="">
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+</section>

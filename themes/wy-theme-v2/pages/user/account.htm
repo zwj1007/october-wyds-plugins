@@ -11,153 +11,73 @@ function onStart(){
 //var_dump($this->canRegister);
 }
 ==
-<div class="container m-t">
-    {% if not user %}
-    <div class="row">
-        <div class="col-md-6">
-            <!--登陆-->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    登陆
-                </div>
-                <div class="panel-body">
-                    <form data-request="onSignin">
-                        <div class="form-group">
-                            <label for="userSigninLogin">邮箱</label>
-                            <input
-                                    name="login"
-                                    type="text"
-                                    class="form-control"
-                                    id="userSigninLogin"
-                                    placeholder="请输入你的电子邮箱">
-                        </div>
-                        <div class="form-group">
-                            <label for="userSigninPassword">密码</label>
-                            <input
-                                    name="password"
-                                    type="password"
-                                    class="form-control"
-                                    id="userSigninPassword"
-                                    placeholder="输入密码">
-                        </div>
-                        <button type="submit" class="btn btn-default">登陆</button>
-                    </form>
-                </div>
-            </div>
-        </div>
 
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    注册
-                </div>
-                <div class="panel-body">
-                    {% if canRegister %}
-                    <form data-request="onRegister">
-                        <div class="form-group">
-                            <label for="registerName">名称</label>
-                            <input
-                                    name="name"
-                                    type="text"
-                                    class="form-control"
-                                    id="registerName"
-                                    placeholder="输入你的全名">
-                        </div>
-                        <div class="form-group">
-                            <label for="registerEmail">邮箱</label>
-                            <input
-                                    name="email"
-                                    type="email"
-                                    class="form-control"
-                                    id="registerEmail"
-                                    placeholder="输入你的电子邮箱"/>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="registerPassword">密码</label>
-                            <input
-                                    name="password"
-                                    type="password"
-                                    class="form-control"
-                                    id="registerPassword"
-                                    placeholder="输入密码"/>
-                        </div>
-
-                        <button type="submit" class="btn btn-default">注册</button>
-
-                    </form>
-                    {% else %}
-                    不能注册
-                    {% endif %}
-                </div>
-            </div>
-        </div>
+<section class="box user ">
+    <div class="mainLeft float-left">
+        <ul>
+            <li class="active ">
+                <span class="icon-notice"></span>
+                <a href="/account">账号</a>
+            </li>
+            <li>
+                <span class="icon-notice1"></span>
+                <a href="/user/company">公司</a>
+            </li>
+            <li class="">
+                <span class="icon-notice1"></span>
+                <a href="/shoucang">收藏课程</a>
+            </li>
+            <li class="">
+                <span class="icon-notice2"></span>
+                <a href="/needs">我的发布</a>
+            </li>
+        </ul>
     </div>
-    {% else %}
-    <div class="row">
-        {% if not user.is_activated %}
-        <div class="col-md-6">
-            <h3>你的邮箱还没有被验证</h3>
-            <p>
-                请检查你的邮箱验证你的账号.
-                <a href="javascript:;" data-request="onSendActivationEmail">重新发送验证信息</a>.
-            </p>
-        </div>
-        {% endif %}
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    修改个人信息
-                </div>
-                <div class="panel-body">
-                    {{ form_ajax('onUpdate', { model: user }) }}
+    <div class="mainRight float-right  ">
+        <div class="content-title">
+            <a href="user.html">用户资料</a>
+            <span></span>
 
-                    <div class="form-group">
-                        <label for="accountName">名称</label>
+        </div>
+        <div class="content">
+            {{ form_ajax('onUpdate', { model: user }) }}
+            <form id="ucMsg" action="#!" method="post" novalidate="novalidate">
+                <div class="leftBar float-left">
+                    <h4>修改头像</h4>
+                    {% component 'imageUploader' %}
+                </div>
+
+                <div class="rightBar float-right">
+                    <div id="nameTips">
+                        <span>名称：</span>
                         <input name="name" type="text" class="form-control" id="accountName" value="{{ form_value('name') }}">
                     </div>
-
-                    <div class="form-group">
-                        <label for="accountEmail">邮箱</label>
+                    <div id="nickNameTips">
+                        <span>邮箱：</span>
                         <input name="email" type="email" class="form-control" id="accountEmail" value="{{ form_value('email') }}" disabled>
                     </div>
 
-                    <div class="form-group">
-                        <label for="accountB7mobile">手机号码</label>
+                    <div>
+                        <span>手机号码：</span>
                         <input name="b7_mobile" type="text" class="form-control" id="accountB7mobile" value="{{ form_value('b7_mobile') }}">
                     </div>
-
-                    <div class="form-group">
-                        <label for="accountB7address">地址</label>
+                    <div>
+                        <span>地址：</span>
                         <input name="b7_address" type="text" class="form-control" id="accountB7address" value="{{ form_value('b7_address') }}">
                     </div>
-
-                    <div class="form-group">
-                        <label for="accountPassword">新密码</label>
+                    <div id="mobileTips">
+                        <span>新密码：</span>
                         <input name="password" type="password" class="form-control" id="accountPassword">
                     </div>
-
-                    <div class="form-group">
-                        <label for="accountPasswordConfirm">确认密码</label>
+                    <div>
+                        <span>确认密码：</span>
                         <input name="password_confirmation" type="password" class="form-control" id="accountPasswordConfirm">
                     </div>
 
-                    <button type="submit" class="btn btn-default">保存</button>
-
-                    {{ form_close() }}
+                    <input id="ucmsgSave" type="submit" class="imgFile" value="保存">
                 </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    用户头像
-                </div>
-                <div class="panel-body">
-                    {% component 'imageUploader' %}
-                </div>
-            </div>
+            </form>
+            {{ form_close() }}
         </div>
     </div>
-    {% endif %}
-</div>
+</section>

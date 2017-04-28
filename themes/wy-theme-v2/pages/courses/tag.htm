@@ -4,7 +4,7 @@ layout="default"
 
 [coursesTag]
 tagFilter="{{ :slug }}"
-postsPerPage=1
+postsPerPage=4
 ==
 function onEnd(){
     if($this->tag){
@@ -13,18 +13,44 @@ function onEnd(){
 }
 ==
 
-<div class="jumbotron">
-    <div class="container">
-        <h2>{{ this.page.title }}课程</h2>
-    </div>
-</div>
+<section class="box syjc-list">
+    <ol class="box breadcrumb">
+        <li class="li-left25"><a href="index.html">首页</a></li>
+        <li><a href="/">线上培训</a></li>
+        <li class="active">书目推荐</li>
+    </ol>
+    <ul class="book-list ">
+        {% for post in courses %}
+        <li>
+            <a href="{{ post.url }}">
+                <img src="{{ post.image|media }}" alt="">
+            </a>
+            <div class="des">
+                <a href="xspx-syjc-content.html"><h2>{{ post.title }}</h2></a>
+                <p>作者：韩利</p>
+                <p>出版社：电子工业出版社</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            {% component 'coursesTag' %}
-        </div>
+    <div class="pagination">
+        <ul>
+            {% if courses.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (courses.currentPage-1) }) }}">上一页</a></li>
+            {% endif %}
+
+            {% for page in 1..courses.lastPage %}
+            <li class="{{ courses.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+            {% endfor %}
+
+            {% if courses.lastPage > courses.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (courses.currentPage+1) }) }}">下一页</a></li>
+            {% endif %}
+        </ul>
     </div>
-</div>
+</section>
 
 

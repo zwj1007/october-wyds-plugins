@@ -171,7 +171,6 @@
         margin-right: 20px;
       }
     }
-
   }
 
   input[type="submit"] {
@@ -183,4 +182,32 @@
     display: block;
     margin: 30px auto;
   }
+}
+
+//个人收藏
+.user-collect {
+  .mainRight {
+    .content {
+      ul {
+        li {
+          line-height: 50px;
+        }
+        span {
+          margin-right: 40px;
+          color: #0b7fc6;
+        }
+      }
+      .but {
+        padding: 30px 0 0 0;
+        button {
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 10px 40px;
+          margin: 4px auto;
+        }
+      }
+    }
+  }
+
 }

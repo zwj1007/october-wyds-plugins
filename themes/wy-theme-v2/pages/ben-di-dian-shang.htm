@@ -9,37 +9,48 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
 }
 ==
 
-<div class="jumbotron">
-    <div class="container">
-        <h2>{{ this.page.title }}</h2>
-        <p>
-            精选优质本地电商
-        </p>
-    </div>
-</div>
-
-<div class="container">
-    <div class="headline">
-        <a href=""><h2>推荐电商</h2></a>
-    </div>
-    <div class="row">
-        {% for post in featuredCompanies %}
-        <div class="col-md-2 col-sm-4 col-xs-6 m-b">
-            <a href="/company/{{ post.id }}"><img alt="{{ post.name }}" src="{{ post.getAvatarThumb(300) }}" class="img-responsive"></a>
+<section class="box cpyx-list ">
+    <div class="cpyx-qypp">
+        <div class="hd"><i>推荐电商</i><a href="ppqy-list.html"><span>more+</span></a></div>
+        <div class="dd">
+            <ul>
+                {% for post in featuredCompanies %}
+                <li><a href="/company/{{ post.id }}"><img src="{{ post.getAvatarThumb(200) }}" alt="">
+                    <p>微商软件开发/APP开发</p></a></li>
+                {% endfor %}
+            </ul>
         </div>
-        {% endfor %}
     </div>
+</section>
 
-    {% if companies %}
-    <div class="headline">
-        <a href="#"><h2>本地电商</h2></a>
-    </div>
-    <div class="row">
-        {% for post in companies %}
-        <div class="col-md-2 col-sm-4 col-xs-6 m-b">
-            <a href="/company/{{ post.id }}"><img alt="{{ post.name }}" src="{{ post.getAvatarThumb(300) }}" class="img-responsive"></a>
+<section class="box cpyx-list">
+    <div class="cpyx-bdds">
+        <div class="hd"><i>本地电商</i></div>
+
+        <div class="scrollpic">
+            <div id="mybtns">
+                <a href="javascript:;" id="left"></a>
+                <a href="javascript:;" id="right"></a>
+            </div>
+            <div id="myscroll">
+                <div id="myscrollbox">
+                    <ul>
+                        {% for post in companies %}
+                        <li>
+                            <a href="/company/{{ post.id }}">
+                                <img src="{{ post.getAvatarThumb(200) }}" width="242" height="390">
+                                <span class="intro"><h5><i>渭源井泓信息技术有限公司1</i></h5>
+                                    <p>
+                                        {{ post.description }}
+                                    </p>
+                                </span>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
         </div>
-        {% endfor %}
     </div>
-    {% endif %}
-</div>
+</section>

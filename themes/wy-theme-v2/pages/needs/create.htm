@@ -9,23 +9,20 @@ function onStart()
 if(!Auth::check()){
 return Redirect::to('/account');
 }
-
+$this->addCss('https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css');
 $this->addCss('assets\vendor\summernote-0.8.3-dist\dist\summernote.css');
 $this->addJs('assets/vendor/summernote-0.8.3-dist/dist/summernote.min.js');
 $this->addJs('assets/vendor/summernote-0.8.3-dist/dist/lang/summernote-zh-CN.js');
 }
 ==
-<div class="container m-t">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    发布新需求
-                </div>
-                <div class="panel-body">
-                    {% partial 'needs/need-form' method='onCreateNeed' %}
-                </div>
-            </div>
+
+<section class="box index-lyzx ">
+    <div class="lyzx-title">
+        <span>需求发布</span>
+    </div>
+    <div class="lyzx-body ">
+        <div class="liuyan_box01 " style="padding:15px;">
+            {% partial 'needs/need-form' method='onCreateNeed' %}
         </div>
     </div>
-</div>
+</section>

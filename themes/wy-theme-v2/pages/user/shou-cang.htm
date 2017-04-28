@@ -5,28 +5,47 @@ layout="default"
 [shouCang]
 ==
 function onEnd(){
-//var_dump($this->courses->toArray());
-$count=\Buuug7\Courses\Models\Course::find(1)->categories()->attach(2);
-var_dump($this->count);
+
 }
 ==
 
-<div class="container m-t">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    已收藏课程
-                </div>
-                <div class="panel-body">
-                    <ul class="list-group">
-                        {% for course in courses %}
-                        <li class="list-group-item"><a href="/courses/course/{{ course.slug }}">{{ course.title }}</a></li>
-                        {% endfor %}
-                    </ul>
-                    {{ courses.render|raw }}
-                </div>
-            </div>
-        </div>
+<section class="box user user-collect">
+    <div class="mainLeft float-left">
+        <ul>
+            <li class=" ">
+                <span class="icon-notice"></span>
+                <a href="/account">账号</a>
+            </li>
+            <li class="">
+                <span class="icon-notice1"></span>
+                <a href="/user/company">公司</a>
+            </li>
+            <li class="active">
+                <span class="icon-notice1"></span>
+                <a href="/shoucang">收藏课程</a>
+            </li>
+            <li class="">
+                <span class="icon-notice2"></span>
+                <a href="/needs">我的发布</a>
+            </li>
+        </ul>
     </div>
-</div>
+    <div class="mainRight float-right  ">
+        <div class="content-title">
+            <a href="user.html">个人收藏</a>
+            <span></span>
+
+        </div>
+        <div class="content">
+            <ul>
+                {% for course in courses %}
+                <li>
+                    <a href="/courses/course/{{ course.slug }}">{{ course.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+</section>
+

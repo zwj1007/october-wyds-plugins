@@ -24,12 +24,16 @@
         </div>
     </div>
     <header>
-
         <div class="float-left logo">
             <img src="images/logo2.png" alt="">
         </div>
         <div class="float-right head-right">
             <ul>
+                <li>
+                    <a href="login.html"> <img src="images/icon4.png" alt=""></a>
+                    <p> 注册登录</p>
+
+                </li>
                 <li>
                     <a href="index-lxwm.html"> <img src="images/icon2.png" alt=""></a>
                     <p> 联系我们</p>
@@ -54,11 +58,9 @@
             <li><a href="dszx-list.html">电商资讯</a></li>
             <li><a href="zhcjd-list.html">政策解读</a></li>
             <li><a href="xspx-list.html">线上培训</a></li>
-            <li><a href="cpyx-list.html">产品营销</a></li>
-            <!--<li><a href="ppqy-list.html">品牌企业</a></li>-->
+            <li><a href="bdds-list.html">本地电商</a></li>
             <li><a href="http://1.jq2.com:8085/">电商学院</a></li>
-            <li><a href="#">数据统计</a></li>
-            <li><a href="login.html">需求发布</a></li>
+            <li><a href="xqfb.html">需求发布</a></li>
         </ul>
     </nav>
 
@@ -77,12 +79,8 @@
                 <a href="user-pwd.html">更改密码</a>
             </li>
             <li class="">
-                <span class="icon-notice1"></span>
-                <a href="#!">个人收藏</a>
-            </li>
-            <li class="">
                 <span class="icon-notice2"></span>
-                <a href="#！">我的活动</a>
+                <a href="user-collect.html">个人收藏</a>
             </li>
 
 
@@ -94,38 +92,18 @@
             <span></span>
 
         </div>
-
         <div class="content">
             <form id="ucMsg" action="#!" method="post" novalidate="novalidate">
                 <div class="leftBar float-left">
                     <div id="img_title_container">
                         <img id="avatarUrl" src="images/user/userPhoto.jpg ">
                     </div>
-                    <!-- <script type="text/javascript">
-                         $("#img_title_container img").load(function () {
-                             img = $(this);
-                             var w = img.width();
-                             var h = img.height();
-                             if (w >= h) {
-                                 img.css("marginLeft", "0px");
-                                 img.css("width", "190px");
-                                 img.css("marginTop", (190 - img.height()) / 2);
-                             } else {
-                                 img.css("marginTop", "0px");
-                                 img.css("height", "190px");
-                                 img.css("marginLeft", (190 - img.width()) / 2);
-                             }
-                         });
-                         var img = " http://www.yweps.org/images/userPhoto.jpg ";
-                         jQuery("#img_title_container img").attr("src", img);
-                     </script>-->
                     <a class="imgFile">修改头像
                         <input type="file" name="img_title_file" id="img_title_file"
                                onchange="uploadImg()">
                     </a>
 
                 </div>
-
                 <div class="rightBar float-right">
                     <div id="nameTips">
                         <span>登录名：</span>
@@ -152,7 +130,6 @@
                         <span>联系人：</span>
                         <input type="text" id="contactName" name="contactName" value="" placeholder="联系人">
                     </div>
-
                     <input id="ucmsgSave" type="button" class="imgFile" value="保存">
                 </div>
             </form>
@@ -180,160 +157,6 @@
         <p>Copyright 2015 甘ICP备123546224 <i></i> 甘公网安备 3323430240号 </p>
     </div>
 </footer>
-
-
-<!--<script type="text/javascript" src="http://www.yweps.org/plug/layer/layer.js"></script>
-<script async="" src="http://www.yweps.org/js/gtm.js"></script>
-<script type="text/javascript" src="http://www.yweps.org/js/jquery-1.11.3.min.js"></script>
-<script src="http://www.yweps.org/js/ajaxfileupload.js" type="text/javascript" charset="utf-8"></script>
-<script src="http://www.yweps.org/js/jquery.validate.js"></script>
-<script src="http://www.yweps.org/js/validate-methods.js"></script>
-<script src="http://www.yweps.org/js/jquery-ui.min.js"></script>
-<script src="http://www.yweps.org/jquery/jquery.validate.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#ucMsg input').blur(function () {
-            var trimV = $.trim($(this).val());
-            $(this).val(trimV);
-        });
-    });
-
-    function uploadImg() {
-        $.ajaxFileUpload({
-            url: "http://www.yweps.org/upload.htm",//用于文件上传的服务器端请求地址
-            secureuri: false,//一般设置为false
-            fileElementId: 'img_title_file',//文件上传控件的id属性
-            dataType: 'json',//返回值类型 一般设置为json
-            success: function (data, status) //服务器成功响应处理函数
-            {
-                var img;
-                if ($("#img_title_container img").length == 0) {
-                    var img = $("<img />");
-                    $("#img_title_container").append(img);
-
-                } else {
-                    var img = $("#img_title_container img");
-                }
-
-                img.attr("src", 'http://img.yweps.org/' + data.file);
-                img.load(function () {
-                    var w = img.width();
-                    var h = img.height();
-
-                    if (w >= h) {
-                        img.css("width", "190px");
-                        img.css("marginTop", (190 - img.height()) / 2);
-                    } else {
-                        img.css("height", "190px");
-                        img.css("marginLeft", (190 - img.width()) / 2);
-                    }
-
-                });
-                $("#faceImg").val(data.file);
-            },
-            error: function (data, status, e)//服务器响应失败处理函数
-            {
-                alert(e);
-            }
-        });
-    }
-</script>
-
-<script type="text/javascript">
-
-    $("#ucmsgSave").click(function () {
-        var resultFlag = $("#ucMsg").valid();
-        if (resultFlag) {
-            $.ajax({
-                url: "http://www.yweps.org/uc/main.htm",
-                type: "post",
-                dataType: "json",
-                data: {
-                    nickName: function () {
-                        return $("#nickName").val();
-                    },
-                    email: function () {
-                        return $("#email").val();
-                    },
-                    picUser: function () {
-                        return $("#faceImg").val();
-                    },
-                    compName: function () {
-                        return $("#compName").val();
-                    },
-                    contactName: function () {
-                        return $("#contactName").val();
-                    },
-                    compAddress: function () {
-                        return $("#compAddress").val();
-                    }
-                },
-                success: function (result, textStatus) {
-                    if (result.success) {
-                        layer.alert(result.message);
-                    } else {
-                        layer.alert(result.errorMessage);
-                    }
-                }
-            });
-        }
-        return;
-    });
-
-    $("#ucMsg").validate({
-        onfocusout: function (element) {
-            $(element).valid();
-        },
-        ignore: "",
-        rules: {
-            nickName: {
-                required: true,
-                remote: {
-                    type: "POST",
-                    url: "http://www.yweps.org/uc/nickName.htm",
-                    async: false,
-                    data: {
-                        nickName: function () {
-                            return $("#nickName").val();
-                        }
-                    }
-                }
-            },
-            email: {
-                email: true
-            },
-            compAddress: {
-                required: true
-            }
-        },
-        messages: {
-            nickName: {
-                required: "请输入昵称",
-                remote: "该昵称已存在"
-            },
-            email: {
-                email: "请输入正确格式的邮箱"
-            },
-            compAddress: {
-                required: "请输入公司地址"
-            }
-        },
-        highlight: function (element, errorClass, validClass) {
-            //打开高亮
-        },
-        unhighlight: function (element, errorClass, validClass) {
-            //关闭高亮
-        },
-        errorPlacement: function (error, element) {
-            layer.tips(error.text(), element.parent(), {tipsMore: true, tips: 2});
-        },
-        errorClass: "onError",
-        errorElement: "div"
-
-    });
-
-
-</script>-->
 
 
 </body>

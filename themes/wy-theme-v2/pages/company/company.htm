@@ -8,39 +8,35 @@ $this['company']=\Buuug7\User\Models\Company::findById($this->param('id'));
 }
 ==
 
-<div class="container m-t">
-    <div class="row">
-        <div class="col-md-9">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    {{ company.name }}
-                </div>
-                <div class="panel-body">
-                    {{ company.description }}
-                    <dl class="dl-horizontal margin-top-20">
-                        <dt>公司地址</dt>
-                        <dd>{{ company.address }}</dd>
-                        <dt>联系电话</dt>
-                        <dd>{{ company.contact_phone }}</dd>
-                        <dt>推荐企业</dt>
-                        <dd>{{ company.featured ? '是' : '否' }}</dd>
-                    </dl>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    {{ company.detail|raw }}
-                </div>
-            </div>
+<section class="box content-qypp ">
+    <div class="ppqy-top">
+        <div class="content-qypp-left float-left">
+            <img src="{{ company.getAvatarThumb(400) }}" alt="">
         </div>
-
-        <div class="col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <img src="{{ company.getAvatarThumb(400) }}" alt="" class="img-responsive">
-                </div>
+        <div class="content-qypp-right float-right">
+            <div class="qypp-content">
+                <h1> {{ company.name }}</h1>
+                <p>公司地址：{{ company.address }}</p>
+                <p>联系电话: {{ company.contact_phone }}</p>
+                <p>发布日期： {{ company.checked_at|time_diff }}</p>
             </div>
 
         </div>
     </div>
-</div>
+    <div class="ppqy-body">
+        <div class="ppqy-body-post1">
+            <ul class="post1-title">
+                <li><span>企业简介</span></li>
+            </ul>
+            <div class="service_item">
+                {{ company.description }}
+            </div>
+            <ul class="post1-title">
+                <li><span>详情</span></li>
+            </ul>
+            <div class="service_item">
+                {{ company.detail|raw }}
+            </div>
+        </div>
+    </div>
+</section>
