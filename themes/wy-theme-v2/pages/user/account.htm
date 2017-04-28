@@ -8,7 +8,7 @@ paramCode = "code"
 [b7Account]
 ==
 function onStart(){
-//var_dump($this->canRegister);
+if(!Auth::check()) return Redirect::to('/login');
 }
 ==
 
