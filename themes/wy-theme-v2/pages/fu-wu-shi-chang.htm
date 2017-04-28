@@ -17,132 +17,115 @@ $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',5);
 }
 ==
 
-<div class="container m-t">
+<div class="box fwsc-list">
     <div class="jumbotron">
         <div class="container">
-            <h2>{{ this.page.title }}</h2>
+            <h2>服务市场</h2>
             <p>
                 快速发布您个人或者公司的需求
             </p>
             <p>
-                <a href="/needs/need/create" class="btn btn-primary"><i class="icon icon-plus"></i> 需求发布</a>
+                <a href="/needs/need/create">
+                    <button>发布需求</button>
+                </a>
             </p>
         </div>
     </div>
+
 </div>
 
-<div class="container">
-    <!--最新 + 推荐-->
-    <div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <!-- Default panel contents -->
-                <div class="panel-heading">最新发布</div>
-                <!-- List group -->
-                <ul class="list-group">
-                    {% for need in checkedNeeds %}
-                    <li class="list-group-item overflow-h text-overflow-ellipsis">
-                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
-                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
 
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <!-- Default panel contents -->
-                <div class="panel-heading"><i class="fa fa-star color-danger"></i> 推荐</div>
-                <!-- List group -->
-                <ul class="list-group">
-                    {% for need in featuredNeeds %}
-                    <li class="list-group-item overflow-h text-overflow-ellipsis">
-                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
-                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
+<section class="box fwsc-list ">
+    <div class="fwsc-zxfb">
+        <div class="hd"><i>最新发布</i></div>
+        <div class="dd">
+            <ul>
+                {% for need in checkedNeeds %}
+                <li>
+                    <a href="/needs/need/{{ need.id }}" target="_blank">
+                        <span>{{ need.title }}</span>
+                    </a>
+                    <span class="time">{{ need.checked_at|time_diff }}</span>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
+</section>
+<section class="box fwsc-list" style="margin-bottom: 30px">
+    <div class="hd"><i>推荐</i></div>
+    <div class="dd">
+        <ul>
+            {% for need in featuredNeeds %}
+            <li>
+                <a href="/needs/need/{{ need.id }}" target="_blank">
+                    <span>{{ need.title }}</span>
+                </a>
+                <span class="time">{{ need.checked_at|time_diff }}</span></li>
+            {% endfor %}
 
-    <!--按照分类显示-->
-    <div class="row">
-        {% if categoryZhaoPin.count %}
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    招聘
-                    <a href="/needs/category/zhaopin" class="pull-right">更多 <i class="fa fa-angle-double-right"></i></a>
-                </div>
-                <ul class="list-group">
-                    {% for need in categoryZhaoPin %}
-                    <li class="list-group-item overflow-h text-overflow-ellipsis">
-                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
-                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-        {% endif %}
-
-        {% if categoryFangChan.count %}
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    房产
-                    <a href="/needs/category/fangchan" class="pull-right">更多 <i class="fa fa-angle-double-right"></i></a>
-                </div>
-                <ul class="list-group">
-                    {% for need in categoryFangChan %}
-                    <li class="list-group-item overflow-h text-overflow-ellipsis">
-                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
-                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-        {% endif %}
-
-        {% if categoryErShow.count %}
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    二手
-                    <a href="/needs/category/ershou" class="pull-right">更多 <i class="fa fa-angle-double-right"></i></a>
-                </div>
-                <ul class="list-group">
-                    {% for need in categoryErShow %}
-                    <li class="list-group-item overflow-h text-overflow-ellipsis">
-                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
-                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-        {% endif %}
-
-        {% if categoryQiTa.count %}
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    其他
-                    <a href="/needs/category/qita" class="pull-right">更多 <i class="fa fa-angle-double-right"></i></a>
-                </div>
-                <ul class="list-group">
-                    {% for need in categoryQiTa %}
-                    <li class="list-group-item overflow-h text-overflow-ellipsis">
-                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
-                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-        {% endif %}
+        </ul>
     </div>
-</div>
+</section>
+<section class="box fwsc-list" style="margin-bottom: 30px">
+    <div class="hd"><i>招聘</i><a href="/needs/category/zhaopin"><span>more+</span></a></div>
+    <div class="dd">
+        <ul>
+            {% for need in categoryZhaoPin %}
+            <li>
+                <a href="/needs/need/{{ need.id }}" target="_blank">
+                    <span>{{ need.title }}</span>
+                </a>
+                <span class="time">{{ need.checked_at|time_diff }}</span></li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+<section class="box fwsc-list " style="margin-bottom: 30px">
+    <div class="hd"><i>房产</i><a href="/needs/category/fangchan"><span>more+</span></a></div>
+    <div class="dd">
+        <ul>
+            {% for need in categoryFangChan %}
+
+            <li>
+                <a href="/needs/need/{{ need.id }}" target="_blank">
+                    <span>{{ need.title }}</span>
+                </a>
+                <span class="time">{{ need.checked_at|time_diff }}</span></li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</section>
+
+<section class="box fwsc-list " style="margin-bottom: 30px">
+    <div class="hd"><i>二手</i><a href="/needs/category/ershou"><span>more+</span></a></div>
+    <div class="dd">
+        <ul>
+            {% for need in categoryErShow %}
+
+            <li>
+                <a href="/needs/need/{{ need.id }}" target="_blank">
+                    <span>{{ need.title }}</span>
+                </a>
+                <span class="time">{{ need.checked_at|time_diff }}</span></li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</section>
+<section class="box fwsc-list " style="margin-bottom: 30px">
+    <div class="hd"><i>其他</i><a href="/needs/category/qita"><span>more+</span></a></div>
+    <div class="dd">
+        <ul>
+            {% for need in categoryQiTa %}
+            <li>
+                <a href="/needs/need/{{ need.id }}" target="_blank">
+                    <span>{{ need.title }}</span>
+                </a>
+                <span class="time">{{ need.checked_at|time_diff }}</span></li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</section>

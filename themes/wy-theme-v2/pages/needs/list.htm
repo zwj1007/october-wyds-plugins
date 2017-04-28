@@ -12,31 +12,26 @@ $this->page->title='服务市场 | '.\Buuug7\User\Models\Need::getCategories()[$
 $this['needs']=\Buuug7\User\Models\Need::displayChecked();
 }
 
-
 //var_dump($this->needs->count());
+
 }
 ==
 
-<div class="jumbotron">
-    <div class="container">
-        <h2>{{ this.page.title }}</h2>
-        <p>All needs show below,you can search by use the post title and slug</p>
+<section class="box fwsc-list " style="margin-bottom: 30px">
+    <div class="hd"><i>{{ this.page.title }}</i></div>
+    <div class="dd" style="height: auto;">
+        <ul>
+            {% for need in needs %}
+            <li>
+                <a href="/needs/need/{{ need.id }}" target="_blank">
+                    <span>{{ need.title }}</span>
+                </a>
+                <span class="time">{{ need.checked_at|time_diff }}</span>
+            </li>
+            {% endfor %}
+        </ul>
     </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        {% for chunk in needs.chunk(3) %}
-        <div class="col-md-4 m-b">
-            <ul class="list-unstyled">
-                {% for need in chunk %}
-                <li class="">
-                    <a href="/needs/need/{{ need.id }}"><h4>{{ need.title }}</h4></a>
-                    <small>{{ need.checked_at|time_diff }} / by {{ need.user.name }}</small>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-        {% endfor %}
+    <div style="margin-left: 45px;">
+        {{ needs.render|raw }}
     </div>
-</div>
+</section>

@@ -7,23 +7,19 @@ function onStart(){
 $this['need']=\Buuug7\User\Models\Need::findById($this->param('id'));
 }
 ==
-<div class="container m-t">
-    <div class="row">
-        <div class="col-md-8">
-            {% if need %}
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    {{ need.title }}
-                </div>
-                <div class="panel-body">
-                    <h4 class="lead"> {{ need.title }}</h4>
-                    <p class="lead">联系电话: {{ need.contact_phone }}</p>
-                    {{ need.description|raw }}
-                </div>
-            </div>
-            {% else %}
-            <p class="lead">您的信息正在审核当中.</p>
-            {% endif %}
-        </div>
+
+<section class="box index-lyzx xqfb-browse ">
+    {% if need %}
+    <div class="xqfb-browse-title">
+        <h3> {{ need.title }}</h3>
     </div>
-</div>
+    <div class="xqfb-browse-body ">
+
+
+        <p class="p-ct"> 联系电话:<span> {{ need.contact_phone }}</span></p>
+        {{ need.description|raw }}
+    </div>
+    {% else %}
+    <p class="lead">您的信息正在审核当中.</p>
+    {% endif %}
+</section>

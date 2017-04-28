@@ -1,6 +1,6 @@
 title = '需求'
 url = '/needs/need/create'
-layout = 'default'
+layout = 'default-v2'
 
 [b7Need]
 ==
@@ -9,7 +9,7 @@ function onStart()
 if(!Auth::check()){
 return Redirect::to('/account');
 }
-$this->addCss('https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css');
+$this->addCss('https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css');
 $this->addCss('assets\vendor\summernote-0.8.3-dist\dist\summernote.css');
 $this->addJs('assets/vendor/summernote-0.8.3-dist/dist/summernote.min.js');
 $this->addJs('assets/vendor/summernote-0.8.3-dist/dist/lang/summernote-zh-CN.js');
