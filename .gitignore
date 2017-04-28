@@ -15,6 +15,7 @@ modules
 plugins/indikator
 plugins/october
 plugins/rainlab
+!plugins/rainlab/user
 storage
 themes/demo
 vendor
