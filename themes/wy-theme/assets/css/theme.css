@@ -660,6 +660,15 @@ a:visited {
 .btn-line:visited {
   color: #fff;
 }
+.btn-line-warning {
+  border: 1px solid #f39c12;
+  background-color: transparent;
+  color: #f39c12;
+}
+.btn-line-warning:hover {
+  color: #fff;
+  background-color: #f39c12;
+}
 .page-header {
   border-bottom: 1px solid #eeeeee;
 }
@@ -706,11 +715,41 @@ a:visited {
 .panel-trans > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: transparent;
 }
+.panel-trans .panel-heading {
+  padding-right: 60px;
+  position: relative;
+}
+.panel-trans .panel-heading .more {
+  position: absolute;
+  right: 15px;
+  top: 22px;
+}
 .panel-trans .list-group .list-group-item {
   background-color: transparent;
+  padding-right: 45px;
+  position: relative;
+}
+.panel-trans .list-group .list-group-item > .time {
+  position: absolute;
+  right: 15px;
 }
 .panel-trans .list-group .list-group-item > a {
   color: #333333;
+}
+.panel-list-group-time .panel-heading span.title {
+  font-weight: bold;
+}
+.panel-list-group-time .list-group .list-group-item {
+  background-color: transparent;
+  padding-right: 60px;
+  position: relative;
+}
+.panel-list-group-time .list-group .list-group-item > a {
+  color: #333333;
+}
+.panel-list-group-time .list-group .list-group-item > .time {
+  position: absolute;
+  right: 15px;
 }
 .headline {
   display: block;

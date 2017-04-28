@@ -35,15 +35,17 @@ $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',5);
     <!--最新 + 推荐-->
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-list-group-time">
                 <!-- Default panel contents -->
-                <div class="panel-heading">最新发布</div>
+                <div class="panel-heading">
+                    <span class="title">最新发布</span>
+                </div>
                 <!-- List group -->
                 <ul class="list-group">
                     {% for need in checkedNeeds %}
                     <li class="list-group-item overflow-h text-overflow-ellipsis">
-                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
-                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
+                        <a href="/needs/need/{{ need.id }}" class="">{{ need.title }}</a>
+                        <span class="small time">{{ need.checked_at|time_diff }}</span>
                     </li>
                     {% endfor %}
                 </ul>
@@ -51,15 +53,17 @@ $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',5);
         </div>
 
         <div class="col-md-6">
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-list-group-time">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><i class="fa fa-star color-danger"></i> 推荐</div>
+                <div class="panel-heading">
+                    <span class="title"><i class="fa fa-star color-danger"></i> 推荐</span>
+                </div>
                 <!-- List group -->
                 <ul class="list-group">
                     {% for need in featuredNeeds %}
                     <li class="list-group-item overflow-h text-overflow-ellipsis">
-                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
-                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
+                        <a href="/needs/need/{{ need.id }}" class="">{{ need.title }}</a>
+                        <span class="small time">{{ need.checked_at|time_diff }}</span>
                     </li>
                     {% endfor %}
                 </ul>
@@ -71,16 +75,16 @@ $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',5);
     <div class="row">
         {% if categoryZhaoPin.count %}
         <div class="col-md-6">
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-list-group-time">
                 <div class="panel-heading">
-                    招聘
+                    <span class="title">招聘</span>
                     <a href="/needs/category/zhaopin" class="pull-right">更多 <i class="fa fa-angle-double-right"></i></a>
                 </div>
                 <ul class="list-group">
                     {% for need in categoryZhaoPin %}
                     <li class="list-group-item overflow-h text-overflow-ellipsis">
-                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
-                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
+                        <a href="/needs/need/{{ need.id }}" class="">{{ need.title }}</a>
+                        <span class="small time">{{ need.checked_at|time_diff }}</span>
                     </li>
                     {% endfor %}
                 </ul>
@@ -90,16 +94,16 @@ $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',5);
 
         {% if categoryFangChan.count %}
         <div class="col-md-6">
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-list-group-time">
                 <div class="panel-heading">
-                    房产
+                    <span class="title">房产</span>
                     <a href="/needs/category/fangchan" class="pull-right">更多 <i class="fa fa-angle-double-right"></i></a>
                 </div>
                 <ul class="list-group">
                     {% for need in categoryFangChan %}
                     <li class="list-group-item overflow-h text-overflow-ellipsis">
-                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
-                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
+                        <a href="/needs/need/{{ need.id }}" class="">{{ need.title }}</a>
+                        <span class="small time">{{ need.checked_at|time_diff }}</span>
                     </li>
                     {% endfor %}
                 </ul>
@@ -109,16 +113,16 @@ $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',5);
 
         {% if categoryErShow.count %}
         <div class="col-md-6">
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-list-group-time">
                 <div class="panel-heading">
-                    二手
+                    <span class="title">二手</span>
                     <a href="/needs/category/ershou" class="pull-right">更多 <i class="fa fa-angle-double-right"></i></a>
                 </div>
                 <ul class="list-group">
                     {% for need in categoryErShow %}
                     <li class="list-group-item overflow-h text-overflow-ellipsis">
-                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
-                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
+                        <a href="/needs/need/{{ need.id }}" class="">{{ need.title }}</a>
+                        <span class="small time">{{ need.checked_at|time_diff }}</span>
                     </li>
                     {% endfor %}
                 </ul>
@@ -128,7 +132,7 @@ $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',5);
 
         {% if categoryQiTa.count %}
         <div class="col-md-6">
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-list-group-time">
                 <div class="panel-heading">
                     其他
                     <a href="/needs/category/qita" class="pull-right">更多 <i class="fa fa-angle-double-right"></i></a>
@@ -136,8 +140,8 @@ $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',5);
                 <ul class="list-group">
                     {% for need in categoryQiTa %}
                     <li class="list-group-item overflow-h text-overflow-ellipsis">
-                        <a href="/needs/need/{{ need.id }}" class="t-nw">{{ need.title }}</a>
-                        <span class="small pull-right">{{ need.checked_at|time_diff }}</span>
+                        <a href="/needs/need/{{ need.id }}" class="">{{ need.title }}</a>
+                        <span class="small time">{{ need.checked_at|time_diff }}</span>
                     </li>
                     {% endfor %}
                 </ul>

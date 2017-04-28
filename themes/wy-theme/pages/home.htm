@@ -5,7 +5,7 @@ layout = "default"
 function onStart()
 {
 // 推荐 特色
-$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(5)->toArray();
+$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(4);
 
 // 电商动态
 $this['dianShangDongTai'] = \Buuug7\News\Models\Post::displayByCategory('dian-shang-dong-tai',4);
@@ -38,7 +38,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
 ==
 
 
-<div class="container m-t">
+<div class="container m-t m-b">
     <div class="jumbotron jumbotron-v1">
         <div class="container">
             <div class="clearfix">
@@ -53,10 +53,9 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
                         {% if user %}
                         <a href="/account" class="btn btn-success m-b">用户中心</a>
                         {% else %}
-                        <a href="/account" class="btn btn-primary m-b">登录 / 注册</a>
+                        <a href="/account" class="btn btn-line-warning m-b">登录 / 注册</a>
                         {% endif %}
-                        <a href="/needs/need/create" class="btn btn-danger m-b">发布信息</a>
-
+                        <a href="/needs/need/create" class="btn btn-warning m-b">发布信息</a>
                     </div>
                 </div>
             </div>
@@ -67,62 +66,24 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
 
 <div class="container">
 
-    <!--推荐资讯-->
-    {% if featuredPosts %}
-    <div class="headline">
-        <h2>推荐资讯</h2>
-    </div>
-    <div class="row m-b">
-        <div class="col-sm-6">
-            <a class="news-wrap m-b" href="/news/post/{{ featuredPosts[0].slug }}">
-                <img src="{{ featuredPosts[0].image|media }}" alt="{{ featuredPosts[0].title }}" class="img-responsive">
-                <p class="title text-shadow">{{ featuredPosts[0].title }}</p>
-            </a>
-        </div>
-        <div class="col-sm-6">
-            <div class="row">
-                <div class="col-sm-6">
-                    <a class="news-wrap" href="/news/post/{{ featuredPosts[1].slug }}">
-                        <img src="{{ featuredPosts[1].image|media }}" alt="{{ featuredPosts[1].title }}" class="img-responsive">
-                        <p class="title text-shadow small">{{ featuredPosts[1].title }}</p>
-                    </a>
-                    <p style="width:5px;height: 5px"></p>
-                    <a class="news-wrap" href="/news/post/{{ featuredPosts[2].slug }}">
-                        <img src="{{ featuredPosts[2].image|media }}" alt="{{ featuredPosts[2].title }}" class="img-responsive">
-                        <p class="title text-shadow small">{{ featuredPosts[2].title }}</p>
-                    </a>
-                </div>
-                <div class="col-sm-6">
-                    <a class="news-wrap" href="/news/post/{{ featuredPosts[3].slug }}">
-                        <img src="{{ featuredPosts[3].image|media }}" alt="{{ featuredPosts[3].title }}" class="img-responsive">
-                        <p class="title text-shadow small">{{ featuredPosts[3].title }}</p>
-                    </a>
-                    <p style="width:5px;height: 5px"></p>
-                    <a class="news-wrap" href="/news/post/{{ featuredPosts[4].slug }}">
-                        <img src="{{ featuredPosts[4].image|media }}" alt="{{ featuredPosts[4].title }}" class="img-responsive">
-                        <p class="title text-shadow small">{{ featuredPosts[4].title }}</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    {% endif %}
 
     <!--电商动态+政策解读-->
-    <div class="tab-v1">
+    <div class="tab-v1 m-t">
         <ul class="nav nav-tabs">
-            <li class="active"><a href="#home" data-toggle="tab" aria-expanded="true" style="font-size: 20px">电商动态</a>
+            <li class="active"><a href="#tab1" data-toggle="tab" aria-expanded="true" style="font-size: 20px">推荐资讯</a>
             </li>
-            <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false" style="font-size: 20px">政策解读</a>
+            <li class=""><a href="#tab2" data-toggle="tab" aria-expanded="true" style="font-size: 20px">电商动态</a>
+            </li>
+            <li class=""><a href="#tab3" data-toggle="tab" aria-expanded="false" style="font-size: 20px">政策解读</a>
             </li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane fade active in" id="home">
+            <div class="tab-pane fade active in" id="tab1">
                 <div class="row m-b">
-                    {% for post in dianShangDongTai %}
+                    {% for post in featuredPosts %}
                     <div class="col-md-3 col-sm-4">
                         <a href="/news/post/{{ post.slug }}">
-                            <h4 class="color-primary" style="height:50px;overflow: hidden;line-height: 1.2">
+                            <h4 class="" style="height:50px;overflow: hidden;line-height: 1.2">
                                 {{post.title|slice(0,20)}}
                             </h4>
                         </a>
@@ -131,12 +92,26 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
                     {% endfor %}
                 </div>
             </div>
-            <div class="tab-pane fade" id="profile">
+            <div class="tab-pane fade" id="tab2">
+                <div class="row m-b">
+                    {% for post in dianShangDongTai %}
+                    <div class="col-md-3 col-sm-4">
+                        <a href="/news/post/{{ post.slug }}">
+                            <h4 class="" style="height:50px;overflow: hidden;line-height: 1.2">
+                                {{post.title|slice(0,20)}}
+                            </h4>
+                        </a>
+                        <small>{{ post.published_at|date('Y,m月 d')}} / by {{ post.user.first_name }}</small>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab3">
                 <div class="row m-b">
                     {% for post in zhenCeJieDu %}
                     <div class="col-md-3 col-sm-4">
                         <a href="/news/post/{{ post.slug }}">
-                            <h4 class="color-primary" style="height:50px;overflow: hidden;line-height: 1.2">
+                            <h4 class="" style="height:50px;overflow: hidden;line-height: 1.2">
                                 {{post.title|slice(0,20)}}
                             </h4>
                         </a>
@@ -158,23 +133,6 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
         <div class="item">
             <a href="/news/post/{{ post.slug }}"><h4>{{ post.title }}</h4></a>
             <small>{{ post.published_at|date('Y,m月 d')}} / by {{ post.user.first_name }}</small>
-        </div>
-        {% endfor %}
-    </div>
-    {% endif %}
-
-    <!--政策解读-->
-    {% if zhenCeJieDu %}
-    <div class="headline">
-        <a href="/news/categories/zheng-ce-jie-du"><h2>政策解读</h2></a>
-    </div>
-    <div class="row">
-        {% for post in zhenCeJieDu %}
-        <div class="col-md-4">
-            <div class="callout callout-yellow">
-                <a href="/news/post/{{ post.slug }}"><h4>{{ post.title }}</h4></a>
-                <p class="size-small">{{ post.summary|raw|slice(0,50) }}</p>
-            </div>
         </div>
         {% endfor %}
     </div>

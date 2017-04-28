@@ -77,7 +77,7 @@ img.oc-img-bordered {
 }
 
 .bg-wrap-f7f7f7 {
-  background-color: darken(#f7f7f7,1%);
+  background-color: darken(#f7f7f7, 1%);
 }
 
 .text-shadow {
@@ -124,8 +124,8 @@ a:hover, a:visited {
   color: @brand-warning;
 }
 
-.color-666{
-  color:#666;
+.color-666 {
+  color: #666;
 }
 
 .bg-color-primary {
@@ -147,8 +147,6 @@ a:hover, a:visited {
 .bg-color-warning {
   background-color: @brand-warning;
 }
-
-
 
 .btn-social {
   position: relative;
@@ -232,6 +230,16 @@ a:hover, a:visited {
   }
 }
 
+.btn-line-warning{
+  border:1px solid @brand-warning;
+  background-color: transparent;
+  color:@brand-warning;
+  &:hover {
+    color: #fff;
+    background-color: @brand-warning;
+  }
+}
+
 .page-header {
   //margin: 20px 15px 20px 15px;
   border-bottom: 1px solid #eeeeee;
@@ -263,16 +271,54 @@ a:hover, a:visited {
   }
 }
 
-.panel-trans{
+.panel-trans {
   background-color: transparent;
-  .panel-variant(transparent,@gray-dark,transparent,#ddd);
-
-  .list-group{
-    .list-group-item{
+  .panel-variant(transparent, @gray-dark, transparent, #ddd);
+  .panel-heading {
+    padding-right: 60px;
+    position: relative;
+    .more {
+      position: absolute;
+      right: 15px;
+      top: 22px;
+    }
+  }
+  .list-group {
+    .list-group-item {
       background-color: transparent;
+      padding-right: 45px;
+      position: relative;
+
     }
-    .list-group-item >a{
-      color:@gray-dark;
+    .list-group-item > .time {
+      position: absolute;
+      right: 15px;
     }
+    .list-group-item > a {
+      color: @gray-dark;
+    }
+  }
+}
+
+.panel-list-group-time {
+  .panel-heading span.title {
+    font-weight: bold;
+  }
+
+  .list-group {
+    .list-group-item {
+      background-color: transparent;
+      padding-right: 60px;
+      position: relative;
+    }
+    .list-group-item > a {
+      color: @gray-dark;
+    }
+
+    .list-group-item > .time {
+      position: absolute;
+      right: 15px;
+    }
+
   }
 }
