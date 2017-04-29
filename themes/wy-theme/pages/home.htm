@@ -4,6 +4,8 @@ layout = "default"
 ==
 function onStart()
 {
+$this->addJs('https://cdn.bootcss.com/jquery-backstretch/2.0.4/jquery.backstretch.min.js');
+
 // 推荐 特色
 $this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(4);
 
@@ -273,5 +275,52 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
         {% endfor %}
     </div>
     {% endif %}
-
 </div>
+
+{% put scripts %}
+<script>
+
+    $('.owl-carousel-v1').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        navText:["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:4
+            }
+        }
+    });
+
+    $('.owl-carousel-v2').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        navText:["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+        responsive:{
+            0:{
+                items:2
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:6
+            }
+        }
+    })
+
+    $(".jumbotron-v1 .container > div").backstretch([
+        "themes/wy-theme/assets/images/home-header-bg-1.jpg",
+        "themes/wy-theme/assets/images/home-header-bg-2.jpg",
+        "themes/wy-theme/assets/images/home-header-bg-3.jpg",
+        "themes/wy-theme/assets/images/home-header-bg-4.png",
+    ], {duration: 5000});
+</script>
+{% endput %}
