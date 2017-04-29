@@ -751,6 +751,11 @@ a:visited {
   position: absolute;
   right: 15px;
 }
+.chart {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
 .headline {
   display: block;
   margin: 35px 0 20px 0;

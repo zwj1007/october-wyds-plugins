@@ -4,7 +4,148 @@ url = '/ui'
 layout = 'default'
 
 ==
+function onStart(){
+
+$this->addJs('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js');
+}
+==
 <div class="container mt">
+    <h2>chartJs</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Polar Area Chart (极地图)</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="chart">
+                        <canvas id="polar-area-chart"></canvas>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Pie Chart (饼状图)</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="chart">
+                        <canvas id="pie-chart"></canvas>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">doughnut Chart (线圈图)</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="chart">
+                        <canvas id="doughnut-chart"></canvas>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Radar Chart (雷达图)</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="chart">
+                        <canvas id="radar-chart"></canvas>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Bar Chart (条形图)</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="chart">
+                        <canvas id="bar-chart"></canvas>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Line Chart (线形图)</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="chart">
+                        <canvas id="line-chart"></canvas>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+
+    </div>
 
     <h2>panel-trans with list group</h2>
     <div class="row">
@@ -39,7 +180,6 @@ layout = 'default'
             </div>
         </div>
     </div>
-
 
 
     <h2>box</h2>
@@ -1475,3 +1615,152 @@ layout = 'default'
     </div>
 
 </div>
+
+{% put scripts %}
+<script>
+    // polar area chart
+    var ctxPolarAreaChart = document.getElementById('polar-area-chart');
+    var polarAreaChartData = {
+        datasets: [{
+            data: [110, 160, 70, 130, 140, 120],
+            backgroundColor: ["#3c8dbc", "#dd4b39", "#00a65a", "#00c0ef", "#f39c12", "#0073b7"],
+            label: 'My dataset' // for legend
+        }],
+        labels: ["一月份", "二月份", "三月份", "四月份", "五月份", "六月份"]
+    };
+    var polarAreaChart = new Chart(ctxPolarAreaChart, {
+        type: 'polarArea',
+        data: polarAreaChartData
+    });
+
+
+    // pie chart
+    var ctxPieChart = document.getElementById('pie-chart');
+    var pieChartDate = polarAreaChartData;
+    var pieChart = new Chart(ctxPieChart, {
+        type: 'pie',
+        data: pieChartDate
+    });
+
+    // radar chart
+    var ctxRadarChart = document.getElementById('radar-chart');
+    var radarChartData = {
+        labels: ["连杀", "补兵", "清野", "经济", "输出", "承受"],
+        datasets: [
+            {
+                label: "皮城女警",
+                backgroundColor: "rgba(179,181,198,0.2)",
+                borderColor: "rgba(179,181,198,1)",
+                pointBackgroundColor: "rgba(179,181,198,1)",
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: "rgba(179,181,198,1)",
+                data: [6, 9, 1, 7, 6, 2]
+            },
+            {
+                label: "蛮族之王",
+                backgroundColor: "rgba(255,99,132,0.2)",
+                borderColor: "rgba(255,99,132,1)",
+                pointBackgroundColor: "rgba(255,99,132,1)",
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: "rgba(255,99,132,1)",
+                data: [6, 9, 2, 8, 6, 9]
+            }
+        ]
+    };
+    var radarChart = new Chart(ctxRadarChart, {
+        type: 'radar',
+        data: radarChartData
+    });
+
+    // bar chart
+    var ctxBarChart = document.getElementById('bar-chart');
+    var barChartData = {
+        datasets: [
+            {
+                label: '2016前半年销售统计',// for legend
+                borderWidth: 1,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                data: [110, 160, 70, 130, 140, 120]
+            }
+        ],
+        labels: ["一月份", "二月份", "三月份", "四月份", "五月份", "六月份"]
+    };
+    var barChartOptions = {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    };
+    var barChart = new Chart(ctxBarChart, {
+        type: 'bar',
+        data: barChartData,
+        options: barChartOptions
+    });
+
+    // line chart
+    var ctxLineChart = document.getElementById('line-chart');
+    var lineChartData = {
+        labels: ["一月份", "二月份", "三月份", "四月份", "五月份", "六月份"],
+        datasets: [
+            {
+                label: "2016前半年销售统计",
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: "rgba(75,192,192,0.4)",
+                borderColor: "rgba(75,192,192,1)",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "rgba(75,192,192,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [110, 160, 70, 130, 140, 120],
+                spanGaps: false,
+            }
+        ]
+    };
+    var lineChartOptions = {};
+    var lineChart = new Chart(ctxLineChart, {
+        type: 'line',
+        data: lineChartData,
+        options: lineChartOptions
+    });
+
+    // doughnut chart
+    var ctxDoughnutChart=document.getElementById('doughnut-chart');
+    var doughnutChartData=polarAreaChartData;
+    var doughnutOptions={};
+    var doughnutChart=new Chart(ctxDoughnutChart,{
+        type: 'doughnut',
+        data: doughnutChartData,
+        options:doughnutChartData
+    });
+</script>
+{% endput %}
