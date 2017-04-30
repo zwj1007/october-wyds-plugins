@@ -554,7 +554,7 @@ class SeedAllTables extends Seeder
             <p>而那些年轻时打了鸡血以熬夜通宵为荣的白领们，恐怕到不了应当白头的年龄，就已经白发苍苍了吧？</p>
             <p>别再想着房价了，好好想想35岁以后你还能干嘛，还能去哪吧。</p>
             <div class="list-group">
-              <a href="#" class="list-group-item">
+              <a href="javascript:void(0);" class="list-group-item">
                 <h4 class="list-group-item-heading">@Kid__33</h4>
                 <p class="list-group-item-text">我83年的，有两个孩子，C9硕士， 在事业单位做小中层。有车有房。 别人说我人生赢家， 我说， 冷暖自知。 真真感觉到了人到中年的困惑和无力。</p>
                 <p class="list-group-item-text">事业上四平八稳，上不太动。没后台，周围暗箭不断。心累。</p>
@@ -562,11 +562,11 @@ class SeedAllTables extends Seeder
                 <p class="list-group-item-text">自己在准一线城市打拼，发小也不在身边。周围的人忙忙碌碌，能交心的不多。 有什么难处也不想和别人倾诉，自己扛。</p>
                 <p class="list-group-item-text">每天上上论坛，看看喜欢的球队。 仿佛身边热闹了很多。</p>
               </a>
-              <a href="#" class="list-group-item">
+              <a href="javascript:void(0);" class="list-group-item">
                 <h4 class="list-group-item-heading">@makoto924</h4>
                 <p class="list-group-item-text">说的在理，所以我不敢按揭换大房子。对自己保持收入的能力没有信心。</p>               
               </a>
-              <a href="#" class="list-group-item">
+              <a href="javascript:void(0);" class="list-group-item">
                 <h4 class="list-group-item-heading">@信德維拉</h4>
                 <p class="list-group-item-text">高端人物的后期核心竞争力都是御人之术。 技术和工作量甚至创意，都会枯竭，人到中年，家庭父母一堆琐事缠身，时间肯定不如年轻人，身体也不如年轻人，那么你的核心竞争力是什么？不是拼命加班，不是无敌的创意，而是搞定事情的能力。</p>
                 <p class="list-group-item-text">搞定事情，无非是搞定人的能力，搞定客户，搞定上司，搞定下属，这个能力，才是越老越值钱的关键。为什么这个位置非你不可？因为别人出马都搞不定，你几个电话，就搞定，这就是能力。</p>
