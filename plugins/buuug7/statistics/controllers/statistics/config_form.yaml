@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Statistic
+
+# Model Form Field configuration
+form: $/buuug7/statistics/models/statistic/fields.yaml
+
+# Model Class name
+modelClass: Buuug7\Statistics\Models\Statistic
+
+# Default redirect location
+defaultRedirect: buuug7/statistics/statistics
+
+# Create page
+create:
+    title: Create Statistic
+    redirect: buuug7/statistics/statistics/update/:id
+    redirectClose: buuug7/statistics/statistics
+
+# Update page
+update:
+    title: Edit Statistic
+    redirect: buuug7/statistics/statistics
+    redirectClose: buuug7/statistics/statistics
+
+# Preview page
+preview:
+    title: Preview Statistic

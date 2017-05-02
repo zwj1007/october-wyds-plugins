@@ -83,12 +83,25 @@ class Plugin extends PluginBase
     {
         return [
             'statistics' => [
-                'label'       => 'Statistics',
-                'url'         => Backend::url('buuug7/statistics/mycontroller'),
+                'label'       => '统计',
+                'url'         => Backend::url('buuug7/statistics/statistics'),
                 'icon'        => 'icon-bar-chart',
                 'permissions' => ['buuug7.statistics.*'],
                 'order'       => 500,
+                'sideMenu' => [
+                    'new_statistics' => [
+                        'label' => '添加统计',
+                        'icon' => 'icon-plus',
+                        'url' => Backend::url('buuug7/statistics/statistics/create'),
+                        'permission' => ['buuug7.statistics.access_statistics'],
+                    ],
+                    'statistics' => [
+                        'label' => '统计',
+                        'icon' => 'icon-area-chart',
+                    ],
+                ],
             ],
+
         ];
     }
 }

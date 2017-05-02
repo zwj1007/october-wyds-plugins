@@ -1,0 +1,36 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: 标题
+        placeholder: 统计标题
+    summary:
+        label: 概述
+        placeholder: 统计表单概述
+        type: textarea
+    detail:
+        table: 统计详情
+        type: repeater
+        prompt: 统计
+        form:
+            fields:
+                name:
+                    label: 品名
+                    type: text
+                    span: left
+                    size: tiny
+                price:
+                    label: 单价(元)
+                    type: number
+                    span: left
+                quantity:
+                    label: 数量(斤)
+                    span: left
+                    type: number
+                total:
+                    label: 总计
+                    span: left
+                    type: number
+

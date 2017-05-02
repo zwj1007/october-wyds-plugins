@@ -1,1 +1,4 @@
 1.0.1: First version of Statistics
+1.0.2:
+    - create statistic table
+    - create_statistics_table.php
