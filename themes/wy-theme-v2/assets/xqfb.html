@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style/app.css">
 </head>
 <body>
-<div>
+<header>
     <div class="topbar">
         <div class="inner">
             <div class="left"><span>欢迎您：user15193241273</span>来到渭源县电子商务公共服务平台 <span class="time"
@@ -18,7 +18,7 @@
             </ul>
         </div>
     </div>
-    <header>
+    <div class="head-long">
         <div class="float-left logo">
             <img src="images/logo2.png" alt="">
         </div>
@@ -46,7 +46,7 @@
             </ul>
         </div>
 
-    </header>
+    </div>
     <nav>
         <ul>
             <li><a href="index.html">首页</a></li>
@@ -59,64 +59,67 @@
             <li><a href="xqfb.html">需求发布</a></li>
         </ul>
     </nav>
+
+</header>
+
+<div class="main">
     <ol class="box breadcrumb">
         <li><a href="index.html">首页</a></li>
         <li class="active">需求发布</li>
     </ol>
-</div>
+    <section class="box index-lyzx ">
+        <div class="lyzx-title">
+            <span>需求发布</span>
+        </div>
+        <div class="lyzx-body ">
+            <div class="liuyan_box01 ">
+                <form name="postForm" id="postForm" action="" method="post" enctype="multipart/form-data">
+                    <div class=" box02">
+                        <ul>
+                            <li class="t01">
+                                <input name="subject" id="subject" maxlength="22" value="请输入标题，不超过22字"
+                                       onblur="if(this.value==''){this.value = '请输入标题，不超过22字'}"
+                                       onfocus="if(this.value=='请输入标题，不超过22字'){this.value = '';this.style.color='#000'}">
+                                <select name="typeId" id="typeId">
+                                    <option>类别</option>
+                                    <option value="1">招聘</option>
+                                    <option value="2">房产</option>
+                                    <option value="6">二手</option>
+                                    <option value="9">其他</option>
+                                </select>
+                            </li>
 
-<section class="box index-lyzx ">
-    <div class="lyzx-title">
-        <span>需求发布</span>
-    </div>
-    <div class="lyzx-body ">
-        <div class="liuyan_box01 ">
-            <form name="postForm" id="postForm" action="" method="post" enctype="multipart/form-data">
-                <div class=" box02">
-                    <ul>
-                        <li class="t01">
-                            <input name="subject" id="subject" maxlength="22" value="请输入标题，不超过22字"
-                                   onblur="if(this.value==''){this.value = '请输入标题，不超过22字'}"
-                                   onfocus="if(this.value=='请输入标题，不超过22字'){this.value = '';this.style.color='#000'}">
-                            <select name="typeId" id="typeId">
-                                <option>类别</option>
-                                <option value="1">招聘</option>
-                                <option value="2">房产</option>
-                                <option value="6">二手</option>
-                                <option value="9">其他</option>
-                            </select>
-                        </li>
-
-                        <li class="t02">
+                            <li class="t02">
                             <textarea name="content" id="content" rows="6" style="color:#939393"
                                       onfocus="if(this.value.substring(0, 3) == '请输入') {this.value='';}this.style.color='#333';"
                                       onblur="if(this.value=='') {this.value='请输入需求内容（字数不得少于20字，不得超过1000字）';
                                       this.style.color='#ccc';}">请输入需求内容（字数不得少于20字，不得超过1000字）
                             </textarea>
-                        </li>
+                            </li>
 
-                        <li class="t04">
-                            <em class="fl">联系方式
-                                <input name="truename" id="truename" value="用户名"
-                                       onblur="if(this.value==''){this.value = '用户名'}"
-                                       onfocus="if(this.value=='用户名'){this.value = '';this.style.color='#000'}">仅供工作人员查看，不对外公开
-                            </em>
-                        </li>
+                            <li class="t04">
+                                <em class="fl">联系方式
+                                    <input name="truename" id="truename" value="用户名"
+                                           onblur="if(this.value==''){this.value = '用户名'}"
+                                           onfocus="if(this.value=='用户名'){this.value = '';this.style.color='#000'}">仅供工作人员查看，不对外公开
+                                </em>
+                            </li>
 
-                        <li class="t05">
-                            <i class="fr"><input id="btn" type="button" value="需求发布"></i>
-                        </li>
+                            <li class="t05">
+                                <i class="fr"><input id="btn" type="button" value="需求发布"></i>
+                            </li>
 
-                    </ul>
-                </div>
-            </form>
+                        </ul>
+                    </div>
+                </form>
+
+            </div>
+
 
         </div>
 
-
-    </div>
-
-</section>
+    </section>
+</div>
 <footer>
     <ul>
         <li>

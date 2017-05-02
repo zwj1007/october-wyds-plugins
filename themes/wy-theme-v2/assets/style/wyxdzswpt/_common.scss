@@ -37,8 +37,12 @@ a:hover, a:link {
   float: right;
 }
 
-.box {
+.main {
   width: 1120px;
+  margin: 0 auto;
+}
+
+.box {
   margin: $margin-15 auto;
   .hd {
     color: #20102A;
@@ -58,6 +62,10 @@ a:hover, a:link {
 
 .margin-left-right-5 {
   margin: 0 $margin-5;
+}
+
+.margin-left-right-10 {
+  margin: 0 $margin-10;
 }
 
 .margin-left-5 {
@@ -87,6 +95,7 @@ a:hover, a:link {
 }
 
 .breadcrumb {
+  margin: $margin-15 auto;
   height: 36px;
   border-top: 1px solid #EDEDED;
   border-bottom: 1px solid #EDEDED;

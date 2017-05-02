@@ -48,7 +48,7 @@ class Need extends ComponentBase
     public function loadNeeds()
     {
         $user = Auth::getUser();
-        return $user->need()->paginate(25);
+        return $user->need()->paginate(2);
     }
 
 

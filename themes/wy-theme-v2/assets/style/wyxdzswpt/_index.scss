@@ -347,7 +347,7 @@
 
 //品牌企业
 .ppqy {
-  height: 224px;
+  height: 300px;
   .hd {
     text-align: left;
     padding-left: 0;
@@ -365,22 +365,20 @@
     }
   }
   .dd {
-    height: 158px;
+    height: 246px;
     overflow: hidden;
     margin: $margin-10 0;
     ul {
-      height: 74px;
+      height: 118px;
     }
-    /* ul.margin-bottom-10{
-       border-bottom: 1px dashed $border-color;
-     }*/
     ul li {
       float: left;
       text-align: center;
       width: 216px;
+      height: 108px;
       img {
-        width: 216px;
-        height: 70px;
+        width: 214px;
+        height: 106px;
         border: 1px solid $border-color;
       }
 

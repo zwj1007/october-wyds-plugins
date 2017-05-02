@@ -4,22 +4,32 @@ layout="default"
 
 [coursesCourses]
 categoryFilter = "{{ :slug }}"
-postsPerPage=1
+postsPerPage=4
 ==
+<section class="box syjc-list">
+    <ol class="box breadcrumb">
+        <li class="li-left25"><a href="index.html">首页</a></li>
+        <li><a href="/">线上培训</a></li>
+        <li class="active">书目推荐</li>
+    </ol>
+    <ul class="book-list ">
+        {% for post in courses %}
+        <li>
+            <a href="{{ post.url }}">
+                <img src="{% if post.image %}{{ post.image|media }} {% else %}http://placehold.it/800x400?text=没有缩略图{% endif %}" alt="">
+            </a>
+            <div class="des">
+                <a href="{{ post.url }}l"><h2>{{ post.title }}</h2></a>
+                <p>{{ post.user.first_name }}</p>
+                <p>{{ post.checked_at|date('Y ,m月d') }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 
-<div class="jumbotron">
-    <div class="container">
-        <h2>All courses</h2>
+    <div style="margin-left: 45px;">
+        {{ courses.render|raw }}
     </div>
-</div>
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            {% component 'coursesCourses' %}
-        </div>
-    </div>
-</div>
+</section>
 
 

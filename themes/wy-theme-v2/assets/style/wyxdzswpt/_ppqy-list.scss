@@ -1,24 +1,27 @@
 @charset "UTF-8";
 /*品牌企业列表页*/
 .ppqy-list {
+  border: 1px solid $border-color;
   .ppqy-list-v1 {
     ul {
       margin: 50px 90px;
-      height: 650px;
+      height: 690px;
       overflow: hidden;
       padding: 10px;
       li {
         float: left;
         border: 1px solid $border-color;
         margin-bottom: 20px;
-        width: 283px;
+        width: 280px;
         margin-right: 20px;
         text-align: center;
         a img {
-          width: 280px;
+          width: 240px;
+          height: 120px;
         }
         a p {
           color: $border-color;
+          margin-bottom: $margin-10;
         }
 
       }
@@ -31,10 +34,8 @@
       }
     }
   }
-
   .pagination {
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     text-align: center;
     ul {
       text-align: center;
@@ -54,4 +55,5 @@
       }
     }
   }
+
 }
