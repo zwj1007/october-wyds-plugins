@@ -1,25 +1,24 @@
-title = "Courses"
+title = "所有课程"
 url = "/courses/courses/:slug?/:page?"
 layout="default"
 
 [coursesCourses]
 categoryFilter = "{{ :slug }}"
-postsPerPage=1
+postsPerPage=15
 ==
 
 <div class="jumbotron">
     <div class="container">
-        <h2>All courses</h2>
+        <h2>所有课程</h2>
     </div>
 </div>
 
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-            {% component 'coursesCourses' %}
-        </div>
+        {% partial 'courses/block-v1' posts=courses %}
     </div>
+    {{ courses.render|raw }}
 </div>
 
 

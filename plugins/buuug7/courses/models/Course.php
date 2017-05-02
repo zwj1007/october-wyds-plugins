@@ -31,7 +31,7 @@ class Course extends Model
     protected $fillable = [];
 
     protected $jsonable = [
-        'files',
+        'files','videos'
     ];
 
     /*

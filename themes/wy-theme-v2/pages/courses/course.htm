@@ -15,6 +15,15 @@ return Redirect::to('/account');
 }
 ==
 <section class="box xspx-rmkc" style="background-color: #fff;height:auto;">
+    {% if course.videos %}
+    <div class="video">
+        {% for item in course.videos %}
+        <h4 class="title">{{ item.file_name }}</h4>
+        <video src="{{ item.file_path|media }}" width="100%" controls preload></video>
+        {% endfor %}
+    </div>
+    {% endif %}
+
     <!--content-->
     {{ course.content|raw }}
 

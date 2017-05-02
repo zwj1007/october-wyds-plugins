@@ -24,7 +24,20 @@ tabs:
             tab: 内容
             type: richeditor
             size: giant
-
+        videos:
+              tab: 视频
+              type: repeater
+              prompt: 新视频
+              form:
+                  fields:
+                      file_path:
+                          label: 选择视频
+                          type: mediafinder
+                          mode: file
+                          span: auto
+                      file_name:
+                          label: 视频名称
+                          span: auto
         files:
             tab: 附件
             type: repeater
@@ -55,6 +68,20 @@ tabs:
             label: 特色图像
             type: mediafinder
             mode: image
+        videos:
+              tab: 视频
+              type: repeater
+              prompt: 新视频
+              form:
+                  fields:
+                      file_path:
+                          label: 选择视频
+                          type: mediafinder
+                          mode: file
+                          span: auto
+                      file_name:
+                          label: 视频名称
+                          span: auto
 
 secondaryTabs:
     fields:

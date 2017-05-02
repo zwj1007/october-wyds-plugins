@@ -4,12 +4,11 @@ layout="default"
 
 [coursesTag]
 tagFilter="{{ :slug }}"
-postsPerPage=1
+postsPerPage=3
 ==
 function onEnd(){
-    if($this->tag){
-    $this->page->title=$this->tag->name.'课程';
-    }
+$this->page->title=$this->tag->name;
+
 }
 ==
 
@@ -21,10 +20,9 @@ function onEnd(){
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-            {% component 'coursesTag' %}
-        </div>
+        {% partial 'courses/block-v1' posts=courses s_tag=tag.name %}
     </div>
+    {{ courses.render|raw }}
 </div>
 
 

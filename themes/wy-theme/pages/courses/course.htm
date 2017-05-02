@@ -1,4 +1,4 @@
-title = "News Course"
+title = "课程"
 url = "/courses/course/:slug"
 layout="default"
 
@@ -18,13 +18,25 @@ return Redirect::to('/account');
     <div class="course-post-detail">
         <div class="row">
             <div class="col-md-8">
+                {% if course.videos %}
+                {% for item in course.videos %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {{ item.file_name }}
+                    </div>
+                    <div class="panel-body">
+                        <video src="{{ item.file_path|media }}" width="100%" controls preload></video>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
                 <div class="panel panel-default">
                     <div class="panel-body">
                         {{ course.content|raw }}
 
                         {% if course.files %}
                         <div class="post-files">
-                            <h4>
+                            <h4 class="lead">
                                 附件
                             </h4>
                             {% for item in course.files %}

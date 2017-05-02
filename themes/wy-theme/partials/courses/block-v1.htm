@@ -1,8 +1,12 @@
 {% for post in posts %}
 <div class="col-md-3 col-sm-6 m-b">
     <div class="easy-block-v2">
-        <div class="easy-bg-v2 bg-color-warning">{{ tag }}</div>
+        <div class="easy-bg-v2 bg-color-warning">{{ s_tag }}</div>
+        {% if post.image %}
         <img alt="{{ post.title }}" src="{{ post.image|media}}">
+        {% else %}
+        <img src="http://placehold.it/800x400?text=没有缩略图" alt="">
+        {% endif %}
         <h4 style="height:44px;line-height: 1;margin-bottom: 5px;">{{ post.title }}</h4>
         <ul class="list-unstyled">
             <li><span class="color-warning">发布时间:</span> <span class="small">{{ post.published_at|date('Y ,m月 d') }}</span></li>

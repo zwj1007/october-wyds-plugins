@@ -18,6 +18,7 @@ class CreateCoursesTable extends Migration
             $table->longText('content')->nullable();
             $table->text('image');
             $table->text('files');
+            $table->text('videos');
             $table->timestamp('published_at')->nullable();
             $table->boolean('published')->default(false);
             $table->boolean('featured')->default(false);

@@ -36,7 +36,7 @@ if(!Auth::check()) return Redirect::to('/account');
         <a href="/courses/tag/tui-jian"><h2>推荐课程</h2></a>
     </div>
     <div class="row">
-        {% partial 'courses/block-v2' posts=tagTuiJian tag="推荐" %}
+        {% partial 'courses/block-v2' posts=tagTuiJian s_tag="推荐" %}
     </div>
     {% endif %}
 
@@ -45,7 +45,7 @@ if(!Auth::check()) return Redirect::to('/account');
         <a href="/courses/tag/re-men"><h2>热门课程</h2></a>
     </div>
     <div class="row">
-        {% partial 'courses/block-v1' posts=tagReMen tag="热门" %}
+        {% partial 'courses/block-v1' posts=tagReMen s_tag="热门" %}
     </div>
     {% endif %}
 

@@ -14,23 +14,20 @@ function onEnd()
 {
 if ($this->category)
 $this->page->title = $this->category->name;
-$this['courses']=$this->courses;
 }
 ==
 
-<div class="container margin-top-20">
-    <div class="jumbotron">
-        <div class="container">
-            <h2>{{ this.page.title }}</h2>
-        </div>
+<div class="jumbotron">
+    <div class="container">
+        <h1>{{ this.page.title }}</h1>
+        <p>Contents...</p>
     </div>
 </div>
-
 
 <div class="container">
     <div class="row">
 
-        {% partial 'courses/thumbnail-block' posts=courses %}
+        {% partial 'courses/block-v2' posts=courses %}
 
     </div>
 </div>
