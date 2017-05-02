@@ -10,6 +10,7 @@ fields:
         label: 概述
         placeholder: 统计表单概述
         type: textarea
+        size: small
     detail:
         table: 统计详情
         type: repeater
@@ -19,18 +20,17 @@ fields:
                 name:
                     label: 品名
                     type: text
-                    span: left
-                    size: tiny
+                    cssClass: w-200 m-r
                 price:
                     label: 单价(元)
                     type: number
-                    span: left
+                    cssClass: w-200 m-r
                 quantity:
                     label: 数量(斤)
-                    span: left
                     type: number
+                    cssClass: w-200 m-r
                 total:
                     label: 总计
-                    span: left
                     type: number
+                    cssClass: w-200 m-r
 
