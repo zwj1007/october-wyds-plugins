@@ -23,12 +23,7 @@ class Statistics extends ComponentBase
     }
     public function listStatistics()
     {
-        $check = Auth::check();
-        if (!$check) {
-            return null;
-        }
-        $user = Auth::getUser();
-        $courses = $user->courses();
-        return $courses->paginate(2);
+        $statistics=StatisticsModel::isPublished()->get;
+        return $statistics;
     }
 }
