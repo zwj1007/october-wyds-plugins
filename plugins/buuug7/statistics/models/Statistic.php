@@ -1,6 +1,7 @@
 <?php namespace Buuug7\Statistics\Models;
 
 use Model;
+use Carbon\Carbon;
 
 /**
  * Statistic Model
