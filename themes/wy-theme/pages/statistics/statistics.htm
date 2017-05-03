@@ -10,5 +10,81 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
 ==
 <div class="container m-t">
   {{ statistics }}
-Statistics 
+  <div class="row">
+    {% for post in statistics %}
+    <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{ post.title }}</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="chart">
+                        <canvas id="line-chart"></canvas>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    {% endfor %}
+  </div>
 </div>
+
+{% put scripts %}
+<script>
+
+    // line chart
+    var ctxLineChart = document.getElementById('line-chart');
+    var lineChartData = {
+        labels: ["一月份", "二月份", "三月份", "四月份", "五月份", "六月份"],
+        datasets: [
+            {
+                label: "2016前半年销售统计",
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: "rgba(75,192,192,0.4)",
+                borderColor: "rgba(75,192,192,1)",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "rgba(75,192,192,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [110, 160, 70, 130, 140, 120],
+                spanGaps: false,
+            }
+        ]
+    };
+    var lineChartOptions = {};
+    var lineChart = new Chart(ctxLineChart, {
+        type: 'line',
+        data: lineChartData,
+        options: lineChartOptions
+    });
+
+    // doughnut chart
+    var ctxDoughnutChart=document.getElementById('doughnut-chart');
+    var doughnutChartData=polarAreaChartData;
+    var doughnutOptions={};
+    var doughnutChart=new Chart(ctxDoughnutChart,{
+        type: 'doughnut',
+        data: doughnutChartData,
+        options:doughnutChartData
+    });
+</script>
+{% endput %}
