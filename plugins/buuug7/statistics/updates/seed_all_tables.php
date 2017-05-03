@@ -15,7 +15,16 @@ class SeedAllTables extends Seeder
             'published' => true,
             'published_at' => Carbon::now(),
             'detail' => [
-                1=>["name"=>"胡萝卜","price"=>"0.87","quantity"=>"10000","total"=>""]
+                1=>["name"=>"白菜","price"=>"0.78","quantity"=>"89500","total"=>""],
+                2=>["name"=>"白菜","price"=>"0.78","quantity"=>"89500","total"=>""],
+                3=>["name"=>"白菜","price"=>"0.78","quantity"=>"89500","total"=>""],
+                4=>["name"=>"白菜","price"=>"0.78","quantity"=>"89500","total"=>""],
+                5=>["name"=>"白菜","price"=>"0.78","quantity"=>"89500","total"=>""],
+                6=>["name"=>"白菜","price"=>"0.78","quantity"=>"89500","total"=>""],
+                7=>["name"=>"白菜","price"=>"0.78","quantity"=>"89500","total"=>""],
+                8=>["name"=>"白菜","price"=>"0.78","quantity"=>"89500","total"=>""],
+                9=>["name"=>"白菜","price"=>"0.78","quantity"=>"89500","total"=>""],
+                10=>["name"=>"白菜","price"=>"0.78","quantity"=>"89500","total"=>""],
             ]
         ]);
         
