@@ -51,7 +51,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            ' Buuug7\Statistics\Components\Statistics'=>'b7Statistics',
+            'Buuug7\Statistics\Components\Statistics'=>'b7Statistics',
         ];
     }
 
