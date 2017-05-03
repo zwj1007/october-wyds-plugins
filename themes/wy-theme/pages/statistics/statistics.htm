@@ -65,7 +65,7 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
                 pointHoverBorderWidth: 2,
                 pointRadius: 1,
                 pointHitRadius: 10,
-                data: [110, 160, 70, 130, 140, 120],
+                data: [{% for item in post.detail%}{{ item.price*item.quantity }},{% endfor %}],
                 spanGaps: false,
             }
         ]
