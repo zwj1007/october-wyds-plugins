@@ -40,7 +40,7 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
 
 {% put scripts %}
 <script>
-
+  {% for post in statistics %}
     // line chart
     var ctxLineChart = document.getElementById('line-chart');
     var lineChartData = {
@@ -86,5 +86,6 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
         data: doughnutChartData,
         options:doughnutChartData
     });
+   {% endfor %}
 </script>
 {% endput %}
