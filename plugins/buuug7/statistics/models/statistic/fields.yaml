@@ -34,16 +34,16 @@ fields:
                     type: number
                     cssClass: w-200 m-r
     published:
-            label: 发布
-            type: checkbox
-            span: auto
+        label: 发布
+        type: checkbox
+        span: auto
 
-        published_at:
-            label: 发布日期
-            type: datepicker
-            model: datetime
-            trigger:
-                action: enable
-                field: published
-                condition: checked                
+    published_at:
+        label: 发布日期
+        type: datepicker
+        model: datetime
+        trigger:
+            action: enable
+            field: published
+            condition: checked                
 
