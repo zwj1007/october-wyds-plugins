@@ -43,6 +43,15 @@ class Statistic extends Model
     public $morphMany = [];
     public $attachOne = [];
     public $attachMany = [];
+    
+    public function scopeIsPublished($query)
+    {
+        return $query
+            ->whereNotNull('published')
+            ->where('published', true)
+            ->whereNotNull('published_at')
+            ->where('published_at', '<', Carbon::now());
+    }
 
 
 }
