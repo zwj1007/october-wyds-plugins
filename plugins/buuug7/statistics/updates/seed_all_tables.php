@@ -15,7 +15,7 @@ class SeedAllTables extends Seeder
             'published' => true,
             'published_at' => Carbon::now(),
             'detail' => [
-              {"name":"胡萝卜","price":"0.87","quantity":"10000","total":""}
+              ["name"=>"胡萝卜","price"=>"0.87","quantity"=>"10000","total"=>""]
             ]
         ]);
         
