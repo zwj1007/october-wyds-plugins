@@ -14,3 +14,10 @@ columns:
         label: 更新日期
         type: date
         invisible: true
+    published:
+        label: 审核
+        type: switch
+    published_at:
+        label: 审核日期
+        type: date
+        invisible: false        
