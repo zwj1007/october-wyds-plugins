@@ -1,6 +1,7 @@
 <?php namespace Buuug7\Statistics\Components;
 use Cms\Classes\ComponentBase;
 use Buuug7\Courses\Models\Course;
+use Buuug7\Statistics\Models\Statistics as StatisticsModel;
 
 class Statistics extends ComponentBase
 {
