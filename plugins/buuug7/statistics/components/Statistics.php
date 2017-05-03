@@ -22,7 +22,7 @@ class Statistics extends ComponentBase
     }
     public function listStatistics()
     {
-        $statistics=StatisticsModel::all();
+        $statistics=StatisticsModel::isPublished()->get();
         return $statistics;
     }
 }
