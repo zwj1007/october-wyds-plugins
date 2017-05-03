@@ -28,7 +28,7 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
                 <!-- /.box-header -->
                 <div class="box-body">
                     <div class="chart">
-                        <canvas id="line-chart"></canvas>
+                        <canvas id="line-chart-{{ loop.index }}"></canvas>
                     </div>
                 </div>
                 <!-- /.box-body -->
@@ -42,7 +42,7 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
 <script>
   {% for post in statistics %}
     // line chart
-    var ctxLineChart = document.getElementById('line-chart');
+    var ctxLineChart = document.getElementById('line-chart-{{ loop.index }}');
     var lineChartData = {
         labels: [{% for item in post.detail %}"{{ item.name }}",{% endfor %}],
         datasets: [
