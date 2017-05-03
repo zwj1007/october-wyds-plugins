@@ -112,7 +112,7 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
    
    {% for post in statistics %}
    // pie chart
-    var ctxPieChart = document.getElementById('pie-chart');
+    var ctxPieChart = document.getElementById('pie-chart-{{loop.index}}');
     var pieChartDate = {
         datasets: [{
             data: [{% for item in post.detail%}{{ item.price*item.quantity }},{% endfor %}],
