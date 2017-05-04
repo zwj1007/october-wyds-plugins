@@ -1,29 +1,5 @@
 @charset "UTF-8";
 .fwsc-list {
-  .jumbotron {
-    background: url("../images/fwsc/home-header-bg-1.jpg");
-    height: 260px;
-    .container {
-      padding: 60px 80px;
-      color: #ffffff;
-      h2 {
-        font-size: 34px;
-      }
-      p {
-        margin-bottom: 15px;
-        font-size: 24px;
-        font-weight: 200;
-        button {
-          background-color: #4CAF50;
-          border: none;
-          color: white;
-          padding: 10px 40px;
-          margin: 4px auto;
-        }
-      }
-    }
-  }
-
   border: 1px solid $border-color;
   border-radius: 5px;
   .hd {

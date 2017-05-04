@@ -68,6 +68,9 @@ a:hover, a:link {
 .margin-bottom-10 {
   margin-bottom: 10px; }
 
+.margin-bottom-25 {
+  margin-bottom: 25px; }
+
 .margin-top-10 {
   margin-top: 10px; }
 
@@ -96,16 +99,38 @@ a:hover, a:link {
   .pagination li {
     float: left;
     margin: 2px;
-    padding: 12px;
-    width: 50px; }
+    padding: 12px; }
+    .pagination li a {
+      width: 50px;
+      padding: 13px 20px; }
   .pagination .active {
-    background: #FF4400; }
+    background: #FF4400;
+    color: #ffffff; }
     .pagination .active a {
       color: #ffffff; }
   .pagination li:hover {
     background: #FF4400; }
     .pagination li:hover a {
       color: #ffffff; }
+
+.jumbotron {
+  background: url("../images/fwsc/home-header-bg-1.jpg");
+  height: 260px; }
+  .jumbotron .container {
+    padding: 60px 80px;
+    color: #ffffff; }
+    .jumbotron .container h2 {
+      font-size: 34px; }
+    .jumbotron .container p {
+      margin-bottom: 15px;
+      font-size: 24px;
+      font-weight: 200; }
+      .jumbotron .container p button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 40px;
+        margin: 4px auto; }
 
 .topbar {
   width: 100%;
@@ -2112,24 +2137,6 @@ input {
 .fwsc-list {
   border: 1px solid #CCCCCC;
   border-radius: 5px; }
-  .fwsc-list .jumbotron {
-    background: url("../images/fwsc/home-header-bg-1.jpg");
-    height: 260px; }
-    .fwsc-list .jumbotron .container {
-      padding: 60px 80px;
-      color: #ffffff; }
-      .fwsc-list .jumbotron .container h2 {
-        font-size: 34px; }
-      .fwsc-list .jumbotron .container p {
-        margin-bottom: 15px;
-        font-size: 24px;
-        font-weight: 200; }
-        .fwsc-list .jumbotron .container p button {
-          background-color: #4CAF50;
-          border: none;
-          color: white;
-          padding: 10px 40px;
-          margin: 4px auto; }
   .fwsc-list .hd {
     text-align: left;
     padding-left: 0;
@@ -2170,5 +2177,32 @@ input {
         margin-right: 30px; }
   .fwsc-list .fwsc-zxfb .dd {
     height: 100px; }
+
+.sjtj-list .jumbotron {
+  background: url("../images/sjtj/banner2.png"); }
+.sjtj-list .sjtj-pos1 {
+  width: 49%;
+  height: auto;
+  box-shadow: 2px 4px 15px rgba(93, 93, 93, 0.4);
+  border-radius: 5px; }
+  .sjtj-list .sjtj-pos1 header {
+    border-bottom: 1px solid #f4f4f4;
+    height: 40px; }
+    .sjtj-list .sjtj-pos1 header h3 {
+      line-height: 40px;
+      display: initial; }
+    .sjtj-list .sjtj-pos1 header .title-right {
+      line-height: 40px; }
+      .sjtj-list .sjtj-pos1 header .title-right button {
+        background: #ffffff;
+        border: 1px solid transparent; }
+        .sjtj-list .sjtj-pos1 header .title-right button .fa-minus:before {
+          content: "\f068"; }
+        .sjtj-list .sjtj-pos1 header .title-right button .times:before {
+          content: "\f00d"; }
+      .sjtj-list .sjtj-pos1 header .title-right .btu {
+        color: #97a0b3; }
+  .sjtj-list .sjtj-pos1 .tbody {
+    margin: 10px; }
 
 /*# sourceMappingURL=app.css.map */

@@ -90,6 +90,10 @@ a:hover, a:link {
   margin-bottom: $margin-10;
 }
 
+.margin-bottom-25 {
+  margin-bottom: $margin-25;
+}
+
 .margin-top-10 {
   margin-top: $margin-10;
 }
@@ -124,11 +128,15 @@ a:hover, a:link {
     float: left;
     margin: 2px;
     padding: 12px;
-    width: 50px;
+    a {
+      width: 50px;
+      padding: 13px 20px;
+    }
 
   }
   .active {
     background: $page-color;
+    color: #ffffff;
     a {
       color: #ffffff;
     }
@@ -139,5 +147,29 @@ a:hover, a:link {
       color: #ffffff;
     }
 
+  }
+}
+
+.jumbotron {
+  background: url("../images/fwsc/home-header-bg-1.jpg");
+  height: 260px;
+  .container {
+    padding: 60px 80px;
+    color: #ffffff;
+    h2 {
+      font-size: 34px;
+    }
+    p {
+      margin-bottom: 15px;
+      font-size: 24px;
+      font-weight: 200;
+      button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 40px;
+        margin: 4px auto;
+      }
+    }
   }
 }

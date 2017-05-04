@@ -20,12 +20,12 @@ security = "all"
 
 <section id="layout-content">
     {% flash %}
-    <div class="margin-top-20">
-        <div class="alert alert-{{ type == 'error' ? 'danger' : type }}">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <section class="box toast">
+        <div class="alert alert-{{ type == 'error' ? 'danger' : type }}" role="alert">
             {{ message }}
+            <button type="button" class="close float-right" data-dismiss="alert" aria-hidden="true">&times;</button>
         </div>
-    </div>
+    </section>
     {% endflash %}
     {% page %}
 </section>
