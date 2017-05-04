@@ -113,58 +113,57 @@
   }
   .dd {
     ul {
-      width: $page-width;
+      float: left;
+      width: ($page-width - 60) /3;
+      height: 240px;
       overflow: hidden;
       li {
-        float: left;
-        width: ($page-width - 60) /3;
-        height: 225px;
-        .dd-img {
-          img {
-            width: 180px;
-            height: 100px;
-            padding-right: 15px;
-          }
-          .dd-p {
-            padding-top: $padding-15;
-            margin-bottom: $padding-15 +10;
-            p {
-              display: inline;
-              font-size: 15px;
-              color: #20102A;
-              font-weight: 600;
-            }
-            span {
-              font-size: 12px;
-              display: block;
-            }
-          }
-          border-bottom: 1px dashed $border-color;
+        height: 30px;
+        line-height: 30px;
+        a {
+          color: #494546;
+          display: inline-block;
+          width: 200px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
-        ol li {
-          height: 30px;
-          line-height: 30px;
-          a {
-            color: #494546;
-            display: inline-block;
-            width: 200px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-          }
-          a:hover {
-            color: $nav-background;
-            /*color: #0844B6*/
-          }
-          span.time {
-            float: right;
-            color: #777;
-            font-size: 12px;
-            letter-spacing: -0.11em;
-            margin-right: 25px;
-          }
+        a:hover {
+          color: $nav-background;
+          /*color: #0844B6*/
+        }
+        span.time {
+          float: right;
+          color: #777;
+          font-size: 12px;
+          letter-spacing: -0.11em;
+          margin-right: 25px;
         }
       }
+    }
+    ul > li:first-child {
+      height: 113px;
+      line-height: 22px;
+      img {
+        width: 180px;
+        height: 100px;
+        padding-right: 15px;
+      }
+      p {
+        font-size: 15px;
+        color: #20102A;
+        font-weight: 600;
+        margin-top: $margin-10;
+      }
+      span {
+        font-size: 12px;
+        display: block;
+      }
+      border-bottom: 1px dashed $border-color;
+
+    }
+    ul:nth-child(2) {
+      margin: 0 30px;
     }
   }
 }

@@ -756,6 +756,16 @@ a:visited {
   overflow: hidden;
   width: 100%;
 }
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  color: #fff;
+  background-color: #f39c12;
+  border-color: #f39c12;
+}
 .headline {
   display: block;
   margin: 35px 0 20px 0;

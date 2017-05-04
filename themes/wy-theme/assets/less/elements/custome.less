@@ -328,3 +328,16 @@ a:hover, a:visited {
   overflow: hidden;
   width: 100%;
 }
+
+.pagination {
+  > .active > a,
+  > .active > span {
+    &,
+    &:hover,
+    &:focus {
+      color: @pagination-active-color;
+      background-color: @brand-warning;
+      border-color: @brand-warning;
+    }
+  }
+}

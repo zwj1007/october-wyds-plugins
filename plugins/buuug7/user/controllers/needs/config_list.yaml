@@ -9,7 +9,7 @@ list: $/buuug7/user/models/need/columns.yaml
 modelClass: Buuug7\User\Models\Need
 
 # List Title
-title: Manage Needs
+title: 管理需求
 
 # Link URL for each record
 recordUrl: buuug7/user/needs/update/:id

@@ -1,0 +1,80 @@
+@charset "UTF-8";
+.fwsc-list {
+  .jumbotron {
+    background: url("../images/fwsc/home-header-bg-1.jpg");
+    height: 260px;
+    .container {
+      padding: 60px 80px;
+      color: #ffffff;
+      h2 {
+        font-size: 34px;
+      }
+      p {
+        margin-bottom: 15px;
+        font-size: 24px;
+        font-weight: 200;
+        button {
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 10px 40px;
+          margin: 4px auto;
+        }
+      }
+    }
+  }
+
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  .hd {
+    text-align: left;
+    padding-left: 0;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 2px solid $nav-background;
+    border-radius: 5px;
+    i {
+      padding: 10px 15px;
+      color: #ffffff;
+      background: $page-color;
+      border-radius: 3px;
+    }
+  }
+  .dd {
+    height: 260px;
+    text-align: left;
+    overflow: hidden;
+    margin: 30px;
+    color: #494546;
+    ul li {
+      height: 40px;
+      list-style: circle;
+      margin-left: 40px;
+      padding: 0 15px;
+      a {
+        color: #494546;
+        display: inline-block;
+        width: 500px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      a:hover {
+        color: $page-color;
+      }
+      span.time {
+        float: right;
+        color: #777;
+        font-size: 12px;
+        letter-spacing: -0.11em;
+        margin-right: 30px;
+      }
+    }
+  }
+  .fwsc-zxfb {
+    .dd {
+      height: 100px;
+    }
+  }
+
+}

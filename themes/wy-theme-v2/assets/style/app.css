@@ -1,5 +1,5 @@
 @charset "UTF-8";
-html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td, header, footer, section, article, nav {
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, th, td, header, footer, section, article, nav {
   padding: 0;
   margin: 0; }
 
@@ -88,6 +88,25 @@ a:hover, a:link {
     color: #ccc;
     content: "/\00a0"; }
 
+.pagination {
+  margin: 0 auto;
+  padding: 20px 0 30px 0;
+  display: table;
+  text-align: center; }
+  .pagination li {
+    float: left;
+    margin: 2px;
+    padding: 12px;
+    width: 50px; }
+  .pagination .active {
+    background: #FF4400; }
+    .pagination .active a {
+      color: #ffffff; }
+  .pagination li:hover {
+    background: #FF4400; }
+    .pagination li:hover a {
+      color: #ffffff; }
+
 .topbar {
   width: 100%;
   height: 36px;
@@ -159,7 +178,7 @@ nav {
     nav ul li {
       float: left;
       text-align: center;
-      width: 140px; }
+      width: 124.44444px; }
       nav ul li a {
         color: #fff; }
     nav ul li:hover {
@@ -251,48 +270,47 @@ nav {
       padding-left: 15px;
       padding-right: 15px; }
   .zcdx .dd ul {
-    width: 1120px;
+    float: left;
+    width: 353.33333px;
+    height: 240px;
     overflow: hidden; }
     .zcdx .dd ul li {
-      float: left;
-      width: 353.33333px;
-      height: 225px; }
-      .zcdx .dd ul li .dd-img {
-        border-bottom: 1px dashed #CCCCCC; }
-        .zcdx .dd ul li .dd-img img {
-          width: 180px;
-          height: 100px;
-          padding-right: 15px; }
-        .zcdx .dd ul li .dd-img .dd-p {
-          padding-top: 15px;
-          margin-bottom: 25px; }
-          .zcdx .dd ul li .dd-img .dd-p p {
-            display: inline;
-            font-size: 15px;
-            color: #20102A;
-            font-weight: 600; }
-          .zcdx .dd ul li .dd-img .dd-p span {
-            font-size: 12px;
-            display: block; }
-      .zcdx .dd ul li ol li {
-        height: 30px;
-        line-height: 30px; }
-        .zcdx .dd ul li ol li a {
-          color: #494546;
-          display: inline-block;
-          width: 200px;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis; }
-        .zcdx .dd ul li ol li a:hover {
-          color: #FF4400;
-          /*color: #0844B6*/ }
-        .zcdx .dd ul li ol li span.time {
-          float: right;
-          color: #777;
-          font-size: 12px;
-          letter-spacing: -0.11em;
-          margin-right: 25px; }
+      height: 30px;
+      line-height: 30px; }
+      .zcdx .dd ul li a {
+        color: #494546;
+        display: inline-block;
+        width: 200px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .zcdx .dd ul li a:hover {
+        color: #FF4400;
+        /*color: #0844B6*/ }
+      .zcdx .dd ul li span.time {
+        float: right;
+        color: #777;
+        font-size: 12px;
+        letter-spacing: -0.11em;
+        margin-right: 25px; }
+  .zcdx .dd ul > li:first-child {
+    height: 113px;
+    line-height: 22px;
+    border-bottom: 1px dashed #CCCCCC; }
+    .zcdx .dd ul > li:first-child img {
+      width: 180px;
+      height: 100px;
+      padding-right: 15px; }
+    .zcdx .dd ul > li:first-child p {
+      font-size: 15px;
+      color: #20102A;
+      font-weight: 600;
+      margin-top: 10px; }
+    .zcdx .dd ul > li:first-child span {
+      font-size: 12px;
+      display: block; }
+  .zcdx .dd ul:nth-child(2) {
+    margin: 0 30px; }
 
 .xspx {
   height: 385px; }
@@ -614,26 +632,6 @@ footer {
           width: 600px; }
       .lanmu .list-right .list-right-v1 .list-post1 .list-post-body {
         margin-left: 10px; }
-  .lanmu .list-right .pagination {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    margin-left: 150px; }
-    .lanmu .list-right .pagination ul {
-      text-align: center;
-      display: inline-block; }
-      .lanmu .list-right .pagination ul li {
-        float: left;
-        margin: 2px;
-        padding: 12px;
-        width: 50px; }
-      .lanmu .list-right .pagination ul .active {
-        background: #FF4400; }
-        .lanmu .list-right .pagination ul .active a {
-          color: #ffffff; }
-      .lanmu .list-right .pagination ul li:hover {
-        background: #FF4400; }
-        .lanmu .list-right .pagination ul li:hover a {
-          color: #ffffff; }
 
 .dszx-content {
   width: 768px;
@@ -1133,25 +1131,7 @@ footer {
           font-size: 14px;
           color: #a4a3a3; }
   .syjc-list .pagination {
-    margin-top: 50px;
-    margin-bottom: 30px;
-    text-align: center; }
-    .syjc-list .pagination ul {
-      text-align: center;
-      display: inline-block; }
-      .syjc-list .pagination ul li {
-        float: left;
-        margin: 2px;
-        padding: 12px;
-        width: 50px; }
-      .syjc-list .pagination ul li:hover {
-        background: #FF4400; }
-        .syjc-list .pagination ul li:hover a {
-          color: #ffffff; }
-      .syjc-list .pagination ul .active {
-        background: #FF4400; }
-        .syjc-list .pagination ul .active a {
-          color: #ffffff; }
+    margin-top: 30px; }
 
 .syjc-contend .book-desc {
   padding: 15px 40px; }
@@ -1351,44 +1331,29 @@ footer {
 /*品牌企业列表页*/
 .ppqy-list {
   border: 1px solid #CCCCCC; }
-  .ppqy-list .ppqy-list-v1 ul {
+  .ppqy-list .ppqy-list-v1 {
     margin: 50px 90px;
-    height: 690px;
+    height: 680px;
     overflow: hidden;
     padding: 10px; }
-    .ppqy-list .ppqy-list-v1 ul li {
+    .ppqy-list .ppqy-list-v1 li {
       float: left;
       border: 1px solid #CCCCCC;
       margin-bottom: 20px;
       width: 280px;
       margin-right: 20px;
       text-align: center; }
-      .ppqy-list .ppqy-list-v1 ul li a img {
+      .ppqy-list .ppqy-list-v1 li a img {
         width: 240px;
         height: 120px; }
-      .ppqy-list .ppqy-list-v1 ul li a p {
+      .ppqy-list .ppqy-list-v1 li a p {
         color: #CCCCCC;
         margin-bottom: 10px; }
-    .ppqy-list .ppqy-list-v1 ul li:hover {
+    .ppqy-list .ppqy-list-v1 li:hover {
       border: 1px solid #ffffff;
       box-shadow: 3px 3px 8px 8px rgba(93, 93, 93, 0.4); }
-      .ppqy-list .ppqy-list-v1 ul li:hover a p {
+      .ppqy-list .ppqy-list-v1 li:hover a p {
         color: #333333; }
-  .ppqy-list .pagination {
-    margin-bottom: 50px;
-    text-align: center; }
-    .ppqy-list .pagination ul {
-      text-align: center;
-      display: inline-block; }
-    .ppqy-list .pagination ul li {
-      float: left;
-      margin: 2px;
-      padding: 12px;
-      width: 50px; }
-    .ppqy-list .pagination li:hover {
-      background: #FF4400; }
-      .ppqy-list .pagination li:hover a {
-        color: #ffffff; }
 
 .content-holder {
   background: url("../images/login/loginbg.jpg") no-repeat; }

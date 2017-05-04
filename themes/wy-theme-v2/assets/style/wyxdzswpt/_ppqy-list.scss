@@ -3,55 +3,32 @@
 .ppqy-list {
   border: 1px solid $border-color;
   .ppqy-list-v1 {
-    ul {
-      margin: 50px 90px;
-      height: 690px;
-      overflow: hidden;
-      padding: 10px;
-      li {
-        float: left;
-        border: 1px solid $border-color;
-        margin-bottom: 20px;
-        width: 280px;
-        margin-right: 20px;
-        text-align: center;
-        a img {
-          width: 240px;
-          height: 120px;
-        }
-        a p {
-          color: $border-color;
-          margin-bottom: $margin-10;
-        }
-
-      }
-      li:hover {
-        border: 1px solid #ffffff;
-        box-shadow: 3px 3px 8px 8px rgba(93, 93, 93, 0.4);
-        a p {
-          color: #333333;
-        }
-      }
-    }
-  }
-  .pagination {
-    margin-bottom: 50px;
-    text-align: center;
-    ul {
-      text-align: center;
-      display: inline-block;
-    }
-    ul li {
+    margin: 50px 90px;
+    height: 680px;
+    overflow: hidden;
+    padding: 10px;
+    li {
       float: left;
-      margin: 2px;
-      padding: 12px;
-      width: 50px;
+      border: 1px solid $border-color;
+      margin-bottom: 20px;
+      width: 280px;
+      margin-right: 20px;
+      text-align: center;
+      a img {
+        width: 240px;
+        height: 120px;
+      }
+      a p {
+        color: $border-color;
+        margin-bottom: $margin-10;
+      }
 
     }
     li:hover {
-      background: $page-color;
-      a {
-        color: #ffffff;
+      border: 1px solid #ffffff;
+      box-shadow: 3px 3px 8px 8px rgba(93, 93, 93, 0.4);
+      a p {
+        color: #333333;
       }
     }
   }

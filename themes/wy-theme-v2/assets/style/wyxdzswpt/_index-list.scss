@@ -185,33 +185,6 @@
 
       }
     }
-    .pagination {
-      margin-top: 30px;
-      margin-bottom: 20px;
-      margin-left: 150px;
-      ul {
-        text-align: center;
-        display: inline-block;
-        li {
-          float: left;
-          margin: 2px;
-          padding: 12px;
-          width: 50px;
 
-        }
-        .active {
-          background: $page-color;
-          a {
-            color: #ffffff;
-          }
-        }
-        li:hover {
-          background: $page-color;
-          a {
-            color: #ffffff;
-          }
-        }
-      }
-    }
   }
 }

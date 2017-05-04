@@ -1,43 +1,50 @@
-<div class="topbar">
-    <div class="inner">
-        <div class="left">
-            {% if user %}
-            <span>欢迎您：<a href="/account">{{ user.name }}</a></span>
-            {% endif %}
-            来到渭源县电子商务公共服务平台
-            <span class="time" id="current-time"></span>
-        </div>
-        <ul class="right">
-            {% if user %}
-            <li><a href="/account">个人中心</a></li>
-            <li><a data-request="onLogout" data-request-data="redirect: '/'">登出</a></li>
-            {% else %}
-            <li><a href="/login">登陆</a></li>
-            <li><a href="/register">注册</a></li>
-            {% endif %}
-        </ul>
-    </div>
-</div>
-
 <header>
-    <div class="float-left logo">
-        <a href="/"><img src="/themes/wy-theme-v2/assets/images/logo2.png" alt=""></a>
+    <div class="topbar">
+        <div class="inner">
+            <div class="left">
+                {% if user %}
+                <span>欢迎归来 : <a href="/account">{{ user.name }}</a></span>
+                {% endif %}
+                渭源县电子商务公共服务平台
+                <span class="time" id="current-time"></span>
+            </div>
+            <ul class="right">
+                {% if user %}
+                <li><a href="/account">个人中心</a></li>
+                <li><a data-request="onLogout" data-request-data="redirect: '/'">登出</a></li>
+                {% else %}
+                <li><a href="/login">登陆</a></li>
+                <li><a href="/register">注册</a></li>
+                {% endif %}
+            </ul>
+        </div>
     </div>
-    <div class="float-right head-right">
-        <ul>
-            <li>
-                <a href="index-lxwm.html"> <img src="/themes/wy-theme-v2/assets/images/icon2.png" alt=""></a>
-                <p> 联系我们</p>
-            </li>
-            <li>
-                <a href="index-lyzx.html"> <img src="/themes/wy-theme-v2/assets/images/icon3.png" alt=""></a>
-                <p>留言咨询</p>
-            </li>
-            <li>
-                <a href="index-sysm.html"> <img src="/themes/wy-theme-v2/assets/images/icon1.png" alt=""></a>
-                <p>使用说明</p>
-            </li>
-        </ul>
-    </div>
+    <div class="head-long">
+        <div class="float-left logo">
+            <img src="/themes/wy-theme-v2/assets/images/logo2.png" alt="">
+        </div>
+        <div class="float-right head-right">
+            <ul>
+                <li>
+                    <a href="login.html"> <img src="/themes/wy-theme-v2/assets/images/icon4.png" alt=""></a>
+                    <p> 注册登录</p>
 
+                </li>
+                <li>
+                    <a href="index-lxwm.html"> <img src="/themes/wy-theme-v2/assets/images/icon2.png" alt=""></a>
+                    <p> 联系我们</p>
+
+                </li>
+                <li>
+                    <a href="index-lyzx.html"> <img src="/themes/wy-theme-v2/assets/images/icon3.png" alt=""></a>
+                    <p>留言咨询</p>
+                </li>
+                <li>
+                    <a href="index-sysm.html"> <img src="/themes/wy-theme-v2/assets/images/icon1.png" alt=""></a>
+                    <p>使用说明</p>
+
+                </li>
+            </ul>
+        </div>
+    </div>
 </header>

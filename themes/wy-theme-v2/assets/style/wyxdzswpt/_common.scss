@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td, header, footer, section, article, nav {
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, th, td, header, footer, section, article, nav {
   padding: 0;
   margin: 0
 }
@@ -112,5 +112,32 @@ a:hover, a:link {
     padding: 0 5px;
     color: #ccc;
     content: "/\00a0";
+  }
+}
+
+.pagination {
+  margin: 0 auto;
+  padding: 20px 0 30px 0;
+  display: table;
+  text-align: center;
+  li {
+    float: left;
+    margin: 2px;
+    padding: 12px;
+    width: 50px;
+
+  }
+  .active {
+    background: $page-color;
+    a {
+      color: #ffffff;
+    }
+  }
+  li:hover {
+    background: $page-color;
+    a {
+      color: #ffffff;
+    }
+
   }
 }

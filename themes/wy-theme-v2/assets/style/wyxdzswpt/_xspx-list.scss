@@ -396,33 +396,8 @@
       }
     }
   }
-
   .pagination {
-    margin-top: 50px;
-    margin-bottom: 30px;
-    text-align: center;
-    ul {
-      text-align: center;
-      display: inline-block;
-      li {
-        float: left;
-        margin: 2px;
-        padding: 12px;
-        width: 50px;
-      }
-      li:hover {
-        background: #FF4400;
-        a {
-          color: #ffffff;
-        }
-      }
-      .active {
-        background: #FF4400;
-        a {
-          color: #ffffff;
-        }
-      }
-    }
+    margin-top: 30px;
   }
 
 }
@@ -479,7 +454,6 @@
 
       }
     }
-
     .book-contend {
       height: 550px;
       overflow: hidden;

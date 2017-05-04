@@ -9,7 +9,7 @@ list: $/buuug7/user/models/company/columns.yaml
 modelClass: Buuug7\User\Models\Company
 
 # List Title
-title: Manage Companies
+title: 管理公司
 
 # Link URL for each record
 recordUrl: buuug7/user/companies/update/:id

@@ -22,15 +22,17 @@ security = "all"
 
         <!-- Content -->
         <section id="layout-content">
-            {% flash %}
-            <div class="margin-top-20">
-                <div class="alert alert-{{ type == 'error' ? 'danger' : type }}">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    {{ message }}
+            <div class="main">
+                {% flash %}
+                <div class="margin-top-20">
+                    <div class="alert alert-{{ type == 'error' ? 'danger' : type }}">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        {{ message }}
+                    </div>
                 </div>
+                {% endflash %}
+                {% page %}
             </div>
-            {% endflash %}
-            {% page %}
         </section>
 
         <!-- Footer -->

@@ -90,34 +90,32 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
     {% endif %}
 </section>
 
-<!--政策导向-->
+<!--政策解读-->
 <section class="box zcdx">
     <div class="hd"><i>政策解读</i><a href="/news/categories/zheng-ce-jie-du"><span>more+</span></a></div>
-    <div class="dd margin-top-10">
+    <div class="dd">
+
+        {% for chunk in zhenCeJieDu.chunk(5) %}
         <ul>
-            {% for chunk in zhenCeJieDu.chunk(5) %}
-            <li {% if loop.index == 2 %} style="margin: 0 30px" {% endif %}>
-                {% for post in chunk %}
-                {% if loop.index==1 %}
-                <div class="dd-img">
-                    <img class="float-left" src="{{ post.image|media }}" alt="">
-                    <div class="dd-p">
-                        <a href="/news/post/{{ post.slug }}"><p>{{ post.title|slice(0,18) }}</p></a>
-                        <span>{{ post.summary|raw|slice(0,25) }}</span>
-                    </div>
-                </div>
-                {% else %}
-                <ol>
-                    <li>
-                        <a href="/news/post/{{ post.slug }}" target="_blank"><span>{{ post.title }}</span></a>
-                        <span class="time">{{ post.published_at|date('Y-m-d') }}</span>
-                    </li>
-                </ol>
-                {% endif %}
-                {% endfor %}
+            {% for post in chunk %}
+            {% if loop.index == 1 %}
+            <li>
+                <img class="float-left" src="{{ post.image|media }}" alt="">
+                <p>{{ post.title|slice(0,18) }}</p>
+                <span>{{ post.summary|raw|slice(0,25) }}</span>
             </li>
+            {% else %}
+            <li>
+                <a href="/news/post/{{ post.slug }}" target="_blank">
+                    <span>{{ post.title }}</span>
+                </a>
+                <span class="time">{{ post.published_at|date('Y-m-d') }}</span>
+            </li>
+            {% endif %}
             {% endfor %}
         </ul>
+        {% endfor %}
+
     </div>
 </section>
 

@@ -9,7 +9,7 @@ list: $/buuug7/statistics/models/statistic/columns.yaml
 modelClass: Buuug7\Statistics\Models\Statistic
 
 # List Title
-title: Manage Statistics
+title: 数据分析管理
 
 # Link URL for each record
 recordUrl: buuug7/statistics/statistics/update/:id
