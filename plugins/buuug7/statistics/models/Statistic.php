@@ -14,11 +14,11 @@ class Statistic extends Model
      */
     public $table = 'buuug7_statistics_statistics';
 
-    public $jsonable=[
+    public $jsonable = [
         'detail'
     ];
-    
-    public $rules=[
+
+    public $rules = [
         'title' => 'required',
     ];
 
@@ -44,7 +44,7 @@ class Statistic extends Model
     public $morphMany = [];
     public $attachOne = [];
     public $attachMany = [];
-    
+
     public function scopeIsPublished($query)
     {
         return $query

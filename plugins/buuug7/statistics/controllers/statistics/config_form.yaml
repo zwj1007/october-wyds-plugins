@@ -16,13 +16,13 @@ defaultRedirect: buuug7/statistics/statistics
 
 # Create page
 create:
-    title: Create Statistic
+    title: 添加统计
     redirect: buuug7/statistics/statistics/update/:id
     redirectClose: buuug7/statistics/statistics
 
 # Update page
 update:
-    title: Edit Statistic
+    title: 编辑统计
     redirect: buuug7/statistics/statistics
     redirectClose: buuug7/statistics/statistics
 

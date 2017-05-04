@@ -2,6 +2,7 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
+use Illuminate\Support\Facades\Response;
 
 /**
  * Statistics Back-end Controller
@@ -27,5 +28,12 @@ class Statistics extends Controller
         parent::__construct();
 
         BackendMenu::setContext('Buuug7.Statistics', 'statistics', 'statistics');
+    }
+
+
+    public function view($id){
+
+        // ~/plugins/buuug7/statistics/controllers/statistics/_view.htm
+        return $this->makePartial('view');
     }
 }

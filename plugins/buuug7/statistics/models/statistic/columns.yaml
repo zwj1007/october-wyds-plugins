@@ -20,4 +20,9 @@ columns:
     published_at:
         label: 审核日期
         type: date
-        invisible: false        
+        invisible: false
+    view:
+        label: 预览
+        type: partial
+        sortable: false
+        path: ~/plugins/buuug7/statistics/models/statistic/_preview.htm

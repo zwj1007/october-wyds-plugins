@@ -1,6 +1,6 @@
 title = "账号 | 登陆"
 url = '/login/:code?'
-layout= 'default'
+layout = 'default-v4'
 
 [account]
 redirect = "account"
@@ -8,21 +8,22 @@ paramCode = "code"
 ==
 
 <div class="content-holder">
-    <div class="box content">
-        <p>
-            <a href="signup.html">
-                注册
-            </a>/
-            <a href="index.html">
-                首页
-            </a>
-        </p>
+    <div class="content">
+
         <div class="show-pic">
             <div class="slider-imgs" id="slider_imgs">
                 <img width="570" height="300" src="/themes/wy-theme-v2/assets/images/login/banner.png">
             </div>
             {% if not user %}
             <div class="login">
+                <p>
+                    <a href="/login">
+                        注册
+                    </a>/
+                    <a href="/">
+                        首页
+                    </a>
+                </p>
                 <form data-request="onSignin" class="form-ct">
                     <div class="form-body">
                         <dl>
