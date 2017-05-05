@@ -349,7 +349,7 @@
 //线上培训内容页 视频页面
 .xspx-video {
   .vid-wrapper {
-    height: 640px;
+    height: 590px;
     overflow: hidden;
     background: #000000;
     .title {
@@ -362,23 +362,23 @@
       margin: 0 auto;
 
     }
-    .c-right {
-      background: rgba(255, 255, 255, 0.53);
-      height: 50px;
-      li {
-        float: left;
-        line-height: 50px; //width: 25%;
-        margin: 0 $margin-35;
-        i {
-          margin: 0 $margin-10;
-          font-size: 16px;
-        }
-        a {
-          color: #d5d5d5;
-        }
-        a:hover {
-          color: blue;
-        }
+  }
+  .c-right {
+    background: rgba(0, 0, 0, 0.63);
+    height: 50px;
+    li {
+      float: left;
+      line-height: 50px; //width: 25%;
+      margin: 0 $margin-35;
+      i {
+        margin: 0 $margin-10;
+        font-size: 16px;
+      }
+      a {
+        color: #d5d5d5;
+      }
+      a:hover {
+        color: blue;
       }
     }
   }
