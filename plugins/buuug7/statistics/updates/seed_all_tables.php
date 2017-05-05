@@ -11,6 +11,7 @@ class SeedAllTables extends Seeder
 
         $post01=Statistic::create([
             'title' => '2016上半年代购统计',
+            'user_id' => 1,
             'summary' => '2016上半年代购统计',
             'published' => true,
             'published_at' => Carbon::now(),
@@ -21,13 +22,15 @@ class SeedAllTables extends Seeder
                 4=>["name"=>"大蒜","price"=>"3.15","quantity"=>"65941","total"=>""],
                 5=>["name"=>"生姜","price"=>"3.67","quantity"=>"34176","total"=>""],
                 6=>["name"=>"青椒","price"=>"1.32","quantity"=>"20947","total"=>""],
-                7=>["name"=>"马铃薯","price"=>"0.61","quantity"=>"2197099","total"=>""]
+                7=>["name"=>"马铃薯","price"=>"0.61","quantity"=>"219099","total"=>""],
+                8=>["name"=>"西红柿","price"=>"1.1","quantity"=>"207099","total"=>""],
             ]
         ]);
         
         
         $post01=Statistic::create([
             'title' => '2016上半年代销统计',
+            'user_id' => 1,
             'summary' => '2016上半年代销统计',
             'published' => true,
             'published_at' => Carbon::now(),
@@ -38,7 +41,8 @@ class SeedAllTables extends Seeder
                 4=>["name"=>"大蒜","price"=>"3.15","quantity"=>"55941","total"=>""],
                 5=>["name"=>"生姜","price"=>"3.67","quantity"=>"32176","total"=>""],
                 6=>["name"=>"青椒","price"=>"1.32","quantity"=>"20447","total"=>""],
-                7=>["name"=>"马铃薯","price"=>"0.61","quantity"=>"2187099","total"=>""]
+                7=>["name"=>"马铃薯","price"=>"0.61","quantity"=>"217099","total"=>""],
+                8=>["name"=>"西红柿","price"=>"1.1","quantity"=>"197099","total"=>""],
             ]
         ]);
         

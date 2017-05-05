@@ -263,7 +263,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "lato", sans-serif;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, WenQuanYi Micro Hei, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #586667;
@@ -5126,7 +5126,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "lato", sans-serif;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, WenQuanYi Micro Hei, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -5244,7 +5244,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "lato", sans-serif;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, WenQuanYi Micro Hei, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;

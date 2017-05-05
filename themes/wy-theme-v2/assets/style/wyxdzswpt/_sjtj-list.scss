@@ -1,0 +1,41 @@
+@charset "UTF-8";
+.sjtj-list {
+  .jumbotron {
+    background: url("../images/sjtj/banner2.png");
+  }
+  .sjtj-pos1 {
+    width: 49%;
+    height: auto;
+    box-shadow: 2px 4px 15px rgba(93, 93, 93, 0.4);
+    border-radius: 5px;
+    header {
+      border-bottom: 1px solid #f4f4f4;
+      height: 40px;
+      h3 {
+        line-height: 40px;
+        display: initial;
+      }
+      .title-right {
+        line-height: 40px;
+        button {
+          background: #ffffff;
+          border: 1px solid transparent;
+          .fa-minus:before {
+            content: "\f068";
+          }
+          .times:before {
+            content: "\f00d";
+          }
+        }
+        .btu {
+          color: #97a0b3;
+        }
+      }
+
+    }
+    .tbody {
+      margin: $margin-10;
+    }
+
+  }
+}

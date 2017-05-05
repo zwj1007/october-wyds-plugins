@@ -1,0 +1,55 @@
+description = "Default layout"
+[session]
+security = "all"
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>渭源 | {{ this.page.title }}</title>
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="title" content="{{ this.page.meta_title }}">
+    <meta name="author" content="YANJF123">
+    <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+    <link href="{{ 'assets/style/app.css'|theme }}" rel="stylesheet">
+    {% styles %}
+</head>
+<body>
+<div id="layout-header">
+    {% partial 'site/header' %}
+</div>
+
+<!-- Content -->
+
+<section id="layout-content">
+    <div class="main">
+        {% flash %}
+        <section class="box toast">
+            <div class="alert alert-{{ type == 'error' ? 'danger' : type }}" role="alert">
+                {{ message }}
+                <button type="button" class="close float-right" data-dismiss="alert" aria-hidden="true">&times;</button>
+            </div>
+        </section>
+        {% endflash %}
+        {% page %}
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="layout-footer">
+    {% partial 'site/footer' %}
+</footer>
+
+<!-- Scripts -->
+<script src="{{ 'assets/script/jquery-3.1.1.min.js'|theme }}"></script>
+<script src="{{ 'assets/css/bootstrap.js'|theme }}"></script>
+<script src="{{ 'assets/script/Mds.onePic.1.0.js'|theme }}"></script>
+{% framework extras %}
+{% scripts %}
+<script>
+    $('#slide').MdsSlideFade({
+        pageNum: true, time: '3000'
+    });
+</script>
+</body>
+</html>

@@ -12,9 +12,9 @@ if(!Auth::check()){
     return Redirect::to('/account');
 }
 
-$this->addCss('assets\vendor\summernote-0.8.3-dist\dist\summernote.css');
-$this->addJs('assets/vendor/summernote-0.8.3-dist/dist/summernote.min.js');
-$this->addJs('assets/vendor/summernote-0.8.3-dist/dist/lang/summernote-zh-CN.js');
+$this->addCss('https://cdn.bootcss.com/summernote/0.8.3/summernote.css');
+$this->addJs('https://cdn.bootcss.com/summernote/0.8.3/summernote.min.js');
+$this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min.js');
 
 }
 

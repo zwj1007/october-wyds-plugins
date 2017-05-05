@@ -1117,6 +1117,60 @@ footer {
     .xspx-rmkc .video-right li {
       list-style: none; }
 
+.xspx-video {
+  border: 1px solid #CCCCCC; }
+  .xspx-video .vid-wrapper {
+    height: 640px;
+    overflow: hidden;
+    background: #000000; }
+    .xspx-video .vid-wrapper .title {
+      color: #ffffff;
+      margin: 15px 20px 10px 20px;
+      letter-spacing: 3px; }
+    .xspx-video .vid-wrapper video {
+      width: 1120px;
+      margin: 0 auto; }
+    .xspx-video .vid-wrapper .c-right {
+      background: rgba(255, 255, 255, 0.53);
+      height: 50px; }
+      .xspx-video .vid-wrapper .c-right li {
+        float: left;
+        line-height: 50px;
+        margin: 0 35px; }
+        .xspx-video .vid-wrapper .c-right li i {
+          margin: 0 10px;
+          font-size: 16px; }
+        .xspx-video .vid-wrapper .c-right li a {
+          color: #d5d5d5; }
+        .xspx-video .vid-wrapper .c-right li a:hover {
+          color: blue; }
+  .xspx-video .vid-body {
+    margin: 35px;
+    line-height: 40px; }
+    .xspx-video .vid-body .vid-title {
+      height: 85px; }
+      .xspx-video .vid-body .vid-title h3 {
+        text-align: center; }
+      .xspx-video .vid-body .vid-title span {
+        float: right;
+        margin-right: 30%; }
+    .xspx-video .vid-body h5 {
+      border-bottom: 1px solid #eaeaea; }
+      .xspx-video .vid-body h5 span {
+        border-left: 3px solid #498d99;
+        padding: 0 15px;
+        line-height: 32px;
+        font-weight: bold;
+        background-color: #eaeaea;
+        display: inline-block; }
+    .xspx-video .vid-body .ul-h5 {
+      margin: 10px 25px; }
+    .xspx-video .vid-body ul li {
+      margin: 0 50px; }
+    .xspx-video .vid-body p {
+      text-indent: 2em;
+      margin: 10px 25px; }
+
 .syjc-list {
   box-shadow: 1px 1px 10px 1px rgba(204, 204, 204, 0.33);
   border: 1px solid #ededed;
@@ -1241,7 +1295,7 @@ footer {
     border-radius: 3px; }
 .cpyx-list .cpyx-qypp {
   margin-top: 30px;
-  height: 330px;
+  margin-bottom: 50px;
   overflow: hidden;
   border-bottom: 1px solid #CCCCCC;
   border-left: 1px solid #CCCCCC;
@@ -1249,8 +1303,8 @@ footer {
   border-radius: 4px; }
   .cpyx-list .cpyx-qypp .dd ul {
     margin-top: 20px;
+    margin-bottom: 30px;
     padding-top: 10px;
-    height: 260px;
     overflow: hidden;
     padding-left: 20px; }
     .cpyx-list .cpyx-qypp .dd ul li {
@@ -2150,7 +2204,7 @@ input {
       background: #FF4400;
       border-radius: 3px; }
   .fwsc-list .dd {
-    height: 260px;
+    height: 100%;
     text-align: left;
     overflow: hidden;
     margin: 30px;
@@ -2162,11 +2216,13 @@ input {
       padding: 0 15px; }
       .fwsc-list .dd ul li a {
         color: #494546;
-        display: inline-block;
-        width: 500px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis; }
+        line-height: 40px;
+        display: inline-flex; }
+        .fwsc-list .dd ul li a span {
+          width: 500px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis; }
       .fwsc-list .dd ul li a:hover {
         color: #FF4400; }
       .fwsc-list .dd ul li span.time {
@@ -2175,8 +2231,6 @@ input {
         font-size: 12px;
         letter-spacing: -0.11em;
         margin-right: 30px; }
-  .fwsc-list .fwsc-zxfb .dd {
-    height: 100px; }
 
 .sjtj-list .jumbotron {
   background: url("../images/sjtj/banner2.png"); }

@@ -12,6 +12,7 @@ class CreateStatisticsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('title');
+            $table->integer('user_id')->unsigned()->nullable();
             $table->text('summary')->nullable();
             $table->text('detail');
             $table->boolean('published')->default(false);

@@ -975,7 +975,6 @@ a:visited {
 }
 .news-post-detail .post-info ul > li {
   display: inline-block;
-  font-style: italic;
 }
 .news-post-detail .post-info ul > li + li:before {
   padding: 0 5px;
@@ -990,7 +989,6 @@ a:visited {
 }
 .post-list .posted-info > li {
   display: inline-block;
-  font-style: italic;
 }
 .post-list .posted-info > li + li:before {
   padding: 0 5px;

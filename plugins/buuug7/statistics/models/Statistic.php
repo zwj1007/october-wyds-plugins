@@ -37,7 +37,9 @@ class Statistic extends Model
      */
     public $hasOne = [];
     public $hasMany = [];
-    public $belongsTo = [];
+    public $belongsTo = [
+        'user' => ['Backend\Models\User']
+    ];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];

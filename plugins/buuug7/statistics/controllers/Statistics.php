@@ -23,6 +23,11 @@ class Statistics extends Controller
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
 
+    public function formBeforeCreate($model)
+    {
+        $model->user_id = $this->user->id;
+    }
+
     public function create()
     {
         BackendMenu::setContextSideMenu('new_statistics');

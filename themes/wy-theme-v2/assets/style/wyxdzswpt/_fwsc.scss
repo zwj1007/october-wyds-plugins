@@ -17,7 +17,7 @@
     }
   }
   .dd {
-    height: 260px;
+    height: 100%;
     text-align: left;
     overflow: hidden;
     margin: 30px;
@@ -29,11 +29,14 @@
       padding: 0 15px;
       a {
         color: #494546;
-        display: inline-block;
-        width: 500px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+        line-height: 40px;
+        display: inline-flex;
+        span {
+          width: 500px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
       }
       a:hover {
         color: $page-color;
@@ -47,10 +50,5 @@
       }
     }
   }
-  .fwsc-zxfb {
-    .dd {
-      height: 100px;
-    }
-  }
-
 }
+
