@@ -9,14 +9,13 @@
 out
 gen
 
-bootstrap
-config
-modules
-plugins/indikator
-storage
-themes/demo
-vendor
-!themes/wy-theme/assets/vendor
+/bootstrap
+/config
+/modules
+/plugins/indikator
+/storage
+/themes/demo
+/vendor
 .htaccess
 artisan
 index.php
