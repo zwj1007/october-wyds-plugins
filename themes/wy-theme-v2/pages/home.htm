@@ -20,18 +20,18 @@ $this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-
 $this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
 
 // 电商基础知识
-$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi'],4);
+$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi'],16);
 
 // 服务市场
-$this['fuwu']=\Buuug7\User\Models\Need::displayFeatured(12);
-$this['categoryZhaoPin']=\Buuug7\User\Models\Need::displayByCategory('zhaopin',12);
-$this['categoryFangChan']=\Buuug7\User\Models\Need::displayByCategory('fangchan',12);
-$this['categoryErShow']=\Buuug7\User\Models\Need::displayByCategory('ershou',12);
-$this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',12);
+$this['fuwu']=\Buuug7\User\Models\Need::displayFeatured(16);
+$this['categoryZhaoPin']=\Buuug7\User\Models\Need::displayByCategory('zhaopin',16);
+$this['categoryFangChan']=\Buuug7\User\Models\Need::displayByCategory('fangchan',16);
+$this['categoryErShow']=\Buuug7\User\Models\Need::displayByCategory('ershou',16);
+$this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',16);
 
 
 // 推荐电商 知名企业
-$this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
+$this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
 }
 
@@ -100,7 +100,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
             {% for post in chunk %}
             {% if loop.index == 1 %}
             <li>
-                <img class="float-left" src="{{ post.image|media }}" alt="">
+                <a href="/news/post/{{ post.slug }}"><img class="float-left" src="{{ post.image|media }}" alt=""></a>
                 <p>{{ post.title|slice(0,18) }}</p>
                 <span>{{ post.summary|raw|slice(0,25) }}</span>
             </li>
@@ -146,7 +146,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
         {% if categoryDianShangJiChuZhiShi.count %}
         <div class="float-right xspx-right">
             <ul>
-                {% for chunk in categoryDianShangJiChuZhiShi.chunk(3) %}
+                {% for chunk in categoryDianShangJiChuZhiShi.chunk(8) %}
                 <li>
                     <ol>
                         {% for post in chunk %}
@@ -175,7 +175,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
     </div>
     <div class="dd ">
         <div class="tab-pane fade active in" id="fw-1">
-            {% for chunk in fuwu.chunk(6) %}
+            {% for chunk in fuwu.chunk(8) %}
             <div class="fw-left {% if loop.index==1 %} float-left {% else %} float-right {% endif %}">
                 <ul>
                     {% for post in chunk %}
@@ -191,7 +191,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
             {% endfor %}
         </div>
         <div class="tab-pane fade" id="fw-2">
-            {% for chunk in categoryZhaoPin.chunk(6) %}
+            {% for chunk in categoryZhaoPin.chunk(8) %}
             <div class="fw-left {% if loop.index==1 %} float-left {% else %} float-right {% endif %}">
                 <ul>
                     {% for post in chunk %}
@@ -207,7 +207,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
             {% endfor %}
         </div>
         <div class="tab-pane fade" id="fw-3">
-            {% for chunk in categoryFangChan.chunk(6) %}
+            {% for chunk in categoryFangChan.chunk(8) %}
             <div class="fw-left {% if loop.index==1 %} float-left {% else %} float-right {% endif %}">
                 <ul>
                     {% for post in chunk %}
@@ -223,7 +223,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
             {% endfor %}
         </div>
         <div class="tab-pane fade" id="fw-4">
-            {% for chunk in categoryErShow.chunk(6) %}
+            {% for chunk in categoryErShow.chunk(8) %}
             <div class="fw-left {% if loop.index==1 %} float-left {% else %} float-right {% endif %}">
                 <ul>
                     {% for post in chunk %}
@@ -239,7 +239,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
             {% endfor %}
         </div>
         <div class="tab-pane fade" id="fw-5">
-            {% for chunk in categoryQiTa.chunk(6) %}
+            {% for chunk in categoryQiTa.chunk(8) %}
             <div class="fw-left {% if loop.index==1 %} float-left {% else %} float-right {% endif %}">
                 <ul>
                     {% for post in chunk %}

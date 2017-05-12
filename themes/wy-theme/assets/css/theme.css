@@ -467,8 +467,16 @@
   background: #e67e22;
 }
 /*
- * img
+ * Images
  */
+img.oc-img-rounded {
+  border-radius: 100%;
+  background-clip: padding-box;
+}
+img.oc-img-bordered {
+  border: solid 10px #CCC;
+  box-sizing: content-box;
+}
 img {
   position: relative;
   max-width: 100%;
@@ -533,17 +541,6 @@ table th.oc-cell-highlighted {
 table td.oc-cell-thick-border,
 table th.oc-cell-thick-border {
   border-width: 2px;
-}
-/*
- * Images
- */
-img.oc-img-rounded {
-  border-radius: 100%;
-  background-clip: padding-box;
-}
-img.oc-img-bordered {
-  border: solid 10px #CCC;
-  box-sizing: content-box;
 }
 /*
 *  buuug7 from here

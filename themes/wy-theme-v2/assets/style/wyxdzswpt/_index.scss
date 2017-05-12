@@ -144,10 +144,14 @@
     ul > li:first-child {
       height: 113px;
       line-height: 22px;
-      img {
-        width: 180px;
-        height: 100px;
-        padding-right: 15px;
+
+      a {
+        display: initial;
+        img {
+          width: 180px;
+          height: 100px;
+          padding-right: 15px;
+        }
       }
       p {
         font-size: 15px;
@@ -212,6 +216,10 @@
         }
         p {
           margin-bottom: 15px;
+          width: 200px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
       }
 
@@ -375,12 +383,19 @@
       text-align: center;
       width: 216px;
       height: 108px;
+      margin: 0 5px 0 5px;
       img {
         width: 214px;
         height: 106px;
         border: 1px solid $border-color;
       }
 
+    }
+    ul li:first-child {
+      margin-left: 0;
+    }
+    ul li:last-child {
+      margin-right: 0;
     }
   }
 }

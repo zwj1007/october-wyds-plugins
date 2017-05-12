@@ -132,6 +132,82 @@ a:hover, a:link {
         padding: 10px 40px;
         margin: 4px auto; }
 
+/*
+ * Images
+ */
+img.oc-img-rounded {
+  border-radius: 100%;
+  background-clip: padding-box; }
+
+img.oc-img-bordered {
+  border: solid 10px #CCC;
+  box-sizing: content-box; }
+
+/*img {
+  position: relative;
+  max-width: 100%;
+  display: block;
+  height: auto !important;
+}*/
+img.fr-dib {
+  margin: 5px auto;
+  display: block;
+  float: none;
+  vertical-align: top; }
+
+img.fr-dib.fr-fir {
+  margin-right: 0; }
+
+img.fr-dib.fr-fil {
+  margin-left: 0; }
+
+/*
+ * Text
+ */
+.oc-text-gray {
+  color: #AAA !important; }
+
+.oc-text-bordered {
+  border-top: solid 1px #222;
+  border-bottom: solid 1px #222;
+  padding: 10px 0; }
+
+.oc-text-spaced {
+  letter-spacing: 1px; }
+
+.oc-text-uppercase {
+  text-transform: uppercase; }
+
+/*
+ * Links
+ */
+a.oc-link-strong {
+  font-weight: 700; }
+
+a.oc-link-green {
+  color: green; }
+
+/*
+ * Table
+ */
+table.oc-dashed-borders td,
+table.oc-dashed-borders th {
+  border-style: dashed; }
+
+table.oc-alternate-rows tbody tr:nth-child(2n) {
+  background: #f5f5f5; }
+
+/*
+ * Table cell
+ */
+table td.oc-cell-highlighted,
+table th.oc-cell-highlighted {
+  border: 1px double red; }
+
+table td.oc-cell-thick-border,
+table th.oc-cell-thick-border {
+  border-width: 2px; }
+
 .topbar {
   width: 100%;
   height: 36px;
@@ -322,10 +398,12 @@ nav {
     height: 113px;
     line-height: 22px;
     border-bottom: 1px dashed #CCCCCC; }
-    .zcdx .dd ul > li:first-child img {
-      width: 180px;
-      height: 100px;
-      padding-right: 15px; }
+    .zcdx .dd ul > li:first-child a {
+      display: initial; }
+      .zcdx .dd ul > li:first-child a img {
+        width: 180px;
+        height: 100px;
+        padding-right: 15px; }
     .zcdx .dd ul > li:first-child p {
       font-size: 15px;
       color: #20102A;
@@ -373,7 +451,11 @@ nav {
           height: 105px;
           margin-bottom: 10px; }
         .xspx .dd .xspx-left ul li p {
-          margin-bottom: 15px; }
+          margin-bottom: 15px;
+          width: 200px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis; }
     .xspx .dd .xspx-right {
       width: 672px;
       height: 325px;
@@ -493,11 +575,16 @@ nav {
       float: left;
       text-align: center;
       width: 216px;
-      height: 108px; }
+      height: 108px;
+      margin: 0 5px 0 5px; }
       .ppqy .dd ul li img {
         width: 214px;
         height: 106px;
         border: 1px solid #CCCCCC; }
+    .ppqy .dd ul li:first-child {
+      margin-left: 0; }
+    .ppqy .dd ul li:last-child {
+      margin-right: 0; }
 
 footer {
   text-align: center;
