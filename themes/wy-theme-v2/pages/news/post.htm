@@ -32,12 +32,28 @@ if($this->post){
         <h4 class="title">{{ post.title }}</h4>
         {{ post.content|raw }}
 
-        <div class="post-files">
-            {% for item in post.files %}
-            <a href="{{ item.file_path|media }}">{{ item.file_name }}</a>
-            {% if not loop.last %} | {% endif %}
+        {% if post.images %}
+        <div class="post-images" style="margin:15px 0 15px 0">
+            <h3>图片</h3>
+            {% for item in post.images %}
+            <a href="{{ item.img_path|media }}">
+                <img src="{{ item.img_path|media}} " alt="{{ item.img_name }}">
+            </a>
             {% endfor %}
         </div>
+        {% endif %}
+
+        {% if post.files %}
+
+        <div class="post-files" style="margin:15px 0 15px 0">
+            <h3>附件</h3>
+            <ul>
+                {% for item in post.files %}
+                <li style="line-height: 2"><a href="{{ item.file_path|media }}" style="color:blue;">{{ item.file_name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
     </div>
 
     <div class="float-right dszx-kjnav">

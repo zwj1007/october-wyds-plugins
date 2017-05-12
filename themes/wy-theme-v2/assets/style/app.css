@@ -766,9 +766,10 @@ footer {
     color: #333;
     word-wrap: break-word;
     padding: 8px 0 0; }
-  .dszx-content p img {
+  .dszx-content img {
+    /*  margin: 0 auto;*/
+    max-width: 100%;
     display: block;
-    margin: 0 auto;
     padding-bottom: 15px; }
 
 .dszx-kjnav {
