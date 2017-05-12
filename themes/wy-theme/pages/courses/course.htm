@@ -6,10 +6,7 @@ layout="default"
 ==
 function onEnd(){
 
-$loggedIn = Auth::check();
-if(!$loggedIn){
-return Redirect::to('/account');
-}
+if(!Auth::check()) return Redirect::to('/user/login');
 
 //var_dump($this->course->toArray());
 }
