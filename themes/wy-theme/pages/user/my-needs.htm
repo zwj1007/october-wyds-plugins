@@ -1,23 +1,32 @@
-title = '需求'
-url = '/needs'
+title = '我的发布'
+url = '/user/center/needs'
 layout = 'default'
 
 [b7Need]
 ==
 function onEnd(){
-//var_dump($this->userRelatedNeeds);
+if(!Auth::check()) return Redirect::to('/user/login');
 }
 ==
 
 <div class="container m-t">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-3 m-b">
+            <ul class="nav nav-pills nav-stacked ">
+                <li class=" bg-white"><a href="/user/center/account"  ><i class="fa fa-fw fa-user-circle"></i> 账号</a></li>
+                <li class="bg-white"><a href="/user/center/company" ><i class="fa fa-fw fa-home"></i> 公司</a></li>
+                <li class="bg-white"><a href="/user/center/shoucang" ><i class="fa fa-fw fa-folder-open"></i> 收藏课程</a></li>
+                <li class="bg-white active"><a href="/user/center/needs" ><i class="fa fa-fw fa-feed"></i> 我的发布</a></li>
+                <li class="bg-white"><a href="/user/center/settings" ><i class="fa fa-fw fa-gear"></i> 设置</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9 bg-white p-y">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     我发布的需求
                 </div>
                 <div class="panel-body">
-                    <p class="m-b"><a href="/needs/need/create" class="btn btn-success"><i class="icon icon-plus"></i> 发布需求</a></p>
+                    <p class="m-b"><a href="/needs/need/create" class="btn btn-warning"><i class="fa fa-plus"></i> 发布需求</a></p>
                     <div class="table-responsive padding-top-20">
                         <table class="table table-hover">
                             <thead>

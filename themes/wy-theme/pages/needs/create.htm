@@ -7,7 +7,7 @@ layout = 'default'
 function onStart()
 {
 if(!Auth::check()){
-return Redirect::to('/account');
+return Redirect::to('/user/login');
 }
 
 $this->addCss('https://cdn.bootcss.com/summernote/0.8.3/summernote.css');

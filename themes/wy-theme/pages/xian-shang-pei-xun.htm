@@ -14,7 +14,7 @@ $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByC
 
 function onEnd(){
 
-if(!Auth::check()) return Redirect::to('/account');
+if(!Auth::check()) return Redirect::to('/user/login');
 
 }
 ==

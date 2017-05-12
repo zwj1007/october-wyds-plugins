@@ -1,8 +1,9 @@
 <?php namespace Buuug7\User\Components;
 
 use Cms\Classes\ComponentBase;
-use Buuug7\Courses\Models\Course;
+use Illuminate\Support\Facades\Redirect;
 use RainLab\User\Facades\Auth;
+
 
 class ShouCang extends ComponentBase
 {
@@ -28,11 +29,9 @@ class ShouCang extends ComponentBase
 
     public function listCourses()
     {
-        $check = Auth::check();
-        if (!$check) {
+        if(!Auth::check()){
             return null;
         }
-
         $user = Auth::getUser();
         $courses = $user->courses();
 

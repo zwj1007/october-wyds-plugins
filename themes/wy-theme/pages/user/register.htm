@@ -1,5 +1,5 @@
 title = "账号 | 注册"
-url = '/register/:code?'
+url = '/user/register/:code?'
 layout= 'default'
 
 [account]
@@ -17,6 +17,7 @@ paramCode = "code"
                     注 册
                 </div>
                 <div class="panel-body">
+                    <p><a href="/user/login">已有账号? 点我登录</a></p>
                     {% if canRegister %}
                     <form data-request="onRegister">
                         <div class="form-group">

@@ -1,0 +1,39 @@
+title = "收藏课程"
+url = "/user/center/shoucang"
+layout="default"
+
+[shouCang]
+==
+function onEnd(){
+if(!Auth::check()) return Redirect::to('/user/login');
+}
+==
+
+<div class="container m-t">
+    <div class="row">
+        <div class="col-md-3 m-b">
+            <ul class="nav nav-pills nav-stacked ">
+                <li class=" bg-white"><a href="/user/center/account"  ><i class="fa fa-fw fa-user-circle"></i> 账号</a></li>
+                <li class="bg-white"><a href="/user/center/company" ><i class="fa fa-fw fa-home"></i> 公司</a></li>
+                <li class="bg-white active"><a href="/user/center/shoucang" ><i class="fa fa-fw fa-folder-open"></i> 收藏课程</a></li>
+                <li class="bg-white"><a href="/user/center/needs" ><i class="fa fa-fw fa-feed"></i> 我的发布</a></li>
+                <li class="bg-white"><a href="/user/center/settings" ><i class="fa fa-fw fa-gear"></i> 设置</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9 bg-white p-y">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    已收藏课程
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        {% for course in courses %}
+                        <li class="list-group-item"><a href="/courses/course/{{ course.slug }}">{{ course.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {{ courses.render|raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

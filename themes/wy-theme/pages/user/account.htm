@@ -1,121 +1,38 @@
-title = "账号"
-url = "/account/:code?"
-layout="default"
-
+title = '账号'
+url = '/user/center/account'
+layout = 'default'
 [account]
-redirect = "account"
+redirect = "user/center"
 paramCode = "code"
 [b7Account]
 ==
-function onStart(){
-//var_dump($this->canRegister);
+function onEnd(){
+
+if(!Auth::check()) return Redirect::to('/user/login');
+
 }
 ==
+
 <div class="container m-t">
-    {% if not user %}
     <div class="row">
-        <div class="col-md-6">
-            <!--登陆-->
+        <div class="col-md-3 m-b">
+            <ul class="nav nav-pills nav-stacked ">
+                <li class=" bg-white active"><a href="/user/center/account"  ><i class="fa fa-fw fa-user-circle"></i> 账号</a></li>
+                <li class="bg-white"><a href="/user/center/company" ><i class="fa fa-fw fa-home"></i> 公司</a></li>
+                <li class="bg-white"><a href="/user/center/shoucang" ><i class="fa fa-fw fa-folder-open"></i> 收藏课程</a></li>
+                <li class="bg-white"><a href="/user/center/needs" ><i class="fa fa-fw fa-feed"></i> 我的发布</a></li>
+                <li class="bg-white"><a href="/user/center/settings" ><i class="fa fa-fw fa-gear"></i> 设置</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9 bg-white p-y">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    登陆
+                    用户头像
                 </div>
                 <div class="panel-body">
-                    <form data-request="onSignin">
-                        <div class="form-group">
-                            <label for="userSigninLogin">邮箱</label>
-                            <input
-                                    name="login"
-                                    type="text"
-                                    class="form-control"
-                                    id="userSigninLogin"
-                                    placeholder="请输入你的电子邮箱">
-                        </div>
-                        <div class="form-group">
-                            <label for="userSigninPassword">密码</label>
-                            <input
-                                    name="password"
-                                    type="password"
-                                    class="form-control"
-                                    id="userSigninPassword"
-                                    placeholder="输入密码">
-                        </div>
-                        <p><a href="/forgot-password">忘记密码?</a></p>
-                        <button type="submit" class="btn btn-default">登陆</button>
-                    </form>
+                    {% component 'imageUploader' %}
                 </div>
             </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    注册
-                </div>
-                <div class="panel-body">
-                    {% if canRegister %}
-                    <form data-request="onRegister">
-                        <div class="form-group">
-                            <label for="registerName">名称</label>
-                            <input
-                                    name="name"
-                                    type="text"
-                                    class="form-control"
-                                    id="registerName"
-                                    placeholder="输入你的昵称">
-                        </div>
-                        <div class="form-group">
-                            <label for="registerEmail">邮箱</label>
-                            <input
-                                    name="email"
-                                    type="email"
-                                    class="form-control"
-                                    id="registerEmail"
-                                    placeholder="输入你的电子邮箱"/>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="registerPassword">密码</label>
-                            <input
-                                    name="password"
-                                    type="password"
-                                    class="form-control"
-                                    id="registerPassword"
-                                    placeholder="输入密码"/>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="registerPasswordConfirmation">密码确认</label>
-                            <input
-                                    name="password_confirmation"
-                                    type="password"
-                                    class="form-control"
-                                    id="registerPasswordConfirmation"
-                                    placeholder="输入密码"/>
-                        </div>
-
-                        <button type="submit" class="btn btn-default">注册</button>
-
-                    </form>
-                    {% else %}
-                    不能注册
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </div>
-    {% else %}
-    <div class="row">
-        {% if not user.is_activated %}
-        <div class="col-md-6">
-            <h3>你的邮箱还没有被验证</h3>
-            <p>
-                请检查你的邮箱验证你的账号.
-                <a href="javascript:;" data-request="onSendActivationEmail">重新发送验证信息</a>.
-            </p>
-        </div>
-        {% endif %}
-        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     修改个人信息
@@ -159,16 +76,5 @@ function onStart(){
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    用户头像
-                </div>
-                <div class="panel-body">
-                    {% component 'imageUploader' %}
-                </div>
-            </div>
-        </div>
     </div>
-    {% endif %}
 </div>

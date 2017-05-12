@@ -1,9 +1,9 @@
 title = "账号 | 登陆"
-url = '/login/:code?'
+url = '/user/login/:code?'
 layout= 'default'
 
 [account]
-redirect = "account"
+redirect = "/user/center/account"
 paramCode = "code"
 ==
 
@@ -36,7 +36,8 @@ paramCode = "code"
                                     id="userSigninPassword"
                                     placeholder="输入密码">
                         </div>
-                        <p><a href="/forgot-password">忘记密码?</a></p>
+                        <p><a href="/user/register">没有账号? 点我注册</a></p>
+                        <p><a href="/user/forgot-password">忘记密码?</a></p>
                         <button type="submit" class="btn btn-default">登陆</button>
                     </form>
                 </div>

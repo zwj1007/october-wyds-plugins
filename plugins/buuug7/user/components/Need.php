@@ -2,7 +2,6 @@
 
 use Cms\Classes\ComponentBase;
 use Buuug7\User\Models\Need as UserNeed;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use October\Rain\Support\Facades\Flash;
 use RainLab\User\Facades\Auth;
@@ -47,6 +46,9 @@ class Need extends ComponentBase
 
     public function loadNeeds()
     {
+        if(!Auth::check()){
+            return null;
+        }
         $user = Auth::getUser();
         return $user->need()->paginate(2);
     }

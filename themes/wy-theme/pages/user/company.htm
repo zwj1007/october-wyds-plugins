@@ -1,5 +1,5 @@
 title = "公司"
-url = "/user/company"
+url = "/user/center/company"
 layout="default"
 
 [b7Company]
@@ -8,9 +8,7 @@ layout="default"
 function onStart()
 {
 
-if(!Auth::check()){
-    return Redirect::to('/account');
-}
+if(!Auth::check()) return Redirect::to('/user/login');
 
 $this->addCss('https://cdn.bootcss.com/summernote/0.8.3/summernote.css');
 $this->addJs('https://cdn.bootcss.com/summernote/0.8.3/summernote.min.js');
@@ -19,42 +17,51 @@ $this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min
 }
 
 ==
-<div class="container m-t">
 
+<div class="container m-t">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-3 m-b">
+            <ul class="nav nav-pills nav-stacked ">
+                <li class=" bg-white"><a href="/user/center/account"  ><i class="fa fa-fw fa-user-circle"></i> 账号</a></li>
+                <li class="bg-white active"><a href="/user/center/company" ><i class="fa fa-fw fa-home"></i> 公司</a></li>
+                <li class="bg-white"><a href="/user/center/shoucang" ><i class="fa fa-fw fa-folder-open"></i> 收藏课程</a></li>
+                <li class="bg-white"><a href="/user/center/needs" ><i class="fa fa-fw fa-feed"></i> 我的发布</a></li>
+                <li class="bg-white"><a href="/user/center/settings" ><i class="fa fa-fw fa-gear"></i> 设置</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9 bg-white p-y">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     公司信息
                 </div>
                 <div class="panel-body">
                     {% if company %}
-                        {% if not company.checked %}
-                            {% if company.status == 'committed' %}
-                                <p>您的公司信息已经提交.</p>
-                            {% elseif company.status == 'checking' %}
-                                <p>您提交的信息正在审核过程中</p>
-                            {% elseif company.status == 'passed' %}
-                                <p>您提交的公司信息已经通过审核!</p>
-                            {% elseif company.status == 'not_passed' %}
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                        <p>您提交的公司信息未通过审核,具体原因如下,修复后可重新提交进行审核</p>
-                                        <p class="text-danger">{{ userRelatedCompany.not_passed_message|md }}</p>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                        {% partial 'user/company_form' company=company method='onUpdateCompany' %}
-                                    </div>
-                                </div>
-                            {% endif %}
-                        {% else %}
-                            <p class="text-success">您提交的公司信息已经通过审核</p>
+                    {% if not company.checked %}
+                    {% if company.status == 'committed' %}
+                    <p>您的公司信息已经提交.</p>
+                    {% elseif company.status == 'checking' %}
+                    <p>您提交的信息正在审核过程中</p>
+                    {% elseif company.status == 'passed' %}
+                    <p>您提交的公司信息已经通过审核!</p>
+                    {% elseif company.status == 'not_passed' %}
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <p>您提交的公司信息未通过审核,具体原因如下,修复后可重新提交进行审核</p>
+                            <p class="text-danger">{{ userRelatedCompany.not_passed_message|md }}</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
                             {% partial 'user/company_form' company=company method='onUpdateCompany' %}
-                        {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
                     {% else %}
-                        {% partial 'user/company_form' company=company method='onCreateCompany' %}
+                    <p class="color-success">您提交的公司信息已经通过审核</p>
+                    {% partial 'user/company_form' company=company method='onUpdateCompany' %}
+                    {% endif %}
+                    {% else %}
+                    {% partial 'user/company_form' company=company method='onCreateCompany' %}
                     {% endif %}
                 </div>
             </div>

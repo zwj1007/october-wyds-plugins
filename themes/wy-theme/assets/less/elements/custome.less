@@ -1,3 +1,27 @@
+
+/*
+ * img
+ */
+img {
+  position: relative;
+  max-width: 100%;
+  display: block;
+  height: auto !important;
+}
+img.fr-dib{
+  margin: 5px auto;
+  display: block;
+  float: none;
+  vertical-align: top;
+}
+img.fr-dib.fr-fir {
+  margin-right: 0;
+}
+img.fr-dib.fr-fil {
+  margin-left: 0;
+}
+
+
 /*
  * Text
  */
@@ -340,4 +364,13 @@ a:hover, a:visited {
       border-color: @brand-warning;
     }
   }
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: @brand-warning;
+}
+
+.nav-pills > li > a {
+  color:#333;
 }

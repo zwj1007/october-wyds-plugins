@@ -10,6 +10,12 @@ $this['latestPosts'] = \Buuug7\News\Models\Post::displayLatest(6);
 
 // 推荐 特色
 $this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(6);
+
+if($this->post){
+    $this->page->title=$this->post->title;
+    $this->page->summary=$this->post->summary;
+}
+
 }
 ==
 <div class="box">
