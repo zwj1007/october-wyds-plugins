@@ -1,112 +1,116 @@
 @charset "UTF-8";
-.topbar {
-  width: 100%;
-  height: 36px;
-  line-height: 36px;
-  box-shadow: 1px 1px 1px rgba(204, 204, 204, 0.43);
-  //background: rgba(231, 231, 231, 0.28);
-  // background: #474747;
-  .inner {
-    width: 1000px;
+header {
+  box-shadow: 1px 1px 1px 1px #CCCCCC;
+  .topbar {
+    width: 100%;
     height: 36px;
-    margin-left: auto;
-    margin-right: auto;
-    //font-size: 16px;
-    .left {
-      color: #A0A1A2;
+    line-height: 36px;
+    box-shadow: 1px 1px 1px rgba(204, 204, 204, 0.43);
+    //background: rgba(231, 231, 231, 0.28);
+    // background: #474747;
+    .inner {
+      width: 1000px;
       height: 36px;
-      float: left;
-      .welcome {
-        color: #444;
+      margin-left: auto;
+      margin-right: auto;
+      //font-size: 16px;
+      .left {
+        color: #A0A1A2;
+        height: 36px;
+        float: left;
+        .welcome {
+          color: #444;
+        }
+        .time {
+          color: #777;
+          padding: 0 10px 0 0;
+          font-size: 12px;
+          //letter-spacing: -0.05em;
+        }
       }
-      .time {
-        color: #777;
-        padding: 0 10px 0 0;
-        font-size: 12px;
-        //letter-spacing: -0.05em;
+      .right {
+        a {
+          color: #78BDEB;
+        }
+        float: right;
+        height: 36px;
+        li {
+          float: left;
+        }
+        li:before {
+          content: "|";
+          padding: 0 5px;
+          color: #999;
+        }
+        li:first-child:before {
+          content: '';
+        }
       }
     }
-    .right {
-      a {
-        color: #78BDEB;
+  }
+
+  .head-long {
+    height: 130px;
+    margin: 0 auto;
+    // text-align: center;
+    width: $page-width;
+    .logo {
+      img {
+        height: 80px;
+        width: 400px;
+        margin: 23px 20px;
       }
-      float: right;
-      height: 36px;
+    }
+    .head-right {
+      //width: 720px;
+      margin: 28px 0;
+      ul {
+        li {
+          float: right;
+          text-align: center;
+          width: 130px;
+          p {
+            font-weight: 600;
+            color: #000000;
+          }
+          img {
+            width: 50px;
+            height: 50px;
+            transition: all 0.8s ease-in-out;
+          }
+          img:hover {
+            opacity: 0.8;
+            transform: scale(1.3) rotate(-13deg)
+          }
+        }
+
+      }
+    }
+  }
+
+  nav {
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    //overflow: hidden;
+    background-color: $nav-background;
+    //color: $nav-color;
+    ul {
+      width: $page-width;
+      overflow: hidden;
+      margin: 0 auto;
       li {
         float: left;
-      }
-      li:before {
-        content: "|";
-        padding: 0 5px;
-        color: #999;
-      }
-      li:first-child:before {
-        content: '';
-      }
-    }
-  }
-}
-
-.head-long {
-  height: 130px;
-  margin: 0 auto;
-  // text-align: center;
-  width: $page-width;
-  .logo {
-    img {
-      height: 80px;
-      width: 400px;
-      margin: 23px 20px;
-    }
-  }
-  .head-right {
-    //width: 720px;
-    margin: 28px 0;
-    ul {
-      li {
-        float: right;
         text-align: center;
-        width: 130px;
-        p {
-          font-weight: 600;
-          color: #000000;
-        }
-        img {
-          width: 50px;
-          height: 50px;
-          transition: all 0.8s ease-in-out;
-        }
-        img:hover {
-          opacity: 0.8;
-          transform: scale(1.3) rotate(-13deg)
+        width: $page-width/9;
+        a {
+          color: $nav-color;
         }
       }
-
-    }
-  }
-}
-
-nav {
-  height: 40px;
-  line-height: 40px;
-  font-size: 16px;
-  //overflow: hidden;
-  background-color: $nav-background;
-  //color: $nav-color;
-  ul {
-    width: $page-width;
-    overflow: hidden;
-    margin: 0 auto;
-    li {
-      float: left;
-      text-align: center;
-      width: $page-width/9;
-      a {
-        color: $nav-color;
+      li:hover {
+        background: $nav-hover;
       }
     }
-    li:hover {
-      background: $nav-hover;
-    }
   }
+
 }

@@ -147,12 +147,7 @@ class Account extends ComponentBase
                 $data['login'] = post('username', post('email'));
             }
 
-            $validation = Validator::make($data, $rules,[
-                'required' => ':attribute 必须填写!',
-            ],[
-                'login' => '邮箱',
-                'password' => '密码',
-            ]);
+            $validation = Validator::make($data, $rules);
             if ($validation->fails()) {
                 throw new ValidationException($validation);
             }
@@ -213,13 +208,7 @@ class Account extends ComponentBase
                 $rules['username'] = 'required|between:2,255';
             }
 
-            $validation = Validator::make($data, $rules,[
-                'required' => ':attribute 必须填写!',
-                'confirmed' => '确认 :attribute 不匹配',
-            ],[
-                'email' => '邮箱',
-                'password' => '密码',
-            ]);
+            $validation = Validator::make($data, $rules);
             if ($validation->fails()) {
                 throw new ValidationException($validation);
             }

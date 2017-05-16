@@ -9,10 +9,10 @@ paramCode = "code"
 function onEnd(){
 
 if(!Auth::check()) return Redirect::to('/user/login');
+$this['userAvatar']=Illuminate\Support\Facades\Session::get('user.avatar');
 
 }
 ==
-
 <div class="container m-t">
     <div class="row">
         <div class="col-md-3 m-b">
@@ -30,7 +30,11 @@ if(!Auth::check()) return Redirect::to('/user/login');
                     用户头像
                 </div>
                 <div class="panel-body">
+                    {% if userAvatar %}
+                    <img src="{{ userAvatar}}" alt="" class="img-responsive">
+                    {% else %}
                     {% component 'imageUploader' %}
+                    {% endif %}
                 </div>
             </div>
             <div class="panel panel-default">

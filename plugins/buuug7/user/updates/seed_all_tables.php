@@ -275,7 +275,6 @@ class SeedAllTables extends Seeder
             'checked_at' => Carbon::now(),
         ]);
 
-
         // insert need of this user
         Need::create([
             'user_id' => $user02->id,
@@ -365,7 +364,6 @@ class SeedAllTables extends Seeder
             'checked_at' => Carbon::now(),
         ]);
 
-
         // insert need of this user
         Need::create([
             'user_id' => $user02->id,
@@ -397,17 +395,16 @@ class SeedAllTables extends Seeder
         ]);
 
 
-
-        $user03 = Auth::findUserByLogin('3190136675@qq.com');
+        $user03 = Auth::findUserByLogin('3190136675@qq2.com');
         if (!$user03) {
             Auth::register([
                 'name' => '3190136675',
-                'email' => '3190136675@qq.com',
+                'email' => '3190136675@qq2.com',
                 'password' => '111111',
                 'password_confirmation' => '111111',
             ], true);
         }
-        $user03 = Auth::findUserByLogin('3190136675@qq.com');
+        $user03 = Auth::findUserByLogin('3190136675@qq2.com');
         // insert user company
         Company::create([
             'name' => '辣妈帮',
@@ -429,7 +426,6 @@ class SeedAllTables extends Seeder
             'featured' => true,
             'checked_at' => Carbon::now(),
         ]);
-
 
         // insert need of this user
         Need::create([
@@ -465,7 +461,6 @@ class SeedAllTables extends Seeder
             'checked' => true,
             'checked_at' => Carbon::now(),
         ]);
-
 
         // insert need of this user
         Need::create([
@@ -503,7 +498,6 @@ class SeedAllTables extends Seeder
             'checked' => true,
             'checked_at' => Carbon::now(),
         ]);
-
 
         $user04 = Auth::findUserByLogin('616184039@qq.com');
         if (!$user04) {

@@ -39,11 +39,7 @@ class ResetPassword extends ComponentBase
             'email' => 'required|email|between:6,255'
         ];
 
-        $validation = Validator::make(post(), $rules,[
-            'required' => ':attribute 必须填写',
-        ],[
-            'email' => '邮箱',
-        ]);
+        $validation = Validator::make(post(), $rules);
         if ($validation->fails()) {
             throw new ValidationException($validation);
         }
@@ -78,12 +74,7 @@ class ResetPassword extends ComponentBase
             'password' => 'required|between:4,255'
         ];
 
-        $validation = Validator::make(post(), $rules,[
-            'required' => ':attribute 必须填写',
-        ],[
-            'code' => '激活码',
-            'password' => '密码',
-        ]);
+        $validation = Validator::make(post(), $rules);
         if ($validation->fails()) {
             throw new ValidationException($validation);
         }

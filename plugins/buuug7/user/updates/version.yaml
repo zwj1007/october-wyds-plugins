@@ -8,3 +8,6 @@
 1.0.3:
     - seed all tables
     - seed_all_tables.php
+1.0.4:
+    - add github_id
+    - user_add_github_id_fields.php

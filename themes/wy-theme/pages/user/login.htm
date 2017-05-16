@@ -6,7 +6,10 @@ layout= 'default'
 redirect = "/user/center/account"
 paramCode = "code"
 ==
-
+function onStart(){
+//var_dump(Config::get('buuug7.user::github.client_id', 50));
+}
+==
 <div class="container m-t">
     
     <div class="row">
@@ -38,6 +41,13 @@ paramCode = "code"
                         </div>
                         <p><a href="/user/register">没有账号? 点我注册</a></p>
                         <p><a href="/user/forgot-password">忘记密码?</a></p>
+                        <p>或者你可以用社交账号登录</p>
+                        <p>
+                            <a class="btn btn-social-icon btn-github m-r-sm" href="/login/github"><i class="fa fa-github"></i></a>
+                            <a class="btn btn-social-icon btn-qq m-r-sm"><i class="fa fa-qq"></i></a>
+                            <a class="btn btn-social-icon btn-wechat m-r-sm"><i class="fa fa-wechat"></i></a>
+                        </p>
+                        <hr>
                         <button type="submit" class="btn btn-default">登陆</button>
                     </form>
                 </div>
