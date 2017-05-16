@@ -46,5 +46,5 @@ Route::get('/login/github/callback', function () {
     Auth::login($userInstance);
     Session::put('user.avatar', $githubUser->avatar_url);
 
-    return Redirect::to('/');
+    return Redirect::to('/user/center/account');
 });
