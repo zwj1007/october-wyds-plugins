@@ -395,16 +395,16 @@ class SeedAllTables extends Seeder
         ]);
 
 
-        $user03 = Auth::findUserByLogin('3190136675@qq2.com');
+        $user03 = Auth::findUserByLogin('1396675682@qq.com');
         if (!$user03) {
             Auth::register([
-                'name' => '3190136675',
-                'email' => '3190136675@qq2.com',
+                'name' => '1396675682',
+                'email' => '1396675682@qq.com',
                 'password' => '111111',
                 'password_confirmation' => '111111',
             ], true);
         }
-        $user03 = Auth::findUserByLogin('3190136675@qq2.com');
+        $user03 = Auth::findUserByLogin('1396675682@qq.com');
         // insert user company
         Company::create([
             'name' => '辣妈帮',

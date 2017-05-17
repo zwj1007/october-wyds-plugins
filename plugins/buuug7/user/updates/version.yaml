@@ -9,5 +9,5 @@
     - seed all tables
     - seed_all_tables.php
 1.0.4:
-    - add github_id
-    - user_add_github_id_fields.php
+    - add social login fields
+    - user_add_social_login_fields.php

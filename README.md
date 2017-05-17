@@ -71,6 +71,8 @@ october plugins
 + install buuug7.courses `php artisan plugin:refresh Buuug7.Courses`
 + install buuug7.user `php artisan plugin:refresh Buuug7.User`
 
++ this plugin need `guzzlehttp/guzzle`, you need run `composer update ` after install
+
 #### 注意
 + 新安装的october需要修改以下几个地方
     + 修改根目录`config/app.php`中 `locale=zh-cn timezone=PRC`

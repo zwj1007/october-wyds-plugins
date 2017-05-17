@@ -1,0 +1,61 @@
+title = '头像设置'
+url = '/user/center/avatar'
+layout = 'default'
+
+[b7Account]
+==
+function onStart(){
+if(!Auth::check()) return Redirect::to('/user/login');
+
+$this['social_avatar']=Auth::getUser()->social_avatar;
+}
+==
+
+<div class="container m-t">
+    <div class="row">
+        <div class="col-md-3 m-b">
+            <ul class="nav nav-pills nav-stacked ">
+                <li class="bg-white"><a href="/user/center/account"><i class="fa fa-fw fa-user-o"></i> 账号</a></li>
+                <li class="bg-white active"><a href="/user/center/avatar"><i class="fa fa-fw fa-user-circle"></i> 头像</a>
+                </li>
+                <li class="bg-white"><a href="/user/center/company"><i class="fa fa-fw fa-home"></i> 公司</a></li>
+                <li class="bg-white"><a href="/user/center/shoucang"><i class="fa fa-fw fa-folder-open"></i> 收藏课程</a>
+                </li>
+                <li class="bg-white"><a href="/user/center/needs"><i class="fa fa-fw fa-feed"></i> 我的发布</a></li>
+                <li class="bg-white"><a href="/user/center/settings"><i class="fa fa-fw fa-gear"></i> 设置</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9 bg-white p-y">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    用户头像
+                </div>
+                <div class="panel-body">
+                    <div class="callout callout-danger">
+                        <h4>头像上传说明</h4>
+                        <p>
+                            上传图片比例建议正方形,长宽比为(1:1),上传图片尺寸建议(200px:200px)
+                            <br>
+                            如果您用社交账号登录,这里不需要上传头像,我们会优先使用您的社交账号头像
+                        </p>
+                    </div>
+                    {% component 'imageUploader' %}
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    社交账号头像
+                </div>
+                <div class="panel-body">
+                    {% if social_avatar %}
+                    <img src="{{ social_avatar }}" alt="" class="img-responsive" style="max-width: 200px">
+                    {% else %}
+                    <p>您还没有关联社交账号的头像</p>
+                    <p>用社交账号登录会自动关联头像</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
