@@ -2,9 +2,37 @@ title = '即将来临'
 url = "/coming-soon"
 layout = "default"
 ==
-<div class="jumbotron ">
+function onStart(){
+$this->addJs('https://cdn.bootcss.com/jquery-backstretch/2.0.4/jquery.backstretch.min.js');
+$this->addJs('https://cdn.bootcss.com/jquery.countdown/2.2.0/jquery.countdown.min.js');
+}
+==
+<div class="jumbotron coming-soon-v1">
     <div class="container">
-        <h1>即将来临</h1>
-        <p>很快到来</p>
+        <h2 class="">即将来临</h2>
+        <p>
+            该功能正在建设当中 , 预计将在以下倒计时结束之前上线该功能 , 敬请期待 ! (❁´◡`❁)*✲ﾟ*
+        </p>
+        <p id="countdown" class="count"></p>
+        <p>
+            <a href="javascript:history.go(-1)" class="btn btn-line-warning">返 回</a>
+        </p>
     </div>
 </div>
+
+
+{% put scripts %}
+<script>
+    $('#countdown').countdown('2017-10-01',function (event) {
+        var $this=$(this).html(event.strftime(''
+            + '<span>%D</span> 天 '
+            + '<span>%H</span> 小时 '
+            + '<span>%M</span> 分钟 '
+            + '<span>%S</span> 秒'));
+    });
+    $('.coming-soon-v1').backstretch([
+        "themes/wy-theme/assets/images/bg/1.jpg",
+        "themes/wy-theme/assets/images/bg/3.jpg",
+    ]);
+</script>
+{% endput %}

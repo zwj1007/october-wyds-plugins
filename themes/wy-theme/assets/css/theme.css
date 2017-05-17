@@ -603,90 +603,6 @@ a:visited {
 .bg-color-warning {
   background-color: #f39c12;
 }
-.btn-social {
-  position: relative;
-  padding-left: 44px;
-  text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.btn-social > :first-child {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 32px;
-  line-height: 34px;
-  font-size: 1.6em;
-  text-align: center;
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
-}
-.btn-social-icon {
-  position: relative;
-  text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  height: 34px;
-  width: 34px;
-  padding: 0;
-}
-.btn-social-icon > :first-child {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  line-height: 34px;
-  font-size: 1.6em;
-  text-align: center;
-  border: none;
-  width: 100%;
-}
-.btn-github {
-  color: #fff;
-  background-color: #444;
-  border-color: rgba(0, 0, 0, 0.2);
-}
-.btn-qq {
-  color: #fff;
-  background-color: #0073b7;
-  border-color: rgba(0, 0, 0, 0.2);
-}
-.btn-wechat {
-  color: #fff;
-  background-color: #00a65a;
-  border-color: rgba(0, 0, 0, 0.2);
-}
-.btn-weibo {
-  color: #fff;
-  background-color: #dd4b39;
-  border-color: rgba(0, 0, 0, 0.2);
-}
-.btn-box-tool {
-  padding: 5px;
-  font-size: 12px;
-  background: transparent;
-  color: #97a0b3;
-}
-.btn-line {
-  border: 1px solid #fff;
-  background-color: transparent;
-  color: #fff;
-}
-.btn-line:hover,
-.btn-line:visited {
-  color: #fff;
-}
-.btn-line-warning {
-  border: 1px solid #f39c12;
-  background-color: transparent;
-  color: #f39c12;
-}
-.btn-line-warning:hover {
-  color: #fff;
-  background-color: #f39c12;
-}
 .page-header {
   border-bottom: 1px solid #eeeeee;
 }
@@ -774,16 +690,6 @@ a:visited {
   overflow: hidden;
   width: 100%;
 }
-.pagination > .active > a,
-.pagination > .active > span,
-.pagination > .active > a:hover,
-.pagination > .active > span:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span:focus {
-  color: #fff;
-  background-color: #f39c12;
-  border-color: #f39c12;
-}
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
@@ -807,7 +713,7 @@ a:visited {
   margin: 0 0 -2px 0;
   padding-bottom: 5px;
   display: inline-block;
-  border-bottom: 3px solid #FF851B;
+  border-bottom: 3px solid #f39c12;
 }
 .headline-primary h2,
 .headline-primary h3,
@@ -847,6 +753,21 @@ a:visited {
   font-size: 20px;
   font-weight: 200;
 }
+.headline-v2-primary {
+  border-left: 3px solid #3c8dbc;
+}
+.headline-v2-success {
+  border-left: 3px solid #00a65a;
+}
+.headline-v2-info {
+  border-left: 3px solid #00c0ef;
+}
+.headline-v2-danger {
+  border-left: 3px solid #dd4b39;
+}
+.headline-v2-warning {
+  border-left: 3px solid #f39c12;
+}
 .headline-v3 {
   text-align: center;
   margin-bottom: 40px;
@@ -857,6 +778,31 @@ a:visited {
 }
 .headline-v3 p {
   font-size: 14px;
+}
+.headline-v3-primary h2,
+.headline-v3-primary h3,
+.headline-v3-primary h4 {
+  color: #3c8dbc;
+}
+.headline-v3-success h2,
+.headline-v3-success h3,
+.headline-v3-success h4 {
+  color: #00a65a;
+}
+.headline-v3-info h2,
+.headline-v3-info h3,
+.headline-v3-info h4 {
+  color: #00c0ef;
+}
+.headline-v3-danger h2,
+.headline-v3-danger h3,
+.headline-v3-danger h4 {
+  color: #dd4b39;
+}
+.headline-v3-warning h2,
+.headline-v3-warning h3,
+.headline-v3-warning h4 {
+  color: #f39c12;
 }
 .tags-v1 li {
   margin: 0;
@@ -1452,6 +1398,151 @@ figure h4 {
 .copyrights-v2 .terms-menu {
   margin: 6px 0 0;
   font-size: 14px;
+}
+.coming-soon-v1 .container {
+  text-align: center;
+  padding: 50px 50px;
+  color: #fff;
+}
+.coming-soon-v1 .container h2 {
+  font-size: 45px;
+  text-transform: uppercase;
+  margin: 45px 0;
+  color: #fff;
+  text-shadow: 5px 5px 5px #000;
+}
+.coming-soon-v1 .container p {
+  font-size: 18px;
+  text-shadow: 5px 5px 5px black;
+}
+.coming-soon-v1 .container .count span {
+  font-size: 35px;
+  font-weight: normal;
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+  padding: 5px 10px;
+  text-shadow: 5px 5px 5px black;
+}
+.coming-soon-v1:before {
+  top: 0;
+  left: 0;
+  bottom: 30px;
+  z-index: -1;
+  width: 100%;
+  content: " ";
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+}
+.btn-social {
+  position: relative;
+  padding-left: 44px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn-social > :first-child {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  line-height: 34px;
+  font-size: 1.6em;
+  text-align: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+.btn-social-icon {
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 34px;
+  width: 34px;
+  padding: 0;
+}
+.btn-social-icon > :first-child {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  line-height: 34px;
+  font-size: 1.6em;
+  text-align: center;
+  border: none;
+  width: 100%;
+}
+.btn-github {
+  color: #333;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-qq {
+  color: #333;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-wechat {
+  color: #333;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-weibo {
+  color: #333;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-box-tool {
+  padding: 5px;
+  font-size: 12px;
+  background: transparent;
+  color: #97a0b3;
+}
+.btn-line {
+  border: 1px solid #333;
+  background-color: transparent;
+  color: #333;
+}
+.btn-line:hover,
+.btn-line:visited {
+  color: #333;
+}
+.btn-line-primary {
+  border: 1px solid #3c8dbc;
+  color: #3c8dbc;
+}
+.btn-line-primary:hover {
+  color: #fff;
+  background-color: #3c8dbc;
+}
+.btn-line-success {
+  border: 1px solid #00a65a;
+  color: #00a65a;
+}
+.btn-line-success:hover {
+  color: #fff;
+  background-color: #00a65a;
+}
+.btn-line-info {
+  border: 1px solid #00c0ef;
+  color: #00c0ef;
+}
+.btn-line-info:hover {
+  color: #fff;
+  background-color: #00c0ef;
+}
+.btn-line-danger {
+  border: 1px solid #dd4b39;
+  color: #dd4b39;
+}
+.btn-line-danger:hover {
+  color: #fff;
+  background-color: #dd4b39;
+}
+.btn-line-warning {
+  border: 1px solid #f39c12;
+  color: #f39c12;
+}
+.btn-line-warning:hover {
+  color: #fff;
+  background-color: #f39c12;
 }
 body {
   padding-top: 70px;

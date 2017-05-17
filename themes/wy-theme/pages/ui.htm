@@ -7,10 +7,35 @@ layout = 'default'
 function onStart(){
 
 $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
+$this->addJs('https://cdn.bootcss.com/jquery-backstretch/2.0.4/jquery.backstretch.min.js');
+$this->addJs('https://cdn.bootcss.com/jquery.countdown/2.2.0/jquery.countdown.min.js');
 }
 ==
 <div class="container mt">
-    <h2>chartJs</h2>
+
+    <div class="headline">
+        <h2>Coming soon</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron coming-soon-v1">
+                <div class="container">
+                    <h2 class="">即将来临</h2>
+                    <p>
+                        该功能正在建设当中 , 预计将在以下倒计时结束之前上线该功能 , 敬请期待 ! (❁´◡`❁)*✲ﾟ*
+                    </p>
+                    <p id="countdown" class="count"></p>
+                    <p>
+                        <a href="javascript:history.go(-1)" class="btn btn-line-warning">返 回</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>ChartJs</h2>
+    </div>
     <div class="row">
         <div class="col-md-6">
             <div class="box box-default">
@@ -144,10 +169,11 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
                 <!-- /.box-body -->
             </div>
         </div>
-
     </div>
 
-    <h2>panel-trans with list group</h2>
+    <div class="headline">
+        <h2>panel-trans with list group</h2>
+    </div>
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-trans">
@@ -182,553 +208,567 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
     </div>
 
 
-    <h2>box</h2>
-    <hr>
-    <h4>box default</h4>
-    <div class="box box-default">
-        <div class="box-header with-border">
-            <h3 class="box-title">Collapsable</h3>
-            <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                        <i class="fa fa-wrench"></i></button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
+    <div class="headline">
+        <h2>Box</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">box default</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fa fa-wrench"></i></button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
                 </div>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-            </div>
-            <!-- /.box-tools -->
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad commodi cum dolor dolorem ducimus
-            eligendi illum, ipsa molestias, nisi nobis non numquam officiis quasi reiciendis reprehenderit repudiandae
-            voluptates.
-        </div>
-        <!-- /.box-body -->
-    </div>
-
-    <h4>box primary</h4>
-    <div class="box box-primary">
-        <div class="box-header with-border">
-            <h3 class="box-title">Collapsable</h3>
-            <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                        <i class="fa fa-wrench"></i></button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
+                <div class="box-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                    obcaecati reprehenderit ea
+                    dignissimos amet voluptatem id excepturi facilistotam veritatis maiores eveniet neque explicabo
+                    temporibus quisquam in ex ab
+                    fugiat ipsa tempore sunt corporis nostrum quam illum!
                 </div>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
             </div>
-            <!-- /.box-tools -->
         </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad commodi cum dolor dolorem ducimus
-            eligendi illum, ipsa molestias, nisi nobis non numquam officiis quasi reiciendis reprehenderit repudiandae
-            voluptates.
-        </div>
-        <!-- /.box-body -->
-    </div>
-
-    <h4>box success</h4>
-    <div class="box box-success">
-        <div class="box-header with-border">
-            <h3 class="box-title">Collapsable</h3>
-            <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                        <i class="fa fa-wrench"></i></button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">box primary</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fa fa-wrench"></i></button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
                 </div>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-            </div>
-            <!-- /.box-tools -->
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad commodi cum dolor dolorem ducimus
-            eligendi illum, ipsa molestias, nisi nobis non numquam officiis quasi reiciendis reprehenderit repudiandae
-            voluptates.
-        </div>
-        <!-- /.box-body -->
-    </div>
-
-    <h4>box info</h4>
-    <div class="box box-info">
-        <div class="box-header with-border">
-            <h3 class="box-title">Collapsable</h3>
-            <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                        <i class="fa fa-wrench"></i></button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
+                <div class="box-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                    obcaecati reprehenderit
+                    ea dignissimos amet voluptatem id excepturi facilistotam veritatis maiores eveniet neque explicabo
+                    temporibus quisquam in
+                    ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!
                 </div>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
             </div>
-            <!-- /.box-tools -->
         </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad commodi cum dolor dolorem ducimus
-            eligendi illum, ipsa molestias, nisi nobis non numquam officiis quasi reiciendis reprehenderit repudiandae
-            voluptates.
-        </div>
-        <!-- /.box-body -->
-    </div>
-
-    <h4>box danger</h4>
-    <div class="box box-danger">
-        <div class="box-header with-border">
-            <h3 class="box-title">Collapsable</h3>
-            <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                        <i class="fa fa-wrench"></i></button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
+        <div class="col-md-6">
+            <div class="box box-success">
+                <div class="box-header with-border">
+                    <h3 class="box-title">box success</h3>
                 </div>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-            </div>
-            <!-- /.box-tools -->
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad commodi cum dolor dolorem ducimus
-            eligendi illum, ipsa molestias, nisi nobis non numquam officiis quasi reiciendis reprehenderit repudiandae
-            voluptates.
-        </div>
-        <!-- /.box-body -->
-    </div>
-
-    <h4>box warning</h4>
-    <div class="box box-warning">
-        <div class="box-header with-border">
-            <h3 class="box-title">Collapsable</h3>
-            <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                        <i class="fa fa-wrench"></i></button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
+                <div class="box-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                    obcaecati reprehenderit
+                    ea dignissimos amet voluptatem id excepturi facilistotam veritatis maiores eveniet neque explicabo
+                    temporibus quisquam in
+                    ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!
                 </div>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
             </div>
-            <!-- /.box-tools -->
         </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad commodi cum dolor dolorem ducimus
-            eligendi illum, ipsa molestias, nisi nobis non numquam officiis quasi reiciendis reprehenderit repudiandae
-            voluptates.
+        <div class="col-md-6">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">box info</h3>
+                </div>
+                <div class="box-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                    obcaecati reprehenderit
+                    ea dignissimos amet voluptatem id excepturi facilistotam veritatis maiores eveniet neque explicabo
+                    temporibus quisquam in
+                    ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!
+                </div>
+            </div>
         </div>
-        <!-- /.box-body -->
+        <div class="col-md-6">
+            <div class="box box-danger">
+                <div class="box-header with-border">
+                    <h3 class="box-title">box danger</h3>
+                </div>
+                <div class="box-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                    obcaecati reprehenderit
+                    ea dignissimos amet voluptatem id excepturi facilistotam veritatis maiores eveniet neque explicabo
+                    temporibus quisquam in
+                    ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-warning">
+                <div class="box-header with-border">
+                    <h3 class="box-title">box warning</h3>
+                </div>
+                <div class="box-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                    obcaecati reprehenderit
+                    ea dignissimos amet voluptatem id excepturi facilistotam veritatis maiores eveniet neque explicabo
+                    temporibus quisquam in
+                    ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!
+                </div>
+            </div>
+        </div>
     </div>
 
 
-    <h2>Tabs</h2>
-    <hr>
-    <h4>tabs default</h4>
-    <!-- TAB NAVIGATION -->
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="active"><a href="#tab1" role="tab" data-toggle="tab">Tab1</a></li>
-        <li><a href="#tab2" role="tab" data-toggle="tab">Tab2</a></li>
-        <li><a href="#tab3" role="tab" data-toggle="tab">Tab3</a></li>
-    </ul>
-    <!-- TAB CONTENT -->
-    <div class="tab-content">
-        <div class="active tab-pane fade in" id="tab1">
-            <h4>Tab1</h4>
-            <p>Lorem ipsum.</p>
-        </div>
-        <div class="tab-pane fade" id="tab2">
-            <h4>Tab2</h4>
-            <p>Lorem ipsum.</p>
-        </div>
-        <div class="tab-pane fade" id="tab3">
-            <h4>Tab3</h4>
-            <p>Lorem ipsum.</p>
-        </div>
+    <div class="headline">
+        <h2>Tabs</h2>
     </div>
-
-    <h4>tabs dropdown</h4>
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="active"><a href="#new" data-toggle="tab">New</a></li>
-        <li><a href="#help" data-toggle="tab">Help</a></li>
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                Dropdown <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#tab1" role="tab" data-toggle="tab">Tab1</a></li>
+                <li><a href="#tab2" role="tab" data-toggle="tab">Tab2</a></li>
+                <li><a href="#tab3" role="tab" data-toggle="tab">Tab3</a></li>
             </ul>
-        </li>
-    </ul>
-    <div class="tab-content">
-        <div class="active tab-pane fade in" id="new">
-            <h4>new</h4>
-            <p>Lorem ipsum.</p>
-        </div>
-        <div class="tab-pane fade" id="help">
-            <h4>help</h4>
-            <p>Lorem ipsum.</p>
-        </div>
-    </div>
-
-
-    <h4>tab-v1</h4>
-    <div class="tab-v1">
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#home" data-toggle="tab" aria-expanded="true">Home</a></li>
-            <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">Profile</a></li>
-            <li class=""><a href="#messages" data-toggle="tab" aria-expanded="false">Messages</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane fade active in" id="home">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img alt="" class="img-responsive img-tab-space" src="http://placehold.it/800x400">
-                    </div>
-                    <div class="col-md-8">
-                        <h4>Heading Sample 1</h4>
-                        <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci
-                           metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong>
-                           condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing
-                           nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget
-                           placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque
-                           fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>
-                    </div>
+            <div class="tab-content">
+                <div class="active tab-pane fade in" id="tab1">
+                    <h4>Tab1</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                        obcaecati reprehenderit ea dignissimos amet voluptatem id excepturi facilis
+                        totam veritatis maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore
+                        sunt corporis nostrum quam illum!
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="tab2">
+                    <h4>Tab2</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                       labore et dolore magna aliqua.</p>
+                </div>
+                <div class="tab-pane fade" id="tab3">
+                    <h4>Tab3</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                       labore et dolore magna aliqua.</p>
                 </div>
             </div>
-            <div class="tab-pane fade" id="profile">
-                <h4>Heading Sample 2</h4>
-                <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac
-                   adipiscing nunc. Pellentesque fermentum, ante ac interdum <strong>ac adipiscing nunc.</strong>
-                   Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Pellentesque fermentum, ante
-                   ac interdum id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac <strong>interdum
-                                                                                                                      ullamcorper.</strong>
-                </p>
-            </div>
-            <div class="tab-pane fade" id="messages">
-                <h4>Heading Sample 3</h4>
-                <p><img alt="" class="pull-right" src="http://placehold.it/400x200"> <strong>Vivamus imperdiet
-                                                                                             condimentum diam, eget
-                                                                                             placerat felis consectetur
-                                                                                             id.</strong> Donec eget
-                                                                                                          orci metus,
-                                                                                                          Vivamus
-                                                                                                          imperdiet
-                                                                                                          condimentum
-                                                                                                          diam, eget
-                                                                                                          placerat felis
-                                                                                                          consectetur
-                                                                                                          id. Donec eget
-                                                                                                          orci metus, ac
-                                                                                                          adipiscing
-                                                                                                          nunc.
-                                                                                                          Pellentesque
-                                                                                                          fermentum,
-                                                                                                          ante ac
-                                                                                                          interdum
-                                                                                                          ullamcorper.
-                                                                                                          Donec eget
-                                                                                                          orci metus, ac
-                                                                                                          adipiscing
-                                                                                                          nunc.
-                                                                                                          Pellentesque
-                                                                                                          fermentum,
-                                                                                                          consectetur
-                                                                                                          id. Donec eget
-                                                                                                          orci metus, ac
-                                                                                                          adipiscing
-                                                                                                          nunc. <strong>Pellentesque
-                                                                                                                        fermentum</strong>,
-                                                                                                          ante ac
-                                                                                                          interdum
-                                                                                                          ullamcorper.
-                                                                                                          Donec eget
-                                                                                                          orci metus, ac
-                                                                                                          adipiscing
-                                                                                                          nunc.
-                                                                                                          Pellentesque
-                                                                                                          fermentum,
-                                                                                                          ante ac
-                                                                                                          interdum
-                                                                                                          ullamcorper.
-                </p>
-            </div>
         </div>
     </div>
 
-    <h4>tab-v2</h4>
-    <div class="tab-v2">
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#home2" data-toggle="tab" aria-expanded="true">Home</a></li>
-            <li class=""><a href="#profile2" data-toggle="tab" aria-expanded="false">Profile</a></li>
-            <li class=""><a href="#messages2" data-toggle="tab" aria-expanded="false">Messages</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane fade active in" id="home2">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img alt="" class="img-responsive img-tab-space" src="http://placehold.it/800x400">
-                    </div>
-                    <div class="col-md-8">
-                        <h4>Heading Sample 1</h4>
-                        <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci
-                           metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong>
-                           condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing
-                           nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget
-                           placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque
-                           fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="profile2">
-                <h4>Heading Sample 2</h4>
-                <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac
-                   adipiscing nunc. Pellentesque fermentum, ante ac interdum <strong>ac adipiscing nunc.</strong>
-                   Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Pellentesque fermentum, ante
-                   ac interdum id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac <strong>interdum
-                                                                                                                      ullamcorper.</strong>
-                </p>
-            </div>
-            <div class="tab-pane fade" id="messages2">
-                <h4>Heading Sample 3</h4>
-                <p><img alt="" class="pull-right" src="http://placehold.it/400x200"> <strong>Vivamus imperdiet
-                                                                                             condimentum diam, eget
-                                                                                             placerat felis consectetur
-                                                                                             id.</strong> Donec eget
-                                                                                                          orci metus,
-                                                                                                          Vivamus
-                                                                                                          imperdiet
-                                                                                                          condimentum
-                                                                                                          diam, eget
-                                                                                                          placerat felis
-                                                                                                          consectetur
-                                                                                                          id. Donec eget
-                                                                                                          orci metus, ac
-                                                                                                          adipiscing
-                                                                                                          nunc.
-                                                                                                          Pellentesque
-                                                                                                          fermentum,
-                                                                                                          ante ac
-                                                                                                          interdum
-                                                                                                          ullamcorper.
-                                                                                                          Donec eget
-                                                                                                          orci metus, ac
-                                                                                                          adipiscing
-                                                                                                          nunc.
-                                                                                                          Pellentesque
-                                                                                                          fermentum,
-                                                                                                          consectetur
-                                                                                                          id. Donec eget
-                                                                                                          orci metus, ac
-                                                                                                          adipiscing
-                                                                                                          nunc. <strong>Pellentesque
-                                                                                                                        fermentum</strong>,
-                                                                                                          ante ac
-                                                                                                          interdum
-                                                                                                          ullamcorper.
-                                                                                                          Donec eget
-                                                                                                          orci metus, ac
-                                                                                                          adipiscing
-                                                                                                          nunc.
-                                                                                                          Pellentesque
-                                                                                                          fermentum,
-                                                                                                          ante ac
-                                                                                                          interdum
-                                                                                                          ullamcorper.
-                </p>
-            </div>
-        </div>
-    </div>
 
-    <h4>tab-v3</h4>
-    <div class="row tab-v3">
-        <div class="col-sm-3">
-            <ul class="nav nav-pills nav-stacked">
-                <li class=""><a href="#home-2" data-toggle="tab" aria-expanded="false"><i class="fa fa-home"></i>
-                    Home</a></li>
-                <li class=""><a href="#profile-2" data-toggle="tab" aria-expanded="false"><i class="fa fa-cloud"></i>
-                    Profile</a></li>
-                <li class="">
-                    <a href="#messages-2" data-toggle="tab" aria-expanded="false"><i class="fa fa-comments"></i>
-                        Messages</a></li>
-                <li class="active">
-                    <a href="#settings-2" data-toggle="tab" aria-expanded="true"><i class="fa fa-gear"></i> Settings</a>
+    <div class="headline">
+        <h2>Tabs dropdown</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#new" data-toggle="tab">New</a></li>
+                <li><a href="#help" data-toggle="tab">Help</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another Action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated Link</a></li>
+                    </ul>
                 </li>
             </ul>
-        </div>
-        <div class="col-sm-9">
             <div class="tab-content">
-                <div class="tab-pane fade" id="home-2">
-                    <h4>Heading Sample 1</h4>
-                    <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac
-                       adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget
-                       placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc.</p>
-                    <p>Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget placerat felis
-                       consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac felis
-                       consectetur id. Donec eget orci metusvivamus imperdiet.</p>
-                </div>
-                <div class="tab-pane fade" id="profile-2">
-                    <img alt="" class="pull-left m-a w-200" src="http://placehold.it/400x200">
-                    <h4>Heading Sample 2</h4>
-                    <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac
-                       adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus,
-                        <strong>ac adipiscing nunc.</strong> Vivamus imperdiet condimentum diam, eget placerat felis
-                       consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac
-                       interdum id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum
-                       ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac <strong>interdum
-                                                                                                                       ullamcorper.</strong>
+                <div class="active tab-pane fade in" id="new">
+                    <h4>New</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                        obcaecati reprehenderit ea dignissimos amet voluptatem id excepturi facilis
+                        totam veritatis maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore
+                        sunt corporis nostrum quam illum!
                     </p>
                 </div>
-                <div class="tab-pane fade" id="messages-2">
-                    <h4>Heading Sample 3</h4>
-                    <p><img alt="" class="pull-right w-300 m-a" src="http://placehold.it/400x200"> <strong>Vivamus
-                                                                                                           imperdiet
-                                                                                                           condimentum
-                                                                                                           diam, eget
-                                                                                                           placerat
-                                                                                                           felis
-                                                                                                           consectetur
-                                                                                                           id.</strong>
-                        Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id.
-                        Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.
-                        Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget
-                        orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum
-                        ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum
-                        ullamcorper.</p>
-                </div>
-                <div class="tab-pane fade active in" id="settings-2">
-                    <h4>Heading Sample 4</h4>
-                    <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac
-                       adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus,
-                        <strong>ac adipiscing nunc.</strong> Vivamus imperdiet condimentum diam, eget placerat felis
-                       consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac
-                       interdum id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum
-                       ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac <strong>interdum
-                                                                                                                       ullamcorper.</strong>
+                <div class="tab-pane fade" id="help">
+                    <h4>Help</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                        obcaecati reprehenderit ea dignissimos amet voluptatem id excepturi facilis
+                        totam veritatis maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore
+                        sunt corporis nostrum quam illum!
                     </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <h2>Panel</h2>
-    <hr>
-    <h4>panel default</h4>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            panel header ...
+    <div class="headline">
+        <h2>Tab v1</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tab-v1">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+                    <li><a href="#profile" data-toggle="tab">Profile</a></li>
+                    <li><a href="#messages" data-toggle="tab">Messages</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="home">
+                        <div class="row">
+                            <div class="col-md-4"><img class="img-responsive m-l" src="http://placehold.it/800x400">
+                            </div>
+                            <div class="col-md-8">
+                                <h4>Heading Sample Home</h4>
+                                <p>
+                                    Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                                    orci
+                                    metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong>
+                                    condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac
+                                    adipiscing
+                                    nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam,
+                                    eget
+                                    placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc.
+                                    Pellentesque
+                                    fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile">
+                        <h4>Heading Sample Profile</h4>
+                        <p>
+                            Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                            orcimetus, ac adipiscing nunc.
+                            Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat
+                            felis consectetur id.
+                            Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong>
+                            imperdiet condimentum diam,
+                            eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque
+                            fermentum, ante ac felis consectetur id.
+                            Donec eget orci metusvivamus imperdiet.
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="messages">
+                        <h4>Heading Messages</h4>
+                        <p><img class="pull-right m-l" src="http://placehold.it/400x200">
+                            Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                            orcimetus, ac adipiscing nunc.
+                            Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat
+                            felis consectetur id.
+                            Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong>
+                            imperdiet condimentum diam,
+                            eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque
+                            fermentum, ante ac felis consectetur id.
+                            Donec eget orci metusvivamus imperdiet.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="panel-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dicta explicabo facere fuga harum
-            illum in labore laborum, maiores nesciunt nisi optio quis recusandae, reiciendis tenetur, voluptatibus.
-            Fugit, modi.
+    </div>
+    <div class="headline">
+        <h2>Tab v2</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tab-v2">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#home2" data-toggle="tab">Home</a></li>
+                    <li><a href="#profile2" data-toggle="tab">Profile</a></li>
+                    <li><a href="#messages2" data-toggle="tab">Messages</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active fade in" id="home2">
+                        <div class="row">
+                            <div class="col-md-4"><img class="img-responsive" src="http://placehold.it/800x400"></div>
+                            <div class="col-md-8">
+                                <h4>Heading Home</h4>
+                                <p>
+                                    Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                                    orcimetus, ac adipiscing nunc.
+                                    Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget
+                                    placerat felis consectetur id.
+                                    Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum
+                                                                                                    vivamus</strong>
+                                    imperdiet condimentum diam,
+                                    eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc.
+                                    Pellentesque fermentum, ante ac felis consectetur id.
+                                    Donec eget orci metusvivamus imperdiet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile2">
+                        <h4>Heading Profile</h4>
+                        <p>
+                            Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                            orcimetus, ac adipiscing nunc.
+                            Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat
+                            felis consectetur id.
+                            Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong>
+                            imperdiet condimentum diam,
+                            eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque
+                            fermentum, ante ac felis consectetur id.
+                            Donec eget orci metusvivamus imperdiet.
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="messages2">
+                        <h4>Heading Messages</h4>
+                        <p><img class="pull-right m-l" src="http://placehold.it/300x150">
+                            Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                            orcimetus, ac adipiscing nunc.
+                            Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat
+                            felis consectetur id.
+                            Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong>
+                            imperdiet condimentum diam,
+                            eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque
+                            fermentum, ante ac felis consectetur id.
+                            Donec eget orci metusvivamus imperdiet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="headline">
+        <h2>Tab v3</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row tab-v3">
+                <div class="col-sm-3">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#home3" data-toggle="tab"><i class="fa fa-home"></i>Home</a></li>
+                        <li><a href="#profile3" data-toggle="tab"><i class="fa fa-cloud"></i>Profile</a></li>
+                        <li><a href="#messages3" data-toggle="tab"><i class="fa fa-comments"></i>messages</a></li>
+                        <li class="active"><a href="#settings3" data-toggle="tab"><i class="fa fa-gear"></i>Settings</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-9">
+                    <div class="tab-content">
+                        <div class="tab-pane fade" id="home3">
+                            <h4>Heading Home</h4>
+                            <p>
+                                Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                                orcimetus, ac adipiscing nunc.
+                                Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat
+                                felis consectetur id.
+                                Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum
+                                                                                                vivamus</strong>
+                                imperdiet condimentum diam,
+                                eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc.
+                                Pellentesque fermentum, ante ac felis consectetur id.
+                                Donec eget orci metusvivamus imperdiet.
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="profile3">
+                            <img class="pull-left m-a w-200" src="http://placehold.it/400x200">
+                            <h4>Heading Profile</h4>
+                            <p>
+                                Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                                orcimetus, ac adipiscing nunc.
+                                Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat
+                                felis consectetur id.
+                                Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum
+                                                                                                vivamus</strong>
+                                imperdiet condimentum diam,
+                                eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc.
+                                Pellentesque fermentum, ante ac felis consectetur id.
+                                Donec eget orci metusvivamus imperdiet.
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="messages3">
+                            <h4>Heading Messages</h4>
+                            <p class="clearfix"><img class="pull-right w-300 m-a" src="http://placehold.it/400x200">
+                                Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                                orcimetus, ac adipiscing nunc.
+                                Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat
+                                felis consectetur id.
+                                Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum
+                                                                                                vivamus</strong>
+                                imperdiet condimentum diam,
+                                eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc.
+                                Pellentesque fermentum, ante ac felis consectetur id.
+                                Donec eget orci metusvivamus imperdiet.
+                            </p>
+                        </div>
+                        <div class="tab-pane fade active in" id="settings3">
+                            <h4>Heading Setting</h4>
+                            <p>
+                                Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                                orcimetus, ac adipiscing nunc.
+                                Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat
+                                felis consectetur id.
+                                Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum
+                                                                                                vivamus</strong>
+                                imperdiet condimentum diam,
+                                eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc.
+                                Pellentesque fermentum, ante ac felis consectetur id.
+                                Donec eget orci metusvivamus imperdiet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <h4>panel primary</h4>
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            panel header ...
+    <div class="headline">
+        <h2>Tags v1</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tags-v1">
+                <ul class="list-inline">
+                    <li><a href="#">Hot</a></li>
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Featured</a></li>
+                    <li><a href="#">Latest Posts</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="panel-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dicta explicabo facere fuga harum
-            illum in labore laborum, maiores nesciunt nisi optio quis recusandae, reiciendis tenetur, voluptatibus.
-            Fugit, modi.
+    </div>
+    <div class="headline">
+        <h2>Tags v2</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tags-v2">
+                <ul class="list-inline">
+                    <li><a href="#">Hot
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Featured</a></li>
+                    <li><a href="#">Latest Posts</a></li>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="headline">
+        <h2>Tags v3</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tags-v3">
+                <ul class="list-inline">
+                    <li><a href="#">Hot
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Featured</a></li>
+                    <li><a href="#">Latest Posts</a></li>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="headline">
+        <h2>Tags v4</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tags-v4">
+                <ul class="list-inline">
+                    <li><a href="#">Hot
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Featured</a></li>
+                    <li><a href="#">Latest Posts</a></li>
+                    </a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    <h4>panel success</h4>
-    <div class="panel panel-success">
-        <div class="panel-heading">
-            panel header ...
+    <div class="headline">
+        <h2>Panel</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    panel default
+                </div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dicta explicabo facere
+                    fuga harum
+                    illum in labore laborum, maiores nesciunt nisi optio quis recusandae, reiciendis tenetur,
+                    voluptatibus.
+                    Fugit, modi.
+                </div>
+            </div>
         </div>
-        <div class="panel-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dicta explicabo facere fuga harum
-            illum in labore laborum, maiores nesciunt nisi optio quis recusandae, reiciendis tenetur, voluptatibus.
-            Fugit, modi.
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    panel primary
+                </div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dicta explicabo facere
+                    fuga harum
+                    illum in labore laborum, maiores nesciunt nisi optio quis recusandae, reiciendis tenetur,
+                    voluptatibus.
+                    Fugit, modi.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    panel success
+                </div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dicta explicabo facere
+                    fuga harum
+                    illum in labore laborum, maiores nesciunt nisi optio quis recusandae, reiciendis tenetur,
+                    voluptatibus.
+                    Fugit, modi.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    panel info
+                </div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dicta explicabo facere
+                    fuga harum
+                    illum in labore laborum, maiores nesciunt nisi optio quis recusandae, reiciendis tenetur,
+                    voluptatibus.
+                    Fugit, modi.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    panel danger
+                </div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dicta explicabo facere
+                    fuga harum
+                    illum in labore laborum, maiores nesciunt nisi optio quis recusandae, reiciendis tenetur,
+                    voluptatibus.
+                    Fugit, modi.
+                </div>
+            </div>
         </div>
     </div>
 
-    <h4>panel info</h4>
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            panel header ...
-        </div>
-        <div class="panel-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dicta explicabo facere fuga harum
-            illum in labore laborum, maiores nesciunt nisi optio quis recusandae, reiciendis tenetur, voluptatibus.
-            Fugit, modi.
-        </div>
+    <div class="headline">
+        <h2>Company</h2>
     </div>
 
-    <h4>panel danger</h4>
-    <div class="panel panel-danger">
-        <div class="panel-heading">
-            panel header ...
-        </div>
-        <div class="panel-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dicta explicabo facere fuga harum
-            illum in labore laborum, maiores nesciunt nisi optio quis recusandae, reiciendis tenetur, voluptatibus.
-            Fugit, modi.
-        </div>
-    </div>
-
-
-    <h2>Company</h2>
-    <hr>
     <div class="owl-carousel owl-carousel-v2">
         <div class="item">
             <img src="themes/wy-theme/assets/images/companies/company01.jpg" alt="">
@@ -762,17 +802,11 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
         </div>
     </div>
 
-    <h2>clients</h2>
-    <hr>
+
+    <div class="headline">
+        <h2>Clients</h2>
+    </div>
     <ul class="list-inline our-clients" id="effect-2">
-        <li>
-            <figure>
-                <img src="themes/wy-theme/assets/images/clients/ea-canada.png" alt="">
-                <div class="img-hover">
-                    <a href="#"><h4>Ea Canada</h4></a>
-                </div>
-            </figure>
-        </li>
         <li>
             <figure>
                 <img src="themes/wy-theme/assets/images/clients/inspiring.png" alt="">
@@ -885,14 +919,7 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
                 </div>
             </figure>
         </li>
-        <li>
-            <figure>
-                <img src="themes/wy-theme/assets/images/clients/starbucks.png" alt="">
-                <div class="img-hover">
-                    <h4>Starbucks</h4>
-                </div>
-            </figure>
-        </li>
+
         <li>
             <figure>
                 <img src="themes/wy-theme/assets/images/clients/national-geographic.png" alt="">
@@ -933,14 +960,7 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
                 </div>
             </figure>
         </li>
-        <li>
-            <figure>
-                <img src="themes/wy-theme/assets/images/clients/getapp.png" alt="">
-                <div class="img-hover">
-                    <h4>GetApp</h4>
-                </div>
-            </figure>
-        </li>
+
         <li>
             <figure>
                 <img src="themes/wy-theme/assets/images/clients/austrian-airlines.png" alt="">
@@ -960,22 +980,23 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
     </ul>
 
 
-    <h2>jumbotron</h2>
-    <hr>
+    <div class="headline">
+        <h2>jumbotron</h2>
+    </div>
     <div class="jumbotron jumbotron-v1">
         <div class="container">
             <div class="clearfix">
                 <div class="header-container loaded">
                     <div class="col-lg-7">
-                        <h1 class="hidden-xs">渭源电商平台</h1>
-                        <h2>渭源县电子商务公共服务平台</h2>
+                        <h1 class="hidden-xs">Lorem ipsum dolor</h1>
+                        <h2>consectetur adipisicing elit</h2>
                         <p>
-                            建设实现 数据统一化、组织网络化、功能社会化、服务产业化、手段现代化
-                            打造一个全县电子商务资源信息集散平台
+                            Alias aperiam, expedita fugiat incidunt itaque nemo neque omnis optio placeat quas quo,
+                            recusandae unde veritatis voluptates.
                         </p>
 
-                        <a href="#" class="btn btn-primary m-b">快速注册</a>
-                        <a href="#" class="btn btn-danger m-b">登陆</a>
+                        <a href="#" class="btn btn-line-primary m-b">Quick Start</a>
+                        <a href="#" class="btn btn-primary m-b">More</a>
 
                     </div>
                 </div>
@@ -984,8 +1005,9 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
     </div>
 
 
-    <h2>Owl carousel</h2>
-    <hr>
+    <div class="headline">
+        <h2>Owl carousel</h2>
+    </div>
     <div class="owl-carousel owl-carousel-v1" id="owl-carousel-v1">
         <div class="item">
             <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
@@ -1013,8 +1035,9 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
         </div>
     </div>
 
-    <h2>News List</h2>
-    <hr>
+    <div class="headline">
+        <h2>News List</h2>
+    </div>
     <div class="row">
         <div class="col-md-8">
 
@@ -1087,43 +1110,43 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
         </div>
     </div>
 
-    <h2>Alerts</h2>
-    <hr>
-    <div class="alert alert-danger">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <strong>Alert Danger!</strong>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-           dolore magna aliqua.
-        </p>
+    <div class="headline">
+        <h2>Alert</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="alert alert-danger">
+                <h4>Lorem ipsum dolor sit amet.</h4>
+                <button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>Title!</strong> Alert body ...
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="alert alert-success">
+                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
+                <button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>Title!</strong> Alert body ...
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="alert alert-warning">
+                <h3>Lorem ipsum dolor sit amet, consectetur.</h3>
+                <button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>Title!</strong> Alert body ...
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="alert alert-info">
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>Title!</strong> Alert body ...
+            </div>
+        </div>
     </div>
 
-    <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <strong>Alert Success!</strong>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-           dolore magna aliqua.
-        </p>
+    <div class="headline">
+        <h2>Easy block v1</h2>
     </div>
-
-    <div class="alert alert-warning">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <strong>Alert Warning!</strong>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-           dolore magna aliqua.
-        </p>
-    </div>
-
-    <div class="alert alert-info">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <strong>Alert Info!</strong>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-           dolore magna aliqua.
-        </p>
-    </div>
-
-
-    <h2>Easy Block V1</h2>
-    <hr>
     <div class="row">
         <div class="col-md-3 col-sm-6 m-b">
             <div class="easy-block-v1">
@@ -1299,8 +1322,9 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
         </div>
     </div>
 
-    <h2>Easy Block V2</h2>
-    <hr>
+    <div class="headline">
+        <h2>Easy block v2</h2>
+    </div>
     <div class="row">
         <div class="col-md-3 col-sm-6 m-b">
             <div class="easy-block-v2">
@@ -1346,272 +1370,347 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
                 <a class="btn btn-success btn-sm" href="#">View More</a>
             </div>
         </div>
-
     </div>
 
-    <h2>Buttons</h2>
-    <hr>
 
+    <div class="headline">
+        <h2>Buttons</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6 m-b"><a class="btn btn-block btn-default" type="button">btn block
+                                                                                     default</a><a class="btn btn-block btn-primary" type="button">btn
+                                                                                                                                                   block
+                                                                                                                                                   primary</a><a class="btn btn-block btn-success" type="button">btn
+                                                                                                                                                                                                                 block
+                                                                                                                                                                                                                 success</a><a class="btn btn-block btn-info" type="button">btn
+                                                                                                                                                                                                                                                                            block
+                                                                                                                                                                                                                                                                            info</a><a class="btn btn-block btn-danger" type="button">btn
+                                                                                                                                                                                                                                                                                                                                      block
+                                                                                                                                                                                                                                                                                                                                      danger</a><a class="btn btn-block btn-warning" type="button">btn
+                                                                                                                                                                                                                                                                                                                                                                                                   block
+                                                                                                                                                                                                                                                                                                                                                                                                   warning</a>
+        </div>
+        <div class="col-md-12">
+            <!-- btn normal--><a class="btn btn-default m-b m-r" type="button">btn
+                                                                               default</a><a class="btn btn-primary m-b m-r" type="button">btn
+                                                                                                                                           primary</a><a class="btn btn-success m-b m-r" type="button">btn
+                                                                                                                                                                                                       success</a><a class="btn btn-info m-b m-r" type="button">btn
+                                                                                                                                                                                                                                                                info</a><a class="btn btn-danger m-b m-r" type="button">btn
+                                                                                                                                                                                                                                                                                                                        danger</a><a class="btn btn-warning m-b m-r" type="button">btn
+                                                                                                                                                                                                                                                                                                                                                                                   warning</a>
+        </div>
+        <div class="col-md-12">
+            <!-- btn large--><a class="btn btn-default btn-lg m-b m-r" type="button">btn large
+                                                                                     default</a><a class="btn btn-primary btn-lg m-b m-r" type="button">btn
+                                                                                                                                                        large
+                                                                                                                                                        primary</a><a class="btn btn-success btn-lg m-b m-r" type="button">btn
+                                                                                                                                                                                                                           large
+                                                                                                                                                                                                                           success</a><a class="btn btn-info btn-lg m-b m-r" type="button">btn
+                                                                                                                                                                                                                                                                                           large
+                                                                                                                                                                                                                                                                                           info</a><a class="btn btn-danger btn-lg m-b m-r" type="button">btn
+                                                                                                                                                                                                                                                                                                                                                          large
+                                                                                                                                                                                                                                                                                                                                                          danger</a><a class="btn btn-warning btn-lg m-b m-r" type="button">btn
+                                                                                                                                                                                                                                                                                                                                                                                                                            large
+                                                                                                                                                                                                                                                                                                                                                                                                                            warning</a>
+        </div>
+        <div class="col-md-12">
+            <!-- btn small--><a class="btn btn-default btn-sm m-b m-r" type="button">btn small
+                                                                                     default</a><a class="btn btn-primary btn-sm m-b m-r" type="button">btn
+                                                                                                                                                        small
+                                                                                                                                                        primary</a><a class="btn btn-success btn-sm m-b m-r" type="button">btn
+                                                                                                                                                                                                                           small
+                                                                                                                                                                                                                           success</a><a class="btn btn-info btn-sm m-b m-r" type="button">btn
+                                                                                                                                                                                                                                                                                           small
+                                                                                                                                                                                                                                                                                           info</a><a class="btn btn-danger btn-sm m-b m-r" type="button">btn
+                                                                                                                                                                                                                                                                                                                                                          small
+                                                                                                                                                                                                                                                                                                                                                          danger</a><a class="btn btn-warning btn-sm m-b m-r" type="button">btn
+                                                                                                                                                                                                                                                                                                                                                                                                                            small
+                                                                                                                                                                                                                                                                                                                                                                                                                            warning</a>
+        </div>
+        <div class="col-md-12">
+            <!-- btn line--><a class="btn btn-line btn-line-default m-b m-r" type="button">btn line
+                                                                                           default</a><a class="btn btn-line btn-line-primary m-b m-r" type="button">btn
+                                                                                                                                                                     line
+                                                                                                                                                                     primary</a><a class="btn btn-line btn-line-success m-b m-r" type="button">btn
+                                                                                                                                                                                                                                               line
+                                                                                                                                                                                                                                               success</a><a class="btn btn-line btn-line-info m-b m-r" type="button">btn
+                                                                                                                                                                                                                                                                                                                      line
+                                                                                                                                                                                                                                                                                                                      info</a><a class="btn btn-line btn-line-danger m-b m-r" type="button">btn
+                                                                                                                                                                                                                                                                                                                                                                                            line
+                                                                                                                                                                                                                                                                                                                                                                                            danger</a><a class="btn btn-line btn-line-warning m-b m-r" type="button">btn
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                     line
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                     warning</a>
+        </div>
+        <div class="col-md-12">
+            <!-- btn disabled--><a class="btn btn-default disabled m-b m-r" type="button">btn disabled
+                                                                                          default</a><a class="btn btn-primary disabled m-b m-r" type="button">btn
+                                                                                                                                                               disabled
+                                                                                                                                                               primary</a><a class="btn btn-success disabled m-b m-r" type="button">btn
+                                                                                                                                                                                                                                    disabled
+                                                                                                                                                                                                                                    success</a><a class="btn btn-info disabled m-b m-r" type="button">btn
+                                                                                                                                                                                                                                                                                                      disabled
+                                                                                                                                                                                                                                                                                                      info</a><a class="btn btn-danger disabled m-b m-r" type="button">btn
+                                                                                                                                                                                                                                                                                                                                                                       disabled
+                                                                                                                                                                                                                                                                                                                                                                       danger</a><a class="btn btn-warning disabled m-b m-r" type="button">btn
+                                                                                                                                                                                                                                                                                                                                                                                                                                           disabled
+                                                                                                                                                                                                                                                                                                                                                                                                                                           warning</a>
+        </div>
+        <div class="col-md-12">
+            <!-- btn socials--><a class="btn btn-social-icon btn-github m-b m-r" type="button"><i class="fa fa-github"></i></a><a class="btn btn-social-icon btn-qq m-b m-r" type="button"><i class="fa fa-qq"></i></a><a class="btn btn-social-icon btn-wechat m-b m-r" type="button"><i class="fa i fa fa-weixin"></i></a><a class="btn btn-social-icon btn-weibo m-b m-r" type="button"><i class="fa i fa fa-weibo"></i></a>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-block btn-social btn-github" type="button"><i class="fa i fa fa-github"></i>Sign in with
+                                                                                                          github</a><a class="btn btn-block btn-social btn-qq" type="button"><i class="fa i fa fa-qq"></i>Sign
+                                                                                                                                                                                                          in
+                                                                                                                                                                                                          with
+                                                                                                                                                                                                          qq</a><a class="btn btn-block btn-social btn-wechat" type="button"><i class="fa i fa fa-wechat"></i>Sign
+                                                                                                                                                                                                                                                                                                              in
+                                                                                                                                                                                                                                                                                                              with
+                                                                                                                                                                                                                                                                                                              wechat</a><a class="btn btn-block btn-social btn-weibo" type="button"><i class="fa i fa fa-weibo"></i>Sign
+                                                                                                                                                                                                                                                                                                                                                                                                                    in
+                                                                                                                                                                                                                                                                                                                                                                                                                    with
+                                                                                                                                                                                                                                                                                                                                                                                                                    weibo</a>
+        </div>
+        <div class="col-md-6">
+            <div class="btn-group m-b m-r">
+                <button class="btn btn-default">Action</button>
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="btn-group m-b m-r">
+                <button class="btn btn-primary">Action</button>
+                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="btn-group m-b m-r">
+                <button class="btn btn-success">Action</button>
+                <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="btn-group m-b m-r">
+                <button class="btn btn-info">Action</button>
+                <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="btn-group m-b m-r">
+                <button class="btn btn-danger">Action</button>
+                <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="btn-group m-b m-r">
+                <button class="btn btn-warning">Action</button>
+                <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Headline</h2>
+    </div>
     <div class="row">
         <div class="col-md-6">
-            <h4>Normal block</h4>
-            <button type="button" class="btn btn-block btn-default">Default</button>
-            <button type="button" class="btn btn-block btn-primary">Primary</button>
-            <button type="button" class="btn btn-block btn-success">Success</button>
-            <button type="button" class="btn btn-block btn-info">Info</button>
-            <button type="button" class="btn btn-block btn-danger">Danger</button>
-            <button type="button" class="btn btn-block btn-warning">Warning</button>
-        </div>
-        <div class="col-md-3">
-            <h4>Normal</h4>
-            <button type="button" class="btn  btn-default m-b">Default</button>
-            <button type="button" class="btn  btn-primary m-b">Primary</button>
-            <button type="button" class="btn  btn-success m-b">Success</button>
-            <button type="button" class="btn  btn-info m-b">Info</button>
-            <button type="button" class="btn  btn-danger m-b">Danger</button>
-            <button type="button" class="btn  btn-warning m-b">Warning</button>
-        </div>
-
-        <div class="col-md-4">
-            <h4>Large</h4>
-            <button type="button" class="btn  btn-default btn-lg m-b">Default</button>
-            <button type="button" class="btn  btn-primary btn-lg m-b">Primary</button>
-            <button type="button" class="btn  btn-success btn-lg m-b">Success</button>
-            <button type="button" class="btn  btn-info btn-lg m-b">Info</button>
-            <button type="button" class="btn  btn-danger btn-lg m-b">Danger</button>
-            <button type="button" class="btn  btn-warning btn-lg m-b">Warning</button>
-        </div>
-
-        <div class="col-md-3">
-            <h4>Disabled</h4>
-            <button type="button" class="btn  btn-default disabled m-b">Default</button>
-            <button type="button" class="btn  btn-primary disabled m-b">Primary</button>
-            <button type="button" class="btn  btn-success disabled m-b">Success</button>
-            <button type="button" class="btn  btn-info disabled m-b">Info</button>
-            <button type="button" class="btn  btn-danger disabled m-b">Danger</button>
-            <button type="button" class="btn  btn-warning disabled m-b">Warning</button>
-        </div>
-
-        <div class="col-md-3">
-            <h4>Social</h4>
-            <a class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></a>
-            <a class="btn btn-social-icon btn-qq"><i class="fa fa-qq"></i></a>
-            <a class="btn btn-social-icon btn-wechat"><i class="fa fa-wechat"></i></a>
-            <a class="btn btn-social-icon btn-weibo"><i class="fa fa-weibo"></i></a>
-        </div>
-
-        <div class="col-md-3">
-            <h4>Social Link</h4>
-            <a class="btn btn-block btn-social btn-github">
-                <i class="fa fa-github"></i> Sign in with GitHub
-            </a>
-            <a class="btn btn-block btn-social btn-qq">
-                <i class="fa fa-qq"></i> Sign in with QQ
-            </a>
-            <a class="btn btn-block btn-social btn-wechat">
-                <i class="fa fa-wechat"></i> Sign in with Wechat
-            </a>
-            <a class="btn btn-block btn-social btn-weibo">
-                <i class="fa fa-weibo"></i> Sign in with Weibo
-            </a>
-        </div>
-
-        <div class="col-md-4">
-            <h4>Split buttons</h4>
-            <div class="btn-group m-b">
-                <button type="button" class="btn btn-default">Action</button>
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                </ul>
+            <div class="headline">
+                <h2>headline default</h2>
             </div>
-            <div class="btn-group m-b">
-                <button type="button" class="btn btn-primary">Action</button>
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="headline headline-primary">
+                <h2>headline primary</h2>
             </div>
-            <div class="btn-group m-b">
-                <button type="button" class="btn btn-success">Action</button>
-                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="headline headline-success">
+                <h2>headline success</h2>
             </div>
-            <div class="btn-group m-b">
-                <button type="button" class="btn btn-info">Action</button>
-                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="headline headline-info">
+                <h2>headline info</h2>
             </div>
-            <div class="btn-group m-b">
-                <button type="button" class="btn btn-danger">Action</button>
-                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="headline headline-danger">
+                <h2>headline danger</h2>
             </div>
-            <div class="btn-group m-b">
-                <button type="button" class="btn btn-warning">Action</button>
-                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="headline headline-warning">
+                <h2>headline warning</h2>
             </div>
         </div>
     </div>
-
-
-    <h2>Headline</h2>
-    <hr>
-    <p>headline default</p>
     <div class="headline">
-        <h2>Lorem ipsum</h2>
+        <h2>Headline v2</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="headline-v2">
+                <h2>headline v2 default</h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v2 headline-v2-primary">
+                <h2>headline v2 primary</h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v2 headline-v2-success">
+                <h2>headline v2 success</h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v2 headline-v2-info">
+                <h2>headline v2 info</h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v2 headline-v2-danger">
+                <h2>headline v2 danger</h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v2 headline-v2-warning">
+                <h2>headline v2 warning</h2>
+            </div>
+        </div>
+    </div>
+    <div class="headline">
+        <h2>Headline v3</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="headline-v3">
+                <h2>headline v3 default</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v3 headline-v3-primary">
+                <h2>headline v3 primary</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v3 headline-v3-success">
+                <h2>headline v3 success</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v3 headline-v3-info">
+                <h2>headline v3 info</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v3 headline-v3-danger">
+                <h2>headline v3 danger</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v3 headline-v3-warning">
+                <h2>headline v3 warning</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
     </div>
 
-    <p>headline primary</p>
-    <div class="headline headline-primary">
-        <h2>电商动态</h2>
+    <div class="headline">
+        <h2>Callouts</h2>
     </div>
-
-    <p>headline success</p>
-    <div class="headline headline-success">
-        <h2>Lorem ipsum</h2>
-    </div>
-
-    <p>headline info</p>
-    <div class="headline headline-info">
-        <h2>Lorem ipsum</h2>
-    </div>
-
-    <p>headline danger</p>
-    <div class="headline headline-danger">
-        <h2>Lorem ipsum</h2>
-    </div>
-
-    <p>headline warning</p>
-    <div class="headline headline-warning">
-        <h2>Lorem ipsum</h2>
-    </div>
-
-
-    <h2>headline v2</h2>
-    <hr>
-
-    <div class="headline-v2">
-        <h2>Trending</h2>
-    </div>
-    <div class="headline-v2 bg-primary">
-        <h2>Trending</h2>
-    </div>
-
-    <div class="headline-v2 bg-success">
-        <h2>Trending</h2>
-    </div>
-    <div class="headline-v2 bg-info">
-        <h2>Trending</h2>
-    </div>
-    <div class="headline-v2 bg-danger">
-        <h2>Trending</h2>
-    </div>
-    <div class="headline-v2 bg-warning">
-        <h2>Trending</h2>
-    </div>
-
-    <h2>headline v3</h2>
-    <hr>
-    <div class="headline-v3">
-        <h2>Our <span class="color-success">Featured</span> Partners</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-           dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-           commodo consequat.</p>
-    </div>
-
-
-    <h2>Callout</h2>
-    <hr>
-    <p>callout default</p>
-    <div class="callout">
-        <h4>Lorem ipsum dolor sit amet.</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium aliquid aperiam
-           autem,
-           consectetur, dolores eligendi harum magnam nam saepe sed velit.</p>
-    </div>
-
-    <p>callout danger</p>
-    <div class="callout callout-danger">
-        <h4>Lorem ipsum dolor sit amet.</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium aliquid aperiam
-           autem,
-           consectetur, dolores eligendi harum magnam nam saepe sed velit.</p>
-    </div>
-
-    <p>callout warning</p>
-    <div class="callout callout-warning">
-        <h4>Lorem ipsum dolor sit amet.</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium aliquid aperiam
-           autem,
-           consectetur, dolores eligendi harum magnam nam saepe sed velit.</p>
-    </div>
-
-    <p>callout info</p>
-    <div class="callout callout-info">
-        <h4>Lorem ipsum dolor sit amet.</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium aliquid aperiam
-           autem,
-           consectetur, dolores eligendi harum magnam nam saepe sed velit.</p>
-    </div>
-
-    <p>callout success</p>
-    <div class="callout callout-success">
-        <h4>Lorem ipsum dolor sit amet.</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium aliquid aperiam
-           autem,
-           consectetur, dolores eligendi harum magnam nam saepe sed velit.</p>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="callout">
+                <h4>callout default</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="callout callout-danger">
+                <h4>callout danger</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="callout callout-warning">
+                <h4>callout warning</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="callout callout-success">
+                <h4>callout success</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="callout callout-info">
+                <h4>callout info</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="callout callout-yellow">
+                <h4>callout yellow</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
     </div>
 
 </div>
@@ -1754,13 +1853,67 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
     });
 
     // doughnut chart
-    var ctxDoughnutChart=document.getElementById('doughnut-chart');
-    var doughnutChartData=polarAreaChartData;
-    var doughnutOptions={};
-    var doughnutChart=new Chart(ctxDoughnutChart,{
+    var ctxDoughnutChart = document.getElementById('doughnut-chart');
+    var doughnutChartData = polarAreaChartData;
+    var doughnutOptions = {};
+    var doughnutChart = new Chart(ctxDoughnutChart, {
         type: 'doughnut',
         data: doughnutChartData,
-        options:doughnutChartData
+        options: doughnutChartData
     });
+
+
+    $('.owl-carousel-v2').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 6
+            }
+        }
+    });
+
+    $('.owl-carousel-v1').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 4
+            }
+        }
+    });
+
+    $(".jumbotron-v1 .container > div").backstretch([
+        "themes/wy-theme/assets/images/home-header-bg-2.jpg",
+        "themes/wy-theme/assets/images/home-header-bg-3.jpg",
+    ], {duration: 5000});
+
+    $('#countdown').countdown('2017-10-01', function (event) {
+        var $this = $(this).html(event.strftime(''
+            + '<span>%D</span> 天 '
+            + '<span>%H</span> 小时 '
+            + '<span>%M</span> 分钟 '
+            + '<span>%S</span> 秒'));
+    });
+    $('.coming-soon-v1').backstretch([
+        "themes/wy-theme/assets/images/bg/1.jpg",
+        "themes/wy-theme/assets/images/bg/3.jpg",
+    ]);
 </script>
 {% endput %}
