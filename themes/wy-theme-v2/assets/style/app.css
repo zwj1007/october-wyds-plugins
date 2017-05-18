@@ -51,7 +51,7 @@ a:hover, a:link {
   margin: 0 5px; }
 
 .margin-left-right-10 {
-  margin: 0 10px; }
+  margin: 0 10px !important; }
 
 .margin-left-5 {
   margin-left: 5px; }
@@ -1562,6 +1562,12 @@ footer {
             .content-holder .content .show-pic .login .form-ct .form-body dl .pwd-forget a {
               color: #098CD0;
               margin-left: 40px; }
+              .content-holder .content .show-pic .login .form-ct .form-body dl .pwd-forget a i {
+                font-size: 16px; }
+              .content-holder .content .show-pic .login .form-ct .form-body dl .pwd-forget a i.fa-github {
+                font-size: 20px; }
+            .content-holder .content .show-pic .login .form-ct .form-body dl .pwd-forget a:hover {
+              color: #1a6480; }
             .content-holder .content .show-pic .login .form-ct .form-body dd {
               float: left;
               line-height: 30px; }
@@ -1956,7 +1962,7 @@ input {
         border-bottom: 1px dashed rgba(191, 191, 191, 0.4); }
 
 .index-lyzx {
-  box-shadow: 1px 3px 5px 1px #CCCCCC;
+  box-shadow: 1px 1px 5px 1px #CCCCCC;
   margin-bottom: 30px; }
   .index-lyzx .lyzx-title {
     letter-spacing: 3px;

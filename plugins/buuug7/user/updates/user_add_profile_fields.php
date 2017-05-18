@@ -26,5 +26,4 @@ class UserAddProfileFields extends Migration
         }
     }
 
-
 }

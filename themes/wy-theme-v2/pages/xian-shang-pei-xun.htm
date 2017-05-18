@@ -14,7 +14,7 @@ $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByC
 
 function onEnd(){
 
-if(!Auth::check()) return Redirect::to('/login');
+if(!Auth::check()) return Redirect::to('/user/login');
 
 }
 ==
@@ -27,7 +27,7 @@ if(!Auth::check()) return Redirect::to('/login');
         <ul>
             {% for post in tagTuiJian %}
             <li>
-                <a href="xspx-content.html" target="_blank">
+                <a href="/courses/course/{{ post.slug }}" target="_blank">
                     <img src="{{ post.image|media }}" alt="">
                 </a>
                 <p><a href="/courses/course/{{ post.slug }}">{{ post.title }}</a></p>
@@ -45,7 +45,7 @@ if(!Auth::check()) return Redirect::to('/login');
         <ul>
             {% for post in tagReMen %}
             <li>
-                <a href="#" target="_blank">
+                <a href="/courses/course/{{ post.slug }}" target="_blank">
                     <img src="{{ post.image|media }}" alt="{{ post.title }}">
                 </a>
                 <p><a href="/courses/course/{{ post.slug }}">{{ post.title }}</a></p>
@@ -65,7 +65,7 @@ if(!Auth::check()) return Redirect::to('/login');
         <ul>
             {% for post in categoryDianShangJiChuZhiShi %}
             <li>
-                <a href="xspx-content.html" target="_blank">
+                <a href="/courses/course/{{ post.slug }}" target="_blank">
                     <img src="{{ post.image|media }}" alt="">
                 </a>
                 <p><a href="/courses/course/{{ post.slug }}">{{ post.title }}</a></p>
@@ -84,7 +84,7 @@ if(!Auth::check()) return Redirect::to('/login');
         <ul>
             {% for post in categoryDianShangJinJieZhiShi %}
             <li>
-                <a href="xspx-content.html" target="_blank">
+                <a href="/courses/course/{{ post.slug }}" target="_blank">
                     <img src="{{ post.image|media }}" alt="">
                 </a>
                 <p><a href="/courses/course/{{ post.slug }}">{{ post.title }}</a></p>

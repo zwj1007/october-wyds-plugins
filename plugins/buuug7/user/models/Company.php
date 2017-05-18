@@ -14,17 +14,23 @@ class Company extends Model
      * @var string The database table used by the model.
      */
     public $table = 'buuug7_user_companies';
-
     /**
      * @var array Guarded fields
      */
     protected $guarded = ['*'];
-
     /**
      * @var array Fillable fields
      */
-    protected $fillable = [];
-
+    protected $fillable = [
+        'user_id',
+        'name',
+        'address',
+        'contact_phone',
+        'description',
+        'detail',
+        'status',
+        'checked'
+    ];
     /*
     * Validation
     */
@@ -35,7 +41,6 @@ class Company extends Model
         'description' => 'required',
         'status' => 'required',
     ];
-
     /**
      * @var array Relations
      */
@@ -94,16 +99,11 @@ class Company extends Model
             $options = [];
         }
 
-        // Default is "mm" (Mystery man)
-        $default = array_get($options, 'default', 'mm');
 
         if ($this->avatar) {
             return $this->avatar->getThumb($size, $size, $options);
         } else {
-            return '//www.gravatar.com/avatar/' .
-                md5(strtolower(trim($this->email))) .
-                '?s=' . $size .
-                '&d=' . urlencode($default);
+            return null;
         }
     }
 

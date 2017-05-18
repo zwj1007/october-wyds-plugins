@@ -1,12 +1,12 @@
 <?php namespace Buuug7\User;
 
-use Backend;
 use Carbon\Carbon;
 use System\Classes\PluginBase;
 use RainLab\User\Models\User as UserModel;
 use RainLab\User\Controllers\Users as UsersController;
 use Yaml;
 use File;
+use Backend;
 
 /**
  * User Plugin Information File
@@ -41,13 +41,12 @@ class Plugin extends PluginBase
         Carbon::setLocale('zh');
         UserModel::extend(function ($model) {
             $model->addFillable([
-                'b7_phone',
                 'b7_mobile',
-                'b7_company',
-                'b7_address'
+                'b7_address',
+                'b7_enterprise'
             ]);
 
-            $model->hasOne['company'] = ['Buuug7\User\Models\Company', 'table' => 'buuug7_user_companies',];
+            $model->hasOne['company'] = ['Buuug7\User\Models\Company', 'table' => 'buuug7_user_companies','key' => 'user_id',];
             $model->hasMany['need'] = ['Buuug7\User\Models\Need', 'table' => 'buuug7_user_needs',];
         });
 

@@ -5,7 +5,6 @@ use ApplicationException;
 use RainLab\User\Facades\Auth;
 use Validator;
 use ValidationException;
-use Buuug7\User\Models\Company as UserCompany;
 use Flash;
 use Redirect;
 
@@ -71,23 +70,19 @@ class Company extends ComponentBase
         if (!$this->canCompany) {
             throw new ApplicationException('你的账号不允许提交公司认证信息');
         }
-        $company = new UserCompany();
-        /*if (!UserCompany::create($data)) {
-            throw new ApplicationException('提交数据出错');
-        }*/
-        $company->name = post('name');
-        $company->address = post('address');
-        $company->contact_phone = post('contact_phone');
-        $company->description = post('description');
-        $company->detail=post('detail');
-        $company->checked = false;
-        $company->status = 'committed';
-        $company->user_id = Auth::getUser()->id;
-        $company->save();
+        Auth::getUser()->company()->create([
+            'name' => post('name'),
+            'address' => post('address'),
+            'contact_phone' => post('contact_phone'),
+            'description' => post('description'),
+            'detail' => post('detail'),
+            'status' => 'committed',
+            'checked' => false,
+        ]);
+
         Flash::success('信息已经提交');
 
         return Redirect::refresh();
-        // return Redirect::back()->withInput();
     }
 
     public function onUpdateCompany()

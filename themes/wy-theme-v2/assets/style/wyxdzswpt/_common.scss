@@ -65,7 +65,7 @@ a:hover, a:link {
 }
 
 .margin-left-right-10 {
-  margin: 0 $margin-10;
+  margin: 0 $margin-10!important;
 }
 
 .margin-left-5 {
@@ -174,10 +174,6 @@ a:hover, a:link {
   }
 }
 
-
-
-
-
 /*
  * Images
  */
@@ -197,19 +193,20 @@ img.oc-img-bordered {
   display: block;
   height: auto !important;
 }*/
-img.fr-dib{
+img.fr-dib {
   margin: 5px auto;
   display: block;
   float: none;
   vertical-align: top;
 }
+
 img.fr-dib.fr-fir {
   margin-right: 0;
 }
+
 img.fr-dib.fr-fil {
   margin-left: 0;
 }
-
 
 /*
  * Text

@@ -1,9 +1,9 @@
 title = "账号 | 登陆"
-url = '/login/:code?'
+url = '/user/login/:code?'
 layout = 'default-v4'
 
 [account]
-redirect = "account"
+redirect = "/user/center/account"
 paramCode = "code"
 ==
 
@@ -17,7 +17,7 @@ paramCode = "code"
             {% if not user %}
             <div class="login">
                 <p>
-                    <a href="/login">
+                    <a href="/user/login">
                         注册
                     </a>/
                     <a href="/">
@@ -63,7 +63,7 @@ paramCode = "code"
                                                     id="remember_login_state">&nbsp;下次自动登录</label>
                             </dd>
                             <dd class="pwd-forget">
-                                <a href="/forgot-password" target="_blank"
+                                <a href="/user/forgot-password" target="_blank"
                                    hidefocus="hidefocus">忘记密码</a>
                             </dd>
                         </dl>
@@ -76,10 +76,25 @@ paramCode = "code"
                         </dl>
                         <dl class="go-sign-up">
                             <dd class="pwd-forget">
-                                <span>还没有账号？</span><a href="/register">立即申请！</a>
+                                <span>还没有账号？</span><a href="/user/register">立即申请！</a>
                             </dd>
                         </dl>
-
+                        <dl class="auto-login">
+                            <dd>
+                                <label>社交账号登录</label>
+                            </dd>
+                            <dd class="pwd-forget margin-left-25 ma">
+                                <a href="/login/weixin" class="margin-left-right-10">
+                                    <i class="fa fa-weixin "></i>
+                                </a>
+                                <a href="/login/qq" class="margin-left-right-10">
+                                    <i class="fa fa-qq"></i>
+                                </a>
+                                <a href="/login/github" class="margin-left-right-10">
+                                    <i class="fa fa-github "></i>
+                                </a>
+                            </dd>
+                        </dl>
                     </div>
                 </form>
             </div>

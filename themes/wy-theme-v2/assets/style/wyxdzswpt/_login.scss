@@ -46,6 +46,15 @@
             dl .pwd-forget a {
               color: #098CD0;
               margin-left: 40px;
+              i{
+                font-size: 16px;
+              }
+              i.fa-github {
+               font-size: 20px;
+              }
+            }
+            dl .pwd-forget a:hover{
+              color: #1a6480;
             }
             dd {
               float: left;

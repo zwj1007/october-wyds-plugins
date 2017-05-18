@@ -1,9 +1,9 @@
 title = "账号"
-url = "/account/:code?"
+url = "/user/center/account/:code?"
 layout="default"
 
 [account]
-redirect = "account"
+redirect = "/user/center/account"
 paramCode = "code"
 [b7Account]
 ==
@@ -17,25 +17,25 @@ if(!Auth::check()) return Redirect::to('/login');
         <ul>
             <li class="active ">
                 <span class="icon-notice"></span>
-                <a href="/account">账号</a>
+                <a href="/user/center/account">账号</a>
             </li>
             <li>
                 <span class="icon-notice1"></span>
-                <a href="/user/company">公司</a>
+                <a href="/user/center/company">公司</a>
             </li>
             <li class="">
                 <span class="icon-notice1"></span>
-                <a href="/shoucang">收藏课程</a>
+                <a href="/user/center/shoucang">收藏课程</a>
             </li>
             <li class="">
                 <span class="icon-notice2"></span>
-                <a href="/needs">我的发布</a>
+                <a href="/user/center/needs">我的发布</a>
             </li>
         </ul>
     </div>
     <div class="mainRight float-right  ">
         <div class="content-title">
-            <a href="user.html">用户资料</a>
+            <a href="javascript:void(0);">用户资料</a>
             <span></span>
 
         </div>

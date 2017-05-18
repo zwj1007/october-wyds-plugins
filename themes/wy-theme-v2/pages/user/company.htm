@@ -1,5 +1,5 @@
 title = "公司"
-url = "/user/company"
+url = "/user/center/company"
 layout="default-v2"
 
 [b7Company]
@@ -9,7 +9,7 @@ function onStart()
 {
 
 if(!Auth::check()){
-    return Redirect::to('/account');
+    return Redirect::to('/user/login');
 }
 
 $this->addCss('https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css');
@@ -25,19 +25,19 @@ $this->addJs('assets/vendor/summernote-0.8.3-dist/dist/lang/summernote-zh-CN.js'
         <ul>
             <li class=" ">
                 <span class="icon-notice"></span>
-                <a href="/account">账号</a>
+                <a href="/user/center/account">账号</a>
             </li>
             <li class="active">
                 <span class="icon-notice1"></span>
-                <a href="/user/company">公司</a>
+                <a href="/user/center/company">公司</a>
             </li>
             <li class="">
                 <span class="icon-notice1"></span>
-                <a href="/shoucang">收藏课程</a>
+                <a href="/user/center/shoucang">收藏课程</a>
             </li>
             <li class="">
                 <span class="icon-notice2"></span>
-                <a href="/needs">我的发布</a>
+                <a href="/user/center/needs">我的发布</a>
             </li>
         </ul>
     </div>
