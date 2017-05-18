@@ -1,22 +1,11 @@
 {% set post = __SELF__.post %}
 
 
-<div class="news-post-detail bg-white margin-bottom-20">
+<div class="news-post-detail bg-white m-b-lg">
     <div class="post-image">
         {% if post.image %}
         <div class="big-image">
             <img src="{{ post.image|media }}" alt="{{ post.title }}" class="img-responsive">
-        </div>
-        {% endif %}
-        {% if post.images %}
-        <div class="row">
-            {% for item in post.images %}
-            <div class="col-sm-6 col-md-3">
-                <a href="{{ item.img_path|media }}">
-                    <img src="{{ item.img_path|media }}" alt="{{ item.img_name }}" class="img-responsive" style="width: 100%">
-                </a>
-            </div>
-            {% endfor %}
         </div>
         {% endif %}
     </div>
@@ -26,9 +15,9 @@
             <li>By {{ post.user.first_name }}</li>
             {% if post.categories.count %}
             <li>
-            {% for category in post.categories %}
-            <a href="{{ category.url}}">{{ category.name }}</a> {% if not loop.last %},{% endif %}
-            {% endfor%}
+                {% for category in post.categories %}
+                <a href="{{ category.url}}">{{ category.name }}</a> {% if not loop.last %},{% endif %}
+                {% endfor%}
             </li>
             {% endif %}
             <li>{{ post.publish_at|date('Y, m月 d') }}</li>
@@ -42,11 +31,30 @@
     <div class="post-content">
         {{ post.content|raw }}
     </div>
+    <hr>
 
+    {% if post.images %}
+    <div class="post-images">
+        <h4>图片集</h4>
+        <div class="row">
+            {% for item in post.images %}
+            <div class="col-sm-6 col-md-3">
+                <a href="{{ item.img_path|media }}">
+                    <img src="{{ item.img_path|media }}" alt="{{ item.img_name }}" class="img-responsive" style="width: 100%">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    {% if post.files %}
     <div class="post-files">
+        <h4>附件</h4>
         {% for item in post.files %}
         <a href="{{ item.file_path|media }}">{{ item.file_name }}</a>
         {% if not loop.last %} | {% endif %}
         {% endfor %}
     </div>
+    {% endif %}
 </div>

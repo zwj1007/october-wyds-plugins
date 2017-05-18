@@ -21,7 +21,7 @@ $this['needs']=\Buuug7\User\Models\Need::displayChecked();
     <div class="container">
         <h2>{{ this.page.title }}</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            在这里你可以浏览查看别人发布的供求信息 (๑╹◡╹)ﾉ"""
         </p>
     </div>
 </div>
@@ -32,8 +32,8 @@ $this['needs']=\Buuug7\User\Models\Need::displayChecked();
         <div class="col-md-4 m-b">
             <ul class="list-unstyled">
                 {% for need in chunk %}
-                <li class="">
-                    <a href="/needs/need/{{ need.id }}"><h4>{{ need.title }}</h4></a>
+                <li class="m-b-md">
+                    <a href="/needs/need/{{ need.id }}"><h4  class="color-444">{{ need.title }}</h4></a>
                     <small>{{ need.checked_at|time_diff }} / by {{ need.user.name }}</small>
                 </li>
                 {% endfor %}

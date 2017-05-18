@@ -85,7 +85,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                     {% for post in featuredPosts %}
                     <div class="col-md-3 col-sm-4">
                         <a href="/news/post/{{ post.slug }}">
-                            <h4 class="" style="height:50px;overflow: hidden;line-height: 1.2">
+                            <h4 class="color-444" style="height:50px;overflow: hidden;line-height: 1.2;" >
                                 {{post.title|slice(0,20)}}
                             </h4>
                         </a>
@@ -99,7 +99,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                     {% for post in dianShangDongTai %}
                     <div class="col-md-3 col-sm-4">
                         <a href="/news/post/{{ post.slug }}">
-                            <h4 class="" style="height:50px;overflow: hidden;line-height: 1.2">
+                            <h4 class="color-444" style="height:50px;overflow: hidden;line-height: 1.2">
                                 {{post.title|slice(0,20)}}
                             </h4>
                         </a>
@@ -113,7 +113,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                     {% for post in zhenCeJieDu %}
                     <div class="col-md-3 col-sm-4">
                         <a href="/news/post/{{ post.slug }}">
-                            <h4 class="" style="height:50px;overflow: hidden;line-height: 1.2">
+                            <h4 class="color-444" style="height:50px;overflow: hidden;line-height: 1.2">
                                 {{post.title|slice(0,20)}}
                             </h4>
                         </a>
@@ -128,12 +128,12 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <!--通知公告-->
     {% if tongZhiGongGao %}
     <div class="headline">
-        <a href="/news/categories/tong-zhi-gong-gao"><h2>通知公告</h2></a>
+        <h2><a href="/news/categories/tong-zhi-gong-gao">通知公告</a></h2>
     </div>
     <div class="owl-carousel owl-carousel-v1 m-b">
         {% for post in tongZhiGongGao %}
         <div class="item">
-            <a href="/news/post/{{ post.slug }}"><h4>{{ post.title }}</h4></a>
+            <a href="/news/post/{{ post.slug }}"><h4 class="color-444">{{ post.title }}</h4></a>
             <small>{{ post.published_at|date('Y,m月 d')}} / by {{ post.user.first_name }}</small>
         </div>
         {% endfor %}
@@ -143,9 +143,9 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <!--推荐课程-->
     {% if tagTuiJian %}
     <div class="headline">
-        <a href="/courses/tag/tui-jian"><h2>推荐课程</h2></a>
+        <h2> <a href="/courses/tag/tui-jian">推荐课程</a></h2>
     </div>
-    <div class="row">
+    <div class="row m-b">
         {% partial 'courses/block-v2' posts=tagTuiJian s_tag='推荐' %}
     </div>
     {% endif %}
@@ -153,15 +153,15 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <!--电商基础知识-->
     {% if categoryDianShangJiChuZhiShi %}
     <div class="headline">
-        <a href="/courses/categories/dian-shang-ji-chu-zhi-shi"><h2>电商基础知识</h2></a>
+        <h2><a href="/courses/categories/dian-shang-ji-chu-zhi-shi">电商基础知识</a></h2>
     </div>
-    <div class="row">
+    <div class="row m-b">
         {% partial 'courses/block-v1' posts=categoryDianShangJiChuZhiShi s_tag='最新' %}
     </div>
     {% endif %}
 
     <!--服务市场-->
-    <div class="tab-v1">
+    <div class="tab-v1 m-b">
         <ul class="nav nav-tabs">
             <li class="active"><a href="#fw-1" data-toggle="tab" aria-expanded="true" style="font-size: 20px;">服务市场 /
                                                                                                                推荐</a>
@@ -263,9 +263,9 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <!--知名企业-->
     {% if featuredCompanies %}
     <div class="headline">
-        <a href="/courses/categories/dian-shang-ji-chu-zhi-shi"><h2>知名企业</h2></a>
+        <h2><a href="/courses/categories/dian-shang-ji-chu-zhi-shi">知名企业</a></h2>
     </div>
-    <div class="owl-carousel owl-carousel-v2 m-b">
+    <div class="owl-carousel owl-carousel-v2 m-b-lg">
         {% for post in featuredCompanies %}
         <div class="item">
             <a href="/company/{{ post.id }}">
