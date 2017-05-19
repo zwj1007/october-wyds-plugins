@@ -11,7 +11,7 @@ class CreateCompaniesTable extends Migration
         Schema::create('buuug7_user_companies', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->nullable();;
             $table->string('name')->nullable();
             //$table->string('slug');
             $table->string('address')->nullable();
