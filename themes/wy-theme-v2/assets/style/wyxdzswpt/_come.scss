@@ -1,0 +1,54 @@
+@charset "UTF-8";
+.come {
+  background: #000000;
+  .come-back-img {
+    background-image: url("../images/come/bg_glow.png");
+    height: 100%;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
+    .back-img-car {
+      position: absolute;
+      width: 1500px;
+      height: 800px;
+      background-image: url("../images/come/car.png");
+      margin-top: 80px;
+    }
+    .content {
+      line-height: 45px;
+      padding-top: 100px;
+      color: #ffffff;
+      h1 {
+        font-size: 45px;
+        text-transform: uppercase;
+        margin: 45px 0;
+      }
+      p {
+        font-size: 18px;
+      }
+      .count span {
+        font-size: 35px;
+        font-weight: normal;
+        font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+        padding: 5px 10px;
+      }
+      p .btn {
+        color: #f3f3f3;
+        background: rgba(255, 255, 255, 0.45);
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        padding: 10px 20px;
+        border-radius: 60px;
+        box-shadow: 0 2px 50px 0 rgb(255, 255, 255);
+        //       box-shadow: 0 2px 50px 0 rgb(208, 23, 23);
+      }
+    }
+    .back-img-glow {
+      position: relative;
+      background-image: url("../images/come/glow.png");
+      height: 800px;
+    }
+  }
+  .come-text {
+
+  }
+}
