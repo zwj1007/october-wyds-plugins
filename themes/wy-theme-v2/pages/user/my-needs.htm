@@ -9,12 +9,48 @@ function onEnd(){
 }
 ==
 
-<section class="box index-lyzx xqfb ">
-    <div class="lyzx-title xqfb-title">
-        <span>我发布的需求</span>
-        <span class="float-right"><a href="/needs/need/create">发布新需求</a></span>
+<section class=" box user xqfb ">
+    <div class="mainLeft float-left">
+        <ul>
+            <li class=" ">
+                <a href="/user/center/account">
+                    <i class="fa fa-drivers-license"></i>
+                    账号
+                </a>
+            </li>
+            <li>
+                <a href="/user/center/avatar">
+                    <i class="fa fa-user-circle-o"></i>
+                    头像
+                </a>
+            </li>
+            <li>
+                <a href="/user/center/company">
+                    <i class="fa fa-institution"></i>
+                    公司
+                </a>
+            </li>
+            <li class="">
+                <a href="/user/center/shoucang">
+                    <i class="fa fa-fw fa-folder-open"></i>
+                    收藏课程
+                </a>
+            </li>
+            <li class="active">
+                <a href="/user/center/needs">
+                    <i class="fa fa-fw fa-feed"></i>
+                    我的发布
+                </a>
+            </li>
+            <li class="">
+                <a href="/coming-soon">
+                    <i class="fa fa-fw fa-gear"></i>
+                    设置
+                </a>
+            </li>
+        </ul>
     </div>
-    <div class="lyzx-body xqfb-body ">
+    <div class="mainRight float-right  lyzx-body xqfb-body ">
         <table class="table table-hover">
             <thead>
             <tr>
@@ -27,8 +63,8 @@ function onEnd(){
             <tbody>
 
             {% for need in needs %}
-            <tr class="list">
-                <td><a href="/needs/need/{{ need.id }}">{{ need.title }}</a></td>
+            <tr>
+                <td class="list"><a href="/needs/need/{{ need.id }}">{{ need.title }}</a></td>
                 <td>{{ need.checked == 0 ? '待审核' : '已审核' }}</td>
                 <td>{{ need.created_at|time_diff }}</td>
                 <td>
@@ -36,23 +72,20 @@ function onEnd(){
                     <a href="/needs/need/{{ need.id }}" class="margin-right-20">
                         <img src="/themes/wy-theme-v2/assets/images/xqfb/xqfb1.png" alt="">
                     </a>
+                    <a href="/needs/need/update/{{ need.id }}" class="margin-right-20">
+                        <img src="/themes/wy-theme-v2/assets/images/xqfb/xqfb3.png" alt="">
+                    </a>
                     <a data-request="onDeleteNeed" data-request-data="id:{{ need.id }}" data-request-confirm="你确定要删除?" class="margin-right-10">
                         <img src="/themes/wy-theme-v2/assets/images/xqfb/xqfb2.png" alt="">
                     </a>
 
-                    <a href="/needs/need/update/{{ need.id }}" class="margin-right-20">
-                        <img src="/themes/wy-theme-v2/assets/images/xqfb/xqfb3.png" alt="">
-                    </a>
                 </td>
             </tr>
             {% endfor %}
             </tbody>
         </table>
 
-        <div style="margin-left: 45px;">
-            {{ needs.render|raw }}
-        </div>
+        {{ needs.render|raw }}
 
     </div>
-
 </section>

@@ -23,6 +23,9 @@ blockquote {
   font-size: 20px;
   border-left: 5px solid #eeeeee; }
 
+a:hover {
+  cursor: pointer; }
+
 a {
   text-decoration: none;
   color: #000000; }
@@ -263,7 +266,7 @@ header {
       width: 400px;
       margin: 23px 20px; }
     header .head-long .head-right {
-      margin: 28px 0; }
+      margin: 28px 0 0; }
       header .head-long .head-right ul li {
         float: right;
         text-align: center;
