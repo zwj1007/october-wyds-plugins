@@ -40,7 +40,6 @@
       box-shadow: 1px 2px 20px 1px #CCCCCC;
       border: 1px solid #f3f3f3;
       .kj-title {
-
         border-bottom: 2px solid $nav-background;
         border-bottom-left-radius: 20%;
         font-size: 18px;
@@ -64,7 +63,9 @@
           text-overflow: ellipsis;
           a {
             color: #333333;
-
+          }
+          a:hover {
+            color: #FE4400;
           }
 
           .aurora__title::after {
@@ -135,9 +136,6 @@
         }
       }
       .list-post {
-        float: right;
-        min-height: 160px;
-        width: 565px;
         position: relative;
         .list-post-title {
           a {

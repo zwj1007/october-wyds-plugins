@@ -5,7 +5,7 @@
   text-align: left;
   box-shadow: 1px 2px 20px 1px #CCCCCC;
   border: 1px solid #ededed;
-  margin: 20px 0 40px 0;
+  margin: 0 0 20px 0;
   padding: 5px 15px 10px 15px;
   h4.title {
     border-bottom: 1px dashed #B2B2B2;
@@ -26,15 +26,14 @@
   img {
     /*  margin: 0 auto;*/
     max-width: 100%;
-    display: block;
+    //display: block;
     padding-bottom: 15px;
   }
 }
 
 .dszx-kjnav {
-
   width: 300px;
-  margin: 20px 0 40px 20px;
+  margin: 0 0 40px 20px;
   .kj-dszx {
     padding-bottom: 15px;
     margin-bottom: 20px;
@@ -64,7 +63,9 @@
       a {
         color: #333333;
       }
-
+      a:hover {
+        color: #FE4400;
+      }
       .aurora__title::after {
         text-shadow: 0 0 5px currentColor;
         font-size: 18px;

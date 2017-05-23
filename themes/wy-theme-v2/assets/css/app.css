@@ -9,8 +9,19 @@ body {
   color: #444;
   height: 100%; }
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 ul, ol {
   list-style: none; }
+
+blockquote {
+  padding: 11px 22px;
+  margin: 0 0 22px;
+  font-size: 20px;
+  border-left: 5px solid #eeeeee; }
 
 a {
   text-decoration: none;
@@ -659,6 +670,8 @@ footer {
         text-overflow: ellipsis; }
         .lanmu .list-left .kj-dszx ul li a {
           color: #333333; }
+        .lanmu .list-left .kj-dszx ul li a:hover {
+          color: #FE4400; }
         .lanmu .list-left .kj-dszx ul li .aurora__title::after {
           text-shadow: 0 0 5px currentColor;
           font-size: 18px;
@@ -708,9 +721,6 @@ footer {
         width: 250px;
         height: 125px; }
     .lanmu .list-right .list-right-v1 .list-post {
-      float: right;
-      min-height: 160px;
-      width: 565px;
       position: relative; }
       .lanmu .list-right .list-right-v1 .list-post .list-post-title a {
         width: 400px;
@@ -750,7 +760,7 @@ footer {
   text-align: left;
   box-shadow: 1px 2px 20px 1px #CCCCCC;
   border: 1px solid #ededed;
-  margin: 20px 0 40px 0;
+  margin: 0 0 20px 0;
   padding: 5px 15px 10px 15px; }
   .dszx-content h4.title {
     border-bottom: 1px dashed #B2B2B2;
@@ -769,12 +779,11 @@ footer {
   .dszx-content img {
     /*  margin: 0 auto;*/
     max-width: 100%;
-    display: block;
     padding-bottom: 15px; }
 
 .dszx-kjnav {
   width: 300px;
-  margin: 20px 0 40px 20px; }
+  margin: 0 0 40px 20px; }
   .dszx-kjnav .kj-dszx {
     padding-bottom: 15px;
     margin-bottom: 20px;
@@ -801,6 +810,8 @@ footer {
       text-overflow: ellipsis; }
       .dszx-kjnav .kj-dszx ul li a {
         color: #333333; }
+      .dszx-kjnav .kj-dszx ul li a:hover {
+        color: #FE4400; }
       .dszx-kjnav .kj-dszx ul li .aurora__title::after {
         text-shadow: 0 0 5px currentColor;
         font-size: 18px;
@@ -1825,15 +1836,13 @@ input {
   .content-qypp .ppqy-top {
     height: 300px; }
     .content-qypp .ppqy-top .content-qypp-left {
-      width: 500px;
-      margin-right: 20px; }
+      border: 1px solid #CCCCCC;
+      margin: 20px;
+      padding: 40px 10px;
+      border-radius: 3px; }
       .content-qypp .ppqy-top .content-qypp-left img {
-        margin: 20px;
-        height: 200px;
-        padding: 30px 0;
-        width: 400px;
-        border: 1px solid #CCCCCC;
-        border-radius: 3px; }
+        height: 160px;
+        width: 400px; }
     .content-qypp .ppqy-top .content-qypp-right {
       width: 600px;
       margin: 40px 0;
@@ -2069,7 +2078,6 @@ input {
           border: none; }
 
 .user {
-  height: 650px;
   margin-top: 30px; }
   .user .mainLeft {
     box-sizing: border-box;
@@ -2144,7 +2152,8 @@ input {
           border-radius: 6px;
           padding: 5px;
           background: rgba(132, 109, 109, 0.18);
-          box-shadow: 0 2px 10px 0 #efe3e3; }
+          box-shadow: 0 2px 10px 0 #efe3e3;
+          margin: 10px 0; }
         .user .mainRight .content .leftBar #img_title_container {
           border: 1px solid #ddd;
           text-align: center;
@@ -2237,6 +2246,38 @@ input {
     font-size: 16px;
     margin-bottom: 10px; }
 
+.user-gs .panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
+  .user-gs .panel .panel-heading {
+    background-color: #f5f5f5;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd; }
+  .user-gs .panel .panel-body {
+    padding: 15px; }
+    .user-gs .panel .panel-body .form-group {
+      margin-bottom: 15px; }
+      .user-gs .panel .panel-body .form-group label {
+        display: inline-block;
+        margin-bottom: 5px;
+        font-weight: 700; }
+      .user-gs .panel .panel-body .form-group .form-control {
+        display: block;
+        width: 100%;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        border: 1px solid #ccc;
+        border-radius: 4px; }
+      .user-gs .panel .panel-body .form-group textarea.form-control {
+        height: auto; }
+      .user-gs .panel .panel-body .form-group .note-frame {
+        border: 1px solid #a9a9a9; }
+
 .user-collect .mainRight .content ul li {
   line-height: 50px; }
 .user-collect .mainRight .content ul span {
@@ -2274,14 +2315,12 @@ input {
     text-align: left; }
 
 .xqfb-browse .xqfb-browse-title {
-  margin: 0 80px; }
-  .xqfb-browse .xqfb-browse-title h3 {
-    padding: 60px 0 0 0;
-    font-size: 22px;
-    letter-spacing: 3px;
-    height: 50px;
-    text-align: center;
-    border-bottom: 1px solid #dddddd; }
+  margin: 0 80px;
+  border-bottom: 1px solid #dddddd;
+  padding: 60px 0 20px 0;
+  font-size: 20px;
+  letter-spacing: 3px;
+  text-align: center; }
 .xqfb-browse .xqfb-browse-body {
   margin: 30px 180px;
   padding-bottom: 50px; }
