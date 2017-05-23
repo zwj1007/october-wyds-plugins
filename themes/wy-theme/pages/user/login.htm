@@ -20,7 +20,11 @@ function onStart(){
                     登 陆
                 </div>
                 <div class="panel-body">
-                    <form data-request="onSignin">
+                    <form
+                            data-request="onSignin"
+                            data-request-flash
+                    >
+
                         <div class="form-group">
                             <label for="userSigninLogin">邮箱</label>
                             <input
@@ -41,7 +45,7 @@ function onStart(){
                         </div>
                         <p><a href="/user/register">没有账号? 点我注册</a></p>
                         <p><a href="/user/forgot-password">忘记密码?</a></p>
-                        <button type="submit" class="btn btn-default">登陆</button>
+                        <button type="submit" class="btn btn-default" data-attach-loading="">登陆</button>
                         <button type="reset" class="btn btn-default">重置</button>
                         <hr>
                         <p>或者你可以用社交账号登录</p>

@@ -22,7 +22,11 @@ $this['need']=\Buuug7\User\Models\Need::findById($this->param('id'));
                 </div>
             </div>
             {% else %}
-            <p class="lead">您的信息正在审核当中.</p>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p class="lead">您的信息正在审核当中.</p>
+                </div>
+            </div>
             {% endif %}
         </div>
     </div>

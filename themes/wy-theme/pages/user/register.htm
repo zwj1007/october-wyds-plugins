@@ -19,7 +19,10 @@ paramCode = "code"
                 <div class="panel-body">
                     <p><a href="/user/login">已有账号? 点我登录</a></p>
                     {% if canRegister %}
-                    <form data-request="onRegister">
+                    <form
+                            data-request="onRegister"
+                            data-request-flash
+                    >
                         <div class="form-group">
                             <label for="registerName">名称</label>
                             <input
@@ -27,7 +30,7 @@ paramCode = "code"
                                     type="text"
                                     class="form-control"
                                     id="registerName"
-                                    placeholder="输入你的全名">
+                                    placeholder="输入你的昵称">
                         </div>
                         <div class="form-group">
                             <label for="registerEmail">邮箱</label>
@@ -59,7 +62,7 @@ paramCode = "code"
                                     placeholder="输入密码"/>
                         </div>
 
-                        <button type="submit" class="btn btn-default">注册</button>
+                        <button type="submit" class="btn btn-default" data-attach-loading="">注册</button>
 
                     </form>
                     {% else %}

@@ -8,7 +8,7 @@ october plugins
 + make `storage` and `themes` directory write permission
 + run `php artisan october:update` the version to latest.
 + this plugin need `guzzlehttp/guzzle`package, install via composer `composer require guzzlehttp/guzzle`
-+ remove project root files of `.gitignore` and `Readme.md` files
++ remove some files,`rm .gitignore README.md .editorconfig .gitattributes`
 + clone this repository
     - in the project root directory
     - run `git init`

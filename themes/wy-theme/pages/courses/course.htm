@@ -61,10 +61,10 @@ if(!Auth::check()) return Redirect::to('/user/login');
                         </p>
                         <p>
                             {% if course.ifShouCang %}
-                            <a data-request="onDetachShouCang" data-request-data="id:{{course.id}}" class="btn btn-danger"><i class="icon icon-trash"></i>
+                            <a data-request="onDetachShouCang" data-request-data="id:{{course.id}}" class="btn btn-danger" data-attach-loading=""><i class="icon icon-trash"></i>
                                 取消收藏</a>
                             {% else %}
-                            <a data-request="onShouCang" data-request-data="id:{{course.id}}" class="btn btn-success"><i class="icon icon-plus"></i>
+                            <a data-request="onShouCang" data-request-data="id:{{course.id}}" class="btn btn-success" data-attach-loading=""><i class="icon icon-plus"></i>
                                 收藏</a>
                             {% endif %}
                             {% if course.previousSlug %}

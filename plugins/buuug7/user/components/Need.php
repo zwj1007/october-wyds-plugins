@@ -50,7 +50,7 @@ class Need extends ComponentBase
             return null;
         }
         $user = Auth::getUser();
-        return $user->need()->paginate(2);
+        return $user->need()->paginate(5);
     }
 
 
@@ -64,7 +64,7 @@ class Need extends ComponentBase
         $need->contact_phone = post('contact_phone');
         $need->save();
         Flash::success('您的发布已经成功提交!');
-        return Redirect::to('needs');
+        return Redirect::to('/user/center/needs');
     }
 
     public function onUpdateNeed()
