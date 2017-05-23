@@ -12,6 +12,9 @@
 * news content page
 */
 .news-post-detail {
+    img{
+        max-width: 100%;
+    }
     .post-image {
         img {
             width: 100%;

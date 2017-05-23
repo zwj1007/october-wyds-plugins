@@ -6664,6 +6664,8 @@ a:hover, a:visited {
 /*
 * news content page
 */
+.news-post-detail img {
+  max-width: 100%; }
 .news-post-detail .post-image img {
   width: 100%; }
 .news-post-detail .post-info ul {
