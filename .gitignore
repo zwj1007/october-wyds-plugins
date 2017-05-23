@@ -1,13 +1,29 @@
+
+/bootstrap/compiled.php
+/vendor
+composer.phar
 .DS_Store
-*.log
-### Example user template template
-### Example user template
+.idea
+.env
+.env.*.php
+.env.php
+php_errors.log
+nginx-error.log
+nginx-access.log
+nginx-ssl.access.log
+nginx-ssl.error.log
+php-errors.log
+sftp-config.json
+selenium.php
+
+# for netbeans
+nbproject
 
 # IntelliJ project files
-.idea
 *.iml
 out
 gen
+
 
 /bootstrap
 /config
@@ -17,10 +33,17 @@ gen
 /plugins/october
 /plugins/rainlab
 /storage
+/tests
 /themes/demo
-/vendor
 .htaccess
 artisan
 index.php
 composer.json
 composer.lock
+
+.travis.yml
+CHANGELOG.md
+CONTRIBUTING.md
+ISSUE_TEMPLATE.md
+phpunit.xml
+server.php
