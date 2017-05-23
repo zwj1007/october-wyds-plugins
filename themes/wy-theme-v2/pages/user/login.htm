@@ -17,14 +17,18 @@ paramCode = "code"
             {% if not user %}
             <div class="login">
                 <p>
-                    <a href="/user/login">
+                    <a href="/user/register">
                         注册
                     </a>/
                     <a href="/">
                         首页
                     </a>
                 </p>
-                <form data-request="onSignin" class="form-ct">
+                <form
+                        data-request="onSignin"
+                        data-request-flash
+                        class="form-ct"
+                >
                     <div class="form-body">
                         <dl>
                             <dd style="border:1px solid #bdc7d8">

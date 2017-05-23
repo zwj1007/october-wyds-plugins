@@ -34,7 +34,10 @@ paramCode = "code"
                     <div class="form-contain">
                         {% if not user %}
                         <div class="form_org_contain" id="form_peo_contain" style="display: block;">
-                            <form data-request="onRegister">
+                            <form
+                                    data-request="onRegister"
+                                    data-request-flash
+                            >
                                 <div class="form-body form-signup-body">
 
                                     <dl>
@@ -104,7 +107,7 @@ paramCode = "code"
                                     <dl>
                                         <dd style="text-align: center;">
                                             <input type="submit" value="立&nbsp;即&nbsp;注&nbsp;册" class="btn-reg"
-                                                   id="btn-submit_peo">
+                                                   id="btn-submit_peo" data-attach-loading="">
                                         </dd>
                                     </dl>
                                 </div>
