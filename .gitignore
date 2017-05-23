@@ -13,6 +13,9 @@ gen
 /config
 /modules
 /plugins/indikator
+/plugins/netsti
+/plugins/october
+/plugins/rainlab
 /storage
 /themes/demo
 /vendor
