@@ -68,8 +68,12 @@ $this['avatar']=Auth::getUser()->getAvatarThumb(200);
                 <div id="img_title_container">
                     {% if social_avatar %}
                     <img src="{{ social_avatar }}" alt=""  style="max-width: 200px">
-                    {% else %}
+                    {% else if avatar %}
                     <img src="{{ avatar }}" alt="">
+                    {% else %}
+                    <p>
+                        <a href="/user/center/avatar">没有头像? 点我上传</a>
+                    </p>
                     {% endif %}
                 </div>
 
