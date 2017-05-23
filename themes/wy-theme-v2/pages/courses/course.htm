@@ -8,7 +8,7 @@ function onEnd(){
 
 $loggedIn = Auth::check();
 if(!$loggedIn){
-return Redirect::to('/account');
+return Redirect::to('/user/login');
 }
 
 //var_dump($this->course->toArray());
