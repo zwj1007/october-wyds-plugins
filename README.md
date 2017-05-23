@@ -1,81 +1,24 @@
 # October Plugin
 october plugins
 
+#### Usage
++ install october via composer `composer create-project october/october myprojectName`
++ setting `'disabledCoreUpdates' => true` in config/cms.php
++ run `php artisan october:install` in project root directory
++ run `php artisan october:update` the version to latest.
++ this plugin need `guzzlehttp/guzzle`package, install via composer `composer require guzzlehttp/guzzle`
++ install plugins
+    - install rainlab.user `php artisan plugin:install RainLab.User`
+    - install rainlab.pages `php artisan plugin:install RainLab.Pages`
+    - install netsti.uploader `php artisan plugin:install Netsti.Uploader`
+    - install buuug7.news `php artisan plugin:refresh Buuug7.News`
+    - install buuug7.courses `php artisan plugin:refresh Buuug7.Courses`
+    - install buuug7.user `php artisan plugin:refresh Buuug7.User`
++ other settings
+    - setting `locale=zh-cn timezone=PRC` in config/app.php
 
-### 栏目结构
-平台主要有7个模块,包括 电商资讯,政策解读,通知公告,线上培训,本地电商,服务市场,数据统计,其中线上培训跟其他平台的电商学院栏目的性质类似,只是叫法不一样.
-
-+ 电商动态
-    + 农村电商
-    + 移动电商
-    + 其他动态
-+ 政策解读
-    - 政策导向
-    - 地方政策
-+ 通知公告    
-+ 线上培训(电商学院)
-+ 本地电商
-    - 推荐电商(featured)
-    - 本地电商(normal)
-+ 服务市场(需求发布/展示)
-+ 数据统计
-+ 用户
-    + 登陆
-    + 注册
-    + 收藏课程
-    + 发布管理
-    + 公司
-
-其中线上培训,本地电商,服务市场这三个模块依赖于**用户模块**,用户模块中包含了完整的用户认证体系,所需要的额外功能根据实际业务来扩展
-
-### 模块详述
-#### 电商动态
-该栏目下电子商务资讯类的信息，涵盖电子商务各行各业的最新资讯，让用户实时了解最前沿的行业资讯，该栏目下有三个小分类，分别为农村电商资讯，移动电商资讯；电商动态；  
-每一个子分类是对电商资讯栏目更细致的划分。农村电商资讯子栏目中信息主要针对的是，农村电商这一领域的所有资讯信息；  
-移动电商资讯子栏目为针对移动端（比如基于手机，平板，微信等电子商务企业应用APP）的资讯进行单独的发布；电商动态子栏目主要针对周边电商最新动态资讯。
-
-#### 政策解读
-该栏目为与电子商务相关的国家政策集中发布区。用户通过该栏目可以及时了解国家政策方针，政策导向，让个人或者企业对国家政策有更好认识并帮助企业个人能够更好的按照国家政策来确立企业自身发展的道路。该栏目分为政策导向和地方政策两大子栏目。
-
-#### 通知公告
-该栏目为平台通知公告栏目,有关通知公告类的信息可以发布在该栏目下
-
-#### 线上培训
-该栏目旨在引导用户及时了解学习互联网电子商务，让企业和个人用户以及政府干部能够面对未来的互联网电子商务冲击做好足够的准备，让他们通过线上培训来为自身充电，同时也为一些电子商务创业团队提供更加长远的培训计划。
-
-#### ~~产品营销~~本地电商
-该栏目集中展示并推广本地电子商务类企业，为本地电子商务类企业提供线上展示和营销推广方式，帮助本地电子商务类企业解决推广难，营销难的问题，通过平台自身流量让每一个本地电商有更多的曝光几率从而增加企业知名度。  
-该模块针对企业用户,企业用户注册认证成功后可提交企业信息,经平台审核通过后将企业的信息通过平台产品营销栏目集中展示营销.  
-同时对一些本地电商中的优质电商以品牌企业作为单独的栏目进行集中展示,为其提供更多的曝光率,让每一个电商企业真正成长起来,也是本平台的初衷.
-
-#### 服务市场
-个人或者组织类的需求信息集中展示的栏目,任何需求类的信息都会自动推送到该栏目下.用户可以通过服务市场检索自己需要的服务.或者可以通过平台的需求发布模块发布你的需求信息.
-
-#### 数据统计
-由于不清楚具体要统计什么内容,暂时实现了数据录入跟展示,作为样例,以后根据实际业务在定制.
-
-#### TODO
-+ 部分插件没有完全本地化,有待翻译
-+ 新闻增加评论
-+ 课程模型增加评论
-+ 公司模型增加评论
-
-
-#### 安装
-+ `mkdir october`
-+ `chmod -R 777 october`
-+ `cd october`
-+ `curl -s https://octobercms.com/api/installer | php`
-+ install rainlab.user `php artisan plugin:install RainLab.User`
-+ install buuug7.news `php artisan plugin:refresh Buuug7.News`
-+ install buuug7.courses `php artisan plugin:refresh Buuug7.Courses`
-+ install buuug7.user `php artisan plugin:refresh Buuug7.User`
-
-+ this plugin need `guzzlehttp/guzzle`, you need run `composer update ` after install
 
 #### 注意
-+ 新安装的october需要修改以下几个地方
-    + 修改根目录`config/app.php`中 `locale=zh-cn timezone=PRC`
 + 媒体中心上传文件不支持中文名称
 + 媒体中心上传图片不支持相同的名字,会覆盖原有同名的文件
 + 建议所有文章的特色图片的大小为800x400,也包括线上培训课程的特色图片
@@ -83,10 +26,13 @@ october plugins
 #### TODO
 + ~~用户中心~~
 + qq互联
++ 微信登录接入
 + 微信开放平台
 + 搜索功能
-+ 评论
-
++ 新闻增加评论
++ 课程模型增加评论
++ 公司模型增加评论
++ 部分插件没有完全本地化,有待翻译
 
 #### 更新
 + 2017-05-03
