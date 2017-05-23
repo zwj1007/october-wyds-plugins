@@ -5,8 +5,15 @@ october plugins
 + install october via composer `composer create-project october/october myprojectName`
 + setting `'disabledCoreUpdates' => true` in config/cms.php
 + run `php artisan october:install` in project root directory
++ make `storage` and `themes` directory write permission
 + run `php artisan october:update` the version to latest.
 + this plugin need `guzzlehttp/guzzle`package, install via composer `composer require guzzlehttp/guzzle`
++ remove project root files of `.gitignore` and `Readme.md` files
++ clone this repository
+    - in the project root directory
+    - run `git init`
+    - run `git remote add origin https://github.com/gansutianqi/october-wyds-plugins.git`
+    - run `git pull origin master`
 + install plugins
     - install rainlab.user `php artisan plugin:install RainLab.User`
     - install rainlab.pages `php artisan plugin:install RainLab.Pages`
@@ -18,7 +25,7 @@ october plugins
     - setting `locale=zh-cn timezone=PRC` in config/app.php
 
 
-#### 注意
+#### Tips
 + 媒体中心上传文件不支持中文名称
 + 媒体中心上传图片不支持相同的名字,会覆盖原有同名的文件
 + 建议所有文章的特色图片的大小为800x400,也包括线上培训课程的特色图片
@@ -34,7 +41,7 @@ october plugins
 + 公司模型增加评论
 + 部分插件没有完全本地化,有待翻译
 
-#### 更新
+#### Change
 + 2017-05-03
     + 添加统计模型
     + 更新前端视图
