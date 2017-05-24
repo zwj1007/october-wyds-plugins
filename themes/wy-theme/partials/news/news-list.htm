@@ -22,10 +22,10 @@
             <li>{{ post.published_at|date('Y, m月 d') }}</li>
         </ul>
         <h4 class="title">
-            <a class="color-444" href="{{ post.url }}">{{ post.title }}</a>
+            <a class="color-444" href="{{ post.url }}">{{ str_limit(post.title, 60, '...') }}</a>
         </h4>
         <p class="color-777 small">
-            {{ str_limit(post.summary, 200, '...') }}
+            {{ str_limit(post.summary, 150, '...') }}
         </p>
     </div>
 </div>
