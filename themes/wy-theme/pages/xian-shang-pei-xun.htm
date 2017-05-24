@@ -4,12 +4,12 @@ layout = "default"
 ==
 function onStart(){
 // filter by tags
-$this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
-$this['tagReMen']=\Buuug7\Courses\Models\Course::displayByTags(['re-men'],4);
+$this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],8);
+$this['tagReMen']=\Buuug7\Courses\Models\Course::displayByTags(['re-men'],8);
 
 // filter by categories
-$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi'],4);
-$this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-jin-jie-zhi-shi'],4);
+$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi'],8);
+$this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-jin-jie-zhi-shi'],8);
 }
 
 function onEnd(){
@@ -33,7 +33,7 @@ if(!Auth::check()) return Redirect::to('/user/login');
     <!--filter by tas-->
     {% if tagTuiJian %}
     <div class="headline">
-        <a href="/courses/tag/tui-jian"><h2>推荐课程</h2></a>
+        <h2><a href="/courses/tag/tui-jian">推荐课程</a></h2>
     </div>
     <div class="row">
         {% partial 'courses/block-v2' posts=tagTuiJian s_tag="推荐" %}
@@ -42,7 +42,8 @@ if(!Auth::check()) return Redirect::to('/user/login');
 
     {% if tagReMen %}
     <div class="headline">
-        <a href="/courses/tag/re-men"><h2>热门课程</h2></a>
+        <h2><a href="/courses/tag/re-men">热门课程</a></h2>
+
     </div>
     <div class="row">
         {% partial 'courses/block-v1' posts=tagReMen s_tag="热门" %}
@@ -52,7 +53,7 @@ if(!Auth::check()) return Redirect::to('/user/login');
     <!--filter by categories-->
     {% if categoryDianShangJiChuZhiShi %}
     <div class="headline">
-        <a href="/courses/categories/dian-shang-ji-chu-zhi-shi"><h2>电商基础知识</h2></a>
+        <h2><a href="/courses/categories/dian-shang-ji-chu-zhi-shi">电商基础知识</a></h2>
     </div>
     <div class="row">
         {% partial 'courses/block-v1' posts=categoryDianShangJiChuZhiShi %}
@@ -61,7 +62,7 @@ if(!Auth::check()) return Redirect::to('/user/login');
 
     {% if categoryDianShangJinJieZhiShi %}
     <div class="headline">
-        <a href="/courses/categories/dian-shang-jin-jie-zhi-shi"><h2>电商进阶知识</h2></a>
+        <h2><a href="/courses/categories/dian-shang-jin-jie-zhi-shi">电商进阶知识</a></h2>
     </div>
     <div class="row">
         {% partial 'courses/block-v1' posts=categoryDianShangJinJieZhiShi %}

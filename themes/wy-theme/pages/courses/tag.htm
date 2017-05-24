@@ -4,7 +4,7 @@ layout="default"
 
 [coursesTag]
 tagFilter="{{ :slug }}"
-postsPerPage=3
+postsPerPage=8
 ==
 function onEnd(){
 $this->page->title=$this->tag->name;
@@ -15,6 +15,7 @@ $this->page->title=$this->tag->name;
 <div class="jumbotron">
     <div class="container">
         <h2>{{ this.page.title }}课程</h2>
+        <p>Contents...</p>
     </div>
 </div>
 

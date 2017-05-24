@@ -6,9 +6,9 @@ layout = 'default'
 ==
 function onStart()
 {
-if(!Auth::check()){
-return Redirect::to('/account');
-}
+
+if(!Auth::check()) return Redirect::to('/user/login');
+
 $this->addCss('https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css');
 $this->addCss('assets\vendor\summernote-0.8.3-dist\dist\summernote.css');
 $this->addJs('assets/vendor/summernote-0.8.3-dist/dist/summernote.min.js');

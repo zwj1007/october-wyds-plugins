@@ -50,7 +50,7 @@ class Need extends ComponentBase
             return null;
         }
         $user = Auth::getUser();
-        return $user->need()->orderBy('checked_at')->paginate(5);
+        return $user->need()->orderBy('checked_at')->paginate(10);
     }
 
 

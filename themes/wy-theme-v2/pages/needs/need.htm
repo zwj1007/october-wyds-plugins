@@ -20,6 +20,9 @@ $this['need']=\Buuug7\User\Models\Need::findById($this->param('id'));
         {{ need.description|raw }}
     </div>
     {% else %}
-    <p class="lead">您的信息正在审核当中.</p>
+    <section class="box wy-audit ">
+        <!-- <i class="fa fa-universal-access"></i>-->
+        <p class="audit"><i class="fa fa-pied-piper-alt fa-flip-horizontal margin-right-20"></i>您的信息正在审核当中,请耐心等待……</p>
+    </section>
     {% endif %}
 </section>

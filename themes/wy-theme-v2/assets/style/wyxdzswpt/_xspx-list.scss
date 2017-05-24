@@ -95,20 +95,17 @@
         box-shadow: 2px 4px 15px rgba(93, 93, 93, 0.4);
         padding: 15px 0 0 20px;
         border-radius: 5px;
-        width: 240px;
         float: left;
         height: 145px;
         margin-left: 10px;
         a {
-          display: block;
           width: 72px;
           margin-top: 20px;
-          border: 1px solid $border-color;
+          border: 1px solid #CCCCCC;
           border-radius: 50%;
           padding: 3px 10px;
           text-align: center;
-          height: 20px;
-          line-height: 20px;
+
         }
         a:hover {
           box-shadow: 1px 2px 20px 1px #CCCCCC;

@@ -35,6 +35,6 @@ class ShouCang extends ComponentBase
         $user = Auth::getUser();
         $courses = $user->courses();
 
-        return $courses->paginate(2);
+        return $courses->paginate(10);
     }
 }

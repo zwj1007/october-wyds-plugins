@@ -7,7 +7,7 @@ slug = "{{ :slug }}"
 
 [coursesCourses]
 categoryFilter = "{{ :slug }}"
-postsPerPage = 2
+postsPerPage = 8
 
 ==
 function onEnd()
@@ -26,10 +26,10 @@ $this->page->title = $this->category->name;
 
 <div class="container">
     <div class="row">
-
         {% partial 'courses/block-v2' posts=courses %}
 
     </div>
+    {{ courses.render|raw }}
 </div>
 
 
