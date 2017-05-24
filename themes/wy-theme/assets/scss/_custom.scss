@@ -7,6 +7,7 @@
 |
 |
 */
+
 /*
  * Images
  */
@@ -95,8 +96,14 @@ body{
     padding-top:65px;
 }
 
-a:hover{
-    cursor: pointer;
+
+a{
+    &:hover{
+        cursor: pointer;
+    }
+    &:visited,&:active{
+        text-decoration: none;
+    }
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
@@ -112,8 +119,4 @@ a:hover{
     position: relative;
     overflow: hidden;
     width: 100%;
-}
-
-@media (max-width: $screen-sm-max) {
-    @include responsive-invisibility('.hidden-xxs');
 }

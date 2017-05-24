@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="overflow-h">
-            <h3>{{ post.title }}</h3>
+            <h3>{{ str_limit(post.title, 22, '...') }}</h3>
             <div class="star-vote pull-right">
                 <ul class="list-inline">
                     <li><i class="color-warning fa fa-star"></i></li>
@@ -24,11 +24,11 @@
                 </ul>
             </div>
         </div>
-        <p>
-            {{ post.summary|striptags|slice(0,40) }}
+        <p class="color-777 small">
+            {{ str_limit(post.summary, 60, '...') }}
         </p>
         <ul class="list-unstyled">
-            <li><span class="color-warning">发布时间 :</span> <span class="time small">{{ post.published_at|date('Y ,m月 d') }}</span></li>
+            <li><span class="color-warning">发布时间 :</span> <span class="time small color-777">{{ post.published_at|date('Y ,m月 d') }}</span></li>
         </ul>
         <a class="btn btn-line-warning btn-sm" href="/courses/course/{{ post.slug }}">查看</a>
 

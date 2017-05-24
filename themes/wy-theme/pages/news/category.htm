@@ -47,9 +47,12 @@ if ($this->category) $this->page->title = $this->category->name;
             <ul class="list-unstyled latest-news margin-bottom-50">
                 {% for post in latestPosts %}
                 <li class="m-b">
-                    <h3><a href="/news/post/{{ post.slug }}">{{ post.title|length > 25 ? post.title|slice(0,25)~'...' :
-                                                             post.title }}</a></h3>
-                    <small>{{ post.published_at|date('Y,m月 d')}} / by {{ post.user.first_name }}</small>
+                    <h3>
+                        <a class="color-444" href="/news/post/{{ post.slug }}">
+                            {{ str_limit(post.title, 60, '...') }}
+                        </a>
+                    </h3>
+                    <small class="color-777">{{ post.published_at|date('Y,m月 d')}} / by {{ post.user.first_name }}</small>
                 </li>
                 {% endfor %}
             </ul>
@@ -63,9 +66,14 @@ if ($this->category) $this->page->title = $this->category->name;
             <ul class="list-unstyled latest-news margin-bottom-50">
                 {% for post in featuredPosts %}
                 <li class="m-b">
-                    <h3><a href="/news/post/{{ post.slug }}">{{ post.title|length > 25 ? post.title|slice(0,25)~'...' :
-                                                             post.title }}</a></h3>
-                    <small>{{ post.published_at|date('Y,m月 d')}} / by {{ post.user.first_name }}</small>
+                    <h3>
+                        <a class="color-444" href="/news/post/{{ post.slug }}">
+                            {{ str_limit(post.title, 60, '...') }}
+                        </a>
+                    </h3>
+                    <small class="color-777">
+                        {{ post.published_at|date('Y,m月 d')}} / by {{ post.user.first_name }}
+                    </small>
                 </li>
                 {% endfor %}
             </ul>
