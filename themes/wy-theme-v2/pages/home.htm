@@ -100,7 +100,13 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             {% for post in chunk %}
             {% if loop.index == 1 %}
             <li>
-                <a href="/news/post/{{ post.slug }}"><img class="float-left" src="{{ post.image|media }}" alt=""></a>
+                <a href="/news/post/{{ post.slug }}">
+                    {% if post.image %}
+                    <img class="float-left" src="{{ post.image|media }}" alt="">
+                    {% else %}
+                    <img class="float-left" src="http://placehold.it/800x400?text=没有缩略图" alt="">
+                    {% endif %}
+                </a>
                 <p>{{ post.title|slice(0,18) }}</p>
                 <span>{{ post.summary|raw|slice(0,25) }}</span>
             </li>
