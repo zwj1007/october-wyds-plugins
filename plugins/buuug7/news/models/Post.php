@@ -174,7 +174,7 @@ class Post extends Model
             'published' => true,
         ], $options));
 
-        $searchableFields = ['title', 'slug', 'content'];
+        $searchableFields = ['title', 'slug'];
 
         if ($published) {
             $query->isPublished();
