@@ -2,12 +2,12 @@
 {% for post in posts %}
 <div class="row post-list">
     {% if post.image %}
-    <div class="col-sm-4 hidden-xs">
+    <div class="col-xs-4 hidden-xss">
         <img class="img-responsive" src="{{ post.image|media }}" alt="{{ post.title }}">
     </div>
     {% endif %}
-    <div class="{% if not post.image %}col-sm-12{% else %}col-sm-8{% endif %} news-v3">
-        <div class="buuug7-no-padding">
+    <div class="{% if not post.image %}col-xs-12{% else %}col-xs-8{% endif %} news-v3">
+        <div class="">
             <ul class="list-inline posted-info">
                 <li>By {{ post.user.first_name }}</li>
                 {% if post.categories.count %}

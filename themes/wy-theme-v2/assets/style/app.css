@@ -266,14 +266,16 @@ header {
       width: 400px;
       margin: 23px 20px; }
     header .head-long .head-right {
-      margin: 28px 0 0; }
+      margin: 28px 0 0 0; }
       header .head-long .head-right ul li {
         float: right;
         text-align: center;
         width: 130px; }
         header .head-long .head-right ul li p {
           font-weight: 600;
-          color: #000000; }
+          color: #000000;
+          margin: 0 !important;
+          padding: 0 !important; }
         header .head-long .head-right ul li img {
           width: 50px;
           height: 50px;
@@ -2147,16 +2149,6 @@ input {
         text-align: center; }
         .user .mainRight .content .leftBar h4 {
           margin: 0 50px 25px 50px; }
-        .user .mainRight .content .leftBar .responsiv-uploader-fileupload .style-image-single .upload-object .icon-container {
-          border: 1px solid rgba(101, 169, 204, 0.36);
-          padding: 30px; }
-        .user .mainRight .content .leftBar .responsiv-uploader-fileupload .upload-object h4 {
-          border: 1px solid rgba(78, 73, 73, 0.13);
-          border-radius: 6px;
-          padding: 5px;
-          background: rgba(132, 109, 109, 0.18);
-          box-shadow: 0 2px 10px 0 #efe3e3;
-          margin: 10px 0; }
         .user .mainRight .content .leftBar #img_title_container {
           border: 1px solid #ddd;
           text-align: center;
@@ -2226,16 +2218,22 @@ input {
 .user-portr .portr {
   margin: 0 auto;
   display: table; }
-  .user-portr .portr .portr-img {
+  .user-portr .portr .responsiv-uploader-fileupload .upload-object h4 {
+    border: 1px solid rgba(78, 73, 73, 0.13);
+    border-radius: 6px;
+    padding: 5px;
+    background: rgba(132, 109, 109, 0.18);
+    box-shadow: 0 2px 10px 0 #efe3e3;
+    margin: 10px 0; }
+  .user-portr .portr .responsiv-uploader-fileupload .style-image-single .upload-object .icon-container {
+    border: 1px solid #BBC5E7;
     width: 250px;
-    height: 250px;
-    background: rgba(221, 221, 221, 0.25);
-    border-radius: 30px;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle; }
-    .user-portr .portr .portr-img img {
-      border-radius: 20%; }
+    padding: 30px;
+    background: rgba(187, 197, 231, 0.48);
+    border-radius: 30px; }
+    .user-portr .portr .responsiv-uploader-fileupload .style-image-single .upload-object .icon-container img {
+      border-radius: 20%;
+      border: 1px solid rgba(187, 197, 231, 0.46); }
 .user-portr .callout {
   margin-top: 35px;
   margin-bottom: 22px;
