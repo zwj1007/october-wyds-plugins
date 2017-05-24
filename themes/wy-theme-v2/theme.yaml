@@ -3,3 +3,13 @@ description: 渭源县电子商务公共服务平台第二套主题
 author: YANJF123
 homepage: https://github.com/YANJF123
 code: 'wy-theme-v2'
+form:
+  fields:
+    site_name:
+      label: 网站名称
+      comment: 网站的名称
+      default: 渭源电商服务平台
+    theme-color:
+      label: 主题色
+      type: colorpicker
+      assetVar: 'theme-color'
