@@ -29,8 +29,8 @@ class Search extends ComponentBase
             throw new ValidationException($validation);
         }else{
             $category=post('category');
-            $q=post('search');
-            return Redirect::to();
+            $search=post('search');
+            return Redirect::to('/news/posts?search='.$search);
         }
 
         Log::info($data);
