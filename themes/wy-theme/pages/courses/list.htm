@@ -4,12 +4,20 @@ layout="default"
 
 [coursesCourses]
 categoryFilter = "{{ :slug }}"
-postsPerPage=15
+postsPerPage=8
+
+==
+<?php
+function onEnd(){
+$this['keywords']=get('search');
+}
+?>
 ==
 
 <div class="jumbotron">
     <div class="container">
-        <h2>所有课程</h2>
+        <h2>课程 | 所有课程</h2>
+        <p>本站所有课程</p>
     </div>
 </div>
 

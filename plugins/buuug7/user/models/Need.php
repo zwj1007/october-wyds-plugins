@@ -71,9 +71,9 @@ class Need extends Model
         return $query->isChecked()->isFeatured()->orderBy('checked_at', 'desc')->limit($limit)->get();
     }
 
-    public function scopeDisplayChecked($query, $limit=null)
+    public function scopeDisplayChecked($query, $limit = null)
     {
-        if($limit){
+        if ($limit) {
             return $query->isChecked()->orderBy('checked_at', 'desc')->limit($limit)->get();
         }
         return $query->isChecked()->orderBy('checked_at', 'desc')->paginate(15);
@@ -91,6 +91,12 @@ class Need extends Model
             return $query->isChecked()->where('category', $categorySlug)->orderBy('checked_at', 'desc')->limit($limit)->get();
         }
         return $query->isChecked()->where('category', $categorySlug)->orderBy('checked_at', 'desc')->paginate(5);
+    }
+
+    public function scopeSearch($query, $search)
+    {
+        $searchableFields=['title'];
+        return $query->isChecked()->searchWhere($search,$searchableFields)->paginate(15);
     }
 
     public static function getCategories()

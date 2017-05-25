@@ -1,0 +1,37 @@
+title = "新闻 | 搜索"
+url = "/news/search/:q?"
+layout="default"
+
+==
+<?php
+function onEnd(){
+    $search = $this->param('q');
+    $this['q']=$search;
+    if($search){
+        $this['posts']=\Buuug7\News\Models\Post::search($search);
+    }
+}
+?>
+==
+
+<div class="jumbotron">
+    <div class="container">
+        <h2>资讯 | 搜索结果</h2>
+        <p>搜索到 <span class="text-danger">{{ posts.count }}</span> 条与 <span class="text-danger">{{ q }}</span> 相关的内容如下 (๑╹◡╹)ﾉ"""</p>
+    </div>
+</div>
+
+
+<div class="container">
+    {% if posts.count %}
+    <div class="row">
+        <div class="col-md-8">
+            {% partial 'news/news-list' posts=posts %}
+        </div>
+    </div>
+    {% else %}
+    <p class="lead">没有找与 <span class="text-danger">{{ q }}</span> 到相关内容</p>
+    {% endif %}
+</div>
+
+

@@ -20,9 +20,8 @@ class Search extends ComponentBase
     public function onSearch()
     {
         $data = post();
-
         $rules = [
-            'search' => 'required',
+            'q' => 'required',
         ];
 
         $validation = Validator::make($data, $rules);
@@ -30,13 +29,13 @@ class Search extends ComponentBase
             throw new ValidationException($validation);
         } else {
             $category = post('category');
-            $search = post('search');
+            $search = post('q');
             if ($category == 'news') {
-                return Redirect::to('/news/posts?search=' . $search);
+                return Redirect::to('/news/search/'. $search);
             } elseif ($category == 'course') {
-                return Redirect::to('/coming-soon');
+                return Redirect::to('/courses/search/'. $search);
             } elseif ($category == 'need') {
-                return Redirect::to('/coming-soon');
+                return Redirect::to('/needs/search/'. $search);
             } else {
                 return Redirect::to('/404');
             }

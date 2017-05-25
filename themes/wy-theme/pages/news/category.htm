@@ -12,10 +12,10 @@ postsPerPage = 15
 function onEnd()
 {
 // 最新发布
-$this['latestPosts'] = \Buuug7\News\Models\Post::displayLatest(4);
+$this['latestPosts'] = \Buuug7\News\Models\Post::displayLatest(5);
 
 // 推荐 特色
-$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(4);
+$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(5);
 
 if ($this->category) $this->page->title = $this->category->name;
 
@@ -26,9 +26,7 @@ if ($this->category) $this->page->title = $this->category->name;
 <div class="jumbotron">
     <div class="container">
         <h2>{{ this.page.title }}</h2>
-        <p>
-            {{ category.description }}
-        </p>
+        <p>{{ category.description }}</p>
     </div>
 </div>
 

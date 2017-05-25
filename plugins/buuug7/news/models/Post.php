@@ -298,4 +298,9 @@ class Post extends Model
         return $query->limit($limit)->get();
     }
 
+    public function scopeSearch($query,$search){
+        $searchableFields = ['title', 'slug'];
+        return $query->isPublished()->searchWhere($search,$searchableFields)->paginate(15);
+    }
+
 }

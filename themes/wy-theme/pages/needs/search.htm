@@ -1,0 +1,52 @@
+title = '需求 | 搜索'
+url = '/needs/search/:q?'
+layout= 'default'
+
+==
+<?php
+function onEnd(){
+    $search=$this->param('q');
+    $this['q']=$search;
+    if($search){
+        $this['needs']=\Buuug7\User\Models\Need::search($search);
+    }
+}
+?>
+==
+<div class="jumbotron">
+    <div class="container">
+        <h2>供求 | 搜索结果</h2>
+
+        <p>搜索到 <span class="text-danger">{{ needs.count }}</span> 条与 <span class="text-danger">{{ q }}</span> 相关的内容如下 (๑╹◡╹)ﾉ"""</p>
+    </div>
+</div>
+
+<div class="container">
+    {% if needs.count %}
+    <div class="row">
+        {% for chunk in needs.chunk(3) %}
+        <div class="col-md-4 m-b">
+            <ul class="list-unstyled">
+                {% for need in chunk %}
+                <li class="m-b-md">
+                    <a href="/needs/need/{{ need.id }}"><h4 class="color-444">{{ need.title }}</h4></a>
+                    <small>{{ need.checked_at|time_diff }} / by {{ need.user.name }}</small>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            {{ needs.render|raw }}
+        </div>
+    </div>
+    {% else %}
+    <div class="row">
+        <div class="col-md-4 m-b">
+            <p class="lead">没有找与 <span class="text-danger">{{ q }}</span> 到相关内容</p>
+        </div>
+    </div>
+    {% endif %}
+</div>
