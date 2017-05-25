@@ -27,11 +27,23 @@ return Redirect::to('/user/login');
     <ul class="c-right">
         <li>
             {% if course.ifShouCang %}
-            <a data-request="onDetachShouCang" data-request-data="id:{{course.id}}" class="btn btn-danger"><i class="icon icon-trash"></i>
-                <i class="fa fa-star-o"></i>取消收藏</a>
+            <a
+                    data-request="onDetachShouCang"
+                    data-request-data="id:{{course.id}}"
+                    data-attach-loading
+                    class="btn btn-danger"
+            >
+                <i class="fa fa-star-o"></i>取消收藏
+            </a>
             {% else %}
-            <a data-request="onShouCang" data-request-data="id:{{course.id}}" class="btn btn-success"><i class="icon icon-plus"></i>
-                <i class="fa fa-star-o"></i>收藏</a>
+            <a
+                    data-request="onShouCang"
+                    data-request-data="id:{{course.id}}"
+                    data-attach-loading
+                    class="btn btn-success"
+            >
+                <i class="fa fa-star-o"></i>收藏
+            </a>
             {% endif %}
         </li>
 

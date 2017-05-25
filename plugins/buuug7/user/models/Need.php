@@ -90,7 +90,7 @@ class Need extends Model
         if ($limit) {
             return $query->isChecked()->where('category', $categorySlug)->orderBy('checked_at', 'desc')->limit($limit)->get();
         }
-        return $query->isChecked()->where('category', $categorySlug)->orderBy('checked_at', 'desc')->paginate(5);
+        return $query->isChecked()->where('category', $categorySlug)->orderBy('checked_at', 'desc')->paginate(4);
     }
 
     public function scopeSearch($query, $search)

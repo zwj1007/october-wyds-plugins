@@ -6,10 +6,10 @@ layout= 'default'
 function onEnd(){
 
 if($this->param('slug')){
-$this['needs']=\Buuug7\User\Models\Need::displayByCategory($this->param('slug'));
-$this->page->title='服务市场 | '.\Buuug7\User\Models\Need::getCategories()[$this->param('slug')];
+    $this['needs']=\Buuug7\User\Models\Need::displayByCategory($this->param('slug'));
+    $this->page->title='服务市场 | '.\Buuug7\User\Models\Need::getCategories()[$this->param('slug')];
 }else{
-$this['needs']=\Buuug7\User\Models\Need::displayChecked();
+    $this['needs']=\Buuug7\User\Models\Need::displayChecked();
 }
 
 //var_dump($this->needs->count());
@@ -31,7 +31,7 @@ $this['needs']=\Buuug7\User\Models\Need::displayChecked();
             {% endfor %}
         </ul>
     </div>
-    <div style="margin-left: 45px;">
-        {{ needs.render|raw }}
-    </div>
+
+    {{ needs.render|raw }}
+
 </section>

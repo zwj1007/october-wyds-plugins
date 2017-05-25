@@ -36,9 +36,7 @@ $this->page->title = $this->category->name;
         </li>
         {% endfor %}
     </ul>
+    {{ courses.render|raw }}
 
-    <div style="margin-left: 45px;">
-        {{ courses.render|raw }}
-    </div>
 </section>
 

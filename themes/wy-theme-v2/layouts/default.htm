@@ -47,15 +47,10 @@ default = 0
 </footer>
 
 <!-- Scripts -->
-<script src="{{ 'assets/script/jquery-3.1.1.min.js'|theme }}"></script>
-<script src="{{ 'assets/css/bootstrap.js'|theme }}"></script>
-<script src="{{ 'assets/script/Mds.onePic.1.0.js'|theme }}"></script>
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="{{ 'assets/script/app.js'|theme }}"></script>
 {% framework extras %}
 {% scripts %}
-<script>
-    $('#slide').MdsSlideFade({
-        pageNum: true, time: '3000'
-    });
-</script>
 </body>
 </html>

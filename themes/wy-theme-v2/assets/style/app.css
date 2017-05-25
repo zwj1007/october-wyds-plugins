@@ -112,20 +112,60 @@ a:hover, a:link {
   text-align: center; }
   .pagination li {
     float: left;
-    margin: 2px;
-    padding: 12px; }
-    .pagination li a {
-      width: 50px;
-      padding: 13px 20px; }
-  .pagination .active {
-    background: #FF4400;
-    color: #ffffff; }
-    .pagination .active a {
-      color: #ffffff; }
-  .pagination li:hover {
-    background: #FF4400; }
-    .pagination li:hover a {
-      color: #ffffff; }
+    margin: 5px; }
+
+.pagination {
+  margin: 0 auto;
+  padding: 20px 0 30px 0;
+  display: table;
+  text-align: center; }
+  .pagination > li {
+    display: inline; }
+    .pagination > li > a,
+    .pagination > li > span {
+      position: relative;
+      float: left;
+      padding: 8px 20px;
+      line-height: 1.4;
+      text-decoration: none;
+      color: #337ab7;
+      background-color: #fff;
+      margin-left: -1px; }
+    .pagination > li:first-child > a,
+    .pagination > li:first-child > span {
+      margin-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0; }
+    .pagination > li:last-child > a,
+    .pagination > li:last-child > span {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0; }
+  .pagination > li > a:hover, .pagination > li > a:focus,
+  .pagination > li > span:hover,
+  .pagination > li > span:focus {
+    z-index: 2;
+    color: #23527c;
+    background-color: #eee;
+    border-color: #ddd; }
+  .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus,
+  .pagination > .active > span,
+  .pagination > .active > span:hover,
+  .pagination > .active > span:focus {
+    z-index: 3;
+    color: #fff;
+    background-color: #FF4400;
+    border-color: #FF4400;
+    cursor: default; }
+  .pagination > .disabled > span,
+  .pagination > .disabled > span:hover,
+  .pagination > .disabled > span:focus,
+  .pagination > .disabled > a,
+  .pagination > .disabled > a:hover,
+  .pagination > .disabled > a:focus {
+    color: #777777;
+    background-color: #fff;
+    border-color: #ddd;
+    cursor: not-allowed; }
 
 .jumbotron {
   background: url("../images/fwsc/home-header-bg-1.jpg");
@@ -297,6 +337,7 @@ header {
         text-align: center;
         width: 124.44444px; }
         header nav ul li a {
+          padding: 10px 30px;
           color: #fff; }
       header nav ul li:hover {
         background: #EC2E2C; }
@@ -339,14 +380,10 @@ header {
     height: 370px;
     overflow: hidden; }
     .dszx .dszx-right .title {
-      /* text-align: left; */
       position: absolute;
       width: 100%;
-      height: 30px;
       line-height: 30px;
       background: rgba(36, 68, 81, 0.65);
-      /* display: inline-block; */
-      /* left: 0; */
       bottom: 0;
       font-size: 14.4px;
       color: #fff;
@@ -1201,58 +1238,63 @@ footer {
     .xspx-rmkc .video-right li {
       list-style: none; }
 
-.xspx-video {
-  border: 1px solid #CCCCCC; }
-  .xspx-video .vid-wrapper {
-    height: 590px;
-    overflow: hidden;
-    background: #000000; }
-    .xspx-video .vid-wrapper .title {
-      color: #ffffff;
-      margin: 15px 20px 10px 20px;
-      letter-spacing: 3px; }
-    .xspx-video .vid-wrapper video {
-      width: 1120px;
-      margin: 0 auto; }
-  .xspx-video .c-right {
+.xspx-video .vid-wrapper {
+  border: 1px solid #CCCCCC;
+  overflow: hidden;
+  background: #000000; }
+  .xspx-video .vid-wrapper .title {
+    color: #ffffff;
+    margin: 15px 20px 10px 20px;
+    letter-spacing: 3px; }
+  .xspx-video .vid-wrapper video {
+    width: 1120px;
+    margin: 0 auto; }
+.xspx-video .vid-cont .divfelt {
+  border: 1px solid #CCCCCC;
+  width: 850px;
+  display: inline-block; }
+  .xspx-video .vid-cont .divfelt .c-right {
     background: rgba(0, 0, 0, 0.63);
     height: 50px; }
-    .xspx-video .c-right li {
+    .xspx-video .vid-cont .divfelt .c-right li {
       float: left;
       line-height: 50px;
       margin: 0 35px; }
-      .xspx-video .c-right li i {
+      .xspx-video .vid-cont .divfelt .c-right li i {
         margin: 0 10px;
         font-size: 16px; }
-      .xspx-video .c-right li a {
+      .xspx-video .vid-cont .divfelt .c-right li a {
         color: #d5d5d5; }
-      .xspx-video .c-right li a:hover {
+      .xspx-video .vid-cont .divfelt .c-right li a:hover {
         color: blue; }
-  .xspx-video .vid-body {
+  .xspx-video .vid-cont .divfelt .vid-body {
     margin: 35px;
     line-height: 40px; }
-    .xspx-video .vid-body .vid-title {
+    .xspx-video .vid-cont .divfelt .vid-body .vid-title {
       height: 85px; }
-      .xspx-video .vid-body .vid-title h3 {
+      .xspx-video .vid-cont .divfelt .vid-body .vid-title h3 {
         text-align: center; }
-      .xspx-video .vid-body .vid-title span {
+      .xspx-video .vid-cont .divfelt .vid-body .vid-title span {
         float: right;
         margin-right: 30%; }
-    .xspx-video .vid-body h5 {
+    .xspx-video .vid-cont .divfelt .vid-body h5 {
       border-bottom: 1px solid #eaeaea; }
-      .xspx-video .vid-body h5 span {
+      .xspx-video .vid-cont .divfelt .vid-body h5 span {
         border-left: 3px solid #498d99;
         padding: 0 15px;
         font-weight: bold;
         background-color: #eaeaea;
         display: inline-block; }
-    .xspx-video .vid-body .ul-h5 {
+    .xspx-video .vid-cont .divfelt .vid-body .ul-h5 {
       margin: 10px 25px; }
-    .xspx-video .vid-body ul li {
+    .xspx-video .vid-cont .divfelt .vid-body ul li {
       margin: 0 50px; }
-    .xspx-video .vid-body p {
+    .xspx-video .vid-cont .divfelt .vid-body p {
       text-indent: 2em;
       margin: 10px 25px; }
+.xspx-video .vid-cont .dszx-kjnav {
+  width: 250px;
+  margin: 0 0 40px 20px; }
 
 .syjc-list {
   box-shadow: 1px 1px 10px 1px rgba(204, 204, 204, 0.33);

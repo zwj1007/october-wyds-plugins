@@ -151,7 +151,7 @@ $(document).ready(function () {
             bottom: 210 + 1,
         },
     });
-    $("#lt-002").slide({});
+
     /* end  */
 
 }); // ready end
