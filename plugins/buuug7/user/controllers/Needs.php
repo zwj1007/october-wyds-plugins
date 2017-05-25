@@ -15,6 +15,7 @@ class Needs extends Controller
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
+    public $requiredPermissions = ['buuug7.user.access_needs'];
 
     public function __construct()
     {

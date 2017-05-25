@@ -88,7 +88,7 @@ class Plugin extends PluginBase
 
             'buuug7.courses.access_publish' => [
                 'tab' => '课程',
-                'label' => '课程发布'
+                'label' => '课程审核'
             ],
 
             'buuug7.courses.access_tags' => [

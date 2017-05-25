@@ -19,6 +19,7 @@ class Tags extends Controller
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
+    public $requiredPermissions = ['buuug7.courses.access_tags'];
 
     public function __construct()
     {

@@ -80,7 +80,7 @@ class Plugin extends PluginBase
             ],
             'buuug7.news.access_publish' => [
                 'tab' => '新闻',
-                'label' => '管理新闻发布',
+                'label' => '管理新闻审核',
             ],
         ];
     }

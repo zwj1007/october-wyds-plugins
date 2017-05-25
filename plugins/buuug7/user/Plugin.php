@@ -88,6 +88,10 @@ class Plugin extends PluginBase
                 'tab' => '企业',
                 'label' => '企业管理'
             ],
+            'buuug7.user.access_needs' => [
+                'tab' => '企业',
+                'label' => '管理供需',
+            ],
         ];
     }
 
