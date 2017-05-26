@@ -74,6 +74,23 @@
     border-color: rgba(0, 0, 0, 0.2);
 }
 
+.btn-tq{
+    color: #333;
+    //background-color: @brand-danger;
+    border-color: rgba(0, 0, 0, 0.2);
+    > :first-child {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        line-height: 34px;
+        font-size: 1.4em;
+        text-align: center;
+        border: none;
+        width: 100%;
+    }
+}
+
 
 .btn-box-tool {
     padding: 5px;

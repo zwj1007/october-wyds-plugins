@@ -15,6 +15,7 @@ class UserAddSocialLoginFields extends Migration
             $table->string('github_id')->nullable();
             $table->string('qq_id')->nullable();
             $table->string('weixin_id')->nullable();
+            $table->string('tianqi_id')->nullable();;
             $table->string('social_avatar')->nullable();
         });
     }
@@ -23,10 +24,7 @@ class UserAddSocialLoginFields extends Migration
     {
         if (Schema::hasTable('users')) {
             Schema::table('users', function ($table) {
-                $table->dropColumn(['github_id']);
-                $table->dropColumn(['qq_id']);
-                $table->dropColumn(['weixin_id']);
-                $table->dropColumn(['social_avatar']);
+                $table->dropColumn('github_id', 'qq_id', 'weixin_id','tianqi_id','social_avatar');
             });
         }
     }
