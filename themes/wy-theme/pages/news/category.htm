@@ -19,10 +19,16 @@ $this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(5);
 
 if ($this->category) $this->page->title = $this->category->name;
 
+$categorySlug=$this->param('slug');
+
+$this['nestedCategory']=\Buuug7\News\Models\Category::where('slug',$categorySlug)->first()->getChildren();
+
+//var_dump($this['nestedCategory']->toArray());
+
 }
 
-
 ==
+
 <div class="jumbotron">
     <div class="container">
         <h2>{{ this.page.title }}</h2>
@@ -36,6 +42,19 @@ if ($this->category) $this->page->title = $this->category->name;
             {% partial 'news/news-list' posts=posts %}
         </div>
         <div class="col-md-3">
+
+            <!--子分类-->
+            {% if nestedCategory.count %}
+            <div class="headline-v2">
+                <h2>子分类</h2>
+            </div>
+
+            <ul class="list-inline tags-v2">
+                {% for child in nestedCategory %}
+                <li><a href="/news/categories/{{ child.slug }}">{{ child.name }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
 
             <!--最新发布-->
             {% if latestPosts %}
@@ -77,22 +96,6 @@ if ($this->category) $this->page->title = $this->category->name;
             </ul>
             {% endif %}
 
-            <div class="headline-v2">
-                <h2>电商动态</h2>
-            </div>
-            <ul class="list-inline tags-v2 margin-bottom-50">
-                <li><a href="/news/categories/nong-cun-dian-shang">农村电商</a></li>
-                <li><a href="/news/categories/yi-dong-dian-shang">移动电商</a></li>
-                <li><a href="/news/categories/qi-ta-dong-tai">其他动态</a></li>
-            </ul>
-
-            <div class="headline-v2">
-                <h2>政策解读</h2>
-            </div>
-            <ul class="list-inline tags-v2 margin-bottom-50">
-                <li><a href="/news/categories/zheng-ce-dao-xiang">政策导向</a></li>
-                <li><a href="/news/categories/di-fang-zheng-ce">地方政策</a></li>
-            </ul>
         </div>
     </div>
 </div>
