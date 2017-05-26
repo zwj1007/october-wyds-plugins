@@ -545,5 +545,7 @@ class SeedAllTables extends Seeder
             'checked_at' => Carbon::now(),
         ]);
 
+
+
     }
 }
