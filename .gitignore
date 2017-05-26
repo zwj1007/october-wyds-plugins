@@ -26,9 +26,9 @@ gen
 
 
 /bootstrap
-/config
-!/config/dev
-!/config/production
+/config/*
+!/config/dev/*
+!/config/production/*
 /modules
 /plugins/indikator
 /plugins/netsti
