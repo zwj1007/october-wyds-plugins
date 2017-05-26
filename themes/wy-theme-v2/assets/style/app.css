@@ -1,5 +1,5 @@
 @charset "UTF-8";
-html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, th, td, header, footer, section, article, nav {
+html, body, div, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, th, td, header, footer, section, article, nav {
   padding: 0;
   margin: 0; }
 
@@ -1853,7 +1853,7 @@ input {
     color: #FF0000; }
 
 .content-qypp {
-  height: 700px;
+  height: 100%;
   box-shadow: 1px 2px 2px 1px #CCCCCC;
   border-top: 1px solid rgba(204, 204, 204, 0.39);
   margin-bottom: 30px; }
@@ -1872,13 +1872,14 @@ input {
       margin: 40px 0;
       height: 230px; }
       .content-qypp .ppqy-top .content-qypp-right .qypp-content h1 {
-        letter-spacing: 5px; }
+        letter-spacing: 5px;
+        font-size: 20px; }
       .content-qypp .ppqy-top .content-qypp-right .qypp-content p {
         margin: 25px 0;
-        font-size: 18px; }
+        font-size: 16px; }
   .content-qypp .ppqy-body .ppqy-body-post1 {
-    margin-bottom: 30px;
-    height: 130px; }
+    margin-bottom: 50px;
+    height: auto; }
     .content-qypp .ppqy-body .ppqy-body-post1 ul {
       margin: 30px; }
       .content-qypp .ppqy-body .ppqy-body-post1 ul li {
@@ -1889,12 +1890,14 @@ input {
           border-bottom: 2px solid #FF4400;
           padding: 10px 15px; }
     .content-qypp .ppqy-body .ppqy-body-post1 .service_item {
-      height: 55px;
-      overflow: hidden;
       margin: 20px 60px;
-      word-wrap: break-word;
-      line-height: 26px;
+      line-height: 30px;
       color: #666; }
+      .content-qypp .ppqy-body .ppqy-body-post1 .service_item p {
+        line-height: 30px; }
+      .content-qypp .ppqy-body .ppqy-body-post1 .service_item h4 {
+        margin: 10px 20px 10px 0;
+        border-bottom: 1px solid #eaeaea; }
 
 .content-bdds {
   box-shadow: 1px 2px 2px 1px #CCCCCC;
@@ -2345,15 +2348,29 @@ input {
   margin: 30px 180px;
   padding-bottom: 50px; }
   .xqfb-browse .xqfb-browse-body p {
-    line-height: 55px; }
+    margin: 10px 0 25px 25px;
+    line-height: 30px;
+    color: #656565;
+    font-size: 14px; }
+  .xqfb-browse .xqfb-browse-body span {
+    line-height: 30px;
+    color: #656565;
+    font-size: 14px; }
   .xqfb-browse .xqfb-browse-body .p-ct {
     letter-spacing: 3px;
     font-size: 15px;
-    color: #000000; }
-    .xqfb-browse .xqfb-browse-body .p-ct span {
-      margin-left: 10px;
-      color: #656565;
-      font-size: 12px; }
+    color: #000000;
+    line-height: 50px;
+    margin: 0; }
+  .xqfb-browse .xqfb-browse-body dl {
+    padding: 0 20px 20px 30px;
+    background: rgba(239, 244, 246, 0.38); }
+    .xqfb-browse .xqfb-browse-body dl dt {
+      line-height: 40px; }
+  .xqfb-browse .xqfb-browse-body h4, .xqfb-browse .xqfb-browse-body h5 {
+    margin: 10px 0; }
+  .xqfb-browse .xqfb-browse-body ul li {
+    line-height: 35px; }
 
 .toast a {
   color: #337ab7; }
