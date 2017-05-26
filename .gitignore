@@ -27,6 +27,8 @@ gen
 
 /bootstrap
 /config
+!/config/dev
+!/config/production
 /modules
 /plugins/indikator
 /plugins/netsti
@@ -40,7 +42,6 @@ artisan
 index.php
 composer.json
 composer.lock
-
 .travis.yml
 CHANGELOG.md
 CONTRIBUTING.md
