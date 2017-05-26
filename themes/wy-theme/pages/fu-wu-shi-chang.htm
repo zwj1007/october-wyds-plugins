@@ -17,19 +17,19 @@ $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',5);
 }
 ==
 
-<div class="container m-t">
-    <div class="jumbotron">
-        <div class="container">
-            <h2>{{ this.page.title }}</h2>
-            <p style="font-size: 22px">
-                快速发布您的供求信息
-            </p>
-            <p>
-                <a href="/needs/need/create" class="btn btn-line-warning"><i class="icon icon-plus"></i> 需求发布</a>
-            </p>
-        </div>
+
+<div class="jumbotron with-bg">
+    <div class="container">
+        <h2>{{ this.page.title }}</h2>
+        <p style="font-size: 22px">
+            快速发布您的供求信息
+        </p>
+        <p>
+            <a href="/needs/need/create" class="btn btn-line-warning"><i class="icon icon-plus"></i> 需求发布</a>
+        </p>
     </div>
 </div>
+
 
 <div class="container">
     <!--最新 + 推荐-->
@@ -97,7 +97,8 @@ $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',5);
             <div class="panel panel-default panel-list-group-time">
                 <div class="panel-heading">
                     <span class="title">房产</span>
-                    <a href="/needs/category/fangchan" class="pull-right">更多 <i class="fa fa-angle-double-right"></i></a>
+                    <a href="/needs/category/fangchan" class="pull-right">更多
+                        <i class="fa fa-angle-double-right"></i></a>
                 </div>
                 <ul class="list-group">
                     {% for need in categoryFangChan %}

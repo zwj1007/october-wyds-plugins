@@ -3,15 +3,35 @@ url = "/news"
 layout = "default"
 ==
 function onEnd(){
+
     //$this['categoryLevelOne'] = \Buuug7\News\Models\Category::where('parent_id','1')->listsNested('slug',null,'');
     $this['categories']=\Buuug7\News\Models\Category::getNested();
 
 }
 ==
 
-<div class="jumbotron">
+<div class="jumbotron with-bg">
     <div class="container">
-        <h2>资讯 | 资讯频道</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>资讯 | 资讯频道</h2>
+                <p>
+                    海量电商资讯
+                </p>
+            </div>
+            <div class="col-md-6">
+                <div class="m-t">
+                    <p>
+                        播种创业梦想 (❁´◡`❁)*✲ﾟ*
+                    </p>
+                    <p>
+                        <i class="fa fa-cog fa-spin fa-2x"></i>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </div>
 
