@@ -24,7 +24,7 @@ class UserAddSocialLoginFields extends Migration
     {
         if (Schema::hasTable('users')) {
             Schema::table('users', function ($table) {
-                $table->dropColumn('github_id', 'qq_id', 'weixin_id','tianqi_id','social_avatar');
+                //$table->dropColumn('github_id', 'qq_id', 'weixin_id','tianqi_id','social_avatar');
             });
         }
     }
