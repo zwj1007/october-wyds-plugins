@@ -22,10 +22,10 @@ Route::get('/login/tianqi',function (){
     $authorize_uri='http://7.jq2.com/oauth/authorize?'.$query;
     return Redirect::to($authorize_uri);
 });
+
 // handle tianqi callback
 Route::get('/login/tianqi/callback',function(){
     $code=input('code');
-
     $accessToken=User::getTianQiUserToken($code);
     $tianQiUser=User::getTianQiUserByToken($accessToken);
 

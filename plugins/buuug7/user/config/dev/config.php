@@ -11,7 +11,6 @@ return [
         'client_id' => '1',
         'client_secret' => 'lBYgPepGpNVwRrR7VePqQrvFC9WFAs3BYRJS0NOw',
         'redirect_uri' => 'http://october-wyds.app/login/tianqi/callback',
-        'auth_get_token_uri' => 'http://7.jq2.com/oauth/token',
     ],
 ];
 

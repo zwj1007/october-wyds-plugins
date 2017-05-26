@@ -5,6 +5,7 @@ october plugins
 + install october via composer `composer create-project october/october myprojectName`
 + setting `'disabledCoreUpdates' => true` in config/cms.php
 + run `php artisan october:install` in project root directory
++ run `php artisan october:env` generate a `.env` file for common config
 + make `storage` and `themes` directory write permission
 + run `php artisan october:update` the version to latest.
 + this plugin need `guzzlehttp/guzzle`package, install via composer `composer require guzzlehttp/guzzle`
