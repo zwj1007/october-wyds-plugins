@@ -14,13 +14,13 @@
     padding-top:15px;
     padding-bottom: 25px;
     //border-top:1px solid $theme-border-color;
-    .links-b7 li {
+    .links li {
         height: 45px;
         line-height: 45px;
-    }
-    .links-b7 li a {
-        //color: blue;
-        font-weight: normal;
+        a {
+            color: #444;
+            font-weight: normal;
+        }
     }
     .social-links-b7{
         padding:20px 0;

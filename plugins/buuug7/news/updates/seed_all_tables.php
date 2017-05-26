@@ -21,7 +21,7 @@ class SeedAllTables extends Seeder
             'name' => '电商动态',
             'parent_id' => 1,
             'slug' => 'dian-shang-dong-tai',
-            'description' => '在这里你可以了解电商行业动态,农村电商,移动电商,与电商相关的资讯',
+            'description' => '在这里你可以了解最新的行业',
         ]);
 
         /*ID:3 政策解读*/

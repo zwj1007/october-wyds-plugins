@@ -7391,6 +7391,39 @@ figure {
 
 /*
 |--------------------------------------------------------------------------
+| _block
+|--------------------------------------------------------------------------
+|
+| Created by buuug7 on 2017/5/26.
+| 
+|
+*/
+.block-v1 {
+  padding: 25px;
+  background: #fff; }
+  .block-v1 i {
+    color: #555;
+    float: left;
+    font-size: 30px;
+    margin: 5px 25px 0 0; }
+  .block-v1 .block-body {
+    overflow: hidden; }
+    .block-v1 .block-body .title {
+      font-size: 22px;
+      margin: 0 0 30px;
+      position: relative;
+      text-transform: uppercase; }
+    .block-v1 .block-body .title:after {
+      left: 0;
+      top: 40px;
+      height: 1px;
+      width: 30px;
+      content: " ";
+      position: absolute;
+      background: #f39c12; }
+
+/*
+|--------------------------------------------------------------------------
 | _navbar
 |--------------------------------------------------------------------------
 |
@@ -7461,11 +7494,12 @@ figure {
   color: #333;
   padding-top: 15px;
   padding-bottom: 25px; }
-  .footer-v1 .links-b7 li {
+  .footer-v1 .links li {
     height: 45px;
     line-height: 45px; }
-  .footer-v1 .links-b7 li a {
-    font-weight: normal; }
+    .footer-v1 .links li a {
+      color: #444;
+      font-weight: normal; }
   .footer-v1 .social-links-b7 {
     padding: 20px 0; }
     .footer-v1 .social-links-b7 a {

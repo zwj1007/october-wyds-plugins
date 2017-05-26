@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/*
+|--------------------------------------------------------------------------
+| _block
+|--------------------------------------------------------------------------
+|
+| Created by buuug7 on 2017/5/26.
+| 
+|
+*/
+
+.block-v1{
+    padding: 25px;
+    background: #fff;
+    i{
+        color:#555;
+        float: left;
+        font-size: 30px;
+        margin:5px 25px 0 0;
+    }
+    .block-body{
+        overflow: hidden;
+        .title{
+            font-size: 22px;
+            margin:0 0 30px;
+            position: relative;
+            text-transform: uppercase;
+        }
+        .title:after{
+            left:0;
+            top:40px;
+            height: 1px;
+            width: 30px;
+            content: " ";
+            position: absolute;
+            background: $brand-warning;
+        }
+    }
+}
+

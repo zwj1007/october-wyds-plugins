@@ -6,14 +6,13 @@ security = "all"
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>渭源 - {{ this.page.title }}</title>
+        <title>渭源 | {{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
         <meta name="author" content="YANJF123">
-        <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
         <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
         <link href="{{ 'assets/style/app.css'|theme }}" rel="stylesheet">
-        <link href="{{ 'assets/style/customer.css'|theme }}" rel="stylesheet">
         {% styles %}
     </head>
     <body>
@@ -42,15 +41,10 @@ security = "all"
         </footer>
 
         <!-- Scripts -->
-        <script src="{{ 'assets/script/jquery-3.1.1.min.js'|theme }}"></script>
-        <script src="{{ 'assets/css/bootstrap.js'|theme }}"></script>
-        <script src="{{ 'assets/script/Mds.onePic.1.0.js'|theme }}"></script>
+        <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="{{ 'assets/script/app.js'|theme }}"></script>
         {% framework extras %}
         {% scripts %}
-        <script>
-            $('#slide').MdsSlideFade({
-                pageNum: true, time: '3000'
-            });
-        </script>
     </body>
 </html>
