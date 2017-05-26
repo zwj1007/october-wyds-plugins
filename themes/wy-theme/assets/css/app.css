@@ -6661,10 +6661,6 @@ a:hover, a:visited {
       background: transparent url(../images/header-transparent-rectangular.png) no-repeat right top;
       background-size: 100% 100%; } }
 
-.jumbotron.with-bg {
-  color: #fff;
-  background-color: #090909; }
-
 /*
 |--------------------------------------------------------------------------
 | _news_post
