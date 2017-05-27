@@ -14,6 +14,7 @@ use Buuug7\News\Models\Category as NewsCategory;
 use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
 use Buuug7\News\Models\Post as NewsPost;
+use Illuminate\Support\Facades\Log;
 use Redirect;
 
 class Posts extends ComponentBase
@@ -21,7 +22,6 @@ class Posts extends ComponentBase
     public $posts;
     public $pageParam;
     public $category;
-    public $noPostsMessage;
     public $postPage;
     public $categoryPage;
     public $sortOrder;
@@ -56,13 +56,6 @@ class Posts extends ComponentBase
                 'validationMessage' => '只允许数字',
                 'default' => '10',
             ],
-            'noPostsMessage' => [
-                'title' => '没有新闻时消息',
-                'description' => '新闻列表中没有一条新闻时显示的提示消息',
-                'type' => 'string',
-                'default' => '没有发现新闻',
-                'showExternalParam' => false
-            ],
             'sortOrder' => [
                 'title' => '新闻排序',
                 'description' => '新闻排序',
@@ -91,15 +84,18 @@ class Posts extends ComponentBase
         return Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
     }
 
+
     public function getPostPageOptions()
     {
         return Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
     }
 
+
     public function getSortOrderOptions()
     {
         return NewsPost::$allowedSortingOptions;
     }
+
 
     public function onRun()
     {
@@ -122,7 +118,6 @@ class Posts extends ComponentBase
     protected function prepareVars()
     {
         $this->pageParam = $this->page['pageParam'] = $this->paramName('pageNumber');
-        $this->noPostsMessage = $this->page['noPostsMessage'] = $this->property('noPostsMessage');
         /*
          * Page links
          * */

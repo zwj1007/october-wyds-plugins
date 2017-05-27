@@ -1,14 +1,13 @@
-title = "News Post"
+title = "资讯"
 url = "/news/post/:slug"
 layout="default"
 
 [newsPost]
 ==
 function onEnd(){
-if($this->post){
-$this->page->title=$this->post->title;
-$this->page->summary=$this->post->summary;
-}
+    if($this->post){
+        $this->page->title=$this->post->title;
+    }
 }
 ==
 <div class="container m-t">

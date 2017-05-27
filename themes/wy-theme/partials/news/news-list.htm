@@ -13,6 +13,7 @@
             <li>In
                 {% for category in post.categories %}
                 {% if loop.index >3 %}
+                .
                 {% else %}
                 <a href="{{ category.url }}">{{ category.name }}</a>
                 {% endif %}
@@ -22,7 +23,7 @@
             <li>{{ post.published_at|date('Y, m月 d') }}</li>
         </ul>
         <h4 class="title">
-            <a class="color-444" href="/news/post/{{post.slug}}">{{ str_limit(post.title, 60, '...') }}</a>
+            <a class="color-444" href="{{ post.url }}">{{ str_limit(post.title, 60, '...') }}</a>
         </h4>
         <p class="color-777 small">
             {{ str_limit(post.summary, 150, '...') }}

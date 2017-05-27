@@ -23,7 +23,6 @@ $categorySlug=$this->param('slug');
 
 $this['nestedCategory']=\Buuug7\News\Models\Category::where('slug',$categorySlug)->first()->getChildren();
 
-//var_dump($this['nestedCategory']->toArray());
 
 }
 
@@ -35,7 +34,6 @@ $this['nestedCategory']=\Buuug7\News\Models\Category::where('slug',$categorySlug
         <p>{{ category.description }}</p>
     </div>
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col-md-9">
