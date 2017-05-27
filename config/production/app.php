@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'debug' => false,
+    'debug' => true,
 
     'url' => 'http://6.jq2.com',
 
