@@ -40,13 +40,6 @@ class Categories extends ComponentBase
                 'default' => '{{ :slug }}',
                 'type' => 'string',
             ],
-
-            'displayEmpty' => [
-                'title' => '显示空分类',
-                'description' => '是否显示空分类',
-                'type' => 'checkbox',
-                'default' => 0,
-            ],
             'categoryPage' => [
                 'title' => '分类页',
                 'description' => '分类页',
@@ -70,21 +63,7 @@ class Categories extends ComponentBase
 
     protected function loadCategories()
     {
-        $categories = CourseCategory::orderBy('name');
-        if (!$this->property('displayEmpty')) {
-            $categories->whereExists(function ($query) {
-                $prefix = Db::getTablePrefix();
-                $query
-                    ->select(Db::raw(1))
-                    ->from('buuug7_courses_courses_categories')
-                    ->join('buuug7_courses_courses', 'buuug7_courses_courses.id', '=', 'buuug7_courses_courses_categories.course_id');
-                    //->whereNotNull('buuug7_news_posts.published')
-                   // ->where('buuug7_news_posts.published', '=', 1)
-                    //->whereRaw($prefix . 'buuug7_news_categories.id = ' . $prefix . 'buuug7_news_posts_categories.category_id');
-            });
-
-        }
-        $categories = $categories->getNested();
+        $categories = CourseCategory::getNested();
         return $this->linkCategories($categories);
     }
 

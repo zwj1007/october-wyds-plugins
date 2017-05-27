@@ -20,7 +20,6 @@ class Tags extends ComponentBase
 {
     public $tags;
     public $pageParam;
-    public $noCoursesMessage;
     public $tagPage;
     public $sortOrder;
 
@@ -44,12 +43,6 @@ class Tags extends ComponentBase
                 'title' => '页数',
                 'type' => 'string',
                 'default' => '{{ :page }}',
-            ],
-            'noCoursesMessage' => [
-                'title' => '没有信息提示消息',
-                'type' => 'string',
-                'default' => '没有信息',
-                'showExternalParam' => false,
             ],
             'sortOrder' => [
                 'title' => '排序',
@@ -95,7 +88,6 @@ class Tags extends ComponentBase
     protected function prepareVars()
     {
         $this->pageParam = $this->page['pageParam'] = $this->paramName('pageNumber');
-        $this->noCoursesMessage = $this->page['noCoursesMessage'] = $this->property('noCoursesMessage');
         $this->coursePage = $this->page['tagPage'] = $this->property('tagPage');
     }
 

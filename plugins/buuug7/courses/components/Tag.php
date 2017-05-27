@@ -25,7 +25,6 @@ class Tag extends ComponentBase
     public $category;
     public $tag;
     public $categoryPage;
-    public $noCoursesMessage;
 
     public function componentDetails()
     {
@@ -57,13 +56,6 @@ class Tag extends ComponentBase
                 'validationPattern' => '^[0-9]+$',
                 'validationMessage' => 'must be number',
                 'default' => '10',
-            ],
-            'noCoursesMessage' => [
-                'title' => 'no courses message',
-                'description' => 'no courses message',
-                'type' => 'string',
-                'default' => 'No courses found',
-                'showExternalParam' => false
             ],
             'categoryPage' => [
                 'title' => 'category page',
@@ -98,7 +90,6 @@ class Tag extends ComponentBase
     protected function prepareVars()
     {
         $this->pageParam = $this->page['pageParam'] = $this->paramName('pageNumber');
-        $this->noCoursesMessage = $this->page['noCoursesMessage'] = $this->property('noCoursesMessage');
 
         $this->coursePage = $this->page['coursePage'] = $this->property('coursePage');
         $this->categoryPage = $this->page['categoryPage'] = $this->property('categoryPage');

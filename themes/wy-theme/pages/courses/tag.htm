@@ -1,4 +1,4 @@
-title = "Courses tag list"
+title = "课程 | 标签"
 url = "/courses/tag/:slug?/:page?"
 layout="default"
 
@@ -7,15 +7,14 @@ tagFilter="{{ :slug }}"
 postsPerPage=8
 ==
 function onEnd(){
-$this->page->title=$this->tag->name;
 
 }
 ==
 
 <div class="jumbotron">
     <div class="container">
-        <h2>{{ this.page.title }}课程</h2>
-        <p>Contents...</p>
+        <h2>{{ tag.name }}课程</h2>
+        <p>{{ tag.description }}</p>
     </div>
 </div>
 

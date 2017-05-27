@@ -3,10 +3,9 @@
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
 use Buuug7\Courses\Models\Course as CoursePost;
-use Illuminate\Support\Facades\Log;
 use RainLab\User\Facades\Auth;
-use Flash;
-use Redirect;
+use October\Rain\Support\Facades\Flash;
+use Illuminate\Support\Facades\Redirect;
 
 class Course extends ComponentBase
 {
@@ -15,7 +14,7 @@ class Course extends ComponentBase
      * @var Buuug7\Courses\Models\Course
      * the Post model
      */
-    public $course;
+    public $post;
 
     /**
      * @var string
@@ -60,56 +59,53 @@ class Course extends ComponentBase
     {
         $this->categoryPage = $this->page['categoryPage'] = $this->property('categoryPage');
 
-        $this->course = $this->page['course'] = $this->loadCourse();
+        $this->post = $this->page['post'] = $this->loadPost();
     }
 
-    public function loadCourse()
+    public function loadPost()
     {
         $slug = $this->property('slug');
-        $course = new CoursePost();
-        $course = $course->where('slug', $slug)->isPublished()->first();
-        $courseId = $course->id;
-        if ($course && $course->categories->count()) {
-            $course->categories->each(function ($category) {
+        $post = CoursePost::where('slug', $slug)->isPublished()->first();
+        $courseId = $post->id;
+
+        if ($post && $post->categories->count()) {
+            $post->categories->each(function ($category) {
                 $category->setUrl($this->categoryPage, $this->controller);
             });
         }
 
-        $course['relatedCourses'] = $this->relatedCourses($courseId);
-        $course['previousSlug'] = $this->previousSlug($courseId);
-        $course['nextSlug'] = $this->nextSlug($courseId);
-        $course['ifShouCang'] = $this->checkShouCang($courseId);
-        return $course;
+        $post['relatedPosts'] = $this->relatedPosts($courseId);
+        $post['previousPost'] = $this->previousPost($courseId);
+        $post['nextPost'] = $this->nextPost($courseId);
+        $post['shouCang'] = $this->checkShouCang($courseId);
+        return $post;
     }
 
-    public function previousSlug($courseId)
+    public function previousPost($courseId)
     {
         $previousId = CoursePost::where('id', '<', $courseId)->max('id');
         if (!$previousId) {
             return null;
         }
-        $previousSlug = CoursePost::find($previousId)->slug;
-        return $previousSlug;
+        return CoursePost::find($previousId);
     }
 
-    public function nextSlug($courseId)
+    public function nextPost($courseId)
     {
         $nextId = CoursePost::where('id', '>', $courseId)->min('id');
         if (!$nextId) {
             return null;
         }
-        $nextSlug = CoursePost::find($nextId)->slug;
-        return $nextSlug;
+        return CoursePost::find($nextId);
     }
 
-    public function relatedCourses($courseId)
+    public function relatedPosts($courseId)
     {
-        $course=CoursePost::find($courseId);
-        if(!$course->categories->first()){
+        $post=CoursePost::find($courseId);
+        if(!$post->categories->first()){
             return null;
         }
-        $course = $course->categories->first()->courses()->limit(8)->get();
-        return $course;
+        return $post->categories->first()->courses()->limit(8)->get();
     }
 
     /**
@@ -140,16 +136,9 @@ class Course extends ComponentBase
      */
     public function onShouCang()
     {
-
-        $check = Auth::check();
-        if (!$check) {
-            return;
-        }
-
         $courseId = post('id');
-        $user = Auth::getUser();
-        if (!$user->courses()->find($courseId)) {
-            $user->courses()->attach($courseId);
+        if(!$this->checkShouCang($courseId)){
+            Auth::getUser()->courses()->attach($courseId);
         }
         Flash::success('收藏成功');
         return Redirect::refresh();
@@ -157,17 +146,12 @@ class Course extends ComponentBase
 
     public function onDetachShouCang()
     {
-        $check = Auth::check();
-        if (!$check) {
-            return;
-        }
         $courseId = post('id');
-        $user = Auth::getUser();
-
-        if (!$user->courses()->find($courseId)) {
+        if (!$this->checkShouCang($courseId)) {
             return;
+        }else{
+            Auth::getUser()->courses()->detach($courseId);
         }
-        $user->courses()->detach($courseId);
         Flash::success('成功取消收藏');
         return Redirect::refresh();
     }

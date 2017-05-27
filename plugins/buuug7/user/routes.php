@@ -4,6 +4,7 @@ use Buuug7\User\Models\User;
 use RainLab\User\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use October\Rain\Support\Facades\Config;
+use Illuminate\Support\Str;
 
 
 //
@@ -37,7 +38,7 @@ Route::get('/login/tianqi/callback',function(){
             $user->save();
             Auth::login($user);
         }else{
-            $password = bcrypt(\Illuminate\Support\Str::random(6));
+            $password = bcrypt(Str::random(6));
             $user = Auth::register([
                 'name' => $tianQiUser->name,
                 'email' => $tianQiUser->email,
@@ -98,7 +99,7 @@ Route::get('/login/github/callback', function () {
             $user->save();
             Auth::login($user);
         } else {
-            $password = bcrypt(\Illuminate\Support\Str::random(6));
+            $password = bcrypt(Str::random(6));
             $userName = $githubUser->name ? $githubUser->name : $githubUser->login;
             $user = Auth::register([
                 'name' => $userName,

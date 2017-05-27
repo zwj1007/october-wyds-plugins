@@ -21,7 +21,6 @@ class Courses extends ComponentBase
     public $courses;
     public $pageParam;
     public $category;
-    public $noPostsMessage;
     public $coursePage;
     public $categoryPage;
     public $sortOrder;
@@ -55,13 +54,6 @@ class Courses extends ComponentBase
                 'validationPattern' => '^[0-9]+$',
                 'validationMessage' => '必须为数字',
                 'default' => '10',
-            ],
-            'noPostsMessage' => [
-                'title' => '没有信息时显示的消息',
-                'description' => '没有信息时显示的消息',
-                'type' => 'string',
-                'default' => 'No posts found',
-                'showExternalParam' => false
             ],
             'sortOrder' => [
                 'title' => '排序',
