@@ -1,4 +1,4 @@
-{{ form_ajax(method,{ model: need }) }}
+{{ form_ajax(method,{ model: need ,'data-request-flash' : 'true'}) }}
 <input type="hidden" name="id" value="{{ form_value('id') }}">
 <div class="form-group">
     <label for="needTitle">需求名称</label>
@@ -27,7 +27,7 @@
     <textarea name="description" rows="8" id="needDescription" class="form-control">{{ form_value('description') }}</textarea>
 </div>
 
-<button type="submit" class="btn btn-default">保存</button>
+<button type="submit" class="btn btn-default" data-attach-loading>保存</button>
 
 {{ form_close() }}
 
