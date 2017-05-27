@@ -51,6 +51,9 @@ Route::get('/login/tianqi/callback',function(){
         }
     }else{
         $userInstance = User::where('tianqi_id', $tianQiUser->id)->firstOrFail();
+        // synchronization user avatar
+        $userInstance->social_avatar=$tianQiUser->avatar_url;
+        $userInstance->save();
         Auth::login($userInstance);
     }
     return Redirect::to('/user/center/account');
@@ -110,6 +113,8 @@ Route::get('/login/github/callback', function () {
         }
     } else {
         $userInstance = User::where('github_id', $githubUser->id)->firstOrFail();
+        $userInstance->social_avatar=$githubUser->avatar_url;
+        $userInstance->save();
         Auth::login($userInstance);
     }
     return Redirect::to('/user/center/account');

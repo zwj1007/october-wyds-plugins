@@ -159,11 +159,8 @@ class Posts extends ComponentBase
             return null;
         }
         $category = new NewsCategory();
-
         $category = $category->where('slug', $slug)->first();
-
         return $category ?: null;
-
     }
 
 }
