@@ -38,7 +38,7 @@ if(!Auth::check()) return Redirect::to('/user/login');
     <div class="row">
         {% for category in categories %}
         {% for child in category.children %}
-        <div class="col-md-3 col-sm-4">
+        <div class="col-md-3 col-sm-6">
             <div class="thumbnail">
                 <img src="{{ child.image|media }}" style="max-width: 100%" alt="">
                 <div class="caption">
