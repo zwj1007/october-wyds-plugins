@@ -23,9 +23,7 @@ $this['keywords']=get('search');
 
 
 <div class="container">
-    <div class="row">
-        {% partial 'courses/block-v1' posts=courses %}
-    </div>
+    {% partial 'courses/block-v1' posts=courses %}
     {{ courses.render|raw }}
 </div>
 

@@ -33,12 +33,20 @@ class createTagsTables extends Migration
             $table->integer('tag_id')->unsigned();
             $table->primary(['course_id', 'tag_id'], 'courses_tag_course');
         });
+
+        Schema::create('buuug7_courses_tags_categories', function ($table) {
+            $table->engine = 'InnoDB';
+            $table->integer('category_id')->unsigned();
+            $table->integer('tag_id')->unsigned();
+            $table->primary(['category_id', 'tag_id'], 'courses_tag_category');
+        });
     }
 
     public function down()
     {
         Schema::dropIfExists('buuug7_courses_tags');
         Schema::dropIfExists('buuug7_courses_tags_courses');
+        Schema::dropIfExists('buuug7_courses_tags_categories');
     }
 
 }

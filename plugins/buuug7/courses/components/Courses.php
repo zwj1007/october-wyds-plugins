@@ -15,12 +15,14 @@ use Cms\Classes\Page;
 use Buuug7\Courses\Models\Course as CoursesCourse;
 use Illuminate\Support\Facades\Log;
 use Redirect;
+use Buuug7\Courses\Models\Tag as CoursesTag;
 
 class Courses extends ComponentBase
 {
     public $courses;
     public $pageParam;
     public $category;
+    public $tag;
     public $coursePage;
     public $categoryPage;
     public $sortOrder;
@@ -47,6 +49,12 @@ class Courses extends ComponentBase
                 'description' => '分类过滤',
                 'type' => 'string',
                 'default' => '',
+            ],
+            'tagFilter' => [
+                'title' => 'tag filter',
+                'description' => 'filter with a given tag',
+                'type' => 'string',
+                'default' => ''
             ],
             'postsPerPage' => [
                 'title' => '每页信息数量',
@@ -97,6 +105,7 @@ class Courses extends ComponentBase
     {
         $this->prepareVars();
         $this->category = $this->page['category'] = $this->loadCategory();
+        $this->tag = $this->page['tag'] = $this->loadTag();
         $this->courses = $this->page['courses'] = $this->listCourses();
         /*
          * If the page number is not valid, redirect
@@ -113,7 +122,6 @@ class Courses extends ComponentBase
     protected function prepareVars()
     {
         $this->pageParam = $this->page['pageParam'] = $this->paramName('pageNumber');
-        $this->noPostsMessage = $this->page['noPostsMessage'] = $this->property('noPostsMessage');
         /*
          * Page links
          * */
@@ -124,6 +132,7 @@ class Courses extends ComponentBase
     protected function listCourses()
     {
         $category = $this->category ? $this->category->id : null;
+        $tag = $this->tag ? $this->tag->id : null;
         /*
          * List all the posts, eager load their categories
          */
@@ -133,6 +142,7 @@ class Courses extends ComponentBase
             'perPage' => $this->property('postsPerPage'),
             'search' => trim(input('search')),
             'category' => $category,
+            'tag' => $tag,
         ]);
 
         /*
@@ -159,6 +169,15 @@ class Courses extends ComponentBase
 
         return $category ?: null;
 
+    }
+
+    protected function loadTag()
+    {
+        if (!$slug = $this->property('tagFilter')) {
+            return null;
+        }
+        $tag = CoursesTag::where('slug', $slug)->first();
+        return $tag ?: null;
     }
 
 }

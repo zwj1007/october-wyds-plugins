@@ -37,10 +37,15 @@ class Category extends Model
      * @var array Relations
      */
     public $belongsToMany = [
-        'courses' => ['Buuug7\Courses\Models\Course',
+        'courses' => [
+            'Buuug7\Courses\Models\Course',
             'table' => 'buuug7_courses_courses_categories',
             'order' => 'published_at desc',
             'scope' => 'isPublished',
+        ],
+        'tags' => [
+            'Buuug7\Courses\Models\Tag',
+            'table' => 'buuug7_courses_tags_categories',
         ],
     ];
 

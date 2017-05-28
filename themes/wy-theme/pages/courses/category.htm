@@ -1,9 +1,9 @@
 title = "Courses Category"
-url = "/courses/categories/:slug?/:page?"
+url = "/courses/categories/:categorySlug?/:page?"
 layout="default"
 
 [coursesCourses]
-categoryFilter = "{{ :slug }}"
+categoryFilter = "{{ :categorySlug }}"
 postsPerPage = 8
 
 ==
@@ -22,10 +22,7 @@ function onEnd()
 </div>
 
 <div class="container">
-    <div class="row">
-        {% partial 'courses/block-v2' posts=courses %}
-
-    </div>
+    {% partial 'courses/block-v2' posts=courses %}
     {{ courses.render|raw }}
 </div>
 
