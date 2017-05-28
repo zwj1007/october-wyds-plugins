@@ -7442,6 +7442,65 @@ figure {
 
 /*
 |--------------------------------------------------------------------------
+| _comments
+|--------------------------------------------------------------------------
+|
+| Created by buuug7 on 2017/5/28.
+| 
+|
+*/
+.comments-v1 .list-group-item {
+  position: relative;
+  background: #fff;
+  padding: 20px 20px 20px 80px;
+  margin: 0;
+  line-height: 1.5rem;
+  min-height: 90px;
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0; }
+  .comments-v1 .list-group-item .img-circle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    left: 10px;
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 50%; }
+  .comments-v1 .list-group-item .title {
+    font-weight: 700;
+    font-size: 16px; }
+  .comments-v1 .list-group-item .time {
+    font-size: 12px;
+    color: #777;
+    display: block;
+    margin-bottom: 5px; }
+  .comments-v1 .list-group-item .comments-body p {
+    margin: 0; }
+  .comments-v1 .list-group-item .comments-body a {
+    color: #f39c12;
+    font-size: 14px; }
+  .comments-v1 .list-group-item .comments-body blockquote {
+    font-size: 14px; }
+.comments-v1 .secondary-content {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  float: right;
+  text-decoration: none;
+  font-size: 14px; }
+  .comments-v1 .secondary-content a {
+    color: #f39c12; }
+  .comments-v1 .secondary-content .fa {
+    padding-right: 5px !important; }
+  .comments-v1 .secondary-content .like {
+    font-size: 12px; }
+
+/*
+|--------------------------------------------------------------------------
 | _navbar
 |--------------------------------------------------------------------------
 |
