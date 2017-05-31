@@ -30,14 +30,14 @@ class SeedAllTables extends Seeder
             'parent_id' => 1,
             'name' => '电商基础知识',
             'slug' => 'dian-shang-ji-chu-zhi-shi',
-            'description' => '电商基础知识类目',
+            'description' => '电商基础知识系列课程',
         ]);
 
         Category::create([
             'parent_id' => 1,
             'name' => '电商进阶知识',
             'slug' => 'dian-shang-jin-jie-zhi-shi',
-            'description' => '电商进阶知识类目',
+            'description' => '电商进阶知识系列课程',
         ]);
 
         Tag::create([

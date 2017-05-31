@@ -51,6 +51,11 @@ class Tag extends Model
             'order' => 'publish_at desc',
             'scope' => 'isPublished',
         ],
+
+        'categories' => [
+            'Buuug7\Courses\Models\Categories',
+            'table' => 'buuug7_courses_tags_categories',
+        ],
     ];
 
     public function afterDelete()

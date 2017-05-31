@@ -2,6 +2,7 @@
 
 use Cms\Classes\ComponentBase;
 use Buuug7\User\Models\Need as UserNeed;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use October\Rain\Support\Facades\Flash;
 use RainLab\User\Facades\Auth;

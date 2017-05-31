@@ -16,8 +16,8 @@ fields:
 
     description:
         label: 描述
-        type: richeditor
-        size: large
+        type: textarea
+        size: small
     image:
         label: 特色图片
         type: mediafinder

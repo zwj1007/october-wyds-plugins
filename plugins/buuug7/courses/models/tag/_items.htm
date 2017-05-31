@@ -3,7 +3,7 @@
 $count = 0;
 
 if (Schema::hasTable('buuug7_courses_courses')) {
-    $count += DB::table('buuug7_courses_tags_courses')->where('tags_id', $record->id)->count();
+    $count += DB::table('buuug7_courses_tags_courses')->where('tag_id', $record->id)->count();
 }
 
 

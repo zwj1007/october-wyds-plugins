@@ -44,8 +44,8 @@ class Post extends ComponentBase
             'slug' => [
                 'title' => '新闻别名',
                 'description' => '新闻别名',
-                'default' => '{{ :slug }}',
                 'type' => 'string',
+                'default' => '{{ :slug }}',
             ],
             'categoryPage' => [
                 'title' => '新闻分类页',
@@ -65,7 +65,8 @@ class Post extends ComponentBase
     public function onRun()
     {
         $this->categoryPage=$this->page['categoryPage']=$this->property('categoryPage');
-        $this->post=$this->page['post']=$this->loadPost();
+        $post=$this->loadPost();
+        $this->post=$this->page['post']=$post;
     }
 
     public function loadPost()
@@ -79,37 +80,6 @@ class Post extends ComponentBase
                 $category->setUrl($this->categoryPage, $this->controller);
             });
         }
-        return $post;
-    }
-
-    public function previousPost()
-    {
-        return $this->getPostSibling(-1);
-    }
-
-    public function nextPost()
-    {
-        return $this->getPostSibling(1);
-    }
-
-    public function getPostSibling($direction = 1)
-    {
-        if (!$this->post) {
-            return;
-        }
-        $method = $direction === -1 ? 'previousPost' : 'nextPost';
-
-        if(!$post=$this->post->$method()){
-            return;
-        }
-        $postPage=$this->getPage()->getBaseFileName();
-
-        $post->setUrl($postPage,$this->controller);
-
-        $post->categories->each(function($category) {
-            $category->setUrl($this->categoryPage, $this->controller);
-        });
-
         return $post;
     }
 

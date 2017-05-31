@@ -1,7 +1,9 @@
 <?php namespace Buuug7\News\Models;
 
 use Backend\Facades\BackendAuth;
+use Buuug7\News\Components\Posts;
 use Carbon\Carbon;
+use Cms\Classes\Controller;
 use Model;
 use Backend\Models\User;
 use ValidationException;
@@ -42,7 +44,6 @@ class Post extends Model
         'title' => 'required',
         'slug' => ['required', 'unique:buuug7_news_posts'],
         'content' => 'required',
-        'summary' => ''
     ];
 
     /**
@@ -298,9 +299,23 @@ class Post extends Model
         return $query->limit($limit)->get();
     }
 
-    public function scopeSearch($query,$search){
+    public function scopeSearch($query, $search)
+    {
+        $postsComponent = new Posts();
+        $controller = new Controller();
+
         $searchableFields = ['title', 'slug'];
-        return $query->isPublished()->searchWhere($search,$searchableFields)->paginate(15);
+        $posts = $query->isPublished()->searchWhere($search, $searchableFields)->paginate(15);
+
+        $posts->each(function ($post) use ($postsComponent,$controller) {
+            // add url to post
+            $post->setUrl($postsComponent->property('postPage'), $controller);
+            // add url to categories
+            $post->categories->each(function ($category) use ($postsComponent,$controller) {
+                $category->setUrl($postsComponent->property('categoryPage'), $controller);
+            });
+        });
+        return $posts;
     }
 
 }

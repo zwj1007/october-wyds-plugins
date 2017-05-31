@@ -1,34 +1,28 @@
 title = "Courses Category"
-url = "/courses/categories/:slug?/:page?"
+url = "/courses/categories/:categorySlug?/:page?"
 layout="default"
 
-[coursesCategories]
-slug = "{{ :slug }}"
-
 [coursesCourses]
-categoryFilter = "{{ :slug }}"
+categoryFilter = "{{ :categorySlug }}"
 postsPerPage = 8
 
 ==
 function onEnd()
 {
-if ($this->category)
-$this->page->title = $this->category->name;
+    if ($this->category) $this->page->title = $this->category->name;
+
 }
 ==
 
 <div class="jumbotron">
     <div class="container">
-        <h1>{{ this.page.title }}</h1>
-        <p>Contents...</p>
+        <h2>{{ category.name }}</h2>
+        <p>{{ category.description }}</p>
     </div>
 </div>
 
 <div class="container">
-    <div class="row">
-        {% partial 'courses/block-v2' posts=courses %}
-
-    </div>
+    {% partial 'courses/block-v2' posts=courses %}
     {{ courses.render|raw }}
 </div>
 

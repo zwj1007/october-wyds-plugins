@@ -5,6 +5,35 @@ use October\Rain\Support\Facades\Config;
 
 class User extends \RainLab\User\Models\User
 {
+
+    public static function getTianQiUserToken($code){
+        $http= new Client();
+        $response = $http->post('http://7.jq2.com/oauth/token', [
+            'form_params' => [
+                'grant_type' => 'authorization_code',
+                'client_id' => Config::get('buuug7.user::tianqi.client_id'),
+                'client_secret' => Config::get('buuug7.user::tianqi.client_secret'),
+                'redirect_uri' => Config::get('buuug7.user::tianqi.redirect_uri'),
+                'code' => $code,
+            ],
+        ]);
+        $accessToken = json_decode($response->getBody())->access_token;
+        return $accessToken;
+    }
+
+    public static function getTianQiUserByToken($token){
+        $userApi='http://7.jq2.com/api/user';
+        $http=new Client();
+        $response=$http->get($userApi,[
+            'headers' => [
+                'Accept' => 'application/json',
+                'Authorization' => 'Bearer ' . $token,
+            ],
+        ]);
+
+        return json_decode($response->getBody());
+    }
+
     public static function getGithubUserToken($code){
         $tokenUri='https://github.com/login/oauth/access_token';
         $http=new Client();

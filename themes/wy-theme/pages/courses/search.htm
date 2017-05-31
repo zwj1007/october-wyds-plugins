@@ -6,10 +6,10 @@ layout="default"
 <?php
 function onEnd(){
     $search = $this->param('q');
-    $this['q']=$search;
-    if($search){
-        $this['courses']=\Buuug7\Courses\Models\Course::search($search);
-    }
+$this['q']=$search;
+if($search){
+$this['courses']=\Buuug7\Courses\Models\Course::search($search);
+}
 }
 ?>
 ==
@@ -17,15 +17,15 @@ function onEnd(){
 <div class="jumbotron">
     <div class="container">
         <h2>课程 | 搜索结果</h2>
-        <p>搜索到 <span class="text-danger">{{ courses.count }}</span> 条与 <span class="text-danger">{{ q }}</span> 相关的内容如下 (๑╹◡╹)ﾉ"""</p>
+        <p>搜索到 <span class="text-danger">{{ courses.count }}</span> 条与 <span class="text-danger">{{ q }}</span> 相关的内容如下
+           (๑╹◡╹)ﾉ"""</p>
     </div>
 </div>
 
 <div class="container">
     {% if courses.count %}
-    <div class="row">
-        {% partial 'courses/block-v1' posts=courses %}
-    </div>
+
+    {% partial 'courses/block-v1' posts=courses %}
     {{ courses.render|raw }}
     {% else %}
     <p class="lead">没有找与 <span class="text-danger">{{ q }}</span> 到相关内容</p>

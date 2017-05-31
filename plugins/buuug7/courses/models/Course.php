@@ -326,7 +326,6 @@ class Course extends Model
         $query->orderBy('published_at', 'desc');
 
         return $query->limit($limit)->get();
-        //Log::info($query->get()->toArray());
     }
 
     public function scopeDisplayByCategories($query, $categoriesSlug, $limit)

@@ -19,4 +19,9 @@ columns:
         label: 更新日期
         type: datetime
         invisible: true
+    tags:
+        label: 标签
+        relation: tags
+        valueFrom: name
+        sortable: false
 

@@ -12,6 +12,7 @@ class CreatePostsCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
+            $table->string('image')->nullable();
             $table->string('description')->nullable();
             $table->integer('parent_id')->unsigned()->index()->nullable();
             $table->integer('nest_left')->nullable();

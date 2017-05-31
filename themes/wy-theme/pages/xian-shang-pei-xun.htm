@@ -4,12 +4,16 @@ layout = "default"
 ==
 function onStart(){
 // filter by tags
-$this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],8);
-$this['tagReMen']=\Buuug7\Courses\Models\Course::displayByTags(['re-men'],8);
+$this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
+$this['tagReMen']=\Buuug7\Courses\Models\Course::displayByTags(['re-men'],4);
 
 // filter by categories
 $this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi'],8);
 $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-jin-jie-zhi-shi'],8);
+
+$this['categories']=\Buuug7\Courses\Models\Category::getNested();
+
+//var_dump($this['categories']);
 }
 
 function onEnd(){
@@ -30,43 +34,44 @@ if(!Auth::check()) return Redirect::to('/user/login');
 </div>
 
 <div class="container">
+
+    <div class="row">
+        {% for category in categories %}
+        {% for child in category.children %}
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src="{{ child.image|media }}" style="max-width: 100%" alt="">
+                <div class="caption">
+                    <h4>{{ child.name }}</h4>
+                    <p class="color-777">
+                        {{ child.description }}
+                    </p>
+                    <P class="color-777">
+                        共包含 {{ child.courses.count }} 课时
+                    </P>
+                    <p>
+                        <a href="/courses/categories/{{ child.slug }}" class="btn btn-warning">学习</a>
+                        <a href="/courses/categories/{{ child.slug }}" class="btn btn-line-warning">收藏</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endfor %}
+    </div>
+
     <!--filter by tas-->
     {% if tagTuiJian %}
     <div class="headline">
         <h2><a href="/courses/tag/tui-jian">推荐课程</a></h2>
     </div>
-    <div class="row">
-        {% partial 'courses/block-v2' posts=tagTuiJian s_tag="推荐" %}
-    </div>
+    {% partial 'courses/block-v2' posts=tagTuiJian s_tag="推荐" %}
     {% endif %}
 
     {% if tagReMen %}
     <div class="headline">
         <h2><a href="/courses/tag/re-men">热门课程</a></h2>
-
     </div>
-    <div class="row">
-        {% partial 'courses/block-v1' posts=tagReMen s_tag="热门" %}
-    </div>
+    {% partial 'courses/block-v1' posts=tagReMen s_tag="热门" %}
     {% endif %}
-
-    <!--filter by categories-->
-    {% if categoryDianShangJiChuZhiShi %}
-    <div class="headline">
-        <h2><a href="/courses/categories/dian-shang-ji-chu-zhi-shi">电商基础知识</a></h2>
-    </div>
-    <div class="row">
-        {% partial 'courses/block-v1' posts=categoryDianShangJiChuZhiShi %}
-    </div>
-    {% endif %}
-
-    {% if categoryDianShangJinJieZhiShi %}
-    <div class="headline">
-        <h2><a href="/courses/categories/dian-shang-jin-jie-zhi-shi">电商进阶知识</a></h2>
-    </div>
-    <div class="row">
-        {% partial 'courses/block-v1' posts=categoryDianShangJinJieZhiShi %}
-    </div>
-    {% endif %}
-
 </div>
