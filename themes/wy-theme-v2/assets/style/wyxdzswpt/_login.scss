@@ -34,26 +34,25 @@
           }
         }
         .form-ct {
-          padding: 0 33px;
+
           .form-body {
-            padding: 22px 0 33px;
+            padding: 22px 0;
             dl {
               _margin: 2px 0;
-              padding: 5px 0;
               overflow: hidden;
               width: 100%;
             }
             dl .pwd-forget a {
               color: #098CD0;
               margin-left: 40px;
-              i{
+              i {
                 font-size: 16px;
               }
               i.fa-github {
-               font-size: 20px;
+                font-size: 20px;
               }
             }
-            dl .pwd-forget a:hover{
+            dl .pwd-forget a:hover {
               color: #1a6480;
             }
             dd {
@@ -64,12 +63,12 @@
               letter-spacing: 4px;
             }
             .go-login dd {
-              width: 100%;
+              width: 75%;
               height: 40px;
               padding: 5px 0;
               .btn-smb {
                 background: $nav-background;
-                background-position: -11px -89px;
+                //background-position: -11px -89px;
                 height: 38px;
                 width: 100%;
                 line-height: 38px;

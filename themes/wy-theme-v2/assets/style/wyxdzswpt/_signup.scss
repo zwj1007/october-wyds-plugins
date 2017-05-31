@@ -176,7 +176,7 @@
 
   .form-body dl {
     display: inline-block;
-    _margin: 2px 0px;
+    margin: 0;
     color: #666;
     padding: 5px 0;
     overflow: hidden;
@@ -207,53 +207,23 @@
     margin: 2px;
     width: 330px;
     height: 20px;
+    padding: 12px 8px;
   }
 
   .input, .textarea {
-    border-color: gray #D4D0C8 #D4D0C8 gray;
-    border-style: solid;
-    border-width: 1px;
+    border: 1px solid $border-color;
     color: #333;
     padding: 3px 2px 1px;
+    border-radius: 3px ;
   }
 
-  .form-body dd {
-    float: left;
-    width: auto;
-    text-align: left;
-  }
 
-  .form-body dt, .form-body dd {
-    height: 30px;
-    line-height: 30px;
-    font-size: 14px;
-  }
   .form-body dl {
     display: inline-block;
-    _margin: 2px 0px;
     color: #666;
     padding: 5px 0;
     overflow: hidden;
     zoom: 1;
-  }
-
-  .form-body .form-tip {
-    float: left;
-    padding-left: 10px;
-    width: auto;
-    max-width: 330px;
-  }
-
-  .form-body dd {
-    float: left;
-    width: auto;
-    text-align: left;
-  }
-
-  .form-body dt, .form-body dd {
-    height: 30px;
-    line-height: 30px;
-    font-size: 14px;
   }
 
   dd.check_rule {
@@ -271,11 +241,6 @@
     float: left;
     width: auto;
     text-align: left;
-  }
-  .form-body dt, .form-body dd {
-    height: 30px;
-    line-height: 30px;
-    font-size: 14px;
   }
 
   .form-body dl {
