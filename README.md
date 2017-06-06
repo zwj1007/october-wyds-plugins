@@ -44,6 +44,8 @@ october plugins
 + 公司模型增加评论
 + 部分插件没有完全本地化,有待翻译
 
+#### 其他
+[其他说明](https://github.com/gansutianqi/october-wyds-plugins/blob/master/docs/1.md)
 
 #### Change
 + 2017-05-27
