@@ -7,16 +7,16 @@ function onStart()
 $this->addJs('https://cdn.bootcss.com/jquery-backstretch/2.0.4/jquery.backstretch.min.js');
 
 // 推荐 特色
-$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(4);
+$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(8);
 
 // 电商动态
-$this['dianShangDongTai'] = \Buuug7\News\Models\Post::displayByCategory('dian-shang-dong-tai',4);
+$this['dianShangDongTai'] = \Buuug7\News\Models\Post::displayByCategory('dian-shang-dong-tai',8);
 
 // 政策解读
-$this['zhenCeJieDu'] = \Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie-du',4);
+$this['zhenCeJieDu'] = \Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie-du',8);
 
 // 通知公告
-$this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',9);
+$this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',8);
 
 // 推荐课程
 $this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],8);
@@ -49,8 +49,8 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                         <h1 class="hidden-xs">渭源电商平台</h1>
                         <h2>渭源县电子商务公共服务平台</h2>
                         <p>
-                            建设实现 数据统一化、组织网络化、功能社会化、服务产业化、手段现代化
-                            打造一个全县电子商务资源信息集散平台
+                            建设实现数据统一化、组织网络化、功能社会化、服务产业<br>
+                            化、手段现代化的一个全县电子商务资源信息集散平台
                         </p>
                         {% if user %}
                         <a href="/user/center/account" class="btn btn-line-warning btn-line-theme m-b">用户中心</a>
@@ -76,6 +76,8 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             <li class=""><a href="#tab2" data-toggle="tab" aria-expanded="true" style="font-size: 20px">电商动态</a>
             </li>
             <li class=""><a href="#tab3" data-toggle="tab" aria-expanded="false" style="font-size: 20px">政策解读</a>
+            </li>
+            <li class=""><a href="#tab4" data-toggle="tab" aria-expanded="false" style="font-size: 20px">平台公告</a>
             </li>
         </ul>
         <div class="tab-content">
@@ -130,28 +132,24 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                     {% endfor %}
                 </div>
             </div>
+            <div class="tab-pane fade" id="tab4">
+                <div class="row">
+                    {% for post in tongZhiGongGao %}
+                    <div class="col-md-3 col-sm-4 m-b">
+                        <h5 class="color-444" style="height: 40px;line-height: 1.3;overflow: hidden">
+                            <a class="color-444" href="/news/post/{{ post.slug }}">
+                                {{ str_limit(post.title, 60, '...') }}
+                            </a>
+                        </h5>
+                        <small class="color-777">
+                            {{ post.published_at|date('Y,m月 d')}} / by {{ post.user.first_name }}
+                        </small>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
-
-    <!--通知公告-->
-    {% if tongZhiGongGao %}
-    <div class="headline">
-        <h2><a href="/news/categories/tong-zhi-gong-gao">通知公告</a></h2>
-    </div>
-    <div class="owl-carousel owl-carousel-v1 m-b">
-        {% for post in tongZhiGongGao %}
-        <div class="item">
-            <h5 style="height: 40px;line-height: 1.3;overflow: hidden">
-                <a class="color-444" href="/news/post/{{ post.slug }}">{{ str_limit(post.title, 40, '...') }}</a>
-            </h5>
-
-            <small class="color-777">
-                {{ post.published_at|date('Y,m月 d')}} / by {{ post.user.first_name }}
-            </small>
-        </div>
-        {% endfor %}
-    </div>
-    {% endif %}
 
     <!--推荐课程-->
     {% if tagTuiJian %}
@@ -175,13 +173,13 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             <li class="active"><a href="#fw-1" data-toggle="tab" aria-expanded="true" style="font-size: 20px;">服务市场 /
                                                                                                                推荐</a>
             </li>
-            <li class=""><a href="#fw-2" data-toggle="tab" aria-expanded="false" style="font-size: 20px">服务市场 / 招聘</a>
+            <li class=""><a href="#fw-2" data-toggle="tab" aria-expanded="false" style="font-size: 20px">招聘</a>
             </li>
-            <li class=""><a href="#fw-3" data-toggle="tab" aria-expanded="false" style="font-size: 20px">服务市场 / 房产</a>
+            <li class=""><a href="#fw-3" data-toggle="tab" aria-expanded="false" style="font-size: 20px">房产</a>
             </li>
-            <li class=""><a href="#fw-4" data-toggle="tab" aria-expanded="false" style="font-size: 20px">服务市场 / 二手</a>
+            <li class=""><a href="#fw-4" data-toggle="tab" aria-expanded="false" style="font-size: 20px">二手</a>
             </li>
-            <li class=""><a href="#fw-5" data-toggle="tab" aria-expanded="false" style="font-size: 20px">服务市场 / 其他</a>
+            <li class=""><a href="#fw-5" data-toggle="tab" aria-expanded="false" style="font-size: 20px">其他</a>
             </li>
         </ul>
         <div class="tab-content">
@@ -326,9 +324,8 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     });
 
     $(".jumbotron-v1 .container > div").backstretch([
-        "themes/wy-theme/assets/images/home-header-bg-1.jpg",
-        "themes/wy-theme/assets/images/home-header-bg-2.jpg",
         "themes/wy-theme/assets/images/home-header-bg-3.jpg",
+        "themes/wy-theme/assets/images/home-header-bg-1.jpg",
         "themes/wy-theme/assets/images/home-header-bg-4.png",
     ], {duration: 5000});
 </script>
