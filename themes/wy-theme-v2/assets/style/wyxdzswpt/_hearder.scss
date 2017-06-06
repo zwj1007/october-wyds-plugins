@@ -61,15 +61,39 @@ header {
         margin: 23px 20px;
       }
     }
+    .head-sousuo {
+      margin: 50px 0 50px 30px;
+      display: inline-flex;
+      select {
+        border: 1px solid $nav-background;
+        color: $nav-background;
+        height: 30px;
+      }
+      input {
+        border: 1px solid $nav-background;
+        padding: 6px 12px;
+        border-left: 0;
+        height: 30px;
+
+      }
+
+      .btn {
+        border: 1px solid $nav-background;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border-left: 0;
+        padding: 0 12px;
+      }
+    }
     .head-right {
       //width: 720px;
       margin: 28px 0 0 0;
       ul {
-        margin-bottom: 0!important;
+        margin-bottom: 0;
         li {
           float: right;
           text-align: center;
-          width: 130px;
+          width: 100px;
           p {
             font-weight: 600;
             color: #000000;
@@ -107,7 +131,7 @@ header {
         text-align: center;
         width: $page-width/9;
         a {
-          padding:10px 30px;
+          padding: 10px 30px;
           color: $nav-color;
         }
       }

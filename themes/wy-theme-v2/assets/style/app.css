@@ -305,14 +305,32 @@ header {
       height: 80px;
       width: 400px;
       margin: 23px 20px; }
+    header .head-long .head-sousuo {
+      margin: 50px 0 50px 30px;
+      display: inline-flex; }
+      header .head-long .head-sousuo select {
+        border: 1px solid #FF4400;
+        color: #FF4400;
+        height: 30px; }
+      header .head-long .head-sousuo input {
+        border: 1px solid #FF4400;
+        padding: 6px 12px;
+        border-left: 0;
+        height: 30px; }
+      header .head-long .head-sousuo .btn {
+        border: 1px solid #FF4400;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border-left: 0;
+        padding: 0 12px; }
     header .head-long .head-right {
       margin: 28px 0 0 0; }
       header .head-long .head-right ul {
-        margin-bottom: 0 !important; }
+        margin-bottom: 0; }
         header .head-long .head-right ul li {
           float: right;
           text-align: center;
-          width: 130px; }
+          width: 100px; }
           header .head-long .head-right ul li p {
             font-weight: 600;
             color: #000000;
@@ -1106,7 +1124,7 @@ footer {
   .xspx-list-wy-v1 .cbp-l-filters-alignCenter .cbp-filter-counter {
     padding: 0; }
   .xspx-list-wy-v1 .cbp-l-filters-alignCenter .cbp-filter-item:hover .cbp-filter-counter {
-    bottom: 25px; }
+    bottom: -5px; }
 .xspx-list-wy-v1 .cbp-l-grid-work .cbp-item-wrapper {
   padding-bottom: 0; }
   .xspx-list-wy-v1 .cbp-l-grid-work .cbp-item-wrapper .cbp-l-grid-work-desc {
@@ -2535,5 +2553,25 @@ input {
     font-size: 18px; }
     .wy-audit .audit i {
       font-size: 50px; }
+
+/*****搜索文章后的列表（样式仿百度）****/
+.sousou {
+  border: 1px solid #eee;
+  padding: 0 25px; }
+  .sousou .sou-p {
+    color: #999;
+    padding: 20px 12px; }
+  .sousou .sou-list .sou-list-title {
+    font-size: 16px;
+    color: #00C; }
+  .sousou .sou-list .sou-list-des {
+    width: 95%;
+    line-height: 30px;
+    margin-top: 3px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    color: #999;
+    text-indent: 2em;
+    padding: 12px; }
 
 /*# sourceMappingURL=app.css.map */

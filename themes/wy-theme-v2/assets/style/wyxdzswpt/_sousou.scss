@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/*****搜索文章后的列表（样式仿百度）****/
+.sousou {
+  //box-shadow: 1px 2px 20px 1px #CCCCCC;
+  border: 1px solid #eee;
+  padding: 0 25px;
+  .sou-p {
+    color: #999;
+    padding:  20px 12px;
+
+  }
+  .sou-list{
+    .sou-list-title {
+      font-size: 16px;
+      color: #00C;
+
+    }
+    .sou-list-des {
+      width: 95%;
+      line-height: 30px;
+      margin-top: 3px;
+      overflow: hidden;
+      margin-bottom: $margin-10;
+      color: #999;
+      text-indent: 2em;
+      padding: 12px;
+    }
+  }
+
+}
