@@ -64,25 +64,29 @@ header {
     .head-sousuo {
       margin: 50px 0 50px 30px;
       display: inline-flex;
+
       select {
         border: 1px solid $nav-background;
         color: $nav-background;
         height: 30px;
+        font: 13px/20px arial, sans-serif !important;
       }
       input {
         border: 1px solid $nav-background;
         padding: 6px 12px;
         border-left: 0;
         height: 30px;
+        font: 13.3333px Arial;
 
       }
-
       .btn {
         border: 1px solid $nav-background;
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
         border-left: 0;
         padding: 0 12px;
+        background: #E6E6E6;
+        border-radius: 0;
+        font: 13.3333px Arial !important;
+        color: #333333;
       }
     }
     .head-right {
