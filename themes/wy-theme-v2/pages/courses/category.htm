@@ -20,7 +20,7 @@ $this->page->title = $this->category->name;
     <ol class="box breadcrumb">
         <li class="li-left25"><a href="index.html">首页</a></li>
         <li><a href="/xian-shang-pei-xun">线上培训</a></li>
-        <li class="active">书目推荐</li>
+        <li class="active">{{ category .name}}</li>
     </ol>
     <ul class="book-list ">
         {% for post in courses %}

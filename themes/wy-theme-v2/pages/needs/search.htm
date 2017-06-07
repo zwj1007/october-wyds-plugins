@@ -1,0 +1,39 @@
+title = '需求 | 搜索'
+url = '/needs/search/:q?'
+layout= 'default'
+
+==
+<?php
+function onEnd(){
+    $search=$this->param('q');
+$this['q']=$search;
+if($search){
+$this['needs']=\Buuug7\User\Models\Need::search($search);
+}
+}
+?>
+==
+
+<section class="box sousou">
+    <p class="sou-p">
+        <span>获得约  {{ needs.count }} 条结果</span>
+        <span class="margin-left-25">用时约 16 毫秒</span>
+    </p>
+    {% if needs.count %}
+    <ul class="sou-list margin-bottom-25">
+        {% for post in needs %}
+        <li>
+            <a class="sou-list-title" href="/needs/need/{{ post.id }}">{{ post.title }}</a>
+            <p class="sou-list-des">
+                <small>{{ post.checked_at|time_diff }} / by {{ post.user.name }}</small>
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="lead">没有找与 <span class="text-danger">{{ q }}</span> 到相关内容</p>
+    {% endif %}
+    {{ needs.render|raw }}
+</section>
+
+

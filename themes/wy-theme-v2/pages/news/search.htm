@@ -1,0 +1,39 @@
+title = "新闻 | 搜索"
+url = "/news/search/:q?"
+layout="default"
+
+==
+<?php
+function onEnd(){
+    $search = $this->param('q');
+    $this['q']=$search;
+    if($search){
+        $this['posts']=\Buuug7\News\Models\Post::search($search);
+    }
+}
+?>
+==
+
+<section class="box sousou">
+    <p class="sou-p">
+        <span>获得约  {{ posts.count }} 条结果</span>
+        <span class="margin-left-25">用时约 16 毫秒</span>
+    </p>
+    {% if posts.count %}
+    <ul class="sou-list margin-bottom-25">
+        {% for post in posts %}
+        <li>
+            <a class="sou-list-title" href="{{ post.url }}" target="_blank">{{ post.title }}</a>
+            <p class="sou-list-des">
+                {{ post. summary }}
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="lead">没有找与 <span class="text-danger">{{ q }}</span> 到相关内容</p>
+    {% endif %}
+    {{ posts.render|raw }}
+</section>
+
+

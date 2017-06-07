@@ -1,0 +1,45 @@
+title = "课程 | 搜索"
+url = "/courses/search/:q?"
+layout="default"
+
+==
+<?php
+function onEnd(){
+    $search = $this->param('q');
+$this['q']=$search;
+if($search){
+$this['courses']=\Buuug7\Courses\Models\Course::search($search);
+}
+}
+?>
+==
+<section class="box sousou sousou1">
+    <p class="sou-p">
+        <span>获得约  625 条结果</span>
+        <span class="margin-left-25">用时约 16 毫秒</span>
+    </p>
+    {% if courses.count %}
+    <ul class="sou-list margin-bottom-25">
+        {% for post in courses %}
+        <li>
+            <a href="#!" class="">
+                {% if post.image %}
+                <img alt="{{ post.title }}" src="{{ post.image|media}}" class="sou-img float-left">
+                {% else %}
+                <img src="http://placehold.it/800x400?text=没有缩略图" alt="{{ post.title }}" class="sou-img float-left">
+                {% endif %}
+            </a>
+            <a class="sou-list-title" href="/courses/course/{{ post.slug }}">{{ post.title }}</a>
+            <p class="sou-list-des">
+                {{ post.summary }}
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="lead">没有找与 <span class="text-danger">{{ q }}</span> 到相关内容</p>
+    {% endif %}
+
+    {{ courses.render|raw }}
+</section>
+
