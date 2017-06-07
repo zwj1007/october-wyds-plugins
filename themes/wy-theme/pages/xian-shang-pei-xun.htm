@@ -3,6 +3,8 @@ url = "/xian-shang-pei-xun/:page?"
 layout = "default"
 ==
 function onStart(){
+if(!Auth::check()) return Redirect::to('/user/login');
+
 // filter by tags
 $this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
 $this['tagReMen']=\Buuug7\Courses\Models\Course::displayByTags(['re-men'],4);
@@ -16,11 +18,6 @@ $this['categories']=\Buuug7\Courses\Models\Category::getNested();
 //var_dump($this['categories']);
 }
 
-function onEnd(){
-
-if(!Auth::check()) return Redirect::to('/user/login');
-
-}
 ==
 <div class="container m-t">
     <div class="jumbotron">

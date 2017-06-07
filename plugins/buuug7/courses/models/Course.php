@@ -325,10 +325,13 @@ class Course extends Model
         });
         $query->orderBy('published_at', 'desc');
 
-        return $query->limit($limit)->get();
+        if($limit){
+            $query->limit($limit);
+        }
+        return $query->get();
     }
 
-    public function scopeDisplayByCategories($query, $categoriesSlug, $limit)
+    public function scopeDisplayByCategories($query, $categoriesSlug, $limit=null)
     {
         if (!is_array($categoriesSlug)) {
             $categoriesSlug = [$categoriesSlug];
@@ -345,7 +348,10 @@ class Course extends Model
             $q->whereIn('id', $categories);
         });
         $query->orderBy('published_at', 'desc');
-        return $query->limit($limit)->get();
+        if($limit){
+            $query->limit($limit);
+        }
+        return $query->get();
     }
 
     public function scopeSearch($query,$search){
