@@ -14,7 +14,7 @@ $this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4)
 $this['tagReMen']=\Buuug7\Courses\Models\Course::displayByTags(['re-men'],8);
 
 // filter by categories
-$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi','dian-shang-jin-jie-zhi-shi'],8);
+$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi','dian-shang-jin-jie-zhi-shi']);
 $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-jin-jie-zhi-shi'],4);
 
 }
@@ -48,9 +48,9 @@ $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByC
     <!--正文-->
     <div id="js-xspx-work-wy-v1" class="cbp cbp-l-grid-work">
         <!--title u-->
-        {% for post in  categoryDianShangJiChuZhiShi %}
+        {% for post in categoryDianShangJiChuZhiShi %}
         <div class="cbp-item {% for category in post.categories %} {{ category.slug }} {% endfor %} ">
-            <a href="/cours es/course/{{ post.slug }}" class="cbp-caption " rel="nofollow">
+            <a href="/courses/course/{{ post.slug }}" class="cbp-caption " rel="nofollow">
                 <div class="cbp-caption-defaultWrap">
                     <img src="{{ post.image|media }}" alt="">
                 </div>
@@ -66,15 +66,6 @@ $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByC
             <u></u>
         </div>
         {% endfor %}
-    </div>
-    <!--加载更多-->
-    <div id="js-xspx-gengduo-wy-v1" class="cbp-l-loadMore-button">
-        <a href="loadmore-xs.html" class="cbp-l-loadMore-link huodong-margin-title"
-           rel="nofollow">
-            <span class="cbp-l-loadMore-defaultText">更多</span>
-            <span class="cbp-l-loadMore-loadingText">加载中...</span>
-            <span class="cbp-l-loadMore-noMoreLoading">已经到底了</span>
-        </a>
     </div>
 </section>
 
