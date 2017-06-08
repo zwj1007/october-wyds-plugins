@@ -52,3 +52,28 @@
     background: rgba(246, 255, 240, 0.19);
   }
 }
+
+.souNo {
+  .noPagesou {
+    height: 50%;
+    background: url("../images/sou-no.png") no-repeat left center !important;
+    .sou-leadP {
+      padding-left: 48%;
+      padding-top: 15%;
+      line-height: 33px;
+      .sou-txt {
+        color: #f85151;
+        font-size: 16px;
+        margin-top: 25px;
+        .text-danger {
+          margin: 10px;
+          font-size: 18px;
+          font-style: italic;
+        }
+      }
+    }
+
+  }
+}
+
+
