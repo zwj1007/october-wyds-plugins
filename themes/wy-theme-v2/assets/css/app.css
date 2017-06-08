@@ -15,7 +15,8 @@ body {
   box-sizing: border-box; }
 
 ul, ol {
-  list-style: none; }
+  list-style: none;
+  margin-bottom: 0 !important; }
 
 blockquote {
   padding: 11px 22px;
@@ -29,6 +30,15 @@ a:hover {
 a {
   text-decoration: none;
   color: #000000; }
+
+a:link {
+  text-decoration: none; }
+
+a:visited {
+  text-decoration: none; }
+
+a:active {
+  text-decoration: none; }
 
 i {
   font-style: normal; }
@@ -314,18 +324,22 @@ header {
       header .head-long .head-sousuo select {
         border: 1px solid #FF4400;
         color: #FF4400;
-        height: 30px; }
+        height: 30px;
+        font: 13px/20px arial, sans-serif !important; }
       header .head-long .head-sousuo input {
         border: 1px solid #FF4400;
         padding: 6px 12px;
         border-left: 0;
-        height: 30px; }
+        height: 30px;
+        font: 13.3333px Arial; }
       header .head-long .head-sousuo .btn {
         border: 1px solid #FF4400;
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
         border-left: 0;
-        padding: 0 12px; }
+        padding: 0 12px;
+        background: #E6E6E6;
+        border-radius: 0;
+        font: 13.3333px Arial !important;
+        color: #333333; }
     header .head-long .head-right {
       margin: 28px 0 0 0; }
       header .head-long .head-right ul {
@@ -1151,6 +1165,10 @@ footer {
   top: -7px;
   left: -8px;
   z-index: 1; }
+.xspx-list-wy-v1 .cbp-l-grid-work i.xb {
+  transform: rotate(-45deg) translateX(-21px) translateY(16px);
+  color: #ffffff;
+  display: inline-block; }
 .xspx-list-wy-v1 .cbp-l-grid-work .u-1 {
   background-image: url("../images/xspx/title2.png"); }
 .xspx-list-wy-v1 .cbp-l-grid-work .u-2 {
@@ -2593,5 +2611,21 @@ input {
     padding-bottom: 0 !important; }
 .sousou1 ul li:hover {
   background: rgba(246, 255, 240, 0.19); }
+
+.souNo .noPagesou {
+  height: 50%;
+  background: url("../images/sou-no.png") no-repeat left center !important; }
+  .souNo .noPagesou .sou-leadP {
+    padding-left: 48%;
+    padding-top: 15%;
+    line-height: 33px; }
+    .souNo .noPagesou .sou-leadP .sou-txt {
+      color: #f85151;
+      font-size: 16px;
+      margin-top: 25px; }
+      .souNo .noPagesou .sou-leadP .sou-txt .text-danger {
+        margin: 10px;
+        font-size: 18px;
+        font-style: italic; }
 
 /*# sourceMappingURL=app.css.map */
