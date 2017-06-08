@@ -1,6 +1,7 @@
 <?php namespace Buuug7\News\Updates;
 
 use Buuug7\News\Models\Category;
+use Buuug7\News\Models\Comment;
 use Buuug7\News\Models\Post;
 use Carbon\Carbon;
 use October\Rain\Database\Updates\Seeder;
@@ -112,6 +113,26 @@ class SeedAllTables extends Seeder
             <p>推动互联网与制造业融合，提升制造业数字化、网络化、智能化水平，加强产业链协作，发展基于互联网的协同制造新模式。在重点领域推进智能制造、大规模个性化定制、网络化协同制造和服务型制造，打造一批网络化协同制造公共服务平台，加快形成制造业网络化产业生态体系。（工业和信息化部、发展改革委、科技部共同牵头）</p>
             ',
         ]);
+
+        $comment01=new Comment([
+           'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+            'user_id' => 2,
+            'like_count' => '30232',
+
+        ]);
+
+        $comment02=new Comment([
+            'content' => '
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime obcaecati reprehenderit ea dignissimos amet voluptatem id excepturi facilis 
+            totam veritatis maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!',
+            'user_id' => 12,
+            'like_count' => '2230232',
+
+        ]);
+
+
+        $post01->comments()->save($comment01);
+        $post01->comments()->save($comment02);
 
         $post01->categories()->attach(4);
         $post01->categories()->attach(5);

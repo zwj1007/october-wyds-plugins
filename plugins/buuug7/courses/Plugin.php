@@ -58,8 +58,6 @@ class Plugin extends PluginBase
             'Buuug7\Courses\Components\Course' => 'coursesCourse',
             'Buuug7\Courses\Components\Categories' => 'coursesCategories',
             'Buuug7\Courses\Components\Courses' => 'coursesCourses',
-            'Buuug7\Courses\Components\Tags' => 'coursesTags',
-            'Buuug7\Courses\Components\Tag' => 'coursesTag',
         ];
     }
 

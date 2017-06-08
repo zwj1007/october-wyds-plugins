@@ -1,7 +1,10 @@
 1.0.1:
-    - First version of ExtContentPlus
+    - First version of news plugin
     - create_posts_table.php
     - create_posts_categories_table.php
 1.0.2:
     - update post model and category model
+1.0.3:
+    - add comments
+    - create_comments_table.php
     - seed_all_tables.php

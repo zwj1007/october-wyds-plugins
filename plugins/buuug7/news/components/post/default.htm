@@ -1,6 +1,6 @@
 {% set post = __SELF__.post %}
 
-<div class="news-post-detail bg-white m-b-lg">
+<div class="news-post-detail bg-white m-b">
     <div class="post-image">
         {% if post.image %}
         <div class="big-image">
@@ -57,3 +57,89 @@
     </div>
     {% endif %}
 </div>
+
+<div class="headline">
+    <h2>评论</h2>
+</div>
+
+<!--post new comment-->
+<div class="post-new-comment m-b clearfix">
+    {% if user %}
+    <a href="#modal-id-post-new-comment" class="btn btn-line-warning" data-toggle="modal">
+        <i class="fa fa-plus"></i> 发表评论
+    </a>
+    {% else %}
+    <p><a href="/user/login">登陆</a> 之后可发布评论</p>
+    {% endif %}
+    <div class="modal fade" id="modal-id-post-new-comment">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">发表新评论</h4>
+                </div>
+                <div class="modal-body">
+                    <form
+                            class="form-horizontal"
+                            id="comment-form"
+                    >
+                        <textarea class="form-control" rows="3" name="content"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-warning" id="comments-button">评论</a>
+                    <a class="btn btn-line-warning" data-dismiss="modal">关闭</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% put scripts %}
+<script>
+    $(document).on('ajaxSetup', function (event, context) {
+        // Enable AJAX handling of Flash messages on all AJAX requests
+        context.options.flash = true;
+
+        // Enable the StripeLoadIndicator on all AJAX requests
+        context.options.loading = $.oc.stripeLoadIndicator;
+
+        // Handle Error Messages by triggering a flashMsg of type error
+        context.options.handleErrorMessage = function (message) {
+            $.oc.flashMsg({text: message, class: 'error'});
+        }
+
+        // Handle Flash Messages by triggering a flashMsg of the message type
+        context.options.handleFlashMessage = function (message, type) {
+            $.oc.flashMsg({text: message, class: type});
+        }
+    })
+
+    $(function () {
+        $('#comments-button').on('click', function (e) {
+            e.preventDefault();
+            $('#comment-form').request('onPostNewComment', {
+                data: {id: '{{ post.id }}'},
+                success: function (data) {
+                    this.success(data).done(function () {
+                        $('#modal-id-post-new-comment').modal('hide');
+                    });
+                },
+                update: {'news/comment': '.new-comment'}
+            });
+        })
+    });
+</script>
+{% endput %}
+
+
+<!--comment list-->
+<ul class="list-group comments-v1">
+    <div class="new-comment"></div>
+    {% if post.comments.count %}
+    {% partial 'news/comment' comments=post.comments %}
+    {% endif %}
+</ul>
+

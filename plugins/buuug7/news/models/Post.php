@@ -54,6 +54,14 @@ class Post extends Model
         'user' => ['Backend\Models\User']
     ];
 
+    public $hasMany = [
+        'comments' => [
+            'Buuug7\News\Models\Comment',
+            'table' => 'buuug7_news_comments',
+            'order' => 'created_at DESC',
+        ],
+    ];
+
 
     public $belongsToMany = [
         'categories' => [

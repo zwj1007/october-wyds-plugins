@@ -47,7 +47,7 @@ class Plugin extends PluginBase
             ]);
 
             $model->hasOne['company'] = ['Buuug7\User\Models\Company', 'table' => 'buuug7_user_companies','key' => 'user_id',];
-            $model->hasMany['need'] = ['Buuug7\User\Models\Need', 'table' => 'buuug7_user_needs',];
+            $model->hasMany['needs'] = ['Buuug7\User\Models\Need', 'table' => 'buuug7_user_needs',];
         });
 
         UsersController::extendFormFields(function ($widget) {

@@ -9,9 +9,13 @@
 
 namespace Buuug7\News\Components;
 
+use Buuug7\News\Models\Comment;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
 use Buuug7\News\Models\Post as NewsPost;
+use Illuminate\Support\Facades\Log;
+use October\Rain\Support\Facades\Flash;
+use RainLab\User\Facades\Auth;
 
 class Post extends ComponentBase
 {
@@ -64,9 +68,9 @@ class Post extends ComponentBase
 
     public function onRun()
     {
-        $this->categoryPage=$this->page['categoryPage']=$this->property('categoryPage');
-        $post=$this->loadPost();
-        $this->post=$this->page['post']=$post;
+        $this->categoryPage = $this->page['categoryPage'] = $this->property('categoryPage');
+        $post = $this->loadPost();
+        $this->post = $this->page['post'] = $post;
     }
 
     public function loadPost()
@@ -81,6 +85,46 @@ class Post extends ComponentBase
             });
         }
         return $post;
+    }
+
+    public function onPostNewComment()
+    {
+        if (!Auth::check()) {
+            return null;
+        }
+        $user = Auth::getUser();
+
+        $conent = post('content');
+        $post_id = post('id');
+
+
+        $comment = new Comment([
+            'content' => $conent,
+            'user_id' => $user->id,
+        ]);
+
+        NewsPost::find($post_id)->comments()->save($comment);
+
+        $this->page['comments'] = [$comment];
+
+        Flash::success('成功发表评论');
+
+    }
+
+    public function onLikeCount()
+    {
+        $comment_id = post('id');
+        $comment=Comment::find($comment_id);
+
+        $like_count = $comment->like_count;
+        if (!$like_count) {
+            $comment->like_count=1;
+            $comment->save();
+        }else{
+            $comment->like_count=$like_count+1;
+            $comment->save();
+        }
+        Flash::success("成功点赞");
     }
 
 }
