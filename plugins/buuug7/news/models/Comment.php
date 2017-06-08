@@ -30,7 +30,7 @@ class Comment extends Model
 * Validation
 */
     public $rules = [
-        'content' => 'required',
+        'content' => 'required|max:255',
     ];
 
 
@@ -49,3 +49,6 @@ class Comment extends Model
         ],
     ];
 }
+
+
+
