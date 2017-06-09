@@ -8,7 +8,7 @@ paramCode = "code"
 [b7Account]
 ==
 function onStart(){
-if(!Auth::check()) return Redirect::to('/login');
+if(!Auth::check()) return Redirect::to('/user/login');
 
 $this['social_avatar']=Auth::getUser()->social_avatar;
 $this['avatar']=Auth::getUser()->getAvatarThumb(200);

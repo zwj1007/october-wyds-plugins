@@ -14,12 +14,13 @@ function onEnd(){
 ?>
 ==
 
+{% if posts.count %}
 <section class="box sousou">
     <p class="sou-p">
         <span>获得约  {{ posts.count }} 条结果</span>
         <span class="margin-left-25">用时约 16 毫秒</span>
     </p>
-    {% if posts.count %}
+
     <ul class="sou-list margin-bottom-25">
         {% for post in posts %}
         <li>
@@ -30,10 +31,23 @@ function onEnd(){
         </li>
         {% endfor %}
     </ul>
-    {% else %}
-    <p class="lead">没有找与 <span class="text-danger">{{ q }}</span> 到相关内容</p>
-    {% endif %}
     {{ posts.render|raw }}
 </section>
+{% else %}
+<section class="box sousou souNo">
+    <p class="sou-p">
+        <span>获得约  0 条结果</span>
+        <span class="margin-left-25">用时约 16 毫秒</span>
+    </p>
+    <div class="noPagesou">
+        <div class="sou-leadP">
+            <p class=" sou-txt">很抱歉！没有找与 <span class="text-danger">{{ q }}</span> 相关内容<br>
+
+            </p>
+            <p>请重新编写搜索信息！</p>
+        </div>
+    </div>
+</section>
+{% endif %}
 
 

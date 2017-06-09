@@ -8,7 +8,7 @@ class CreateCoursesTable extends Migration
 {
     public function up()
     {
-        Schema::create('buuug7_courses_courses', function(Blueprint $table) {
+        Schema::create('buuug7_courses_courses', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable();
@@ -19,6 +19,8 @@ class CreateCoursesTable extends Migration
             $table->text('image');
             $table->text('files');
             $table->text('videos');
+            $table->integer('views')->unsigned()->nullable();
+            $table->smallInteger('stars')->default(0);
             $table->timestamp('published_at')->nullable();
             $table->boolean('published')->default(false);
             $table->boolean('featured')->default(false);

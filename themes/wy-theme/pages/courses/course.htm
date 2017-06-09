@@ -7,6 +7,20 @@ layout="default"
 ==
 function onEnd(){
     if(!Auth::check()) return Redirect::to('/user/login');
+
+    // count views++
+    $slug=$this->param('slug');
+    if($slug){
+        $course=\Buuug7\Courses\Models\Course::where('slug', $slug)->isPublished()->first();
+        if(!$course->views){
+            $course->views=1;
+            $course->save();
+        }else{
+            $course->views=$course->views+1;
+            $course->save();
+        }
+    }
+
 }
 ==
 <div class="container m-t">
@@ -83,6 +97,7 @@ function onEnd(){
                             栏目
                             {% endif %}
                         </p>
+                        <p>该课程已经被浏览 <span class="color-success">{{ post.views }}</span> 次</p>
                     </div>
                 </div>
 

@@ -58,9 +58,9 @@ $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByC
             <a href="#!" class="cbp-l-grid-work-title " rel="nofollow">{{ post.categories[0].name }}</a>
             <div class="cbp-l-grid-work-desc">
                 <p><a href="#!" class="">{{ post.title }}</a></p>
-                <i class="fa fa-hourglass-1" title="课时"><span class="margin-left-5">课时</span></i>
+                <i class="fa fa-hourglass-1" title="课时"><span class="margin-left-5">{{ post.published_at|date('Y,m月 d') }}</span></i>
                 <i class="fa fa-binoculars float-right" title="学习人数">
-                    <span class="margin-left-right-10">1420人正在学习</span>
+                    <span class="margin-left-right-10">{{ post.views ? post.views: 0 }} 浏览次数</span>
                 </i>
             </div>
             <u></u>

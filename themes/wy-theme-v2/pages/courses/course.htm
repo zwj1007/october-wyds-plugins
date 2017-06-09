@@ -8,6 +8,19 @@ function onEnd(){
 
 if(!Auth::check()) return Redirect::to('/user/login');
 
+// count views++
+$slug=$this->param('slug');
+if($slug){
+    $course=\Buuug7\Courses\Models\Course::where('slug', $slug)->isPublished()->first();
+    if(!$course->views){
+        $course->views=1;
+        $course->save();
+    }else{
+        $course->views=$course->views+1;
+        $course->save();
+    }
+}
+
 }
 ==
 <section class="box xspx-video">

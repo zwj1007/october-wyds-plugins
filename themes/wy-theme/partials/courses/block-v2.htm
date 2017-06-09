@@ -19,13 +19,66 @@
             <div class="overflow-h">
                 <h3>{{ str_limit(post.title, 22, '...') }}</h3>
                 <div class="star-vote pull-right">
+                    {% if post.stars == 0 %}
+                    <ul class="list-inline">
+                        <li><i class="color-warning fa fa-star-o"></i></li>
+                        <li><i class="color-warning fa fa-star-o"></i></li>
+                        <li><i class="color-warning fa fa-star-o"></i></li>
+                        <li><i class="color-warning fa fa-star-o"></i></li>
+                        <li><i class="color-warning fa fa-star-o"></i></li>
+                        <li><i class="color-warning fa fa-star-o"></i></li>
+                    </ul>
+                    {% endif %}
+                    {% if post.stars == 1 %}
+                    <ul class="list-inline">
+                        <li><i class="color-warning fa fa-star"></i></li>
+                        <li><i class="color-warning fa fa-star-o"></i></li>
+                        <li><i class="color-warning fa fa-star-o"></i></li>
+                        <li><i class="color-warning fa fa-star-o"></i></li>
+                        <li><i class="color-warning fa fa-star-o"></i></li>
+                        <li><i class="color-warning fa fa-star-o"></i></li>
+                    </ul>
+                    {% endif %}
+                    {% if post.stars == 2 %}
+                    <ul class="list-inline">
+                        <li><i class="color-warning fa fa-star"></i></li>
+                        <li><i class="color-warning fa fa-star"></i></li>
+                        <li><i class="color-warning fa fa-star-o"></i></li>
+                        <li><i class="color-warning fa fa-star-o"></i></li>
+                        <li><i class="color-warning fa fa-star-o"></i></li>
+                        <li><i class="color-warning fa fa-star-o"></i></li>
+                    </ul>
+                    {% endif %}
+                    {% if post.stars == 3 %}
                     <ul class="list-inline">
                         <li><i class="color-warning fa fa-star"></i></li>
                         <li><i class="color-warning fa fa-star"></i></li>
                         <li><i class="color-warning fa fa-star"></i></li>
-                        <li><i class="color-warning fa fa-star-half-o"></i></li>
+                        <li><i class="color-warning fa fa-star"></i></li>
+                        <li><i class="color-warning fa fa-star-o"></i></li>
                         <li><i class="color-warning fa fa-star-o"></i></li>
                     </ul>
+                    {% endif %}
+                    {% if post.stars == 4 %}
+                    <ul class="list-inline">
+                        <li><i class="color-warning fa fa-star"></i></li>
+                        <li><i class="color-warning fa fa-star"></i></li>
+                        <li><i class="color-warning fa fa-star"></i></li>
+                        <li><i class="color-warning fa fa-star"></i></li>
+                        <li><i class="color-warning fa fa-star"></i></li>
+                        <li><i class="color-warning fa fa-star-o"></i></li>
+                    </ul>
+                    {% endif %}
+                    {% if post.stars == 5 %}
+                    <ul class="list-inline">
+                        <li><i class="color-warning fa fa-star"></i></li>
+                        <li><i class="color-warning fa fa-star"></i></li>
+                        <li><i class="color-warning fa fa-star"></i></li>
+                        <li><i class="color-warning fa fa-star"></i></li>
+                        <li><i class="color-warning fa fa-star"></i></li>
+                        <li><i class="color-warning fa fa-star"></i></li>
+                    </ul>
+                    {% endif %}
                 </div>
             </div>
             <p class="color-777 small">

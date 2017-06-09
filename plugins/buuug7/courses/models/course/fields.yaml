@@ -98,7 +98,15 @@ secondaryTabs:
                 action: enable
                 field: published
                 condition: checked
-
+        stars:
+            label: 星级
+            type: balloon-selector
+            options:
+                1: 1颗星
+                2: 2颗星
+                3: 3颗星
+                4: 4颗星
+                5: 5颗星
         featured:
             label: 特色
             type: checkbox
