@@ -7283,20 +7283,20 @@ figure {
 | 
 |
 */
-.coming-soon-v1 .container {
+.coming-soon-v1 .inner {
   text-align: center;
   padding: 50px 50px;
   color: #fff; }
-  .coming-soon-v1 .container h2 {
+  .coming-soon-v1 .inner h2 {
     font-size: 45px;
     text-transform: uppercase;
     margin: 45px 0;
     color: #fff;
     text-shadow: 5px 5px 5px #000; }
-  .coming-soon-v1 .container p {
+  .coming-soon-v1 .inner p {
     font-size: 18px;
     text-shadow: 5px 5px 5px black; }
-  .coming-soon-v1 .container .count span {
+  .coming-soon-v1 .inner .count span {
     font-size: 35px;
     font-weight: normal;
     font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
@@ -7313,15 +7313,15 @@ figure {
   position: absolute;
   background: rgba(0, 0, 0, 0.4); }
 
-.coming-soon-v2 .container {
+.coming-soon-v2 .inner {
   text-align: center; }
-  .coming-soon-v2 .container h2 {
+  .coming-soon-v2 .inner h2 {
     font-size: 45px;
     text-transform: uppercase;
     margin: 45px 0; }
-  .coming-soon-v2 .container p {
+  .coming-soon-v2 .inner p {
     font-size: 18px; }
-  .coming-soon-v2 .container .count span {
+  .coming-soon-v2 .inner .count span {
     font-size: 35px;
     font-weight: normal;
     font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
@@ -7676,9 +7676,6 @@ table td.oc-cell-thick-border,
 table th.oc-cell-thick-border {
   border-width: 2px; }
 
-body {
-  padding-top: 65px; }
-
 a:hover {
   cursor: pointer; }
 a:visited, a:active {
@@ -7702,10 +7699,6 @@ a:visited, a:active {
  * with disabling the responsiveness.
  */
 /* Account for fixed navbar */
-body {
-  padding-top: 70px;
-  padding-bottom: 30px; }
-
 body,
 .navbar-fixed-top,
 .navbar-fixed-bottom {
@@ -7731,15 +7724,6 @@ body,
 .container {
   width: 970px;
   max-width: none !important; }
-
-/* Demonstrate the grids */
-.col-xs-4 {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background-color: #eee;
-  background-color: rgba(86, 61, 124, 0.15);
-  border: 1px solid #ddd;
-  border: 1px solid rgba(86, 61, 124, 0.2); }
 
 .container .navbar-header,
 .container .navbar-collapse {
