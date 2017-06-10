@@ -16,19 +16,16 @@ function onStart(){
         <title>渭源 | {{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
-        <meta name="author" content="buuug7">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="icon" type="image/png" href="{{ 'assets/images/logo.png'|theme }}">
 
         <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="https://cdn.bootcss.com/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" rel="stylesheet">
 
-        <!--assert combiner-->
-        <!--<link href="{{ ['assets/scss/app.scss']|theme }}" rel="stylesheet">-->
         <link href="{{ 'assets/css/app.css'|theme }}" rel="stylesheet">
         {% styles %}
     </head>
-    <body class="bg-wrap-f7f7f7">
+    <body>
 
         <!-- Header -->
         <header id="layout-header">
@@ -56,6 +53,7 @@ function onStart(){
         <footer id="layout-footer">
             {% partial 'site/footer' %}
         </footer>
+
 
 
         <!-- Scripts -->

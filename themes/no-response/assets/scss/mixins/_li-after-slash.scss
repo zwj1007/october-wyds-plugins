@@ -1,0 +1,23 @@
+/*
+|--------------------------------------------------------------------------
+| _li-after-slash
+|--------------------------------------------------------------------------
+|
+| Created by buuug7 on 2017/5/6.
+| 
+|
+*/
+@mixin li-after-slash() {
+    > li {
+        display: inline-block;
+        //font-style: italic;
+        + li:before {
+            padding: 0 5px;
+            color: #ccc;
+            content: '/\00a0';
+        }
+    }
+    > li a {
+        //color:red;
+    }
+}

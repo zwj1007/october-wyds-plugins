@@ -1,0 +1,2183 @@
+title = 'UI'
+url = '/'
+
+layout = 'default'
+
+==
+function onStart(){
+
+$this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
+$this->addJs('https://cdn.bootcss.com/jquery-backstretch/2.0.4/jquery.backstretch.min.js');
+$this->addJs('https://cdn.bootcss.com/jquery.countdown/2.2.0/jquery.countdown.min.js');
+}
+==
+<div class="container mt">
+    <div class="headline">
+        <h2>comments</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <ul class="list-group comments-v1">
+                <li class="list-group-item">
+                    <img src="http://lorempixel.com/100/100/cats/1" class="img-circle" alt="">
+                    <span class="title">最丑的是誓言</span>
+                    <span class="time">2016-11-11</span>
+                    <div class="comments-body">
+                        <p>
+                            成熟与年龄无关，而是一种阅历；优雅与装扮无关，而是一种气度。
+                            不要期待别人能抚平自己的伤痛，只有把自己说服了，让自己想通了，才能彻底地根治心病。
+                            受挫、失误、不幸和磨难，是成长的催长素，也是成熟的催熟剂。
+                            我们不希望有痛苦，但也绝不能惧怕痛苦。唯有征服自己的人，才有能力去征服一切。
+                        </p>
+                    </div>
+
+                    <div class="secondary-content">
+                        <a href="#!">
+                            <i class="fa fa-reply"></i>
+                        </a>
+                        <a href="#!">
+                            <i class="fa fa-thumbs-o-up"></i>
+                        </a>
+                        <span class="like">5454</span>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <img src="http://lorempixel.com/100/100/cats/2" class="img-circle" alt="">
+                    <span class="title">Renetsil</span>
+                    <span class="time">2016-12-01</span>
+                    <div class="comments-body">
+                        <ul class="list-unstyled">
+                            <li>I used to rule the wrold</li>
+                            <li>昔日万邦孤为王</li>
+                            <li>Seas would rise when i gave the word</li>
+                            <li>四海浮沉吾独断</li>
+                            <li>Now in the morning i sleep alone</li>
+                            <li>今朝悚悟广寒中</li>
+                            <li>Sweep the streets i used to own</li>
+                            <li>茕茕孑立如孤魂</li>
+                            <li>I used to roll the dice</li>
+                            <li>昔日生杀吾人掌</li>
+                            <li>Feel the fear in my enemy's eyes</li>
+                            <li>谈笑声中枭敌首</li>
+                        </ul>
+                    </div>
+                    <div class="secondary-content">
+                        <a href="#!">
+                            <i class="fa fa-reply"></i>
+                        </a>
+                        <a href="#!">
+                            <i class="fa fa-thumbs-o-up"></i>
+                        </a>
+                        <span class="like">115454</span>
+                    </div>
+                </li>
+
+
+                <li class="list-group-item">
+                    <img src="http://lorempixel.com/100/100/cats/3" class="img-circle" alt="">
+                    <span class="title">来抓八爷</span>
+                    <span class="time">2017-01-11</span>
+                    <div class="comments-body">
+                        <p>
+                            <a href="#!">回复@搬砖头的建工男</a>
+                            我就服你
+                        </p>
+                        <blockquote>
+                            <a href="#!">@搬砖头的建工男</a>
+                            因为高中听了这首歌大学毅然决然的选了俄语…后来才发现这tm的是乌克兰语…
+                        </blockquote>
+                    </div>
+
+                    <div class="secondary-content">
+                        <a href="#!">
+                            <i class="fa fa-reply"></i>
+                        </a>
+                        <a href="#!">
+                            <i class="fa fa-thumbs-o-up"></i>
+                        </a>
+                        <span class="like">0</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Block</h2>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-6 m-b">
+            <div class="block-v1">
+                <i class="fa fa-rss"></i>
+                <div class="block-body">
+                    <h3 class="title">
+                        <a href="#" class="color-444">Block v1</a>
+                    </h3>
+                    <p class="desc color-777">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, ipsum minus!
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 m-b">
+            <div class="block-v1">
+                <i class="fa fa-rss"></i>
+                <div class="block-body">
+                    <h3 class="title">
+                        <a href="#" class="color-444">Block v1</a>
+                    </h3>
+                    <p class="desc color-777">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est id maxime neque perferendis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>info box</h2>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="info-box">
+                <div class="info-box-icon bg-color-primary"><i class="fa fa-cog"></i></div>
+                <div class="info-box-content"><span class="info-box-text">CPU TRAFFIC</span><span class="info-box-number">90%</span></div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="info-box">
+                <div class="info-box-icon bg-color-success"><i class="fa fa-google-plus"></i></div>
+                <div class="info-box-content"><span class="info-box-text">LINKS</span><span class="info-box-number">433218</span></div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="info-box">
+                <div class="info-box-icon bg-color-info"><i class="fa fa-cart-plus"></i></div>
+                <div class="info-box-content"><span class="info-box-text">SALES</span><span class="info-box-number">518</span></div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="info-box">
+                <div class="info-box-icon bg-color-danger"><i class="fa fa-user-plus"></i></div>
+                <div class="info-box-content"><span class="info-box-text">NEW MEMBERS</span><span class="info-box-number">212</span></div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="info-box">
+                <div class="info-box-icon bg-color-warning"><i class="fa fa-user-plus"></i></div>
+                <div class="info-box-content"><span class="info-box-text">SUBSCRIBES</span><span class="info-box-number">881</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="headline">
+        <h2>Pagination</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="pagination">
+                <li><a href="#">«</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li class="active"><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">»</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="headline">
+        <h2>Social widget</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="box box-widget widget-user">
+                <div class="widget-user-header">
+                    <h3 class="user-name">TwiceBug</h3>
+                    <h5 class="user-desc">I am a web desiner</h5>
+                </div>
+                <div class="widget-user-image"><img class="img-circle" src="http://lorempixel.com/128/128/cats"></div>
+                <div class="box-footer">
+                    <div class="row">
+                        <div class="col-sm-4 border-right">
+                            <div class="description-block">
+                                <h5 class="description-header">3,200</h5><span class="description-text">Sales</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 border-right">
+                            <div class="description-block">
+                                <h5 class="description-header">11,200</h5><span class="description-text">Follows</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 border-right">
+                            <div class="description-block">
+                                <h5 class="description-header">621</h5><span class="description-text">Productions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="headline">
+        <h2>timeline</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="timeline">
+                <li class="time-label"><span>2017 3月22</span></li>
+                <li><i class="fa fa-envelope bg-color-primary"></i>
+                    <div class="timeline-item"><span class="time"><i class="fa fa-clock-o"></i>12:05</span>
+                        <h3 class="timeline-header"><a href="">Lorem Ipsum Dolor.</a></h3>
+                        <div class="timeline-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime obcaecati reprehenderit ea dignissimos amet voluptatem id excepturi facilis
+                            totam veritatis maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!
+                        </div>
+                        <div class="timeline-footer"><a class="btn btn-line-primary btn-sm" href="">Detail</a>&nbsp;<a class="btn btn-primary btn-sm" href="">View</a></div>
+                    </div>
+                </li>
+                <li><i class="fa fa-tag bg-color-success"></i>
+                    <div class="timeline-item"><span class="time"><i class="fa fa-clock-o"></i>13:25</span>
+                        <h3 class="timeline-header"><a href="">Laudantium, itaque, cumque, maxime obcaecati</a></h3>
+                        <div class="timeline-body">
+                            <img class="m-a img-inline" src="http://lorempixel.com/150/100/nature/1">
+                            <img class="m-a" src="http://lorempixel.com/150/100/nature/2">
+                            <img class="m-a" src="http://lorempixel.com/150/100/nature/3">
+                            <img class="m-a" src="http://lorempixel.com/150/100/nature/4">
+                        </div>
+                        <div class="timeline-footer"><a class="btn btn-success btn-sm" href="">View Detail</a></div>
+                    </div>
+                </li>
+                <li class="time-label"><span>2017 3月15</span></li>
+                <li><i class="fa fa-bell-o bg-color-info"></i>
+                    <div class="timeline-item"><span class="time"><i class="fa fa-clock-o"></i>13:25</span>
+                        <h3 class="timeline-header"><a href="">Laudantium, itaque, cumque, maxime obcaecati</a></h3>
+                        <div class="timeline-body"><img class="m-a" src="http://lorempixel.com/150/100/fashion/1"><img class="m-a" src="http://lorempixel.com/150/100/fashion/2"><img class="m-a" src="http://lorempixel.com/150/100/fashion/3"><img class="m-a" src="http://lorempixel.com/150/100/fashion/4"></div>
+                        <div class="timeline-footer"><a class="btn btn-info btn-sm" href="">View Detail</a></div>
+                    </div>
+                </li>
+                <li><i class="fa fa-feed bg-color-danger"></i>
+                    <div class="timeline-item"><span class="time"><i class="fa fa-clock-o"></i>12:05</span>
+                        <h3 class="timeline-header"><a href="">Lorem Ipsum Dolor.</a></h3>
+                        <div class="timeline-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime obcaecati reprehenderit ea dignissimos amet voluptatem id excepturi facilis
+                            totam veritatis maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!
+                        </div>
+                        <div class="timeline-footer"><a class="btn btn-danger btn-sm" href="">View</a></div>
+                    </div>
+                </li>
+                <li><i class="fa fa-heart bg-color-warning"></i>
+                    <div class="timeline-item"><span class="time"><i class="fa fa-clock-o"></i>12:05</span>
+                        <h3 class="timeline-header"><a href="">Lorem Ipsum Dolor.</a></h3>
+                        <div class="timeline-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime obcaecati reprehenderit ea dignissimos amet voluptatem id excepturi facilis
+                            totam veritatis maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!
+                        </div>
+                        <div class="timeline-footer"><a class="btn btn-warning btn-sm" href="">View</a></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Coming soon v1</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron coming-soon-v1">
+                <div class="container">
+                    <h2 class="">即将来临</h2>
+                    <p>
+                        该功能正在建设当中 , 预计将在以下倒计时结束之前上线该功能 , 敬请期待 ! (❁´◡`❁)*✲ﾟ*
+                    </p>
+                    <p id="countdown" class="count"></p>
+                    <p>
+                        <a href="javascript:history.go(-1)" class="btn btn-line-warning">返 回</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Coming soon v2</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron coming-soon-v2">
+                <div class="container">
+                    <h2 class="">即将来临</h2>
+                    <p>
+                        该功能正在建设当中 , 预计将在以下倒计时结束之前上线该功能 , 敬请期待 ! (❁´◡`❁)*✲ﾟ*
+                    </p>
+                    <p id="countdown2" class="count"></p>
+                    <p>
+                        <a href="javascript:history.go(-1)" class="btn btn-line-warning">返 回</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>ChartJs</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Polar Area Chart (极地图)</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="chart">
+                        <canvas id="polar-area-chart"></canvas>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Pie Chart (饼状图)</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="chart">
+                        <canvas id="pie-chart"></canvas>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">doughnut Chart (线圈图)</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="chart">
+                        <canvas id="doughnut-chart"></canvas>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Radar Chart (雷达图)</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="chart">
+                        <canvas id="radar-chart"></canvas>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Bar Chart (条形图)</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="chart">
+                        <canvas id="bar-chart"></canvas>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Line Chart (线形图)</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="chart">
+                        <canvas id="line-chart"></canvas>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>panel-trans with list group</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-trans">
+                <div class="panel-heading">
+                    <h4>最新发布</h4>
+                    <a href="#" class="more pull-right">更多 <i class="fa fa-angle-double-right"></i></a>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="#" class="">卢沟桥 晓月苑四里正规精装大两居家电家具全齐随时看拎包住</a>
+                        <span class="time small">1天前</span>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">急聘平面设计讲师 五险一金双休</a>
+                        <span class="time small">1天前</span>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">苹果 iPhone7 Plus 苹果手机7plus 128G转让</a>
+                        <span class="time small">1天前</span>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">专业催乳师无痛开奶、催乳、疏通急性乳腺炎上门服务</a>
+                        <span class="time small">1天前</span>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">专业承接公寓别墅装修 二手房装修 旧房装修</a>
+                        <span class="time small">1天前</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Box</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">box default</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fa fa-wrench"></i></button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                    obcaecati reprehenderit ea
+                    dignissimos amet voluptatem id excepturi facilistotam veritatis maiores eveniet neque explicabo
+                    temporibus quisquam in ex ab
+                    fugiat ipsa tempore sunt corporis nostrum quam illum!
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">box primary</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fa fa-wrench"></i></button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                    obcaecati reprehenderit
+                    ea dignissimos amet voluptatem id excepturi facilistotam veritatis maiores eveniet neque explicabo
+                    temporibus quisquam in
+                    ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-success">
+                <div class="box-header with-border">
+                    <h3 class="box-title">box success</h3>
+                </div>
+                <div class="box-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                    obcaecati reprehenderit
+                    ea dignissimos amet voluptatem id excepturi facilistotam veritatis maiores eveniet neque explicabo
+                    temporibus quisquam in
+                    ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">box info</h3>
+                </div>
+                <div class="box-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                    obcaecati reprehenderit
+                    ea dignissimos amet voluptatem id excepturi facilistotam veritatis maiores eveniet neque explicabo
+                    temporibus quisquam in
+                    ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-danger">
+                <div class="box-header with-border">
+                    <h3 class="box-title">box danger</h3>
+                </div>
+                <div class="box-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                    obcaecati reprehenderit
+                    ea dignissimos amet voluptatem id excepturi facilistotam veritatis maiores eveniet neque explicabo
+                    temporibus quisquam in
+                    ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-warning">
+                <div class="box-header with-border">
+                    <h3 class="box-title">box warning</h3>
+                </div>
+                <div class="box-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                    obcaecati reprehenderit
+                    ea dignissimos amet voluptatem id excepturi facilistotam veritatis maiores eveniet neque explicabo
+                    temporibus quisquam in
+                    ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Tabs</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#tab1" role="tab" data-toggle="tab">Tab1</a></li>
+                <li><a href="#tab2" role="tab" data-toggle="tab">Tab2</a></li>
+                <li><a href="#tab3" role="tab" data-toggle="tab">Tab3</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="active tab-pane fade in" id="tab1">
+                    <h4>Tab1</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                        obcaecati reprehenderit ea dignissimos amet voluptatem id excepturi facilis
+                        totam veritatis maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore
+                        sunt corporis nostrum quam illum!
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="tab2">
+                    <h4>Tab2</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                       labore et dolore magna aliqua.</p>
+                </div>
+                <div class="tab-pane fade" id="tab3">
+                    <h4>Tab3</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                       labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Tabs dropdown</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#new" data-toggle="tab">New</a></li>
+                <li><a href="#help" data-toggle="tab">Help</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another Action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated Link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="active tab-pane fade in" id="new">
+                    <h4>New</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                        obcaecati reprehenderit ea dignissimos amet voluptatem id excepturi facilis
+                        totam veritatis maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore
+                        sunt corporis nostrum quam illum!
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="help">
+                    <h4>Help</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime
+                        obcaecati reprehenderit ea dignissimos amet voluptatem id excepturi facilis
+                        totam veritatis maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore
+                        sunt corporis nostrum quam illum!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Tab v1</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tab-v1">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+                    <li><a href="#profile" data-toggle="tab">Profile</a></li>
+                    <li><a href="#messages" data-toggle="tab">Messages</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="home">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="img-responsive" src="http://placehold.it/800x400">
+                            </div>
+                            <div class="col-md-8">
+                                <h4>Heading Sample Home</h4>
+                                <p>
+                                    Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                                    orci
+                                    metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong>
+                                    condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac
+                                    adipiscing
+                                    nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam,
+                                    eget
+                                    placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc.
+                                    Pellentesque
+                                    fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile">
+                        <h4>Heading Sample Profile</h4>
+                        <p>
+                            Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                            orcimetus, ac adipiscing nunc.
+                            Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat
+                            felis consectetur id.
+                            Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong>
+                            imperdiet condimentum diam,
+                            eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque
+                            fermentum, ante ac felis consectetur id.
+                            Donec eget orci metusvivamus imperdiet.
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="messages">
+                        <h4>Heading Messages</h4>
+                        <p><img class="pull-right m-l" src="http://placehold.it/400x200">
+                            Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                            orcimetus, ac adipiscing nunc.
+                            Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat
+                            felis consectetur id.
+                            Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong>
+                            imperdiet condimentum diam,
+                            eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque
+                            fermentum, ante ac felis consectetur id.
+                            Donec eget orci metusvivamus imperdiet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="headline">
+        <h2>Tab v2</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tab-v2">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#home2" data-toggle="tab">Home</a></li>
+                    <li><a href="#profile2" data-toggle="tab">Profile</a></li>
+                    <li><a href="#messages2" data-toggle="tab">Messages</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active fade in" id="home2">
+                        <div class="row">
+                            <div class="col-md-4"><img class="img-responsive" src="http://placehold.it/800x400"></div>
+                            <div class="col-md-8">
+                                <h4>Heading Home</h4>
+                                <p>
+                                    Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                                    orcimetus, ac adipiscing nunc.
+                                    Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget
+                                    placerat felis consectetur id.
+                                    Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum
+                                                                                                    vivamus</strong>
+                                    imperdiet condimentum diam,
+                                    eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc.
+                                    Pellentesque fermentum, ante ac felis consectetur id.
+                                    Donec eget orci metusvivamus imperdiet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile2">
+                        <h4>Heading Profile</h4>
+                        <p>
+                            Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                            orcimetus, ac adipiscing nunc.
+                            Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat
+                            felis consectetur id.
+                            Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong>
+                            imperdiet condimentum diam,
+                            eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque
+                            fermentum, ante ac felis consectetur id.
+                            Donec eget orci metusvivamus imperdiet.
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="messages2">
+                        <h4>Heading Messages</h4>
+                        <p><img class="pull-right m-l" src="http://placehold.it/300x150">
+                            Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                            orcimetus, ac adipiscing nunc.
+                            Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat
+                            felis consectetur id.
+                            Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong>
+                            imperdiet condimentum diam,
+                            eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque
+                            fermentum, ante ac felis consectetur id.
+                            Donec eget orci metusvivamus imperdiet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="headline">
+        <h2>Tab v3</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row tab-v3">
+                <div class="col-sm-3">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#home3" data-toggle="tab"><i class="fa fa-home"></i>Home</a></li>
+                        <li><a href="#profile3" data-toggle="tab"><i class="fa fa-cloud"></i>Profile</a></li>
+                        <li><a href="#messages3" data-toggle="tab"><i class="fa fa-comments"></i>messages</a></li>
+                        <li class="active"><a href="#settings3" data-toggle="tab"><i class="fa fa-gear"></i>Settings</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-9">
+                    <div class="tab-content">
+                        <div class="tab-pane fade" id="home3">
+                            <h4>Heading Home</h4>
+                            <p>
+                                Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                                orcimetus, ac adipiscing nunc.
+                                Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat
+                                felis consectetur id.
+                                Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum
+                                                                                                vivamus</strong>
+                                imperdiet condimentum diam,
+                                eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc.
+                                Pellentesque fermentum, ante ac felis consectetur id.
+                                Donec eget orci metusvivamus imperdiet.
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="profile3">
+                            <img class="pull-left m-a w-200" src="http://placehold.it/400x200">
+                            <h4>Heading Profile</h4>
+                            <p>
+                                Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                                orcimetus, ac adipiscing nunc.
+                                Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat
+                                felis consectetur id.
+                                Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum
+                                                                                                vivamus</strong>
+                                imperdiet condimentum diam,
+                                eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc.
+                                Pellentesque fermentum, ante ac felis consectetur id.
+                                Donec eget orci metusvivamus imperdiet.
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="messages3">
+                            <h4>Heading Messages</h4>
+                            <p class="clearfix"><img class="pull-right w-300 m-a" src="http://placehold.it/400x200">
+                                Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                                orcimetus, ac adipiscing nunc.
+                                Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat
+                                felis consectetur id.
+                                Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum
+                                                                                                vivamus</strong>
+                                imperdiet condimentum diam,
+                                eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc.
+                                Pellentesque fermentum, ante ac felis consectetur id.
+                                Donec eget orci metusvivamus imperdiet.
+                            </p>
+                        </div>
+                        <div class="tab-pane fade active in" id="settings3">
+                            <h4>Heading Setting</h4>
+                            <p>
+                                Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget
+                                orcimetus, ac adipiscing nunc.
+                                Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat
+                                felis consectetur id.
+                                Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum
+                                                                                                vivamus</strong>
+                                imperdiet condimentum diam,
+                                eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc.
+                                Pellentesque fermentum, ante ac felis consectetur id.
+                                Donec eget orci metusvivamus imperdiet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Tags v1</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tags-v1">
+                <ul class="list-inline">
+                    <li><a href="#">Hot</a></li>
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Featured</a></li>
+                    <li><a href="#">Latest Posts</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="headline">
+        <h2>Tags v2</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tags-v2">
+                <ul class="list-inline">
+                    <li><a href="#">Hot
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Featured</a></li>
+                    <li><a href="#">Latest Posts</a></li>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="headline">
+        <h2>Tags v3</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tags-v3">
+                <ul class="list-inline">
+                    <li><a href="#">Hot
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Featured</a></li>
+                    <li><a href="#">Latest Posts</a></li>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="headline">
+        <h2>Tags v4</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tags-v4">
+                <ul class="list-inline">
+                    <li><a href="#">Hot
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Featured</a></li>
+                    <li><a href="#">Latest Posts</a></li>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Panel</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    panel default
+                </div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dicta explicabo facere
+                    fuga harum
+                    illum in labore laborum, maiores nesciunt nisi optio quis recusandae, reiciendis tenetur,
+                    voluptatibus.
+                    Fugit, modi.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    panel primary
+                </div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dicta explicabo facere
+                    fuga harum
+                    illum in labore laborum, maiores nesciunt nisi optio quis recusandae, reiciendis tenetur,
+                    voluptatibus.
+                    Fugit, modi.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    panel success
+                </div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dicta explicabo facere
+                    fuga harum
+                    illum in labore laborum, maiores nesciunt nisi optio quis recusandae, reiciendis tenetur,
+                    voluptatibus.
+                    Fugit, modi.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    panel info
+                </div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dicta explicabo facere
+                    fuga harum
+                    illum in labore laborum, maiores nesciunt nisi optio quis recusandae, reiciendis tenetur,
+                    voluptatibus.
+                    Fugit, modi.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    panel danger
+                </div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis dicta explicabo facere
+                    fuga harum
+                    illum in labore laborum, maiores nesciunt nisi optio quis recusandae, reiciendis tenetur,
+                    voluptatibus.
+                    Fugit, modi.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Company</h2>
+    </div>
+
+    <div class="owl-carousel owl-carousel-v2">
+        <div class="item">
+            <img src="themes/wy-theme/assets/images/companies/01.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="themes/wy-theme/assets/images/companies/02.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="themes/wy-theme/assets/images/companies/03.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="themes/wy-theme/assets/images/companies/04.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="themes/wy-theme/assets/images/companies/05.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="themes/wy-theme/assets/images/companies/06.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="themes/wy-theme/assets/images/companies/07.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="themes/wy-theme/assets/images/companies/08.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="themes/wy-theme/assets/images/companies/09.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="themes/wy-theme/assets/images/companies/10.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Clients</h2>
+    </div>
+    <ul class="list-inline our-clients" id="effect-2">
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/inspiring.png" alt="">
+                <div class="img-hover">
+                    <h4>Inspiring</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/ucweb.png" alt="">
+                <div class="img-hover">
+                    <h4>UcWeb</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/clarks.png" alt="">
+                <div class="img-hover">
+                    <h4>Clarks</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/corepreserves.png" alt="">
+                <div class="img-hover">
+                    <h4>Core Preserves</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/finals.png" alt="">
+                <div class="img-hover">
+                    <h4>USL Champions</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/getaround.png" alt="">
+                <div class="img-hover">
+                    <h4>GetAround</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/baderbrau.png" alt="">
+                <div class="img-hover">
+                    <h4>Baderbrau</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/emirates.png" alt="">
+                <div class="img-hover">
+                    <h4>Emirates</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/fddw.png" alt="">
+                <div class="img-hover">
+                    <h4>Field Days</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/district-karaoke.png" alt="">
+                <div class="img-hover">
+                    <h4>District Karaoke</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/marianos.png" alt="">
+                <div class="img-hover">
+                    <h4>Mariano's</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/grifting-tree.png" alt="">
+                <div class="img-hover">
+                    <h4>The Grifting Tree</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/jaguar.png" alt="">
+                <div class="img-hover">
+                    <h4>Jaguar</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/hermes.png" alt="">
+                <div class="img-hover">
+                    <h4>Hermes</h4>
+                </div>
+            </figure>
+        </li>
+
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/national-geographic.png" alt="">
+                <div class="img-hover">
+                    <h4>National Geographic</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/much-more.png" alt="">
+                <div class="img-hover">
+                    <h4>Much More</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/hotiron.png" alt="">
+                <div class="img-hover">
+                    <h4>Hotiron</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/fred-perry.png" alt="">
+                <div class="img-hover">
+                    <h4>Fred Perry</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/bellfield.png" alt="">
+                <div class="img-hover">
+                    <h4>Bellfield</h4>
+                </div>
+            </figure>
+        </li>
+
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/austrian-airlines.png" alt="">
+                <div class="img-hover">
+                    <h4>Austrian Airlines</h4>
+                </div>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="themes/wy-theme/assets/images/clients/general-electric.png" alt="">
+                <div class="img-hover">
+                    <h4>General Electronic</h4>
+                </div>
+            </figure>
+        </li>
+    </ul>
+
+    <div class="headline">
+        <h2>jumbotron</h2>
+    </div>
+    <div class="jumbotron jumbotron-v1">
+        <div class="container">
+            <div class="clearfix">
+                <div class="header-container loaded">
+                    <div class="col-lg-7">
+                        <h1 class="hidden-xs">Lorem ipsum dolor</h1>
+                        <h2>consectetur adipisicing elit</h2>
+                        <p>
+                            Alias aperiam, expedita fugiat incidunt itaque nemo neque omnis optio placeat quas quo,
+                            recusandae unde veritatis voluptates.
+                        </p>
+
+                        <a href="#" class="btn btn-line-primary m-b">Quick Start</a>
+                        <a href="#" class="btn btn-primary m-b">More</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Owl carousel</h2>
+    </div>
+    <div class="owl-carousel owl-carousel-v1" id="owl-carousel-v1">
+        <div class="item">
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
+            <small>2017,04月 22 / by Root</small>
+        </div>
+        <div class="item">
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
+            <small>2017,04月 22 / by Root</small>
+        </div>
+        <div class="item">
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
+            <small>2017,04月 22 / by Root</small>
+        </div>
+        <div class="item">
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
+            <small>2017,04月 22 / by Root</small>
+        </div>
+        <div class="item">
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
+            <small>2017,04月 22 / by Root</small>
+        </div>
+        <div class="item">
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
+            <small>2017,04月 22 / by Root</small>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>News List</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+
+            <div class="row post-list m-b">
+                <div class="col-sm-4 hidden-xs">
+                    <img class="img-responsive" src="http://placehold.it/800x400" alt="">
+                </div>
+                <div class="col-sm-8 news-v3">
+                    <div class="buuug7-no-padding">
+                        <ul class="list-inline posted-info">
+                            <li>By buuug7</li>
+                            <li>In <a href="#">Twice</a></li>
+                            <li>Posted January 24, 2015</li>
+                        </ul>
+                        <h4><a href="#">Wonderful post “IMAGE”</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                           labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix m-b">
+                <hr>
+            </div>
+
+            <div class="row post-list m-b">
+                <div class="col-sm-12 news-v3">
+                    <div class="buuug7-no-padding">
+                        <ul class="list-inline posted-info">
+                            <li>By Root</li>
+                            <li>In <a href="#">Production</a></li>
+                            <li>Posted January 24, 2015</li>
+                        </ul>
+                        <h4><a href="#">Awesome post “VIDEO”</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                           labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix m-b">
+                <hr>
+            </div>
+
+            <div class="row post-list m-b">
+                <div class="col-sm-4 hidden-xs">
+                    <img class="img-responsive" src="http://placehold.it/800x400" alt="">
+                </div>
+                <div class="col-sm-8 news-v3">
+                    <div class="buuug7-no-padding">
+                        <ul class="list-inline posted-info">
+                            <li>By Root</li>
+                            <li>In <a href="#">Design</a></li>
+                            <li>Posted January 24, 2015</li>
+                        </ul>
+                        <h4><a href="#">Incredible standard post “IMAGE”</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                           labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix m-b">
+                <hr>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Alert</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="alert alert-danger">
+                <h4>Lorem ipsum dolor sit amet.</h4>
+                <button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>Title!</strong> Alert body ...
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="alert alert-success">
+                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
+                <button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>Title!</strong> Alert body ...
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="alert alert-warning">
+                <h3>Lorem ipsum dolor sit amet, consectetur.</h3>
+                <button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>Title!</strong> Alert body ...
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="alert alert-info">
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>Title!</strong> Alert body ...
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Easy block v1</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-sm-6 m-b">
+            <div class="easy-block-v1">
+                <div class="easy-block-v1-badge bg-color-primary">Tag</div>
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li class="rounded-x" data-target="#carousel-example-generic" data-slide-to="0"></li>
+                        <li class="rounded-x active" data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li class="rounded-x" data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item">
+                            <img alt="" src="http://placehold.it/800x400">
+                        </div>
+                        <div class="item active">
+                            <img alt="" src="http://placehold.it/800x400">
+                        </div>
+                        <div class="item">
+                            <img alt="" src="http://placehold.it/800x400">
+                        </div>
+                    </div>
+                </div>
+                <div class="overflow-h">
+                    <h3>电子商务入门基础教程</h3>
+                    <div class="star-vote pull-right">
+                        <ul class="list-inline">
+                            <li><i class="text-primary fa fa-star"></i></li>
+                            <li><i class="text-primary fa fa-star"></i></li>
+                            <li><i class="text-primary fa fa-star"></i></li>
+                            <li><i class="text-primary fa fa-star-half-o"></i></li>
+                            <li><i class="text-primary fa fa-star-o"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad at atque cumque delectus labore
+                    magnam modi non quos rem, sed?
+                </p>
+                <ul class="list-unstyled">
+                    <li><span class="text-primary">Post Time:</span> <span class="time small">2017-03-11</span></li>
+                </ul>
+                <a class="btn btn-primary btn-sm" href="#">View More</a>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 m-b">
+            <div class="easy-block-v1">
+                <div class="easy-block-v1-badge bg-color-success">Tag</div>
+                <div id="carousel-example-generic-1" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li class="rounded-x" data-target="#carousel-example-generic-1" data-slide-to="0"></li>
+                        <li class="rounded-x active" data-target="#carousel-example-generic-1" data-slide-to="1"></li>
+                        <li class="rounded-x" data-target="#carousel-example-generic-1" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item">
+                            <img alt="" src="http://placehold.it/800x400">
+                        </div>
+                        <div class="item active">
+                            <img alt="" src="http://placehold.it/800x400">
+                        </div>
+                        <div class="item">
+                            <img alt="" src="http://placehold.it/800x400">
+                        </div>
+                    </div>
+                </div>
+                <div class="overflow-h">
+                    <h3>电子商务入门基础教程</h3>
+                    <div class="star-vote pull-right">
+                        <ul class="list-inline">
+                            <li><i class="color-success fa fa-star"></i></li>
+                            <li><i class="color-success fa fa-star"></i></li>
+                            <li><i class="color-success fa fa-star"></i></li>
+                            <li><i class="color-success fa fa-star-half-o"></i></li>
+                            <li><i class="color-success fa fa-star-o"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad at atque cumque delectus labore
+                    magnam modi non quos rem, sed?
+                </p>
+                <ul class="list-unstyled">
+                    <li><span class="color-success">Post Time:</span> <span class="time small">2017-03-11</span></li>
+                </ul>
+                <a class="btn btn-success btn-sm" href="#">View More</a>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 m-b">
+            <div class="easy-block-v1">
+                <div class="easy-block-v1-badge bg-color-info">Tag</div>
+                <div id="carousel-example-generic-2" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li class="rounded-x" data-target="#carousel-example-generic-2" data-slide-to="0"></li>
+                        <li class="rounded-x active" data-target="#carousel-example-generic-2" data-slide-to="1"></li>
+                        <li class="rounded-x" data-target="#carousel-example-generic-2" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item">
+                            <img alt="" src="http://placehold.it/800x400">
+                        </div>
+                        <div class="item active">
+                            <img alt="" src="http://placehold.it/800x400">
+                        </div>
+                        <div class="item">
+                            <img alt="" src="http://placehold.it/800x400">
+                        </div>
+                    </div>
+                </div>
+                <div class="overflow-h">
+                    <h3>电子商务入门基础教程</h3>
+                    <div class="star-vote pull-right">
+                        <ul class="list-inline">
+                            <li><i class="color-info fa fa-star"></i></li>
+                            <li><i class="color-info fa fa-star"></i></li>
+                            <li><i class="color-info fa fa-star"></i></li>
+                            <li><i class="color-info fa fa-star-half-o"></i></li>
+                            <li><i class="color-info fa fa-star-o"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad at atque cumque delectus labore
+                    magnam modi non quos rem, sed?
+                </p>
+                <ul class="list-unstyled">
+                    <li><span class="color-info">Post Time:</span> <span class="time small">2017-03-11</span></li>
+                </ul>
+                <a class="btn btn-info btn-sm" href="#">View More</a>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 m-b">
+            <div class="easy-block-v1">
+                <div class="easy-block-v1-badge bg-color-danger">Tag</div>
+                <div id="carousel-example-generic-3" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li class="rounded-x" data-target="#carousel-example-generic-3" data-slide-to="0"></li>
+                        <li class="rounded-x active" data-target="#carousel-example-generic-3" data-slide-to="1"></li>
+                        <li class="rounded-x" data-target="#carousel-example-generic-3" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item">
+                            <img alt="" src="http://placehold.it/800x400">
+                        </div>
+                        <div class="item active">
+                            <img alt="" src="http://placehold.it/800x400">
+                        </div>
+                        <div class="item">
+                            <img alt="" src="http://placehold.it/800x400">
+                        </div>
+                    </div>
+                </div>
+                <div class="overflow-h">
+                    <h3>电子商务入门基础教程</h3>
+                    <div class="star-vote pull-right">
+                        <ul class="list-inline">
+                            <li><i class="color-danger fa fa-star"></i></li>
+                            <li><i class="color-danger fa fa-star"></i></li>
+                            <li><i class="color-danger fa fa-star"></i></li>
+                            <li><i class="color-danger fa fa-star-half-o"></i></li>
+                            <li><i class="color-danger fa fa-star-o"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad at atque cumque delectus labore
+                    magnam modi non quos rem, sed?
+                </p>
+                <ul class="list-unstyled">
+                    <li><span class="color-danger">Post Time:</span> <span class="time small">2017-03-11</span></li>
+                </ul>
+                <a class="btn btn-danger btn-sm" href="#">View More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Easy block v2</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-sm-6 m-b">
+            <div class="easy-block-v2">
+                <div class="easy-bg-v2 bg-color-danger">New</div>
+                <img alt="" src="http://placehold.it/800x400">
+                <h4>UBS Headquarter Zürich</h4>
+                <ul class="list-unstyled">
+                    <li><span class="color-danger">Posted Time:</span> <span class="small">2017-4-22 18:22</span></li>
+                </ul>
+                <a class="btn btn-danger btn-sm" href="#">View More</a>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 m-b">
+            <div class="easy-block-v2">
+                <div class="easy-bg-v2 bg-color-warning">New</div>
+                <img alt="" src="http://placehold.it/800x400">
+                <h4>UBS Headquarter Zürich</h4>
+                <ul class="list-unstyled">
+                    <li><span class="color-warning">Posted Time:</span> <span class="small">2017-4-22</span></li>
+                </ul>
+                <a class="btn btn-warning btn-sm" href="#">View More</a>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 m-b">
+            <div class="easy-block-v2">
+                <div class="easy-bg-v2 bg-color-primary">New</div>
+                <img alt="" src="http://placehold.it/800x400">
+                <h4>UBS Headquarter Zürich</h4>
+                <ul class="list-unstyled">
+                    <li><span class="color-primary">Posted Time:</span> <span class="small">2017-4-22</span></li>
+                </ul>
+                <a class="btn btn-primary btn-sm" href="#">View More</a>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 m-b">
+            <div class="easy-block-v2">
+                <div class="easy-bg-v2 bg-color-success">New</div>
+                <img alt="" src="http://placehold.it/800x400">
+                <h4>UBS Headquarter Zürich</h4>
+                <ul class="list-unstyled">
+                    <li><span class="color-success">Posted Time:</span> <span class="small">2017-4-22</span></li>
+                </ul>
+                <a class="btn btn-success btn-sm" href="#">View More</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="headline">
+        <h2>Buttons</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6 m-b">
+            <a class="btn btn-block btn-default" type="button">btn block default</a>
+            <a class="btn btn-block btn-primary" type="button">btn block primary</a>
+            <a class="btn btn-block btn-success" type="button">btn block success</a>
+            <a class="btn btn-block btn-info" type="button">btn block info</a>
+            <a class="btn btn-block btn-danger" type="button">btn block danger</a>
+            <a class="btn btn-block btn-warning" type="button">btn block warning</a>
+        </div>
+        <div class="col-md-12">
+            <!-- btn normal-->
+            <a class="btn btn-default m-b m-r" type="button">btn default</a>
+            <a class="btn btn-primary m-b m-r" type="button">btn primary</a>
+            <a class="btn btn-success m-b m-r" type="button">btn success</a>
+            <a class="btn btn-info m-b m-r" type="button">btn info</a>
+            <a class="btn btn-danger m-b m-r" type="button">btn danger</a>
+            <a class="btn btn-warning m-b m-r" type="button">btn warning</a>
+        </div>
+        <div class="col-md-12">
+            <!-- btn large-->
+            <a class="btn btn-default btn-lg m-b m-r" type="button">btn large default</a>
+            <a class="btn btn-primary btn-lg m-b m-r" type="button">btn large primary</a>
+            <a class="btn btn-success btn-lg m-b m-r" type="button">btn large success</a>
+            <a class="btn btn-info btn-lg m-b m-r" type="button">btn large info</a>
+            <a class="btn btn-danger btn-lg m-b m-r" type="button">btn large danger</a>
+            <a class="btn btn-warning btn-lg m-b m-r" type="button">btn large warning</a>
+        </div>
+        <div class="col-md-12">
+            <!-- btn small-->
+            <a class="btn btn-default btn-sm m-b m-r" type="button">btn small default</a>
+            <a class="btn btn-primary btn-sm m-b m-r" type="button">btn small primary</a>
+            <a class="btn btn-success btn-sm m-b m-r" type="button">btn small success</a>
+            <a class="btn btn-info btn-sm m-b m-r" type="button">btn small info</a>
+            <a class="btn btn-danger btn-sm m-b m-r" type="button">btn small danger</a>
+            <a class="btn btn-warning btn-sm m-b m-r" type="button">btn small warning</a>
+        </div>
+        <div class="col-md-12">
+            <!-- btn line-->
+            <a class="btn btn-line btn-line-default m-b m-r" type="button">btn line default</a>
+            <a class="btn btn-line btn-line-primary m-b m-r" type="button">btn line primary</a>
+            <a class="btn btn-line btn-line-success m-b m-r" type="button">btn line success</a>
+            <a class="btn btn-line btn-line-info m-b m-r" type="button">btn line info</a>
+            <a class="btn btn-line btn-line-danger m-b m-r" type="button">btn line danger</a>
+            <a class="btn btn-line btn-line-warning m-b m-r" type="button">btn line warning</a>
+        </div>
+        <div class="col-md-12">
+            <!-- btn disabled-->
+            <a class="btn btn-default disabled m-b m-r" type="button">btn disabled default</a>
+            <a class="btn btn-primary disabled m-b m-r" type="button">btn disabled primary</a>
+            <a class="btn btn-success disabled m-b m-r" type="button">btn disabled success</a>
+            <a class="btn btn-info disabled m-b m-r" type="button">btn disabled info</a>
+            <a class="btn btn-danger disabled m-b m-r" type="button">btn disabled danger</a>
+            <a class="btn btn-warning disabled m-b m-r" type="button">btn disabled warning</a>
+        </div>
+        <div class="col-md-12">
+            <!-- btn socials-->
+            <a class="btn btn-social-icon btn-github m-b m-r" type="button"><i class="fa fa-github"></i></a>
+            <a class="btn btn-social-icon btn-qq m-b m-r" type="button"><i class="fa fa-qq"></i></a>
+            <a class="btn btn-social-icon btn-wechat m-b m-r" type="button"><i class="fa i fa fa-weixin"></i></a>
+            <a class="btn btn-social-icon btn-weibo m-b m-r" type="button"><i class="fa i fa fa-weibo"></i></a>
+            <a class="btn btn-social-icon btn-tq m-b m-r"><i>TQ</i></a>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-block btn-social btn-github" type="button"><i class="fa i fa fa-github"></i>Sign in withgithub</a>
+            <a class="btn btn-block btn-social btn-qq" type="button"><i class="fa i fa fa-qq"></i>Sign in with qq</a>
+            <a class="btn btn-block btn-social btn-wechat" type="button"><i class="fa i fa fa-wechat"></i>Sign in with wechat</a>
+            <a class="btn btn-block btn-social btn-weibo" type="button"><i class="fa i fa fa-weibo"></i>Sign in with weibo</a>
+        </div>
+        <div class="col-md-6">
+            <div class="btn-group m-b m-r">
+                <button class="btn btn-default">Action</button>
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="btn-group m-b m-r">
+                <button class="btn btn-primary">Action</button>
+                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="btn-group m-b m-r">
+                <button class="btn btn-success">Action</button>
+                <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="btn-group m-b m-r">
+                <button class="btn btn-info">Action</button>
+                <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="btn-group m-b m-r">
+                <button class="btn btn-danger">Action</button>
+                <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="btn-group m-b m-r">
+                <button class="btn btn-warning">Action</button>
+                <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Headline</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="headline">
+                <h2>headline default</h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline headline-primary">
+                <h2>headline primary</h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline headline-success">
+                <h2>headline success</h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline headline-info">
+                <h2>headline info</h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline headline-danger">
+                <h2>headline danger</h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline headline-warning">
+                <h2>headline warning</h2>
+            </div>
+        </div>
+    </div>
+    <div class="headline">
+        <h2>Headline v2</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="headline-v2">
+                <h2>headline v2 default</h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v2 headline-v2-primary">
+                <h2>headline v2 primary</h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v2 headline-v2-success">
+                <h2>headline v2 success</h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v2 headline-v2-info">
+                <h2>headline v2 info</h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v2 headline-v2-danger">
+                <h2>headline v2 danger</h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v2 headline-v2-warning">
+                <h2>headline v2 warning</h2>
+            </div>
+        </div>
+    </div>
+    <div class="headline">
+        <h2>Headline v3</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="headline-v3">
+                <h2>headline v3 default</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v3 headline-v3-primary">
+                <h2>headline v3 primary</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v3 headline-v3-success">
+                <h2>headline v3 success</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v3 headline-v3-info">
+                <h2>headline v3 info</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v3 headline-v3-danger">
+                <h2>headline v3 danger</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headline-v3 headline-v3-warning">
+                <h2>headline v3 warning</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h2>Callouts</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="callout">
+                <h4>callout default</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="callout callout-danger">
+                <h4>callout danger</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="callout callout-warning">
+                <h4>callout warning</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="callout callout-success">
+                <h4>callout success</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="callout callout-info">
+                <h4>callout info</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="callout callout-yellow">
+                <h4>callout yellow</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                   et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% put scripts %}
+<script>
+    // polar area chart
+    var ctxPolarAreaChart = document.getElementById('polar-area-chart');
+    var polarAreaChartData = {
+        datasets: [{
+            data: [110, 160, 70, 130, 140, 120],
+            backgroundColor: ["#3c8dbc", "#dd4b39", "#00a65a", "#00c0ef", "#f39c12", "#0073b7"],
+            label: 'My dataset' // for legend
+        }],
+        labels: ["一月份", "二月份", "三月份", "四月份", "五月份", "六月份"]
+    };
+    var polarAreaChart = new Chart(ctxPolarAreaChart, {
+        type: 'polarArea',
+        data: polarAreaChartData
+    });
+
+
+    // pie chart
+    var ctxPieChart = document.getElementById('pie-chart');
+    var pieChartDate = polarAreaChartData;
+    var pieChart = new Chart(ctxPieChart, {
+        type: 'pie',
+        data: pieChartDate
+    });
+
+    // radar chart
+    var ctxRadarChart = document.getElementById('radar-chart');
+    var radarChartData = {
+        labels: ["连杀", "补兵", "清野", "经济", "输出", "承受"],
+        datasets: [
+            {
+                label: "皮城女警",
+                backgroundColor: "rgba(179,181,198,0.2)",
+                borderColor: "rgba(179,181,198,1)",
+                pointBackgroundColor: "rgba(179,181,198,1)",
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: "rgba(179,181,198,1)",
+                data: [6, 9, 1, 7, 6, 2]
+            },
+            {
+                label: "蛮族之王",
+                backgroundColor: "rgba(255,99,132,0.2)",
+                borderColor: "rgba(255,99,132,1)",
+                pointBackgroundColor: "rgba(255,99,132,1)",
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: "rgba(255,99,132,1)",
+                data: [6, 9, 2, 8, 6, 9]
+            }
+        ]
+    };
+    var radarChart = new Chart(ctxRadarChart, {
+        type: 'radar',
+        data: radarChartData
+    });
+
+    // bar chart
+    var ctxBarChart = document.getElementById('bar-chart');
+    var barChartData = {
+        datasets: [
+            {
+                label: '2016前半年销售统计',// for legend
+                borderWidth: 1,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                data: [110, 160, 70, 130, 140, 120]
+            }
+        ],
+        labels: ["一月份", "二月份", "三月份", "四月份", "五月份", "六月份"]
+    };
+    var barChartOptions = {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    };
+    var barChart = new Chart(ctxBarChart, {
+        type: 'bar',
+        data: barChartData,
+        options: barChartOptions
+    });
+
+    // line chart
+    var ctxLineChart = document.getElementById('line-chart');
+    var lineChartData = {
+        labels: ["一月份", "二月份", "三月份", "四月份", "五月份", "六月份"],
+        datasets: [
+            {
+                label: "2016前半年销售统计",
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: "rgba(75,192,192,0.4)",
+                borderColor: "rgba(75,192,192,1)",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "rgba(75,192,192,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [110, 160, 70, 130, 140, 120],
+                spanGaps: false,
+            }
+        ]
+    };
+    var lineChartOptions = {};
+    var lineChart = new Chart(ctxLineChart, {
+        type: 'line',
+        data: lineChartData,
+        options: lineChartOptions
+    });
+
+    // doughnut chart
+    var ctxDoughnutChart = document.getElementById('doughnut-chart');
+    var doughnutChartData = polarAreaChartData;
+    var doughnutOptions = {};
+    var doughnutChart = new Chart(ctxDoughnutChart, {
+        type: 'doughnut',
+        data: doughnutChartData,
+        options: doughnutChartData
+    });
+
+
+    $('.owl-carousel-v2').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 6
+            }
+        }
+    });
+
+    $('.owl-carousel-v1').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 4
+            }
+        }
+    });
+
+    $(".jumbotron-v1 .container > div").backstretch([
+        "themes/wy-theme/assets/images/home-header-bg-2.jpg",
+        "themes/wy-theme/assets/images/home-header-bg-3.jpg",
+    ], {duration: 5000});
+
+    $('#countdown').countdown('2017-10-01', function (event) {
+        var $this = $(this).html(event.strftime(''
+            + '<span>%D</span> 天 '
+            + '<span>%H</span> 小时 '
+            + '<span>%M</span> 分钟 '
+            + '<span>%S</span> 秒'));
+    });
+    $('.coming-soon-v1').backstretch([
+        "themes/wy-theme/assets/images/bg/1.jpg",
+        "themes/wy-theme/assets/images/bg/3.jpg",
+    ]);
+
+    $('#countdown2').countdown('2017-10-01', function (event) {
+        var $this = $(this).html(event.strftime(''
+            + '<span>%D</span> 天 '
+            + '<span>%H</span> 小时 '
+            + '<span>%M</span> 分钟 '
+            + '<span>%S</span> 秒'));
+    });
+</script>
+{% endput %}
