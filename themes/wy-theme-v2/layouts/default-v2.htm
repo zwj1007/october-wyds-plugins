@@ -16,29 +16,9 @@ security = "all"
         {% styles %}
     </head>
     <body>
-        <div id="layout-header">
-            {% partial 'site/header-v2' %}
-        </div>
 
         <!-- Content -->
-        <section id="layout-content">
-            <div class="main">
-                {% flash %}
-                <section class="box toast">
-                    <div class="alert alert-{{ type == 'error' ? 'danger' : type }}" role="alert">
-                        {{ message }}
-                        <button type="button" class="close float-right" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    </div>
-                </section>
-                {% endflash %}
-                {% page %}
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer id="layout-footer">
-            {% partial 'site/footer' %}
-        </footer>
+        {% page %}
 
         <!-- Scripts -->
         <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>

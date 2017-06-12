@@ -63,7 +63,9 @@ $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByC
                     <span class="margin-left-right-10">{{ post.views ? post.views: 0 }} 浏览次数</span>
                 </i>
             </div>
-            <u></u>
+            {% if post.tags.count %}
+            <u class="{{ post.tags[0].slug}}"><i class="xb">{{ post.tags[0].name}}</i></u>
+            {% endif %}
         </div>
         {% endfor %}
     </div>

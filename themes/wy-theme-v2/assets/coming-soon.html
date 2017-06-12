@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coming soon</title>
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/app.css">
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .coming-soon {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .coming-soon:before {
+            top: 0;
+            left: 0;
+            bottom: 30px;
+            z-index: -1;
+            width: 100%;
+            content: " ";
+            height: 100%;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .coming-soon-inner {
+            position: absolute;
+            width: 800px;
+            color: #fff;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: transparent;
+            padding: 20px;
+        }
+
+        .coming-soon-inner p {
+            margin: 15px 0;
+            font-size: 18px;
+        }
+
+        .coming-soon-inner .go-back-button {
+            padding: 5px 10px;
+            border: 1px solid #fff;
+            color: #fff;
+            background: transparent;
+        }
+
+        .coming-soon-inner .go-back-button:hover {
+            background: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+<div class="coming-soon">
+    <div class="coming-soon-inner">
+        <h1>即将来临</h1>
+        <p>
+            该功能正在建设当中 , 预计将在以下倒计时结束之前上线该功能 , 敬请期待 ! (❁´◡`❁)*✲ﾟ*
+        </p>
+        <p id="countdown" class="count"></p>
+        <p>
+            <a href="javascript:history.go(-1)" class="go-back-button">返 回</a>
+        </p>
+    </div>
+</div>
+
+
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
+<script>
+    $(".coming-soon").backstretch([
+        'images/coming-soon-2.jpg',
+        'images/coming-soon-3.jpg',
+    ], {
+        duration: 3000
+    });
+
+    $('#countdown').countdown('2017-10-01', function (event) {
+        var $this = $(this).html(event.strftime(''
+            + '<span>%D</span> 天 '
+            + '<span>%H</span> 小时 '
+            + '<span>%M</span> 分钟 '
+            + '<span>%S</span> 秒'));
+    });
+</script>
+</body>
+</html>
