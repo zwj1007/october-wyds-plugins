@@ -153,8 +153,7 @@
     .cbp-l-grid-work-title {
       border-bottom: 1px solid darken(#F4F4F4, 5%);
     }
-    u {
-      background: url("../images/xspx/title1.png");
+    u{
       width: 100px;
       height: 100px;
       position: absolute;
@@ -162,27 +161,21 @@
       left: -8px;
       z-index: 1;
     }
+    u.hot {
+      background: url("../images/xspx/hot.png");
+    }
+    u.recommend {
+      background-image: url("../images/xspx/recommend.png");
+    }
     i.xb {
-      transform: rotate(-45deg) translateX(-21px) translateY(16px);
+      //transform: rotate(-45deg) translateX(-21px) translateY(16px);
+      transform: rotate(-45deg) translateX(-2px) translateY(28px);
+      letter-spacing:10px;
       color: #ffffff;
       display: inline-block;
     }
-    .u-1 {
-      background-image: url("../images/xspx/title2.png");
 
-    }
-    .u-2 {
-      background-image: url("../images/xspx/title3.png");
-    }
-    .u-3 {
-      background-image: url("../images/xspx/title4.png");
-    }
-    .u-4 {
-      background-image: url("../images/xspx/title5.png");
-    }
-    .u-5 {
-      background-image: url("../images/xspx/title6.png");
-    }
+
   }
   //更多
   .cbp-l-loadMore-button .cbp-l-loadMore-link {

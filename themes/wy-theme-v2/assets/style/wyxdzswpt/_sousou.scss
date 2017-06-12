@@ -37,6 +37,7 @@
 
 }
 
+/*搜索图片样式*/
 .sousou1 {
   .sou-list li {
     border-top: 1px #fff solid;
@@ -53,13 +54,14 @@
   }
 }
 
+/*无搜索信息样式*/
 .souNo {
   .noPagesou {
-    height: 50%;
     background: url("../images/sou-no.png") no-repeat left center !important;
     .sou-leadP {
       padding-left: 48%;
-      padding-top: 15%;
+      padding-top: 10%;
+      padding-bottom: 15%;
       line-height: 33px;
       .sou-txt {
         color: #f85151;
