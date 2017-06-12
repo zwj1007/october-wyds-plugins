@@ -1,23 +1,33 @@
 @charset "UTF-8";
 .come {
-  background: #000000;
-  .come-back-img {
-    background-image: url("../images/come/bg_glow.png");
+  background: rgba(0, 0, 0, 0.89);
+  .coming-soon {
+    width: 100%;
     height: 100%;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 100%;
-    .back-img-car {
-      position: absolute;
-      width: 1500px;
-      height: 800px;
-      background-image: url("../images/come/car.png");
-      margin-top: 80px;
-    }
-    .content {
+    position: relative;
+  }
+  .coming-soon:before {
+    top: 0;
+    left: 0;
+    bottom: 30px;
+    z-index: -1;
+    width: 100%;
+    content: " ";
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .content {
       line-height: 45px;
-      padding-top: 100px;
-      color: #ffffff;
+      position: absolute;
+      color: #fff;
+      min-width: 300px;
+      text-align: center;
+      top: 38%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: transparent;
+      padding: 20px;
       h1 {
         font-size: 45px;
         text-transform: uppercase;
@@ -25,6 +35,7 @@
       }
       p {
         font-size: 18px;
+        margin: 15px 0;
       }
       .count span {
         font-size: 35px;
@@ -42,13 +53,6 @@
         //       box-shadow: 0 2px 50px 0 rgb(208, 23, 23);
       }
     }
-    .back-img-glow {
-      position: relative;
-      background-image: url("../images/come/glow.png");
-      height: 800px;
-    }
-  }
-
 }
 
 .wy-audit {

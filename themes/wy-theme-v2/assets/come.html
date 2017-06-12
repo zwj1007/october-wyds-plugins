@@ -8,29 +8,40 @@
 </head>
 <body>
 <div class="come">
-    <div class="come-back-img">
-        <!-- <img src="images/come/bg_glow.png" alt="">-->
-        <div class="back-img-car">
-
-        </div>
-
-        <div class="back-img-glow">
-            <div class="content">
-                <h1>即将来临</h1>
-                <p>
-                    该功能正在建设当中 , 预计将在以下倒计时结束之前上线该功能 , 敬请期待 ! (❁´◡`❁)*✲ﾟ*
-                </p>
-                <p id="countdown" class="count"><span>134</span> 天 <span>12</span> 小时 <span>38</span> 分钟 <span>40</span>
-                    秒
-                </p>
-                <p>
-                    <a href="login.html" class="btn ">返 回</a>
-                </p>
-            </div>
+    <div class="coming-soon">
+        <div class="content coming-soon-inner">
+            <h1>即将来临</h1>
+            <p>
+                该功能正在建设当中 , 预计将在以下倒计时结束之前上线该功能 , 敬请期待 ! (❁´◡`❁)*✲ﾟ*
+            </p>
+            <p id="countdown" class="count"></p>
+            <p>
+                <a href="javascript:history.go(-1)" class="go-back-button btn">返 回</a>
+            </p>
         </div>
     </div>
 </div>
 
-
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
+<script>
+    $(".coming-soon").backstretch([
+        "images/come/4.png",
+        "images/come/2.png",
+        "images/come/1.png",
+        "images/come/3.png"
+    ], {
+        fade: 2000,
+        duration: 2000
+    });
+    $('#countdown').countdown('2017-10-01', function (event) {
+        var $this = $(this).html(event.strftime(''
+                + '<span>%D</span> 天 '
+                + '<span>%H</span> 小时 '
+                + '<span>%M</span> 分钟 '
+                + '<span>%S</span> 秒'));
+    });
+</script>
 </body>
 </html>
