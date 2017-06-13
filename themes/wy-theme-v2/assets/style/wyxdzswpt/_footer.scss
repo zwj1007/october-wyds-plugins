@@ -8,6 +8,7 @@ footer {
   color: $nav-color;
   ul {
     width: $page-width;
+    height: 220px;
     overflow: hidden;
     margin: 0 auto;
     li {
@@ -18,8 +19,11 @@ footer {
       img.footer1-img {
         width: 180px;
       }
-    }
+      img.footer1-wxH{
+        width: 130px;
 
+      }
+    }
     li.footer3 {
       font-size: 22px;
       color: #758995;
