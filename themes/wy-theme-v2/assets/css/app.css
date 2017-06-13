@@ -2363,6 +2363,33 @@ input {
     padding: 10px 40px;
     margin: 4px auto; }
 
+.suer-setting .mainRight {
+  background: url("../images/user/setting.png") no-repeat; }
+  .suer-setting .mainRight .content {
+    padding: 10% 0 15% 28%;
+    line-height: 45px;
+    min-width: 300px;
+    text-align: center; }
+    .suer-setting .mainRight .content h1 {
+      font-size: 45px;
+      text-transform: uppercase;
+      margin: 25px 0; }
+    .suer-setting .mainRight .content p {
+      font-size: 18px;
+      margin: 15px 0; }
+    .suer-setting .mainRight .content .count span {
+      font-size: 35px;
+      font-weight: normal;
+      font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+      padding: 5px 10px; }
+    .suer-setting .mainRight .content p .btn {
+      color: #fff;
+      background: #ff4400;
+      border: 1px solid rgba(247, 194, 194, 0.27);
+      padding: 10px 20px;
+      margin-left: 25px;
+      border-radius: 60px; }
+
 .xqfb .xqfb-title a {
   margin-right: 20px;
   font-size: 16px; }
@@ -2546,7 +2573,6 @@ input {
     top: 38%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: transparent;
     padding: 20px; }
     .come .content h1 {
       font-size: 45px;
