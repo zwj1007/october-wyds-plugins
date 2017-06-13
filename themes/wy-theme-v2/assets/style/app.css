@@ -686,6 +686,7 @@ footer {
   color: #fff; }
   footer ul {
     width: 1120px;
+    height: 220px;
     overflow: hidden;
     margin: 0 auto; }
     footer ul li {
@@ -695,6 +696,8 @@ footer {
       width: 373.33333px; }
       footer ul li img.footer1-img {
         width: 180px; }
+      footer ul li img.footer1-wxH {
+        width: 130px; }
     footer ul li.footer3 {
       font-size: 22px;
       color: #758995; }
