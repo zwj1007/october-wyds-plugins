@@ -294,3 +294,40 @@
   }
 
 }
+
+//设置
+.suer-setting {
+  .mainRight {
+    background: url("../images/user/setting.png") no-repeat;
+    .content {
+      padding: 10% 0 15% 28%;
+      line-height: 45px;
+      min-width: 300px;
+      text-align: center;
+      h1 {
+        font-size: 45px;
+        text-transform: uppercase;
+        margin: 25px 0;
+      }
+      p {
+        font-size: 18px;
+        margin: 15px 0;
+      }
+      .count span {
+        font-size: 35px;
+        font-weight: normal;
+        font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+        padding: 5px 10px;
+      }
+      p .btn {
+        color: #fff;
+        background: rgb(255, 68, 0);
+        border: 1px solid rgba(247, 194, 194, 0.27);
+        padding: 10px 20px;
+        margin-left: 25px;
+        border-radius: 60px;
+
+      }
+    }
+  }
+}
