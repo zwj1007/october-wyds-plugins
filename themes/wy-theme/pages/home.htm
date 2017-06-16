@@ -7,16 +7,16 @@ function onStart()
 $this->addJs('https://cdn.bootcss.com/jquery-backstretch/2.0.4/jquery.backstretch.min.js');
 
 // 推荐 特色
-$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(8);
+$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(4);
 
 // 电商动态
-$this['dianShangDongTai'] = \Buuug7\News\Models\Post::displayByCategory('dian-shang-dong-tai',8);
+$this['dianShangDongTai'] = \Buuug7\News\Models\Post::displayByCategory('dian-shang-dong-tai',4);
 
 // 政策解读
-$this['zhenCeJieDu'] = \Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie-du',8);
+$this['zhenCeJieDu'] = \Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie-du',4);
 
 // 通知公告
-$this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',8);
+$this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',4);
 
 // 推荐课程
 $this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],8);

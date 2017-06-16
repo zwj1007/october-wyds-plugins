@@ -40,7 +40,7 @@ $this['categories']=\Buuug7\Courses\Models\Category::getNested();
                 {% if child.image %}
                 <img src="{{ child.image|media }}" style="max-width: 100%" alt="">
                 {% else %}
-                <img src="http://placehold.it/800x400?text=没有缩略图" alt="">
+                <img src="http://placehold.it/800x400?text=No Image" alt="">
                 {% endif %}
                 <div class="caption">
                     <h4>{{ child.name }}</h4>
