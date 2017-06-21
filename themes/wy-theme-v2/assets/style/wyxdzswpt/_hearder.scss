@@ -142,6 +142,10 @@ header {
       }
       li:hover {
         background: $nav-hover;
+        a {
+          color: #ffffff;
+          text-decoration:none;
+        }
       }
     }
   }
