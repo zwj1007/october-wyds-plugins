@@ -156,7 +156,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                 <li>
                     <ol>
                         {% for post in chunk %}
-                        <li><a href="/courses/course/{{ post.index }}"><span>{{ post.title }}</span></a></li>
+                        <li><a href="/courses/course/{{ post.id }}"><span>{{ post.title }}</span></a></li>
                         {% endfor %}
                     </ol>
                 </li>
