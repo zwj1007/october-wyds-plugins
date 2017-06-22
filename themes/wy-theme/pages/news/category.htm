@@ -63,11 +63,11 @@ $this['nestedCategory']=\Buuug7\News\Models\Category::where('slug',$categorySlug
                 {% for post in latestPosts %}
                 <li class="m-b">
                     <h3>
-                        <a class="color-444" href="/news/post/{{ post.slug }}">
+                        <a class="color-444" href="/news/post/{{ post.id }}">
                             {{ str_limit(post.title, 60, '...') }}
                         </a>
                     </h3>
-                    <small class="color-777">{{ post.published_at|date('Y,m月 d')}} / by {{ post.user.first_name }}</small>
+                    <small class="color-777">{{ post.published_at|date('Y,m月 d')}} /  {{ post.user.first_name }}</small>
                 </li>
                 {% endfor %}
             </ul>
@@ -82,12 +82,12 @@ $this['nestedCategory']=\Buuug7\News\Models\Category::where('slug',$categorySlug
                 {% for post in featuredPosts %}
                 <li class="m-b">
                     <h3>
-                        <a class="color-444" href="/news/post/{{ post.slug }}">
+                        <a class="color-444" href="/news/post/{{ post.id }}">
                             {{ str_limit(post.title, 60, '...') }}
                         </a>
                     </h3>
                     <small class="color-777">
-                        {{ post.published_at|date('Y,m月 d')}} / by {{ post.user.first_name }}
+                        {{ post.published_at|date('Y,m月 d')}} / {{ post.user.first_name }}
                     </small>
                 </li>
                 {% endfor %}

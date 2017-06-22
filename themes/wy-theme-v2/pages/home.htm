@@ -48,7 +48,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                 <ul>
                     {% for post in dianShangDongTai %}
                     <li>
-                        <a href="/news/post/{{ post.slug }}" target="_blank"><span>{{ post.title }}</span></a>
+                        <a href="/news/post/{{ post.id }}" target="_blank"><span>{{ post.title }}</span></a>
                         <span class="time">{{ post.published_at|date('Y-m-d') }}</span>
                     </li>
                     {% endfor %}
@@ -80,7 +80,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             <ul class="list">
                 {% for post in featuredPosts %}
                 <li>
-                    <a href="/news/post/{{ post.slug }}"><img src="{{ post.image|media }}" alt="{{ post.title }}"></a>
+                    <a href="/news/post/{{ post.id }}"><img src="{{ post.image|media }}" alt="{{ post.title }}"></a>
                     <div class="title"><p>{{ post.title }}</p></div>
                 </li>
                 {% endfor %}
@@ -100,7 +100,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             {% for post in chunk %}
             {% if loop.index == 1 %}
             <li>
-                <a href="/news/post/{{ post.slug }}">
+                <a href="/news/post/{{ post.id }}">
                     {% if post.image %}
                     <img class="float-left" src="{{ post.image|media }}" alt="">
                     {% else %}
