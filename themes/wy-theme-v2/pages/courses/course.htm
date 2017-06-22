@@ -114,7 +114,7 @@ if($id){
         <ul>
             {% for post in post.relatedPosts %}
             <li>
-                <a href="/courses/course/{{ post.slug }}" target="_blank">
+                <a href="/courses/course/{{ post.id }}" target="_blank">
                     <img src="{{ post.image|media }}" alt="">
                 </a>
                 <p><a href="/courses/course/{{ post.id }}">{{ post.title }}</a></p>

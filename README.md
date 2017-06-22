@@ -35,7 +35,7 @@ october plugins
 + ~~用户中心~~
 + ~~搜索功能~~
 + ~~接入天奇用户中心~~
-+ 简化新闻跟课程组件中部分功能(half)
++ ~~简化新闻跟课程组件中部分功能~~
 + qq互联
 + 微信登录接入
 + 微信开放平台
@@ -43,6 +43,7 @@ october plugins
 + 课程模型增加评论
 + 公司模型增加评论
 + 部分插件没有完全本地化,有待翻译
++ 邮件模板翻译
 
 #### 其他
 [其他说明](https://github.com/gansutianqi/october-wyds-plugins/blob/master/docs/1.md)
