@@ -379,6 +379,9 @@ header {
           color: #fff; }
       header nav ul li:hover {
         background: #EC2E2C; }
+        header nav ul li:hover a {
+          color: #ffffff;
+          text-decoration: none; }
 
 .dszx {
   height: 370px; }
@@ -838,9 +841,12 @@ footer {
       .lanmu .list-right .list-right-v1 .list-post1 .list-post-body {
         margin-left: 10px; }
 
+.dszx-content-right {
+  width: 800px; }
+
 .dszx-content {
   width: 800px;
-  text-align: left;
+  float: left;
   box-shadow: 1px 2px 20px 1px #CCCCCC;
   border: 1px solid #ededed;
   margin: 0 0 20px 0;
@@ -863,6 +869,131 @@ footer {
     /*  margin: 0 auto;*/
     max-width: 100%;
     padding-bottom: 15px; }
+
+.comment_tontainer {
+  height: auto;
+  float: left;
+  box-shadow: 1px 2px 20px 1px #CCCCCC;
+  border: 1px solid #ededed;
+  margin: 0 0 20px 0;
+  padding: 5px 15px 10px 15px;
+  width: 100%; }
+  .comment_tontainer .comment_title {
+    line-height: 40px;
+    color: #FF6600;
+    text-align: left;
+    background-image: url(../images/fwsc/comment-title.png);
+    background-size: 2rem 2rem;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 35px; }
+  .comment_tontainer .comment_textarea {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    color: #464646;
+    border: 1px solid #FF6600;
+    border-bottom: 0; }
+  .comment_tontainer .comment-frame {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    line-height: 50px;
+    text-align: center;
+    height: 45px;
+    color: #c1bfbf;
+    border: 1px solid #FF6600;
+    margin-top: -4px;
+    border-top: 1px dashed #e2e2e2; }
+    .comment_tontainer .comment-frame .comment_issue {
+      line-height: 50px;
+      text-align: center;
+      float: right;
+      width: 60px;
+      color: #FF6600;
+      cursor: pointer;
+      background-image: url("../images/fwsc/comment-fb.png");
+      background-repeat: no-repeat;
+      background-position: center; }
+    .comment_tontainer .comment-frame .comment_issue:hover {
+      background-image: url(../images/fwsc/comment-fb1.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      color: white; }
+  .comment_tontainer .new_comment_container {
+    float: left;
+    width: 100%;
+    margin-top: 20px; }
+    .comment_tontainer .new_comment_container .new_comment_title {
+      width: 12%;
+      float: left;
+      height: 30px;
+      text-align: center;
+      border-left: 1px solid #FF6600;
+      border-right: 1px solid #FF6600;
+      border-top: 1px solid #FF6600;
+      font-size: 13px;
+      color: #FF6600;
+      line-height: 30px;
+      font-weight: bold;
+      border-radius: 5px 5px 0 0; }
+    .comment_tontainer .new_comment_container .new_comment_title_number {
+      float: left;
+      height: 30px;
+      border-bottom: 1px solid #FF6600;
+      width: 87%;
+      color: #FF6600;
+      font-size: 14px;
+      line-height: 40px;
+      text-align: right; }
+    .comment_tontainer .new_comment_container .new_comment {
+      float: left;
+      width: 100%;
+      margin-top: 30px; }
+    .comment_tontainer .new_comment_container .new_comment_li {
+      float: left;
+      width: 100%;
+      position: relative;
+      padding: 20px 20px 20px 100px;
+      margin: 0;
+      line-height: 1.5rem;
+      min-height: 90px;
+      font-size: 14px;
+      border-bottom: 1px solid #e0e0e0;
+      border-top-right-radius: 0;
+      border-top-left-radius: 0; }
+      .comment_tontainer .new_comment_container .new_comment_li .img-circle {
+        position: absolute;
+        left: 10px;
+        max-width: 100%;
+        width: 80px;
+        height: 80px;
+        vertical-align: middle;
+        display: inline-block;
+        border-radius: 50%;
+        float: left;
+        margin-right: 20px; }
+      .comment_tontainer .new_comment_container .new_comment_li .title {
+        font-weight: 700;
+        font-size: 16px; }
+      .comment_tontainer .new_comment_container .new_comment_li .time {
+        font-size: 12px;
+        color: #777;
+        display: block;
+        margin-bottom: 5px; }
+      .comment_tontainer .new_comment_container .new_comment_li .comments-body {
+        color: #808080; }
+      .comment_tontainer .new_comment_container .new_comment_li .secondary-content {
+        position: absolute;
+        top: 18px;
+        right: 25px;
+        float: right;
+        text-decoration: none;
+        font-size: 14px; }
+        .comment_tontainer .new_comment_container .new_comment_li .secondary-content a {
+          margin-right: 15px;
+          color: #FF4400; }
 
 .dszx-kjnav {
   width: 300px;

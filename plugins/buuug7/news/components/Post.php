@@ -24,7 +24,7 @@ class Post extends ComponentBase
      * @var Buuug7\News\Models\Post
      * the Post model
      */
-    public $post;
+    public $id;
 
 
     /**
@@ -45,11 +45,11 @@ class Post extends ComponentBase
     public function defineProperties()
     {
         return [
-            'slug' => [
+            'id' => [
                 'title' => '新闻别名',
                 'description' => '新闻别名',
                 'type' => 'string',
-                'default' => '{{ :slug }}',
+                'default' => '{{ :id }}',
             ],
             'categoryPage' => [
                 'title' => '新闻分类页',
@@ -75,9 +75,9 @@ class Post extends ComponentBase
 
     public function loadPost()
     {
-        $slug = $this->property('slug');
+        $id = $this->property('id');
         $post = new NewsPost();
-        $post = $post->where('slug', $slug)->isPublished()->first();
+        $post = $post->where('id', $id)->isPublished()->first();
 
         if ($post && $post->categories->count()) {
             $post->categories->each(function ($category) {
