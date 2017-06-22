@@ -20,16 +20,18 @@ if($this->post){
 
 }
 ==
-<div class="box">
-    <ol class="breadcrumb">
-        <li><a href="/">首页</a></li>
-        <li>
-            {% for category in post.categories %}
-            <a href="{{ category.url }}">{{ category.name }}</a>&nbsp;
-            {% endfor %}
-        </li>
-        <li class="active">{{ post.title }}</li>
-    </ol>
+
+<ol class="breadcrumb">
+    <li><a href="/">首页</a></li>
+    <li>
+        {% for category in post.categories %}
+        <a href="{{ category.url }}">{{ category.name }}</a>&nbsp;
+        {% endfor %}
+    </li>
+    <li class="active">{{ post.title }}</li>
+</ol>
+<section class="box">
+
     <div class="float-left dszx-content">
         <h4 class="title">{{ post.title }}</h4>
         {{ post.content|raw }}
@@ -96,8 +98,8 @@ if($this->post){
         </div>
         <div class="kjnav-ggo">
             <span>广告</span>
-            <embed src="flash/1.swf" quality="high"
+            <embed src="/themes/wy-theme-v2/assets/flash/1.swf" quality="high"
                    pluginspage="#!" width="300" height="250" wmode="transparent">
         </div>
     </div>
-</div>
+</section>

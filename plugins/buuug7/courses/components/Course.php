@@ -34,10 +34,10 @@ class Course extends ComponentBase
     public function defineProperties()
     {
         return [
-            'slug' => [
+            'id' => [
                 'title' => '课程别名',
                 'description' => '课程别名',
-                'default' => '{{ :slug }}',
+                'default' => '{{ :id }}',
                 'type' => 'string',
             ],
             'categoryPage' => [
@@ -64,8 +64,8 @@ class Course extends ComponentBase
 
     public function loadPost()
     {
-        $slug = $this->property('slug');
-        $post = CoursePost::where('slug', $slug)->isPublished()->first();
+        $id = $this->property('id');
+        $post = CoursePost::where('id', $id)->isPublished()->first();
         $courseId = $post->id;
 
         if ($post && $post->categories->count()) {

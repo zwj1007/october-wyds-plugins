@@ -50,7 +50,7 @@ $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByC
         <!--title u-->
         {% for post in categoryDianShangJiChuZhiShi %}
         <div class="cbp-item {% for category in post.categories %} {{ category.slug }} {% endfor %} ">
-            <a href="/courses/course/{{ post.slug }}" class="cbp-caption " rel="nofollow">
+            <a href="/courses/course/{{ post.id }}" class="cbp-caption " rel="nofollow">
                 <div class="cbp-caption-defaultWrap">
                     <img src="{{ post.image|media }}" alt="">
                 </div>

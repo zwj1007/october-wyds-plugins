@@ -1,5 +1,5 @@
 title = "课程"
-url = "/courses/course/:slug"
+url = "/courses/course/:id"
 layout="default"
 
 [coursesCourse]
@@ -9,9 +9,9 @@ function onEnd(){
     if(!Auth::check()) return Redirect::to('/user/login');
 
     // count views++
-    $slug=$this->param('slug');
-    if($slug){
-        $course=\Buuug7\Courses\Models\Course::where('slug', $slug)->isPublished()->first();
+    $id=$this->param('id');
+    if($id){
+        $course=\Buuug7\Courses\Models\Course::where('id', $id)->isPublished()->first();
         if(!$course->views){
             $course->views=1;
             $course->save();
@@ -80,11 +80,11 @@ function onEnd(){
                                 收藏</a>
                             {% endif %}
                             {% if post.previousPost %}
-                            <a href="/courses/course/{{ post.previousPost.slug}}" class="btn btn-default"><i class="icon icon-angle-left"></i>
+                            <a href="/courses/course/{{ post.previousPost.id}}" class="btn btn-default"><i class="icon icon-angle-left"></i>
                                 上一课</a>
                             {% endif %}
                             {% if post.nextPost %}
-                            <a href="/courses/course/{{ post.nextPost.slug }}" class="btn btn-default">下一课
+                            <a href="/courses/course/{{ post.nextPost.id }}" class="btn btn-default">下一课
                                 <i class="icon icon-angle-right"></i></a>
                             {% endif %}
                         </p>
@@ -109,7 +109,7 @@ function onEnd(){
                     <div class="panel-body">
                         <div class="list-group">
                             {% for post in post.relatedPosts %}
-                            <a href="/courses/course/{{ post.slug }}" class="list-group-item">{{ post.title }}</a>
+                            <a href="/courses/course/{{ post.id }}" class="list-group-item">{{ post.title }}</a>
                             {% endfor %}
                         </div>
                     </div>

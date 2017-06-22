@@ -59,12 +59,12 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
         {% if tongZhiGongGao.count %}
         <div class="th">
-            <div class="hd">通知公告 <a href="dszx-list.html"><span>more+</span></a></div>
+            <div class="hd">通知公告 <a href=""><span>more+</span></a></div>
             <div class="dd td1">
                 <ul>
                     {% for post in tongZhiGongGao %}
                     <li>
-                        <a href="/news/post/{{ post.slug }}" target="_blank"><span>{{ post.title }}</span></a>
+                        <a href="/news/post/{{ post.id }}" target="_blank"><span>{{ post.title }}</span></a>
                         <span class="time">{{ post.published_at|date('Y-m-d') }}</span>
                     </li>
                     {% endfor %}
@@ -104,7 +104,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                     {% if post.image %}
                     <img class="float-left" src="{{ post.image|media }}" alt="">
                     {% else %}
-                    <img class="float-left" src="http://placehold.it/800x400?text=没有缩略图" alt="">
+                    <img class="float-left" src="http://placehold.it/800x400?text=no images" alt="">
                     {% endif %}
                 </a>
                 <p>{{ post.title|slice(0,18) }}</p>
@@ -112,7 +112,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             </li>
             {% else %}
             <li>
-                <a href="/news/post/{{ post.slug }}" target="_blank">
+                <a href="/news/post/{{ post.id }}" target="_blank">
                     <span>{{ post.title }}</span>
                 </a>
                 <span class="time">{{ post.published_at|date('Y-m-d') }}</span>

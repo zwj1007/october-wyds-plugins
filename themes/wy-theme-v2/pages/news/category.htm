@@ -48,7 +48,7 @@ $this->page->title = $this->category->name;
                     {% for post in latestPosts %}
                     <li>
                         <i class="aurora__title aurora100"></i>
-                        <a href="/news/post/{{ post.slug }}">
+                        <a href="/news/post/{{ post.id }}">
                             <span>{{ post.title|length > 25 ? post.title|slice(0,25)~'...' :post.title }}</span>
                         </a>
                     </li>
@@ -58,7 +58,7 @@ $this->page->title = $this->category->name;
 
             <div class="kjnav-ggo">
                 <span>广告</span>
-                <embed src="flash/2.swf" quality="high"
+                <embed src="/themes/wy-theme-v2/assets/flash/2.swf" quality="high"
                        pluginspage="#!"
                        type="application/x-shockwave-flash" width="250" height="100" wmode="transparent"
                        title="Adobe Flash Player">
