@@ -75,6 +75,7 @@ class Course extends ComponentBase
         }
 
         $post['relatedPosts'] = $this->relatedPosts($courseId);
+        $post['relatedPostsAll'] = $this->relatedPostsAll($courseId);
         $post['previousPost'] = $this->previousPost($courseId);
         $post['nextPost'] = $this->nextPost($courseId);
         $post['shouCang'] = $this->checkShouCang($courseId);
@@ -106,6 +107,15 @@ class Course extends ComponentBase
             return null;
         }
         return $post->categories->first()->courses()->limit(8)->get();
+    }
+
+    public function relatedPostsAll($courseId)
+    {
+        $post=CoursePost::find($courseId);
+        if(!$post->categories->first()){
+            return null;
+        }
+        return $post->categories->first()->courses()->limit(10)->get();
     }
 
     /**

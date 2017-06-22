@@ -95,46 +95,12 @@ if($id){
                     <a href="xspx-list.html"> <span>课程列表</span></a>
                 </div>
                 <ul>
+                    {% for post in post.relatedPostsAll %}
                     <li>
-                        <em class="topSpan ">1</em>
-                        <a href="dszx-list.html"> <span> 卖家必看不一样的爆款策略</span> </a>
+                        <em class="{% if loop.index <= 5 %}topSpan{% endif %}">{{ loop.index }}</em>
+                        <a href="/courses/course/{{ post.id }}"> <span> {{ post.title }}</span> </a>
                     </li>
-                    <li>
-                        <em class="topSpan ">2</em>
-                        <a href="dszx-list.html"><span>电商实战: 数据分析之店铺成交转化分析</span></a>
-                    </li>
-                    <li>
-                        <em class="topSpan ">3</em>
-                        <a href="dszx-list.html"><span>电商知识: 店内营销之宝贝页面策划与实施</span></a>
-                    </li>
-                    <li>
-                        <em class="topSpan ">4</em>
-                        <a href="dszx-list.html"> <span> 卖家必看不一样的爆款策略</span> </a>
-                    </li>
-                    <li>
-                        <em class="topSpan ">5</em>
-                        <a href="dszx-list.html"><span>电商实战: 数据分析之店铺成交转化分析</span></a>
-                    </li>
-                    <li>
-                        <em class=" ">6</em>
-                        <a href="dszx-list.html"><span>电商实战: 卖家必知店铺日常管理的核心</span></a>
-                    </li>
-                    <li>
-                        <em class=" ">7</em>
-                        <a href="dszx-list.html"><span>电商知识: 店内营销之满减送及限时折扣设置</span></a>
-                    </li>
-                    <li>
-                        <em class=" ">8</em>
-                        <a href="dszx-list.html"><span>论坛推广实战秘笈之帖子正文撰写</span></a>
-                    </li>
-                    <li>
-                        <em class=" ">9</em>
-                        <a href="dszx-list.html"><span>电商实战: 卖家必知店铺日常管理的核心</span></a>
-                    </li>
-                    <li>
-                        <em class=" ">10</em>
-                        <a href="dszx-list.html"><span>电商知识: 店内营销之满减送及限时折扣设置</span></a>
-                    </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
@@ -151,7 +117,7 @@ if($id){
                 <a href="/courses/course/{{ post.slug }}" target="_blank">
                     <img src="{{ post.image|media }}" alt="">
                 </a>
-                <p><a href="/courses/course/{{ post.slug }}">{{ post.title }}</a></p>
+                <p><a href="/courses/course/{{ post.id }}">{{ post.title }}</a></p>
             </li>
             {% endfor %}
         </ul>
