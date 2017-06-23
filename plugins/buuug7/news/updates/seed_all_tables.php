@@ -1293,7 +1293,7 @@ class SeedAllTables extends Seeder
             'published' => true,
             'published_at' => Carbon::now(),
             'featured' => true,
-            'image' => '/news/25.jpg',
+            'image' => '/news/5.jpg',
             'user_id' => 1,
             'images' => [],
             'files' => [],
@@ -1314,6 +1314,34 @@ class SeedAllTables extends Seeder
         $post26->categories()->attach(7);
         $post26->categories()->attach(8);
         $post26->categories()->attach(9);
+        
+        
+            $post27 = Post::create([
+            'title' => '定西渭源：电商扶贫带动贫困户增收',
+            'slug' => '定西渭源：电商扶贫带动贫困户增收',
+            'summary' => '近年来，渭源县不断加强电商扶贫扶持力度，走出了一条贫困地区脱贫致富的新路子。',
+            'published' => true,
+            'published_at' => Carbon::now(),
+            'featured' => true,
+            'image' => '/news/27.jpg',
+            'user_id' => 1,
+            'images' => [],
+            'files' => [],
+            'content' => '
+             <p>近年来，渭源县坚持将电子商务与现代物流产业融合发展作为转方式、调结构、扩消费、促就业、惠民生的朝阳产业来抓，立足特色资源优势，强化顶层设计，不断加强电商扶贫扶持力度，实现了农民增收、企业增效、就业增加的阶段性目标，走出了一条贫困地区“电商扶贫”的新路子</p>
+             
+             <p>该县按照农产品网络销售“三品一标”的要求，将“中国马铃薯良种之乡”“中国党参之乡”“南山放养虫草鸡”地理标识认证和“渭河源”牌、“五竹”牌种薯，“老白条”党参、“富硒”黄芪等商标授权县内电商企业、网店使用，动员企业以条形码、二维码、物联网等技术应用为核心，为渭源所有网货产品建立统一的产品认证标识等身份证明，打造了一大批具有影响力的网络特色农产品品牌。同时积极推进快递物流行业的布站设点，在全县16个乡镇建成邮政所，217个行政村建成村邮站，实现了邮政服务网络县、乡、村三级全覆盖。</p>
+
+             <p>电子商务的快速发展，有力地促进了渭源特色农产品的销售，拓宽了群众增收致富渠道。目前，全县累计建成网店547家，本地网购平台7个，发展网销企业51家，组建实力较强电商公司3家；实现线上销售额8200万元，带动线下交易1.7亿元，直接带动贫困群众人均增收200多元，增加就业3500多人。</p>
+
+        ]);
+
+        $post27->categories()->attach(4);
+        $post27->categories()->attach(5);
+        $post27->categories()->attach(6);
+        $post27->categories()->attach(7);
+        $post27->categories()->attach(8);
+        $post27->categories()->attach(9);
         
         
         
