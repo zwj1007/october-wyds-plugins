@@ -49,6 +49,8 @@ class Plugin extends PluginBase
                 return Lang::get('buuug7.user::lang.exception_wrong_password');
             } elseif ($message == 'A user was not found with the given credentials.') {
                 return Lang::get('buuug7.user::lang.exception_not_found_user');
+            } elseif (strpos($message, 'as they are not activated')) {
+                return Lang::get('buuug7.user::lang.exception_not_activated');
             }
 
         });
