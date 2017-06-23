@@ -4,9 +4,11 @@ use Cms\Classes\ComponentBase;
 use Buuug7\User\Models\Need as UserNeed;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
+use October\Rain\Exception\ValidationException;
 use October\Rain\Support\Facades\Flash;
 use RainLab\User\Facades\Auth;
 use ApplicationException;
+use Validator;
 
 class Need extends ComponentBase
 {
@@ -47,7 +49,7 @@ class Need extends ComponentBase
 
     public function loadNeeds()
     {
-        if(!Auth::check()){
+        if (!Auth::check()) {
             return null;
         }
         $user = Auth::getUser();
@@ -57,13 +59,37 @@ class Need extends ComponentBase
 
     public function onCreateNeed()
     {
-        $need = new UserNeed();
-        $need->user_id = Auth::getUser()->id;
-        $need->title = post('title');
-        $need->category=post('category');
-        $need->description = post('description');
-        $need->contact_phone = post('contact_phone');
-        $need->save();
+        if (!Auth::check()) {
+            return null;
+        }
+
+        $rules = [
+            'title' => 'required',
+            'contact_phone' => 'required',
+            'description' => 'required',
+        ];
+
+        $data = post();
+        $validation = Validator::make($data, $rules, [
+            'required' => '请填写 :attribute',
+        ], [
+            'title' => '标题',
+            'contact_phone' => '联系电话',
+            'description' => '描述',
+        ]);
+
+        if ($validation->fails()) {
+            throw new ValidationException($validation);
+        }
+
+        $user=Auth::getUser();
+        $user->needs()->create([
+            'title' => post('title'),
+            'category' => post('category'),
+            'description' => post('description'),
+            'contact_phone' => post('contact_phone'),
+        ]);
+
         Flash::success('您的发布已经成功提交!');
         return Redirect::to('/user/center/needs');
     }
@@ -71,17 +97,38 @@ class Need extends ComponentBase
     public function onUpdateNeed()
     {
         $need = UserNeed::find(post('id'));
+
         if (!$need) {
             throw new ApplicationException('应用发生错误,请稍后再试!');
         }
+
+        $rules = [
+            'title' => 'required',
+            'contact_phone' => 'required',
+            'description' => 'required',
+        ];
+
+        $data = post();
+        $validation = Validator::make($data, $rules, [
+            'required' => '请填写 :attribute',
+        ], [
+            'title' => '标题',
+            'contact_phone' => '联系电话',
+            'description' => '描述',
+        ]);
+
+        if ($validation->fails()) {
+            throw new ValidationException($validation);
+        }
+
         $need->title = post('title');
-        $need->category=post('category');
+        $need->category = post('category');
         $need->contact_phone = post('contact_phone');
         $need->description = post('description');
         $need->checked = false;
         $need->save();
         Flash::success('更新成功!');
-        return Redirect::to('needs');
+        return Redirect::to('/user/center/needs');
     }
 
     public function onDeleteNeed()

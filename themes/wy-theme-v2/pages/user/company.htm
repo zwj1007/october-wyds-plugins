@@ -71,6 +71,8 @@ $this->addJs('assets/vendor/summernote-0.8.3-dist/dist/lang/summernote-zh-CN.js'
                 {% if not company.checked %}
                 {% if company.status == 'committed' %}
                 <p>您的公司信息已经提交.</p>
+                <p>请上传公司LOGO</p>
+                {% component 'imageUploader' %}
                 {% elseif company.status == 'checking' %}
                 <p>您提交的信息正在审核过程中</p>
                 {% elseif company.status == 'passed' %}

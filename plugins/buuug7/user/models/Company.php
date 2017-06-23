@@ -115,7 +115,6 @@ class Company extends Model
     {
 
         $this->avatar && $this->avatar->delete();
-        parent::afterDelete();
     }
 
     public function scopeDisplayChecked($query, $limit)

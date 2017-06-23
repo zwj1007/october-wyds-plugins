@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Post
+name: 资讯
 
 # Model Form Field configuration
 form: $/buuug7/news/models/post/fields.yaml

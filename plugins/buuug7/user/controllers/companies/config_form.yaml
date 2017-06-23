@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Company
+name: 公司
 
 # Model Form Field configuration
 form: $/buuug7/user/models/company/fields.yaml

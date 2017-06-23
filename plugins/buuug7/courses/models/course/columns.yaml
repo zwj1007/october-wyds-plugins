@@ -25,10 +25,12 @@ columns:
         type: date
     featured:
         label: 特色
-        type: switch
+        type: partial
+        path: ~/plugins/buuug7/news/models/post/_featured.htm
     published:
         label: 发布
-        type: switch
+        type: partial
+        path: ~/plugins/buuug7/news/models/post/_published.htm
     user:
         label: 发布者
         relation: user

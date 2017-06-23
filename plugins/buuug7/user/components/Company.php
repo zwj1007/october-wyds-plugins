@@ -4,9 +4,10 @@ use Cms\Classes\ComponentBase;
 use ApplicationException;
 use RainLab\User\Facades\Auth;
 use Validator;
-use ValidationException;
 use Flash;
 use Redirect;
+use October\Rain\Exception\ValidationException;
+
 
 class Company extends ComponentBase
 {
@@ -31,9 +32,9 @@ class Company extends ComponentBase
                 [
                     'modelClass' => 'Buuug7\User\Models\Company',
                     'modelKeyColumn' => 'avatar',
-                    'deferredBinding' => false,
-                    'imageWidth' => '200',
-                    'imageHeight' => '200',
+                    'imageWidth' => '100',
+                    'imageHeight' => '100',
+                    'deferredBinding' => false
                 ]
             );
 
@@ -66,6 +67,24 @@ class Company extends ComponentBase
 
     public function onCreateCompany()
     {
+        $data = post();
+        $rules = [
+            'name' => 'required',
+            'address' => 'required',
+            'contact_phone' => 'required',
+            'description' => 'required',
+        ];
+        $validation = Validator::make($data, $rules, [
+            'required' => '请填写 :attribute',
+        ], [
+            'name' => '名称',
+            'address' => '公司地址',
+            'contact_phone' => '联系电话',
+            'description' => '公司简介',
+        ]);
+        if ($validation->fails()) {
+            throw new ValidationException($validation);
+        }
 
         if (!$this->canCompany) {
             throw new ApplicationException('你的账号不允许提交公司认证信息');
@@ -92,7 +111,7 @@ class Company extends ComponentBase
         $company->address = post('address');
         $company->contact_phone = post('contact_phone');
         $company->description = post('description');
-        $company->detail=post('detail');
+        $company->detail = post('detail');
         $company->status = 'committed';
         $company->checked = false;
         $company->not_passed_message = null;

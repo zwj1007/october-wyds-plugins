@@ -8,6 +8,7 @@ function onStart(){
 if(!Auth::check()) return Redirect::to('/user/login');
 
 $this['social_avatar']=Auth::getUser()->social_avatar;
+
 }
 ==
 

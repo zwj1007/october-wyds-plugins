@@ -23,7 +23,9 @@ class Need extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'title','category','contact_phone','description'
+    ];
 
     /*
     * Validation

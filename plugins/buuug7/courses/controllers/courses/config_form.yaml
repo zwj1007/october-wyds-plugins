@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Course
+name: 课程
 
 # Model Form Field configuration
 form: $/buuug7/courses/models/course/fields.yaml

@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Need
+name: 需求
 
 # Model Form Field configuration
 form: $/buuug7/user/models/need/fields.yaml

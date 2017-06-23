@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Statistic
+name: 统计
 
 # Model Form Field configuration
 form: $/buuug7/statistics/models/statistic/fields.yaml

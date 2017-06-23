@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Tag
+name: 标签
 
 # Model Form Field configuration
 form: $/buuug7/courses/models/tag/fields.yaml

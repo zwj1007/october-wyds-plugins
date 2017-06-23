@@ -1,12 +1,16 @@
 <?php namespace Buuug7\User;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 use System\Classes\PluginBase;
 use RainLab\User\Models\User as UserModel;
 use RainLab\User\Controllers\Users as UsersController;
 use Yaml;
 use File;
 use Backend;
+use October\Rain\Auth\AuthException;
+use App;
+use Lang;
 
 /**
  * User Plugin Information File
@@ -38,6 +42,17 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
+        // 翻译用户验证的问题
+        App::error(function (AuthException $exception) {
+            $message = $exception->getMessage();
+            if ($message == 'A user was found to match all plain text credentials however hashed credential "password" did not match.') {
+                return Lang::get('buuug7.user::lang.exception_wrong_password');
+            } elseif ($message == 'A user was not found with the given credentials.') {
+                return Lang::get('buuug7.user::lang.exception_not_found_user');
+            }
+
+        });
+
         Carbon::setLocale('zh');
         UserModel::extend(function ($model) {
             $model->addFillable([
@@ -46,7 +61,7 @@ class Plugin extends PluginBase
                 'b7_enterprise'
             ]);
 
-            $model->hasOne['company'] = ['Buuug7\User\Models\Company', 'table' => 'buuug7_user_companies','key' => 'user_id',];
+            $model->hasOne['company'] = ['Buuug7\User\Models\Company', 'table' => 'buuug7_user_companies', 'key' => 'user_id',];
             $model->hasMany['needs'] = ['Buuug7\User\Models\Need', 'table' => 'buuug7_user_needs',];
         });
 
@@ -71,6 +86,7 @@ class Plugin extends PluginBase
         return [
             'Buuug7\User\Components\ShouCang' => 'shouCang',
             'Buuug7\User\Components\Account' => 'b7Account',
+            'Buuug7\User\Components\ResetPassword' => 'b7ResetPassword',
             'Buuug7\User\Components\Company' => 'b7Company',
             'Buuug7\User\Components\Need' => 'b7Need',
         ];
