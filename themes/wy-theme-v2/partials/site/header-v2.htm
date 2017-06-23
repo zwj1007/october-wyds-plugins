@@ -11,7 +11,7 @@
             <ul class="right">
                 {% if user %}
                 <li><a href="/user/center/account">个人中心</a></li>
-                <li><a data-request="onLogout" data-request-data="redirect: '/'">退出</a></li>
+                <li><a data-request="onLogout" data-request-data="redirect: '/user/login'">退出</a></li>
                 {% else %}
                 <li><a href="/user/login">登陆</a></li>
                 <li><a href="/user/register">注册</a></li>
