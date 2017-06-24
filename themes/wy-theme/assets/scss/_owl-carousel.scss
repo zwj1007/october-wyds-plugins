@@ -7,7 +7,7 @@
 | 
 |
 */
-// owl v1
+// owl v1 v2
 .owl-carousel-v1, .owl-carousel-v2 {
     position: relative;
     .owl-nav {
@@ -25,6 +25,51 @@
         color: #fff;
         i {
             font-size: 22px;
+        }
+    }
+}
+
+.owl-carousel-v3 {
+    .item {
+        display: block;
+        position: relative;
+    }
+    .item p {
+        position: absolute;
+        bottom:0;
+        left: 0;
+        width: 100%;
+        opacity: 0.5;
+        background-color: #000;
+        margin:0;
+        padding:5px 10px;
+        color:#fff;
+    }
+
+    .owl-dots {
+        position: absolute;
+        height: 31px;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        .owl-dot {
+            float: left;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            padding-right: 10px;
+            span {
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                border: 1px solid $brand-warning;
+                background: #fff;
+            }
+        }
+        .active {
+            span {
+                background: $brand-warning;
+            }
         }
     }
 }

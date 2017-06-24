@@ -285,6 +285,18 @@ class Post extends Model
         return $query->where('featured', 1)->limit($limit)->get();
     }
 
+    /**
+     * 获取置顶的post
+     * @param $query
+     * @param $limit
+     * @return mixed
+     */
+    public function scopeDisplayTop($query, $limit)
+    {
+        $query->isPublished();
+        return $query->where('top', 1)->limit($limit)->get();
+    }
+
     public function scopeDisplayLatest($query, $limit)
     {
         $query->isPublished();
@@ -315,15 +327,16 @@ class Post extends Model
         $searchableFields = ['title', 'slug'];
         $posts = $query->isPublished()->searchWhere($search, $searchableFields)->paginate(15);
 
-        $posts->each(function ($post) use ($postsComponent,$controller) {
+        $posts->each(function ($post) use ($postsComponent, $controller) {
             // add url to post
             $post->setUrl($postsComponent->property('postPage'), $controller);
             // add url to categories
-            $post->categories->each(function ($category) use ($postsComponent,$controller) {
+            $post->categories->each(function ($category) use ($postsComponent, $controller) {
                 $category->setUrl($postsComponent->property('categoryPage'), $controller);
             });
         });
         return $posts;
     }
+
 
 }

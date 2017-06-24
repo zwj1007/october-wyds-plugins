@@ -136,38 +136,6 @@ a {
     }
 }
 
-.info-box-v2{
-    display: block;
-    background: #fff;
-    width: 100%;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
-    @include clearfix;
-    overflow: hidden;
-
-    .info-box__header{
-        display: block;
-        float: left;
-        height: 120px;
-        width: 45%;
-        text-align: center;
-        background:url("http://placehold.it/240x120") center / cover;
-        color:#fff;
-    }
-    .info-box__content{
-        float: left;
-        width:55%;
-        display: block;
-        padding:20px 10px 10px 10px;
-        >a{
-            font-size: 22px;
-            display: block;
-        }
-        >p{
-            font-size: 14px;
-        }
-    }
-}
 
 
 // .....
@@ -182,7 +150,7 @@ a {
         color:#fff;
         margin:0;
         padding: 10px;
-        opacity: 0.8;
+        text-shadow: 5px 5px 5px #000;
     }
 
 }

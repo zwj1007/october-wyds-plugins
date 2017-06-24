@@ -31,3 +31,7 @@ columns:
         label: 发布
         type: partial
         path: ~/plugins/buuug7/news/models/post/_published.htm
+    top:
+        label: 置顶
+        type: partial
+        path: ~/plugins/buuug7/news/models/post/_top.htm

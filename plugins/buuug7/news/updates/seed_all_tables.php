@@ -123,8 +123,7 @@ class SeedAllTables extends Seeder
 
         $comment02=new Comment([
             'content' => '
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime obcaecati reprehenderit ea dignissimos amet voluptatem id excepturi facilis 
-            totam veritatis maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!',
+            neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!',
             'user_id' => 12,
             'like_count' => '2230232',
 

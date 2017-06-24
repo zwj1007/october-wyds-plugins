@@ -86,4 +86,8 @@ secondaryTabs:
             label: 推荐新闻
             type: checkbox
             span: auto
+        top:
+            label: 置顶新闻
+            type: checkbox
+            span: auto
 
