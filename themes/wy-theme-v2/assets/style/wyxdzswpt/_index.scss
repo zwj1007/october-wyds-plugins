@@ -102,7 +102,7 @@
     border-bottom: 1px solid $border-color;
     i {
       border-bottom: 3px solid $nav-background;
-      padding-bottom: 8px;
+      padding-bottom: 6px;
       padding-left: 15px;
       padding-right: 15px;
     }
@@ -182,12 +182,11 @@
     border-bottom: 1px solid $border-color;
     i {
       border-bottom: 3px solid $nav-background;
-      padding-bottom: 8px;
+      padding-bottom: 6px;
       padding-left: 15px;
       padding-right: 15px;
     }
   }
-
   .dd {
     height: 340px;
     padding-top: $margin-5;
@@ -269,7 +268,7 @@
     border-bottom: 1px solid $border-color;
     i {
       border-bottom: 3px solid $nav-background;
-      padding-bottom: 8px;
+      padding-bottom: 6px;
       padding-left: 15px;
       padding-right: 15px;
       width: 300px;
@@ -348,6 +347,63 @@
   }
 }
 
+//便民服务
+.bmfw {
+  height: 280px;
+  .hd {
+    text-align: left;
+    padding-left: 0;
+    height: 40px;
+    line-height: 40px;
+    border-top: 2px solid $border-color;
+    border-right: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    i {
+      border-bottom: 3px solid $nav-background;
+      padding-bottom: 6px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  .dd {
+    height: 220px;
+    padding-top: $margin-15;
+
+    ul li {
+      float: left;
+      background: rebeccapurple;
+      width: $page-width/4-5;
+      margin-right: 5px;
+      .info-box__content {
+        text-align: center;
+        display: block;
+        padding: 20px 10px 10px 10px;
+        color: #FFFFFF;
+        a {
+          color: #FFFFFF;
+          font-size: 22px;
+          display: block;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+
+
+      img {
+        max-width: 100%;
+
+      }
+      ul li:last-child {
+
+        margin-right: 0;
+
+      }
+    }
+  }
+}
+
 //品牌企业
 .ppqy {
   height: 300px;
@@ -362,7 +418,7 @@
     border-bottom: 1px solid $border-color;
     i {
       border-bottom: 3px solid $nav-background;
-      padding-bottom: 8px;
+      padding-bottom: 6px;
       padding-left: 15px;
       padding-right: 15px;
     }
