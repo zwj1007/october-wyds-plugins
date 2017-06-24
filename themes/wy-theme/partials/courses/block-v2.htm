@@ -1,5 +1,5 @@
 {% for chunk in posts.chunk(4) %}
-<div class="row">
+<div class="row m-b">
     {% for post in chunk%}
     <div class="col-md-3 col-sm-6 m-b">
         <div class="easy-block-v1">
@@ -81,9 +81,9 @@
                     {% endif %}
                 </div>
             </div>
-            <p class="color-777 small">
+           <!-- <p class="color-777 small">
                 {{ str_limit(post.summary, 60, '...') }}
-            </p>
+            </p>-->
             <ul class="list-unstyled">
                 <li><span class="color-warning small">发布时间 :</span> <span class="time small color-777">{{ post.published_at|date('Y ,m月 d') }}</span></li>
             </ul>
