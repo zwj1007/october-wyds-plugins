@@ -464,7 +464,7 @@ header {
     border-bottom: 1px solid #CCCCCC; }
     .zcdx .hd i {
       border-bottom: 3px solid #FF4400;
-      padding-bottom: 8px;
+      padding-bottom: 6px;
       padding-left: 15px;
       padding-right: 15px; }
   .zcdx .dd ul {
@@ -525,7 +525,7 @@ header {
     border-bottom: 1px solid #CCCCCC; }
     .xspx .hd i {
       border-bottom: 3px solid #FF4400;
-      padding-bottom: 8px;
+      padding-bottom: 6px;
       padding-left: 15px;
       padding-right: 15px; }
   .xspx .dd {
@@ -591,7 +591,7 @@ header {
     border-bottom: 1px solid #CCCCCC; }
     .fusc .hd i {
       border-bottom: 3px solid #FF4400;
-      padding-bottom: 8px;
+      padding-bottom: 6px;
       padding-left: 15px;
       padding-right: 15px;
       width: 300px; }
@@ -646,6 +646,46 @@ header {
     .fusc .dd .active {
       display: block; }
 
+.bmfw {
+  height: 280px; }
+  .bmfw .hd {
+    text-align: left;
+    padding-left: 0;
+    height: 40px;
+    line-height: 40px;
+    border-top: 2px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC; }
+    .bmfw .hd i {
+      border-bottom: 3px solid #FF4400;
+      padding-bottom: 6px;
+      padding-left: 15px;
+      padding-right: 15px; }
+  .bmfw .dd {
+    height: 220px;
+    padding-top: 15px; }
+    .bmfw .dd ul li {
+      float: left;
+      background: rebeccapurple;
+      width: 275px;
+      margin-right: 5px; }
+      .bmfw .dd ul li .info-box__content {
+        text-align: center;
+        display: block;
+        padding: 20px 10px 10px 10px;
+        color: #FFFFFF; }
+        .bmfw .dd ul li .info-box__content a {
+          color: #FFFFFF;
+          font-size: 22px;
+          display: block; }
+        .bmfw .dd ul li .info-box__content p {
+          font-size: 14px; }
+      .bmfw .dd ul li img {
+        max-width: 100%; }
+      .bmfw .dd ul li ul li:last-child {
+        margin-right: 0; }
+
 .ppqy {
   height: 300px; }
   .ppqy .hd {
@@ -659,7 +699,7 @@ header {
     border-bottom: 1px solid #CCCCCC; }
     .ppqy .hd i {
       border-bottom: 3px solid #FF4400;
-      padding-bottom: 8px;
+      padding-bottom: 6px;
       padding-left: 15px;
       padding-right: 15px; }
   .ppqy .dd {
@@ -2858,6 +2898,7 @@ input {
     line-height: 30px;
     margin-top: 5px;
     letter-spacing: 5px;
+    padding-bottom: 10px;
     font-weight: 600; }
   .wy-notice-content .notice-content p {
     line-height: 40px;
