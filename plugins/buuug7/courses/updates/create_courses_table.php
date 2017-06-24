@@ -13,7 +13,6 @@ class CreateCoursesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable();
             $table->string('title');
-            $table->string('slug');
             $table->text('summary')->nullable();;
             $table->longText('content')->nullable();
             $table->text('image');

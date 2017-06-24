@@ -39,7 +39,6 @@ class Course extends Model
     */
     public $rules = [
         'title' => 'required',
-        'slug' => ['required', 'unique:buuug7_courses_courses'],
         'content' => 'required',
         'summary' => ''
     ];
