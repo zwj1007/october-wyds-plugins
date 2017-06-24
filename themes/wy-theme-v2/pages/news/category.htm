@@ -12,7 +12,7 @@ postsPerPage = 10
 function onEnd()
 {
 // 最新发布
-$this['latestPosts'] = \Buuug7\News\Models\Post::displayLatest(6);
+$this['latestPosts'] = \Buuug7\News\Models\Post::displayLatest(4);
 
 // 推荐 特色
 $this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(6);
