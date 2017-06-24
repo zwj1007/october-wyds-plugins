@@ -3,6 +3,9 @@ html, body, div, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input,
   padding: 0;
   margin: 0; }
 
+html, body {
+  height: 100%; }
+
 body {
   font-family: "Hiragino Sans GB", "Microsoft YaHei", arial, Tahoma, SimSun, sans-serif;
   font-size: 14px;
@@ -373,7 +376,7 @@ header {
       header nav ul li {
         float: left;
         text-align: center;
-        width: 124.44444px; }
+        width: 140px; }
         header nav ul li a {
           padding: 10px 30px;
           color: #fff; }
@@ -2792,5 +2795,86 @@ input {
         margin: 10px;
         font-size: 18px;
         font-style: italic; }
+
+.wy-notice {
+  height: 100%; }
+  .wy-notice .notice-left {
+    width: 300px;
+    box-shadow: 1px 2px 2px 1px #CCCCCC;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 15px;
+    padding-bottom: 15px; }
+    .wy-notice .notice-left .zxtw-title {
+      border-bottom: 2px solid #FF4400;
+      line-height: 30px;
+      text-align: center;
+      font-size: 16px;
+      margin-top: 5px;
+      letter-spacing: 5px;
+      font-weight: 600; }
+    .wy-notice .notice-left ul li {
+      text-align: center;
+      margin-bottom: 10px; }
+      .wy-notice .notice-left ul li a img {
+        width: 270px;
+        margin-top: 15px; }
+      .wy-notice .notice-left ul li a p {
+        padding: 0 15px; }
+      .wy-notice .notice-left ul li a:hover {
+        color: #FF4400; }
+  .wy-notice .notice-right {
+    width: 810px;
+    height: 100%;
+    box-shadow: 1px 2px 2px 1px #CCCCCC;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 15px;
+    padding: 10px 15px 15px 15px; }
+    .wy-notice .notice-right .tzgg-title {
+      border-bottom: 2px solid #FF4400;
+      line-height: 30px;
+      padding-left: 20px;
+      font-size: 16px;
+      margin-top: 5px;
+      letter-spacing: 5px;
+      font-weight: 600; }
+    .wy-notice .notice-right ul li {
+      list-style: disc;
+      margin: 15px 0 15px 30px;
+      line-height: 35px;
+      border-bottom: 1px dashed rgba(191, 191, 191, 0.4); }
+      .wy-notice .notice-right ul li a {
+        width: 80%;
+        display: block; }
+      .wy-notice .notice-right ul li span {
+        float: right; }
+
+.wy-notice-content .notice-content {
+  padding: 20px 50px;
+  border: 1px solid #CCCCCC; }
+  .wy-notice-content .notice-content .notice-con-title {
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 2px solid #CCCCCC;
+    line-height: 30px;
+    margin-top: 5px;
+    letter-spacing: 5px;
+    font-weight: 600; }
+  .wy-notice-content .notice-content p {
+    line-height: 40px;
+    margin: 20px 60px;
+    color: #666; }
+  .wy-notice-content .notice-content img {
+    max-width: 100%; }
+  .wy-notice-content .notice-content h6 {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0; }
+    .wy-notice-content .notice-content h6 span {
+      font-size: 14px;
+      border-bottom: 2px solid #FF4400;
+      padding: 7px 15px; }
+  .wy-notice-content .notice-content strong {
+    margin: 10px  40px;
+    border-bottom: 1px solid #eaeaea;
+    display: block; }
 
 /*# sourceMappingURL=app.css.map */
