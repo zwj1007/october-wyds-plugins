@@ -24,7 +24,7 @@ class Need extends Model
      * @var array Fillable fields
      */
     protected $fillable = [
-        'title','category','contact_phone','description'
+        'title','category','description'
     ];
 
     /*
@@ -32,7 +32,6 @@ class Need extends Model
     */
     public $rules = [
         'title' => 'required',
-        'contact_phone' => 'required',
         'description' => 'required',
     ];
 

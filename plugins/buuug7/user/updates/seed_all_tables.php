@@ -42,7 +42,6 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user01->id,
             'title' => '急聘初中语文老师',
-            'contact_phone' => '18309467501',
             'category' => 'zhaopin',
             'description' => '
             <h4>职位详情</h4>
@@ -69,7 +68,6 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user01->id,
             'title' => '卢沟桥 晓月苑四里正规精装大两居家电家具全齐随时看拎包住',
-            'contact_phone' => '18309467501',
             'category' => 'fangchan',
             'description' => '
             <h4>租赁方式</h4>
@@ -95,7 +93,6 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user01->id,
             'title' => '平面设计',
-            'contact_phone' => '18309467501',
             'category' => 'zhaopin',
             'description' => '
             <h4>职位介绍</h4>
@@ -121,7 +118,6 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user01->id,
             'title' => '急聘平面设计讲师 五险一金双休',
-            'contact_phone' => '18309467501',
             'category' => 'zhaopin',
             'description' => '
             <h4>职位介绍</h4>
@@ -151,7 +147,6 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user01->id,
             'title' => '苹果 iPhone7 Plus 苹果手机7plus 128G转让',
-            'contact_phone' => '18309467501',
             'category' => 'ershou',
             'description' => '
             <dl class="dl-horizontal">
@@ -209,7 +204,6 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user02->id,
             'title' => '免费换人 三天试用 上门服务 持证上岗 专业靠谱',
-            'contact_phone' => '18309467501',
             'category' => 'qita',
             'description' => '
             <dl class="dl-horizontal">
@@ -244,7 +238,6 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user02->id,
             'title' => '专业催乳师无痛开奶、催乳、疏通急性乳腺炎上门服务',
-            'contact_phone' => '18309467501',
             'category' => 'qita',
             'description' => '
             <dl class="dl-horizontal">
@@ -285,7 +278,6 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user02->id,
             'title' => '专业承接公寓别墅装修 二手房装修 旧房装修',
-            'contact_phone' => '18309467501',
             'category' => 'fangchan',
             'description' => '
             <dl class="dl-horizontal">
@@ -315,7 +307,6 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user02->id,
             'title' => '专业中医调理颈椎,专治股骨头坏死,腰间盘突出',
-            'contact_phone' => '18309467501',
             'category' => 'qita',
             'description' => '
             <dl class="dl-horizontal">
@@ -376,7 +367,6 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user02->id,
             'title' => '回收苹果7plus三星华为oppo vivo美图',
-            'contact_phone' => '18309467501',
             'category' => 'ershou',
             'description' => '
             <dl class="dl-horizontal">
@@ -440,7 +430,6 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user03->id,
             'title' => '高价回收苹果、三星、小米、华为、ViVO、OPPO',
-            'contact_phone' => '18309467501',
             'category' => 'ershou',
             'description' => '
             <dl class="dl-horizontal">
@@ -476,7 +465,6 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user03->id,
             'title' => '十一黄金周微女神洗发汁,发膜,信誉合作',
-            'contact_phone' => '18309467501',
             'category' => 'qita',
             'description' => '
             <dl class="dl-horizontal">
@@ -578,7 +566,6 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user03->id,
             'title' => '高价回收苹果、华为、ViVO、OPPO',
-            'contact_phone' => '18309467501',
             'category' => 'ershou',
             'description' => '
             <dl >
@@ -615,8 +602,8 @@ class SeedAllTables extends Seeder
         $user06 = Auth::findUserByLogin('894031@qq.com');
         Company::create([
             'name' => '长兴电子商务',
-            'address' => '浙江省长兴县国家级开发区路惠路06号星网电商园',
             'contact_phone' => '0892-8972382',
+            'address' => '浙江省长兴县国家级开发区路惠路06号星网电商园',
             'description' => '浙江长兴星网网络科技有限公司是专注为入驻淘宝、天猫、京东等平台的电商企业、提供仓储管理和产品代发的公司，是浙江长兴星网电子商务园的重要组成部分。建筑面积5万平方米、其中办公楼、公寓楼、食堂、培训教室等共2万平方米，仓储3万平方米。仓库为钢筋混泥土结构，共2幢，每幢三层，层高5米，每层4800平方米。仓库配有货梯4部、叉车若干，方便货物运输。仓储面积可分割，1平米起租，根据客户不同的需求设置独立面积。',
             'detail' => '
             <p>项目无忧客户服务，配合度100%</p>
@@ -645,7 +632,6 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user03->id,
             'title' => '高价回收苹果、华为、ViVO、OPPO',
-            'contact_phone' => '18309467501',
             'category' => 'ershou',
             'description' => '
             <dl>
@@ -730,7 +716,6 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user03->id,
             'title' => '好房出租',
-            'contact_phone' => '18309467501',
             'category' => 'ershou',
             'description' => '
             <p class="p-ct"> 联系电话:<span> 18309467501</span></p>     

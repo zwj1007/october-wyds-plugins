@@ -65,7 +65,6 @@ class Need extends ComponentBase
 
         $rules = [
             'title' => 'required',
-            'contact_phone' => 'required',
             'description' => 'required',
         ];
 
@@ -74,7 +73,6 @@ class Need extends ComponentBase
             'required' => '请填写 :attribute',
         ], [
             'title' => '标题',
-            'contact_phone' => '联系电话',
             'description' => '描述',
         ]);
 
@@ -87,7 +85,6 @@ class Need extends ComponentBase
             'title' => post('title'),
             'category' => post('category'),
             'description' => post('description'),
-            'contact_phone' => post('contact_phone'),
         ]);
 
         Flash::success('您的发布已经成功提交!');
@@ -104,7 +101,6 @@ class Need extends ComponentBase
 
         $rules = [
             'title' => 'required',
-            'contact_phone' => 'required',
             'description' => 'required',
         ];
 
@@ -113,7 +109,6 @@ class Need extends ComponentBase
             'required' => '请填写 :attribute',
         ], [
             'title' => '标题',
-            'contact_phone' => '联系电话',
             'description' => '描述',
         ]);
 
@@ -123,7 +118,6 @@ class Need extends ComponentBase
 
         $need->title = post('title');
         $need->category = post('category');
-        $need->contact_phone = post('contact_phone');
         $need->description = post('description');
         $need->checked = false;
         $need->save();

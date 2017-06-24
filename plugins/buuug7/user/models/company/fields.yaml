@@ -8,10 +8,6 @@ fields:
         disabled: false
         placeholder: 公司名称
         span: left
-    contact_phone:
-        label: 电话
-        placeholder: 联系电话
-        span: right
     address:
         label: 地址
         disabled: false

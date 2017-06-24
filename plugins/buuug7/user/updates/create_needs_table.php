@@ -15,7 +15,6 @@ class CreateNeedsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('title');
             $table->longText('description')->nullable();
-            $table->string('contact_phone')->nullable();
             $table->boolean('featured')->default(0);
             $table->boolean('checked')->default(0);
             $table->timestamp('checked_at')->nullable();

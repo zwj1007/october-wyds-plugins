@@ -20,8 +20,53 @@ $this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(6);
 $this->page->title = $this->category->name;
 }
 
-
 ==
+
+{% if category.slug == 'tong-zhi-gong-gao' %}
+<ol class="box breadcrumb">
+    <li><a href="/">首页</a></li>
+    <li class="active">通知公告</li>
+</ol>
+<section class="box wy-notice">
+    <div class="notice-left float-left">
+        <div class="zxtw-title">
+            最新图文
+        </div>
+        <ul>
+            {% for post in latestPosts %}
+            {% if post.image %}
+            <li>
+                <a href="#!" class="">
+                    <img src="{{ post.image|media }}" alt="">
+                    <p>{{ post.title }}</p>
+                </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+
+        </ul>
+    </div>
+
+    <div class="notice-right float-right">
+        <div class="tzgg-title">
+            <i class="fa fa-folder-open-o"></i>
+            通知公告
+        </div>
+        <ul>
+            {% for post in posts %}
+            <li>
+                       <span>
+                           [{{ post.published_at|date('Y-m-d')}}]
+                    </span>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+
+            </li>
+            {% endfor %}
+        </ul>
+        {{ posts.render|raw }}
+    </div>
+</section>
+{% else %}
 <section class="box">
     <div class="lanmu">
         <!--左侧-->
@@ -114,5 +159,6 @@ $this->page->title = $this->category->name;
 
     </div>
 </section>
+{% endif %}
 
 

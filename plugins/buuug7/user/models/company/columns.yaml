@@ -9,8 +9,6 @@ columns:
     address:
         label: 地址
         invisible: true
-    contact_phone:
-        label: 联系电话
     user:
         label: 用户
         relation: user

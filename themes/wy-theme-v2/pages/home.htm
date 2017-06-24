@@ -7,6 +7,9 @@ function onStart()
 // 推荐 特色
 $this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(5);
 
+// 置顶 资讯
+$this['topPosts'] = \Buuug7\News\Models\Post::displayTop(5);
+
 // 电商动态
 $this['dianShangDongTai'] = \Buuug7\News\Models\Post::displayByCategory('dian-shang-dong-tai',6);
 
@@ -59,7 +62,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
         {% if tongZhiGongGao.count %}
         <div class="th">
-            <div class="hd">通知公告 <a href=""><span>more+</span></a></div>
+            <div class="hd">通知公告 <a href="/news/categories/tong-zhi-gong-gao"><span>more+</span></a></div>
             <div class="dd td1">
                 <ul>
                     {% for post in tongZhiGongGao %}
@@ -74,11 +77,11 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         {% endif %}
     </div>
 
-    {% if featuredPosts.count %}
+    {% if topPosts.count %}
     <div class="dszx-right float-right">
         <div id="slide">
             <ul class="list">
-                {% for post in featuredPosts %}
+                {% for post in topPosts %}
                 <li>
                     <a href="/news/post/{{ post.id }}"><img src="{{ post.image|media }}" alt="{{ post.title }}"></a>
                     <div class="title"><p>{{ post.title }}</p></div>
