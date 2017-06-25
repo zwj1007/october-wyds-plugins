@@ -1,56 +1,67 @@
 <?php namespace Buuug7\User\Models;
 
 use Model;
-use Carbon\Carbon;
 use ValidationException;
 
 /**
- * Company Model
+ * Shop Model
  */
-class Company extends Model
+class Shop extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+
+    public $rules = [
+        'name' => 'required',
+        'links' => 'required|url',
+        'description' => 'required',
+        'status' => 'required',
+    ];
+
+    public $customMessages = [
+        'required' => '请填写 :attribute ',
+    ];
+
+    public $attributeNames = [
+        'name' => '店铺名称',
+        'links' => '店铺地址',
+        'description' => '店铺描述',
+    ];
+
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'buuug7_user_companies';
+    public $table = 'buuug7_user_shops';
+
     /**
      * @var array Guarded fields
      */
     protected $guarded = ['*'];
+
     /**
      * @var array Fillable fields
      */
     protected $fillable = [
-        'user_id',
-        'name',
-        'address',
-        'contact_phone',
-        'description',
-        'detail',
-        'status',
-        'checked'
+        'name', 'links', 'description', 'status'
     ];
-    /*
-    * Validation
-    */
-    public $rules = [
-        'name' => 'required',
-        'address' => 'required',
-        'contact_phone' => 'required',
-        'description' => 'required',
-        'status' => 'required',
-    ];
+
+    protected $dates = ['created_at', 'updated_at', 'checked_at'];
+
     /**
      * @var array Relations
      */
+    public $hasOne = [];
+    public $hasMany = [];
     public $belongsTo = [
         'user' => ['RainLab\User\Models\User'],
     ];
-
+    public $belongsToMany = [];
+    public $morphTo = [];
+    public $morphOne = [];
+    public $morphMany = [];
     public $attachOne = [
         'avatar' => ['System\Models\File']
     ];
+    public $attachMany = [];
 
     public function getStatusOptions()
     {
@@ -63,7 +74,24 @@ class Company extends Model
         ];
     }
 
-    protected $dates = ['created_at', 'updated_at', 'checked_at'];
+    public function afterValidate()
+    {
+        if ($this->checked && !$this->checked_at) {
+            throw new ValidationException([
+                'checked_at' => '请选择审核日期'
+            ]);
+        }
+    }
+
+    /**
+     * After delete event
+     * @return void
+     */
+    public function afterDelete()
+    {
+
+        $this->avatar && $this->avatar->delete();
+    }
 
     public function scopeIsChecked($query)
     {
@@ -79,14 +107,6 @@ class Company extends Model
         return $query->where('featured', true);
     }
 
-    public function afterValidate()
-    {
-        if ($this->checked && !$this->checked_at) {
-            throw new ValidationException([
-                'checked_at' => '请选择审核日期'
-            ]);
-        }
-    }
 
     /**
      * Returns the public image file path to this user's avatar.
@@ -103,18 +123,8 @@ class Company extends Model
         if ($this->avatar) {
             return $this->avatar->getThumb($size, $size, $options);
         } else {
-            return 'http://placehold.it/400x200?text=没有添加LOGO';
+            return 'http://placehold.it/400x200?text=no image';
         }
-    }
-
-    /**
-     * After delete event
-     * @return void
-     */
-    public function afterDelete()
-    {
-
-        $this->avatar && $this->avatar->delete();
     }
 
     public function scopeDisplayChecked($query, $limit)

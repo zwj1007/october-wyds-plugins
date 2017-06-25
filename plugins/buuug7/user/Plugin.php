@@ -65,6 +65,7 @@ class Plugin extends PluginBase
 
             $model->hasOne['company'] = ['Buuug7\User\Models\Company', 'table' => 'buuug7_user_companies', 'key' => 'user_id',];
             $model->hasMany['needs'] = ['Buuug7\User\Models\Need', 'table' => 'buuug7_user_needs',];
+            $model->hasMany['shops'] = ['Buuug7\User\Models\Shop', 'table' => 'buuug7_user_shops',];
         });
 
         UsersController::extendFormFields(function ($widget) {
@@ -91,6 +92,7 @@ class Plugin extends PluginBase
             'Buuug7\User\Components\ResetPassword' => 'b7ResetPassword',
             'Buuug7\User\Components\Company' => 'b7Company',
             'Buuug7\User\Components\Need' => 'b7Need',
+            'Buuug7\User\Components\Shop' => 'b7Shop',
         ];
     }
 
@@ -122,15 +124,21 @@ class Plugin extends PluginBase
     {
         return [
             'user' => [
-                'label' => '企业',
+                'label' => '营销',
                 'url' => Backend::url('buuug7/user/companies'),
-                'icon' => 'icon-user-plus',
+                'icon' => 'icon-diamond',
                 'permissions' => ['buuug7.user.*'],
                 'sideMenu' => [
                     'companies' => [
                         'label' => '企业',
                         'icon' => 'icon-user-plus',
                         'url' => Backend::url('buuug7/user/companies'),
+                        'permissions' => ['buuug7.user.*'],
+                    ],
+                    'shops' => [
+                        'label' => '店铺',
+                        'icon' => 'icon-shopping-cart',
+                        'url' => Backend::url('buuug7/user/shops'),
                         'permissions' => ['buuug7.user.*'],
                     ],
                     'needs' => [

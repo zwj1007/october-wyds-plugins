@@ -5,29 +5,21 @@
 fields:
     name:
         label: 名称
-        disabled: false
-        placeholder: 公司名称
-        span: left
-    address:
-        label: 地址
-        disabled: false
         span: auto
-        placeholder: 公司地址
-tabs:
-    fields:
-        description:
-            tab: 公司简介
-            placeholder: 公司简介
-            type: textarea
-            size: large
-        detail:
-            tab: 公司详情
-            type: richeditor
-            size: giant
+        placeholder: 店铺名称
+    links:
+        label: 店铺地址
+        span: auto
+        placeholder: 店铺地址
+    description:
+        label: 店铺描述
+        type: textarea
+        size: large
+
 secondaryTabs:
     fields:
         avatar:
-            label: 公司LOGO
+            label: 店铺缩略图
             type: fileupload
             mode: image
             imageHeight: 200
@@ -56,9 +48,4 @@ secondaryTabs:
             label: 推荐
             type: checkbox
             span: auto
-
-
-
-
-
 

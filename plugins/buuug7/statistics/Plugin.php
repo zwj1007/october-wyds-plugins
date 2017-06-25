@@ -2,7 +2,8 @@
 
 use Backend;
 use System\Classes\PluginBase;
-
+use Validator;
+use DB;
 /**
  * Statistics Plugin Information File
  */
@@ -40,6 +41,30 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
+        Validator::extend('unique_with', function ($attribute, $value, $parameters, $validator) {
+            $request = request()->all();
+
+            // $table is always the first parameter
+            // You can extend it to use dots in order to specify: connection.database.table
+            $table = array_shift($parameters);
+
+            // Add current column to the $clauses array
+            $clauses = [
+                $attribute => $value,
+            ];
+
+            // Add the rest
+            foreach ($parameters as $column) {
+                if (isset($request[$column])) {
+                    $clauses[$column] = $request[$column];
+                }
+            }
+
+            // Query for existence.
+            return ! DB::table($table)
+                ->where($clauses)
+                ->exists();
+        });
 
     }
 
@@ -87,10 +112,11 @@ class Plugin extends PluginBase
                 'permissions' => ['buuug7.statistics.*'],
                 'order'       => 500,
                 'sideMenu' => [
-                    'statisticsOnes' => [
+                    'statisticones' => [
                         'label' => '统计(one)',
                         'icon' => 'icon-bar-chart',
                         'url' => Backend::url('buuug7/statistics/statisticones'),
+                        'permissions' => ['buuug7.statistics.access_statistics.*'],
                     ],
                     'statistics' => [
                         'label' => '统计(test)',

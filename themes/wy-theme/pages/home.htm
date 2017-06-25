@@ -72,7 +72,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
 <div class="container m-t">
     <!--置顶资讯-->
-    <div class="row m-b">
+    <div class="row">
         <div class="col-sm-6 m-b">
             <div class="owl-carousel owl-carousel-v3">
                 {% for post in topPosts %}
@@ -135,14 +135,8 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         {% endfor %}
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-
-        </div>
-    </div>
-
     <!--电商动态+政策解读-->
-    <div class="tab-v1 m-t">
+    <div class="tab-v1 m-t-lg">
         <ul class="nav nav-tabs">
             <li class="active"><a href="#tab2" data-toggle="tab" aria-expanded="true" style="font-size: 20px">电商动态</a>
             </li>

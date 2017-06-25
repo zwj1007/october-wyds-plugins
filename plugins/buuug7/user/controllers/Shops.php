@@ -1,12 +1,12 @@
-<?php namespace Buuug7\Statistics\Controllers;
+<?php namespace Buuug7\User\Controllers;
 
 use BackendMenu;
 use Backend\Classes\Controller;
 
 /**
- * Statistic Ones Back-end Controller
+ * Shops Back-end Controller
  */
-class StatisticOnes extends Controller
+class Shops extends Controller
 {
     public $implement = [
         'Backend.Behaviors.FormController',
@@ -20,11 +20,6 @@ class StatisticOnes extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Buuug7.Statistics', 'statistics', 'statisticones');
-    }
-
-    public function update($recordId = null){
-
-        return $this->asExtension('FormController')->update($recordId);
+        BackendMenu::setContext('Buuug7.User', 'user', 'shops');
     }
 }

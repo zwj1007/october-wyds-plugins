@@ -1,0 +1,63 @@
+title = "店铺"
+url = "/user/center/shops"
+layout="default"
+
+[b7Shop]
+
+==
+
+function onStart()
+{
+
+if(!Auth::check()) return Redirect::to('/user/login');
+
+$this->addCss('https://cdn.bootcss.com/summernote/0.8.3/summernote.css');
+$this->addJs('https://cdn.bootcss.com/summernote/0.8.3/summernote.min.js');
+$this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min.js');
+
+}
+
+==
+
+<div class="container m-t">
+    <div class="row">
+        <div class="col-md-3 m-b">
+            <ul class="nav nav-pills nav-stacked ">
+                <li class="bg-white"><a href="/user/center/account"  ><i class="fa fa-fw fa-user-o"></i> 账号</a></li>
+                <li class="bg-white"><a href="/user/center/avatar"  ><i class="fa fa-fw fa-user-circle"></i> 头像</a></li>
+                <li class="bg-white"><a href="/user/center/company" ><i class="fa fa-fw fa-home"></i> 公司</a></li>
+                <li class="bg-white active"><a href="/user/center/shops"><i class="fa fa-fw fa-shopping-basket"></i> 我的店铺</a></li>
+                <li class="bg-white"><a href="/user/center/shoucang" ><i class="fa fa-fw fa-folder-open"></i> 收藏课程</a></li>
+                <li class="bg-white"><a href="/user/center/needs" ><i class="fa fa-fw fa-feed"></i> 我的发布</a></li>
+                <li class="bg-white"><a href="/user/center/settings" ><i class="fa fa-fw fa-gear"></i> 设置</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9 bg-white p-y m-b">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    我的店铺
+                </div>
+                <div class="panel-body">
+                    <a href="/shops/shop/create" class="btn btn-warning m-b m-t"><i class="fa fa-plus"></i> 添加店铺</a>
+                    <hr>
+                    <div class="row">
+                        {% for shop in shops %}
+                        <div class="col-md-3 col-sm-6">
+                            <div class="easy-block-v2">
+                                <div class="easy-bg-v2 bg-color-warning">{{ shop.status }}</div>
+                                <img alt="" src="{{ shop.getAvatarThumb(100) }}">
+                                <h4></h4>
+                                <a class="btn btn-warning btn-sm" href="#">查看</a>
+                                <a class="btn btn-line-warning btn-sm" href="#">更新</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

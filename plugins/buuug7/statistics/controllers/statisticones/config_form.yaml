@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Statistic One
+name: 电商交易统计
 
 # Model Form Field configuration
 form: $/buuug7/statistics/models/statisticone/fields.yaml
@@ -16,13 +16,13 @@ defaultRedirect: buuug7/statistics/statisticones
 
 # Create page
 create:
-    title: Create Statistic One
+    title: 创建电商交易统计
     redirect: buuug7/statistics/statisticones/update/:id
     redirectClose: buuug7/statistics/statisticones
 
 # Update page
 update:
-    title: Edit Statistic One
+    title: 编辑电商交易统计
     redirect: buuug7/statistics/statisticones
     redirectClose: buuug7/statistics/statisticones
 

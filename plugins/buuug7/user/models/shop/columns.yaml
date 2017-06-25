@@ -1,0 +1,35 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: 店铺名称
+        searchable: true
+    links:
+        label: 店铺地址(URL)
+    user:
+        label: 用户
+        relation: user
+        valueFrom: name
+    checked:
+        label: 审核
+        type: switch
+    checked_at:
+        label: 审核时间
+        type: datetime
+    created_at:
+        label: 创建日期
+        type: date
+        invisible: true
+    updated_at:
+        label: 更新日期
+        type: date
+        invisible: true
+    status:
+        label: 状态
+        type: partial
+        path: ~/plugins/buuug7/user/models/shop/_status_column.htm
+    featured:
+        label: 推荐
+        type: switch

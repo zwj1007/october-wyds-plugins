@@ -1,8 +1,7 @@
-title = '发布需求'
-url = '/needs/need/create'
-layout = 'default'
-
-[b7Need]
+title = '创建店铺'
+url = '/shops/shop/create'
+layout ='default'
+[b7Shop]
 ==
 function onStart()
 {
@@ -15,15 +14,16 @@ $this->addJs('https://cdn.bootcss.com/summernote/0.8.3/summernote.min.js');
 $this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min.js');
 }
 ==
+
 <div class="container m-t">
     <div class="row">
         <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    发布新需求
+                    添加新店铺
                 </div>
                 <div class="panel-body">
-                    {% partial 'needs/need-form' method='onCreateNeed' %}
+                    {% partial 'shops/shop-form' method='onCreateShop' %}
                 </div>
             </div>
         </div>
