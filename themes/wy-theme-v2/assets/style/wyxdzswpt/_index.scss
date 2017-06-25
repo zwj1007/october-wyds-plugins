@@ -375,6 +375,10 @@
       background: rebeccapurple;
       width: $page-width/4-5;
       margin-right: 5px;
+
+  /*    a.bm-fw-img {
+        transition: all 2s;
+      }*/
       .info-box__content {
         text-align: center;
         display: block;
@@ -389,8 +393,6 @@
           font-size: 14px;
         }
       }
-
-
       img {
         max-width: 100%;
 
