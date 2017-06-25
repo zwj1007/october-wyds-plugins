@@ -1,0 +1,40 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    buy:
+        label: 购进
+        placeholder: 购进(万元)
+        type: number
+        span: auto
+    sales:
+        label: 外销
+        placeholder: 外销(万元)
+        type: number
+        span: auto
+    poverty_total:
+        label: 贫困村电商交易额
+        placeholder: 贫困村电商交易额
+        type: number
+        span: auto
+    total:
+        label: 电商交易额
+        placeholder: 电商交易额(万元)
+        dependsOn:
+            - buy
+            - sales
+        type: dropdown
+        span: auto
+    published_at:
+        label: 日期
+        placeholder: 日期
+        type: datepicker
+        mode: date
+        span: auto
+    user:
+        label: 用户
+        type: relation
+        nameFrom: name
+        span: auto
+        searchable: true

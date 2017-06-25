@@ -36,7 +36,7 @@ $this->page->title = $this->category->name;
             {% for post in latestPosts %}
             {% if post.image %}
             <li>
-                <a href="#!" class="">
+                <a href="/news/post/{{post.id}}" class="">
                     <img src="{{ post.image|media }}" alt="">
                     <p>{{ post.title }}</p>
                 </a>

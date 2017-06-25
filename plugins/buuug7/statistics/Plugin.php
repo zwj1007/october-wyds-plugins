@@ -87,14 +87,13 @@ class Plugin extends PluginBase
                 'permissions' => ['buuug7.statistics.*'],
                 'order'       => 500,
                 'sideMenu' => [
-                    'new_statistics' => [
-                        'label' => '添加统计',
-                        'icon' => 'icon-plus',
-                        'url' => Backend::url('buuug7/statistics/statistics/create'),
-                        'permissions' => ['buuug7.statistics.access_statistics.*'],
+                    'statisticsOnes' => [
+                        'label' => '统计(one)',
+                        'icon' => 'icon-bar-chart',
+                        'url' => Backend::url('buuug7/statistics/statisticones'),
                     ],
                     'statistics' => [
-                        'label' => '统计',
+                        'label' => '统计(test)',
                         'icon' => 'icon-area-chart',
                         'url'         => Backend::url('buuug7/statistics/statistics'),
                         'permissions' => ['buuug7.statistics.access_statistics.*'],

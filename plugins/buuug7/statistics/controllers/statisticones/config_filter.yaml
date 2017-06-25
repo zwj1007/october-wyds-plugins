@@ -1,0 +1,15 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+    user:
+        label: 用户过滤
+        modelClass: RainLab\User\Models\User
+        nameFrom: name
+        scope: FilterUser
+    published_at:
+        label: 提交日期
+        type: daterange
+        conditions: created_at >= ':after' AND created_at <= ':before'
+
