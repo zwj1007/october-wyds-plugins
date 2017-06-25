@@ -23,10 +23,10 @@ $this['zhenCeJieDu'] = \Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie
 $this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',8);
 
 // 推荐课程
-$this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],8);
+$this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
 
 // 电商基础知识
-$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi'],8);
+$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi'],4);
 
 // 服务市场
 $this['fuwu']=\Buuug7\User\Models\Need::displayFeatured(12);
@@ -70,7 +70,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 </div>-->
 
 
-<div class="container m-t">
+<div class="container m-t-lg">
     <!--置顶资讯-->
     <div class="row">
         <div class="col-sm-6 m-b">
@@ -88,7 +88,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         {% if featuredPosts %}
 
         <!--推荐资讯-->
-        <div class="col-sm-6">
+        <div class="col-sm-6 hidden-xs">
             <div class="row">
                 <div class="col-sm-6 m-b">
                     <a class="news-wrap" href="/news/post/{{ featuredPosts[1].slug }}">
