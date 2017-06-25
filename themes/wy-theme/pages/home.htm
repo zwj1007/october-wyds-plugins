@@ -91,23 +91,23 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         <div class="col-sm-6 hidden-xs">
             <div class="row">
                 <div class="col-sm-6 m-b">
-                    <a class="news-wrap" href="/news/post/{{ featuredPosts[1].slug }}">
+                    <a class="news-wrap" href="/news/post/{{ featuredPosts[1].id }}">
                         <img src="{{ featuredPosts[1].image|media }}" alt="{{ featuredPosts[1].title }}" class="img-responsive">
                         <p class="title">{{ featuredPosts[0].title }}</p>
                     </a>
                     <p style="width:5px;height: 5px"></p>
-                    <a class="news-wrap" href="/news/post/{{ featuredPosts[2].slug }}">
+                    <a class="news-wrap" href="/news/post/{{ featuredPosts[2].id }}">
                         <img src="{{ featuredPosts[2].image|media }}" alt="{{ featuredPosts[2].title }}" class="img-responsive">
                         <p class="title">{{ featuredPosts[1].title }}</p>
                     </a>
                 </div>
                 <div class="col-sm-6">
-                    <a class="news-wrap" href="/news/post/{{ featuredPosts[3].slug }}">
+                    <a class="news-wrap" href="/news/post/{{ featuredPosts[3].id }}">
                         <img src="{{ featuredPosts[3].image|media }}" alt="{{ featuredPosts[3].title }}" class="img-responsive">
                         <p class="title">{{ featuredPosts[2].title }}</p>
                     </a>
                     <p style="width:5px;height: 5px"></p>
-                    <a class="news-wrap" href="/news/post/{{ featuredPosts[4].slug }}">
+                    <a class="news-wrap" href="/news/post/{{ featuredPosts[4].id }}">
                         <img src="{{ featuredPosts[4].image|media }}" alt="{{ featuredPosts[4].title }}" class="img-responsive">
                         <p class="title">{{ featuredPosts[3].title }}</p>
                     </a>
