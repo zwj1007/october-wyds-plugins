@@ -2948,10 +2948,13 @@ input {
       float: left;
       width: 210px;
       height: 100px;
-      background: #e2e0f5;
+      border-radius: 6px;
+      border: 1px solid rgba(171, 142, 139, 0.55);
       margin-right: 14px;
       overflow: hidden;
       margin-bottom: 15px; }
+      .bmfw-list .dd .info-box-v3 a.info-box-v3 {
+        border: 1px solid rgba(204, 204, 204, 0.64); }
       .bmfw-list .dd .info-box-v3 a {
         overflow: hidden; }
         .bmfw-list .dd .info-box-v3 a img {
