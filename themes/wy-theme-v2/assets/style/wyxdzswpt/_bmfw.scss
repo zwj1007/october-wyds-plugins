@@ -1,0 +1,76 @@
+@charset "UTF-8";
+.bmfw-list {
+  border: 0;
+  .jumbotron {
+    background: url(../images/fwsc/bm-header.jpg) !important;
+    height: 260px;
+  }
+
+  .hd {
+    border-bottom: 1px solid #CCCCCC;
+    border-radius: 0;
+    padding-left: 0;
+    height: 40px;
+    line-height: 40px;
+
+    i {
+      padding: 8px 15px;
+      border-bottom: 2px solid $nav-background;
+      background: none;
+      border-radius: 0;
+      color: #333333;
+    }
+  }
+
+  .dd {
+    margin: 30px 0;
+    height: 100%;
+    text-align: left;
+    overflow: hidden;
+    color: #494546;
+    .info-box-v3 {
+      float: left;
+      width: 210px;
+      height: 100px;
+      background: #e2e0f5;
+      margin-right: 14px;
+      overflow: hidden;
+      margin-bottom: 15px;
+      a {
+        overflow: hidden;
+
+
+        img {
+          max-width: 100%;
+          width: 100px;
+          padding: 5px;
+          float: left;
+        }
+        .info-box__content {
+          margin-top: 15px;
+          overflow: hidden;
+          text-align: center;
+          .info-box__title {
+            display: block;
+            font-size: 18px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 5px 0 8px 0;
+            color: #282727;
+
+          }
+          .info-box__description {
+            display: block;
+            font-size: 12px;
+            margin-right: 5px;
+          }
+        }
+
+      }
+    }
+
+  }
+
+}
+
