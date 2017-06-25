@@ -1,0 +1,33 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+
+    user_id:
+        label: 用户
+        relation: user
+        select: name
+    buy:
+        label: 购进(万元)
+        type: number
+    sales:
+        label: 外销(万元)
+        type: number
+    poverty_total:
+        label: 贫困村电商交易额
+        type: number
+    total:
+        label: 电商交易额
+        type: number
+    published_at:
+        label: 提交时间
+        type: date
+    created_at:
+        label: 创建日期
+        type: date
+        invisible: true
+    updated_at:
+        label: 更新日期
+        type: date
+        invisible: true

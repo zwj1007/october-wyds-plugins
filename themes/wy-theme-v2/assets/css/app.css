@@ -669,7 +669,10 @@ header {
       float: left;
       background: rebeccapurple;
       width: 275px;
-      margin-right: 5px; }
+      margin-right: 5px;
+      /*    a.bm-fw-img {
+            transition: all 2s;
+          }*/ }
       .bmfw .dd ul li .info-box__content {
         text-align: center;
         display: block;
@@ -2917,5 +2920,60 @@ input {
     margin: 10px  40px;
     border-bottom: 1px solid #eaeaea;
     display: block; }
+
+.bmfw-list {
+  border: 0; }
+  .bmfw-list .jumbotron {
+    background: url(../images/fwsc/bm-header.jpg) !important;
+    height: 260px; }
+  .bmfw-list .hd {
+    border-bottom: 1px solid #CCCCCC;
+    border-radius: 0;
+    padding-left: 0;
+    height: 40px;
+    line-height: 40px; }
+    .bmfw-list .hd i {
+      padding: 8px 15px;
+      border-bottom: 2px solid #FF4400;
+      background: none;
+      border-radius: 0;
+      color: #333333; }
+  .bmfw-list .dd {
+    margin: 30px 0;
+    height: 100%;
+    text-align: left;
+    overflow: hidden;
+    color: #494546; }
+    .bmfw-list .dd .info-box-v3 {
+      float: left;
+      width: 210px;
+      height: 100px;
+      background: #e2e0f5;
+      margin-right: 14px;
+      overflow: hidden;
+      margin-bottom: 15px; }
+      .bmfw-list .dd .info-box-v3 a {
+        overflow: hidden; }
+        .bmfw-list .dd .info-box-v3 a img {
+          max-width: 100%;
+          width: 100px;
+          padding: 5px;
+          float: left; }
+        .bmfw-list .dd .info-box-v3 a .info-box__content {
+          margin-top: 15px;
+          overflow: hidden;
+          text-align: center; }
+          .bmfw-list .dd .info-box-v3 a .info-box__content .info-box__title {
+            display: block;
+            font-size: 18px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 5px 0 8px 0;
+            color: #282727; }
+          .bmfw-list .dd .info-box-v3 a .info-box__content .info-box__description {
+            display: block;
+            font-size: 12px;
+            margin-right: 5px; }
 
 /*# sourceMappingURL=app.css.map */

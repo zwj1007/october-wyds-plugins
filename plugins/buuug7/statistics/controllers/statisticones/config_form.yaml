@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Statistic One
+
+# Model Form Field configuration
+form: $/buuug7/statistics/models/statisticone/fields.yaml
+
+# Model Class name
+modelClass: Buuug7\Statistics\Models\StatisticOne
+
+# Default redirect location
+defaultRedirect: buuug7/statistics/statisticones
+
+# Create page
+create:
+    title: Create Statistic One
+    redirect: buuug7/statistics/statisticones/update/:id
+    redirectClose: buuug7/statistics/statisticones
+
+# Update page
+update:
+    title: Edit Statistic One
+    redirect: buuug7/statistics/statisticones
+    redirectClose: buuug7/statistics/statisticones
+
+# Preview page
+preview:
+    title: Preview Statistic One

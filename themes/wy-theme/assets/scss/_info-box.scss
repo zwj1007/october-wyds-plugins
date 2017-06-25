@@ -89,28 +89,44 @@
 .info-box-v2{
     display: block;
     background: #fff;
+    position: relative;
     width: 100%;
+    height: 100px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     margin-bottom: 15px;
-    @include clearfix;
     overflow: hidden;
 
     .info-box__header{
+        position: absolute;
         display: block;
-        float: left;
-        height: 120px;
-        width: 45%;
+        left: 0;
+        height: 100px;
+        width: 100px;
         text-align: center;
-        background:url("http://placehold.it/240x120") center / cover;
         color:#fff;
     }
+
+    .info-box__header-icons1{
+        background:url("../images/shenghuofuwu.jpg") center / cover;
+    }
+    .info-box__header-icons2{
+        background:url("../images/gongqiuxinxi.jpg") center / cover;
+    }
+
+    .info-box__header-icons3{
+        background:url("../images/wuliupeisong.jpg") center / cover;
+    }
+
+    .info-box__header-icons4{
+        background:url("../images/jiankangyiliao.jpg") center / cover;
+    }
     .info-box__content{
-        float: left;
-        width:55%;
+        width:100%;
+        height:100px;
         display: block;
-        padding:20px 10px 10px 10px;
+        padding: 15px 5px 15px 120px;
         >a{
-            font-size: 22px;
+            font-size: 20px;
             display: block;
         }
         >p{

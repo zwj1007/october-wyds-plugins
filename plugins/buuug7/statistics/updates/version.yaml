@@ -2,4 +2,5 @@
 1.0.2:
     - create statistic table
     - create_statistics_table.php
+    - create_statistic_ones_table.php
     - seed_all_tables.php
