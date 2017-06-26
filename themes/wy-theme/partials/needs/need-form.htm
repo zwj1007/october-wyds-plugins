@@ -11,8 +11,12 @@
     <select class="form-control" id="needCategory" name="category">
         <option value="qita" {% if form_value('category') == "qita" %} selected {% endif %}>其他</option>
         <option value="zhaopin" {% if form_value('category') == "zhaopin" %} selected {% endif %}>招聘</option>
+        <option value="jianzhi" {% if form_value('category') == "jianzhi" %} selected {% endif %}>兼职</option>
         <option value="fangchan" {% if form_value('category') == "fangchan" %} selected {% endif %}>房产</option>
         <option value="ershou" {% if form_value('category') == "ershou" %} selected {% endif %}>二手</option>
+        <option value="chongwu" {% if form_value('category') == "chongwu" %} selected {% endif %}>宠物</option>
+        <option value="bendifuwu" {% if form_value('category') == "bendifuwu" %} selected {% endif %}>本地服务</option>
+        <option value="jiaoyou" {% if form_value('category') == "jiaoyou" %} selected {% endif %}>交友</option>
     </select>
 </div>
 

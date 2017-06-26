@@ -8,6 +8,7 @@ columns:
         searchable: true
     links:
         label: 店铺地址(URL)
+        invisible: true
     user:
         label: 用户
         relation: user

@@ -7861,6 +7861,30 @@ figure {
 
 /*
 |--------------------------------------------------------------------------
+| _thumbnail
+|--------------------------------------------------------------------------
+|
+| Created by buuug7 on 2017/6/26.
+| 
+|
+*/
+.thumbnail-v2 {
+  background-color: transparent; }
+  .thumbnail-v2 .caption > * {
+    text-align: center; }
+  .thumbnail-v2 .caption > p {
+    color: #9e9e9e !important; }
+  .thumbnail-v2 .caption > p:last-of-type {
+    font-size: 14px; }
+
+.thumbnail-v3 {
+  padding: 0;
+  border: none; }
+  .thumbnail-v3 > img {
+    width: 100%; }
+
+/*
+|--------------------------------------------------------------------------
 | _navbar
 |--------------------------------------------------------------------------
 |
@@ -8055,15 +8079,6 @@ a:visited, a:active {
   position: relative;
   overflow: hidden;
   width: 100%; }
-
-.thumbnail-v2 {
-  background-color: transparent; }
-  .thumbnail-v2 .caption > * {
-    text-align: center; }
-  .thumbnail-v2 .caption > p {
-    color: #9e9e9e !important; }
-  .thumbnail-v2 .caption > p:last-of-type {
-    font-size: 14px; }
 
 .news-wrap {
   display: block;

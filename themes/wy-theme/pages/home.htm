@@ -35,6 +35,8 @@ $this['categoryFangChan']=\Buuug7\User\Models\Need::displayByCategory('fangchan'
 $this['categoryErShow']=\Buuug7\User\Models\Need::displayByCategory('ershou',12);
 $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',12);
 
+// 推荐店铺
+$this['featuredShops']=\Buuug7\User\Models\Shop::displayFeatured();
 
 // 推荐电商 知名企业
 $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
@@ -148,11 +150,14 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                 <div class="row">
                     {% for post in dianShangDongTai %}
                     <div class="col-md-3 col-sm-4 m-b">
-                        <h5 class="color-444" style="height: 40px;line-height: 1.3;overflow: hidden">
+                        <h5 class="color-444" style="">
                             <a class="color-444" href="/news/post/{{ post.id }}">
                                 {{ str_limit(post.title, 60, '...') }}
                             </a>
                         </h5>
+                        <p class="small color-777">
+                            {{ str_limit(post.summary, 60, '...') }}
+                        </p>
                         <small class="color-777">
                             {{ post.published_at|date('Y,m月 d')}}
                         </small>
@@ -169,6 +174,9 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                                 {{ str_limit(post.title, 60, '...') }}
                             </a>
                         </h5>
+                        <p class="small color-777">
+                            {{ str_limit(post.summary, 60, '...') }}
+                        </p>
                         <small class="color-777">
                             {{ post.published_at|date('Y,m月 d')}}
                         </small>
@@ -219,7 +227,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                             {% for post in chunk %}
                             <li style="line-height: 2">
                                 <a href="/needs/need/{{ post.id }}" class="color-666">{{ post.title}}</a>
-                                <span class="time small pull-right">{{ post.checked_at|time_diff }}</span>
+                                <span class="time small pull-right hidden-xs">{{ post.checked_at|time_diff }}</span>
                             </li>
                             {% endfor %}
                         </ul>
@@ -235,7 +243,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                             {% for post in chunk %}
                             <li>
                                 <a href="/needs/need/{{ post.id }}" class="color-666">{{ post.title}}</a>
-                                <span class="time small pull-right">{{ post.checked_at|time_diff }}</span>
+                                <span class="time small pull-right hidden-xs">{{ post.checked_at|time_diff }}</span>
                             </li>
                             {% endfor %}
                         </ul>
@@ -251,7 +259,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                             {% for post in chunk %}
                             <li>
                                 <a href="/needs/need/{{ post.id }}" class="color-666">{{ post.title}}</a>
-                                <span class="time small pull-right">{{ post.checked_at|time_diff }}</span>
+                                <span class="time small pull-right hidden-xs">{{ post.checked_at|time_diff }}</span>
                             </li>
                             {% endfor %}
                         </ul>
@@ -267,7 +275,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                             {% for post in chunk %}
                             <li>
                                 <a href="/needs/need/{{ post.id }}" class="color-666">{{ post.title}}</a>
-                                <span class="time small pull-right">{{ post.checked_at|time_diff }}</span>
+                                <span class="time small pull-right hidden-xs">{{ post.checked_at|time_diff }}</span>
                             </li>
                             {% endfor %}
                         </ul>
@@ -283,7 +291,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                             {% for post in chunk %}
                             <li>
                                 <a href="/needs/need/{{ post.id }}" class="color-666">{{ post.title}}</a>
-                                <span class="time small pull-right">{{ post.checked_at|time_diff }}</span>
+                                <span class="time small pull-right hidden-xs">{{ post.checked_at|time_diff }}</span>
                             </li>
                             {% endfor %}
                         </ul>
@@ -295,6 +303,26 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         </div>
     </div>
 
+    <!--品牌店铺-->
+    <div class="headline">
+        <h2><a href="/shops">品牌店铺</a></h2>
+    </div>
+    <div class="row">
+        {% for shop in featuredShops %}
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail thumbnail-v3">
+                <img src="{{ shop.getAvatarThumb(400,200) }}" alt="">
+                <div class="caption">
+                    <h4>{{ shop.name }}</h4>
+                    <p class="color-777">{{ str_limit(shop.description, 56, '...') }}</p>
+                    <p>
+                        <a href="/shops/shop/{{ shop.id }}" class="btn btn-warning">查看</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 
     <!--便民服务-->
     <div class="headline ">

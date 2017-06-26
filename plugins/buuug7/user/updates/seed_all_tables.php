@@ -54,7 +54,7 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user01->id,
             'title' => '急聘初中语文老师',
-            'category' => 'zhaopin',
+            'category' => 'jianzhi',
             'description' => '
             <h4>职位详情</h4>
             <h5>授课年级</h5>
@@ -129,8 +129,55 @@ class SeedAllTables extends Seeder
         // insert need of this user
         Need::create([
             'user_id' => $user01->id,
-            'title' => '急聘平面设计讲师 五险一金双休',
+            'title' => '机电维修工钣金喷漆工学徒',
             'category' => 'zhaopin',
+            'description' => '
+            <h4>职位介绍</h4>
+            <p>性别：不限 | 驾照：不要求</p>
+            <h4>职位描述</h4>
+            <p>敬业爱岗忠于职守热爱本职工作尊敬领导</p>
+            <h4>招聘职位：机电维修</h4>
+            ',
+            'featured' => true,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+        ]);
+
+
+        // insert need of this user
+        Need::create([
+            'user_id' => $user01->id,
+            'title' => '兰州本地 家养纯种哈多利版球形博美宝宝',
+            'category' => 'chongwu',
+            'description' => '
+            <h4>狗狗简介</h4>
+            <p>公母都有，毛色雪白，毛量大，耳朵小，嘴巴短短的特别可爱。现在马上三个月了，喜欢的抓紧咯。诚心喜欢的电话联系，非诚勿扰！</p>
+            ',
+            'featured' => true,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+        ]);
+
+        // insert need of this user
+        Need::create([
+            'user_id' => $user01->id,
+            'title' => '顶级精品泰迪幼犬, 颜色全数量多,包纯种有送货服务',
+            'category' => 'chongwu',
+            'description' => '
+            <h4>狗狗简介</h4>
+            <p>保证纯种,狗都是自己的狗场繁殖的，同样的饲养成本我们不会养串子影响效益 ，而且做生意讲的是诚信。我犬舍还有种公配种服务 从我犬舍售出的狗狗成年后还可以为您免费配种两次</p>
+            ',
+            'featured' => true,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+        ]);
+
+
+        // insert need of this user
+        Need::create([
+            'user_id' => $user01->id,
+            'title' => '兼职急聘平面设计讲师 五险一金双休',
+            'category' => 'jianzhi',
             'description' => '
             <h4>职位介绍</h4>
             <p>年龄：23-30岁 | 性别：不限 | 驾照：不要求</p>
@@ -227,7 +274,7 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user02->id,
             'title' => '免费换人 三天试用 上门服务 持证上岗 专业靠谱',
-            'category' => 'qita',
+            'category' => 'bendifuwu',
             'description' => '
             <dl class="dl-horizontal">
                 <dt>类别</dt>
@@ -261,7 +308,7 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user02->id,
             'title' => '专业催乳师无痛开奶、催乳、疏通急性乳腺炎上门服务',
-            'category' => 'qita',
+            'category' => 'bendifuwu',
             'description' => '
             <dl class="dl-horizontal">
                 <dt>类别</dt>
@@ -410,6 +457,41 @@ class SeedAllTables extends Seeder
            <blockquote>
             专业的公司，做专业的回收。让您省时 省心 省事
             </blockquote>
+            ',
+            'featured' => true,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+        ]);
+
+
+        // insert need of this user
+        Need::create([
+            'user_id' => $user02->id,
+            'title' => '心诚则灵,真诚招婚',
+            'category' => 'jiaoyou',
+            'description' => '
+            <h4>个人资料</h4>
+            <p>本人姓宋，男，家住定西市。身高182CM，体重70公斤。年龄24岁，月收入10000左右，有房</p>
+            <h4>征婚宣言</h4>
+            <p>我是一个平凡的男人，想找一帅哥的就别来了，虽然我也不差。想找一钱袋的就别见了，虽然我有点小钱。我只想找个看得上，能过日子的女人就好，就像我经常开玩笑说的一样，只要是女的.活的就好。我个人比较顾家，会做饭，家务我也经常做的，平时在家也养些花草，喜欢旅游，每年都会旅游一次，以前总是一个人出去旅游，虽然很自由很放松，可也少了不少乐趣。想找个人陪我一起游览!</p>
+            ',
+            'featured' => true,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+        ]);
+
+        // insert need of this user
+        Need::create([
+            'user_id' => $user02->id,
+            'title' => '非诚勿扰个人征婚启事',
+            'category' => 'jiaoyou',
+            'description' => '
+            <h4>个人资料</h4>
+            <p>保密,呵呵</p>
+            <h4>求偶原则</h4>
+            <p>只要是女的就行</p>
+            <p>谁对我有意思，我就跟谁交往; 谁要是喜欢我，我就跟谁恋爱;</p>
+            <p>谁愿意和我举行婚礼，我就跟谁结为夫妻; 谁能够和我彼此相爱，我就跟谁天长地久!</p>
             ',
             'featured' => true,
             'checked' => true,

@@ -11,7 +11,7 @@ class CreateNeedsTable extends Migration
         Schema::create('buuug7_user_needs', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->enum('category', ['zhaopin', 'fangchan', 'ershou', 'qita'])->default('qita');
+            $table->enum('category', ['zhaopin', 'jianzhi', 'fangchan', 'ershou', 'chongwu', 'bendifuwu', 'jiaoyou', 'qita'])->default('qita');
             $table->integer('user_id')->unsigned();
             $table->string('title');
             $table->longText('description')->nullable();

@@ -24,7 +24,7 @@ class Need extends Model
      * @var array Fillable fields
      */
     protected $fillable = [
-        'title','category','description'
+        'title', 'category', 'description'
     ];
 
     /*
@@ -91,23 +91,47 @@ class Need extends Model
         if ($limit) {
             return $query->isChecked()->where('category', $categorySlug)->orderBy('checked_at', 'desc')->limit($limit)->get();
         }
-        return $query->isChecked()->where('category', $categorySlug)->orderBy('checked_at', 'desc')->paginate(4);
+        return $query->isChecked()->where('category', $categorySlug)->orderBy('checked_at', 'desc')->paginate(5);
     }
 
     public function scopeSearch($query, $search)
     {
-        $searchableFields=['title'];
-        return $query->isChecked()->searchWhere($search,$searchableFields)->paginate(15);
+        $searchableFields = ['title'];
+        return $query->isChecked()->searchWhere($search, $searchableFields)->paginate(15);
     }
 
     public static function getCategories()
     {
         return [
             'zhaopin' => '招聘',
+            'jianzhi' => '兼职',
             'fangchan' => '房产',
             'ershou' => '二手',
+            'chongwu' => '宠物',
+            'bendifuwu' => '本地服务',
+            'jiaoyou' => '交友',
             'qita' => '其他',
         ];
+    }
+
+    /**
+     * 按照分类取出取出所有的信息
+     * @param null $limit
+     * @return array
+     */
+    public static function getAllNeedsGroupedByCategory($limit = null)
+    {
+        $out = null;
+        foreach (self::getCategories() as $k => $v) {
+            if ($limit) {
+                $out[$k]['name']=$v;
+                $out[$k]['data'] = self::displayByCategory($k, $limit);
+            } else {
+                $out[$k]['name']=$v;
+                $out[$k]['data'] = self::displayByCategory($k);
+            }
+        }
+        return $out;
     }
 
 }

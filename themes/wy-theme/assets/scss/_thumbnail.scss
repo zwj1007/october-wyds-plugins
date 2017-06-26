@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/*
+|--------------------------------------------------------------------------
+| _thumbnail
+|--------------------------------------------------------------------------
+|
+| Created by buuug7 on 2017/6/26.
+| 
+|
+*/
+
+.thumbnail-v2 {
+    background-color: transparent;
+    .caption {
+        > * {
+            text-align: center;
+        }
+        > p {
+            color: rgb(158, 158, 158) !important;;
+        }
+        > p:last-of-type {
+            font-size: 14px;
+        }
+    }
+}
+
+.thumbnail-v3 {
+    padding: 0;
+    border: none;
+    > img {
+        width: 100%
+    }
+    .caption {
+        //background: transparent;
+    }
+}
