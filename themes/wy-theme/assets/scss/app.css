@@ -6539,22 +6539,6 @@ a:hover, a:visited {
 | 
 |
 */
-.alert-danger {
-  background-color: #dd4b39;
-  color: #fff; }
-
-.alert-success {
-  background-color: #00a65a;
-  color: #fff; }
-
-.alert-warning {
-  background-color: #f39c12;
-  color: #fff; }
-
-.alert-info {
-  background-color: #00c0ef;
-  color: #fff; }
-
 /*
 |--------------------------------------------------------------------------
 | _box
@@ -6799,6 +6783,16 @@ a:hover, a:visited {
     text-align: center;
     letter-spacing: 2px;
     transform: rotate(45deg); }
+  .easy-block-v2 .easy-bg-v2--v1 {
+    top: 30%;
+    color: #fff;
+    width: 100%;
+    padding: 5px;
+    right: 0;
+    font-size: 13px;
+    position: absolute;
+    text-align: center;
+    letter-spacing: 2px; }
 
 /*
 |--------------------------------------------------------------------------
