@@ -18,15 +18,19 @@
                 </li>
                 <li class="{% if this.page.id == 'xian-shang-pei-xun' %}active {% endif %}">
                     <a href="/xian-shang-pei-xun">培训</a></li>
-                <li class="{% if this.page.id == 'ben-di-dian-shang' %}active {% endif %}">
-                    <a href="/ben-di-dian-shang">本地电商</a></li>
-                <li class="{% if this.page.id == 'fu-wu-shi-chang' %}active {% endif %}">
-                    <a href="/fu-wu-shi-chang">服务市场</a></li>
+
+                <li class="{% if this.page.id == 'ying-xiao' %}active {% endif %}">
+                    <a href="/ying-xiao">营销</a></li>
+
+                <li class="{% if this.page.id == 'sheng-huo' %}active {% endif %}">
+                    <a href="/sheng-huo">本地生活</a></li>
                 <li class="{% if this.page.id == 'statistics-statistics' %}active {% endif %}">
                     <a href="/statistics">统计</a></li>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% if user %}{{ user.name }}{% else %}登陆/注册{% endif %} <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        {% if user %}{{ user.name }}{% else %}登陆/注册{% endif %} <b class="caret"></b>
+                    </a>
                     <ul class="dropdown-menu">
                         {% if user %}
                         <li><a href="/user/center/account">账号</a></li>

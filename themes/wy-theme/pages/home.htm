@@ -295,28 +295,12 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         </div>
     </div>
 
-    <!--知名企业-->
-    {% if featuredCompanies %}
-    <div class="headline">
-        <h2><a href="/courses/categories/dian-shang-ji-chu-zhi-shi">知名企业</a></h2>
-    </div>
-    <div class="owl-carousel owl-carousel-v2 m-b-lg">
-        {% for post in featuredCompanies %}
-        <div class="item">
-            <a href="/company/{{ post.id }}">
-                <img src="{{ post.getAvatarThumb(300) }}" alt="">
-            </a>
-        </div>
-        {% endfor %}
-    </div>
-    {% endif %}
-
 
     <!--便民服务-->
     <div class="headline ">
         <h2><a href="/bian-min-fu-wu">便民服务</a></h2>
     </div>
-    <div class="row m-b-lg">
+    <div class="row m-b">
         <div class="col-sm-6 col-md-3">
             <div class="info-box-v2">
                 <a class="info-box__header info-box__header-icons1" href="/bian-min-fu-wu#sheng-huo-fu-wu">
@@ -359,6 +343,23 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             </div>
         </div>
     </div>
+
+    <!--知名企业-->
+    {% if featuredCompanies %}
+    <div class="headline">
+        <h2><a href="/courses/categories/dian-shang-ji-chu-zhi-shi">知名企业</a></h2>
+    </div>
+    <div class="owl-carousel owl-carousel-v2 m-b-lg">
+        {% for post in featuredCompanies %}
+        <div class="item">
+            <a href="/company/{{ post.id }}">
+                <img src="{{ post.getAvatarThumb(300) }}" alt="">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
 </div>
 
 {% put scripts %}
