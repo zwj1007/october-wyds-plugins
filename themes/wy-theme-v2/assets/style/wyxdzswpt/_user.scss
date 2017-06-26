@@ -267,6 +267,82 @@
   }
 }
 
+//店铺
+.user-dp {
+
+  .content {
+    .btn-warning {
+      color: #fff;
+      background-color: #f39c12;
+      border-color: #e08e0b;
+    }
+    .btn {
+      display: inline-block;
+      margin-bottom: 0;
+      font-weight: normal;
+      text-align: center;
+      vertical-align: middle;
+      touch-action: manipulation;
+      cursor: pointer;
+      white-space: nowrap;
+      font-size: 16px;
+      line-height: 1.42857;
+      border-radius: 0;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      padding: 8px 25px;
+      border: 1px solid #ff6218;
+      background: $nav-background;
+      color: #FFFFFF;
+    }
+  }
+
+  .panel {
+    .dp-but {
+      padding: 8px 15px;
+      border: 1px solid #ff6218;
+      background: $nav-background;
+      color: #FFFFFF;
+      margin: 0 auto;
+      display: -webkit-box;
+      a {
+        color: #FFFFFF;
+        padding: 10px 25px;
+
+      }
+    }
+  }
+
+  .con-img {
+
+    .portr .portr-img {
+      border: 1px dashed #CCCCCC;
+      padding: 20px 40px;
+      i{
+        font-size: 82px;
+      }
+
+    }
+    .callout {
+      margin-top: 35px;
+      margin-bottom: 22px;
+      padding: 20px;
+      border-left: 3px solid #eeeeee;
+      line-height: 30px;
+      background-color: rgba(244, 89, 18, 0.22);
+      border-color: rgba(225, 82, 18, 0.5);
+      h4 {
+        color: #bd4b12;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+}
+
 //个人收藏
 .user-collect {
   .mainRight {

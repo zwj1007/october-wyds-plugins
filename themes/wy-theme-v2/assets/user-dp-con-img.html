@@ -85,10 +85,10 @@
 
 
 <div class="main">
-    <section class="user ">
+    <section class="user user-dp user-portr ">
         <div class="mainLeft float-left">
             <ul>
-                <li class="active ">
+                <li>
                     <a href="user.html">
                         <i class="fa fa-drivers-license"></i>
                         账号
@@ -106,7 +106,7 @@
                         公司信息
                     </a>
                 </li>
-                <li>
+                <li class="active ">
                     <a href="user-dianpu.html">
                         <i class="fa fa-archive"></i>
                         我的店铺
@@ -135,52 +135,27 @@
             </ul>
         </div>
         <div class="mainRight float-right  ">
+
             <div class="content-title">
-                <a href="user.html">用户资料</a>
+                <a href="user.html">店铺缩略图</a>
                 <span></span>
-
             </div>
-            <div class="content">
-                <form id="ucMsg" action="#!" method="post" novalidate="novalidate">
-                    <div class="leftBar float-left">
-                        <div id="img_title_container">
-                            <img id="avatarUrl" src="images/user/userPhoto.jpg ">
-                        </div>
-                        <a class="imgFile">修改头像
-                            <input type="file" name="img_title_file" id="img_title_file"
-                                   onchange="uploadImg()">
-                        </a>
 
+            <div class="content con-img">
+                <div class="portr">
+                    <div class="portr-img ">
+                       <i class="fa fa-picture-o"></i>
                     </div>
-                    <div class="rightBar float-right">
-                        <div id="nameTips">
-                            <span>登录名：</span>
-                            <input type="text" name="name" value="yjf123" id="name" disabled="">
-                        </div>
-                        <div id="nickNameTips">
-                            <span>昵称：</span>
-                            <input type="text" name="nickName" value="user15193241273" id="nickName">
-                        </div>
+                </div>
+                <div class="callout ">
+                    <h4>店铺缩略图上传说明</h4>
 
-                        <div>
-                            <span>用户类别：</span>
-                            <input type="text" name="roleCode" value="普通用户" id="usertype" disabled="">
-                        </div>
-                        <div>
-                            <span>电子邮箱：</span>
-                            <input id="email" type="text" name="email" value="" placeholder="电子邮箱">
-                        </div>
-                        <div id="mobileTips">
-                            <span>手机号：</span>
-                            <input type="text" name="mobile" value=" 151****1273 " id="mobile" placeholder="联系电话">
-                        </div>
-                        <div>
-                            <span>联系人：</span>
-                            <input type="text" id="contactName" name="contactName" value="" placeholder="联系人">
-                        </div>
-                        <input id="ucmsgSave" type="button" class="imgFile" value="保存">
-                    </div>
-                </form>
+                    <p>
+                        1、上传图片比例建议长宽比为(1:1)<br>
+                        2、上传图片尺寸建议(400px:400px)<br>
+                    </p>
+                </div>
+
             </div>
         </div>
     </section>

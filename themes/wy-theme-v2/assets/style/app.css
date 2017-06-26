@@ -689,6 +689,45 @@ header {
       .bmfw .dd ul li ul li:last-child {
         margin-right: 0; }
 
+.yxwd .hd {
+  text-align: left;
+  padding-left: 0;
+  height: 40px;
+  line-height: 40px;
+  border-top: 2px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+  border-left: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC; }
+  .yxwd .hd i {
+    border-bottom: 3px solid #FF4400;
+    padding-bottom: 6px;
+    padding-left: 15px;
+    padding-right: 15px; }
+.yxwd .dd .zzsc {
+  overflow: hidden; }
+  .yxwd .dd .zzsc img {
+    width: 16%;
+    margin: 3px;
+    border-radius: 5px;
+    float: left;
+    border: 1px solid #CCCCCC; }
+  .yxwd .dd .zzsc .rotatesimg {
+    -webkit-animation: transform-5 2s ease 500ms alternate none 1;
+    animation: transform-5 2s ease 500ms alternate none 1; }
+@-webkit-keyframes transform-5 {
+  from {
+    -webkit-transform: perspective(400px) rotateY(180deg);
+    transform: perspective(400px) rotateY(180deg); }
+  to {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg); } }
+@keyframes transform-5 {
+  from {
+    -webkit-transform: perspective(400px) rotateY(180deg);
+    transform: perspective(400px) rotateY(180deg); }
+  to {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg); } }
 .ppqy {
   height: 300px; }
   .ppqy .hd {
@@ -2528,6 +2567,58 @@ input {
         height: auto; }
       .user-gs .panel .panel-body .form-group .note-frame {
         border: 1px solid #a9a9a9; }
+
+.user-dp .content .btn-warning {
+  color: #fff;
+  background-color: #f39c12;
+  border-color: #e08e0b; }
+.user-dp .content .btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 16px;
+  line-height: 1.42857;
+  border-radius: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 8px 25px;
+  border: 1px solid #ff6218;
+  background: #FF4400;
+  color: #FFFFFF; }
+.user-dp .panel .dp-but {
+  padding: 8px 15px;
+  border: 1px solid #ff6218;
+  background: #FF4400;
+  color: #FFFFFF;
+  margin: 0 auto;
+  display: -webkit-box; }
+  .user-dp .panel .dp-but a {
+    color: #FFFFFF;
+    padding: 10px 25px; }
+.user-dp .con-img .portr .portr-img {
+  border: 1px dashed #CCCCCC;
+  padding: 20px 40px; }
+  .user-dp .con-img .portr .portr-img i {
+    font-size: 82px; }
+.user-dp .con-img .callout {
+  margin-top: 35px;
+  margin-bottom: 22px;
+  padding: 20px;
+  border-left: 3px solid #eeeeee;
+  line-height: 30px;
+  background-color: rgba(244, 89, 18, 0.22);
+  border-color: rgba(225, 82, 18, 0.5); }
+  .user-dp .con-img .callout h4 {
+    color: #bd4b12;
+    font-size: 16px;
+    margin-bottom: 10px; }
 
 .user-collect .mainRight .content ul li {
   line-height: 50px; }

@@ -376,9 +376,9 @@
       width: $page-width/4-5;
       margin-right: 5px;
 
-  /*    a.bm-fw-img {
-        transition: all 2s;
-      }*/
+      /*    a.bm-fw-img {
+            transition: all 2s;
+          }*/
       .info-box__content {
         text-align: center;
         display: block;
@@ -403,6 +403,66 @@
 
       }
     }
+  }
+}
+
+//优秀网站
+.yxwd {
+  .hd {
+    text-align: left;
+    padding-left: 0;
+    height: 40px;
+    line-height: 40px;
+    border-top: 2px solid $border-color;
+    border-right: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    i {
+      border-bottom: 3px solid $nav-background;
+      padding-bottom: 6px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  .dd {
+    .zzsc {
+      overflow: hidden;
+      img {
+        width: 16%;
+        margin: 3px;
+        border-radius: 5px;
+        float: left;
+        border: 1px solid #CCCCCC;
+      }
+      .rotatesimg {
+        -webkit-animation: transform-5 2s ease 500ms alternate none 1;
+        animation: transform-5 2s ease 500ms alternate none 1;
+      }
+
+      @-webkit-keyframes transform-5 {
+        from {
+          -webkit-transform: perspective(400px) rotateY(180deg);
+          transform: perspective(400px) rotateY(180deg);
+        }
+        to {
+          -webkit-transform: perspective(400px) rotateY(0deg);
+          transform: perspective(400px) rotateY(0deg);
+        }
+      }
+
+      @keyframes transform-5 {
+        from {
+          -webkit-transform: perspective(400px) rotateY(180deg);
+          transform: perspective(400px) rotateY(180deg);
+        }
+        to {
+          -webkit-transform: perspective(400px) rotateY(0deg);
+          transform: perspective(400px) rotateY(0deg);
+        }
+      }
+
+    }
+
   }
 }
 
