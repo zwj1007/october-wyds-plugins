@@ -1,0 +1,51 @@
+title = '创建店铺'
+url = '/shops/shop/update/:id'
+layout ='default'
+[b7Shop]
+==
+function onStart()
+{
+if(!Auth::check()){
+return Redirect::to('/user/login');
+}
+
+$this->addCss('https://cdn.bootcss.com/summernote/0.8.3/summernote.css');
+$this->addJs('https://cdn.bootcss.com/summernote/0.8.3/summernote.min.js');
+$this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min.js');
+}
+==
+
+<div class="container m-t">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    更新店铺
+                </div>
+                <div class="panel-body">
+
+                   <!-- <form>
+                        <div class="form-group">
+                            <label for="">店铺缩略图</label>
+
+                        </div>
+                    </form>-->
+
+
+                    {% partial 'shops/shop-form' method='onUpdateShop' %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    店铺头像
+                </div>
+                <div class="panel-body">
+                    {% component 'imageUploader' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

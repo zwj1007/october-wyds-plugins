@@ -28,6 +28,10 @@ $this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min
                        {% component 'imageUploader' %}
                    </div>
 
+                    <div class="callout callout-info">
+                        <p>等待图片上传接受后在点击提交按钮</p>
+                    </div>
+
                     <form
                             data-request="onBindAvatar"
                             data-request-data="id:{{ shop.id }}"

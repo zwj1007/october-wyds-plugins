@@ -5,6 +5,8 @@ use Buuug7\User\Models\Shop as UserShop;
 use RainLab\User\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Flash;
+use Log;
+use ApplicationException;
 
 class Shop extends ComponentBase
 {
@@ -85,7 +87,7 @@ class Shop extends ComponentBase
 
         $user = Auth::getUser();
 
-        if ($user->shops()) {
+        if (count($user->shops()->get())) {
             Flash::error('只允许添加一个店铺');
             return Redirect::refresh();
         }
@@ -119,7 +121,43 @@ class Shop extends ComponentBase
             Flash::error('发生了错误,请重新提交店铺信息,店铺缩略图未上传?');
             return Redirect::refresh();
         }
+    }
 
+    public function onUpdateShop()
+    {
+        $shop = UserShop::find(post('id'));
+        if (!$shop) {
+            throw new ApplicationException('应用发生错误,请稍后再试!');
+        }
+
+        $shop->name = post('name');
+        $shop->links = post('links');
+        $shop->description = post('description');
+        $shop->checked = false;
+        $shop->status = 'committed';
+        $shop->save();
+        Flash::success('更新成功');
+        return Redirect::to('/user/center/shops');
+    }
+
+    public function onDeleteShop()
+    {
+        if (!Auth::check()) {
+            return null;
+        }
+
+        $user = Auth::getUser();
+
+        $shop = UserShop::find(post('id'));
+
+        if ($user->id == $shop->user_id) {
+            $shop->delete();
+            Flash::success('成功删除');
+            return Redirect::refresh();
+        } else {
+            Flash::error('你没有权限删除该店铺');
+            return Redirect::refresh();
+        }
 
     }
 

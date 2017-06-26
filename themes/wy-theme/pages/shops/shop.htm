@@ -13,23 +13,52 @@ layout = 'default'
                     {{ shop.name }}
                 </div>
                 <div class="panel-body">
+                    {% if not shop.checked %}
+                    {% if shop.status == 'committed' %}
+                    <div class="alert alert-info">
+                        <strong>您的店铺信息已经提交</strong>
+                    </div>
+                    {% elseif shop.status == 'checking' %}
+                    <div class="alert alert-info">
+                        <strong>您提交的信息正在审核过程中</strong>
+                    </div>
+                    {% elseif shop.status == 'passed' %}
+                    <div class="alert alert-success">
+                        <strong>恭喜,您提交的店铺信息已经通过审核,我们将会在店铺中心展示您的店铺</strong>
+                    </div>
+                    {% elseif shop.status == 'not_passed' %}
+                    <div class="alert alert-info">
+                        <strong>您提交的公司信息未通过审核,具体原因如下,修复后可重新提交进行审核</strong>
+                    </div>
+                    <div class="callout callout-danger">
+                        <h4>需要修复的问题</h4>
+                        <p class="m-t">
+                            {{ shop.not_passed_message }}
+                        </p>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                    <p class="lead">店铺描述</p>
                     <p>
                         {{ shop.description|raw }}
                     </p>
                     <p>
-                        <a href="{{ shop.links }}" class="btn btn-default">店铺地址</a>
+                        <a href="{{ shop.links }}" class="btn btn-default" target="_blank">
+                            <i class="fa fa-link"></i>
+                            店铺地址
+                        </a>
                     </p>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     店铺缩略图
                 </div>
                 <div class="panel-body">
                     <p class="">
-                        <img src="{{ shop.getAvatarThumb(200) }}" class="img-responsive center-block" alt="">
+                        <img src="{{ shop.getAvatarThumb(200) }}" class="center-block img-responsive" alt="">
                     </p>
                 </div>
             </div>

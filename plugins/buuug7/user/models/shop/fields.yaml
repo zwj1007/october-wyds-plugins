@@ -13,7 +13,7 @@ fields:
         placeholder: 店铺地址
     description:
         label: 店铺描述
-        type: textarea
+        type: richeditor
         size: large
 
 secondaryTabs:
@@ -30,8 +30,7 @@ secondaryTabs:
         not_passed_message:
             label: 退回消息
             placeholder: 如何审核不通过,退回用户的反馈消息
-            type: markdown
-            mode: split
+            type: textarea
         checked:
             label: 审核
             type: checkbox
@@ -48,4 +47,8 @@ secondaryTabs:
             label: 推荐
             type: checkbox
             span: auto
+            trigger:
+                action: enable
+                field: checked
+                condition: checked
 
