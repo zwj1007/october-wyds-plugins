@@ -1,0 +1,38 @@
+title = '店铺预览'
+url = '/shops/shop/:id'
+layout = 'default'
+
+[b7Shop]
+==
+
+<div class="container m-t">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {{ shop.name }}
+                </div>
+                <div class="panel-body">
+                    <p>
+                        {{ shop.description|raw }}
+                    </p>
+                    <p>
+                        <a href="{{ shop.links }}" class="btn btn-default">店铺地址</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    店铺缩略图
+                </div>
+                <div class="panel-body">
+                    <p class="">
+                        <img src="{{ shop.getAvatarThumb(200) }}" class="img-responsive center-block" alt="">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

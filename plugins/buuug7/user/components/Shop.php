@@ -78,11 +78,17 @@ class Shop extends ComponentBase
 
     public function onCreateShop()
     {
+
         if (!Auth::check()) {
             return null;
         }
 
         $user = Auth::getUser();
+
+        if ($user->shops()) {
+            Flash::error('只允许添加一个店铺');
+            return Redirect::refresh();
+        }
 
         $shop = $user->shops()->create([
             'name' => post('name'),
@@ -109,7 +115,7 @@ class Shop extends ComponentBase
         if ($shop->avatar) {
             Flash::success('店铺信息已经提交,我们将会尽快审核');
             return Redirect::to('/user/center/shops');
-        }else{
+        } else {
             Flash::error('发生了错误,请重新提交店铺信息,店铺缩略图未上传?');
             return Redirect::refresh();
         }
