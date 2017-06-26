@@ -153,6 +153,60 @@ $(document).ready(function () {
     });
     /* end  */
 
+
+    //首页——优秀店铺展示
+    $(function () {
+        $("#img-slider").imgScroll();
+        $("#img-slider-2").imgScroll();
+
+    });
+    (function ($) {
+        $.fn.imgScroll = function () {
+            var isDone = false,
+                scrollBox = $(this),
+                prevBtn = scrollBox.find("#prev"),
+                nextBtn = scrollBox.find("#next"),
+                imgBox = scrollBox.find("ul"),
+                next_over = imgBox.find("li").width() * imgBox.find("li").length,
+                slide_width = $(".slider-wrap").width();
+
+            return this.each(function () {
+                function setOpacity() {
+                    imgBox.animate({
+                        opacity: 1
+                    }, 800, function () {
+                        isDone = false;
+                    })
+                }
+
+                function scrollNext() {
+                    if (!isDone && next_over + parseInt(imgBox.css("left"), 10) > slide_width) {
+                        isDone = true;
+                        imgBox.animate({
+                            left: "+=" + "-" + slide_width,
+                            opacity: 0.5
+                        }, 1800, setOpacity);
+                    }
+                    //isDone = false
+                }
+
+                function scrollPrev() {
+                    if (!imgBox.is(':animated') && parseInt(imgBox.css("left"), 10) != 0) {
+                        imgBox.animate({
+                            left: "+=" + slide_width,
+                        }, 1800, setOpacity);
+
+                    }
+                }
+
+                prevBtn.bind('click', scrollPrev);
+                nextBtn.bind('click', scrollNext);
+
+
+            })
+        }
+    })(jQuery);
+
 }); // ready end
 
 

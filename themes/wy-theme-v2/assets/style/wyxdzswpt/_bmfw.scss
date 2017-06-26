@@ -55,18 +55,19 @@
           text-align: center;
           .info-box__title {
             display: block;
-            font-size: 18px;
+            font-size: 15px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             margin: 5px 0 8px 0;
-            color: #282727;
+            color: #494848;
 
           }
           .info-box__description {
             display: block;
             font-size: 12px;
             margin-right: 5px;
+            color: #7e7a7a;
           }
         }
 
