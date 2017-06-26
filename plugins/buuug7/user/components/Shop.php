@@ -44,7 +44,7 @@ class Shop extends ComponentBase
                 [
                     'modelClass' => 'Buuug7\User\Models\Shop',
                     'modelKeyColumn' => 'avatar',
-                    'imageWidth' => '100',
+                    'imageWidth' => '200',
                     'imageHeight' => '100',
                     'deferredBinding' => false
                 ]

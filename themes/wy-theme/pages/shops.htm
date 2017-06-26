@@ -1,0 +1,62 @@
+title = '网店'
+url = '/shops'
+layout = 'default'
+
+==
+function onStart(){
+$this['shops']=\Buuug7\User\Models\Shop::displayChecked();
+$this['featuredShops']=\Buuug7\User\Models\Shop::displayFeatured();
+}
+==
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>品牌店铺</h2>
+                <p class="color-777">汇聚最优质的本地网店</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="headline">
+        <h2>推荐店铺</h2>
+    </div>
+    <div class="row">
+        {% for shop in featuredShops %}
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src="{{ shop.getAvatarThumb(400,200) }}" alt="">
+                <div class="caption">
+                    <h4>{{ shop.name }}</h4>
+                    <p class="color-777">{{ str_limit(shop.description, 56, '...') }}</p>
+                    <p>
+                        <a href="/shops/shop/{{ shop.id }}" class="btn btn-primary">查看</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="headline">
+        <h2>店铺</h2>
+    </div>
+    <div class="row">
+        {% for shop in shops %}
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src="{{ shop.getAvatarThumb(400,200) }}" alt="">
+                <div class="caption">
+                    <h4>{{ shop.name }}</h4>
+                    <p>{{ str_limit(shop.description, 30, '...') }}</p>
+                    <p>
+                        <a href="/shops/shop/{{ shop.id }}" class="btn btn-primary">查看</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

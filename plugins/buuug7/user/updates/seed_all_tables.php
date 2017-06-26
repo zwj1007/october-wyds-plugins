@@ -3,6 +3,7 @@
 
 use Buuug7\User\Models\Company;
 use Buuug7\User\Models\Need;
+use Buuug7\User\Models\Shop;
 use Carbon\Carbon;
 use October\Rain\Database\Updates\Seeder;
 use RainLab\User\Facades\Auth;
@@ -25,6 +26,17 @@ class SeedAllTables extends Seeder
             ], true);
         }
         $user01 = Auth::findUserByLogin('youpp@126.com');
+        // insert user shop
+        Shop::create([
+            'name' => 'ThinkPad官方渭源店',
+            'links' => 'https://item.taobao.com/item.htm?spm=a217h.8161588.653213.14.o6rVxT&id=548053128884',
+            'user_id' => $user01->id,
+            'featured' => true,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+            'status' => 'passed',
+            'description' => '<p>杭州瑞淘计算机有限公司企业资质卖家，主营ThinkPad全系列产品。欢迎个人用户与广大企事业单位来店采购，可开增值税票及对公过账，本公司10公里范围3小时内免费送货上门，联系电话182 6811 8891</p>',
+        ]);
         // insert user company
         Company::create([
             'name' => '甘肃天奇网络科技有限公司',
@@ -179,6 +191,17 @@ class SeedAllTables extends Seeder
             ], true);
         }
         $user02 = Auth::findUserByLogin('20654039@qq.com');
+        // insert user shop
+        Shop::create([
+            'name' => '国货精品索奈特店',
+            'links' => 'https://item.taobao.com/item.htm?spm=a217h.8161588.660645.12.o6rVxT&id=536368969377',
+            'user_id' => $user02->id,
+            'featured' => true,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+            'status' => 'passed',
+            'description' => '<p>全新三代台式机内存 兼容三代H61 B75 B55 A55等新系列主板（不兼容G41 P43 P45 X58系列老主板）。支持无理由退货，任何不喜欢不满意均可全额退款，赠送运费险，实现0风险购物。索奈特，精选高品质内存颗粒，烧机测试，通过各大主板的兼容性测试，坚持国货精品不动摇。 6811 8891</p>',
+        ]);
         // insert user company
         Company::create([
             'name' => '雪域科技',
@@ -404,6 +427,17 @@ class SeedAllTables extends Seeder
             ], true);
         }
         $user03 = Auth::findUserByLogin('1396675682@qq.com');
+        // insert user shop
+        Shop::create([
+            'name' => '战略先锋777店铺',
+            'links' => 'https://item.taobao.com/item.htm?spm=a217h.8161588.660689.15.o6rVxT&id=523900371679',
+            'user_id' => $user03->id,
+            'featured' => true,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+            'status' => 'passed',
+            'description' => '<p>2015年9月10日官方发布！ 12.9 英寸 Retina 显示屏，近两倍于 iPad Air 2 的中央处理器性能，图形处理器性能是其两倍。采用 64 位台式电脑级架构的芯片：全新 A9X。iOS 9系统。它薄至 6.9 毫米，轻至 713 克。实现了轻巧纤薄与格外坚固的卓越平衡。</p>',
+        ]);
         // insert user company
         Company::create([
             'name' => '辣妈帮',
@@ -508,6 +542,19 @@ class SeedAllTables extends Seeder
             ], true);
         }
         $user04 = Auth::findUserByLogin('616184039@qq.com');
+
+        // insert user shop
+        Shop::create([
+            'name' => '奇奇鲨童装店',
+            'links' => 'https://shop592477230.taobao.com/?spm=2013.1.1000126.2.mSleQ3',
+            'user_id' => $user04->id,
+            'featured' => true,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+            'status' => 'passed',
+            'description' => '<p>指商品的实时标价，不因表述的差异改变性质。具体成交价格根据商品参加活动，或会员使用优惠券、积分等发生变化，最终以订单结算页价格为准。</p>',
+        ]);
+
         // insert user company
         Company::create([
             'name' => '智火营销',
@@ -543,6 +590,19 @@ class SeedAllTables extends Seeder
             ], true);
         }
         $user05 = Auth::findUserByLogin('614039@qq.com');
+
+        // insert user shop
+        Shop::create([
+            'name' => '百鸟男装店',
+            'links' => 'https://shop592477230.taobao.com/?spm=2013.1.1000126.2.mSleQ3',
+            'user_id' => $user05->id,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+            'status' => 'passed',
+            'description' => '<p>欢迎新老客户关注白鸟男装微信账号：13527762844 每期新品提前分享信息和活动折扣，加入请留言旺旺ID账号或者姓名白鸟每周二，周五更新新品，请新老客户留意一下哦。新品上新72小时内8.5折，联系客服改价。特价商品除外。</p>',
+        ]);
+
+
         Company::create([
             'name' => '视界网',
             'address' => '武汉市江岸区新荣村经贸大夏11F',
@@ -564,7 +624,7 @@ class SeedAllTables extends Seeder
         ]);
 
         Need::create([
-            'user_id' => $user03->id,
+            'user_id' => $user05->id,
             'title' => '高价回收苹果、华为、ViVO、OPPO',
             'category' => 'ershou',
             'description' => '
@@ -600,6 +660,19 @@ class SeedAllTables extends Seeder
             ], true);
         }
         $user06 = Auth::findUserByLogin('894031@qq.com');
+
+        // insert user shop
+        Shop::create([
+            'name' => '里克鲨鱼集市店',
+            'links' => 'https://item.taobao.com/item.htm?id=545657509371&ali_refid=a3_420434_1006:1104621015:N:%E8%A3%A4:74656296785e79cbe59047dfb043f6c0&ali_trackid=1_74656296785e79cbe59047dfb043f6c0&spm=a230r.1.1957635.16.6uZ1If',
+            'user_id' => $user06->id,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+            'status' => 'passed',
+            'description' => '<p>码子是标准的 平时穿的码就可以 不用拍大一码或小一码 腰围无弹力 其他位置均是四面高弹力 免烫 做工精细 立体裁剪 重要的是 面料好 面料好 面料好</p>',
+        ]);
+
+
         Company::create([
             'name' => '长兴电子商务',
             'contact_phone' => '0892-8972382',
@@ -630,7 +703,7 @@ class SeedAllTables extends Seeder
         ]);
 
         Need::create([
-            'user_id' => $user03->id,
+            'user_id' => $user06->id,
             'title' => '高价回收苹果、华为、ViVO、OPPO',
             'category' => 'ershou',
             'description' => '
@@ -668,6 +741,19 @@ class SeedAllTables extends Seeder
             ], true);
         }
         $user07 = Auth::findUserByLogin('785243874@qq.com');
+
+        // insert user shop
+        Shop::create([
+            'name' => '伊慕诗祺舰店',
+            'links' => 'https://item.taobao.com/item.htm?id=553361444276&ali_refid=a3_420434_1006:1150175134:N:%E8%A3%A4%E5%AD%90:5b8ce5826eef6fef17d52eab2a8761bc&ali_trackid=1_5b8ce5826eef6fef17d52eab2a8761bc&spm=a230r.1.1957635.2.6uZ1If',
+            'user_id' => $user07->id,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+            'status' => 'passed',
+            'description' => '<p>2017新款女装春装宽松韩版雪纺衫打底衫女短袖t恤娃娃领衬衫上衣</p>',
+        ]);
+
+
         Company::create([
             'name' => '掌讯科技',
             'address' => '浙江省杭州市江干区八号大街902号8幢2008室',
@@ -696,6 +782,18 @@ class SeedAllTables extends Seeder
             ], true);
         }
         $user08 = Auth::findUserByLogin('139887541@qq.com');
+
+        // insert user shop
+        Shop::create([
+            'name' => '泰星百纳',
+            'links' => 'https://item.taobao.com/item.htm?spm=a230r.1.14.224.6uZ1If&id=528453060238&ns=1&abbucket=19#detail',
+            'user_id' => $user08->id,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+            'status' => 'passed',
+            'description' => '<p>高腰用以表现女性婀娜的腰肢，衬托出臀部圆润饱满的曲线，使下肢显得修长而增添亭亭玉立之感。 亚麻吸湿性强，散热快，吸尘率低，抑菌保健</p>',
+        ]);
+
         Company::create([
             'name' => '飞凡科技',
             'address' => '广州市黄埔区黄埔西路2301号景盛创意园D栋240房',
@@ -714,7 +812,7 @@ class SeedAllTables extends Seeder
         ]);
 
         Need::create([
-            'user_id' => $user03->id,
+            'user_id' => $user08->id,
             'title' => '好房出租',
             'category' => 'ershou',
             'description' => '
@@ -745,6 +843,18 @@ class SeedAllTables extends Seeder
             ], true);
         }
         $user09 = Auth::findUserByLogin('267842147@qq.com');
+
+        // insert user shop
+        Shop::create([
+            'name' => '白开水数码',
+            'links' => 'https://item.taobao.com/item.htm?spm=a217h.8239130.618661.21.5LugG2&id=535587684817',
+            'user_id' => $user09->id,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+            'status' => 'passed',
+            'description' => '<p>荣耀8现货速发 ；购机即送：荣耀8原装透明壳+全屏钢化膜+线控音乐耳机+指环扣支架+店铺延保2年。买正品手机，选白开水数码，荣耀品牌授权店铺，购物无忧！ 亚麻吸湿性强，散热快，吸尘率低，抑菌保健</p>',
+        ]);
+
         Company::create([
             'name' => '天能电池',
             'address' => '深圳市观澜街道大水坑新塘社区易事达工业园F栋',
@@ -772,6 +882,17 @@ class SeedAllTables extends Seeder
             ], true);
         }
         $user10 = Auth::findUserByLogin('45781247@qq.com');
+        // insert user shop
+        Shop::create([
+            'name' => '西瓜数码专享店',
+            'links' => 'https://item.taobao.com/item.htm?spm=a217h.8239130.618658.7.5LugG2&id=541978965595',
+            'user_id' => $user10->id,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+            'status' => 'passed',
+            'description' => '<p>【购机送礼】2.5D钢化膜+透明保护壳+音乐耳机+快递包邮+延保一年！ 全新原封正品，全国联保！</p>',
+        ]);
+
         Company::create([
             'name' => '别具E格',
             'address' => '哈尔滨市松北区学海街1号商业大学A区体育场（哈尔滨）',

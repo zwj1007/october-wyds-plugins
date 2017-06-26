@@ -47,7 +47,7 @@ $this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min
                         {% for shop in shops %}
                         <div class="col-md-4 col-sm-6">
                             <div class="easy-block-v2">
-                                <img alt="" src="{{ shop.getAvatarThumb(200) }}">
+                                <img alt="" src="{{ shop.getAvatarThumb(200,100) }}">
                                 <h4>{{ shop.name }}</h4>
                                 <a class="btn btn-warning btn-xs" href="/shops/shop/{{ shop.id }}">
                                     <i class="fa fa-eye"></i> 查看

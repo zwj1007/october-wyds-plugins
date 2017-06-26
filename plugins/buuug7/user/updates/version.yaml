@@ -7,10 +7,10 @@
     - create_needs_table.php
 1.0.3:
     - seed all tables
-    - seed_all_tables.php
 1.0.4:
     - add social login fields
     - user_add_social_login_fields.php
 1.0.5:
     - add shop model
     - create_shops_table.php
+    - seed_all_tables.php
