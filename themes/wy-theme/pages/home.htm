@@ -381,7 +381,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         {% for post in featuredCompanies %}
         <div class="item">
             <a href="/company/{{ post.id }}">
-                <img src="{{ post.getAvatarThumb(300) }}" alt="">
+                <img src="{{ post.getAvatarThumb(300) }}" alt="" class="bg-white">
             </a>
         </div>
         {% endfor %}
