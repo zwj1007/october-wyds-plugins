@@ -2607,24 +2607,37 @@ input {
   border-color: #e08e0b; }
 .user-dp .content .btn {
   display: inline-block;
-  margin-bottom: 0;
-  font-weight: normal;
-  text-align: center;
-  vertical-align: middle;
-  touch-action: manipulation;
-  cursor: pointer;
-  white-space: nowrap;
-  font-size: 16px;
-  line-height: 1.42857;
-  border-radius: 0;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   padding: 8px 25px;
   border: 1px solid #ff6218;
   background: #FF4400;
   color: #FFFFFF; }
+  .user-dp .content .btn a {
+    color: #FFFFFF;
+    padding: 10px 25px; }
+.user-dp .content .headline {
+  display: block;
+  margin: 35px 0 20px 0;
+  border-bottom: 1px dotted #e4e9f0; }
+  .user-dp .content .headline h3 {
+    margin: 0 0 -2px 0;
+    padding-bottom: 5px;
+    display: inline-block;
+    border-bottom: 3px solid #FF4400; }
+.user-dp .content .content-dptp {
+  text-align: center;
+  margin-left: 40px; }
+  .user-dp .content .content-dptp h4.dpxx-h4 {
+    text-align: left;
+    border-bottom: 1px dashed #CCCCCC; }
+    .user-dp .content .content-dptp h4.dpxx-h4 span {
+      border-bottom: 2px dashed #FF4400; }
+  .user-dp .content .content-dptp img {
+    max-width: 100%;
+    padding: 15px; }
+  .user-dp .content .content-dptp .dptp-xx {
+    text-align: left; }
+    .user-dp .content .content-dptp .dptp-xx p {
+      line-height: 35px; }
 .user-dp .panel .dp-but {
   padding: 8px 15px;
   border: 1px solid #ff6218;
@@ -2635,23 +2648,81 @@ input {
   .user-dp .panel .dp-but a {
     color: #FFFFFF;
     padding: 10px 25px; }
-.user-dp .con-img .portr .portr-img {
-  border: 1px dashed #CCCCCC;
-  padding: 20px 40px; }
-  .user-dp .con-img .portr .portr-img i {
-    font-size: 82px; }
-.user-dp .con-img .callout {
-  margin-top: 35px;
-  margin-bottom: 22px;
-  padding: 20px;
-  border-left: 3px solid #eeeeee;
-  line-height: 30px;
-  background-color: rgba(244, 89, 18, 0.22);
-  border-color: rgba(225, 82, 18, 0.5); }
-  .user-dp .con-img .callout h4 {
-    color: #bd4b12;
-    font-size: 16px;
-    margin-bottom: 10px; }
+.user-dp .con-img {
+  text-align: center; }
+  .user-dp .con-img .portr .portr-img {
+    border: 1px dashed #CCCCCC;
+    padding: 20px 40px; }
+    .user-dp .con-img .portr .portr-img i {
+      font-size: 82px; }
+  .user-dp .con-img .callout {
+    text-align: left;
+    margin-top: 35px;
+    margin-bottom: 22px;
+    padding: 20px;
+    border-left: 3px solid #eeeeee;
+    line-height: 30px;
+    background-color: rgba(244, 89, 18, 0.22);
+    border-color: rgba(225, 82, 18, 0.5); }
+    .user-dp .con-img .callout h4 {
+      color: #bd4b12;
+      font-size: 16px;
+      margin-bottom: 10px; }
+  .user-dp .con-img .callout-info {
+    text-align: left;
+    background-color: #d1ecff;
+    border-color: #a6d0d9; }
+
+.dp-see {
+  border: 1px solid #CCCCCC;
+  margin-bottom: 20px; }
+  .dp-see .content {
+    padding: 20px 15px; }
+    .dp-see .content .see-left {
+      width: 600px;
+      display: inline-block; }
+      .dp-see .content .see-left h4 {
+        font-size: 22px;
+        margin-left: 20px;
+        margin-bottom: 20px; }
+      .dp-see .content .see-left p {
+        line-height: 40px;
+        font-size: 14px; }
+    .dp-see .content .see-right {
+      width: 400px;
+      display: inline-block;
+      margin-left: 55px; }
+      .dp-see .content .see-right img {
+        max-width: 100%; }
+      .dp-see .content .see-right .seeR-content .seeR-title {
+        text-align: center;
+        margin: 15px 0;
+        background: #cccccc;
+        padding: 12px;
+        letter-spacing: 4px; }
+      .dp-see .content .see-right .seeR-content .alert {
+        padding: 15px;
+        margin: 15px 0; }
+        .dp-see .content .see-right .seeR-content .alert i {
+          font-size: 20px; }
+      .dp-see .content .see-right .seeR-content .alert-info {
+        background-color: #d9edf7;
+        border-color: #bce8f1;
+        color: #31708f; }
+      .dp-see .content .see-right .seeR-content .alert-success {
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+        color: #3c763d; }
+      .dp-see .content .see-right .seeR-content .callout {
+        padding: 10px 20px 20px 10px;
+        border-left: 3px solid #eeeeee; }
+      .dp-see .content .see-right .seeR-content .callout-danger {
+        background-color: #fdf7f7;
+        border-color: #ebccd1; }
+        .dp-see .content .see-right .seeR-content .callout-danger h4 {
+          color: #a94442; }
+        .dp-see .content .see-right .seeR-content .callout-danger p {
+          margin: 5px 15px; }
 
 .user-collect .mainRight .content ul li {
   line-height: 50px; }

@@ -85,7 +85,7 @@
 
 
 <div class="main">
-    <section class="user user-dp user-portr ">
+    <section class="user user-gs user-dp ">
         <div class="mainLeft float-left">
             <ul>
                 <li>
@@ -135,31 +135,36 @@
             </ul>
         </div>
         <div class="mainRight float-right  ">
-
-            <div class="content-title">
-                <a href="user.html">店铺缩略图</a>
-                <span></span>
-            </div>
-
-            <div class="content con-img">
-                <div class="portr">
-                    <div class="portr-img ">
-                        <i class="fa fa-picture-o"></i>
-                    </div>
+            <div class="panel">
+                <div class="panel-heading">
+                    更新店铺信息
                 </div>
-                <div class="callout callout-info">
-                    <p>等待图片上传接受后在点击提交按钮</p>
-                </div>
-                <button type="submit" class="btn"><a
-                        href="user-dianpu-Succ.html">提交</a></button>
+                <div class="panel-body">
+                    <form method="post" action="">
+                        <div class="form-group">
+                            <label for="companyName">店铺名称</label>
+                            <input type="text" name="name" id="companyName" value="" placeholder="例如：渭水中药材"
+                                   class="form-control">
+                        </div>
 
-                <div class="callout ">
-                    <h4>店铺缩略图上传说明</h4>
+                        <div class="form-group">
+                            <label for="companyContactPhone">店铺地址 <span style="font-size: 12px;color: #aaaaaa">（必须为有效的网店网址，否则本次添加无效）</span></label>
+                            <input type="text" name="contact_phone" id="companyContactPhone"
+                                   placeholder="例如：http://1.jq2.com" value=""
+                                   class="form-control">
+                        </div>
 
-                    <p>
-                        1、上传图片比例建议长宽比为(1:1)<br>
-                        2、上传图片尺寸建议(400px:400px)<br>
-                    </p>
+                        <div class="form-group">
+                            <label>店铺描述</label>
+
+                            <div class="note-frame">
+
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-default dp-but"><a href="user-dp-con-img.html">更新</a>
+                        </button>
+
+                    </form>
                 </div>
 
             </div>
