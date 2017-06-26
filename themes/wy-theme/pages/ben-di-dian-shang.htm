@@ -25,7 +25,9 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
     <div class="row">
         {% for post in featuredCompanies %}
         <div class="col-md-3 col-sm-4 col-xs-6 m-b">
-            <a href="/company/{{ post.id }}"><img alt="{{ post.name }}" src="{{ post.getAvatarThumb(300) }}" class="img-responsive"></a>
+            <a href="/company/{{ post.id }}">
+                <img alt="{{ post.name }}" src="{{ post.getAvatarThumb(300) }}" class="img-responsive bg-white">
+            </a>
         </div>
         {% endfor %}
     </div>
@@ -37,7 +39,9 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(5);
     <div class="row">
         {% for post in companies %}
         <div class="col-md-3 col-sm-4 col-xs-6 m-b">
-            <a href="/company/{{ post.id }}"><img alt="{{ post.name }}" src="{{ post.getAvatarThumb(300) }}" class="img-responsive"></a>
+            <a href="/company/{{ post.id }}">
+                <img alt="{{ post.name }}" src="{{ post.getAvatarThumb(300) }}" class="img-responsive bg-white">
+            </a>
         </div>
         {% endfor %}
     </div>
