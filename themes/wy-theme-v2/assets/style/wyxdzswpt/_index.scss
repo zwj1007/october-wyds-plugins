@@ -262,10 +262,10 @@
     padding-left: 0;
     height: 40px;
     line-height: 40px;
-    border-top: 2px solid $border-color;
-    border-right: 1px solid $border-color;
-    border-left: 1px solid $border-color;
-    border-bottom: 1px solid $border-color;
+
+    border: 1px solid $border-color;
+
+
     i {
       border-bottom: 3px solid $nav-background;
       padding-bottom: 6px;
@@ -274,11 +274,11 @@
       width: 300px;
     }
     ul {
-      padding-right: 80px;
       display: inline;
       li {
-        width: 50px;
+        width: 80px;
         float: left;
+        text-align: center;
         a {
           font-size: 14px;
           letter-spacing: 3px;
@@ -345,6 +345,100 @@
     }
 
   }
+}
+
+.fusc1 {
+  .dd {
+
+    ul li {
+      text-align: center;
+      a {
+        text-align: center;
+        line-height: 50px;
+        margin: 50px 0;
+        color: #c6c6c6;
+        span {
+          font-size: 30px;
+        }
+        i {
+          font-size: 60px;
+          margin-right: 20px;
+        }
+      }
+    }
+    ul li:hover {
+      a {
+        color: #FFFFFF;
+      }
+    }
+
+    .ul-left {
+      width: 360px;
+      li {
+        width: 360px;
+        height: 150px;
+        background: #707bba;
+      }
+      .ul-li1 {
+        background: #ff4400;
+      }
+    }
+    .ul-center {
+      li {
+        background: #009944;
+        width: 180px;
+        height: 310px;
+        .cen-li-top {
+          height: 155px;
+          border-bottom: 3px solid #00652f;
+          img {
+            max-width: 100%;
+            width: 145px;
+          }
+        }
+      }
+      .cen-li {
+        background: #2f92dc;
+      }
+
+    }
+    .ul-right {
+      width: 380px;
+      padding-left: 10px;
+      li {
+        background: #ff4400;
+        width: 180px;
+        height: 150px;
+        margin-bottom: 5px;
+        margin-right: 5px;
+        span {
+          color: #FFFFFF;
+          font-size: 18px;
+          margin-top: 15px;
+          display: block;
+        }
+        i {
+          color: #FFFFFF;
+          font-size: 35px;
+          margin-top: 10px;
+        }
+        img {
+          width: 150px;
+          max-width: 150%;
+        }
+      }
+      .li1 {
+        background: #6290ff
+      }
+      .li2 {
+        background: #ffa037;
+      }
+      .li3 {
+        background: #ff50d2;
+      }
+    }
+  }
+
 }
 
 //便民服务
