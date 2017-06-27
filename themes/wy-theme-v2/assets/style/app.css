@@ -385,7 +385,7 @@ header {
           color: #fff; }
         header nav ul li ul.ul-xl {
           width: 140px;
-          visibility: hidden; }
+          display: none; }
           header nav ul li ul.ul-xl li {
             float: left;
             text-align: center;
@@ -400,7 +400,7 @@ header {
           color: #ffffff;
           text-decoration: none; }
         header nav ul li:hover ul.ul-xl {
-          visibility: visible; }
+          display: block; }
 
 .dszx {
   height: 370px; }

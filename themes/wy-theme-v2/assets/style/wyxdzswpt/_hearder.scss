@@ -144,8 +144,7 @@ header {
         }
         ul.ul-xl {
           width: 140px;
-          visibility: hidden;
-
+          display: none;
           li {
             float: left;
             text-align: center;
@@ -168,7 +167,7 @@ header {
           text-decoration: none;
         }
         ul.ul-xl {
-          visibility: visible;
+          display: block;
         }
       }
     }
