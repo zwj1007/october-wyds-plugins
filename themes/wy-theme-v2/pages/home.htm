@@ -139,9 +139,10 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             <div class="slider-wrap">
                 <ul>
                     {% for shop in featuredShops %}
-                    <li>
-                        <a href="/shops/shop/{{ shop.id }}"><img src="{{ shop.getAvatarThumb(400,200) }}" class="rotates rotatesimg"/></a>
-                    </li>
+                    <li><a href="/shops/shop/{{ shop.id }}">
+                        <img src="{{ shop.getAvatarThumb(400,200) }}" class="rotates rotatesimg"/>
+                        <p>{{ shop.name }}</p>
+                    </a></li>
                     {% endfor %}
                 </ul>
             </div>

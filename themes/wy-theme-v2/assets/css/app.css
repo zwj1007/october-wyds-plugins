@@ -721,10 +721,6 @@ header {
     padding-right: 15px; }
 .yxwd .dd .zzsc {
   overflow: hidden; }
-  .yxwd .dd .zzsc img {
-    max-width: 100%;
-    border-radius: 5px;
-    border: 1px solid #CCCCCC; }
   .yxwd .dd .zzsc .rotatesimg {
     -webkit-animation: transform-5 2s ease 500ms alternate none 1;
     animation: transform-5 2s ease 500ms alternate none 1; }
@@ -746,7 +742,7 @@ header {
     width: 1050px;
     overflow: hidden;
     position: relative;
-    height: 150px;
+    height: 172px;
     margin-left: 38px;
     margin-right: 40px;
     margin-top: 10px; }
@@ -760,7 +756,20 @@ header {
       float: left;
       width: 252px;
       padding: 5px 0;
-      margin-right: 12px; }
+      margin-right: 12px;
+      border: 1px solid #CCCCCC;
+      border-radius: 5px; }
+      .yxwd .dd .zzsc .slider-wrap ul li img {
+        max-width: 100%; }
+      .yxwd .dd .zzsc .slider-wrap ul li p {
+        text-align: center;
+        margin-top: 10px;
+        color: #6e6d6e; }
+    .yxwd .dd .zzsc .slider-wrap li:hover {
+      box-shadow: 1px 1px 1px 1px #CCCCCC;
+      border: 1px solid #eeeeee; }
+      .yxwd .dd .zzsc .slider-wrap li:hover p {
+        color: #393839; }
   .yxwd .dd .zzsc #prev, .yxwd .dd .zzsc #next {
     position: absolute;
     top: 40px;
