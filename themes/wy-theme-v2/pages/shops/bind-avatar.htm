@@ -1,15 +1,21 @@
-title = "收藏课程"
-url = "/user/center/shoucang"
-layout="default"
-
-[shouCang]
+title = '上传店铺缩略图'
+url = '/shops/shop/bind-avatar/:id'
+layout ='default'
+[b7Shop]
 ==
-function onEnd(){
+function onStart()
+{
+if(!Auth::check()){
+return Redirect::to('/user/login');
+}
+
+$this->addCss('https://cdn.bootcss.com/summernote/0.8.3/summernote.css');
+$this->addJs('https://cdn.bootcss.com/summernote/0.8.3/summernote.min.js');
+$this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min.js');
 
 }
 ==
-
-<section class="box user user-collect">
+<section class="user user-dp user-portr ">
     <div class="mainLeft float-left">
         <ul>
             <li class=" ">
@@ -18,7 +24,7 @@ function onEnd(){
                     账号
                 </a>
             </li>
-            <li>
+            <li class="">
                 <a href="/user/center/avatar">
                     <i class="fa fa-user-circle-o"></i>
                     头像
@@ -30,13 +36,13 @@ function onEnd(){
                     公司信息
                 </a>
             </li>
-            <li class=" ">
+            <li class="active">
                 <a href="/user/center/shops">
                     <i class="fa fa-archive"></i>
                     我的店铺
                 </a>
             </li>
-            <li class="active">
+            <li class="">
                 <a href="/user/center/shoucang">
                     <i class="fa fa-fw fa-folder-open"></i>
                     收藏课程
@@ -58,24 +64,34 @@ function onEnd(){
     </div>
     <div class="mainRight float-right  ">
         <div class="content-title">
-            <a href="javascript:void(0);">已收藏课程</a>
+            <a href="user.html">店铺缩略图</a>
             <span></span>
+        </div>
+
+        <div class="content con-img">
+            <div class="portr">
+                {% component 'imageUploader' %}
+            </div>
+            <div class="callout callout-info">
+                <p>等待图片上传结束在点击提交按钮</p>
+            </div>
+
+            <form
+                    data-request="onBindAvatar"
+                    data-request-data="id:{{ shop.id }}"
+            >
+                <button type="submit" class="btn" data-attach-loading>提交</button>
+            </form>
+
+            <div class="callout ">
+                <h4>店铺缩略图上传说明</h4>
+
+                <p>
+                    1、上传图片比例建议宽高比为(2:1)<br>
+                    2、上传图片尺寸建议(400px:200px)<br>
+                </p>
+            </div>
 
         </div>
-        <div class="content">
-            <ul>
-                {% for course in courses %}
-                <li>
-                    <a href="/courses/course/{{ course.slug }}">{{ course.title }}</a>
-                </li>
-                {% endfor %}
-            </ul>
-
-        </div>
-        {{ courses.render|raw }}
     </div>
-
 </section>
-
-
-

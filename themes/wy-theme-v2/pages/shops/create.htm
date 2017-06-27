@@ -1,15 +1,22 @@
-title = "收藏课程"
-url = "/user/center/shoucang"
-layout="default"
-
-[shouCang]
+title = '创建店铺'
+url = '/shops/shop/create'
+layout ='default'
+[b7Shop]
 ==
-function onEnd(){
+function onStart()
+{
+if(!Auth::check()){
+return Redirect::to('/user/login');
+}
 
+$this->addCss('https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css');
+$this->addCss('https://cdn.bootcss.com/summernote/0.8.3/summernote.css');
+$this->addJs('https://cdn.bootcss.com/summernote/0.8.3/summernote.min.js');
+$this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min.js');
 }
 ==
 
-<section class="box user user-collect">
+<section class="user user-gs user-dp ">
     <div class="mainLeft float-left">
         <ul>
             <li class=" ">
@@ -18,7 +25,7 @@ function onEnd(){
                     账号
                 </a>
             </li>
-            <li>
+            <li class="">
                 <a href="/user/center/avatar">
                     <i class="fa fa-user-circle-o"></i>
                     头像
@@ -30,13 +37,13 @@ function onEnd(){
                     公司信息
                 </a>
             </li>
-            <li class=" ">
+            <li class="active">
                 <a href="/user/center/shops">
                     <i class="fa fa-archive"></i>
                     我的店铺
                 </a>
             </li>
-            <li class="active">
+            <li class="">
                 <a href="/user/center/shoucang">
                     <i class="fa fa-fw fa-folder-open"></i>
                     收藏课程
@@ -57,25 +64,14 @@ function onEnd(){
         </ul>
     </div>
     <div class="mainRight float-right  ">
-        <div class="content-title">
-            <a href="javascript:void(0);">已收藏课程</a>
-            <span></span>
+        <div class="panel">
+            <div class="panel-heading">
+                添加新店铺信息
+            </div>
+            <div class="panel-body">
+                {% partial 'shops/shop-form' method='onCreateShop' %}
+            </div>
 
         </div>
-        <div class="content">
-            <ul>
-                {% for course in courses %}
-                <li>
-                    <a href="/courses/course/{{ course.slug }}">{{ course.title }}</a>
-                </li>
-                {% endfor %}
-            </ul>
-
-        </div>
-        {{ courses.render|raw }}
     </div>
-
 </section>
-
-
-

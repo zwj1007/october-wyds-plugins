@@ -32,6 +32,8 @@ $this['categoryFangChan']=\Buuug7\User\Models\Need::displayByCategory('fangchan'
 $this['categoryErShow']=\Buuug7\User\Models\Need::displayByCategory('ershou',16);
 $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',16);
 
+// 推荐店铺
+$this['featuredShops']=\Buuug7\User\Models\Shop::displayFeatured();
 
 // 推荐电商 知名企业
 $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
@@ -126,6 +128,29 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         {% endfor %}
 
     </div>
+</section>
+
+<!--优秀网店-->
+<section class="box yxwd">
+    <div class="hd"><i>优秀网店展示</i><a href="dpzs-list.html"><span>more+</span></a></div>
+    <div class="dd ">
+        <div id="img-slider" class="zzsc margin-top-10 ">
+            <button id="prev"><i class="fa fa-angle-double-left"></i></button>
+            <div class="slider-wrap">
+                <ul>
+                    {% for shop in featuredShops %}
+                    <li>
+                        <a href="/shops/shop/{{ shop.id }}"><img src="{{ shop.getAvatarThumb(400,200) }}" class="rotates rotatesimg"/></a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <button id="next"><i class="fa fa-angle-double-right"></i></button>
+        </div>
+
+
+    </div>
+
 </section>
 
 <!--广告位-->

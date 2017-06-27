@@ -1,0 +1,58 @@
+title = '店铺预览'
+url = '/shops/shop/:id'
+layout = 'default'
+
+[b7Shop]
+==
+
+<section class="user dp-see">
+    <div class="content">
+        <div class=" see-left">
+            <h4>{{ shop.name }}</h4>
+            {{ shop.description|raw }}
+        </div>
+
+
+        <div class=" see-right">
+            <div style="text-align: center">
+                <a style="color: #969696" href="">
+                    <img class="margin-bottom-10" src="{{ shop.getAvatarThumb(400,200) }}" alt="">
+                    渭水中药材缩略图
+                </a>
+            </div>
+            <div class="seeR-content">
+
+                {% if not shop.checked %}
+                <div class="seeR-title">
+                    <strong> 店铺审核状态</strong>
+                </div>
+                {% if shop.status == 'committed' %}
+                <div class="alert alert-info">
+                    <i class="fa fa-spinner fa-pulse margin-left-right-10"></i> <span>您的店铺信息已经提交,我们将尽快审核.</span>
+                </div>
+                {% elseif shop.status == 'checking' %}
+                <div class="alert alert-info">
+                    <i class="fa fa-spinner fa-pulse margin-left-right-10"></i> <span>审核进行中，请注意查看。</span>
+                </div>
+                {% elseif shop.status == 'passed' %}
+                <div class="alert alert-success">
+                    <i class="fa fa-american-sign-language-interpreting margin-left-right-10 "></i> <span>恭喜,您提交的店铺信息已经通过审核,我们将会在店铺中心展示您的店铺</span>
+                </div>
+                {% elseif shop.status == 'not_passed' %}
+
+                <div class="callout callout-danger">
+                    <h4>审核未通过</h4>
+                    <p>
+                        <strong>原因:</strong>
+                        {{ shop.not_passed_message }}
+                    </p>
+                </div>
+                {% endif %}
+                {% endif %}
+            </div>
+
+        </div>
+
+
+    </div>
+</section>

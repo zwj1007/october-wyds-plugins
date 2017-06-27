@@ -1,0 +1,109 @@
+title = '网店'
+url = '/shops'
+layout = 'default'
+
+==
+function onStart(){
+$this['shops']=\Buuug7\User\Models\Shop::displayChecked();
+$this['featuredShops']=\Buuug7\User\Models\Shop::displayFeatured();
+
+
+$this->addCss('assets/style/cubeportfolio.min.css');
+$this->addJs('assets/script/jquery.cubeportfolio.min.js');
+}
+==
+
+<ol class="box breadcrumb">
+    <li><a href="index.html">首页</a></li>
+    <li class="active">店铺</li>
+</ol>
+<!--活动项目-->
+<section class="xspx-list-wy-v1 margin-bottom-25">
+    <!--标题按钮-->
+    <div id="js-xspx-title-wy-v1" class="cbp-l-filters-alignCenter">
+        <div data-filter=".featured" class="cbp-filter-item cbp-filter-item-active">
+            推荐店铺
+            <div class="cbp-filter-counter"></div>
+        </div>
+        /
+        <div data-filter="*" class=" cbp-filter-item">
+            所有店铺
+            <div class="cbp-filter-counter"></div>
+        </div>
+    </div>
+
+
+    <!--正文-->
+    <div id="js-xspx-work-wy-v1" class="cbp cbp-l-grid-work">
+
+        {% for shop in shops %}
+        <div class="cbp-item {% if shop.featured %}featured{% endif %}">
+            <a href="/shops/shop/{{ shop.id }}" class="cbp-caption " rel="nofollow">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ shop.getAvatarThumb(400,200) }}" alt="">
+                </div>
+            </a>
+            <a href="#!" class="cbp-l-grid-work-title huodong-title-a"
+               rel="nofollow">{{ shop.name }}</a>
+
+            <div class="cbp-l-grid-work-desc">
+                <p>{{ str_limit(shop.description, 40, '...') }}</p>
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+    <!--加载更多-->
+    <div id="js-xspx-gengduo-wy-v1" class="cbp-l-loadMore-button">
+        <a href="#!" class="cbp-l-loadMore-link huodong-margin-title"
+           rel="nofollow">
+            <span class="cbp-l-loadMore-defaultText">更多</span>
+            <span class="cbp-l-loadMore-loadingText">加载中...</span>
+            <span class="cbp-l-loadMore-noMoreLoading">已经到底了</span>
+        </a>
+    </div>
+</section>
+
+
+{% put scripts %}
+<script>
+    //线上培训-列表
+    $('#js-xspx-work-wy-v1').cubeportfolio({
+        filters: '#js-xspx-title-wy-v1',
+        loadMore: '#js-xspx-gengduo-wy-v1',
+        loadMoreAction: 'click',
+        layoutMode: 'grid',
+        defaultFilter: '.featured',
+        animationType: 'scaleSides',
+        gapHorizontal: 30,
+        gapVertical: 30,
+        gridAdjustment: 'responsive',
+        mediaQueries: [{
+            width: 1500,
+            cols: 5,
+        }, {
+            width: 1100,
+            cols: 3,
+        }, {
+            width: 800,
+            cols: 3,
+        }, {
+            width: 480,
+            cols: 2,
+            options: {
+                caption: '',
+            },
+        }, {
+            width: 320,
+            cols: 1,
+            options: {
+                caption: '',
+            },
+        },],
+        caption: 'zoom',
+        displayType: 'fadeIn',
+        displayTypeSpeed: 400,
+    });
+</script>
+{% endput %}

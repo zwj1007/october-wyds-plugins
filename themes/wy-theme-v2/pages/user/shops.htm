@@ -1,5 +1,5 @@
-title = '头像设置'
-url = '/user/center/avatar'
+title = '店铺管理'
+url = '/user/center/shops'
 layout = 'default'
 
 [b7Account]
@@ -14,7 +14,7 @@ $this['social_avatar']=Auth::getUser()->social_avatar;
 
 
 <div class="main">
-    <section class="box user user-portr ">
+    <section class="user user-dp">
         <div class="mainLeft float-left">
             <ul>
                 <li class=" ">
@@ -23,7 +23,7 @@ $this['social_avatar']=Auth::getUser()->social_avatar;
                         账号
                     </a>
                 </li>
-                <li class="active">
+                <li class="">
                     <a href="/user/center/avatar">
                         <i class="fa fa-user-circle-o"></i>
                         头像
@@ -35,7 +35,7 @@ $this['social_avatar']=Auth::getUser()->social_avatar;
                         公司信息
                     </a>
                 </li>
-                <li class=" ">
+                <li class="active">
                     <a href="/user/center/shops">
                         <i class="fa fa-archive"></i>
                         我的店铺
@@ -61,27 +61,17 @@ $this['social_avatar']=Auth::getUser()->social_avatar;
                 </li>
             </ul>
         </div>
-        <div class="mainRight float-right">
+        <div class="mainRight float-right  ">
             <div class="content-title">
-                <a href="user.html">用户头像</a>
+                <a href="/">我的店铺</a>
                 <span></span>
+
             </div>
-
             <div class="content">
-                <div class="portr">
+                <a href="/shops/shop/create" class="btn btn-warning m-b m-t"><i class="fa fa-plus"></i> 添加店铺</a>
 
-                    {% component 'imageUploader' %}
-
-                </div>
-                <div class="callout ">
-                    <h4>头像上传说明</h4>
-                    <p>
-                        1、上传图片比例建议正方形,<br>
-                        2、长宽比为(1:1),<br>
-                        3、上传图片尺寸建议(200px:200px)<br>
-                        4、如果您用社交账号登录,这里不需要上传头像,我们会优先使用您的社交账号头像<br>
-                        4、用社交账号登录时会自动关联其头像。
-                    </p>
+                <div class="headline">
+                    <h3>已添加店铺</h3>
                 </div>
 
             </div>
