@@ -12,7 +12,11 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="item active">
+                        {% if post.image %}
                         <img alt="" src="{{ post.image|media}}">
+                        {% else %}
+                        <img src="http://placehold.it/800x400" alt="">
+                        {% endif %}
                     </div>
                 </div>
             </div>

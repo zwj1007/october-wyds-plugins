@@ -40,8 +40,23 @@ class Course extends Model
     public $rules = [
         'title' => 'required',
         'content' => 'required',
-        'summary' => ''
+        'summary' => 'required',
+        'stars' => 'required',
     ];
+
+
+    public $customMessages = [
+        'required' => '请填写 :attribute ',
+    ];
+
+    public $attributeNames = [
+        'title' => '标题',
+        'content' => '内容',
+        'summary' => '概述',
+        'stars' => '星级',
+        'published_at' => '提交时间',
+    ];
+
 
     /**
      * @var array Relations

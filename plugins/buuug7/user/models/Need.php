@@ -1,6 +1,7 @@
 <?php namespace Buuug7\User\Models;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Model;
 use ValidationException;
 
@@ -124,10 +125,10 @@ class Need extends Model
         $out = null;
         foreach (self::getCategories() as $k => $v) {
             if ($limit) {
-                $out[$k]['name']=$v;
+                $out[$k]['name'] = $v;
                 $out[$k]['data'] = self::displayByCategory($k, $limit);
             } else {
-                $out[$k]['name']=$v;
+                $out[$k]['name'] = $v;
                 $out[$k]['data'] = self::displayByCategory($k);
             }
         }

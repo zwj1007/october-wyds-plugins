@@ -26,7 +26,6 @@ class StatisticOne extends Model
     public $customMessages = [
         'required' => '请填写 :attribute ',
         'unique_with' => '同一天内不能提交两次统计数据',
-
     ];
 
     public $attributeNames = [

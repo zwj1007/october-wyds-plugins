@@ -60,15 +60,19 @@ function onEnd(){
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        {% if post.image %}
+
                         <div class="big-image margin-bottom-20">
+                            {% if post.image %}
                             <img src="{{ post.image|media }}" alt="{{ post.title }}" class="img-responsive img-rounded">
+                            {% else %}
+                            <img src="http://placehold.it/800x400" alt="{{ post.title }}" class="img-responsive img-rounded">
+                            {% endif %}
                         </div>
-                        {% endif %}
+
                         <h4> {{ post.title }}</h4>
                     </div>
                     <div class="panel-body">
-                        <p>
+                        <p class="color-777" style="font-size: 16px;">
                             {{ post.summary }}
                         </p>
                         <p>

@@ -1,0 +1,82 @@
+title = '服务市场'
+url = '/fu-wu-shi-chang'
+layout = 'default'
+
+==
+function onStart(){
+
+$this['needs']=\Buuug7\User\Models\Need::getAllNeedsGroupedByCategory(2);
+
+$this['checkedNeeds']=\Buuug7\User\Models\Need::displayChecked(8);
+$this['featuredNeeds']=\Buuug7\User\Models\Need::displayFeatured(8);
+
+}
+==
+
+<div class="box fwsc-list">
+    <div class="jumbotron">
+        <div class="container">
+            <h2>服务市场</h2>
+            <p>
+                快速发布您个人或者公司的需求
+            </p>
+            <p>
+                <a href="/needs/need/create">
+                    <button>发布需求</button>
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<section class="box fwsc-list ">
+    <div class="fwsc-zxfb">
+        <div class="hd"><i>最新发布</i></div>
+        <div class="dd">
+            <ul>
+                {% for need in checkedNeeds %}
+                <li>
+                    <a href="/needs/need/{{ need.id }}" target="_blank">
+                        <span>{{ need.title }}</span>
+                    </a>
+                    <span class="time">{{ need.checked_at|time_diff }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="box fwsc-list" style="margin-bottom: 30px">
+    <div class="hd"><i>推荐</i></div>
+    <div class="dd">
+        <ul>
+            {% for need in featuredNeeds %}
+            <li>
+                <a href="/needs/need/{{ need.id }}" target="_blank">
+                    <span>{{ need.title }}</span>
+                </a>
+                <span class="time">{{ need.checked_at|time_diff }}</span></li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</section>
+
+
+{% for key,category in needs %}
+<section class="box fwsc-list" style="margin-bottom: 30px">
+    <div class="hd"><i>{{ category.name }}</i><a href="/needs/category/{{ key }}""><span>more+</span></a></div>
+    <div class="dd">
+        <ul>
+            {% for need in category.data %}
+            <li>
+                <a href="/needs/need/{{ need.id }}" target="_blank">
+                    <span>{{ need.title }}</span>
+                </a>
+                <span class="time">{{ need.checked_at|time_diff }}</span></li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endfor %}

@@ -6,7 +6,9 @@ layout = 'default'
 function onStart(){
 
 
-$this['needs']=\Buuug7\User\Models\Need::getAllNeedsGroupedByCategory(2);
+$this['categoriesLimit']=\Buuug7\User\Models\Need::getAllNeedsGroupedByCategory(2);
+
+$this['categories']=\Buuug7\User\Models\Need::getCategories();
 
 $this['checkedNeeds']=\Buuug7\User\Models\Need::displayChecked(8);
 $this['featuredNeeds']=\Buuug7\User\Models\Need::displayFeatured(8);
@@ -15,18 +17,32 @@ $this['featuredNeeds']=\Buuug7\User\Models\Need::displayFeatured(8);
 ==
 
 
-<div class="jumbotron with-bg">
+<div class="jumbotron">
     <div class="container">
-        <h2>{{ this.page.title }}</h2>
-        <p style="font-size: 22px">
-            快速发布您的供求信息
-        </p>
-        <p>
-            <a href="/needs/need/create" class="btn btn-line-warning"><i class="icon icon-plus"></i> 发布新需求</a>
-        </p>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>{{ this.page.title }}</h2>
+                <p>
+                    快速发布您的供求信息
+                </p>
+                <p>
+                    <a href="/needs/need/create" class="btn btn-line-warning"><i class="icon icon-plus"></i> 发布新需求</a>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <div class="tags-v4 p-t-md">
+                    <ul class="list-inline">
+                        {% for key,category in categories %}
+                        <li>
+                            <a href="/needs/category/{{ key }}">{{ category }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
 
 <div class="container">
     <!--最新 + 推荐-->

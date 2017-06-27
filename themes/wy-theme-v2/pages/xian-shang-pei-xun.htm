@@ -14,8 +14,7 @@ $this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4)
 $this['tagReMen']=\Buuug7\Courses\Models\Course::displayByTags(['re-men'],8);
 
 // filter by categories
-$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi','dian-shang-jin-jie-zhi-shi']);
-$this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-jin-jie-zhi-shi'],4);
+$this['courses']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-zi-shang-wu-ji-chu-jiao-cheng','dian-zi-shang-wu-jin-jie-jiao-cheng']);
 
 }
 
@@ -35,24 +34,28 @@ $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByC
             <div class="cbp-filter-counter"></div>
         </div>
         /
-        <div data-filter=".dian-shang-ji-chu-zhi-shi" class="cbp-filter-item">
-            电商基础知识
+        <div data-filter=".dian-zi-shang-wu-ji-chu-jiao-cheng" class="cbp-filter-item">
+            电子商务基础教程
             <div class="cbp-filter-counter"></div>
         </div>
         /
-        <div data-filter=".dian-shang-jin-jie-zhi-shi" class="cbp-filter-item">
-            电商进阶知识
+        <div data-filter=".dian-zi-shang-wu-jin-jie-jiao-chengi" class="cbp-filter-item">
+            电子商务进阶教程
             <div class="cbp-filter-counter"></div>
         </div>
     </div>
     <!--正文-->
     <div id="js-xspx-work-wy-v1" class="cbp cbp-l-grid-work">
         <!--title u-->
-        {% for post in categoryDianShangJiChuZhiShi %}
+        {% for post in courses %}
         <div class="cbp-item {% for category in post.categories %} {{ category.slug }} {% endfor %} ">
             <a href="/courses/course/{{ post.id }}" class="cbp-caption " rel="nofollow">
                 <div class="cbp-caption-defaultWrap">
-                    <img src="{{ post.image|media }}" alt="">
+                    {% if post.image %}
+                    <img src="{{ post.image|media }}" alt="{{ post.title }}">
+                    {% else %}
+                    <img src="http://placehold.it/800x400" alt="{{ post.title }}">
+                    {% endif %}
                 </div>
             </a>
             <a href="#!" class="cbp-l-grid-work-title " rel="nofollow">{{ post.categories[0].name }}</a>

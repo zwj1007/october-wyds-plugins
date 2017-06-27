@@ -23,7 +23,7 @@ $this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-
 $this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
 
 // 电商基础知识
-$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi'],16);
+$this['categoryDianShang']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-zi-shang-wu-ji-chu-jiao-cheng'],16);
 
 // 服务市场
 $this['fuwu']=\Buuug7\User\Models\Need::displayFeatured(16);
@@ -178,10 +178,10 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         </div>
         {% endif %}
 
-        {% if categoryDianShangJiChuZhiShi.count %}
+        {% if categoryDianShang.count %}
         <div class="float-right xspx-right">
             <ul>
-                {% for chunk in categoryDianShangJiChuZhiShi.chunk(8) %}
+                {% for chunk in categoryDianShang.chunk(8) %}
                 <li>
                     <ol>
                         {% for post in chunk %}

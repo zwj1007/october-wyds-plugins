@@ -15,7 +15,7 @@ class CreateCoursesTable extends Migration
             $table->string('title');
             $table->text('summary')->nullable();;
             $table->longText('content')->nullable();
-            $table->text('image');
+            $table->text('image')->nullable();
             $table->text('files');
             $table->text('videos');
             $table->integer('views')->unsigned()->nullable();

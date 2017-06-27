@@ -1,8 +1,8 @@
-1.0.1: First version of Courses
-1.0.2:
-    - init
-    - add table schema of course and course category
+1.0.1:
+    - First version of Courses
     - create_courses_table.php
     - create_courses_categories_table.php
     - create_tags_table.php
-    - seed_all_tables.php
+    - seed_categories_and_tags_table.php
+    - seed_courses_one_tables.php
+
