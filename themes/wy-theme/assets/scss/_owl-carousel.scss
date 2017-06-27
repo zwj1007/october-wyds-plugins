@@ -74,3 +74,23 @@
         }
     }
 }
+
+.item-block-v1{
+    background-color: #f7f7f7;
+    padding:12px 12px;
+    >a{
+        display: block;
+        height:45px;
+        line-height: 22px;
+    }
+}
+.item-block-v2{
+    background-color: #f7f7f7;
+    padding:12px 12px;
+    >a{
+        display: block;
+        height:45px;
+        line-height: 22px;
+        margin-bottom: 10px;
+    }
+}

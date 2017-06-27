@@ -123,14 +123,13 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <div class="headline">
         <h2>通知公告</h2>
     </div>
-    <div class="owl-carousel owl-carousel-v1 m-b">
+    <div class="owl-carousel owl-carousel-v1">
         {% for post in tongZhiGongGao %}
-        <div class="item">
+        <div class="item item-block-v1">
             <a href="/news/post/{{ post.id }}" class="color-444">
                 {{ post.title }}
             </a>
-            &nbsp;
-            <small class="color-777">
+            <small class="color-999">
                 {{ post.published_at|date('Y,m月 d')}}
             </small>
         </div>
@@ -138,7 +137,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     </div>
 
     <!--电商动态+政策解读-->
-    <div class="tab-v1 m-t-lg">
+    <div class="tab-v1 m-t-md">
         <ul class="nav nav-tabs">
             <li class="active"><a href="#tab2" data-toggle="tab" aria-expanded="true" style="font-size: 20px">电商动态</a>
             </li>
@@ -149,18 +148,18 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             <div class="tab-pane fade active in" id="tab2">
                 <div class="row">
                     {% for post in dianShangDongTai %}
-                    <div class="col-md-3 col-sm-4 m-b">
-                        <h5 class="color-444" style="">
+                    <div class="col-md-3 col-sm-4">
+                        <div class="item-block-v2">
                             <a class="color-444" href="/news/post/{{ post.id }}">
                                 {{ str_limit(post.title, 60, '...') }}
                             </a>
-                        </h5>
-                        <p class="small color-777">
-                            {{ str_limit(post.summary, 60, '...') }}
-                        </p>
-                        <small class="color-777">
-                            {{ post.published_at|date('Y,m月 d')}}
-                        </small>
+                            <p class="small color-999">
+                                {{ str_limit(post.summary, 60, '...') }}
+                            </p>
+                            <!--<small class="color-999">
+                                {{ post.published_at|date('Y,m月 d')}}
+                            </small>-->
+                        </div>
                     </div>
                     {% endfor %}
                 </div>
@@ -168,18 +167,18 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             <div class="tab-pane fade" id="tab3">
                 <div class="row">
                     {% for post in zhenCeJieDu %}
-                    <div class="col-md-3 col-sm-4 m-b">
-                        <h5 class="color-444" style="height: 40px;line-height: 1.3;overflow: hidden">
+                    <div class="col-md-3 col-sm-4">
+                        <div class="item-block-v2">
                             <a class="color-444" href="/news/post/{{ post.id }}">
                                 {{ str_limit(post.title, 60, '...') }}
                             </a>
-                        </h5>
-                        <p class="small color-777">
-                            {{ str_limit(post.summary, 60, '...') }}
-                        </p>
-                        <small class="color-777">
-                            {{ post.published_at|date('Y,m月 d')}}
-                        </small>
+                            <p class="small color-999">
+                                {{ str_limit(post.summary, 60, '...') }}
+                            </p>
+                            <!--<small class="color-999">
+                                {{ post.published_at|date('Y,m月 d')}}
+                            </small>-->
+                        </div>
                     </div>
                     {% endfor %}
                 </div>
@@ -397,7 +396,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         loop: true,
         margin: 10,
         nav: true,
-        autoplay: true,
+        //autoplay: true,
         navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
         responsive: {
             0: {

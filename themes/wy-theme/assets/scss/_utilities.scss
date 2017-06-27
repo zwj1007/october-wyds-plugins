@@ -462,13 +462,6 @@
     padding-bottom: ($spacer-y * 3) !important;
 }
 
-.bg-white {
-    background-color: #fff;
-}
-
-.bg-wrap-f7f7f7 {
-    background-color: darken(#f7f7f7, 1%);
-}
 
 .text-shadow {
     text-shadow: 2px 0 2px #000;
@@ -531,6 +524,20 @@ a:hover, a:visited {
 .color-888{
     color:#888 !important;
 }
+
+.color-999{
+    color:#999 !important;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.bg-wrap-f7f7f7 {
+    background-color: darken(#f7f7f7, 1%);
+}
+
+
 
 .bg-color-primary {
     background-color: $brand-primary !important;

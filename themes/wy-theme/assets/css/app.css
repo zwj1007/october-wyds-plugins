@@ -6170,12 +6170,6 @@ button.close {
   padding-top: 60px !important;
   padding-bottom: 60px !important; }
 
-.bg-white {
-  background-color: #fff; }
-
-.bg-wrap-f7f7f7 {
-  background-color: #f4f4f4; }
-
 .text-shadow {
   text-shadow: 2px 0 2px #000; }
 
@@ -6217,6 +6211,15 @@ a:hover, a:visited {
 
 .color-888 {
   color: #888 !important; }
+
+.color-999 {
+  color: #999 !important; }
+
+.bg-white {
+  background-color: #fff; }
+
+.bg-wrap-f7f7f7 {
+  background-color: #f4f4f4; }
 
 .bg-color-primary {
   background-color: #3c8dbc !important; }
@@ -7710,6 +7713,23 @@ figure {
       background: #fff; }
   .owl-carousel-v3 .owl-dots .active span {
     background: #f39c12; }
+
+.item-block-v1 {
+  background-color: #f7f7f7;
+  padding: 12px 12px; }
+  .item-block-v1 > a {
+    display: block;
+    height: 45px;
+    line-height: 22px; }
+
+.item-block-v2 {
+  background-color: #f7f7f7;
+  padding: 12px 12px; }
+  .item-block-v2 > a {
+    display: block;
+    height: 45px;
+    line-height: 22px;
+    margin-bottom: 10px; }
 
 /*
 |--------------------------------------------------------------------------
