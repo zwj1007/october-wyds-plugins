@@ -7803,6 +7803,24 @@ figure {
       line-height: 1.2;
       overflow: hidden; }
 
+.item-block-v1 {
+  background-color: #f7f7f7;
+  padding: 12px 12px; }
+  .item-block-v1 > a {
+    display: block;
+    height: 45px;
+    line-height: 22px; }
+
+.item-block-v2 {
+  background-color: #f7f7f7;
+  padding: 12px 12px;
+  margin-bottom: 10px; }
+  .item-block-v2 > a {
+    display: block;
+    height: 45px;
+    line-height: 22px;
+    margin-bottom: 10px; }
+
 /*
 |--------------------------------------------------------------------------
 | _comments
