@@ -2,7 +2,7 @@ title = '店铺管理'
 url = '/user/center/shops'
 layout = 'default'
 
-[b7Account]
+[b7Shop]
 ==
 function onStart(){
 if(!Auth::check()) return Redirect::to('/user/login');
@@ -72,6 +72,35 @@ $this['social_avatar']=Auth::getUser()->social_avatar;
 
                 <div class="headline">
                     <h3>已添加店铺</h3>
+                </div>
+
+                <div class="content-dptp">
+                    {% for shop in shops %}
+                    <h4 class="dpxx-h4"><span>店铺缩略图</span></h4>
+                    <img src="{{ shop.getAvatarThumb(400,200) }}" alt="">
+                    <h4 class="dpxx-h4"><span>店铺描述信息</span></h4>
+
+                    <div class="dptp-xx margin-top-10 margin-bottom-10">
+                        {{ shop.description|raw }}
+                    </div>
+
+
+                    <a class="btn" href="/shops/shop/{{ shop.id }}">
+                        <i class="fa fa-eye"></i> 查看
+                    </a>
+                    <a class="btn" href="/shops/shop/update/{{ shop.id }}">
+                        <i class="fa fa-pencil"></i> 更新
+                    </a>
+                    <a class="btn" href="#"
+                       class="btn btn-danger btn-xs"
+                       href="#"
+                       data-request="onDeleteShop"
+                       data-request-data="id:{{ shop.id }}"
+                       data-request-confirm="你确定要删除该店铺 ?"
+                    >
+                        <i class="fa fa-trash"></i> 删除
+                    </a>
+                    {% endfor %}
                 </div>
 
             </div>

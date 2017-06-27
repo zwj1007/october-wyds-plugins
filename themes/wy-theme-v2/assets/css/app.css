@@ -368,6 +368,8 @@ header {
     height: 40px;
     line-height: 40px;
     font-size: 16px;
+    position: relative;
+    z-index: 999;
     background-color: #FF4400; }
     header nav ul {
       width: 1120px;
@@ -376,15 +378,29 @@ header {
       header nav ul li {
         float: left;
         text-align: center;
-        width: 140px; }
+        width: 140px;
+        position: relative; }
         header nav ul li a {
           padding: 10px 30px;
           color: #fff; }
+        header nav ul li ul.ul-xl {
+          width: 140px;
+          visibility: hidden; }
+          header nav ul li ul.ul-xl li {
+            float: left;
+            text-align: center;
+            position: relative;
+            width: 140px;
+            background: #EC2E2C; }
+          header nav ul li ul.ul-xl li:hover {
+            background: #FF4400; }
       header nav ul li:hover {
         background: #EC2E2C; }
         header nav ul li:hover a {
           color: #ffffff;
           text-decoration: none; }
+        header nav ul li:hover ul.ul-xl {
+          visibility: visible; }
 
 .dszx {
   height: 370px; }
@@ -742,7 +758,7 @@ header {
       width: 9999px; }
     .yxwd .dd .zzsc .slider-wrap ul li {
       float: left;
-      width: 120px;
+      width: 252px;
       padding: 5px 0;
       margin-right: 12px; }
   .yxwd .dd .zzsc #prev, .yxwd .dd .zzsc #next {
@@ -2723,6 +2739,26 @@ input {
           color: #a94442; }
         .dp-see .content .see-right .seeR-content .callout-danger p {
           margin: 5px 15px; }
+
+.dp-update .dpslt {
+  border-bottom: 1px solid #CCCCCC; }
+  .dp-update .dpslt .dp-tp {
+    margin-bottom: 20px;
+    width: 200px;
+    height: 100px;
+    border: 1px dotted #CCCCCC; }
+    .dp-update .dpslt .dp-tp i {
+      text-align: center;
+      display: block;
+      font-size: 22px;
+      height: 22px;
+      width: 22px;
+      line-height: 22px;
+      color: rgba(0, 0, 0, 0.1);
+      font-weight: 700;
+      margin: 38px auto;
+      vertical-align: middle;
+      text-decoration: none; }
 
 .user-collect .mainRight .content ul li {
   line-height: 50px; }
