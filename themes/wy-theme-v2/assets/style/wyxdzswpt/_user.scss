@@ -451,6 +451,33 @@
   }
 }
 
+.dp-update {
+  .dpslt {
+    border-bottom: 1px solid#CCCCCC;
+    .dp-tp {
+      margin-bottom: 20px;
+      width: 200px;
+      height: 100px;
+      border: 1px dotted #CCCCCC;
+      i {
+        text-align: center;
+        display: block;
+        font-size: 22px;
+        height: 22px;
+        width: 22px;
+        line-height: 22px;
+        color: rgba(0, 0, 0, 0.1);
+        font-weight: 700;
+        margin: 38px auto;
+        vertical-align: middle;
+        text-decoration: none;
+      }
+    }
+
+  }
+
+}
+
 //个人收藏
 .user-collect {
   .mainRight {

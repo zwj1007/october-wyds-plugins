@@ -65,7 +65,7 @@ header {
     .head-sousuo {
       margin: 50px 0 50px 30px;
       display: inline-flex;
-       //display: inline-block;
+      //display: inline-block;
 
       select {
         border: 1px solid $nav-background;
@@ -124,6 +124,8 @@ header {
     height: 40px;
     line-height: 40px;
     font-size: 16px;
+    position: relative;
+    z-index: 999;
     //overflow: hidden;
     background-color: $nav-background;
     //color: $nav-color;
@@ -135,20 +137,42 @@ header {
         float: left;
         text-align: center;
         width: $page-width/8;
-
+        position: relative;
         a {
           padding: 10px 30px;
           color: $nav-color;
         }
+        ul.ul-xl {
+          width: 140px;
+          visibility: hidden;
+
+          li {
+            float: left;
+            text-align: center;
+            position: relative;
+            width: 140px;
+            background: $nav-hover;
+
+          }
+          li:hover {
+            background: $nav-background;
+
+          }
+        }
+
       }
       li:hover {
         background: $nav-hover;
         a {
           color: #ffffff;
-          text-decoration:none;
+          text-decoration: none;
+        }
+        ul.ul-xl {
+          visibility: visible;
         }
       }
     }
+
   }
 
 }
