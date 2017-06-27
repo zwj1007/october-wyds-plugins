@@ -24,7 +24,7 @@ class SeedCoursesOneTables extends Seeder
             'title' => '电子商务概述(1)',
             'published' => true,
             'published_at' => Carbon::now(),
-            'image' => '',
+            'image' => '/courses/dian-zi-shang-wu-gai-shu.png',
             'user_Id' => 1,
             'files' => [],
             'videos' => [],

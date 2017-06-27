@@ -44,10 +44,10 @@ $this['categories']=\Buuug7\Courses\Models\Category::getNested();
                 {% endif %}
                 <div class="caption">
                     <h4>{{ child.name }}</h4>
-                    <p class="color-777">
+                    <p class="color-999" style="height: 44px;line-height: 22px;">
                         {{ str_limit(child.description,70,'...') }}
                     </p>
-                    <P class="color-777">
+                    <P class="color-999">
                         共包含 {{ child.courses.count }} 课时
                     </P>
                     <p>
