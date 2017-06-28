@@ -8,22 +8,26 @@ layout="default"
 function onEnd(){
     if(!Auth::check()) return Redirect::to('/user/login');
 
-    // count views++
-    $id=$this->param('id');
-    if($id){
-        $course=\Buuug7\Courses\Models\Course::where('id', $id)->isPublished()->first();
-        if(!$course->views){
-            $course->views=1;
-            $course->save();
-        }else{
-            $course->views=$course->views+1;
-            $course->save();
-        }
-    }
+// count views++
+$id=$this->param('id');
+if($id){
+$course=\Buuug7\Courses\Models\Course::where('id', $id)->isPublished()->first();
+if(!$course){
+return Redirect::to('/404');
+}
+if(!$course->views){
+$course->views=1;
+$course->save();
+}else{
+$course->views=$course->views+1;
+$course->save();
+}
+}
 
 }
 ==
 <div class="container m-t">
+    {% if post %}
     <div class="course-post-detail">
         <div class="row">
             <div class="col-md-8">
@@ -101,7 +105,9 @@ function onEnd(){
                             栏目
                             {% endif %}
                         </p>
+                        {% if post.views %}
                         <p>该课程已经被浏览 <span class="color-success">{{ post.views }}</span> 次</p>
+                        {% endif %}
                     </div>
                 </div>
 
@@ -122,4 +128,9 @@ function onEnd(){
             </div>
         </div>
     </div>
+    {% else %}
+    <div class="callout callout-danger">
+        <p>没有对应的课程</p>
+    </div>
+    {% endif %}
 </div>

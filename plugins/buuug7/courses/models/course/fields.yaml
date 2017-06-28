@@ -16,6 +16,7 @@ tabs:
         content:
             tab: 内容
             type: richeditor
+            toolbarButtons: fullscreen|bold|italic|underline|fontFamily|fontSize|||color|emoticons|inlineStyle|paragraphStyle|||paragraphFormat|align|formatOL|formatUL|outdent|indent|quote|insertHR|insertLink|insertImage|insertVideo|insertAudio|insertFile|insertTable|undo|redo|clearFormatting|selectAll|html
             size: giant
         videos:
               tab: 视频

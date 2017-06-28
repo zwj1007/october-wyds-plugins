@@ -595,132 +595,137 @@ header {
           .xspx .dd .xspx-right ul li ol li a:hover {
             color: #FF4400; }
 
-.fusc {
+.fwsc {
   height: 350px !important;
   overflow: hidden; }
-  .fusc .hd {
+  .fwsc .hd {
     text-align: left;
     padding-left: 0;
     height: 40px;
     line-height: 40px;
     border: 1px solid #CCCCCC; }
-    .fusc .hd i {
+    .fwsc .hd i {
       border-bottom: 3px solid #FF4400;
       padding-bottom: 6px;
       padding-left: 15px;
       padding-right: 15px;
       width: 300px; }
-    .fusc .hd ul {
+    .fwsc .hd ul {
       display: inline; }
-      .fusc .hd ul li {
+      .fwsc .hd ul li {
         width: 80px;
         float: left;
         text-align: center; }
-        .fusc .hd ul li a {
+        .fwsc .hd ul li a {
           font-size: 14px;
           letter-spacing: 3px;
           color: #999999; }
-      .fusc .hd ul .active {
+      .fwsc .hd ul .active {
         border: none; }
-        .fusc .hd ul .active a {
+        .fwsc .hd ul .active a {
           color: #3e3e3e; }
-  .fusc .dd {
+  .fwsc .dd {
     height: 300px !important;
     overflow: hidden;
     margin: 10px 0; }
-    .fusc .dd ul li {
+    .fwsc .dd ul li {
       height: 38px;
       line-height: 38px;
       width: 450px;
       text-align: left; }
-      .fusc .dd ul li a {
+      .fwsc .dd ul li a {
         color: #494546;
         display: inline-block;
         width: 280px;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis; }
-      .fusc .dd ul li span.time {
+      .fwsc .dd ul li span.time {
         float: right;
         color: #777;
         font-size: 12px;
         letter-spacing: -0.11em; }
-    .fusc .dd .fw-left {
+    .fwsc .dd .fw-left {
       width: 500px; }
-    .fusc .dd .fw-right {
+    .fwsc .dd .fw-right {
       width: 500px; }
-    .fusc .dd .fade {
+    .fwsc .dd .fade {
       opacity: 0;
       -webkit-transition: opacity 0.15s linear;
       -o-transition: opacity 0.15s linear;
       transition: opacity 0.15s linear; }
-    .fusc .dd .fade.in {
+    .fwsc .dd .fade.in {
       opacity: 1; }
-    .fusc .dd .tab-pane {
+    .fwsc .dd .tab-pane {
       display: none; }
-    .fusc .dd .active {
+    .fwsc .dd .active {
       display: block; }
 
-.fusc1 .dd ul li {
+.fwsc1 .dd ul li {
   text-align: center; }
-  .fusc1 .dd ul li a {
+  .fwsc1 .dd ul li a {
     text-align: center;
     line-height: 50px;
     margin: 50px 0;
     color: #c6c6c6; }
-    .fusc1 .dd ul li a span {
+    .fwsc1 .dd ul li a span {
       font-size: 30px; }
-    .fusc1 .dd ul li a i {
+    .fwsc1 .dd ul li a i {
       font-size: 60px;
       margin-right: 20px; }
-.fusc1 .dd ul li:hover a {
+.fwsc1 .dd ul li:hover a {
   color: #FFFFFF; }
-.fusc1 .dd .ul-left {
+.fwsc1 .dd .ul-left {
   width: 360px; }
-  .fusc1 .dd .ul-left li {
+  .fwsc1 .dd .ul-left li {
     width: 360px;
     height: 150px;
     background: #707bba; }
-  .fusc1 .dd .ul-left .ul-li1 {
+  .fwsc1 .dd .ul-left .ul-li1 {
     background: #ff4400; }
-.fusc1 .dd .ul-center li {
+.fwsc1 .dd .ul-center li {
   background: #009944;
   width: 180px;
   height: 310px; }
-  .fusc1 .dd .ul-center li .cen-li-top {
+  .fwsc1 .dd .ul-center li .cen-li-top {
     height: 155px;
     border-bottom: 3px solid #00652f; }
-    .fusc1 .dd .ul-center li .cen-li-top img {
-      max-width: 100%;
-      width: 145px; }
-.fusc1 .dd .ul-center .cen-li {
+    .fwsc1 .dd .ul-center li .cen-li-top a {
+      margin: 0;
+      width: 100%; }
+      .fwsc1 .dd .ul-center li .cen-li-top a img {
+        max-width: 100%;
+        width: 145px; }
+.fwsc1 .dd .ul-center .cen-li {
   background: #2f92dc; }
-.fusc1 .dd .ul-right {
+.fwsc1 .dd .ul-right {
   width: 380px;
   padding-left: 10px; }
-  .fusc1 .dd .ul-right li {
+  .fwsc1 .dd .ul-right li {
     background: #ff4400;
     width: 180px;
     height: 150px;
     margin-bottom: 5px;
     margin-right: 5px; }
-    .fusc1 .dd .ul-right li span {
-      color: #FFFFFF;
-      font-size: 18px;
-      margin-top: 15px;
-      display: block; }
-    .fusc1 .dd .ul-right li i {
-      color: #FFFFFF;
-      font-size: 35px;
-      margin-top: 10px; }
-    .fusc1 .dd .ul-right li img {
-      width: 150px;
-      max-width: 150%; }
-  .fusc1 .dd .ul-right .li1 {
+    .fwsc1 .dd .ul-right li a {
+      margin: 0;
+      width: 100%; }
+      .fwsc1 .dd .ul-right li a span {
+        color: #FFFFFF;
+        font-size: 18px;
+        margin-top: 15px;
+        display: block; }
+      .fwsc1 .dd .ul-right li a i {
+        color: #FFFFFF;
+        margin-right: 0; }
+      .fwsc1 .dd .ul-right li a img {
+        width: 150px;
+        max-width: 150%; }
+  .fwsc1 .dd .ul-right .li1 {
     background: #6290ff; }
-  .fusc1 .dd .ul-right .li2 {
+  .fwsc1 .dd .ul-right .li2 {
     background: #ffa037; }
-  .fusc1 .dd .ul-right .li3 {
+  .fwsc1 .dd .ul-right .li3 {
     background: #ff50d2; }
 
 .bmfw {
@@ -2999,6 +3004,114 @@ input {
         font-size: 12px;
         letter-spacing: -0.11em;
         margin-right: 30px; }
+
+.fwsc-fl-list {
+  margin-top: 25px; }
+  .fwsc-fl-list .fl-Lfet {
+    width: 770px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px 1px #ddd;
+    padding: 10px 15px;
+    margin-bottom: 15px; }
+    .fwsc-fl-list .fl-Lfet .hd {
+      position: absolute;
+      top: 7px;
+      right: -30px;
+      border-bottom: 0; }
+      .fwsc-fl-list .fl-Lfet .hd span.fl-span {
+        display: block;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        width: 120px;
+        background: #fe7050;
+        color: #fff;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(30deg);
+        font-size: 14px; }
+    .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li {
+      line-height: 60px;
+      border-bottom: 1px dotted #CCCCCC; }
+      .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-img {
+        display: table-cell; }
+        .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-img a img {
+          width: 60px;
+          max-width: 100%;
+          border-radius: 30px;
+          margin-right: 20px; }
+      .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-body {
+        display: inline-block; }
+        .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-body a {
+          float: left;
+          width: 300px;
+          display: block;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          margin-right: 20px; }
+        .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-body .label {
+          padding: .2em .6em .3em;
+          font-size: 75%;
+          font-weight: bold;
+          color: #fff;
+          text-align: center; }
+        .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-body .label-ly {
+          background: #FF4400; }
+        .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-body .label-tj {
+          background: #3092f6; }
+      .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .sj-span {
+        float: right;
+        color: #777;
+        font-size: 12px;
+        letter-spacing: 0.11em;
+        margin-right: 30px; }
+  .fwsc-fl-list .fl-Right {
+    width: 330px;
+    position: relative;
+    box-shadow: 1px 1px 5px 1px #ddd;
+    margin-bottom: 20px; }
+    .fwsc-fl-list .fl-Right .box-header {
+      color: #FF4400;
+      display: block;
+      padding: 10px;
+      border-bottom: 1px solid #f4f4f4; }
+      .fwsc-fl-list .fl-Right .box-header h3 {
+        display: inline-block; }
+        .fwsc-fl-list .fl-Right .box-header h3 a {
+          color: #FF4400; }
+    .fwsc-fl-list .fl-Right .box-body {
+      padding: 10px; }
+      .fwsc-fl-list .fl-Right .box-body li {
+        line-height: 25px; }
+        .fwsc-fl-list .fl-Right .box-body li a.item {
+          color: #333;
+          display: inline-block;
+          text-align: center;
+          width: 240px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis; }
+          .fwsc-fl-list .fl-Right .box-body li a.item i {
+            margin-right: 15px; }
+        .fwsc-fl-list .fl-Right .box-body li a:hover {
+          color: #6e6d6e; }
+
+.fwsc-list1 {
+  height: 100% !important; }
+  .fwsc-list1 .fw-list-L {
+    width: 800px; }
+    .fwsc-list1 .fw-list-L .hd {
+      height: 80px; }
+      .fwsc-list1 .fw-list-L .hd ul {
+        display: inline-block; }
+        .fwsc-list1 .fw-list-L .hd ul li {
+          text-align: left; }
+    .fwsc-list1 .fw-list-L .dd {
+      height: 100% !important; }
+  .fwsc-list1 .fw-list-R .kj-dszx {
+    box-shadow: 1px 1px 1px 1px #CCCCCC; }
 
 .sjtj-list .jumbotron {
   background: url("../images/sjtj/banner2.png"); }

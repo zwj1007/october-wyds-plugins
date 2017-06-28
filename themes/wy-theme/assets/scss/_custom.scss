@@ -106,6 +106,10 @@ a {
     }
 }
 
+blockquote {
+    font-size: 16px;
+}
+
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
     color: #fff;
     background-color: $brand-warning;
