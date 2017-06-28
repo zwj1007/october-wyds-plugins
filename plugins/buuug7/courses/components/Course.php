@@ -6,6 +6,7 @@ use Buuug7\Courses\Models\Course as CoursePost;
 use RainLab\User\Facades\Auth;
 use October\Rain\Support\Facades\Flash;
 use Illuminate\Support\Facades\Redirect;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Course extends ComponentBase
 {
@@ -66,6 +67,9 @@ class Course extends ComponentBase
     {
         $id = $this->property('id');
         $post = CoursePost::where('id', $id)->isPublished()->first();
+        if(!$post){
+            return null;
+        }
         $courseId = $post->id;
 
         if ($post && $post->categories->count()) {
