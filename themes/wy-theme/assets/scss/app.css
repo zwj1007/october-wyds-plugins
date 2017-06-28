@@ -8089,6 +8089,9 @@ a:hover {
 a:visited, a:active {
   text-decoration: none; }
 
+blockquote {
+  font-size: 16px; }
+
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
   color: #fff;
   background-color: #f39c12; }
