@@ -39,7 +39,7 @@ if($this->param('slug')){
                         <a class="color-444" href="/needs/need/{{ need.id }}">{{ need.title }}</a>
                     </h5>
                     <small class="color-777">
-                        {{ need.checked_at|time_diff }} / by {{ need.user.name }}
+                        {{ need.checked_at|time_diff }} / {{ need.user.name }}
                     </small>
                 </li>
                 {% endfor %}

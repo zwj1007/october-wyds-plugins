@@ -71,7 +71,7 @@ class SeedAllTables extends Seeder
                 <li>热爱教育事业，具备良好的教师职业操守和服务意识，做事态度积极，抗压能力强</li>
             </ul>
             ',
-            'featured' => true,
+            'featured' => false,
             'checked' => true,
             'checked_at' => Carbon::now(),
         ]);
@@ -121,7 +121,7 @@ class SeedAllTables extends Seeder
                 <li>插画及手绘能力较强者优先.(同时我们也可以培养平面设计实习生为平面设计，提供食宿)</li>
             </ul>
             ',
-            'featured' => true,
+            'featured' => false,
             'checked' => true,
             'checked_at' => Carbon::now(),
         ]);
@@ -167,7 +167,7 @@ class SeedAllTables extends Seeder
             <h4>狗狗简介</h4>
             <p>保证纯种,狗都是自己的狗场繁殖的，同样的饲养成本我们不会养串子影响效益 ，而且做生意讲的是诚信。我犬舍还有种公配种服务 从我犬舍售出的狗狗成年后还可以为您免费配种两次</p>
             ',
-            'featured' => true,
+            'featured' => false,
             'checked' => true,
             'checked_at' => Carbon::now(),
         ]);
@@ -219,7 +219,7 @@ class SeedAllTables extends Seeder
                 <dd>苹果手机7plus 128G转让 全新手机 没有打开包装 亮黑色 转让价6300元 中介勿扰</dd>
             </dl>
             ',
-            'featured' => true,
+            'featured' => false,
             'checked' => true,
             'checked_at' => Carbon::now(),
         ]);
@@ -428,7 +428,7 @@ class SeedAllTables extends Seeder
                 <li>颈椎6-7椎：颈、肩、上肢酸痛。你的身体状况到哪种程度了呢，自己对照一下吧</li>
             </ul>
             ',
-            'featured' => true,
+            'featured' => false,
             'checked' => true,
             'checked_at' => Carbon::now(),
         ]);
@@ -572,7 +572,7 @@ class SeedAllTables extends Seeder
                 欢迎大家提供回收信息，并对提供成功业务信息者给予业务佣金，专业回收，值得信赖，不抬价，不压价，追求价格公道合理，以求长远的合作
             </blockquote>
             ',
-            'featured' => true,
+            'featured' => false,
             'checked' => true,
             'checked_at' => Carbon::now(),
         ]);
@@ -807,7 +807,7 @@ class SeedAllTables extends Seeder
                 欢迎大家提供回收信息，并对提供成功业务信息者给予业务佣金，专业回收，值得信赖，不抬价，不压价，追求价格公道合理，以求长远的合作
             </blockquote>
             ',
-            'featured' => true,
+            'featured' => false,
             'checked' => true,
             'checked_at' => Carbon::now(),
         ]);

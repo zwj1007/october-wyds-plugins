@@ -8,14 +8,62 @@
 |
 */
 
+
+.jumbotron-sm {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    // margin-bottom: $jumbotron-padding-dx;
+    color: $jumbotron-color;
+    background-color: #fff;
+    position: relative;
+    h1,
+    .h1 {
+        color: $jumbotron-heading-color;
+    }
+    p {
+        margin-bottom: ($jumbotron-padding / 2);
+        font-size: $jumbotron-font-size;
+        font-weight: 200;
+    }
+
+    > hr {
+        border-top-color: darken($jumbotron-bg, 10%);
+    }
+
+    .container &,
+    .container-fluid & {
+        border-radius: 0; // Only round corners at higher resolutions if contained in a container
+        padding-left: ($grid-gutter-width / 2);
+        padding-right: ($grid-gutter-width / 2);
+    }
+    .container {
+        max-width: 100%;
+    }
+
+    @media screen and (min-width: $screen-sm-min) {
+        padding-top: (15px * 1);
+        padding-bottom: (15px * 1);
+        .container &,
+        .container-fluid & {
+            padding-left: (15px * 2);
+            padding-right: (15px * 2);
+        }
+        h1,
+        .h1 {
+            font-size: $jumbotron-heading-font-size;
+        }
+    }
+}
+
 // jumbotron-v1
+// used for banner
 .jumbotron-v1 {
-    padding:0 !important;
+    padding: 0 !important;
     margin-bottom: 0;
-    h1{
+    h1 {
         font-size: 60px;
     }
-    p{
+    p {
         font-size: 20px;
     }
     .container > div {
@@ -45,7 +93,7 @@
     }
 }
 
-.jumbotron.with-bg{
+.jumbotron.with-bg {
     //color:#fff;
     //background-color:lighten(#090909,55%);
 }

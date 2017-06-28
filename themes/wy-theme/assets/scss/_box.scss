@@ -20,10 +20,18 @@
         display: block;
         padding: 10px;
         position: relative;
+        font-size: 18px;
         @include clearfix;
-        .box-title {
+        > .fa {
             display: inline-block;
+            margin: 0;
+            line-height: 1;
+            margin-right: 5px;
             font-size: 18px;
+        }
+        .box-title {
+            font-size: 18px;
+            display: inline-block;
             margin: 0;
             line-height: 1;
         }
@@ -45,6 +53,13 @@
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         padding: 10px;
+        .item{
+            color: #333;
+            display: inline-block;
+            height: 25px;
+            line-height: 25px;
+            padding: 5px 10px
+        }
     }
 
     .box-footer {
@@ -64,18 +79,23 @@
 .box-default {
     border-top-color: #d2d6de;
 }
+
 .box-primary {
     border-top-color: $brand-primary;
 }
+
 .box-success {
     border-top-color: $brand-success;
 }
+
 .box-info {
     border-top-color: $brand-info;
 }
+
 .box-danger {
     border-top-color: $brand-danger;
 }
+
 .box-warning {
     border-top-color: $brand-warning;
 }

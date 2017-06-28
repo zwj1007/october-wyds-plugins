@@ -1,39 +1,102 @@
 {{ form_ajax(method,{ model: need ,'data-request-flash' : 'true'}) }}
+
 <input type="hidden" name="id" value="{{ form_value('id') }}">
+
 <div class="form-group">
-    <label for="needTitle">需求名称</label>
-    <input type="text" name="title" id="needTitle" value="{{ form_value('title') }}" class="form-control">
+    <input type="text" name="title" id="needTitle" value="{{ form_value('title') }}" class="form-control" placeholder="请输入需求标题">
 </div>
-
+<!--
+<div class="form-group">
+    <ul class="list-inline category-list">
+        <li class="m-b-sm">
+            <input type="radio" name="category" value="qita" class="input-radio" {% if form_value('category') == "qita" %} checked {% endif %}>
+            <label>其他</label>
+        </li>
+        <li class="m-b-sm">
+            <input type="radio" name="category" value="zhaopin" class="input-radio" {% if form_value('category') == "zhaopin" %} checked {% endif %}>
+            <label>招聘</label>
+        </li>
+        <li class="m-b-sm">
+            <input type="radio" name="category" value="jianzhi"  class="input-radio" {% if form_value('category') == "jianzhi" %} checked {% endif %}>
+            <label>兼职</label>
+        </li>
+        <li class="m-b-sm">
+            <input type="radio" name="category" value="fangchan" class="input-radio" {% if form_value('category') == "fangchan" %} checked {% endif %}>
+            <label>房产</label>
+        </li>
+        <li class="m-b-sm">
+            <input type="radio" name="category" value="ershou" class="input-radio" {% if form_value('category') == "ershou" %} checked {% endif %}>
+            <label>二手</label>
+        </li>
+        <li class="m-b-sm">
+            <input type="radio" name="category" value="chongwu" class="input-radio" {% if form_value('category') == "chongwu" %} checked {% endif %}>
+            <label>宠物</label>
+        </li>
+        <li class="m-b-sm">
+            <input type="radio" name="category" value="jiaoyou" class="input-radio" {% if form_value('category') == "jiaoyou" %} checked {% endif %}>
+            <label>交友</label>
+        </li>
+        <li class="m-b-sm">
+            <input type="radio" name="category" value="bendifuwu" class="input-radio" {% if form_value('category') == "bendifuwu" %} checked {% endif %}>
+            <label>本地服务</label>
+        </li>
+    </ul>
+</div>-->
 
 <div class="form-group">
-    <label for="" class=" control-label">分类</label>
     <select class="form-control" id="needCategory" name="category">
-        <option value="qita" {% if form_value('category') == "qita" %} selected {% endif %}>其他</option>
-        <option value="zhaopin" {% if form_value('category') == "zhaopin" %} selected {% endif %}>招聘</option>
-        <option value="jianzhi" {% if form_value('category') == "jianzhi" %} selected {% endif %}>兼职</option>
-        <option value="fangchan" {% if form_value('category') == "fangchan" %} selected {% endif %}>房产</option>
-        <option value="ershou" {% if form_value('category') == "ershou" %} selected {% endif %}>二手</option>
-        <option value="chongwu" {% if form_value('category') == "chongwu" %} selected {% endif %}>宠物</option>
-        <option value="bendifuwu" {% if form_value('category') == "bendifuwu" %} selected {% endif %}>本地服务</option>
-        <option value="jiaoyou" {% if form_value('category') == "jiaoyou" %} selected {% endif %}>交友</option>
+        <option value="qita" {% if form_value(
+        'category') == "qita" %} selected {% endif %}>其他</option>
+        <option value="zhaopin" {% if form_value(
+        'category') == "zhaopin" %} selected {% endif %}>招聘</option>
+        <option value="jianzhi" {% if form_value(
+        'category') == "jianzhi" %} selected {% endif %}>兼职</option>
+        <option value="fangchan" {% if form_value(
+        'category') == "fangchan" %} selected {% endif %}>房产</option>
+        <option value="ershou" {% if form_value(
+        'category') == "ershou" %} selected {% endif %}>二手</option>
+        <option value="chongwu" {% if form_value(
+        'category') == "chongwu" %} selected {% endif %}>宠物</option>
+        <option value="bendifuwu" {% if form_value(
+        'category') == "bendifuwu" %} selected {% endif %}>本地服务</option>
+        <option value="jiaoyou" {% if form_value(
+        'category') == "jiaoyou" %} selected {% endif %}>交友</option>
     </select>
 </div>
 
-<div class="form-group">
-    <label for="needDescription">需求描述</label>
+<div class="form-group" style="position: relative">
     <textarea name="description" rows="8" id="needDescription" class="form-control">{{ form_value('description') }}</textarea>
+    {% if method=='onCreateNeed' %}
+    <div class="placeholder">
+        请填写需求描述
+    </div>
+    {% endif %}
 </div>
 
 <button type="submit" class="btn btn-default" data-attach-loading>发布</button>
 
 {{ form_close() }}
 
+
+<style>
+    .form-group .placeholder {
+        position: absolute;
+        top: 90px;
+        left: 15px;
+        font-size: 16px;
+        color: #bbb;
+        display: none;
+        pointer-events: none;
+    }
+</style>
+
+
 {% put scripts %}
 <script>
+    var $placeholder = $('.placeholder');
     $("textarea[name='description']").summernote({
-        lang:'zh-CN',
-        height: 200,
+        lang: 'zh-CN',
+        height: 150,
         toolbar: [
             ['style', ['style']],
             ['font', ['bold', 'underline', 'clear']],
@@ -42,6 +105,36 @@
             ['insert', ['link']],
             ['view', ['fullscreen']]
         ],
+        callbacks: {
+            onInit: function () {
+                $placeholder.show();
+            },
+            onFocus: function () {
+                $placeholder.hide();
+            },
+            onBlur: function () {
+                var $self = $(this);
+                setTimeout(function () {
+                    if ($self.summernote('isEmpty') && !$self.summernote('codeview.isActivated')) {
+                        $placeholder.show();
+                    }
+                }, 300);
+            }
+        }
     });
+
+    $('.input-radio').each(function () {
+        var self = $(this),
+            label = self.next(),
+            label_text = label.text();
+
+        label.remove();
+        self.iCheck({
+            checkboxClass: 'icheckbox_line-yellow',
+            radioClass: 'iradio_line-yellow',
+            insert: '<div class="icheck_line-icon"></div>' + label_text
+        });
+    });
+
 </script>
 {% endput %}

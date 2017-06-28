@@ -10,6 +10,9 @@ function onStart()
 $this->addCss('https://cdn.bootcss.com/summernote/0.8.3/summernote.css');
 $this->addJs('https://cdn.bootcss.com/summernote/0.8.3/summernote.min.js');
 $this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min.js');
+
+$this->addCss('https://cdn.bootcss.com/iCheck/1.0.2/skins/line/yellow.css');
+$this->addJs('https://cdn.bootcss.com/iCheck/1.0.2/icheck.min.js');
 }
 ==
 <div class="container m-t">
@@ -17,7 +20,7 @@ $this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min
         <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    发布新需求
+                    更新需求
                 </div>
                 <div class="panel-body">
                     {% partial 'needs/need-form' method='onUpdateNeed' %}

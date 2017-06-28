@@ -5,106 +5,81 @@ layout = 'default'
 ==
 function onStart(){
 
-
 $this['categoriesLimit']=\Buuug7\User\Models\Need::getAllNeedsGroupedByCategory(2);
 
 $this['categories']=\Buuug7\User\Models\Need::getCategories();
 
-$this['checkedNeeds']=\Buuug7\User\Models\Need::displayChecked(8);
+$this['checkedNeeds']=\Buuug7\User\Models\Need::displayChecked();
 $this['featuredNeeds']=\Buuug7\User\Models\Need::displayFeatured(8);
 
 }
 ==
 
-
-<div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>{{ this.page.title }}</h2>
-                <p>
-                    快速发布您的供求信息
-                </p>
-                <p>
-                    <a href="/needs/need/create" class="btn btn-line-warning"><i class="icon icon-plus"></i> 发布新需求</a>
-                </p>
-            </div>
-            <div class="col-md-4">
-                <div class="tags-v4 p-t-md">
-                    <ul class="list-inline">
-                        {% for key,category in categories %}
-                        <li>
-                            <a href="/needs/category/{{ key }}">{{ category }}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
+<div class="container m-y">
+    <div class="jumbotron-sm ">
+        <div class="container">
+            <h2>{{ this.page.title }}</h2>
+            <p class="color-777">
+                招聘、兼职、房产、二手、宠物、本地服务、交友、其他各类供求信息，在这里浏览或者发布自己感兴趣的信息
+            </p>
+            <p>
+                <a href="/needs/need/create" class="btn btn-warning"><i class="icon icon-plus"></i> 发布新需求</a>
+            </p>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <!--最新 + 推荐-->
     <div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-default panel-list-group-time">
-                <!-- Default panel contents -->
-                <div class="panel-heading">
-                    <span class="title">最新发布</span>
-                </div>
-                <!-- List group -->
-                <ul class="list-group">
-                    {% for need in checkedNeeds %}
-                    <li class="list-group-item overflow-h text-overflow-ellipsis">
-                        <a href="/needs/need/{{ need.id }}" class="">{{ need.title }}</a>
-                        <span class="small time">{{ need.checked_at|time_diff }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
+        <div class="col-md-8">
+            <ul class="list-group list-group--needs">
+                {% for need in checkedNeeds %}
+                <li class="list-group-item">
+                    <div class="list-group-item__info">
+                        <img src="{{ need.user.getAvatarThumb(50)}}" alt="" class="list-group-item__avatar">
+                        <a href="/show/user" class="list-group-item__name">{{ need.user.name }}</a>
+                        <span class="list-group-item__time">{{ need.checked_at|time_diff }}</span>
+                    </div>
+                    <div class="list-group-item__title" href="/needs/need/{{ need.id }}">
+                        <a href="/needs/category/{{ need.category}}" class="label-v1">{{ categories[need.category]
+                                                                                      }}</a>
+                        <a href="#" class="color-777"> {{ need.title }}</a>
+                    </div>
+                    {% if need.featured %}
+                    <div class="list-group-item__feature">推荐</div>
+                    {% endif %}
+                </li>
+                {% endfor %}
+                <li class="list-group-item text-center" >
+                    <a href="#" class="btn btn-default center" >加载更多</a>
+                </li>
+            </ul>
         </div>
-
-        <div class="col-md-6">
-            <div class="panel panel-default panel-list-group-time">
-                <!-- Default panel contents -->
-                <div class="panel-heading">
-                    <span class="title"><i class="fa fa-star color-danger"></i> 推荐</span>
+        <div class="col-md-4">
+            <div class="box box-default">
+                <div class="box-header with-border" style="color: #f39c12">
+                    <i class="fa fa-tags"></i>
+                    <h4 class="box-title">分类</h4>
                 </div>
-                <!-- List group -->
-                <ul class="list-group">
-                    {% for need in featuredNeeds %}
-                    <li class="list-group-item overflow-h text-overflow-ellipsis">
-                        <a href="/needs/need/{{ need.id }}" class="">{{ need.title }}</a>
-                        <span class="small time">{{ need.checked_at|time_diff }}</span>
-                    </li>
+                <div class="box-body">
+                    {% for key,category in categories %}
+                    <a href="/needs/category/{{ key }}" class="item">{{ category }}</a>
                     {% endfor %}
-                </ul>
+                </div>
+            </div>
+            <div class="box box-default">
+                <div class="box-header with-border" style="color: #f39c12">
+                    <i class="fa fa-star"></i>
+                    <h4 class="box-title">推荐信息</h4>
+                </div>
+                <div class="box-body" style="padding:20px;">
+                    <ul class="list-unstyled">
+                        {% for need in featuredNeeds %}
+                        <li style="line-height: 2.5"><a href="/needs/need/{{ need.id }}" class="color-777">{{ need.title }}</a></li>
+                        {% endfor  %}
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="row">
-        {% for key, category in needs %}
-        <div class="col-md-6">
-            <div class="panel panel-default panel-list-group-time">
-                <div class="panel-heading">
-                    <span class="title">{{ category.name }}</span>
-                    <a href="/needs/category/{{ key }}" class="pull-right">
-                        更多 <i class="fa fa-angle-double-right"></i>
-                    </a>
-                </div>
-                <ul class="list-group">
-                    {% for need in category.data %}
-                    <li class="list-group-item overflow-h text-overflow-ellipsis">
-                        <a href="/needs/need/{{ need.id }}" class="">{{ need.title }}</a>
-                        <span class="small time">{{ need.checked_at|time_diff }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-
 </div>

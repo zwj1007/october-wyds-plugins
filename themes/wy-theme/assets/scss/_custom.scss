@@ -110,6 +110,10 @@ blockquote {
     font-size: 16px;
 }
 
+.block-with-shadown {
+    box-shadow: 1px 1px 1px #ddd;
+}
+
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
     color: #fff;
     background-color: $brand-warning;
@@ -140,5 +144,64 @@ blockquote {
         text-shadow: 5px 5px 5px #000;
         font-size: 14px;
     }
+}
 
+.list-group--needs {
+    .list-group-item{
+        padding: 15px;
+        position: relative;
+        overflow: hidden;
+    }
+    .list-group-item__info {
+        padding-left: 60px;
+        position: relative;
+        height: 50px;
+    }
+    .list-group-item__avatar {
+        position: absolute;
+        left: 0;
+    }
+    .list-group-item__name {
+        display: block;
+    }
+    .list-group-item__time {
+        color: #999;
+        font-size: 14px;
+    }
+    .list-group-item__title {
+        display: block;
+        margin-top:10px;
+    }
+    .list-group-item__feature{
+        position: absolute;
+        top: 7px;
+        right: -30px;
+        display: block;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        width: 100px;
+        background: $brand-warning;
+        color: #fff;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        font-size: 14px;
+    }
+}
+
+.label-v1 {
+    color: #bbb;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 4px 6px;
+    border: 1px solid #bbb;
+    //border-radius: 2px;
+    &:hover {
+        color: #fff;
+        background: #f39c12;
+        border-color: #f39c12;
+        text-decoration: none;
+        transition: all 0.25s, transform 0.25s;
+    }
 }

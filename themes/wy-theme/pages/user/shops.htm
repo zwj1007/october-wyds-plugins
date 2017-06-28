@@ -1,4 +1,4 @@
-title = "店铺"
+title = "我的店铺"
 url = "/user/center/shops"
 layout="default"
 
@@ -45,25 +45,30 @@ $this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min
                     </div>
                     <div class="row">
                         {% for shop in shops %}
-                        <div class="col-md-4 col-sm-6">
-                            <div class="easy-block-v2">
+                        <div class="col-md-6">
+
+                            <div class="thumbnail">
                                 <img alt="" src="{{ shop.getAvatarThumb(200,100) }}">
-                                <h4>{{ shop.name }}</h4>
-                                <a class="btn btn-warning btn-xs" href="/shops/shop/{{ shop.id }}">
-                                    <i class="fa fa-eye"></i> 查看
-                                </a>
-                                <a class="btn btn-line-warning btn-xs" href="/shops/shop/update/{{ shop.id }}">
-                                    <i class="fa fa-pencil"></i> 更新
-                                </a>
-                                <a
-                                        class="btn btn-danger btn-xs"
-                                        href="#"
-                                        data-request="onDeleteShop"
-                                        data-request-data="id:{{ shop.id }}"
-                                        data-request-confirm="你确定要删除该店铺 ?"
-                                >
-                                    <i class="fa fa-trash"></i> 删除
-                                </a>
+                                <div class="caption">
+                                    <h4>{{ shop.name }}</h4>
+                                    <p>
+                                        <a class="btn btn-warning btn-xs" href="/shops/shop/{{ shop.id }}">
+                                            <i class="fa fa-eye"></i> 查看
+                                        </a>
+                                        <a class="btn btn-line-warning btn-xs" href="/shops/shop/update/{{ shop.id }}">
+                                            <i class="fa fa-pencil"></i> 更新
+                                        </a>
+                                        <a
+                                                class="btn btn-danger btn-xs"
+                                                href="#"
+                                                data-request="onDeleteShop"
+                                                data-request-data="id:{{ shop.id }}"
+                                                data-request-confirm="你确定要删除该店铺 ?"
+                                        >
+                                            <i class="fa fa-trash"></i> 删除
+                                        </a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                         {% endfor %}
