@@ -140,9 +140,9 @@
     ul > li:first-child {
       height: 113px;
       line-height: 22px;
-
       a {
         display: initial;
+        float: left;
         img {
           width: 180px;
           height: 100px;
@@ -158,6 +158,8 @@
       span {
         font-size: 12px;
         display: block;
+        height: 40px;
+        overflow: hidden;
       }
       border-bottom: 1px dashed $border-color;
 
@@ -426,9 +428,8 @@
           }
           i {
             color: #FFFFFF;
-           // font-size: 35px;
+            // font-size: 35px;
             //margin-top: 10px;
-
 
             margin-right: 0;
           }
@@ -477,7 +478,10 @@
 
     ul li {
       float: left;
-      background: rebeccapurple;
+      //background: rebeccapurple;
+      //background: #0000CC;
+      background: #5b40a3;
+
       width: $page-width/4-5;
       margin-right: 5px;
 
