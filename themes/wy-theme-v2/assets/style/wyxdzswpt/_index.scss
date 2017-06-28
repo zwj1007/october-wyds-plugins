@@ -254,7 +254,7 @@
 }
 
 //服务市场
-.fusc {
+.fwsc {
   height: 350px !important;
   overflow: hidden;
   .hd {
@@ -262,10 +262,7 @@
     padding-left: 0;
     height: 40px;
     line-height: 40px;
-
     border: 1px solid $border-color;
-
-
     i {
       border-bottom: 3px solid $nav-background;
       padding-bottom: 6px;
@@ -347,7 +344,8 @@
   }
 }
 
-.fusc1 {
+//服务市场
+.fwsc1 {
   .dd {
 
     ul li {

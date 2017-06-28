@@ -1,4 +1,5 @@
 @charset "UTF-8";
+//服务市场——列表
 .fwsc-list {
   border: 1px solid $border-color;
   border-radius: 5px;
@@ -52,3 +53,146 @@
   }
 }
 
+//服务市场——分类
+.fwsc-fl-list {
+  margin-top: $margin-25;
+  .fl-Lfet {
+    width: 770px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px 1px #ddd;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    .hd {
+      position: absolute;
+      top: 7px;
+      right: -30px;
+      border-bottom: 0;
+      span.fl-span {
+        display: block;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        width: 120px;
+        background: #fe7050;
+        color: #fff;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(30deg);
+        font-size: 14px;
+
+      }
+
+    }
+    .dd {
+      ul.fl-dd-post {
+        li {
+          line-height: 60px;
+          .post-img {
+            display: table-cell;
+            a img {
+              width: 60px;
+              max-width: 100%;
+              border-radius: 30px;
+              margin-right: 20px;
+            }
+          }
+          .post-body {
+            display: inline-block;
+            a {
+              float: left;
+              width: 300px;
+              display: block;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              margin-right: 20px;
+            }
+            .label {
+              padding: .2em .6em .3em;
+              font-size: 75%;
+              font-weight: bold;
+              color: #fff;
+              text-align: center;
+
+            }
+            .label-ly {
+              background: $nav-background;
+            }
+            .label-tj {
+              background: #3092f6;
+            }
+
+          }
+          .sj-span {
+            float: right;
+            color: #777;
+            font-size: 12px;
+            letter-spacing: 0.11em;
+            margin-right: 30px;
+          }
+          border-bottom: 1px dotted #CCCCCC;
+        }
+      }
+    }
+
+  }
+  .fl-Right {
+    width: 330px;
+    position: relative;
+    box-shadow: 1px 1px 5px 1px #ddd;
+    margin-bottom: 20px;
+    .box-header {
+      color: $nav-background;
+      display: block;
+      padding: 10px;
+      border-bottom: 1px solid #f4f4f4;
+      h3 {
+        display: inline-block;
+        a {
+          color: $nav-background;
+        }
+      }
+    }
+
+    .box-body {
+      padding: 10px;
+      .item {
+        color: #333;
+        display: inline-block;
+        width: 90px;
+        margin: 5px 5px;
+        text-align: center;
+      }
+      a:hover {
+        color: #6e6d6e;
+      }
+
+    }
+  }
+}
+
+//服务市场——列表——1
+.fwsc-list1 {
+  height: 100% !important;
+  .fw-list-L {
+    width: 800px;
+    .hd {
+      height: 80px;
+      ul {
+        display: inline-block;
+        li {
+          text-align: left;
+        }
+      }
+    }
+    .dd {
+      height: 100% !important;
+    }
+  }
+  .fw-list-R {
+    .kj-dszx {
+      box-shadow: 1px 1px 1px 1px #CCCCCC;
+    }
+  }
+}
