@@ -157,15 +157,25 @@
 
     .box-body {
       padding: 10px;
-      .item {
-        color: #333;
-        display: inline-block;
-        width: 90px;
-        margin: 5px 5px;
-        text-align: center;
-      }
-      a:hover {
-        color: #6e6d6e;
+
+      li {
+        line-height: 25px;
+        a.item {
+          color: #333;
+          display: inline-block;
+          text-align: center;
+          width: 240px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          i {
+            margin-right: 15px;
+          }
+        }
+
+        a:hover {
+          color: #6e6d6e;
+        }
       }
 
     }

@@ -690,9 +690,12 @@ header {
   .fwsc1 .dd .ul-center li .cen-li-top {
     height: 155px;
     border-bottom: 3px solid #00652f; }
-    .fwsc1 .dd .ul-center li .cen-li-top img {
-      max-width: 100%;
-      width: 145px; }
+    .fwsc1 .dd .ul-center li .cen-li-top a {
+      margin: 0;
+      width: 100%; }
+      .fwsc1 .dd .ul-center li .cen-li-top a img {
+        max-width: 100%;
+        width: 145px; }
 .fwsc1 .dd .ul-center .cen-li {
   background: #2f92dc; }
 .fwsc1 .dd .ul-right {
@@ -704,18 +707,20 @@ header {
     height: 150px;
     margin-bottom: 5px;
     margin-right: 5px; }
-    .fwsc1 .dd .ul-right li span {
-      color: #FFFFFF;
-      font-size: 18px;
-      margin-top: 15px;
-      display: block; }
-    .fwsc1 .dd .ul-right li i {
-      color: #FFFFFF;
-      font-size: 35px;
-      margin-top: 10px; }
-    .fwsc1 .dd .ul-right li img {
-      width: 150px;
-      max-width: 150%; }
+    .fwsc1 .dd .ul-right li a {
+      margin: 0;
+      width: 100%; }
+      .fwsc1 .dd .ul-right li a span {
+        color: #FFFFFF;
+        font-size: 18px;
+        margin-top: 15px;
+        display: block; }
+      .fwsc1 .dd .ul-right li a i {
+        color: #FFFFFF;
+        margin-right: 0; }
+      .fwsc1 .dd .ul-right li a img {
+        width: 150px;
+        max-width: 150%; }
   .fwsc1 .dd .ul-right .li1 {
     background: #6290ff; }
   .fwsc1 .dd .ul-right .li2 {
@@ -3078,14 +3083,20 @@ input {
           color: #FF4400; }
     .fwsc-fl-list .fl-Right .box-body {
       padding: 10px; }
-      .fwsc-fl-list .fl-Right .box-body .item {
-        color: #333;
-        display: inline-block;
-        width: 90px;
-        margin: 5px 5px;
-        text-align: center; }
-      .fwsc-fl-list .fl-Right .box-body a:hover {
-        color: #6e6d6e; }
+      .fwsc-fl-list .fl-Right .box-body li {
+        line-height: 25px; }
+        .fwsc-fl-list .fl-Right .box-body li a.item {
+          color: #333;
+          display: inline-block;
+          text-align: center;
+          width: 240px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis; }
+          .fwsc-fl-list .fl-Right .box-body li a.item i {
+            margin-right: 15px; }
+        .fwsc-fl-list .fl-Right .box-body li a:hover {
+          color: #6e6d6e; }
 
 .fwsc-list1 {
   height: 100% !important; }
