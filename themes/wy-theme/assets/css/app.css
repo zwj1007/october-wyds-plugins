@@ -5833,6 +5833,13 @@ button.close {
 | 
 |
 */
+.list-inline-after-slash > li {
+  display: inline-block; }
+  .list-inline-after-slash > li + li:before {
+    padding: 0 5px;
+    color: #ccc;
+    content: '/\00a0'; }
+
 /*
 |--------------------------------------------------------------------------
 | _utilities
@@ -6532,6 +6539,37 @@ a:hover, a:visited {
 .bm__icon63 {
   background-image: url("../images/jkyl_60_1.png") !important;
   background-position: 0 -360px; }
+
+.nav-cat__icon {
+  height: 45px;
+  width: 45px;
+  margin: 0 auto;
+  margin-bottom: 8px;
+  display: block;
+  position: relative;
+  background-size: 45px 45px;
+  background-repeat: no-repeat; }
+
+.nav-cat_icon-zhaopin {
+  background-image: url("../images/icons/jobs.png"); }
+
+.nav-cat_icon-fangchan {
+  background-image: url("../images/icons/house.png"); }
+
+.nav-cat_icon-ershou {
+  background-image: url("../images/icons/second-hand.png"); }
+
+.nav-cat_icon-chongwu {
+  background-image: url("../images/icons/pet.png"); }
+
+.nav-cat_icon-jiaoyou {
+  background-image: url("../images/icons/humans.png"); }
+
+.nav-cat_icon-bendifuwu {
+  background-image: url("../images/icons/service.png"); }
+
+.nav-cat_icon-qita {
+  background-image: url("../images/icons/more.png"); }
 
 /*
 |--------------------------------------------------------------------------
@@ -8174,6 +8212,12 @@ blockquote {
   padding-left: 60px;
   position: relative;
   height: 50px; }
+  .list-group--needs .list-group-item__info .list-inline-after-slash {
+    padding: 8px 0 0 0;
+    font-size: 14px;
+    color: #999; }
+    .list-group--needs .list-group-item__info .list-inline-after-slash a {
+      color: #999; }
 .list-group--needs .list-group-item__avatar {
   position: absolute;
   left: 0; }
@@ -8185,6 +8229,8 @@ blockquote {
 .list-group--needs .list-group-item__title {
   display: block;
   margin-top: 10px; }
+  .list-group--needs .list-group-item__title a {
+    font-size: 18px; }
 .list-group--needs .list-group-item__feature {
   position: absolute;
   top: 7px;
@@ -8205,7 +8251,7 @@ blockquote {
   color: #bbb;
   font-size: 12px;
   font-weight: 400;
-  padding: 4px 6px;
+  padding: 2px 5px;
   border: 1px solid #bbb; }
   .label-v1:hover {
     color: #fff;
@@ -8213,5 +8259,14 @@ blockquote {
     border-color: #f39c12;
     text-decoration: none;
     transition: all 0.25s, transform 0.25s; }
+
+.nav-cat {
+  text-align: center;
+  padding: 15px 36px;
+  display: inline-block; }
+  .nav-cat > .nav-cat__name {
+    color: #888;
+    margin-bottom: 0;
+    font-size: 18px; }
 
 /*# sourceMappingURL=app.css.map */

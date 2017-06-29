@@ -1,3 +1,11 @@
+<style>
+    .search .btn-search {
+        position: fixed;
+        right: 15px;
+        bottom: 20px;
+        z-index: 10000;
+    }
+</style>
 <div class="search">
     <a class="btn btn-warning btn-search" data-toggle="modal" href="#modal-id-search">
         <i class="fa fa-search"></i>
@@ -20,15 +28,15 @@
                             <label class="col-sm-2 control-label">选择分类</label>
                             <div class="radio col-sm-10">
                                 <label>
-                                    <input type="radio" name="category"  value="news" checked="checked">
+                                    <input type="radio" name="category" value="news" checked="checked">
                                     新闻资讯
                                 </label>
                                 <label>
-                                    <input type="radio" name="category"  value="course" >
+                                    <input type="radio" name="category" value="course">
                                     课程
                                 </label>
                                 <label>
-                                    <input type="radio" name="category"  value="need">
+                                    <input type="radio" name="category" value="need">
                                     供求信息
                                 </label>
                             </div>
@@ -51,11 +59,5 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 </div>
-<style>
-    .search .btn-search{
-        position: fixed;
-        right:15px;
-        bottom: 20px;
-        z-index: 10000;
-    }
-</style>
+
+

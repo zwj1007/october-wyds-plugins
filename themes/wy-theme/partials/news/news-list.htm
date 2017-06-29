@@ -8,15 +8,11 @@
     {% endif %}
     <div class="{% if not post.image %}col-sm-12{% else %}col-sm-8{% endif %}">
         <ul class="list-inline posted-info small color-777">
-            <li>By {{ post.user.first_name }}</li>
+            <li>{{ post.user.first_name }}</li>
             {% if post.categories.count %}
-            <li>In
+            <li>
                 {% for category in post.categories %}
-                {% if loop.index >3 %}
-                .
-                {% else %}
                 <a href="{{ category.url }}">{{ category.name }}</a>
-                {% endif %}
                 {% endfor %}
             </li>
             {% endif %}

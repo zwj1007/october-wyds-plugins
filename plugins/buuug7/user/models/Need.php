@@ -105,7 +105,6 @@ class Need extends Model
     {
         return [
             'zhaopin' => '招聘',
-            'jianzhi' => '兼职',
             'fangchan' => '房产',
             'ershou' => '二手',
             'chongwu' => '宠物',

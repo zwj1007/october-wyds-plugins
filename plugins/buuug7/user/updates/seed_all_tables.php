@@ -54,7 +54,7 @@ class SeedAllTables extends Seeder
         Need::create([
             'user_id' => $user01->id,
             'title' => '急聘初中语文老师',
-            'category' => 'jianzhi',
+            'category' => 'zhaopin',
             'description' => '
             <h4>职位详情</h4>
             <h5>授课年级</h5>
@@ -139,87 +139,6 @@ class SeedAllTables extends Seeder
             <h4>招聘职位：机电维修</h4>
             ',
             'featured' => true,
-            'checked' => true,
-            'checked_at' => Carbon::now(),
-        ]);
-
-
-        // insert need of this user
-        Need::create([
-            'user_id' => $user01->id,
-            'title' => '兰州本地 家养纯种哈多利版球形博美宝宝',
-            'category' => 'chongwu',
-            'description' => '
-            <h4>狗狗简介</h4>
-            <p>公母都有，毛色雪白，毛量大，耳朵小，嘴巴短短的特别可爱。现在马上三个月了，喜欢的抓紧咯。诚心喜欢的电话联系，非诚勿扰！</p>
-            ',
-            'featured' => true,
-            'checked' => true,
-            'checked_at' => Carbon::now(),
-        ]);
-
-        // insert need of this user
-        Need::create([
-            'user_id' => $user01->id,
-            'title' => '顶级精品泰迪幼犬, 颜色全数量多,包纯种有送货服务',
-            'category' => 'chongwu',
-            'description' => '
-            <h4>狗狗简介</h4>
-            <p>保证纯种,狗都是自己的狗场繁殖的，同样的饲养成本我们不会养串子影响效益 ，而且做生意讲的是诚信。我犬舍还有种公配种服务 从我犬舍售出的狗狗成年后还可以为您免费配种两次</p>
-            ',
-            'featured' => false,
-            'checked' => true,
-            'checked_at' => Carbon::now(),
-        ]);
-
-
-        // insert need of this user
-        Need::create([
-            'user_id' => $user01->id,
-            'title' => '兼职急聘平面设计讲师 五险一金双休',
-            'category' => 'jianzhi',
-            'description' => '
-            <h4>职位介绍</h4>
-            <p>年龄：23-30岁 | 性别：不限 | 驾照：不要求</p>
-            <h4>岗位职责</h4>
-            <ul>
-                <li>有扎实的美术功底，较好的平面设计理念；</li>
-                <li>熟练使用Photoshop、Dreamweaver、Illustrator等设计软件；</li>
-                <li>负责学生的平面设计课程的教学工作； 并能独立完成备课及研发制作相关的课件；</li>
-                <li>能按时完成领导安排的其他教学工作。</li>
-            </ul>
-            <h4>任职要求</h4>
-            <ul>
-                <li>大学专科及以上学历，年龄23-30周岁，2年及以上相关互联网教学经验；</li>
-                <li>精通设计，熟悉海报、易拉宝等的设计流程，能够熟练运用Photoshop、illustrated、indesign等软件，了解设计流程、设计技巧、有思想、有创意；</li>
-                <li>普通话标准，具备较强的语言表达能力及良好的演讲能力；</li>
-                <li>具备较强的亲和力和感染力；</li>
-                <li>具备较强的执行能力，工作态度积极，责任心强，认真、细致，善于灵活处理问题；</li>
-            </ul>
-            ',
-            'featured' => true,
-            'checked' => true,
-            'checked_at' => Carbon::now(),
-        ]);
-
-        // insert need of this user
-        Need::create([
-            'user_id' => $user01->id,
-            'title' => '苹果 iPhone7 Plus 苹果手机7plus 128G转让',
-            'category' => 'ershou',
-            'description' => '
-            <dl class="dl-horizontal">
-                <dt>机身颜色</dt>
-                <dd>黑色</dd>
-                <dt>容量</dt>
-                <dd>128G</dd>
-                <dt>购买渠道</dt>
-                <dd>国行</dd>
-                <dt>其他</dt>
-                <dd>苹果手机7plus 128G转让 全新手机 没有打开包装 亮黑色 转让价6300元 中介勿扰</dd>
-            </dl>
-            ',
-            'featured' => false,
             'checked' => true,
             'checked_at' => Carbon::now(),
         ]);
@@ -502,7 +421,7 @@ class SeedAllTables extends Seeder
         $user03 = Auth::findUserByLogin('1396675682@qq.com');
         if (!$user03) {
             Auth::register([
-                'name' => '1396675682',
+                'name' => '总有刁民想害朕',
                 'email' => '1396675682@qq.com',
                 'password' => '111111',
                 'password_confirmation' => '111111',
@@ -614,16 +533,98 @@ class SeedAllTables extends Seeder
             'checked_at' => Carbon::now(),
         ]);
 
+
+
+        // insert need of this user
+        Need::create([
+            'user_id' => $user03->id,
+            'title' => '兰州本地 家养纯种哈多利版球形博美宝宝',
+            'category' => 'chongwu',
+            'description' => '
+            <h4>狗狗简介</h4>
+            <p>公母都有，毛色雪白，毛量大，耳朵小，嘴巴短短的特别可爱。现在马上三个月了，喜欢的抓紧咯。诚心喜欢的电话联系，非诚勿扰！</p>
+            ',
+            'featured' => true,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+        ]);
+
+        // insert need of this user
+        Need::create([
+            'user_id' => $user03->id,
+            'title' => '顶级精品泰迪幼犬, 颜色全数量多,包纯种有送货服务',
+            'category' => 'chongwu',
+            'description' => '
+            <h4>狗狗简介</h4>
+            <p>保证纯种,狗都是自己的狗场繁殖的，同样的饲养成本我们不会养串子影响效益 ，而且做生意讲的是诚信。我犬舍还有种公配种服务 从我犬舍售出的狗狗成年后还可以为您免费配种两次</p>
+            ',
+            'featured' => false,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+        ]);
+
         $user04 = Auth::findUserByLogin('616184039@qq.com');
         if (!$user04) {
             Auth::register([
-                'name' => '616184039',
+                'name' => '深情从来都是被辜负',
                 'email' => '616184039@qq.com',
                 'password' => '111111',
                 'password_confirmation' => '111111',
             ], true);
         }
         $user04 = Auth::findUserByLogin('616184039@qq.com');
+
+
+        // insert need of this user
+        Need::create([
+            'user_id' => $user04->id,
+            'title' => '兼职急聘平面设计讲师 五险一金双休',
+            'category' => 'zhaopin',
+            'description' => '
+            <h4>职位介绍</h4>
+            <p>年龄：23-30岁 | 性别：不限 | 驾照：不要求</p>
+            <h4>岗位职责</h4>
+            <ul>
+                <li>有扎实的美术功底，较好的平面设计理念；</li>
+                <li>熟练使用Photoshop、Dreamweaver、Illustrator等设计软件；</li>
+                <li>负责学生的平面设计课程的教学工作； 并能独立完成备课及研发制作相关的课件；</li>
+                <li>能按时完成领导安排的其他教学工作。</li>
+            </ul>
+            <h4>任职要求</h4>
+            <ul>
+                <li>大学专科及以上学历，年龄23-30周岁，2年及以上相关互联网教学经验；</li>
+                <li>精通设计，熟悉海报、易拉宝等的设计流程，能够熟练运用Photoshop、illustrated、indesign等软件，了解设计流程、设计技巧、有思想、有创意；</li>
+                <li>普通话标准，具备较强的语言表达能力及良好的演讲能力；</li>
+                <li>具备较强的亲和力和感染力；</li>
+                <li>具备较强的执行能力，工作态度积极，责任心强，认真、细致，善于灵活处理问题；</li>
+            </ul>
+            ',
+            'featured' => true,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+        ]);
+
+        // insert need of this user
+        Need::create([
+            'user_id' => $user04->id,
+            'title' => '苹果 iPhone7 Plus 苹果手机7plus 128G转让',
+            'category' => 'ershou',
+            'description' => '
+            <dl class="dl-horizontal">
+                <dt>机身颜色</dt>
+                <dd>黑色</dd>
+                <dt>容量</dt>
+                <dd>128G</dd>
+                <dt>购买渠道</dt>
+                <dd>国行</dd>
+                <dt>其他</dt>
+                <dd>苹果手机7plus 128G转让 全新手机 没有打开包装 亮黑色 转让价6300元 中介勿扰</dd>
+            </dl>
+            ',
+            'featured' => false,
+            'checked' => true,
+            'checked_at' => Carbon::now(),
+        ]);
 
         // insert user shop
         Shop::create([

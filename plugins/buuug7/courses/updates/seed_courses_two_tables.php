@@ -97,13 +97,9 @@ class SeedCoursesTwoTables extends Seeder
             <p>太多人会异口同声的说：淘宝呗。淘宝网免费让你开店，但是你不花钱却不一定能卖的了东西，即便你卖了东西如果连自己都养不活，那也是不行的。所以你要入消保、买旺铺、买统计、做推广，而淘宝网本身又是一个短视的企业，连屏蔽商品都干的出来（08年2月），所以做了多年淘宝之后，我毅然决定自己建站，摒弃阿里巴巴、淘宝的束缚，拥有自己的顶级域名，全部管理权限。不受任何一个平台的管理和约束，让更多人认识我们。</p>
             ',
         ]);
-
         // attach categories
         $course02->categories()->attach(3);
 
-        // attach tags
-        $course02->tags()->attach(1);
-        $course02->tags()->attach(2);
 
         $course03 = Course::create([
             'title' => '几种海报的设计方法',
@@ -119,13 +115,9 @@ class SeedCoursesTwoTables extends Seeder
             <p>艺多不压身，多学几种方法用来防身啊！万一你以后的老丈人或者婆婆是开淘宝店铺的呢？不可能？现在互联网这种形势，别说上天了，都快冲出大气层了。</p>
             ',
         ]);
-
         // attach categories
         $course03->categories()->attach(3);
 
-        // attach tags
-        $course03->tags()->attach(1);
-        $course03->tags()->attach(2);
 
         $course04 = Course::create([
             'title' => '区域电子商务系统构建的阶段和方法',
@@ -158,9 +150,6 @@ class SeedCoursesTwoTables extends Seeder
         // attach categories
         $course04->categories()->attach(3);
 
-        // attach tags
-        $course04->tags()->attach(1);
-        $course04->tags()->attach(2);
 
         $course05 = Course::create([
             'title' => '农产品互联网品牌打造案例',
@@ -200,8 +189,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         $course05->categories()->attach(3);
-        $course05->tags()->attach(1);
-        $course05->tags()->attach(2);
+
 
         $course06 = Course::create([
             'title' => '农村电商现状以及发展规划',
@@ -235,8 +223,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         $course06->categories()->attach(3);
-        $course06->tags()->attach(1);
-        $course06->tags()->attach(2);
+
 
         $course07 = Course::create([
             'title' => '电子商务基本知识',
@@ -276,8 +263,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         $course07->categories()->attach(3);
-        $course07->tags()->attach(1);
-        $course07->tags()->attach(2);
+
 
         $course08 = Course::create([
             'title' => '电子商务中的交易模式',
@@ -311,8 +297,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         $course08->categories()->attach(3);
-        $course08->tags()->attach(1);
-        $course08->tags()->attach(2);
+
 
         $course09 = Course::create([
             'title' => '电器电商逆向物流尝试：成败关键在哪？',
@@ -340,8 +325,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         $course09->categories()->attach(3);
-        $course09->tags()->attach(1);
-        $course09->tags()->attach(2);
+
 
         $course10 = Course::create([
             'title' => '支付机构洗牌潮来袭：逾6成公司无新增业务',
@@ -377,8 +361,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         $course10->categories()->attach(3);
-        $course10->tags()->attach(1);
-        $course10->tags()->attach(2);
+
 
         $course11 = Course::create([
             'title' => '新手如何在网上成功赚钱，抵达人生巅峰',
@@ -402,8 +385,6 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         $course11->categories()->attach(3);
-        $course11->tags()->attach(1);
-        $course11->tags()->attach(2);
 
         $course12 = Course::create([
             'title' => '避开网络营销的三大误区',
@@ -428,9 +409,6 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         $course12->categories()->attach(3);
-        $course12->tags()->attach(1);
-        $course12->tags()->attach(2);
-
 
         $course13 = Course::create([
             'title' => '“互联网+制造业”：六大特点',
@@ -485,8 +463,6 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         $course14->categories()->attach(3);
-        $course14->tags()->attach(1);
-        $course14->tags()->attach(2);
 
 
         $course15 = Course::create([
@@ -522,8 +498,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         $course15->categories()->attach(3);
-        $course15->tags()->attach(1);
-        $course15->tags()->attach(2);
+
 
         $course16 = Course::create([
             'title' => '博客营销推广的营销本质',
@@ -543,8 +518,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         $course16->categories()->attach(3);
-        $course16->tags()->attach(1);
-        $course16->tags()->attach(2);
+
 
 
         // 重复的
@@ -571,8 +545,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         $course12->categories()->attach(3);
-        $course12->tags()->attach(1);
-        $course12->tags()->attach(2);
+
 
 
         $course13 = Course::create([
@@ -602,8 +575,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         $course13->categories()->attach(3);
-        $course13->tags()->attach(1);
-        $course13->tags()->attach(2);
+
 
 
         $course14 = Course::create([
@@ -628,8 +600,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         $course14->categories()->attach(3);
-        $course14->tags()->attach(1);
-        $course14->tags()->attach(2);
+
 
 
         $course15 = Course::create([
@@ -665,8 +636,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         $course15->categories()->attach(3);
-        $course15->tags()->attach(1);
-        $course15->tags()->attach(2);
+
 
         $course16 = Course::create([
             'title' => '博客营销推广的营销本质',
@@ -686,8 +656,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         $course16->categories()->attach(3);
-        $course16->tags()->attach(1);
-        $course16->tags()->attach(2);
+
 
     }
 

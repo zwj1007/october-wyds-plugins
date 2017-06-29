@@ -23,10 +23,8 @@ $this['zhenCeJieDu'] = \Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie
 $this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',8);
 
 // 推荐课程
-$this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
+$this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],8);
 
-// 电商基础知识
-$this['categoryDianShangJiChu']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-zi-shang-wu-ji-chu-jiao-cheng'],4);
 
 // 服务市场
 $this['fuwu']=\Buuug7\User\Models\Need::displayFeatured(12);
@@ -191,15 +189,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <div class="headline">
         <h2><a href="/courses/tag/tui-jian">推荐课程</a></h2>
     </div>
-    {% partial 'courses/block-v2' posts=tagTuiJian s_tag='推荐' %}
-    {% endif %}
-
-    <!--电商基础知识-->
-    {% if categoryDianShangJiChu %}
-    <div class="headline">
-        <h2><a href="/courses/categories/dian-shang-ji-chu-zhi-shi">电商基础知识</a></h2>
-    </div>
-    {% partial 'courses/block-v1' posts=categoryDianShangJiChu s_tag='最新' %}
+    {% partial 'courses/block-v1' posts=tagTuiJian s_tag='推荐' %}
     {% endif %}
 
     <!--服务市场-->

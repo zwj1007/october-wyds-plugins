@@ -146,6 +146,8 @@ class SeedCoursesOneTables extends Seeder
         ]);
         // attach categories
         $courseJiChu01->categories()->attach(2);
+        // attach tags
+        $courseJiChu01->tags()->attach(2);
 
 
         $courseJiChu02 = Course::create([
@@ -364,6 +366,9 @@ class SeedCoursesOneTables extends Seeder
         ]);
         // attach categories
         $courseJiChu02->categories()->attach(2);
+        // attach tags
+        $courseJiChu02->tags()->attach(2);
+
 
         $courseJiChu03 = Course::create([
             'title' => 'B2B电子商务与供应链管理',
@@ -414,6 +419,8 @@ class SeedCoursesOneTables extends Seeder
         ]);
         // attach categories
         $courseJiChu03->categories()->attach(2);
+        // attach tags
+        $courseJiChu03->tags()->attach(2);
 
 
         $courseJiChu04 = Course::create([
@@ -485,6 +492,9 @@ class SeedCoursesOneTables extends Seeder
         ]);
         // attach categories
         $courseJiChu04->categories()->attach(2);
+        // attach tags
+        $courseJiChu04->tags()->attach(2);
+
 
         $courseJiChu05 = Course::create([
             'title' => '电子商务系统建设',
@@ -667,6 +677,9 @@ class SeedCoursesOneTables extends Seeder
         ]);
         // attach categories
         $courseJiChu05->categories()->attach(2);
+        // attach tags
+        $courseJiChu05->tags()->attach(2);
+
 
         $courseJiChu06 = Course::create([
             'title' => '浅谈我国电子商务标准体系的建设',
@@ -709,5 +722,7 @@ class SeedCoursesOneTables extends Seeder
         ]);
         // attach categories
         $courseJiChu06->categories()->attach(2);
+        // attach tags
+        $courseJiChu06->tags()->attach(2);
     }
 }

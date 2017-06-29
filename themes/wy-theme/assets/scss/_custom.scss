@@ -147,7 +147,7 @@ blockquote {
 }
 
 .list-group--needs {
-    .list-group-item{
+    .list-group-item {
         padding: 15px;
         position: relative;
         overflow: hidden;
@@ -156,6 +156,14 @@ blockquote {
         padding-left: 60px;
         position: relative;
         height: 50px;
+        .list-inline-after-slash {
+            padding: 8px 0 0 0;
+            font-size: 14px;
+            color: #999;
+            a {
+                color: #999;
+            }
+        }
     }
     .list-group-item__avatar {
         position: absolute;
@@ -170,9 +178,13 @@ blockquote {
     }
     .list-group-item__title {
         display: block;
-        margin-top:10px;
+        margin-top: 10px;
+        a {
+            font-size: 18px;
+        }
+
     }
-    .list-group-item__feature{
+    .list-group-item__feature {
         position: absolute;
         top: 7px;
         right: -30px;
@@ -194,7 +206,7 @@ blockquote {
     color: #bbb;
     font-size: 12px;
     font-weight: 400;
-    padding: 4px 6px;
+    padding: 2px 5px;
     border: 1px solid #bbb;
     //border-radius: 2px;
     &:hover {
@@ -205,3 +217,16 @@ blockquote {
         transition: all 0.25s, transform 0.25s;
     }
 }
+
+.nav-cat {
+    text-align: center;
+    padding: 15px 36px;
+    display: inline-block;
+    > .nav-cat__name {
+        color: #888;
+        margin-bottom: 0;
+        font-size: 18px;
+    }
+}
+
+

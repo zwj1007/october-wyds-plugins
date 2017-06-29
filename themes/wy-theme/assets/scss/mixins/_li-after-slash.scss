@@ -21,3 +21,7 @@
         //color:red;
     }
 }
+
+.list-inline-after-slash {
+    @include li-after-slash;
+}

@@ -514,7 +514,8 @@ header {
     line-height: 22px;
     border-bottom: 1px dashed #CCCCCC; }
     .zcdx .dd ul > li:first-child a {
-      display: initial; }
+      display: initial;
+      float: left; }
       .zcdx .dd ul > li:first-child a img {
         width: 180px;
         height: 100px;
@@ -526,7 +527,9 @@ header {
       margin-top: 10px; }
     .zcdx .dd ul > li:first-child span {
       font-size: 12px;
-      display: block; }
+      display: block;
+      height: 40px;
+      overflow: hidden; }
   .zcdx .dd ul:nth-child(2) {
     margin: 0 30px; }
 
@@ -749,7 +752,7 @@ header {
     padding-top: 15px; }
     .bmfw .dd ul li {
       float: left;
-      background: rebeccapurple;
+      background: #5b40a3;
       width: 275px;
       margin-right: 5px;
       /*    a.bm-fw-img {
