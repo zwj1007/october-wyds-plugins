@@ -5,16 +5,28 @@ layout = 'default'
 ==
 function onStart(){
 
-$this['categoriesLimit']=\Buuug7\User\Models\Need::getAllNeedsGroupedByCategory(2);
-
 $this['categories']=\Buuug7\User\Models\Need::getCategories();
 
-$this['checkedNeeds']=\Buuug7\User\Models\Need::displayChecked();
+$this['checkedNeeds']=\Buuug7\User\Models\Need::displayChecked(5);
 $this['featuredNeeds']=\Buuug7\User\Models\Need::displayFeatured(8);
+
+}
+
+function onLoadMore(){
+$result= \Buuug7\User\Models\Need::loadMore(post('offset'));
+
+if(!count($result[1])){
+    Flash::info('没有更多的信息了!');
+}
+$this['categories']=\Buuug7\User\Models\Need::getCategories();
+$this['needs']=$result[1];
+$this['offset']=$result[0];
 
 }
 ==
 
+
+{{ needs }}
 <div class="container m-y">
     <div class="row">
         <div class="col-md-12">
@@ -55,13 +67,22 @@ $this['featuredNeeds']=\Buuug7\User\Models\Need::displayFeatured(8);
                     {% endif %}
                 </li>
                 {% endfor %}
-                <li class="list-group-item text-center">
-                    <a href="#" class="btn btn-default center">加载更多</a>
+                <div class="loadMorePlaceholder"></div>
+                <li class="list-group-item text-center loadMore">
+                    <a href="#"
+                       class="btn btn-default load-button"
+                       data-request="onLoadMore"
+                       data-request-data="offset: 5"
+                       data-request-update="'needs/list-need':'@.loadMorePlaceholder','needs/load-button':'.loadMore'"
+                       data-request-flash
+                    >
+                        加载更多
+                    </a>
                 </li>
             </ul>
         </div>
-        <div class="col-md-4">
 
+        <div class="col-md-4">
             <div class="box box-default">
                 <div class="box-header with-border" style="color: #f39c12">
                     <i class="fa fa-star"></i>

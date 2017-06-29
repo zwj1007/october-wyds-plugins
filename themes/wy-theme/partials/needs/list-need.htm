@@ -1,0 +1,18 @@
+{% for need in needs %}
+<li class="list-group-item">
+    <div class="list-group-item__info">
+        <img src="{{ need.user.getAvatarThumb(50)}}" alt="" class="list-group-item__avatar">
+        <a href="/show/user" class="list-group-item__name">{{ need.user.name }}</a>
+        <ul class="list-inline-after-slash">
+            <li><a href="/needs/category/{{ need.category}}">{{ categories[need.category]}}</a></li>
+            <li>{{ need.checked_at|time_diff }}</li>
+        </ul>
+    </div>
+    <div class="list-group-item__title" href="/needs/need/{{ need.id }}">
+        <a href="/needs/need/{{ need.id }}" class="color-777"> {{ need.title }}</a>
+    </div>
+    {% if need.featured %}
+    <div class="list-group-item__feature">推荐</div>
+    {% endif %}
+</li>
+{% endfor %}

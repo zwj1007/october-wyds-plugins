@@ -2,6 +2,7 @@
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Model;
 use ValidationException;
 
@@ -78,7 +79,7 @@ class Need extends Model
         if ($limit) {
             return $query->isChecked()->orderBy('checked_at', 'desc')->limit($limit)->get();
         }
-        return $query->isChecked()->orderBy('checked_at', 'desc')->paginate(15);
+        return $query->isChecked()->orderBy('checked_at', 'desc')->paginate(5);
 
     }
 
@@ -132,6 +133,17 @@ class Need extends Model
             }
         }
         return $out;
+    }
+
+    public static function scopeLoadMore($query, $offset)
+    {
+
+
+        $count = DB::table('buuug7_user_needs')->count();
+
+        $data = $query->isChecked()->orderBy('checked_at', 'desc')->offset($offset)->limit(5)->get();
+        Log::info($offset);
+        return [$offset + 5, $data];
     }
 
 }
