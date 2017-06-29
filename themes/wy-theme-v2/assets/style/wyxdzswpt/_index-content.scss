@@ -4,9 +4,9 @@
 }
 
 .dszx-content {
-  width:800px;
+  width: 800px;
   float: left;
-  box-shadow: 1px 2px 20px 1px #CCCCCC;
+  //box-shadow: 1px 2px 20px 1px #CCCCCC;
   border: 1px solid #ededed;
   margin: 0 0 20px 0;
   padding: 5px 15px 10px 15px;
@@ -38,7 +38,7 @@
 .comment_tontainer {
   height: auto;
   float: left;
-  box-shadow: 1px 2px 20px 1px #CCCCCC;
+  //box-shadow: 1px 2px 20px 1px #CCCCCC;
   border: 1px solid #ededed;
   margin: 0 0 20px 0;
   padding: 5px 15px 10px 15px;
@@ -84,7 +84,7 @@
       background-repeat: no-repeat;
       background-position: center;
     }
-    .comment_issue:hover{
+    .comment_issue:hover {
       background-image: url(../images/fwsc/comment-fb1.png);
       background-repeat: no-repeat;
       background-position: center;
@@ -186,19 +186,20 @@
   .kj-dszx {
     padding-bottom: 15px;
     margin-bottom: 20px;
-    box-shadow: 1px 2px 20px 1px #CCCCCC;
+    box-shadow: 1px 1px 1px 1px #CCCCCC;
     border: 1px solid #f3f3f3;
     .kj-title {
       margin-bottom: 10px;
-      border-bottom: 2px solid $nav-background;
-      border-bottom-left-radius: 20%;
-      font-size: 18px;
+      border-bottom: 1px solid $nav-background;
+      //border-bottom-left-radius: 20%;
+      font-size: 15px;
       font-weight: bold;
       padding: 0 15px;
       height: 32px;
       line-height: 32px;
       a {
         color: #6d6d6d;
+        letter-spacing: 3px;
       }
     }
     ul li {
