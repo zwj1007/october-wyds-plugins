@@ -8220,7 +8220,9 @@ blockquote {
       color: #999; }
 .list-group--needs .list-group-item__avatar {
   position: absolute;
-  left: 0; }
+  left: 0;
+  width: 50px;
+  height: 50px; }
 .list-group--needs .list-group-item__name {
   display: block; }
 .list-group--needs .list-group-item__time {
