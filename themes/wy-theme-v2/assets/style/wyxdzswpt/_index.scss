@@ -391,7 +391,7 @@
         height: 310px;
         .cen-li-top {
           height: 155px;
-          border-bottom: 3px solid #00652f;
+          border-bottom: 3px solid #26699c;
           a {
             margin: 0;
             width: 100%;
@@ -401,6 +401,16 @@
             }
           }
         }
+        .cen-li-chang {
+          height: 100%;
+          a {
+            img {
+              width: 180px;
+              margin-top: 5px;
+            }
+          }
+        }
+
       }
       .cen-li {
         background: #2f92dc;

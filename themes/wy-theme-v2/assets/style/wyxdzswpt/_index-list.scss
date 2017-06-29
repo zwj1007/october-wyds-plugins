@@ -40,15 +40,16 @@
       box-shadow: 1px 2px 20px 1px #CCCCCC;
       border: 1px solid #f3f3f3;
       .kj-title {
-        border-bottom: 2px solid $nav-background;
-        border-bottom-left-radius: 20%;
-        font-size: 18px;
+        border-bottom: 1px solid $nav-background;
+       // border-bottom-left-radius: 20%;
+        font-size: 15px;
         font-weight: bold;
         padding: 0 15px;
         height: 32px;
         line-height: 32px;
         a {
           color: #6d6d6d;
+          letter-spacing: 3px;
         }
       }
       ul {
