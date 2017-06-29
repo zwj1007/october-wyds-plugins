@@ -1,6 +1,15 @@
 title = '用户'
-url = '/show/user'
+url = '/show/user/:slug'
 layout = 'default'
+==
+function onStart(){
+$user = \Buuug7\User\Models\User::findByEmail($this->param('slug'));
+
+if($user){
+$this['otherUser']=$user;
+}
+
+}
 ==
 
 <div class="container m-t">
@@ -8,20 +17,22 @@ layout = 'default'
         <div class="col-md-8">
             <div class="box box-widget widget-user">
                 <div class="widget-user-header">
-                    <h3 class="user-name">总有刁民想害朕</h3>
-                    <h5 class="user-desc">非宁静无以致远 非淡泊无以明志</h5>
+                    <h3 class="user-name">{{ otherUser.name }}</h3>
+                    <h5 class="user-desc">{{ otherUser.email }}</h5>
                 </div>
                 <div class="widget-user-image"><img class="img-circle" src="http://lorempixel.com/128/128/cats"></div>
                 <div class="box-footer">
                     <div class="row">
                         <div class="col-sm-4 border-right">
                             <div class="description-block">
-                                <h5 class="description-header">3,200</h5><span class="description-text">信息</span>
+                                <h5 class="description-header">{{ user.needs().count() }}</h5>
+                                <span class="description-text">发布信息</span>
                             </div>
                         </div>
                         <div class="col-sm-4 border-right">
                             <div class="description-block">
-                                <h5 class="description-header">11,200</h5><span class="description-text">被关注</span>
+                                <h5 class="description-header">{{ user.courses().count() }}</h5>
+                                <span class="description-text">收藏课程</span>
                             </div>
                         </div>
                         <div class="col-sm-4 border-right">
@@ -33,58 +44,75 @@ layout = 'default'
                 </div>
             </div>
             <ul class="timeline">
-                <li class="time-label"><span>2017 3月22</span></li>
+                <li class="time-label"><span>2017 6月27</span></li>
                 <li><i class="fa fa-envelope bg-color-primary"></i>
                     <div class="timeline-item"><span class="time"><i class="fa fa-clock-o"></i>12:05</span>
-                        <h3 class="timeline-header"><a href="">Lorem Ipsum Dolor.</a></h3>
+                        <h3 class="timeline-header"><a href="">发布了新的供求信息</a></h3>
                         <div class="timeline-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime obcaecati reprehenderit ea dignissimos amet voluptatem id excepturi facilis
-                            totam veritatis maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!
+                            <h4>招聘文员两个，工资待遇高</h4>
                         </div>
-                        <div class="timeline-footer"><a class="btn btn-line-primary btn-sm" href="">Detail</a>&nbsp;<a class="btn btn-primary btn-sm" href="">View</a></div>
+                        <div class="timeline-footer">
+                            <a class="btn btn-line-primary btn-sm" href="">详情</a>
+                        </div>
                     </div>
                 </li>
                 <li><i class="fa fa-tag bg-color-success"></i>
                     <div class="timeline-item"><span class="time"><i class="fa fa-clock-o"></i>13:25</span>
-                        <h3 class="timeline-header"><a href="">Laudantium, itaque, cumque, maxime obcaecati</a></h3>
+                        <h3 class="timeline-header"><a href="">收藏了新课程</a></h3>
                         <div class="timeline-body">
-                            <img class="m-a img-inline" src="http://lorempixel.com/150/100/nature/1">
-                            <img class="m-a" src="http://lorempixel.com/150/100/nature/2">
-                            <img class="m-a" src="http://lorempixel.com/150/100/nature/3">
-                            <img class="m-a" src="http://lorempixel.com/150/100/nature/4">
+                            <h4>B2B电子商务与供应链管理</h4>
                         </div>
-                        <div class="timeline-footer"><a class="btn btn-success btn-sm" href="">View Detail</a></div>
+                        <div class="timeline-footer"><a class="btn btn-success btn-sm" href="">查看</a></div>
                     </div>
                 </li>
-                <li class="time-label"><span>2017 3月15</span></li>
+                <li class="time-label"><span>2017 6月18</span></li>
                 <li><i class="fa fa-bell-o bg-color-info"></i>
                     <div class="timeline-item"><span class="time"><i class="fa fa-clock-o"></i>13:25</span>
-                        <h3 class="timeline-header"><a href="">Laudantium, itaque, cumque, maxime obcaecati</a></h3>
-                        <div class="timeline-body"><img class="m-a" src="http://lorempixel.com/150/100/fashion/1"><img class="m-a" src="http://lorempixel.com/150/100/fashion/2"><img class="m-a" src="http://lorempixel.com/150/100/fashion/3"><img class="m-a" src="http://lorempixel.com/150/100/fashion/4"></div>
-                        <div class="timeline-footer"><a class="btn btn-info btn-sm" href="">View Detail</a></div>
+                        <h3 class="timeline-header"><a href="">发表了新的说说</a></h3>
+                        <div class="timeline-body">
+                            <h4>什么是FASHION，我现在才知道</h4>
+                            <img class="m-a" src="http://lorempixel.com/150/100/fashion/1">
+                            <img class="m-a" src="http://lorempixel.com/150/100/fashion/3">
+                            <img class="m-a" src="http://lorempixel.com/150/100/fashion/4">
+                        </div>
+                        <div class="timeline-footer"><a class="btn btn-info btn-sm" href="">查看说说</a></div>
                     </div>
                 </li>
                 <li><i class="fa fa-feed bg-color-danger"></i>
                     <div class="timeline-item"><span class="time"><i class="fa fa-clock-o"></i>12:05</span>
-                        <h3 class="timeline-header"><a href="">Lorem Ipsum Dolor.</a></h3>
+                        <h3 class="timeline-header"><a href="">发表了新评论</a></h3>
                         <div class="timeline-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime obcaecati reprehenderit ea dignissimos amet voluptatem id excepturi facilis
-                            totam veritatis maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!
+                            <p>
+                                企业竞争意识强烈却忽视了企业间合作关系的重要性｡供应链各结点之间经常被片面地定位在竞争关系上而忽略了实质性的合作关系这一层面｡
+                            </p>
+
                         </div>
-                        <div class="timeline-footer"><a class="btn btn-danger btn-sm" href="">View</a></div>
+                        <div class="timeline-footer"><a class="btn btn-danger btn-sm" href="">查看</a></div>
                     </div>
                 </li>
                 <li><i class="fa fa-heart bg-color-warning"></i>
                     <div class="timeline-item"><span class="time"><i class="fa fa-clock-o"></i>12:05</span>
-                        <h3 class="timeline-header"><a href="">Lorem Ipsum Dolor.</a></h3>
+                        <h3 class="timeline-header"><a href="">发表了新评论</a></h3>
                         <div class="timeline-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime obcaecati reprehenderit ea dignissimos amet voluptatem id excepturi facilis
-                            totam veritatis maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!
+                            <p>
+                                这样就组成了一个动态的､虚拟的､全球网络化的供应链网络,也真正做到了降低企业的采购成本和物流成本,在整个供应链网络的每一个过程实现最合适的增值,并且最重要的是提高企业对市场和最终顾客需求的响应速度,从而提高企业的市场竞争力｡
+                            </p>
                         </div>
-                        <div class="timeline-footer"><a class="btn btn-warning btn-sm" href="">View</a></div>
+                        <div class="timeline-footer"><a class="btn btn-warning btn-sm" href="">查看</a></div>
                     </div>
                 </li>
             </ul>
+
+            <ul class="pagination">
+                <li class="disabled"><a href="#">&laquo;</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
+
         </div>
     </div>
 </div>

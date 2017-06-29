@@ -69,9 +69,14 @@ class Need extends Model
         }
     }
 
-    public function scopeDisplayFeatured($query, $limit)
+    public function scopeDisplayFeatured($query, $limit=null)
     {
-        return $query->isChecked()->isFeatured()->orderBy('checked_at', 'desc')->limit($limit)->get();
+        if ($limit) {
+            return $query->isChecked()->isFeatured()->orderBy('checked_at', 'desc')->limit($limit)->get();
+        } else {
+            return $query->isChecked()->isFeatured()->orderBy('checked_at', 'desc')->paginate(10);
+        }
+
     }
 
     public function scopeDisplayChecked($query, $limit = null)
@@ -135,14 +140,12 @@ class Need extends Model
         return $out;
     }
 
+
     public static function scopeLoadMore($query, $offset)
     {
-
-
         $count = DB::table('buuug7_user_needs')->count();
-
         $data = $query->isChecked()->orderBy('checked_at', 'desc')->offset($offset)->limit(5)->get();
-        Log::info($offset);
+        //   Log::info($offset);
         return [$offset + 5, $data];
     }
 
