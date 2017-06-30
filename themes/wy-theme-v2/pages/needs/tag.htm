@@ -1,12 +1,25 @@
-title = '需求'
-url = '/needs/category/:slug?'
-layout= 'default'
+title = '供求信息'
+url = '/needs/tag/:slug'
+layout = 'default'
 
 ==
-function onEnd(){
+function onStart(){
 
-$this['needs']=\Buuug7\User\Models\Need::displayByCategory($this->param('slug'));
-$this->page->title='服务市场 | '.\Buuug7\User\Models\Need::getCategories()[$this->param('slug')];
+$this['categories']=\Buuug7\User\Models\Need::getCategories();
+
+// 请求的url为 /needs/tag/featured
+if($this->param('slug') == 'featured' ){
+$this['needs']=\Buuug7\User\Models\Need::displayFeatured();
+$this['breadcrumb']='推荐信息';
+$this['tag']='推荐';
+}
+
+// 请求的url为 /needs/tag/newly
+if($this->param('slug') == 'newly' ){
+$this['needs']=\Buuug7\User\Models\Need::displayChecked();
+$this['breadcrumb']='最新信息';
+$this['tag']='最新';
+}
 
 
 $this['categoryZhaoPin']=\Buuug7\User\Models\Need::displayByCategory('zhaopin',12);
@@ -18,12 +31,13 @@ $this['categoryJiaoYou']=\Buuug7\User\Models\Need::displayByCategory('jiaoyou',1
 $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',12);
 }
 ==
-
 <section class="box fwsc-fl-list">
 
     <div class="fl-Lfet float-left">
         <div class="hd">
-            <span class="fl-span"></span>
+            <span class="fl-span">
+                {{ tag }}
+            </span>
         </div>
         <div class="dd">
             <ul class="fl-dd-post">
@@ -108,4 +122,3 @@ $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',12);
 
 
 </section>
-
