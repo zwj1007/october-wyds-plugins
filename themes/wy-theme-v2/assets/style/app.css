@@ -3015,7 +3015,7 @@ input {
             transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
             .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .form-group .form-control input {
               margin-right: 15px; }
-          .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form button {
+          .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .button-fb {
             width: 100px;
             line-height: 30px;
             height: 30px;
