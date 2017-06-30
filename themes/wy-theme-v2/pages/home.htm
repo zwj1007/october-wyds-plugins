@@ -25,12 +25,6 @@ $this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4)
 // 电商基础知识
 $this['categoryDianShang']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-zi-shang-wu-ji-chu-jiao-cheng'],16);
 
-// 服务市场
-$this['fuwu']=\Buuug7\User\Models\Need::displayFeatured(16);
-$this['categoryZhaoPin']=\Buuug7\User\Models\Need::displayByCategory('zhaopin',16);
-$this['categoryFangChan']=\Buuug7\User\Models\Need::displayByCategory('fangchan',16);
-$this['categoryErShow']=\Buuug7\User\Models\Need::displayByCategory('ershou',16);
-$this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',16);
 
 // 推荐店铺
 $this['featuredShops']=\Buuug7\User\Models\Shop::displayFeatured();
@@ -197,8 +191,9 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 <!--服务市场-->
 <section class="box fwsc fwsc1">
     <div class="hd">
-        <i class="">服务市场 <a href="fwsc-list.html"><span>more+</span></a> <a
-                href="fwsc-list1.html"><span>more1    </span></a></i>
+        <i class="">服务市场
+            <a href="/gong-qiu-xin-xi"><span>more+</span></a>
+        </i>
     </div>
     <div class="dd ">
         <ul class="float-left ul-left">
@@ -213,12 +208,13 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                 </div>
                 <div class="cen-li-top">
                     <a href="/needs/category/ershou" class=""> <img src="/themes/wy-theme-v2/assets/images/come/es.png" alt="" class=""></a>
+
                 </div>
             </li>
             <li class=" float-left">
                 <div class="cen-li-top cen-li-chang">
 
-                    <a href="/needs/category/zhaopin"> <img src="/themes/wy-theme-v2/assets/images/come/zp.png" alt="" class=""></a>
+                    <a href="/needs/category/zhaopin"><img src="/themes/wy-theme-v2/assets/images/come/zp.png" alt="" class="list-zp-img"></a>
                 </div>
 
             </li>

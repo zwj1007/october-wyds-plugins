@@ -1,0 +1,88 @@
+description = "Default layout"
+
+[session]
+security = "all"
+
+[staticPage]
+useContent = 1
+default = 0
+[b7Search]
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>渭源 | {{ this.page.title }}</title>
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="title" content="{{ this.page.meta_title }}">
+    <meta name="author" content="YANJF123">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+    <link href="{{ 'assets/style/app.css'|theme }}" rel="stylesheet">
+    {% styles %}
+</head>
+<body>
+<header>
+    <div class="topbar">
+        <div class="inner">
+            <div class="left">
+                {% if user %}
+                <span>欢迎归来 : <a href="/user/center/account">{{ user.name }}</a></span>
+                {% endif %}
+                {{ this.theme.site_name }}
+                <span class="time" id="current-time"></span>
+            </div>
+            <ul class="right">
+                {% if user %}
+                <li><a href="/user/center/account">个人中心</a></li>
+                <li><a data-request="onLogout" data-request-data="redirect: '/user/login'">退出</a></li>
+                {% else %}
+                <li><a href="/user/login">登陆</a></li>
+                <li><a href="/user/register">注册</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    <div class="head-long">
+        <div class="float-left logo">
+            <a href="#"> <img src="/themes/wy-theme-v2/assets/images/logo2.png" alt=""></a>
+        </div>
+        <!--   <form action="sousuo.html" class="head-sousuo">
+               <select name="typeId">
+                   <option value="新闻咨询">新闻咨询</option>
+                   <option value="培训课程">培训课程</option>
+                   <option value="供求信息">供求信息</option>
+               </select>
+               <input type="text" name="" placeholder="请输入搜索信息">
+               <button class="btn btn-default" type="submit">搜索</button>
+
+
+           </form>-->
+        <div class=" head-right">
+            <i style="margin-left: 300px; font-size: 50px;color: #6d6cd0;margin-right: 10px"
+               class="fa fa-upload"></i><span
+                style="font-size: 20px;color: #ffffff;
+    text-shadow: 1px 1px 1px #323ef4;;">需求发布</span>
+        </div>
+    </div>
+</header>
+
+{% page %}
+
+
+<footer class="footer1 margin-top-10">
+    <div class="box footer-bottom">
+        <p>版权所有：渭源县电子商务公众服务中心</p>
+
+        <p>Copyright 2015 甘ICP备123546224 <i></i> 甘公网安备 3323430240号 </p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="{{ 'assets/script/app.js'|theme }}"></script>
+{% framework extras %}
+{% scripts %}
+</body>
+</html>

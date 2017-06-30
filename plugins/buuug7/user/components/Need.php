@@ -135,4 +135,11 @@ class Need extends ComponentBase
         Flash::success('成功删除');
         return Redirect::refresh();
     }
+
+    // 严军芳视图需求
+    //
+    public function onCreateNeedOne(){
+        $category=post('category');
+        return Redirect::to('/needs/need/create-two/'.$category);
+    }
 }

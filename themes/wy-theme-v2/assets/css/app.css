@@ -649,7 +649,15 @@ header {
         font-size: 12px;
         letter-spacing: -0.11em; }
     .fwsc .dd .fw-left {
-      width: 500px; }
+      text-align: center; }
+      .fwsc .dd .fw-left ul {
+        margin-bottom: 20px !important; }
+      .fwsc .dd .fw-left .fw-left-a {
+        width: 100px;
+        background: #FF4400;
+        padding: 10px 40px;
+        color: #fff;
+        line-height: 60px; }
     .fwsc .dd .fw-right {
       width: 500px; }
     .fwsc .dd .fade {
@@ -701,7 +709,7 @@ header {
         width: 145px; }
   .fwsc1 .dd .ul-center li .cen-li-chang {
     height: 100%; }
-    .fwsc1 .dd .ul-center li .cen-li-chang a img {
+    .fwsc1 .dd .ul-center li .cen-li-chang a .list-zp-img {
       width: 180px;
       margin-top: 5px; }
 .fwsc1 .dd .ul-center .cen-li {
@@ -2959,8 +2967,7 @@ input {
         border-right: 0;
         border-left: 0; }
         .xqfb-list1 .content-holder .content .signup-center .signup-main .step-contain .step {
-          width: 264px;
-          background-image: url("../images/come/12.png"); }
+          width: 264px; }
           .xqfb-list1 .content-holder .content .signup-center .signup-main .step-contain .step a {
             color: #4d4c4d; }
         .xqfb-list1 .content-holder .content .signup-center .signup-main .step-contain .active a {
@@ -3118,6 +3125,7 @@ input {
         display: table-cell; }
         .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-img a img {
           width: 60px;
+          height: 60px;
           max-width: 100%;
           border-radius: 30px;
           margin-right: 20px; }

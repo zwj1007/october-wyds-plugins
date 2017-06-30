@@ -105,13 +105,17 @@ class Plugin extends PluginBase
     {
         return [
             'buuug7.user.access_companies' => [
-                'tab' => '企业',
+                'tab' => '营销',
                 'label' => '企业管理'
             ],
             'buuug7.user.access_needs' => [
-                'tab' => '企业',
-                'label' => '管理供需',
+                'tab' => '营销',
+                'label' => '管理供求信息',
             ],
+            'buuug7.user.access_shops' => [
+                'tab' => '营销',
+                'label' => '管理店铺',
+            ]
         ];
     }
 
@@ -130,19 +134,19 @@ class Plugin extends PluginBase
                 'permissions' => ['buuug7.user.*'],
                 'sideMenu' => [
                     'companies' => [
-                        'label' => '企业',
-                        'icon' => 'icon-user-plus',
+                        'label' => '用户企业',
+                        'icon' => 'icon-building',
                         'url' => Backend::url('buuug7/user/companies'),
                         'permissions' => ['buuug7.user.*'],
                     ],
                     'shops' => [
-                        'label' => '店铺',
-                        'icon' => 'icon-shopping-cart',
+                        'label' => '用户店铺',
+                        'icon' => 'icon-shopping-bag',
                         'url' => Backend::url('buuug7/user/shops'),
                         'permissions' => ['buuug7.user.*'],
                     ],
                     'needs' => [
-                        'label' => '需求',
+                        'label' => '供求信息',
                         'icon' => 'icon-file-text',
                         'url' => Backend::url('buuug7/user/needs'),
                         'permissions' => ['buuug7.user.*'],

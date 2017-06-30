@@ -5,78 +5,223 @@ layout = 'default'
 ==
 function onStart(){
 
-$this['needs']=\Buuug7\User\Models\Need::getAllNeedsGroupedByCategory(2);
 
+$this['coursesTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],6);
+$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(6);
+
+// needs
 $this['checkedNeeds']=\Buuug7\User\Models\Need::displayChecked(8);
 $this['featuredNeeds']=\Buuug7\User\Models\Need::displayFeatured(8);
+
+$this['categoryZhaoPin']=\Buuug7\User\Models\Need::displayByCategory('zhaopin',12);
+$this['categoryFangChan']=\Buuug7\User\Models\Need::displayByCategory('fangchan',12);
+$this['categoryErShow']=\Buuug7\User\Models\Need::displayByCategory('ershou',12);
+$this['categoryChongWu']=\Buuug7\User\Models\Need::displayByCategory('chongwu',12);
+$this['categoryBenDiFuWu']=\Buuug7\User\Models\Need::displayByCategory('bendifuwu',12);
+$this['categoryJiaoYou']=\Buuug7\User\Models\Need::displayByCategory('jiaoyou',12);
+$this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',12);
 
 }
 ==
 
+<ol class="box breadcrumb">
+    <li><a href="/">首页</a></li>
+    <li class="active">供求信息</li>
+</ol>
+
 <div class="box fwsc-list">
     <div class="jumbotron">
         <div class="container">
-            <h2>服务市场</h2>
             <p>
-                快速发布您个人或者公司的需求
-            </p>
-            <p>
-                <a href="/needs/need/create">
+                <a class="float-right" href="/needs/need/create-one">
                     <button>发布需求</button>
                 </a>
             </p>
         </div>
     </div>
+
 </div>
 
 
-<section class="box fwsc-list ">
-    <div class="fwsc-zxfb">
-        <div class="hd"><i>最新发布</i></div>
-        <div class="dd">
+<!--服务市场-->
+<section class="box fwsc fwsc-list1">
+    <div class="fw-list-L fwsc-list float-left">
+        <div class="hd">
+            <ul class=" margin-left-25">
+                <li class="active"><a href="#fw-1" data-toggle="tab">最新发布</a></li>
+                <li><a href="#fw-2" data-toggle="tab">热门推荐</a></li>
+                <li><a href="#fw-3" data-toggle="tab">招聘</a></li>
+                <li><a href="#fw-4" data-toggle="tab">房产</a></li>
+                <li><a href="#fw-5" data-toggle="tab">二手</a></li>
+                <li><a href="#fw-6" data-toggle="tab">宠物</a></li>
+                <li><a href="#fw-7" data-toggle="tab">本地服务</a></li>
+                <li><a href="#fw-8" data-toggle="tab">交友</a></li>
+                <li><a href="#fw-9" data-toggle="tab">其他</a></li>
+            </ul>
+        </div>
+        <div class="dd ">
+            <div class="tab-pane fade active in" id="fw-1">
+                <div class="fw-left">
+                    <ul>
+                        {% for need in checkedNeeds %}
+                        <li>
+                            <a href="/needs/need/{{ need.id }}" target="_blank">
+                                <span>{{ need.title }}</span>
+                            </a>
+                            <span class="time">{{ need.checked_at|date('Y-m-d') }}</span></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="fw-2">
+                <div class="fw-left">
+                    <ul>
+                        {% for need in featuredNeeds %}
+                        <li>
+                            <a href="/needs/need/{{ need.id }}" target="_blank">
+                                <span>{{ need.title }}</span>
+                            </a>
+                            <span class="time">{{ need.checked_at|date('Y-m-d') }}</span></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="fw-3">
+                <div class="fw-left">
+                    <ul>
+                        {% for need in categoryZhaoPin %}
+                        <li>
+                            <a href="/needs/need/{{ need.id }}" target="_blank">
+                                <span>{{ need.title }}</span>
+                            </a>
+                            <span class="time">{{ need.checked_at|date('Y-m-d') }}</span></li>
+                        {% endfor %}
+                    </ul>
+                    <a href="/needs/category/zhaopin" class="fw-left-a">查看更多</a>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="fw-4">
+                <div class="fw-left">
+                    <ul>
+                        {% for need in categoryFangChan %}
+                        <li>
+                            <a href="/needs/need/{{ need.id }}" target="_blank">
+                                <span>{{ need.title }}</span>
+                            </a>
+                            <span class="time">{{ need.checked_at|date('Y-m-d') }}</span></li>
+                        {% endfor %}
+                    </ul>
+                    <a href="/needs/category/fangchan" class="fw-left-a">查看更多</a>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="fw-5">
+                <div class="fw-left">
+                    <ul>
+                        {% for need in categoryErShow %}
+                        <li>
+                            <a href="/needs/need/{{ need.id }}" target="_blank">
+                                <span>{{ need.title }}</span>
+                            </a>
+                            <span class="time">{{ need.checked_at|date('Y-m-d') }}</span></li>
+                        {% endfor %}
+                    </ul>
+                    <a href="/needs/category/ershou" class="fw-left-a">查看更多</a>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="fw-6">
+                <div class="fw-left">
+                    <ul>
+                        {% for need in categoryChongWu %}
+                        <li>
+                            <a href="/needs/need/{{ need.id }}" target="_blank">
+                                <span>{{ need.title }}</span>
+                            </a>
+                            <span class="time">{{ need.checked_at|date('Y-m-d') }}</span></li>
+                        {% endfor %}
+                    </ul>
+                    <a href="/needs/category/chongwu" class="fw-left-a">查看更多</a>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="fw-7">
+                <div class="fw-left">
+                    <ul>
+                        {% for need in categoryBenDiFuWu %}
+                        <li>
+                            <a href="/needs/need/{{ need.id }}" target="_blank">
+                                <span>{{ need.title }}</span>
+                            </a>
+                            <span class="time">{{ need.checked_at|date('Y-m-d') }}</span></li>
+                        {% endfor %}
+                    </ul>
+                    <a href="/needs/category/bendifuwu" class="fw-left-a">查看更多</a>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="fw-8">
+                <div class="fw-left">
+                    <ul>
+                        {% for need in categoryJiaoYou %}
+                        <li>
+                            <a href="/needs/need/{{ need.id }}" target="_blank">
+                                <span>{{ need.title }}</span>
+                            </a>
+                            <span class="time">{{ need.checked_at|date('Y-m-d') }}</span></li>
+                        {% endfor %}
+                    </ul>
+                    <a href="/needs/category/jiaoyou" class="fw-left-a">查看更多</a>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="fw-9">
+                <div class="fw-left">
+                    <ul>
+                        {% for need in categoryQiTa %}
+                        <li>
+                            <a href="/needs/need/{{ need.id }}" target="_blank">
+                                <span>{{ need.title }}</span>
+                            </a>
+                            <span class="time">{{ need.checked_at|date('Y-m-d') }}</span></li>
+                        {% endfor %}
+                    </ul>
+                    <a href="/needs/category/qita" class="fw-left-a">查看更多</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fw-list-R dszx-kjnav float-right">
+        <div class="kj-dszx">
+            <div class="kj-title">
+                <a href="dszx-list.html"> <span>推荐资讯</span></a>
+            </div>
             <ul>
-                {% for need in checkedNeeds %}
+                {% for post in featuredPosts %}
                 <li>
-                    <a href="/needs/need/{{ need.id }}" target="_blank">
-                        <span>{{ need.title }}</span>
-                    </a>
-                    <span class="time">{{ need.checked_at|time_diff }}</span>
+                    <i class="aurora__title aurora100"></i>
+                    <a href="/news/post/{{ post.id }}"> <span>{{ post.title }}</span></a>
+                </li>
+                {% endfor  %}
+            </ul>
+        </div>
+        <div class="kj-dszx rmkc">
+            <div class="kj-title">
+                <a href="xspx-list.html"> <span>推荐课程</span></a>
+            </div>
+            <ul>
+                {% for post in coursesTuiJian %}
+                <li>
+                    <em class="{% if loop.index <= 3 %}topSpan{% else %}{% endif %}">{{ loop.index }}</em>
+                    <a href="/courses/course/{{ post.id }}"> <span> {{ post.title }}</span> </a>
                 </li>
                 {% endfor %}
             </ul>
         </div>
-    </div>
-</section>
-<section class="box fwsc-list" style="margin-bottom: 30px">
-    <div class="hd"><i>推荐</i></div>
-    <div class="dd">
-        <ul>
-            {% for need in featuredNeeds %}
-            <li>
-                <a href="/needs/need/{{ need.id }}" target="_blank">
-                    <span>{{ need.title }}</span>
-                </a>
-                <span class="time">{{ need.checked_at|time_diff }}</span></li>
-            {% endfor %}
 
-        </ul>
     </div>
-</section>
 
-
-{% for key,category in needs %}
-<section class="box fwsc-list" style="margin-bottom: 30px">
-    <div class="hd"><i>{{ category.name }}</i><a href="/needs/category/{{ key }}""><span>more+</span></a></div>
-    <div class="dd">
-        <ul>
-            {% for need in category.data %}
-            <li>
-                <a href="/needs/need/{{ need.id }}" target="_blank">
-                    <span>{{ need.title }}</span>
-                </a>
-                <span class="time">{{ need.checked_at|time_diff }}</span></li>
-            {% endfor %}
-        </ul>
-    </div>
 </section>
-{% endfor %}

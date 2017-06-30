@@ -31,11 +31,9 @@ $this['fuwu']=\Buuug7\User\Models\Need::displayFeatured(12);
 $this['categoryZhaoPin']=\Buuug7\User\Models\Need::displayByCategory('zhaopin',12);
 $this['categoryFangChan']=\Buuug7\User\Models\Need::displayByCategory('fangchan',12);
 $this['categoryErShow']=\Buuug7\User\Models\Need::displayByCategory('ershou',12);
-
 $this['categoryChongWu']=\Buuug7\User\Models\Need::displayByCategory('chongwu',12);
 $this['categoryBenDiFuWu']=\Buuug7\User\Models\Need::displayByCategory('bendifuwu',12);
 $this['categoryJiaoYou']=\Buuug7\User\Models\Need::displayByCategory('jiaoyou',12);
-
 $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',12);
 
 // 推荐店铺
@@ -70,22 +68,22 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             <div class="row">
                 <div class="col-sm-6 m-b">
                     <a class="news-wrap" href="/news/post/{{ featuredPosts[1].id }}">
-                        <img src="{{ featuredPosts[1].image|media }}" alt="{{ featuredPosts[1].title }}" class="img-responsive">
+                        <img src="{{ featuredPosts[1].image|media }}" alt="{{ featuredPosts[1].title }}" class="img-responsive animate-scale-rotate--default">
                         <p class="title">{{ featuredPosts[0].title }}</p>
                     </a>
                     <p style="width:5px;height: 5px"></p>
                     <a class="news-wrap" href="/news/post/{{ featuredPosts[2].id }}">
-                        <img src="{{ featuredPosts[2].image|media }}" alt="{{ featuredPosts[2].title }}" class="img-responsive">
+                        <img src="{{ featuredPosts[2].image|media }}" alt="{{ featuredPosts[2].title }}" class="img-responsive animate-scale-rotate--default">
                         <p class="title">{{ featuredPosts[1].title }}</p>
                     </a>
                 </div>
                 <div class="col-sm-6">
                     <a class="news-wrap" href="/news/post/{{ featuredPosts[3].id }}">
-                        <img src="{{ featuredPosts[3].image|media }}" alt="{{ featuredPosts[3].title }}" class="img-responsive">
+                        <img src="{{ featuredPosts[3].image|media }}" alt="{{ featuredPosts[3].title }}" class="img-responsive animate-scale-rotate--default">
                         <p class="title">{{ featuredPosts[2].title }}</p>
                     </a>
                     <p style="width:5px;height: 5px"></p>
-                    <a class="news-wrap" href="/news/post/{{ featuredPosts[4].id }}">
+                    <a class="news-wrap animate-scale-rotate--default" href="/news/post/{{ featuredPosts[4].id }}">
                         <img src="{{ featuredPosts[4].image|media }}" alt="{{ featuredPosts[4].title }}" class="img-responsive">
                         <p class="title">{{ featuredPosts[3].title }}</p>
                     </a>

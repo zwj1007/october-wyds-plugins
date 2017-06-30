@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*
+|--------------------------------------------------------------------------
+| _animate_scale_rotate
+|--------------------------------------------------------------------------
+|
+| Created by buuug7 on 2017/6/30.
+| 
+|
+*/
+
+@mixin animate-scale-rotate($duration,$scale,$rotate) {
+    transition: all $duration ease-in-out;
+    &:hover {
+        transform: scale($scale) rotate($rotate);
+    }
+}
+
+.animate-scale-rotate--default {
+    @include animate-scale-rotate(1.5s, 1.3, 0);
+}
