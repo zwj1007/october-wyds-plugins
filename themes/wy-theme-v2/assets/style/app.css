@@ -3122,7 +3122,8 @@ input {
       line-height: 60px;
       border-bottom: 1px dotted #CCCCCC; }
       .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-img {
-        display: table-cell; }
+        display: table-cell;
+        height: 60px; }
         .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-img a img {
           width: 60px;
           height: 60px;
