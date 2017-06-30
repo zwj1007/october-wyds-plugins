@@ -145,7 +145,8 @@
               }
 
               .note-frame {
-                border: 1px solid #a9a9a9;
+                //border: 1px solid #a9a9a9;
+                border-bottom: 1px solid #afa1a1;
               }
 
               label {
@@ -170,6 +171,16 @@
                   margin-right: 15px;
                 }
               }
+            }
+            button {
+              width: 100px;
+              line-height: 30px;
+              height: 30px;
+              margin: 0 auto;
+              border: 0;
+              box-shadow: 1px 1px 1px #7e6e68;
+              background: #ff4400;
+              color: #fff;
             }
 
           }
