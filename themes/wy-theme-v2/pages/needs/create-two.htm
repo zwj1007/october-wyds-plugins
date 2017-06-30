@@ -7,7 +7,10 @@ function onStart(){
 
 if(!Auth::check()) return Redirect::to('/user/login');
 
-
+$this->addCss('https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css');
+$this->addCss('https://cdn.bootcss.com/summernote/0.8.3/summernote.css');
+$this->addJs('https://cdn.bootcss.com/summernote/0.8.3/summernote.min.js');
+$this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min.js');
 
 
 $this['category']=$this->param('category');
@@ -62,3 +65,19 @@ $this['category']=$this->param('category');
 
 </div>
 
+{% put scripts %}
+<script>
+    $("textarea[name='description']").summernote({
+        lang:'zh-CN',
+        height: 200,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link']],
+            ['view', ['fullscreen']]
+        ],
+    });
+</script>
+{% endput %}
