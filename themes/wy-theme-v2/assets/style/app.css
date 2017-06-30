@@ -701,7 +701,7 @@ header {
         width: 145px; }
   .fwsc1 .dd .ul-center li .cen-li-chang {
     height: 100%; }
-    .fwsc1 .dd .ul-center li .cen-li-chang a img {
+    .fwsc1 .dd .ul-center li .cen-li-chang a .list-zp-img {
       width: 180px;
       margin-top: 5px; }
 .fwsc1 .dd .ul-center .cen-li {
@@ -3118,6 +3118,7 @@ input {
         display: table-cell; }
         .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-img a img {
           width: 60px;
+          height: 60px;
           max-width: 100%;
           border-radius: 30px;
           margin-right: 20px; }
