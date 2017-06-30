@@ -5,33 +5,106 @@ layout= 'default'
 ==
 function onEnd(){
 
-if($this->param('slug')){
-    $this['needs']=\Buuug7\User\Models\Need::displayByCategory($this->param('slug'));
-    $this->page->title='服务市场 | '.\Buuug7\User\Models\Need::getCategories()[$this->param('slug')];
-}else{
-    $this['needs']=\Buuug7\User\Models\Need::displayChecked();
-}
+$this['needs']=\Buuug7\User\Models\Need::displayByCategory($this->param('slug'));
+$this->page->title='服务市场 | '.\Buuug7\User\Models\Need::getCategories()[$this->param('slug')];
 
-//var_dump($this->needs->count());
 
+$this['categoryZhaoPin']=\Buuug7\User\Models\Need::displayByCategory('zhaopin',12);
+$this['categoryFangChan']=\Buuug7\User\Models\Need::displayByCategory('fangchan',12);
+$this['categoryErShow']=\Buuug7\User\Models\Need::displayByCategory('ershou',12);
+$this['categoryChongWu']=\Buuug7\User\Models\Need::displayByCategory('chongwu',12);
+$this['categoryBenDiFuWu']=\Buuug7\User\Models\Need::displayByCategory('bendifuwu',12);
+$this['categoryJiaoYou']=\Buuug7\User\Models\Need::displayByCategory('jiaoyou',12);
+$this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',12);
 }
 ==
 
-<section class="box fwsc-list " style="margin-bottom: 30px">
-    <div class="hd"><i>{{ this.page.title }}</i></div>
-    <div class="dd" style="height: auto;">
-        <ul>
-            {% for need in needs %}
-            <li>
-                <a href="/needs/need/{{ need.id }}" target="_blank">
-                    <span>{{ need.title }}</span>
-                </a>
-                <span class="time">{{ need.checked_at|time_diff }}</span>
-            </li>
-            {% endfor %}
-        </ul>
+<section class="box fwsc-fl-list">
+
+    <div class="fl-Lfet float-left">
+        <div class="hd">
+            <span class="fl-span">最新</span>
+        </div>
+        <div class="dd">
+            <ul class="fl-dd-post">
+                {% for need in needs %}
+                <li>
+                    <div class="post-img float-left">
+                        <a href="/needs/need/{{ need.id }}">
+                            <img src="/themes/wy-theme-v2/assets/images/come/jz.png " alt="">
+                        </a>
+                    </div>
+                    <div class="post-body">
+                        <a href="/needs/need/{{ need.id }}">{{ need.title }}</a>
+                        <span class="label label-ly">最新</span>
+                        <span class="label label-tj">推荐</span>
+                    </div>
+
+                    <span class="sj-span">[{{ need.checked_at|date('Y-m-d') }}]</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        {{ needs.render|raw }}
+
+
     </div>
 
-    {{ needs.render|raw }}
+    <div class="fl-Right float-right">
+        <div>
+            <div class="box-header">
+                <i class="fa fa-hand-peace-o"></i>
+
+                <h3 class="box-title"><a href="#!">招聘信息</a></h3>
+            </div>
+            <ul class="box-body">
+                {% for need in categoryZhaoPin %}
+                <li>
+                    <a href="/needs/need/{{ need.id }}" class="item">
+                        <i class="fa fa-sun-o"></i>
+                        <span class="">{{ need.title }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            <div class="box-header">
+                <i class="fa fa-user-plus"></i>
+
+                <h3><a href="#!">房产信息</a></h3>
+            </div>
+            <ul class="box-body">
+                {% for need in categoryFangChan %}
+                <li>
+                    <a href="/needs/need/{{ need.id }}" class="item">
+                        <i class="fa fa-sun-o"></i>
+                        <span class="">{{ need.title }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            <div class="box-header">
+                <i class="fa fa-user-plus"></i>
+
+                <h3><a href="#!">二手信息</a></h3>
+            </div>
+            <ul class="box-body">
+                {% for need in categoryErShow %}
+                <li>
+                    <a href="/needs/need/{{ need.id }}" class="item">
+                        <i class="fa fa-sun-o"></i>
+                        <span class="">{{ need.title }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
 
 </section>
+

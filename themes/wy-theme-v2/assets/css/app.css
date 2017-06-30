@@ -2978,7 +2978,7 @@ input {
           .xqfb-list1 .content-holder .content .signup-center .signup-main .xqfb-fl li {
             display: inline-block;
             width: 270px;
-            text-align: center;
+            padding-left: 80px;
             line-height: 50px; }
             .xqfb-list1 .content-holder .content .signup-center .signup-main .xqfb-fl li i {
               margin-right: 15px;
