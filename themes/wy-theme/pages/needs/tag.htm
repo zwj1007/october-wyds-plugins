@@ -1,0 +1,63 @@
+title = '供求信息'
+url = '/needs/tag/:slug'
+layout = 'default'
+
+==
+function onStart(){
+
+$this['categories']=\Buuug7\User\Models\Need::getCategories();
+
+// 请求的url为 /needs/tag/featured
+if($this->param('slug') == 'featured' ){
+$this['needs']=\Buuug7\User\Models\Need::displayFeatured();
+$this['breadcrumb']='推荐信息';
+}
+
+// 请求的url为 /needs/tag/newly
+if($this->param('slug') == 'newly' ){
+$this['needs']=\Buuug7\User\Models\Need::displayChecked();
+$this['breadcrumb']='最新信息';
+}
+
+
+}
+==
+
+
+<div class="container m-t">
+    <div class="row">
+        <div class="col-md-8">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="/">首页</a>
+                </li>
+                <li>
+                    <a href="/gong-qiu-xin-xi">供求信息</a>
+                </li>
+                <li class="active">{{ breadcrumb }}</li>
+            </ol>
+            <ul class="list-group list-group--needs">
+                {% for need in needs %}
+                <li class="list-group-item">
+                    <div class="list-group-item__info">
+                        <img src="{{ need.user.getAvatarThumb(50)}}" alt="" class="list-group-item__avatar">
+                        <a href="/show/user" class="list-group-item__name">{{ need.user.name }}</a>
+                        <ul class="list-inline-after-slash">
+                            <li><a href="/needs/category/{{ need.category}}">{{ categories[need.category]}}</a></li>
+                            <li>{{ need.checked_at|time_diff }}</li>
+                        </ul>
+                    </div>
+                    <div class="list-group-item__title" href="/needs/need/{{ need.id }}">
+                        <a href="/needs/need/{{ need.id }}" class="color-777"> {{ need.title }}</a>
+                    </div>
+                    {% if need.featured %}
+                    <div class="list-group-item__feature">推荐</div>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+            {{ needs.render|raw }}
+        </div>
+
+    </div>
+</div>

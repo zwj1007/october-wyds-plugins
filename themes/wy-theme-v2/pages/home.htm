@@ -195,102 +195,6 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 </section>
 
 <!--服务市场-->
-<!--<section class="box  fusc">
-    <div class="hd">
-        <i class="">服务市场</i>
-        <ul class="float-right">
-            <li class="active"><a href="#fw-1" data-toggle="tab" aria-expanded="true">推荐</a></li>
-            <li><a href="#fw-2" data-toggle="tab" aria-expanded="false">招聘</a></li>
-            <li><a href="#fw-3" data-toggle="tab" aria-expanded="false">房产</a></li>
-            <li><a href="#fw-4" data-toggle="tab" aria-expanded="false">二手</a></li>
-            <li><a href="#fw-5" data-toggle="tab" aria-expanded="false">其他</a></li>
-        </ul>
-    </div>
-    <div class="dd ">
-        <div class="tab-pane fade active in" id="fw-1">
-            {% for chunk in fuwu.chunk(8) %}
-            <div class="fw-left {% if loop.index==1 %} float-left {% else %} float-right {% endif %}">
-                <ul>
-                    {% for post in chunk %}
-                    <li>
-                        <a href="/needs/need/{{ post.id }}" target="_blank">
-                            <span>{{ post.title }}</span>
-                        </a>
-                        <span class="time">{{ post.checked_at|time_diff }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endfor %}
-        </div>
-        <div class="tab-pane fade" id="fw-2">
-            {% for chunk in categoryZhaoPin.chunk(8) %}
-            <div class="fw-left {% if loop.index==1 %} float-left {% else %} float-right {% endif %}">
-                <ul>
-                    {% for post in chunk %}
-                    <li>
-                        <a href="/needs/need/{{ post.id }}" target="_blank">
-                            <span>{{ post.title }}</span>
-                        </a>
-                        <span class="time">{{ post.checked_at|time_diff }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endfor %}
-        </div>
-        <div class="tab-pane fade" id="fw-3">
-            {% for chunk in categoryFangChan.chunk(8) %}
-            <div class="fw-left {% if loop.index==1 %} float-left {% else %} float-right {% endif %}">
-                <ul>
-                    {% for post in chunk %}
-                    <li>
-                        <a href="/needs/need/{{ post.id }}" target="_blank">
-                            <span>{{ post.title }}</span>
-                        </a>
-                        <span class="time">{{ post.checked_at|time_diff }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endfor %}
-        </div>
-        <div class="tab-pane fade" id="fw-4">
-            {% for chunk in categoryErShow.chunk(8) %}
-            <div class="fw-left {% if loop.index==1 %} float-left {% else %} float-right {% endif %}">
-                <ul>
-                    {% for post in chunk %}
-                    <li>
-                        <a href="/needs/need/{{ post.id }}" target="_blank">
-                            <span>{{ post.title }}</span>
-                        </a>
-                        <span class="time">{{ post.checked_at|time_diff }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endfor %}
-        </div>
-        <div class="tab-pane fade" id="fw-5">
-            {% for chunk in categoryQiTa.chunk(8) %}
-            <div class="fw-left {% if loop.index==1 %} float-left {% else %} float-right {% endif %}">
-                <ul>
-                    {% for post in chunk %}
-                    <li>
-                        <a href="/needs/need/{{ post.id }}" target="_blank">
-                            <span>{{ post.title }}</span>
-                        </a>
-                        <span class="time">{{ post.checked_at|time_diff }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>-->
-
-<!--服务市场-->
 <section class="box fwsc fwsc1">
     <div class="hd">
         <i class="">服务市场 <a href="fwsc-list.html"><span>more+</span></a> <a
@@ -303,36 +207,32 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             </li>
         </ul>
         <ul class="float-left ul-center">
-            <li class="margin-left-right-10 float-left">
+            <li class="margin-left-right-10 float-left cen-li">
                 <div class="cen-li-top">
-
-                    <a href="#!"> <img src="/themes/wy-theme-v2/assets/images/come/zp.png" alt="" class=""></a>
+                    <a href="/needs/category/fangchan"> <img src="/themes/wy-theme-v2/assets/images/come/fc.png" alt="" class=""></a>
                 </div>
                 <div class="cen-li-top">
-                    <a href="#!"> <img src="/themes/wy-theme-v2/assets/images/come/jz.png" alt="" class="">
-                    </a>
+                    <a href="/needs/category/ershou" class=""> <img src="/themes/wy-theme-v2/assets/images/come/es.png" alt="" class=""></a>
+                </div>
+            </li>
+            <li class=" float-left">
+                <div class="cen-li-top cen-li-chang">
+
+                    <a href="/needs/category/zhaopin"> <img src="/themes/wy-theme-v2/assets/images/come/zp.png" alt="" class=""></a>
                 </div>
 
             </li>
-            <li class="float-left cen-li">
-                <div class="cen-li-top">
-                    <a href="#!"> <img src="/themes/wy-theme-v2/assets/images/come/fc.png" alt="" class=""></a>
-                </div>
-                <div class="cen-li-top">
-                    <a href="#!" class=""> <img src="/themes/wy-theme-v2/assets/images/come/es.png" alt="" class=""></a>
 
-                </div>
-            </li>
         </ul>
         <ul class="float-left ul-right" style="">
             <li class="float-left ">
                 <!--    <img src="images/come/jy.png" alt="">-->
-                <a href="#!" class=""> <span>交友</span>
+                <a href="/needs/category/jiaoyou" class=""> <span>交友</span>
                     <i class="fa fa-eercast"></i>
                 </a>
             </li>
             <li class="float-left li1">
-                <a href="#!" class="">
+                <a href="/needs/category/chongwu" class="">
                     <span>宠物</span>
                     <i class="fa fa-eercast"></i>
 
@@ -341,14 +241,14 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
             </li>
             <li class="float-left  li2 ">
-                <a href="#!" class="">
+                <a href="/needs/category/bendifuwu" class="">
                     <span>本地服务</span>
                     <i class="fa fa-eercast"></i>
                 </a>
             </li>
             <li class="float-left li3">
 
-                <a href="#!" class=""> <span>其他</span>
+                <a href="/needs/category/qita" class=""> <span>其他</span>
                     <i class="fa  fa-eercast"></i></a>
             </li>
         </ul>
