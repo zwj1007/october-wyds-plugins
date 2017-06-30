@@ -89,6 +89,7 @@
   padding-top: 0;
   .content-holder {
     background: 0;
+    height: 100%;
     .content {
       width: 1120px !important;
       height: auto;
@@ -149,7 +150,7 @@
 
               label {
                 margin-right: 15px;
-                width: 60px;
+                //width: 150px;
                 input {
                   margin-right: 10px;
                 }
