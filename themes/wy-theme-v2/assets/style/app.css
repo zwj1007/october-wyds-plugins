@@ -649,7 +649,15 @@ header {
         font-size: 12px;
         letter-spacing: -0.11em; }
     .fwsc .dd .fw-left {
-      width: 500px; }
+      text-align: center; }
+      .fwsc .dd .fw-left ul {
+        margin-bottom: 20px !important; }
+      .fwsc .dd .fw-left .fw-left-a {
+        width: 100px;
+        background: #FF4400;
+        padding: 10px 40px;
+        color: #fff;
+        line-height: 60px; }
     .fwsc .dd .fw-right {
       width: 500px; }
     .fwsc .dd .fade {

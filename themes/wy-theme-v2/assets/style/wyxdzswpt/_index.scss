@@ -320,7 +320,18 @@
       }
     }
     .fw-left {
-      width: 500px;
+      //width: 500px;
+      text-align: center;
+      ul {
+        margin-bottom: 20px !important;
+      }
+      .fw-left-a {
+        width: 100px;
+        background: $nav-background;
+        padding: 10px 40px;
+        color: #fff;
+        line-height: 60px;
+      }
 
     }
     .fw-right {
