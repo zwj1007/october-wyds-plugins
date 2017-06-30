@@ -2997,7 +2997,7 @@ input {
             margin-bottom: 5px;
             font-weight: 700; }
           .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .form-group .note-frame {
-            border: 1px solid #a9a9a9; }
+            border-bottom: 1px solid #afa1a1; }
           .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .form-group label {
             margin-right: 15px; }
             .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .form-group label input {
@@ -3015,6 +3015,15 @@ input {
             transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
             .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .form-group .form-control input {
               margin-right: 15px; }
+          .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form button {
+            width: 100px;
+            line-height: 30px;
+            height: 30px;
+            margin: 0 auto;
+            border: 0;
+            box-shadow: 1px 1px 1px #7e6e68;
+            background: #ff4400;
+            color: #fff; }
         .xqfb-list1 .content-holder .content .signup-center .signup-main .xqfb-cg li i {
           font-size: 35px; }
         .xqfb-list1 .content-holder .content .signup-center .signup-main .sip-bottom {
