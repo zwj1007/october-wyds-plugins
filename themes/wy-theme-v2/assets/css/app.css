@@ -2958,7 +2958,8 @@ input {
 .xqfb-list1 {
   padding-top: 0; }
   .xqfb-list1 .content-holder {
-    background: 0; }
+    background: 0;
+    height: 100%; }
     .xqfb-list1 .content-holder .content {
       width: 1120px !important;
       height: auto; }
@@ -2998,8 +2999,7 @@ input {
           .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .form-group .note-frame {
             border: 1px solid #a9a9a9; }
           .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .form-group label {
-            margin-right: 15px;
-            width: 60px; }
+            margin-right: 15px; }
             .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .form-group label input {
               margin-right: 10px; }
           .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .form-group .form-control {
@@ -3122,7 +3122,8 @@ input {
       line-height: 60px;
       border-bottom: 1px dotted #CCCCCC; }
       .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-img {
-        display: table-cell; }
+        display: table-cell;
+        height: 60px; }
         .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-img a img {
           width: 60px;
           height: 60px;
