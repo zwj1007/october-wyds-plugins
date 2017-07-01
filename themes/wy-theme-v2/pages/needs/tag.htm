@@ -5,120 +5,86 @@ layout = 'default'
 ==
 function onStart(){
 
+
+$this['zhaoPin']=\Buuug7\User\Models\Need::displayByCategory('zhaopin');
+$this['erShou']=\Buuug7\User\Models\Need::displayByCategory('ershou');
+
 $this['categories']=\Buuug7\User\Models\Need::getCategories();
 
 // 请求的url为 /needs/tag/featured
 if($this->param('slug') == 'featured' ){
 $this['needs']=\Buuug7\User\Models\Need::displayFeatured();
 $this['breadcrumb']='推荐信息';
-$this['tag']='推荐';
 }
 
 // 请求的url为 /needs/tag/newly
 if($this->param('slug') == 'newly' ){
 $this['needs']=\Buuug7\User\Models\Need::displayChecked();
 $this['breadcrumb']='最新信息';
-$this['tag']='最新';
 }
 
 
-$this['categoryZhaoPin']=\Buuug7\User\Models\Need::displayByCategory('zhaopin',12);
-$this['categoryFangChan']=\Buuug7\User\Models\Need::displayByCategory('fangchan',12);
-$this['categoryErShow']=\Buuug7\User\Models\Need::displayByCategory('ershou',12);
-$this['categoryChongWu']=\Buuug7\User\Models\Need::displayByCategory('chongwu',12);
-$this['categoryBenDiFuWu']=\Buuug7\User\Models\Need::displayByCategory('bendifuwu',12);
-$this['categoryJiaoYou']=\Buuug7\User\Models\Need::displayByCategory('jiaoyou',12);
-$this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',12);
 }
 ==
+<ol class="box breadcrumb">
+    <li><a href="/">首页</a></li>
+    <li><a href="/gong-qiu-xin-xi">生活信息</a></li>
+    <li class="">{{ breadcrumb }}</li>
+</ol>
+
 <section class="box fwsc-fl-list">
 
     <div class="fl-Lfet float-left">
-        <div class="hd">
-            <span class="fl-span">
-                {{ tag }}
-            </span>
-        </div>
+
         <div class="dd">
             <ul class="fl-dd-post">
-                {% for need in needs %}
-                <li>
-                    <div class="post-img float-left">
-                        <a href="/needs/need/{{ need.id }}">
-                            <img src="/themes/wy-theme-v2/assets/images/come/jz.png " alt="">
-                        </a>
-                    </div>
-                    <div class="post-body">
-                        <a href="/needs/need/{{ need.id }}">{{ need.title }}</a>
-                        {% if need.featured %}
-                        <span class="label label-tj">推荐</span>
-                        {% endif %}
-                    </div>
-
-                    <span class="sj-span">[{{ need.checked_at|date('Y-m-d') }}]</span>
-                </li>
-                {% endfor %}
+                {% partial 'needs/list-need' needs=needs %}
             </ul>
         </div>
-
         {{ needs.render|raw }}
-
-
     </div>
 
     <div class="fl-Right float-right">
-        <div>
-            <div class="box-header">
-                <i class="fa fa-hand-peace-o"></i>
-
-                <h3 class="box-title"><a href="#!">招聘信息</a></h3>
-            </div>
-            <ul class="box-body">
-                {% for need in categoryZhaoPin %}
-                <li>
-                    <a href="/needs/need/{{ need.id }}" class="item">
-                        <i class="fa fa-sun-o"></i>
-                        <span class="">{{ need.title }}</span>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
+        <div class="Publish-button">
+            <a href="/needs/need/create"> <i class="fa fa-hand-pointer-o "></i> 点我发布新需求</a>
         </div>
-        <div>
-            <div class="box-header">
-                <i class="fa fa-user-plus"></i>
 
-                <h3><a href="#!">房产信息</a></h3>
-            </div>
-            <ul class="box-body">
-                {% for need in categoryFangChan %}
-                <li>
-                    <a href="/needs/need/{{ need.id }}" class="item">
-                        <i class="fa fa-sun-o"></i>
-                        <span class="">{{ need.title }}</span>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div>
-            <div class="box-header">
-                <i class="fa fa-user-plus"></i>
+        <div class="Column">
+            <div>
+                <div class="Column-header">
+                    <i class="fa fa-user-plus"></i>
 
-                <h3><a href="#!">二手信息</a></h3>
+                    <h3 class="box-title"><a href="#!">招聘信息</a></h3>
+                </div>
+                <ul class="Column-body">
+                    {% for need in zhaoPin %}
+                    <li>
+                        <a href="/needs/need/{{ need.id }}" class="item">
+                            <i class="fa fa-sun-o"></i>
+                            <span class="">{{ need.title }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                <div>
+                    <div class="Column-header">
+                        <i class="fa fa-user-plus"></i>
+
+                        <h3><a href="#!">二手信息</a></h3>
+                    </div>
+                    <ul class="Column-body">
+                        {% for need in zhaoPin %}
+                        <li>
+                            <a href="/needs/need/{{ need.id }}" class="item">
+                                <i class="fa fa-sun-o"></i>
+                                <span class="">{{ need.title }}</span>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
-            <ul class="box-body">
-                {% for need in categoryErShow %}
-                <li>
-                    <a href="/needs/need/{{ need.id }}" class="item">
-                        <i class="fa fa-sun-o"></i>
-                        <span class="">{{ need.title }}</span>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
         </div>
     </div>
-
-
 </section>
