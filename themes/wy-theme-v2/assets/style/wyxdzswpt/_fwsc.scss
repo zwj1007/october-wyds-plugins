@@ -146,7 +146,6 @@
     width: 330px;
     .Publish-button {
       margin-bottom: 20px;
-      padding: 15px;
       text-align: center;
       box-shadow: 1px 1px 5px 1px #ddd;
       a {
@@ -154,10 +153,11 @@
         font-size: 14px;
         color: $nav-background;
         font-weight: 600;
+        display: block;
+        padding: 15px;
       }
-      i {
+      a > i {
         font-size: 26px;
-        color: $nav-background;
 
       }
     }
@@ -168,9 +168,6 @@
       a {
         color: #fff;
         font-weight: 600;
-      }
-      i {
-        color: #fff;
       }
     }
     .Column {
