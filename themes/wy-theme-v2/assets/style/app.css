@@ -3024,8 +3024,11 @@ input {
             box-shadow: 1px 1px 1px #7e6e68;
             background: #ff4400;
             color: #fff; }
-        .xqfb-list1 .content-holder .content .signup-center .signup-main .xqfb-cg li i {
-          font-size: 35px; }
+        .xqfb-list1 .content-holder .content .signup-center .signup-main .xqfb-cg li {
+          width: 400px;
+          text-align: center; }
+          .xqfb-list1 .content-holder .content .signup-center .signup-main .xqfb-cg li i {
+            font-size: 35px; }
         .xqfb-list1 .content-holder .content .signup-center .signup-main .sip-bottom {
           margin-top: 100px; }
 
