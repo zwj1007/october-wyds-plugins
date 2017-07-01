@@ -1,0 +1,18 @@
+{% for need in needs %}
+<li>
+    <div class="post-img float-left">
+        <img src="{{ need.user.getAvatarThumb(50)}}" alt="">
+    </div>
+    <div class="post-body">
+        <strong>
+            <a href="/show/user/{{ need.user.email }}" class="">{{ need.user.name }}</a>
+        </strong>
+        <a href="xqfb-browse.html"> {{ need.title }}</a>
+        {% if need.featured %}
+        <span class="label label-tj">推荐</span>
+        {% endif %}
+
+    </div>
+    <span class="sj-span">{{ need.checked_at|time_diff }}</span>
+</li>
+{% endfor %}
