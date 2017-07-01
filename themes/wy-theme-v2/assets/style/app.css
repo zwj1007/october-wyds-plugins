@@ -205,6 +205,9 @@ a:hover, a:link {
 /*
  * Images
  */
+img {
+  border: 0px; }
+
 img.oc-img-rounded {
   border-radius: 100%;
   background-clip: padding-box; }
@@ -324,8 +327,7 @@ header {
       margin: 23px 20px; }
     header .head-long .head-sousuo {
       margin: 50px 0 50px 30px;
-      /*      display: inline-block;*/
-      display: inline-flex;
+      display: inline-block;
       width: 350px; }
       header .head-long .head-sousuo select {
         border: 1px solid #FF4400;
@@ -3191,7 +3193,8 @@ input {
         font-weight: 600; }
     .fwsc-fl-list .fl-Right .Column {
       position: relative;
-      box-shadow: 1px 1px 5px 1px #ddd; }
+      box-shadow: 1px 1px 5px 1px #ddd;
+      margin-bottom: 20px; }
       .fwsc-fl-list .fl-Right .Column .Column-header {
         color: #FF4400;
         display: block;

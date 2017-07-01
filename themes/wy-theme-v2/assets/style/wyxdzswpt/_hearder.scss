@@ -64,8 +64,8 @@ header {
     }
     .head-sousuo {
       margin: 50px 0 50px 30px;
-/*      display: inline-block;*/
-      display: inline-flex;
+    display: inline-block;
+      //display: inline-flex;
       width: 350px;
 
       select {
