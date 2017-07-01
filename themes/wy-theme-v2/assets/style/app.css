@@ -3029,8 +3029,6 @@ input {
           text-align: center; }
           .xqfb-list1 .content-holder .content .signup-center .signup-main .xqfb-cg li i {
             font-size: 35px; }
-        .xqfb-list1 .content-holder .content .signup-center .signup-main .sip-bottom {
-          margin-top: 100px; }
 
 .toast a {
   color: #337ab7; }
@@ -3170,34 +3168,56 @@ input {
         letter-spacing: 0.11em;
         margin-right: 30px; }
   .fwsc-fl-list .fl-Right {
-    width: 330px;
-    position: relative;
-    box-shadow: 1px 1px 5px 1px #ddd;
-    margin-bottom: 20px; }
-    .fwsc-fl-list .fl-Right .box-header {
-      color: #FF4400;
-      display: block;
-      padding: 10px;
-      border-bottom: 1px solid #f4f4f4; }
-      .fwsc-fl-list .fl-Right .box-header h3 {
-        display: inline-block; }
-        .fwsc-fl-list .fl-Right .box-header h3 a {
-          color: #FF4400; }
-    .fwsc-fl-list .fl-Right .box-body {
-      padding: 10px; }
-      .fwsc-fl-list .fl-Right .box-body li {
-        line-height: 25px; }
-        .fwsc-fl-list .fl-Right .box-body li a.item {
-          color: #333;
-          display: inline-block;
-          width: 240px;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis; }
-          .fwsc-fl-list .fl-Right .box-body li a.item i {
-            margin-right: 15px; }
-        .fwsc-fl-list .fl-Right .box-body li a:hover {
-          color: #6e6d6e; }
+    width: 330px; }
+    .fwsc-fl-list .fl-Right .Publish-button {
+      margin-bottom: 20px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 1px 1px 5px 1px #ddd; }
+      .fwsc-fl-list .fl-Right .Publish-button a {
+        letter-spacing: 4px;
+        font-size: 14px;
+        color: #FF4400;
+        font-weight: 600; }
+      .fwsc-fl-list .fl-Right .Publish-button i {
+        font-size: 26px;
+        color: #FF4400; }
+    .fwsc-fl-list .fl-Right .Publish-button:hover {
+      background: #FF4400;
+      box-shadow: 1px 1px 2px 1px #FF4400;
+      border-radius: 6px; }
+      .fwsc-fl-list .fl-Right .Publish-button:hover a {
+        color: #fff;
+        font-weight: 600; }
+      .fwsc-fl-list .fl-Right .Publish-button:hover i {
+        color: #fff; }
+    .fwsc-fl-list .fl-Right .Column {
+      position: relative;
+      box-shadow: 1px 1px 5px 1px #ddd; }
+      .fwsc-fl-list .fl-Right .Column .Column-header {
+        color: #FF4400;
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #f4f4f4; }
+        .fwsc-fl-list .fl-Right .Column .Column-header h3 {
+          display: inline-block; }
+          .fwsc-fl-list .fl-Right .Column .Column-header h3 a {
+            color: #FF4400; }
+      .fwsc-fl-list .fl-Right .Column .Column-body {
+        padding: 10px 10px 10px 20px; }
+        .fwsc-fl-list .fl-Right .Column .Column-body li {
+          line-height: 25px; }
+          .fwsc-fl-list .fl-Right .Column .Column-body li a.item {
+            color: #333;
+            display: inline-block;
+            width: 240px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis; }
+            .fwsc-fl-list .fl-Right .Column .Column-body li a.item i {
+              margin-right: 15px; }
+          .fwsc-fl-list .fl-Right .Column .Column-body li a:hover {
+            color: #6e6d6e; }
 
 .fwsc-list1 {
   height: 100% !important; }
