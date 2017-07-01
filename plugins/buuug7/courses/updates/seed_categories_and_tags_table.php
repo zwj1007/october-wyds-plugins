@@ -44,10 +44,10 @@ class SeedCategoriesAndTagsTable extends Seeder
 
         Category::create([
             'parent_id' => 1,
-            'name' => '淘宝天猫运营杂谈',
-            'slug' => 'tao-bao-tian-mao-yun-ying-za-tan',
+            'name' => '电商运营杂谈',
+            'slug' => 'dian-shang-yun-ying-za-tan',
             'description' => '在这个系统的教程中，我们主要就当前最热的电商平台淘宝天猫店铺的运营',
-            'image' => '/courses/tao-bao-tian-mao-yun-ying-za-tan.png',
+            'image' => '/courses/dian-shang-yun-ying-za-tan.png',
         ]);
 
 

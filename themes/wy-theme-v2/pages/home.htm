@@ -23,7 +23,7 @@ $this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-
 $this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
 
 // 电商基础知识
-$this['categoryDianShang']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-zi-shang-wu-ji-chu-jiao-cheng'],16);
+$this['courses']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-zi-shang-wu-ji-chu-jiao-cheng','dian-zi-shang-wu-jin-jie-jiao-cheng'],16);
 
 
 // 推荐店铺
@@ -124,7 +124,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
 <!--优秀网店-->
 <section class="box yxwd">
-    <div class="hd"><i>优秀网店展示</i><a href="/shops"><span>more+</span></a></div>
+    <div class="hd"><i>网店展示</i><a href="/shops"><span>more+</span></a></div>
     <div class="dd ">
         <div id="img-slider" class="zzsc margin-top-10 ">
             <button id="prev"><i class="fa fa-angle-double-left"></i></button>
@@ -141,7 +141,6 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             <button id="next"><i class="fa fa-angle-double-right"></i></button>
         </div>
     </div>
-
 </section>
 
 <!--广告位-->
@@ -168,10 +167,10 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         </div>
         {% endif %}
 
-        {% if categoryDianShang.count %}
+        {% if courses.count %}
         <div class="float-right xspx-right">
             <ul>
-                {% for chunk in categoryDianShang.chunk(8) %}
+                {% for chunk in courses.chunk(8) %}
                 <li>
                     <ol>
                         {% for post in chunk %}

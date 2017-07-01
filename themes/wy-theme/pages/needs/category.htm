@@ -1,52 +1,34 @@
 title = '需求'
-url = '/needs/category/:slug?'
+url = '/needs/category/:slug'
 layout= 'default'
 
 ==
 <?php
 function onEnd(){
-
-if($this->param('slug')){
-    $this['needs']=\Buuug7\User\Models\Need::displayByCategory($this->param('slug'));
-    $this->page->title='服务市场 | '.\Buuug7\User\Models\Need::getCategories()[$this->param('slug')];
-}else{
-    $this['needs']=\Buuug7\User\Models\Need::displayChecked();
-}
-
+    $this['checkedNeeds']=\Buuug7\User\Models\Need::displayByCategory($this->param('slug'));
+    $this['category']=\Buuug7\User\Models\Need::getCategories()[$this->param('slug')];
+    //var_dump($this['checkedNeeds']);
 }
 
 ?>
 ==
 
-<div class="jumbotron">
-    <div class="container">
-        <h2>{{ this.page.title }}</h2>
-        <p>
-            在这里你可以浏览别人发布的供求信息 (๑╹◡╹)ﾉ"""
-        </p>
-    </div>
-</div>
-
-<div class="container">
-    {% if needs.count %}
+<div class="container m-t">
+    {% if checkedNeeds.count %}
     <div class="row">
-        {% for chunk in needs.chunk(4) %}
-        <div class="col-md-4 m-b">
-            <ul class="list-unstyled">
-                {% for need in chunk %}
-                <li class="m-b-md">
-                    <h5 style="height: 40px;line-height: 1.3;overflow: hidden">
-                        <a class="color-444" href="/needs/need/{{ need.id }}">{{ need.title }}</a>
-                    </h5>
-                    <small class="color-777">
-                        {{ need.checked_at|time_diff }} / {{ need.user.name }}
-                    </small>
-                </li>
-                {% endfor %}
+        <div class="col-md-8">
+            <ol class="breadcrumb" style="">
+                <li><a href="/">首页</a></li>
+                <li><a href="/gong-qiu-xin-xi">生活信息</a></li>
+                <li class="">{{ category }}</li>
+            </ol>
+            <ul class="list-group list-group--needs">
+                {% partial 'needs/list-need' needs=checkedNeeds %}
             </ul>
+            {{ needs.render|raw }}
         </div>
-        {% endfor %}
     </div>
+
     {% else %}
     <p class="lead">没有找到信息 .</p>
     {% endif %}

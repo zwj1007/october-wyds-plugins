@@ -85,7 +85,6 @@ class Need extends Model
             return $query->isChecked()->orderBy('checked_at', 'desc')->limit($limit)->get();
         }
         return $query->isChecked()->orderBy('checked_at', 'desc')->paginate(5);
-
     }
 
     public static function findById($id)
