@@ -25,8 +25,8 @@ $this['offset']=$result[0];
 }
 ==
 
-<section class="box fwsc-fl-list fwsc-fl-header">
-    <div class="bg-white block-with-shadown" style="white-space: nowrap;overflow-x: auto">
+<section class="box fwsc-fl-list ">
+    <div class="fwsc-fl-header">
         {% for key,category in categories %}
         <a class="nav-cat" href="/needs/category/{{ key }}">
             <i class="nav-cat__icon nav-cat_icon-{{ key }}"></i>
@@ -42,7 +42,7 @@ $this['offset']=$result[0];
             <ul class="fl-dd-post">
                 {% partial 'needs/list-need' needs=checkedNeeds %}
                 <div class="loadMorePlaceholder"></div>
-                <li class="loadMore">
+                <li class="le loadMore">
                     <a href="#"
                        class="btn btn-default load-button"
                        data-request="onLoadMore"

@@ -1,0 +1,80 @@
+title = '需求'
+url = '/needs/category/:slug'
+layout= 'default'
+
+==
+<?php
+function onEnd(){
+
+    $this['zhaoPin']=\Buuug7\User\Models\Need::displayByCategory('zhaopin');
+    $this['erShou']=\Buuug7\User\Models\Need::displayByCategory('ershou');
+    $this['checkedNeeds']=\Buuug7\User\Models\Need::displayByCategory($this->param('slug'));
+    $this['category']=\Buuug7\User\Models\Need::getCategories()[$this->param('slug')];
+    //var_dump($this['checkedNeeds']);
+}
+
+?>
+==
+
+<ol class="box breadcrumb">
+    <li><a href="/">首页</a></li>
+    <li><a href="/gong-qiu-xin-xi">生活信息</a></li>
+    <li class="">{{ category }}</li>
+</ol>
+
+<section class="box fwsc-fl-list">
+
+    <div class="fl-Lfet float-left">
+
+        <div class="dd">
+            <ul class="fl-dd-post">
+                {% partial 'needs/list-need' needs=checkedNeeds %}
+            </ul>
+        </div>
+        {{ needs.render|raw }}
+    </div>
+
+    <div class="fl-Right float-right">
+        <div class="Publish-button">
+            <a href="/needs/need/create"> <i class="fa fa-hand-pointer-o "></i> 点我发布新需求</a>
+        </div>
+
+        <div class="Column">
+            <div>
+                <div class="Column-header">
+                    <i class="fa fa-user-plus"></i>
+
+                    <h3 class="box-title"><a href="#!">招聘信息</a></h3>
+                </div>
+                <ul class="Column-body">
+                    {% for need in zhaoPin %}
+                    <li>
+                        <a href="/needs/need/{{ need.id }}" class="item">
+                            <i class="fa fa-sun-o"></i>
+                            <span class="">{{ need.title }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+
+                    <div>
+                        <div class="Column-header">
+                            <i class="fa fa-user-plus"></i>
+
+                            <h3><a href="#!">二手信息</a></h3>
+                        </div>
+                        <ul class="Column-body">
+                            {% for need in zhaoPin %}
+                            <li>
+                                <a href="/needs/need/{{ need.id }}" class="item">
+                                    <i class="fa fa-sun-o"></i>
+                                    <span class="">{{ need.title }}</span>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
