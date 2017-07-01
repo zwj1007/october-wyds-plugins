@@ -3146,14 +3146,18 @@ input {
     .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-img {
       display: table-cell;
       height: 60px; }
-      .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-img a img {
-        width: 60px;
-        height: 60px;
+      .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-img img {
+        margin-top: 5px;
+        width: 50px;
+        height: 50px;
         max-width: 100%;
         border-radius: 30px;
         margin-right: 20px; }
     .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-body {
       display: inline-block; }
+      .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-body > strong > a {
+        width: 70px;
+        color: #0f0f0f; }
       .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-body a {
         float: left;
         width: 300px;
@@ -3179,6 +3183,14 @@ input {
       font-size: 12px;
       letter-spacing: 0.11em;
       margin-right: 30px; }
+  .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post > li:last-child {
+    border-bottom: 0;
+    text-align: center; }
+    .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post > li:last-child > a {
+      margin-top: 20px;
+      padding: 8px 35px;
+      background: #a5a5a5;
+      color: #fff; }
 .fwsc-fl-list .fl-Right {
   width: 330px; }
   .fwsc-fl-list .fl-Right .Publish-button {
