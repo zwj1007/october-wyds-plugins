@@ -1,60 +1,59 @@
 @charset "UTF-8";
-//服务市场——列表
-.fwsc-list {
-  border: 1px solid $border-color;
-  border-radius: 5px;
-  .hd {
-    text-align: left;
-    padding-left: 0;
-    height: 40px;
-    line-height: 40px;
-    border-bottom: 2px solid $nav-background;
-    border-radius: 5px;
-    i {
-      padding: 10px 15px;
-      color: #ffffff;
-      background: $page-color;
-      border-radius: 3px;
-    }
-  }
-  .dd {
-    height: 100%;
-    text-align: left;
-    overflow: hidden;
-    margin: 30px;
-    color: #494546;
-    ul li {
-      height: 40px;
-      list-style: circle;
-      margin-left: 40px;
-      padding: 0 15px;
-      a {
-        color: #494546;
-        line-height: 40px;
-        display: inline-flex;
-        span {
-          width: 500px;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-        }
-      }
-      a:hover {
-        color: $page-color;
-      }
-      span.time {
-        float: right;
-        color: #777;
-        font-size: 12px;
-        letter-spacing: -0.11em;
-        margin-right: 30px;
-      }
-    }
-  }
-}
 
 //服务市场——分类
 .fwsc-fl-list {
+  .fwsc-fl-header {
+    box-shadow: 1px 1px 5px 1px #ddd;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    // 信息分类中用到的图标
+    .nav-cat__icon {
+      height: 45px;
+      width: 45px;
+      margin: 0 auto;
+      margin-bottom: 8px;
+      display: block;
+      position: relative;
+      background-size: 45px 45px;
+      background-repeat: no-repeat;
+    }
+    .nav-cat_icon-zhaopin {
+      background-image: url("../images/fwsc/tubiao/jobs.png");
+    }
+
+    .nav-cat_icon-fangchan {
+      background-image: url("../images/fwsc/tubiao/house.png");
+    }
+    .nav-cat_icon-ershou {
+      background-image: url("../images/fwsc/tubiao/second-hand.png");
+    }
+    .nav-cat_icon-chongwu {
+      background-image: url("../images/fwsc/tubiao/pet.png");
+    }
+
+    .nav-cat_icon-jiaoyou {
+      background-image: url("../images/fwsc/tubiao/humans.png");
+    }
+    .nav-cat_icon-bendifuwu {
+      background-image: url("../images/fwsc/tubiao/service.png");
+    }
+    .nav-cat_icon-qita {
+      background-image: url("../images/fwsc/tubiao/more.png");
+    }
+
+    .nav-cat {
+      text-align: center;
+      padding: 15px 36px;
+      display: inline-block;
+    }
+
+    .nav-cat > .nav-cat__name {
+      color: #888;
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+
+  }
   .fl-Lfet {
     width: 770px;
     position: relative;
@@ -62,27 +61,6 @@
     box-shadow: 1px 1px 5px 1px #ddd;
     padding: 10px 15px;
     margin-bottom: 15px;
-    .hd {
-      position: absolute;
-      top: 7px;
-      right: -30px;
-      border-bottom: 0;
-      span.fl-span {
-        display: block;
-        height: 25px;
-        line-height: 25px;
-        text-align: center;
-        width: 120px;
-        background: #fe7050;
-        color: #fff;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(30deg);
-        font-size: 14px;
-
-      }
-
-    }
     .dd {
       ul.fl-dd-post {
         li {
@@ -246,91 +224,6 @@
   }
 }
 
-.fwsc-fl-header {
-  box-shadow: 1px 1px 5px 1px #ddd;
-  padding: 10px 15px;
-  margin-bottom: 15px;
-  // 信息分类中用到的图标
-  .nav-cat__icon {
-    height: 45px;
-    width: 45px;
-    margin: 0 auto;
-    margin-bottom: 8px;
-    display: block;
-    position: relative;
-    background-size: 45px 45px;
-    background-repeat: no-repeat;
-  }
-  .nav-cat_icon-zhaopin {
-    background-image: url("../images/fwsc/tubiao/jobs.png");
-  }
 
-  .nav-cat_icon-fangchan {
-    background-image: url("../images/fwsc/tubiao/house.png");
-  }
-  .nav-cat_icon-ershou {
-    background-image: url("../images/fwsc/tubiao/second-hand.png");
-  }
-  .nav-cat_icon-chongwu {
-    background-image: url("../images/fwsc/tubiao/pet.png");
-  }
 
-  .nav-cat_icon-jiaoyou {
-    background-image: url("../images/fwsc/tubiao/humans.png");
-  }
-  .nav-cat_icon-bendifuwu {
-    background-image: url("../images/fwsc/tubiao/service.png");
-  }
-  .nav-cat_icon-qita {
-    background-image: url("../images/fwsc/tubiao/more.png");
-  }
 
-  .nav-cat {
-    text-align: center;
-    padding: 15px 36px;
-    display: inline-block;
-  }
-
-  .nav-cat > .nav-cat__name {
-    color: #888;
-    margin-bottom: 0;
-    font-size: 18px;
-  }
-
-}
-
-//服务市场——列表——1
-.fwsc-list1 {
-  height: 100% !important;
-  .fw-list-L {
-    width: 800px;
-    .hd {
-      ul {
-        display: inline-block;
-        li {
-          text-align: left;
-        }
-        .active {
-          a {
-            color: #3e3e3e;
-            border-bottom: 1px $nav-background;
-          }
-
-        }
-
-      }
-      border-bottom: 1px solid #CCCCCC;
-      border-top: hidden;
-      border-left: hidden;
-      border-right: hidden;
-    }
-    .dd {
-      height: 100% !important;
-    }
-  }
-  .fw-list-R {
-    .kj-dszx {
-      box-shadow: 1px 1px 1px 1px #CCCCCC;
-    }
-  }
-}
