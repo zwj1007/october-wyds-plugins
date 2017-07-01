@@ -5,18 +5,41 @@ layout = 'default'
 ==
 function onStart(){
 $this['need']=\Buuug7\User\Models\Need::findById($this->param('id'));
+$this['categories']=\Buuug7\User\Models\Need::getCategories();
 }
 ==
 <div class="container m-t">
     <div class="row">
         <div class="col-md-8">
+            <ol class="breadcrumb" style="">
+                <li><a href="/">首页</a></li>
+                <li><a href="/gong-qiu-xin-xi">生活信息</a></li>
+                <li><a href="#">{{ categories[need.category] }}</a></li>
+                <li class="active">{{ need.title }}</li>
+            </ol>
             {% if need %}
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ need.title }}
+                    <h5>{{ need.title }}</h5>
                 </div>
                 <div class="panel-body">
                     <h4 class="lead"> {{ need.title }}</h4>
+
+                    <ul class="list-group list-group--needs">
+
+                        <li class="list-group-item">
+                            <div class="list-group-item__info">
+                                <img src="{{ need.user.getAvatarThumb(50)}}" alt="" class="list-group-item__avatar">
+                                <a href="/show/user/{{ need.user.email }}" class="list-group-item__name">{{ need.user.name }}</a>
+                                <ul class="list-inline-after-slash">
+                                    <li><a href="/needs/category/{{ need.category}}">{{ categories[need.category]}}</a></li>
+                                    <li>{{ need.checked_at|time_diff }}</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+
                     {{ need.description|raw }}
                 </div>
             </div>
