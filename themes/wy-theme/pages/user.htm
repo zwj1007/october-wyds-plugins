@@ -17,21 +17,21 @@ if($user){
         <div class="col-md-8">
             <div class="box box-widget widget-user">
                 <div class="widget-user-header">
-                    <h3 class="user-name">{{ otherUser.name }}</h3>
-                    <h5 class="user-desc">{{ otherUser.email }}</h5>
+                    <h3 class="user-name">{{ thatUser.name }}</h3>
+                    <h5 class="user-desc">{{ thatUser.email }}</h5>
                 </div>
                 <div class="widget-user-image"><img class="img-circle" src="{{ thatUser.getAvatarThumb(50) }}"></div>
                 <div class="box-footer">
                     <div class="row">
                         <div class="col-sm-4 border-right">
                             <div class="description-block">
-                                <h5 class="description-header">{{ user.needs().count() }}</h5>
+                                <h5 class="description-header">{{ thatUser.needs().count() }}</h5>
                                 <span class="description-text">发布信息</span>
                             </div>
                         </div>
                         <div class="col-sm-4 border-right">
                             <div class="description-block">
-                                <h5 class="description-header">{{ user.courses().count() }}</h5>
+                                <h5 class="description-header">{{ thatUser.courses().count() }}</h5>
                                 <span class="description-text">收藏课程</span>
                             </div>
                         </div>
