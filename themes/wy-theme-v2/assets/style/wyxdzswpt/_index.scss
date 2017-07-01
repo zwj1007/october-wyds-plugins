@@ -300,75 +300,13 @@
     overflow: hidden;
     margin: $margin-10 0;
     ul li {
-      height: 38px;
-      line-height: 38px;
-      width: 450px;
-      text-align: left;
-      a {
-        color: #494546;
-        display: inline-block;
-        width: 280px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-
-      }
-      span.time {
-        float: right;
-        color: #777;
-        font-size: 12px;
-        letter-spacing: -0.11em;
-      }
-    }
-    .fw-left {
-      //width: 500px;
-      text-align: center;
-      ul {
-        margin-bottom: 20px !important;
-      }
-      .fw-left-a {
-        width: 100px;
-        background: $nav-background;
-        padding: 10px 40px;
-        color: #fff;
-        line-height: 60px;
-      }
-
-    }
-    .fw-right {
-      width: 500px;
-    }
-
-    .fade {
-      opacity: 0;
-      -webkit-transition: opacity 0.15s linear;
-      -o-transition: opacity 0.15s linear;
-      transition: opacity 0.15s linear;
-    }
-    .fade.in {
-      opacity: 1;
-    }
-    .tab-pane {
-      display: none;
-    }
-    .active {
-      display: block;
-    }
-
-  }
-}
-
-//服务市场
-.fwsc1 {
-  .dd {
-
-    ul li {
       text-align: center;
       a {
         text-align: center;
         line-height: 50px;
         margin: 50px 0;
         color: #c6c6c6;
+        display: inline-block;
         span {
           font-size: 30px;
         }
@@ -472,8 +410,9 @@
       }
     }
   }
-
 }
+
+
 
 //便民服务
 .bmfw {
