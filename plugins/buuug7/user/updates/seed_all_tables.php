@@ -150,7 +150,7 @@ class SeedAllTables extends Seeder
         $user02 = Auth::findUserByLogin('20654039@qq.com');
         if (!$user02) {
             Auth::register([
-                'name' => '20654039',
+                'name' => '睡梦中的雄师',
                 'email' => '20654039@qq.com',
                 'password' => '111111',
                 'password_confirmation' => '111111',
@@ -666,7 +666,7 @@ class SeedAllTables extends Seeder
         $user05 = Auth::findUserByLogin('614039@qq.com');
         if (!$user05) {
             Auth::register([
-                'name' => '614039',
+                'name' => '花开的那一瞬间',
                 'email' => '614039@qq.com',
                 'password' => '111111',
                 'password_confirmation' => '111111',
@@ -736,7 +736,7 @@ class SeedAllTables extends Seeder
         $user06 = Auth::findUserByLogin('894031@qq.com');
         if (!$user06) {
             Auth::register([
-                'name' => '894031',
+                'name' => '醉里挑灯看剑',
                 'email' => '894031@qq.com',
                 'password' => '111111',
                 'password_confirmation' => '111111',
@@ -817,7 +817,7 @@ class SeedAllTables extends Seeder
         $user07 = Auth::findUserByLogin('785243874@qq.com');
         if (!$user07) {
             Auth::register([
-                'name' => '785243874',
+                'name' => '作业你和考卷私奔吧',
                 'email' => '785243874@qq.com',
                 'password' => '111111',
                 'password_confirmation' => '111111',
@@ -858,7 +858,7 @@ class SeedAllTables extends Seeder
         $user08 = Auth::findUserByLogin('139887541@qq.com');
         if (!$user08) {
             Auth::register([
-                'name' => '139887541',
+                'name' => '半夏彼岸花绽放',
                 'email' => '139887541@qq.com',
                 'password' => '111111',
                 'password_confirmation' => '111111',
@@ -919,7 +919,7 @@ class SeedAllTables extends Seeder
         $user09 = Auth::findUserByLogin('267842147@qq.com');
         if (!$user09) {
             Auth::register([
-                'name' => '267842147',
+                'name' => '听属于俩人的歌',
                 'email' => '267842147@qq.com',
                 'password' => '111111',
                 'password_confirmation' => '111111',
@@ -958,7 +958,7 @@ class SeedAllTables extends Seeder
         $user10 = Auth::findUserByLogin('45781247@qq.com');
         if (!$user10) {
             Auth::register([
-                'name' => '45781247',
+                'name' => '陌生De自己ヾ忘却',
                 'email' => '45781247@qq.com',
                 'password' => '111111',
                 'password_confirmation' => '111111',
