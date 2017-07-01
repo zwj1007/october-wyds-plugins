@@ -616,7 +616,7 @@ header {
     .fwsc .hd ul {
       display: inline; }
       .fwsc .hd ul li {
-        width: 80px;
+        margin-right: 20px;
         float: left;
         text-align: center; }
         .fwsc .hd ul li a {
@@ -2793,7 +2793,7 @@ input {
     padding: 20px 15px; }
     .dp-see .content .see-left {
       width: 600px;
-      display: inline-block; }
+      float: left; }
       .dp-see .content .see-left h4 {
         font-size: 22px;
         margin-left: 20px;
@@ -3129,6 +3129,7 @@ input {
         font-size: 14px; }
     .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li {
       line-height: 60px;
+      height: 60px;
       border-bottom: 1px dotted #CCCCCC; }
       .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-img {
         display: table-cell;
@@ -3186,7 +3187,6 @@ input {
         .fwsc-fl-list .fl-Right .box-body li a.item {
           color: #333;
           display: inline-block;
-          text-align: center;
           width: 240px;
           overflow: hidden;
           white-space: nowrap;

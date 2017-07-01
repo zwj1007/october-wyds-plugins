@@ -385,7 +385,8 @@
     padding: 20px 15px;
     .see-left {
       width: 600px;
-      display: inline-block;
+      //display: inline-block;
+      float: left;
       h4 {
         font-size: 22px;
         margin-left: 20px;
@@ -453,7 +454,7 @@
 
 .dp-update {
   .dpslt {
-    border-bottom: 1px solid#CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
     .dp-tp {
       margin-bottom: 20px;
       width: 200px;

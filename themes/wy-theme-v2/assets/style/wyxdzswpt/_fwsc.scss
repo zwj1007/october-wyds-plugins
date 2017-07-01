@@ -88,6 +88,8 @@
       ul.fl-dd-post {
         li {
           line-height: 60px;
+          height: 60px;
+          border-bottom: 1px dotted #CCCCCC;
           .post-img {
             display: table-cell;
             height: 60px;
@@ -133,7 +135,7 @@
             letter-spacing: 0.11em;
             margin-right: 30px;
           }
-          border-bottom: 1px dotted #CCCCCC;
+
         }
       }
     }
@@ -165,7 +167,6 @@
         a.item {
           color: #333;
           display: inline-block;
-          text-align: center;
           width: 240px;
           overflow: hidden;
           white-space: nowrap;
