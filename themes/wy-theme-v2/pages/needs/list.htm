@@ -22,9 +22,6 @@ $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',12);
 <section class="box fwsc-fl-list">
 
     <div class="fl-Lfet float-left">
-        <div class="hd">
-            <span class="fl-span"></span>
-        </div>
         <div class="dd">
             <ul class="fl-dd-post">
                 {% for need in needs %}
@@ -53,57 +50,64 @@ $this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',12);
     </div>
 
     <div class="fl-Right float-right">
-        <div>
-            <div class="box-header">
-                <i class="fa fa-hand-peace-o"></i>
-
-                <h3 class="box-title"><a href="#!">招聘信息</a></h3>
-            </div>
-            <ul class="box-body">
-                {% for need in categoryZhaoPin %}
-                <li>
-                    <a href="/needs/need/{{ need.id }}" class="item">
-                        <i class="fa fa-sun-o"></i>
-                        <span class="">{{ need.title }}</span>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
+        <div class="Publish-button">
+            <a href="/needs/need/create-one"> <i class="fa fa-hand-pointer-o "></i> 点我发布新需求</a>
         </div>
-        <div>
-            <div class="box-header">
-                <i class="fa fa-user-plus"></i>
+        <div class="Column">
+            <div>
+                <div class="Column-header">
+                    <i class="fa fa-user-plus"></i>
 
-                <h3><a href="#!">房产信息</a></h3>
+                    <h3 class="box-title"><a href="#!">招聘信息</a></h3>
+                </div>
+                <ul class="Column-body">
+                    {% for need in categoryZhaoPin %}
+                    <li>
+                        <a href="/needs/need/{{ need.id }}" class="item">
+                            <i class="fa fa-sun-o"></i>
+                            <span class="">{{ need.title }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
-            <ul class="box-body">
-                {% for need in categoryFangChan %}
-                <li>
-                    <a href="/needs/need/{{ need.id }}" class="item">
-                        <i class="fa fa-sun-o"></i>
-                        <span class="">{{ need.title }}</span>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div>
-            <div class="box-header">
-                <i class="fa fa-user-plus"></i>
 
-                <h3><a href="#!">二手信息</a></h3>
+            <div>
+                <div class="Column-header">
+                    <i class="fa fa-building"></i>
+                    <h3><a href="#!">房产信息</a></h3>
+                </div>
+                <ul class="Column-body">
+                    {% for need in categoryFangChan %}
+                    <li>
+                        <a href="/needs/need/{{ need.id }}" class="item">
+                            <i class="fa fa-sun-o"></i>
+                            <span class="">{{ need.title }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
-            <ul class="box-body">
-                {% for need in categoryErShow %}
-                <li>
-                    <a href="/needs/need/{{ need.id }}" class="item">
-                        <i class="fa fa-sun-o"></i>
-                        <span class="">{{ need.title }}</span>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
+            <div>
+                <div class="Column-header">
+                    <i class="fa fa-user-plus"></i>
+
+                    <h3><a href="#!">二手信息</a></h3>
+                </div>
+                <ul class="Column-body">
+                    {% for need in categoryErShow %}
+                    <li>
+                        <a href="/needs/need/{{ need.id }}" class="item">
+                            <i class="fa fa-sun-o"></i>
+                            <span class="">{{ need.title }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
         </div>
+
     </div>
 
 
