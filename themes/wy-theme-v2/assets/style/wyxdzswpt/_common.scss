@@ -5,9 +5,10 @@ html, body, div, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input,
   margin: 0
 }
 
-html,body{
+html, body {
   height: 100%;
 }
+
 body {
   font-family: "Hiragino Sans GB", "Microsoft YaHei", arial, Tahoma, SimSun, sans-serif;
   font-size: 14px;
@@ -270,6 +271,11 @@ a:hover, a:link {
 /*
  * Images
  */
+
+img {
+  border: 0px
+}
+
 img.oc-img-rounded {
   border-radius: 100%;
   background-clip: padding-box;

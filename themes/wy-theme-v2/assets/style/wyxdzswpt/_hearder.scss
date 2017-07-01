@@ -64,28 +64,38 @@ header {
     }
     .head-sousuo {
       margin: 50px 0 50px 30px;
-/*      display: inline-block;*/
-      display: inline-flex;
-      width: 350px;
-
+      display: inline-block;
+      border: 1px solid $nav-background;
+      width: 330px;
       select {
-        border: 1px solid $nav-background;
+        border-top: 0;
+        border-left: 0;
+        border-bottom: 0;
+        border-right: 1px solid $nav-background;
         color: $nav-background;
         height: 30px;
         font: 13px/20px arial, sans-serif !important;
+        line-height: 30px;
       }
       input {
-        border: 1px solid $nav-background;
-        padding: 6px 12px;
+       // border: 1px solid $nav-background;
+        padding: 6px 20px 6px 12px;
         border-left: 0;
         height: 30px;
+        line-height: 30px;
         font: 13.3333px Arial;
+        margin-left: -4px;
       }
       .btn {
-        border: 1px solid $nav-background;
-        border-left: 0;
+        height: 30px;
+        line-height: 30px;
+        border-top: 0;
+        border-left: 1px solid $nav-background;
+        border-bottom: 0;
+        border-right: 0;
         padding: 0 12px;
-        background: #E6E6E6;
+        margin-left: -4px;
+        background: #fff;
         border-radius: 0;
         font: 13.3333px Arial !important;
         color: #333333;
