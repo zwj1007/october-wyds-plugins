@@ -104,7 +104,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <div class="owl-carousel owl-carousel-v1">
         {% for post in tongZhiGongGao %}
         <div class="callout callout-v1 wow slideInLeft">
-            <h4><a href="#">{{ str_limit(post.title,40,'...') }}</a></h4>
+            <h4><a href="/news/post/{{ post.id }}">{{ str_limit(post.title,40,'...') }}</a></h4>
             <p class="color-777">{{ str_limit(post.summary,45,'...') }}</p>
         </div>
         {% endfor %}
@@ -123,8 +123,8 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                 <div class="row">
                     {% for post in dianShangDongTai %}
                     <div class="col-md-3 col-sm-4">
-                        <div class="callout callout-v1 wow slideInRight">
-                            <h4><a href="#">{{ str_limit(post.title,40,'...') }}</a></h4>
+                        <div class="callout callout-v1">
+                            <h4><a href="news/post/{{ post.id }}">{{ str_limit(post.title,40,'...') }}</a></h4>
                             <p class="color-777">{{ str_limit(post.summary,45,'...') }}</p>
                         </div>
                     </div>
@@ -135,16 +135,9 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                 <div class="row">
                     {% for post in zhenCeJieDu %}
                     <div class="col-md-3 col-sm-4">
-                        <div class="item-block-v2">
-                            <a class="color-444" href="/news/post/{{ post.id }}">
-                                {{ str_limit(post.title, 60, '...') }}
-                            </a>
-                            <p class="small color-999">
-                                {{ str_limit(post.summary, 60, '...') }}
-                            </p>
-                            <!--<small class="color-999">
-                                {{ post.published_at|date('Y,m月 d')}}
-                            </small>-->
+                        <div class="callout callout-v1">
+                            <h4><a href="news/post/{{ post.id }}">{{ str_limit(post.title,40,'...') }}</a></h4>
+                            <p class="color-777">{{ str_limit(post.summary,45,'...') }}</p>
                         </div>
                     </div>
                     {% endfor %}
