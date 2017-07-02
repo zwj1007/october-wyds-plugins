@@ -4,7 +4,9 @@ layout = "default"
 ==
 function onStart()
 {
-$this->addJs('https://cdn.bootcss.com/jquery-backstretch/2.0.4/jquery.backstretch.min.js');
+
+$this->addCss('https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css');
+$this->addJs('https://cdn.bootcss.com/wow/1.1.2/wow.min.js');
 
 // 推荐 特色
 $this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(5);
@@ -41,6 +43,8 @@ $this['featuredShops']=\Buuug7\User\Models\Shop::displayFeatured();
 
 // 推荐电商 知名企业
 $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
+
+
 
 }
 
@@ -333,7 +337,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <div class="row">
         {% for shop in featuredShops %}
         <div class="col-md-3 col-sm-6">
-            <div class="thumbnail thumbnail-v3">
+            <div class="thumbnail thumbnail-v3 wow slideInUp" data-wow-delay="0.{{ loop.index*2 }}s">
                 <img src="{{ shop.getAvatarThumb(400,200) }}" alt="">
                 <div class="caption">
                     <h4>{{ shop.name }}</h4>
@@ -475,13 +479,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         }
     });
 
-    $(".jumbotron-v1 .container > div").backstretch([
-        "themes/wy-theme/assets/images/home-header-bg-3.jpg",
-        "themes/wy-theme/assets/images/home-header-bg-1.jpg",
-        "themes/wy-theme/assets/images/home-header-bg-4.png",
-    ], {
-        duration: 5000,
-        transition: 'cover_left'
-    });
+    // init wow
+    new WOW().init();
 </script>
 {% endput %}
