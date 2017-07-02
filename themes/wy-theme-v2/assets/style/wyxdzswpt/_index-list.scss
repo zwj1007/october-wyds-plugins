@@ -23,12 +23,10 @@
         letter-spacing: 8px;
       }
       .dd {
-        text-align: left;
-        margin-left: 30px;
+        letter-spacing: 3px;
         ul li {
           height: 50px;
           line-height: 50px;
-          font-size: 16px;
           a:hover {
             color: #6d6d6d;
           }
@@ -41,7 +39,7 @@
       border: 1px solid #f3f3f3;
       .kj-title {
         border-bottom: 1px solid $nav-background;
-       // border-bottom-left-radius: 20%;
+        // border-bottom-left-radius: 20%;
         font-size: 15px;
         font-weight: bold;
         padding: 0 15px;
