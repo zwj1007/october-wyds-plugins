@@ -928,12 +928,10 @@ header {
       color: #555555;
       letter-spacing: 8px; }
     .lanmu .list-left .list-left1 .dd {
-      text-align: left;
-      margin-left: 30px; }
+      letter-spacing: 3px; }
       .lanmu .list-left .list-left1 .dd ul li {
         height: 50px;
-        line-height: 50px;
-        font-size: 16px; }
+        line-height: 50px; }
         .lanmu .list-left .list-left1 .dd ul li a:hover {
           color: #6d6d6d; }
   .lanmu .list-left .kj-dszx {
@@ -1828,7 +1826,7 @@ header {
   background: url(../images/title-1.png) no-repeat center;
   border-bottom: 0; }
   .cpyx-list .hd i {
-    padding: 10px 15px;
+    padding: 8px 15px;
     color: #ffffff;
     background: #FF4400;
     border-radius: 3px; }
