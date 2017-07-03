@@ -25,7 +25,7 @@ $this['needs']=\Buuug7\User\Models\Need::search($search);
         <li>
             <a class="sou-list-title" href="/needs/need/{{ post.id }}">{{ post.title }}</a>
             <p class="sou-list-des">
-                <small>{{ post.checked_at|time_diff }} / by {{ post.user.name }}</small>
+                <small>{{ post.checked_at|time_diff }} / {{ post.user.name }}</small>
             </p>
         </li>
         {% endfor %}
