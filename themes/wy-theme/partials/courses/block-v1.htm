@@ -9,7 +9,7 @@
             {% if post.image %}
             <img alt="{{ post.title }}" src="{{ post.image|media}}">
             {% else %}
-            <img src="http://placehold.it/800x400?text=没有缩略图" alt="">
+            <img src="holder.js/800x400?text=没有缩略图&auto=yes&theme=gray&size=1" >
             {% endif %}
             <h5 class="color-444" style="height:40px;line-height: 1.3;overflow: hidden;margin-bottom: 5px;">
                 {{ str_limit(post.title, 60, '...') }}
