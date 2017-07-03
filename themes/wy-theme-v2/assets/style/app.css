@@ -1972,7 +1972,7 @@ header {
 
 .content-holder {
   background: url("../images/login/loginbg.jpg") no-repeat;
-  height: 546px; }
+  height: 600px; }
   .content-holder .content {
     width: 950px;
     padding: 30px 0 50px;
@@ -1988,7 +1988,8 @@ header {
         position: absolute;
         top: 0;
         right: 10px;
-        background-color: rgba(255, 255, 255, 0.72); }
+        background-color: rgba(255, 255, 255, 0.72);
+        border: 1px solid #CCCCCC; }
         .content-holder .content .show-pic .login p {
           text-align: right;
           right: 5%;

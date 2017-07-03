@@ -6734,6 +6734,18 @@ a:hover, a:visited {
   .callout-yellow h4, .callout-yellow a, .callout-yellow p {
     color: #fff; }
 
+.callout-v1 {
+  border-left: 5px solid #ddd;
+  border-right: 5px solid #ddd;
+  background-color: #fff;
+  border-color: #ddd; }
+  .callout-v1 h4 {
+    font-size: 16px; }
+  .callout-v1 p {
+    font-size: 14px; }
+  .callout-v1 h4, .callout-v1 a {
+    color: #333; }
+
 /*
 |--------------------------------------------------------------------------
 | _callouts
@@ -6784,6 +6796,18 @@ a:hover, a:visited {
   border-color: #f39c12; }
   .callout-yellow h4, .callout-yellow a, .callout-yellow p {
     color: #fff; }
+
+.callout-v1 {
+  border-left: 5px solid #ddd;
+  border-right: 5px solid #ddd;
+  background-color: #fff;
+  border-color: #ddd; }
+  .callout-v1 h4 {
+    font-size: 16px; }
+  .callout-v1 p {
+    font-size: 14px; }
+  .callout-v1 h4, .callout-v1 a {
+    color: #333; }
 
 /*
 |--------------------------------------------------------------------------
