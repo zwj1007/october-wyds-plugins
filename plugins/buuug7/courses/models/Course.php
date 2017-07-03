@@ -2,6 +2,7 @@
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Model;
 use ValidationException;
 use Backend\Models\User;
@@ -290,6 +291,7 @@ class Course extends Model
         return $this->url = $controller->pageUrl($pageName, $params);
     }
 
+
     public function afterDelete()
     {
         DB::table('buuug7_courses_tags_courses')->where('course_id', $this->id)->delete();
@@ -373,4 +375,12 @@ class Course extends Model
         return $query->isPublished()->searchWhere($search,$searchableFields)->paginate(15);
     }
 
+
+    public function getImage(){
+        if($this->image){
+            return '/storage/app/media'.$this->image;
+        }else{
+            return 'holder.js/800x400?text=没有缩略图&auto=yes&theme=gray';
+        }
+    }
 }

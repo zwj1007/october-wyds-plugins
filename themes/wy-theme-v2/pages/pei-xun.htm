@@ -14,14 +14,14 @@ $this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4)
 $this['tagReMen']=\Buuug7\Courses\Models\Course::displayByTags(['re-men'],8);
 
 // filter by categories
-$this['courses']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-zi-shang-wu-ji-chu-jiao-cheng','dian-zi-shang-wu-jin-jie-jiao-cheng']);
+$this['courses']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-zi-shang-wu-ji-chu-jiao-cheng','dian-zi-shang-wu-jin-jie-jiao-cheng','dian-shang-yun-ying-za-tan']);
 
 }
 
 ==
 
 <ol class="box breadcrumb">
-    <li><a href="index.html">首页</a></li>
+    <li><a href="/">首页</a></li>
     <li class="active">线上培训</li>
 </ol>
 
@@ -43,6 +43,11 @@ $this['courses']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-zi-sh
             电子商务进阶教程
             <div class="cbp-filter-counter"></div>
         </div>
+        /
+        <div data-filter=".dian-shang-yun-ying-za-tan" class="cbp-filter-item">
+            电商运营杂谈
+            <div class="cbp-filter-counter"></div>
+        </div>
     </div>
     <!--正文-->
     <div id="js-xspx-work-wy-v1" class="cbp cbp-l-grid-work">
@@ -51,11 +56,7 @@ $this['courses']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-zi-sh
         <div class="cbp-item {% for category in post.categories %} {{ category.slug }} {% endfor %} ">
             <a href="/courses/course/{{ post.id }}" class="cbp-caption " rel="nofollow">
                 <div class="cbp-caption-defaultWrap">
-                    {% if post.image %}
-                    <img src="{{ post.image|media }}" alt="{{ post.title }}">
-                    {% else %}
-                    <img src="http://placehold.it/800x400" alt="{{ post.title }}">
-                    {% endif %}
+                    <img src="{{ post.getImage() }}" alt="">
                 </div>
             </a>
             <a href="#!" class="cbp-l-grid-work-title " rel="nofollow">{{ post.categories[0].name }}</a>

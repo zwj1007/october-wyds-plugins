@@ -12,11 +12,7 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="item active">
-                        {% if post.image %}
-                        <img alt="" src="{{ post.image|media}}">
-                        {% else %}
-                        <img src="holder.js/800x400?text=没有缩略图&auto=yes&theme=gray&size=1" >
-                        {% endif %}
+                        <img src="{{ post.getImage() }}" alt="">
                     </div>
                 </div>
             </div>

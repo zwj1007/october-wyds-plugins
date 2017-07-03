@@ -64,9 +64,12 @@ function onStart(){
         <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://cdn.bootcss.com/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
         <script src="https://cdn.bootcss.com/holder/2.9.4/holder.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
         <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
         {% framework extras %}
         {% scripts %}
-
+        <script>
+            $("img.lazy").lazyload();
+        </script>
     </body>
 </html>

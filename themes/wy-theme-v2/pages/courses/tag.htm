@@ -23,7 +23,7 @@ function onEnd(){
         {% for post in courses %}
         <li>
             <a href="{{ post.url }}">
-                <img src="{{ post.image|media }}" alt="">
+                <img src="{{ post.getImage() }}" alt="">
             </a>
             <div class="des">
                 <a href="{{ post.url }}l"><h2>{{ post.title }}</h2></a>

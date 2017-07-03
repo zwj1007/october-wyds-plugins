@@ -66,11 +66,7 @@ $course->save();
                     <div class="panel-heading">
 
                         <div class="big-image margin-bottom-20">
-                            {% if post.image %}
-                            <img src="{{ post.image|media }}" alt="{{ post.title }}" class="img-responsive img-rounded">
-                            {% else %}
-                            <img src="http://placehold.it/800x400" alt="{{ post.title }}" class="img-responsive img-rounded">
-                            {% endif %}
+                            <img src="{{ post.getImage() }}" alt="" class="img-responsive">
                         </div>
 
                         <h4> {{ post.title }}</h4>

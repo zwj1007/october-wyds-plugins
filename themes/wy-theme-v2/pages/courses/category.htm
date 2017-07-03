@@ -1,5 +1,5 @@
-title = "Courses Category"
-url = "/courses/categories/:slug?/:page?"
+title = "课程"
+url = "/courses/categories/:slug/:page?"
 layout="default"
 
 [coursesCourses]
@@ -26,7 +26,7 @@ $this->page->title = $this->category->name;
         {% for post in courses %}
         <li>
             <a href="{{ post.url }}">
-                <img src="{{ post.image|media }}" alt="">
+                <img src="{{ post.getImage() }}" alt="">
             </a>
             <div class="des">
                 <a href="/courses/courses/{{ post.id}}"><h2>{{ post.title }}</h2></a>
