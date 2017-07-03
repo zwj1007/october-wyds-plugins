@@ -103,7 +103,7 @@ class Company extends Model
         if ($this->avatar) {
             return $this->avatar->getThumb($size, $size, $options);
         } else {
-            return 'http://placehold.it/400x200?text=没有添加LOGO';
+            return 'http://placehold.it/400x200?text=no image';
         }
     }
 

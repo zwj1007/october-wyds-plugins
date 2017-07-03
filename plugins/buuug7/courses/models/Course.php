@@ -369,7 +369,7 @@ class Course extends Model
     }
 
     public function scopeSearch($query,$search){
-        $searchableFields = ['title', 'slug'];
+        $searchableFields = ['title'];
         return $query->isPublished()->searchWhere($search,$searchableFields)->paginate(15);
     }
 
