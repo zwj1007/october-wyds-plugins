@@ -1,0 +1,101 @@
+title = '首页'
+url = '/'
+layout = 'default'
+==
+function onStart()
+{
+
+$this->addCss('https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css');
+$this->addJs('https://cdn.bootcss.com/wow/1.1.2/wow.min.js');
+
+// 推荐 特色
+$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(5);
+
+// 置顶 资讯
+$this['topPosts'] = \Buuug7\News\Models\Post::displayTop(5);
+
+
+// 电商动态
+$this['dianShangDongTai'] = \Buuug7\News\Models\Post::displayByCategory('dian-shang-dong-tai',4);
+
+// 政策解读
+$this['zhenCeJieDu'] = \Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie-du',4);
+
+// 通知公告
+$this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',8);
+
+// 推荐课程
+$this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],8);
+
+
+// 服务市场
+$this['fuwu']=\Buuug7\User\Models\Need::displayFeatured(12);
+$this['categoryZhaoPin']=\Buuug7\User\Models\Need::displayByCategory('zhaopin',12);
+$this['categoryFangChan']=\Buuug7\User\Models\Need::displayByCategory('fangchan',12);
+$this['categoryErShow']=\Buuug7\User\Models\Need::displayByCategory('ershou',12);
+$this['categoryChongWu']=\Buuug7\User\Models\Need::displayByCategory('chongwu',12);
+$this['categoryBenDiFuWu']=\Buuug7\User\Models\Need::displayByCategory('bendifuwu',12);
+$this['categoryJiaoYou']=\Buuug7\User\Models\Need::displayByCategory('jiaoyou',12);
+$this['categoryQiTa']=\Buuug7\User\Models\Need::displayByCategory('qita',12);
+
+// 推荐店铺
+$this['featuredShops']=\Buuug7\User\Models\Shop::displayFeatured();
+
+// 推荐电商 知名企业
+$this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
+
+}
+==
+<!--home swiper-->
+<div class="swiper-container home-swiper"
+     data-space-between='10'
+     data-pagination='.swiper-pagination'
+     data-autoplay="1000"
+>
+    <div class="swiper-wrapper">
+        {% for post in topPosts %}
+        <div class="swiper-slide">
+            <a href="#">
+                <img src="{{ post.image|media }}" style="width:100%;">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+
+
+<!--通知公告-->
+<div class="row home-tongzhi">
+    <div class="col-10">
+        <i class="fa fa-bullhorn"></i>
+    </div>
+    <div class="col-80">
+        <div class="swiper-container home-tong-zhi-swiper"
+             data-space-between='10'
+             data-autoplay="100"
+        >
+            <div class="swiper-wrapper">
+                {% for post in tongZhiGongGao %}
+                <a href="/news/post/{{ post.id }}" class="swiper-slide color-777" style="font-size: .65rem">{{ post.title }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-10">
+        <a href="#" class="color-777"><i class="fa fa-ellipsis-h"></i></a>
+    </div>
+</div>
+
+
+{% put scripts %}
+<script>
+    $(".home-swiper").swiper({
+        paginationClickable: true
+    });
+    $(".home-tong-zhi-swiper").swiper({
+        paginationClickable: true
+    });
+</script>
+{% endput %}

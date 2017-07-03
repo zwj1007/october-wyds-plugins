@@ -1,0 +1,11 @@
+name: with-light7
+description: 'build with light7'
+author: buuug7
+homepage: ''
+code: with-light7
+form:
+  fields:
+    site_name:
+      label: 网站名称
+      comment: 网站的名称
+      default: 渭源电商服务平台

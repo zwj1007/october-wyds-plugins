@@ -1,0 +1,47 @@
+/*
+|--------------------------------------------------------------------------
+| app
+|--------------------------------------------------------------------------
+|
+| Created by buuug7 on 2017/7/3.
+| 
+|
+*/
+.color-333 {
+  color: #333; }
+
+.color-444 {
+  color: #444; }
+
+.color-555 {
+  color: #555; }
+
+.color-666 {
+  color: #666 !important; }
+
+.color-777 {
+  color: #777 !important; }
+
+.color-888 {
+  color: #888 !important; }
+
+.color-999 {
+  color: #999 !important; }
+
+.bg-white {
+  background-color: #fff; }
+
+.home-swiper {
+  padding-bottom: 0; }
+
+.home-tongzhi {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  background: #fff;
+  padding: 5px 0; }
+  .home-tongzhi .swiper-container {
+    height: 1rem;
+    padding-bottom: 0; }
+
+/*# sourceMappingURL=app.css.map */
