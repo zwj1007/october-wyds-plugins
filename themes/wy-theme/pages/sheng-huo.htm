@@ -2,6 +2,10 @@ title = '生活服务'
 url = '/sheng-huo'
 layout = 'default'
 ==
+function onStart(){
+    $this->addJs('https://cdn.bootcss.com/holder/2.9.4/holder.min.js');
+}
+==
 
 <div class="jumbotron with-bg">
     <div class="container">
@@ -16,30 +20,28 @@ layout = 'default'
 
 <div class="container">
     <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="col-md-3 col-sm-6">
             <div class="thumbnail">
-                <img data-src="3" alt="">
+                <img src="holder.js/400x100?theme=social&size=30&text=生活信息" alt="">
                 <div class="caption">
-                    <h3>生活信息</h3>
                     <p class="color-999">
                         快速发布你的供求信息
                     </p>
                     <p>
-                        <a href="/gong-qiu-xin-xi" class="btn btn-primary m-b-sm">浏览</a>
+                        <a href="/gong-qiu-xin-xi" class="btn btn-default m-b-sm">浏览</a>
                     </p>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="col-md-3 col-sm-6">
             <div class="thumbnail">
-                <img data-src="3" alt="">
+                <img src="holder.js/400x100?theme=social&size=30&text=便民服务" alt="">
                 <div class="caption">
-                    <h3>便民服务</h3>
                     <p class="color-777">
                         快捷,贴心的生活类服务
                     </p>
                     <p>
-                        <a href="/bian-min-fu-wu" class="btn btn-primary m-b-sm">浏览</a>
+                        <a href="/bian-min-fu-wu" class="btn btn-default m-b-sm">浏览</a>
                     </p>
                 </div>
             </div>
