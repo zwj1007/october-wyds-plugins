@@ -1,14 +1,37 @@
 title = '公司'
-url = '/company/:id'
+url = '/companies/company/:id'
 layout = 'default'
-
-==
-function onStart(){
-$this['company']=\Buuug7\User\Models\Company::findById($this->param('id'));
-}
+[b7Company]
 ==
 
 <section class="box content-qypp ">
+    <div style="padding: 50px;">
+        {% if not company.checked %}
+        {% if company.status == 'committed' %}
+        <div class="alert alert-info">
+            <strong>您的公司信息已经提交，我们会尽快审核</strong>
+        </div>
+        {% elseif company.status == 'checking' %}
+        <div class="alert alert-info">
+            <strong>您提交的信息正在审核中</strong>
+        </div>
+        {% elseif company.status == 'passed' %}
+        <div class="alert alert-success">
+            <strong>恭喜,您提交的公司信息已经通过审核,我们将会在店铺中心展示您的店铺</strong>
+        </div>
+        {% elseif company.status == 'not_passed' %}
+        <div class="alert alert-info">
+            <strong>您提交的公司信息未通过审核,具体原因如下,修复后可重新提交进行审核</strong>
+        </div>
+        <div class="callout callout-danger">
+            <h4>需要修复的问题</h4>
+            <p class="m-t">
+                {{ company.not_passed_message }}
+            </p>
+        </div>
+        {% endif %}
+        {% endif %}
+    </div>
     <div class="ppqy-top">
         <div class="content-qypp-left float-left">
             <img src="{{ company.getAvatarThumb(400) }}" alt="">

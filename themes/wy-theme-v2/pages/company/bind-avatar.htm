@@ -1,0 +1,38 @@
+title = '上传公司LOGO'
+url = '/companies/company/bind-avatar/:id'
+layout = 'default'
+[b7Company]
+==
+function onStart(){
+if(!Auth::check()){
+return Redirect::to('/user/login');
+}
+}
+==
+
+<div class="container m-t">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h5>上传公司LOGO</h5>
+                </div>
+                <div class="panel-body">
+                    <div class="m-b">
+                        {% component 'imageUploader' %}
+                    </div>
+                    <div class="callout callout-info">
+                        <p>图片大小建议：长400px，宽200px</p>
+                        <p>等待图片上传结束后在点击提交按钮</p>
+                    </div>
+                    <form
+                            data-request="onBindAvatar"
+                            data-request-data="id:{{ company.id }}"
+                    >
+                        <button type="submit" class="btn btn-primary" data-attach-loading>提交</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
