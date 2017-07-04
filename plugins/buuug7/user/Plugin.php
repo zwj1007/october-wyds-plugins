@@ -60,7 +60,6 @@ class Plugin extends PluginBase
             $model->addFillable([
                 'b7_mobile',
                 'b7_address',
-                'b7_enterprise'
             ]);
 
             $model->hasOne['company'] = ['Buuug7\User\Models\Company', 'table' => 'buuug7_user_companies', 'key' => 'user_id',];

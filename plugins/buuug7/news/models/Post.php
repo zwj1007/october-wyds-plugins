@@ -44,7 +44,21 @@ class Post extends Model
         'title' => 'required',
         'slug' => ['required', 'unique:buuug7_news_posts'],
         'content' => 'required',
+        'summary' => 'required',
     ];
+
+    public $customMessages = [
+        'required' => '请填写 :attribute ',
+    ];
+
+    public $attributeNames = [
+        'title' => '标题',
+        'slug' => '别名',
+        'content' => '内容',
+        'summary' => '概述',
+        'published_at' => '发布时间',
+    ];
+
 
     /**
      * Relations

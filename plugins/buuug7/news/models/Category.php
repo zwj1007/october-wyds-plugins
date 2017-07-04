@@ -23,6 +23,15 @@ class Category extends Model
         'slug' => 'required|between:3,64|unique:buuug7_news_categories',
     ];
 
+    public $customMessages = [
+        'required' => '请填写 :attribute ',
+    ];
+
+    public $attributeNames = [
+        'slug' => '别名',
+        'name' => '名称',
+    ];
+
     /**
      * @var array Guarded fields
      */

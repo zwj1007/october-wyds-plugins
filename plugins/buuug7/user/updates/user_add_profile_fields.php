@@ -7,13 +7,12 @@ class UserAddProfileFields extends Migration
 {
     public function up()
     {
-        if (Schema::hasColumns('users', ['b7_mobile', 'b7_address', 'b7_enterprise'])) {
+        if (Schema::hasColumns('users', ['b7_mobile', 'b7_address'])) {
             return;
         }
         Schema::table('users', function ($table) {
             $table->string('b7_mobile')->nullable();
             $table->string('b7_address')->nullable();
-            $table->boolean('b7_enterprise')->default(0);
         });
     }
 
@@ -21,7 +20,7 @@ class UserAddProfileFields extends Migration
     {
         if (Schema::hasTable('users')) {
             Schema::table('users', function ($table) {
-                $table->dropColumn(['b7_mobile', 'b7_address', 'b7_enterprise']);
+                $table->dropColumn(['b7_mobile', 'b7_address']);
             });
         }
     }
