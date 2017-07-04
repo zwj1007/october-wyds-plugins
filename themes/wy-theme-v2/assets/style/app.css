@@ -399,13 +399,13 @@ header {
           padding: 10px 30px;
           color: #fff; }
         header nav ul li ul.ul-xl {
-          width: 124.444px;
+          width: 124.44px;
           display: none; }
           header nav ul li ul.ul-xl li {
             float: left;
             text-align: center;
             position: relative;
-            width: 140px;
+            width: 124.44px;
             background: #EC2E2C; }
           header nav ul li ul.ul-xl li:hover {
             background: #FF4400; }
