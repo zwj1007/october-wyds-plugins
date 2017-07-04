@@ -810,12 +810,13 @@ header {
     .yxwd .dd .zzsc .slider-wrap ul li {
       float: left;
       width: 252px;
-      padding: 5px 0;
+      padding: 0 0 5px 0;
       margin-right: 12px;
       border: 1px solid #CCCCCC;
       border-radius: 5px; }
       .yxwd .dd .zzsc .slider-wrap ul li img {
-        max-width: 100%; }
+        max-width: 100%;
+        border-radius: 4px; }
       .yxwd .dd .zzsc .slider-wrap ul li p {
         text-align: center;
         margin-top: 10px;

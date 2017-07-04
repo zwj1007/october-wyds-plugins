@@ -24,6 +24,9 @@ $this['zhenCeJieDu'] = \Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie
 // 通知公告
 $this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',8);
 
+// 信息公开
+$this['xinXiGongKai'] = \Buuug7\News\Models\Post::displayByCategory('xin-xi-gong-kai',8);
+
 // 推荐课程
 $this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],8);
 
@@ -93,6 +96,21 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             </div>
         </div>
         {% endif %}
+    </div>
+
+    <!--信息公开-->
+    <div class="headline">
+        <h2>信息公开</h2>
+    </div>
+    <div class="row">
+        {% for post in xinXiGongKai %}
+        <div class="col-md-3 col-sm-6">
+            <div class="m-b-md">
+                <a href="/news/post/{{ post.id }}" class="color-777">{{ post.title }}</a>
+                <small class="color-888">[{{ post.published_at|date('m-d') }}]</small>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 
     <!--通知公告-->

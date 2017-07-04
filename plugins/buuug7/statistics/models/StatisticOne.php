@@ -34,7 +34,7 @@ class StatisticOne extends Model
         'poverty_total' => '贫困村电商交易额',
         'total' => '电商交易额',
         'published_at' => '提交时间',
-        'unique_with' => '你今天已经提交过了,一天内不停提交两次统计信息',
+        'unique_with' => '你今天已经提交过了,一天内不能提交两次统计信息',
     ];
 
 

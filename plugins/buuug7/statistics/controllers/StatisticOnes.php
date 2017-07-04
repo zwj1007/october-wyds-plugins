@@ -15,6 +15,7 @@ class StatisticOnes extends Controller
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
+    public $requiredPermissions = ['buuug7.statistics.access_statistic_one'];
 
     public function __construct()
     {

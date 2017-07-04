@@ -87,12 +87,10 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
-
         return [
-            'buuug7.statistics.some_permission' => [
-                'tab' => 'Statistics',
-                'label' => 'Some permission'
+            'buuug7.statistics.access_statistic_one' => [
+                'tab' => '统计',
+                'label' => '统计一'
             ],
         ];
     }

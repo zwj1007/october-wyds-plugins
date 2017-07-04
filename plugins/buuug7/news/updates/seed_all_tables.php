@@ -41,24 +41,32 @@ class SeedAllTables extends Seeder
             'description' => '渭源县电子商务公共服务平台通知公告',
         ]);
 
+        /*ID:5 信息公开*/
+        Category::create([
+            'name' => '信息公开',
+            'parent_id' => 1,
+            'slug' => 'xin-xi-gong-kai',
+            'description' => '渭源县电子商务公共服务平台信息公开',
+        ]);
+
         //
         // 电商动态子栏目
         //
-        /*ID:5 农村电商*/
+        /*ID:6 农村电商*/
         Category::create([
             'name' => '农村电商',
             'parent_id' => 2,
             'slug' => 'nong-cun-dian-shang',
             'description' => '在这里你可以了解最新的农村电商资讯,惠农政策,实时关注与您生活贴切的电商资讯',
         ]);
-        /*ID:6 移动电商*/
+        /*ID:7 移动电商*/
         Category::create([
             'name' => '移动电商',
             'parent_id' => 2,
             'slug' => 'yi-dong-dian-shang',
             'description' => '移动电子商务的发展前景非常广阔,在这里你可以了解最新的移动电商资讯',
         ]);
-        /*ID:7 其他动态*/
+        /*ID:8 其他动态*/
         Category::create([
             'name' => '其他动态',
             'parent_id' => 2,
@@ -70,14 +78,14 @@ class SeedAllTables extends Seeder
         //
         // 政策解读子栏目
         //
-        /*ID:8 政策导向*/
+        /*ID:9 政策导向*/
         Category::create([
             'name' => '政策导向',
             'parent_id' => 3,
             'slug' => 'zheng-ce-dao-xiang',
             'description' => '在这里你可以了解与电子商务相关的政策导向',
         ]);
-        /*ID:9 地方政策*/
+        /*ID:10 地方政策*/
         Category::create([
             'name' => '地方政策',
             'parent_id' => 3,
@@ -114,14 +122,14 @@ class SeedAllTables extends Seeder
             ',
         ]);
 
-        $comment01=new Comment([
-           'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+        $comment01 = new Comment([
+            'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
             'user_id' => 2,
             'like_count' => '30232',
 
         ]);
 
-        $comment02=new Comment([
+        $comment02 = new Comment([
             'content' => '
             neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!',
             'user_id' => 12,
@@ -139,6 +147,7 @@ class SeedAllTables extends Seeder
         $post01->categories()->attach(7);
         $post01->categories()->attach(8);
         $post01->categories()->attach(9);
+        $post01->categories()->attach(10);
 
 
         $post02 = Post::create([
@@ -168,6 +177,7 @@ class SeedAllTables extends Seeder
         $post02->categories()->attach(7);
         $post02->categories()->attach(8);
         $post02->categories()->attach(9);
+        $post02->categories()->attach(10);
 
 
         $post03 = Post::create([
@@ -178,6 +188,7 @@ class SeedAllTables extends Seeder
             'published_at' => Carbon::now(),
             'featured' => true,
             'image' => '/news/03.jpg',
+            'top' => true,
             'user_id' => 1,
             'images' => [],
             'files' => [],
@@ -211,6 +222,7 @@ class SeedAllTables extends Seeder
         $post03->categories()->attach(7);
         $post03->categories()->attach(8);
         $post03->categories()->attach(9);
+        $post03->categories()->attach(10);
 
         $post04 = Post::create([
             'title' => '进口电商旺季来袭：解决跨境痛点，物流基建是关键',
@@ -220,6 +232,7 @@ class SeedAllTables extends Seeder
             'published_at' => Carbon::now(),
             'featured' => true,
             'image' => '/news/04.jpg',
+            'top' => true,
             'user_id' => 1,
             'images' => [],
             'files' => [],
@@ -250,6 +263,7 @@ class SeedAllTables extends Seeder
         $post04->categories()->attach(7);
         $post04->categories()->attach(8);
         $post04->categories()->attach(9);
+        $post04->categories()->attach(10);
 
 
         $post05 = Post::create([
@@ -261,6 +275,7 @@ class SeedAllTables extends Seeder
             'featured' => true,
             'image' => '/news/05.jpg',
             'user_id' => 1,
+            'top' => true,
             'images' => [],
             'files' => [],
             'content' => '
@@ -285,6 +300,7 @@ class SeedAllTables extends Seeder
         $post05->categories()->attach(7);
         $post05->categories()->attach(8);
         $post05->categories()->attach(9);
+        $post05->categories()->attach(10);
 
 
         $post06 = Post::create([
@@ -339,6 +355,7 @@ class SeedAllTables extends Seeder
         $post06->categories()->attach(7);
         $post06->categories()->attach(8);
         $post06->categories()->attach(9);
+        $post06->categories()->attach(10);
 
 
         $post07 = Post::create([
@@ -369,6 +386,7 @@ class SeedAllTables extends Seeder
         $post07->categories()->attach(7);
         $post07->categories()->attach(8);
         $post07->categories()->attach(9);
+        $post07->categories()->attach(10);
 
 
         $post08 = Post::create([
@@ -416,6 +434,7 @@ class SeedAllTables extends Seeder
         $post08->categories()->attach(7);
         $post08->categories()->attach(8);
         $post08->categories()->attach(9);
+        $post08->categories()->attach(10);
 
 
         $post09 = Post::create([
@@ -445,6 +464,7 @@ class SeedAllTables extends Seeder
         $post09->categories()->attach(7);
         $post09->categories()->attach(8);
         $post09->categories()->attach(9);
+        $post09->categories()->attach(10);
 
 
         $post10 = Post::create([
@@ -483,6 +503,7 @@ class SeedAllTables extends Seeder
         $post10->categories()->attach(7);
         $post10->categories()->attach(8);
         $post10->categories()->attach(9);
+        $post10->categories()->attach(10);
 
 
         $post11 = Post::create([
@@ -537,6 +558,7 @@ class SeedAllTables extends Seeder
         $post11->categories()->attach(7);
         $post11->categories()->attach(8);
         $post11->categories()->attach(9);
+        $post11->categories()->attach(10);
 
 
         $post12 = Post::create([
@@ -610,6 +632,7 @@ class SeedAllTables extends Seeder
         $post12->categories()->attach(7);
         $post12->categories()->attach(8);
         $post12->categories()->attach(9);
+        $post12->categories()->attach(10);
 
 
         $post13 = Post::create([
@@ -654,6 +677,7 @@ class SeedAllTables extends Seeder
         $post13->categories()->attach(7);
         $post13->categories()->attach(8);
         $post13->categories()->attach(9);
+        $post13->categories()->attach(10);
 
 
         $post14 = Post::create([
@@ -703,6 +727,7 @@ class SeedAllTables extends Seeder
         $post14->categories()->attach(7);
         $post14->categories()->attach(8);
         $post14->categories()->attach(9);
+        $post14->categories()->attach(10);
 
 
         $post15 = Post::create([
@@ -760,6 +785,7 @@ class SeedAllTables extends Seeder
         $post15->categories()->attach(7);
         $post15->categories()->attach(8);
         $post15->categories()->attach(9);
+        $post15->categories()->attach(10);
 
 
         $post16 = Post::create([
@@ -828,6 +854,7 @@ class SeedAllTables extends Seeder
         $post16->categories()->attach(7);
         $post16->categories()->attach(8);
         $post16->categories()->attach(9);
+        $post16->categories()->attach(10);
 
 
         $post17 = Post::create([
@@ -887,6 +914,7 @@ class SeedAllTables extends Seeder
         $post17->categories()->attach(7);
         $post17->categories()->attach(8);
         $post17->categories()->attach(9);
+        $post17->categories()->attach(10);
 
 
         $post18 = Post::create([
@@ -939,6 +967,7 @@ class SeedAllTables extends Seeder
         $post18->categories()->attach(7);
         $post18->categories()->attach(8);
         $post18->categories()->attach(9);
+        $post18->categories()->attach(10);
 
 
         $post19 = Post::create([
@@ -983,6 +1012,7 @@ class SeedAllTables extends Seeder
         $post19->categories()->attach(7);
         $post19->categories()->attach(8);
         $post19->categories()->attach(9);
+        $post19->categories()->attach(10);
 
 
         $post20 = Post::create([
@@ -1030,16 +1060,17 @@ class SeedAllTables extends Seeder
         $post20->categories()->attach(7);
         $post20->categories()->attach(8);
         $post20->categories()->attach(9);
-        
-        
-          $post21 = Post::create([
+        $post20->categories()->attach(10);
+
+
+        $post21 = Post::create([
             'title' => '这就尴尬了！支付宝扫码支付竟扫出小学奥数题',
             'slug' => '这就尴尬了！支付宝扫码支付竟扫出小学奥数题',
             'summary' => ' 支付宝扫码支付已经成为大家的日常，但扫二维码出现小学奥数题，答对吃饭免单还是头一次。这样的新玩法你见过吗？',
             'published' => true,
             'published_at' => Carbon::now(),
             'featured' => true,
-           'image' => '/news/21.jpg',
+            'image' => '/news/21.jpg',
             'user_id' => 1,
             'images' => [],
             'files' => [],
@@ -1064,16 +1095,17 @@ class SeedAllTables extends Seeder
         $post21->categories()->attach(7);
         $post21->categories()->attach(8);
         $post21->categories()->attach(9);
+        $post21->categories()->attach(10);
 
-        
-         $post22 = Post::create([
+
+        $post22 = Post::create([
             'title' => '《王者荣耀》有多赚钱？你绝对想不到',
             'slug' => '《王者荣耀》有多赚钱？你绝对想不到',
             'summary' => ' 支付宝扫码支付已经成为大家的日常，但扫二维码出现小学奥数题，答对吃饭免单还是头一次。这样的新玩法你见过吗？',
             'published' => true,
             'published_at' => Carbon::now(),
             'featured' => true,
-           'image' => '/news/22.jpg',
+            'image' => '/news/22.jpg',
             'user_id' => 1,
             'images' => [],
             'files' => [],
@@ -1097,7 +1129,9 @@ class SeedAllTables extends Seeder
         $post22->categories()->attach(7);
         $post22->categories()->attach(8);
         $post22->categories()->attach(9);
-        
+        $post22->categories()->attach(10);
+
+
         $post23 = Post::create([
             'title' => '潘润红：移动电子商务金融科技服务创新',
             'slug' => '潘润红：移动电子商务金融科技服务创新',
@@ -1105,7 +1139,7 @@ class SeedAllTables extends Seeder
             'published' => true,
             'published_at' => Carbon::now(),
             'featured' => true,
-           'image' => '/news/23.jpg',
+            'image' => '/news/23.jpg',
             'user_id' => 1,
             'images' => [],
             'files' => [],
@@ -1175,6 +1209,8 @@ class SeedAllTables extends Seeder
         $post23->categories()->attach(7);
         $post23->categories()->attach(8);
         $post23->categories()->attach(9);
+        $post23->categories()->attach(10);
+
 
         $post24 = Post::create([
             'title' => '定西渭源：攻破农村电商“最后一公里”',
@@ -1183,7 +1219,7 @@ class SeedAllTables extends Seeder
             'published' => true,
             'published_at' => Carbon::now(),
             'featured' => true,
-           'image' => '/news/24.jpg',
+            'image' => '/news/24.jpg',
             'user_id' => 1,
             'images' => [],
             'files' => [],
@@ -1242,14 +1278,9 @@ class SeedAllTables extends Seeder
         $post24->categories()->attach(7);
         $post24->categories()->attach(8);
         $post24->categories()->attach(9);
-        
-        
-        
+        $post24->categories()->attach(10);
 
-        
-        
-        
-        
+
         $post25 = Post::create([
             'title' => '乘着“隐形”的翅膀——定西渭源县电子商务产业发展扫描',
             'slug' => '乘着“隐形”的翅膀——定西渭源县电子商务产业发展扫描',
@@ -1272,7 +1303,7 @@ class SeedAllTables extends Seeder
 
             <p>点燃“草根”创业激情。渭源县通过宣传引导、奖励扶持、培训孵化，鼓励高校毕业生、大学生村官、有创业意愿的农村青年通过电子商务积极创业。先后筹措培训资金100多万元，举办各类培训班20期，培训人员3600多人次，全县建成销售当地土特产的网店547家，其中贫困村建成网店167家，培育出了年销售100万元以上的琪祥阁、品正堂、药之堂等一批优秀网店，使“草根”阶层通过从事电子商务创业的梦想变为现实，更多的年轻才俊回到了农村，从事电子商务及上下游配套产业链的服务。目前，琪祥阁网店年销售额达到1100万元，成为天猫网络销售平台上中药材类第一；渭水探源大学生创业孵化中心已经孵化成功企业11家，累计开展创业培训135人次。</p>
                      
-         ',    
+         ',
         ]);
 
         $post25->categories()->attach(4);
@@ -1281,10 +1312,9 @@ class SeedAllTables extends Seeder
         $post25->categories()->attach(7);
         $post25->categories()->attach(8);
         $post25->categories()->attach(9);
-        
-        
-        
-                
+        $post25->categories()->attach(10);
+
+
         $post26 = Post::create([
             'title' => '定西渭源：“电商扶贫”闯新路”',
             'slug' => '定西渭源：“电商扶贫”闯新路”',
@@ -1304,7 +1334,7 @@ class SeedAllTables extends Seeder
         <p>为夯实电子商务发展基础，近年来渭源县积极推进快递物流行业的布站设点，全县16个乡镇建成邮政所，217个行政村建成村邮站，实现了邮政服务网络县、乡、村三级全覆盖及乡镇、重点村快递服务网络全覆盖。电信、移动、联通等网络运营企业大力实施“通网”工程，已实现197个行政村网络信号覆盖，预计到今年年底，将实现行政村宽带网络全覆盖。同时，积极建设县、乡、村三级电商物流公共服务体系，16个乡镇全部建成了乡级电商服务站，109个村建成了村级服务点，畅通了农产品进城和消费品下乡双向流通的绿色通道。</p>
 
         <p>为了全面增强电子商务的核心竞争力，渭源县将“中国马铃薯良种之乡”“中国党参之乡”“南山放养虫草鸡”地理标识认证和“渭河源”牌、“五竹”牌、“金蛋蛋”牌种薯，“老白条”党参、“富硒”黄芪等商标提供或授权县内电商企业、网店使用，动员企业以条形码、二维码、物联网等技术应用为核心，为所有网络销售产品建立统一的产品认证标识等身份证明，打造形成了一大批网络特色农产品品牌。截至目前，全县累计开设网店547家，实现线上销售8200万元，带动线下交易1.7亿元，直接带动贫困群众人均增收200多元，增加就业3500多人。</p>
-         ',    
+         ',
         ]);
 
         $post26->categories()->attach(4);
@@ -1313,8 +1343,8 @@ class SeedAllTables extends Seeder
         $post26->categories()->attach(7);
         $post26->categories()->attach(8);
         $post26->categories()->attach(9);
-        
-        
+
+
         $post27 = Post::create([
             'title' => '定西渭源：电商扶贫带动贫困户增收',
             'slug' => '定西渭源：电商扶贫带动贫困户增收',
@@ -1341,7 +1371,7 @@ class SeedAllTables extends Seeder
         $post27->categories()->attach(7);
         $post27->categories()->attach(8);
         $post27->categories()->attach(9);
-        
+
         $post28 = Post::create([
             'title' => '定西渭源创新实施电商扶贫工程成效显著',
             'slug' => '定西渭源创新实施电商扶贫工程成效显著',
@@ -1367,10 +1397,7 @@ class SeedAllTables extends Seeder
         $post28->categories()->attach(7);
         $post28->categories()->attach(8);
         $post28->categories()->attach(9);
-        
-        
-        
-        
+
 
     }
 }
