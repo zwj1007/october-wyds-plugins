@@ -1,14 +1,14 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>用户中心</title>
+    <meta charset="UTF-8">
+    <title>渭源县电子商务平台-需求发布</title>
     <link rel="icon" type="image/png" href="http://6.jq2.com/themes/wy-theme-v2/assets/images/october.png">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/app.css">
-
 </head>
 <body>
-
 <header>
     <div class="topbar">
         <div class="inner">
@@ -96,12 +96,10 @@
 
         </ul>
     </nav>
-
 </header>
 
-
 <div class="main">
-    <section class="user user-dp  ">
+    <section class=" box user user-gs">
         <div class="mainLeft float-left">
             <ul>
                 <li>
@@ -117,7 +115,7 @@
                     </a>
                 </li>
                 <li class="active ">
-                    <a href="user-gs.html">
+                    <a href="user-gs-content.html">
                         <i class="fa fa-institution"></i>
                         公司信息
                     </a>
@@ -146,43 +144,61 @@
                         设置
                     </a>
                 </li>
-
-
             </ul>
         </div>
-        <div class="mainRight float-right  ">
-            <div class="content-title">
-                <a href="user.html">公司信息</a>
-                <span></span>
-
-            </div>
-            <div class="content">
-                <a href="user-gs-content.html" class="btn btn-warning m-b m-t"><i class="fa fa-plus"></i> 添加公司</a>
-
-                <div class="headline">
-                    <h3>已添加公司信息</h3>
+        <div class="mainRight float-right ">
+            <div class="panel">
+                <div class="panel-heading">
+                    公司信息
                 </div>
+                <div class="panel-body">
+                    <form method="post" action="user-gs-Succ.html">
+                        <div class="form-group">
+                            <label for="companyName">公司名称</label>
+                            <input type="text" name="name" id="companyName" value="" class="form-control">
+                        </div>
 
-                <div class="content-dptp">
-                    <img src="images/ppqy/qy3.png" alt="">
+                        <div class="form-group">
+                            <label for="companyContactPhone">公司电话</label>
+                            <input type="text" name="contact_phone" id="companyContactPhone" value=""
+                                   class="form-control">
+                        </div>
 
-                    <div class="margin-top-10">
-                        <a class="btn" href="user-gs-Succ.html">
-                            <i class="fa fa-eye"></i> 查看
-                        </a>
-                        <a class="btn" href="user-gs-content.html">
-                            <i class="fa fa-pencil"></i> 更新
-                        </a>
-                        <a class="btn" href="#!" data-request-confirm="你确定要删除该公司信息吗 ?">
-                            <i class="fa fa-trash"></i> 删除
-                        </a>
+                        <div class="form-group">
+                            <label for="companyAddress">公司地址</label>
+                            <input type="text" name="address" id="companyAddress" value="" class="form-control">
+                        </div>
 
-                    </div>
+                        <div class="form-group">
+                            <label for="companyDescription">公司简介</label>
+                            <textarea name="description" rows="3" id="companyDescription"
+                                      class="form-control"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>公司详情</label>
+
+                            <div class="note-frame">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>公司LOGO</label>
+
+                            <div class="gs-log">
+                                <img style="" src="images/xspx/ck1.jpg"
+                                     alt="">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-default">保存</button>
+
+                    </form>
                 </div>
-
-
             </div>
         </div>
+
     </section>
 </div>
 
@@ -208,6 +224,5 @@
         <p>Copyright 2015 甘ICP备123546224 <i></i> 甘公网安备 3323430240号 </p>
     </div>
 </footer>
-
 </body>
 </html>
