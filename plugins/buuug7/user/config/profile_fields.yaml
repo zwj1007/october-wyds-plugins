@@ -10,7 +10,3 @@ b7_address:
     label: 地址
     tab: 个人资料
     span: auto
-b7_enterprise:
-    label: 企业用户
-    type: checkbox
-    span: auto
