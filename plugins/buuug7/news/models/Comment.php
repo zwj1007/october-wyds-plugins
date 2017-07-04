@@ -34,6 +34,15 @@ class Comment extends Model
     ];
 
 
+    public $customMessages = [
+        'required' => '请填写 :attribute ',
+    ];
+
+    public $attributeNames = [
+        'content' => '内容',
+    ];
+
+
     /**
      * @var array Relations
      */
@@ -49,6 +58,3 @@ class Comment extends Model
         ],
     ];
 }
-
-
-

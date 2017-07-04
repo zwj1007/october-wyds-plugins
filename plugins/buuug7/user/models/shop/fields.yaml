@@ -22,8 +22,6 @@ secondaryTabs:
             label: 店铺缩略图
             type: fileupload
             mode: image
-            imageHeight: 200
-            imageWidth: 200
         status:
             label: 状态
             type: balloon-selector

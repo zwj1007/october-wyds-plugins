@@ -36,11 +36,25 @@ class Company extends Model
     */
     public $rules = [
         'name' => 'required',
+        'contact_phone' => 'required|numeric',
         'address' => 'required',
-        'contact_phone' => 'required',
         'description' => 'required',
         'status' => 'required',
     ];
+
+
+    public $customMessages = [
+        'required' => '请填写 :attribute ',
+    ];
+
+    public $attributeNames = [
+        'name' => '名称',
+        'address' => '地址',
+        'contact_phone' => '联系电话',
+        'description' => '公司简介',
+        'status' => '状态',
+    ];
+
     /**
      * @var array Relations
      */

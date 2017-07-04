@@ -20,6 +20,16 @@ class Tag extends Model
         'slug' => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:buuug7_courses_tags']
     ];
 
+    public $customMessages = [
+        'required' => '请填写 :attribute ',
+    ];
+
+    public $attributeNames = [
+        'name' => '名称',
+        'slug' => '别名',
+    ];
+
+
     /**
      * @var array Guarded fields
      */

@@ -204,28 +204,4 @@ class Account extends \RainLab\User\Components\Account
 
     }
 
-    public function onGetSmsCode(){
-        $phoneNum=post('phoneNum');
-        if (!$phoneNum){
-            Flash::error('请输入合适的电话号码');
-            return ;
-        }
-        Log::info($phoneNum);
-        return ;
-
-        //TODO 
-        $http=new Client();
-        $key='23837586';
-        $secret='1a3c0ba05ce74ecea37b78b5a8db8c66';
-        $url='http://gw.api.taobao.com/router/rest';
-        $response=$http->get($url,[
-            'query' => [
-                'app_key' => $key,
-                'format' => 'json',
-            ],
-        ]);
-
-        Log::info($response->getBody());
-    }
-
 }

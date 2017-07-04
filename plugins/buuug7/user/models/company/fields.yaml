@@ -13,6 +13,9 @@ fields:
         disabled: false
         span: auto
         placeholder: 公司地址
+    contact_phone:
+        label: 联系电话
+        span: auto
 tabs:
     fields:
         description:
@@ -30,16 +33,13 @@ secondaryTabs:
             label: 公司LOGO
             type: fileupload
             mode: image
-            imageHeight: 200
-            imageWidth: 200
         status:
             label: 状态
             type: balloon-selector
         not_passed_message:
             label: 退回消息
             placeholder: 如何审核不通过,退回用户的反馈消息
-            type: markdown
-            mode: split
+            type: textarea
         checked:
             label: 审核
             type: checkbox

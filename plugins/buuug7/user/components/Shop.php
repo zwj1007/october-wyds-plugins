@@ -46,7 +46,8 @@ class Shop extends ComponentBase
                     'modelKeyColumn' => 'avatar',
                     'imageWidth' => '200',
                     'imageHeight' => '100',
-                    'deferredBinding' => false
+                    'deferredBinding' => false,
+                    'imageMode' => 'portrait'
                 ]
             );
 

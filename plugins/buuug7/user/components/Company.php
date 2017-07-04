@@ -7,6 +7,7 @@ use Validator;
 use Flash;
 use Redirect;
 use October\Rain\Exception\ValidationException;
+use Buuug7\User\Models\Company as UserCompany;
 
 
 class Company extends ComponentBase
@@ -32,9 +33,10 @@ class Company extends ComponentBase
                 [
                     'modelClass' => 'Buuug7\User\Models\Company',
                     'modelKeyColumn' => 'avatar',
-                    'imageWidth' => '100',
+                    'imageWidth' => '200',
                     'imageHeight' => '100',
-                    'deferredBinding' => false
+                    'deferredBinding' => true,
+                    'imageMode' => 'portrait'
                 ]
             );
 
@@ -68,28 +70,11 @@ class Company extends ComponentBase
     public function onCreateCompany()
     {
         $data = post();
-        $rules = [
-            'name' => 'required',
-            'address' => 'required',
-            'contact_phone' => 'required',
-            'description' => 'required',
-        ];
-        $validation = Validator::make($data, $rules, [
-            'required' => '请填写 :attribute',
-        ], [
-            'name' => '名称',
-            'address' => '公司地址',
-            'contact_phone' => '联系电话',
-            'description' => '公司简介',
-        ]);
-        if ($validation->fails()) {
-            throw new ValidationException($validation);
-        }
 
         if (!$this->canCompany) {
             throw new ApplicationException('你的账号不允许提交公司认证信息');
         }
-        Auth::getUser()->company()->create([
+        $company = Auth::getUser()->company()->create([
             'name' => post('name'),
             'address' => post('address'),
             'contact_phone' => post('contact_phone'),
@@ -99,10 +84,29 @@ class Company extends ComponentBase
             'checked' => false,
         ]);
 
-        Flash::success('信息已经提交');
+        //Flash::success('信息已经提交');
 
-        return Redirect::refresh();
+        return Redirect::to('/companies/company/bind-avatar/' . $company->id);
     }
+
+    public function onBindAvatar()
+    {
+        if (!Auth::check()) {
+            return null;
+        }
+
+        $user = Auth::getUser();
+        $company = UserCompany::find(post('id'));
+
+        if($company->avatar){
+            Flash::success('公司信息已经提交,我们将会尽快审核');
+            return Redirect::to('/user/center/company');
+        }else{
+            Flash::error('发生了错误,请重新提交公司信息,店铺缩略图未上传?');
+            return Redirect::refresh();
+        }
+    }
+
 
     public function onUpdateCompany()
     {

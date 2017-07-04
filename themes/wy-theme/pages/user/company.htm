@@ -11,10 +11,6 @@ function onStart()
 
 if(!Auth::check()) return Redirect::to('/user/login');
 
-$this->addCss('https://cdn.bootcss.com/summernote/0.8.3/summernote.css');
-$this->addJs('https://cdn.bootcss.com/summernote/0.8.3/summernote.min.js');
-$this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min.js');
-
 }
 
 ==
@@ -38,36 +34,37 @@ $this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min
                     公司信息
                 </div>
                 <div class="panel-body">
-                    {% if company %}
-                    {% if not company.checked %}
-                    {% if company.status == 'committed' %}
-                    <p>您的公司信息已经提交.</p>
-                    <p>请上传公司LOGO</p>
-                    {% component 'imageUploader' %}
-                    {% elseif company.status == 'checking' %}
-                    <p>您提交的信息正在审核过程中</p>
-                    {% elseif company.status == 'passed' %}
-                    <p>您提交的公司信息已经通过审核!</p>
-                    {% elseif company.status == 'not_passed' %}
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <p>您提交的公司信息未通过审核,具体原因如下,修复后可重新提交进行审核</p>
-                            <p class="text-danger">{{ company.not_passed_message|md }}</p>
+                    <a href="/companies/company/create" class="btn btn-warning m-b m-t">添加公司</a>
+                    <div class="headline">
+                        <h2>已添加公司</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img alt="" src="{{ company.getAvatarThumb(400,200) }}" style="width: 100%">
+                                <div class="caption">
+                                    <h4>{{ company.name }}</h4>
+                                    <p>
+                                        <a class="btn btn-warning btn-xs" href="/companies/company/{{ company.id }}">
+                                            <i class="fa fa-eye"></i> 查看
+                                        </a>
+                                        <a class="btn btn-line-warning btn-xs" href="/companies/company/update/{{ company.id }}">
+                                            <i class="fa fa-pencil"></i> 更新
+                                        </a>
+                                        <a
+                                                class="btn btn-danger btn-xs"
+                                                href="#"
+                                                data-request="onDeleteShop"
+                                                data-request-data="id:{{ shop.id }}"
+                                                data-request-confirm="你确定要删除该店铺 ?"
+                                        >
+                                            <i class="fa fa-trash"></i> 删除
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            {% partial 'user/company_form' company=company method='onUpdateCompany' %}
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% else %}
-                    <p class="color-success">您提交的公司信息已经通过审核</p>
-                    {% partial 'user/company_form' company=company method='onUpdateCompany' %}
-                    {% endif %}
-                    {% else %}
-                    {% partial 'user/company_form' company=company method='onCreateCompany' %}
-                    {% endif %}
                 </div>
             </div>
         </div>

@@ -1,18 +1,18 @@
-title = '创建店铺'
-url = '/shops/shop/create'
-layout ='default'
-[b7Shop]
+title = '创建公司'
+url = '/companies/company/create'
+layout = 'default'
+[b7Company]
 ==
-function onStart()
-{
-if(!Auth::check()){
-return Redirect::to('/user/login');
-}
+function onStart(){
+
+if(!Auth::check()) return Redirect::to('/user/login');
 
 $this->addCss('https://cdn.bootcss.com/summernote/0.8.3/summernote.css');
 $this->addJs('https://cdn.bootcss.com/summernote/0.8.3/summernote.min.js');
 $this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min.js');
+
 }
+
 ==
 
 <div class="container m-t">
@@ -20,10 +20,10 @@ $this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min
         <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h5>添加新店铺</h5>
+                    <h5>添加公司</h5>
                 </div>
                 <div class="panel-body">
-                    {% partial 'shops/shop-form' method='onCreateShop' %}
+                    {% partial 'companies/company_form' method='onCreateCompany' %}
                 </div>
             </div>
         </div>
