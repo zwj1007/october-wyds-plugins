@@ -399,7 +399,7 @@ header {
           padding: 10px 30px;
           color: #fff; }
         header nav ul li ul.ul-xl {
-          width: 140px;
+          width: 124.444px;
           display: none; }
           header nav ul li ul.ul-xl li {
             float: left;
@@ -2863,6 +2863,8 @@ input {
         background: #cccccc;
         padding: 12px;
         letter-spacing: 4px; }
+        .dp-see .content .see-right .seeR-content .seeR-title a {
+          padding: 11px 123px; }
       .dp-see .content .see-right .seeR-content .alert {
         padding: 15px;
         margin: 15px 0; }
@@ -3454,7 +3456,8 @@ input {
         width: 80%;
         display: block; }
       .wy-notice .notice-right ul li span {
-        float: right; }
+        float: right;
+        font-size: 12px; }
 
 .wy-notice-content .notice-content {
   padding: 20px 50px;
@@ -3482,7 +3485,7 @@ input {
       border-bottom: 2px solid #FF4400;
       padding: 7px 15px; }
   .wy-notice-content .notice-content strong {
-    margin: 10px  40px;
+    margin: 10px 40px;
     border-bottom: 1px solid #eaeaea;
     display: block; }
 

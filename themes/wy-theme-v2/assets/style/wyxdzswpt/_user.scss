@@ -159,7 +159,6 @@
   background-image: url("../images/user/66.png");
   border-radius: 3px;
 
-
   .widget-user-header {
     padding: 20px;
     height: 120px;
@@ -206,7 +205,7 @@
       text-transform: uppercase;
 
       //zenjia
-      > i{
+      > i {
         font-size: 20px;
       }
     }
@@ -449,7 +448,6 @@
 }
 
 //店铺——查看
-
 .dp-see {
   border: 1px solid #CCCCCC;
   margin-bottom: 20px;
@@ -483,6 +481,9 @@
           background: #cccccc;
           padding: 12px;
           letter-spacing: 4px;
+          a {
+            padding: 11px 123px;
+          }
         }
         .alert {
           padding: 15px;
@@ -524,6 +525,7 @@
   }
 }
 
+//店铺——更新
 .dp-update {
   .dpslt {
     border-bottom: 1px solid #CCCCCC;

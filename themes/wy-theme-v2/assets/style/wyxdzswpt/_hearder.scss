@@ -147,6 +147,7 @@ header {
       li {
         float: left;
         text-align: center;
+
         width: $page-width/9;
         position: relative;
         a {
@@ -154,7 +155,7 @@ header {
           color: $nav-color;
         }
         ul.ul-xl {
-          width: 140px;
+          width: 124.444px;
           display: none;
           li {
             float: left;
