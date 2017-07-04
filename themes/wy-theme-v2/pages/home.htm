@@ -19,6 +19,9 @@ $this['zhenCeJieDu'] = \Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie
 // 通知公告
 $this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',9);
 
+// 信息公开
+$this['xinXiGongKai'] = \Buuug7\News\Models\Post::displayByCategory('xin-xi-gong-kai',8);
+
 // 推荐课程
 $this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
 
@@ -85,6 +88,25 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         </div>
     </div>
     {% endif %}
+</section>
+
+
+<!--信息公开-->
+<section class="box xxgk">
+    <div class="hd"><i>信息公开</i></div>
+    <div class="dd">
+        {% for chunk in xinXiGongKai.chunk(4) %}
+        <ul>
+            {% for post in chunk %}
+            <li>
+                <a href="/news/post/{{ post.id }}">{{ post.title }}</a>
+                <small>[{{ post.published_at|date('m-d') }}]</small>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </div>
+
 </section>
 
 <!--政策解读-->
