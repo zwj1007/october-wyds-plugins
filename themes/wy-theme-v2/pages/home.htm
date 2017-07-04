@@ -331,7 +331,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         <ul class="margin-bottom-10">
             {% for post in chunk %}
             <li class="margin-right-5">
-                <a href="/company/{{ post.id }}"><img src="{{ post.getAvatarThumb(300) }}" alt=""></a>
+                <a href="/companies/company/{{ post.id }}"><img src="{{ post.getAvatarThumb(300) }}" alt=""></a>
             </li>
             {% endfor %}
         </ul>
