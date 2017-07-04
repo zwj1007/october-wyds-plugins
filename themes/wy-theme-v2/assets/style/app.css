@@ -68,11 +68,13 @@ a:hover, a:link {
     border-bottom: 1px dashed #CCCCCC;
     padding-left: 15px; }
     .box .hd span {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 100;
       color: #BBBBBB;
       float: right;
       margin-right: 10px; }
+    .box .hd span:hover {
+      color: #337ab7; }
 
 .margin-left-right-5 {
   margin: 0 5px; }

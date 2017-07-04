@@ -85,11 +85,14 @@ a:hover, a:link {
     border-bottom: 1px dashed $border-color;
     padding-left: $padding-15;
     span {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 100;
       color: #BBBBBB;
       float: right;
       margin-right: $margin-10;
+    }
+    span:hover {
+      color: #337ab7;
     }
   }
 }
