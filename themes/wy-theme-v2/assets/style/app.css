@@ -393,7 +393,7 @@ header {
       header nav ul li {
         float: left;
         text-align: center;
-        width: 140px;
+        width: 124.44444px;
         position: relative; }
         header nav ul li a {
           padding: 10px 30px;
@@ -428,8 +428,8 @@ header {
       overflow: hidden;
       margin: 5px; }
       .dszx .dszx-left .th .dd ul li {
-        height: 28px;
-        line-height: 28px; }
+        height: 35px;
+        line-height: 35px; }
         .dszx .dszx-left .th .dd ul li a {
           color: #494546;
           display: inline-block;
@@ -482,6 +482,36 @@ header {
         border-radius: 50%; }
       .dszx .dszx-right #slide ul.page li.on {
         background: #FF4400; }
+
+.xxgk {
+  height: 170px;
+  overflow: hidden; }
+  .xxgk .hd {
+    padding-left: 0;
+    height: 40px;
+    line-height: 40px;
+    border-top: 2px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC; }
+    .xxgk .hd i {
+      border-bottom: 3px solid #FF4400;
+      padding-bottom: 6px;
+      padding-left: 15px;
+      padding-right: 15px; }
+  .xxgk .dd ul {
+    margin-top: 10px;
+    display: inline-block;
+    margin-left: 5px; }
+    .xxgk .dd ul > li {
+      float: left;
+      width: 248.75px;
+      line-height: 25px;
+      margin-right: 40px;
+      height: 50px;
+      overflow: hidden; }
+    .xxgk .dd ul li:last-child {
+      margin-right: 0; }
 
 .zcdx {
   height: 300px; }
@@ -810,7 +840,7 @@ header {
     .yxwd .dd .zzsc .slider-wrap ul li {
       float: left;
       width: 252px;
-      padding: 0 05px 0;
+      padding: 0 0 5px 0;
       margin-right: 12px;
       border: 1px solid #CCCCCC;
       border-radius: 5px; }
@@ -3428,11 +3458,11 @@ input {
 
 .wy-notice-content .notice-content {
   padding: 20px 50px;
-  border: 1px solid #CCCCCC; }
+  border: 1px solid #ebebeb; }
   .wy-notice-content .notice-content .notice-con-title {
     text-align: center;
     font-size: 20px;
-    border-bottom: 2px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
     line-height: 30px;
     margin-top: 5px;
     letter-spacing: 5px;
