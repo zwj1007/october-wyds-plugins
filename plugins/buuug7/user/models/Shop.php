@@ -112,7 +112,7 @@ class Shop extends Model
     /**
      * Returns the public image file path to this user's avatar.
      */
-    public function getAvatarThumb($width = 200,$height=100, $options = null)
+    public function getAvatarThumb($width = 400,$height=200, $options = null)
     {
         if (is_string($options)) {
             $options = ['default' => $options];

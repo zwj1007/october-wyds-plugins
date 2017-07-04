@@ -1,5 +1,5 @@
 title = "公司"
-url = "/user/center/company"
+url = "/user/center/companies"
 layout="default"
 
 [b7Company]
@@ -19,13 +19,15 @@ if(!Auth::check()) return Redirect::to('/user/login');
     <div class="row">
         <div class="col-md-3 m-b">
             <ul class="nav nav-pills nav-stacked ">
-                <li class="bg-white"><a href="/user/center/account"  ><i class="fa fa-fw fa-user-o"></i> 账号</a></li>
-                <li class="bg-white"><a href="/user/center/avatar"  ><i class="fa fa-fw fa-user-circle"></i> 头像</a></li>
-                <li class="bg-white active"><a href="/user/center/company" ><i class="fa fa-fw fa-home"></i> 公司</a></li>
-                <li class="bg-white"><a href="/user/center/shops"><i class="fa fa-fw fa-shopping-basket"></i> 我的店铺</a></li>
-                <li class="bg-white"><a href="/user/center/shoucang" ><i class="fa fa-fw fa-folder-open"></i> 收藏课程</a></li>
-                <li class="bg-white"><a href="/user/center/needs" ><i class="fa fa-fw fa-feed"></i> 我的发布</a></li>
-                <li class="bg-white"><a href="/user/center/settings" ><i class="fa fa-fw fa-gear"></i> 设置</a></li>
+                <li class="bg-white"><a href="/user/center/account"><i class="fa fa-fw fa-user-o"></i> 账号</a></li>
+                <li class="bg-white"><a href="/user/center/avatar"><i class="fa fa-fw fa-user-circle"></i> 头像</a></li>
+                <li class="bg-white active"><a href="/user/center/companies"><i class="fa fa-fw fa-home"></i> 公司</a></li>
+                <li class="bg-white"><a href="/user/center/shops"><i class="fa fa-fw fa-shopping-basket"></i> 我的店铺</a>
+                </li>
+                <li class="bg-white"><a href="/user/center/shoucang"><i class="fa fa-fw fa-folder-open"></i> 收藏课程</a>
+                </li>
+                <li class="bg-white"><a href="/user/center/needs"><i class="fa fa-fw fa-feed"></i> 我的发布</a></li>
+                <li class="bg-white"><a href="/user/center/settings"><i class="fa fa-fw fa-gear"></i> 设置</a></li>
             </ul>
         </div>
         <div class="col-md-9 m-b">
@@ -39,9 +41,10 @@ if(!Auth::check()) return Redirect::to('/user/login');
                         <h2>已添加公司</h2>
                     </div>
                     <div class="row">
+                        {% for company in companies %}
                         <div class="col-md-4">
                             <div class="thumbnail">
-                                <img alt="" src="{{ company.getAvatarThumb(400,200) }}" style="width: 100%">
+                                <img alt="" src="{{ company.getAvatarThumb(400,200) }}" style="width: 100%;background: #fff;">
                                 <div class="caption">
                                     <h4>{{ company.name }}</h4>
                                     <p>
@@ -54,8 +57,8 @@ if(!Auth::check()) return Redirect::to('/user/login');
                                         <a
                                                 class="btn btn-danger btn-xs"
                                                 href="#"
-                                                data-request="onDeleteShop"
-                                                data-request-data="id:{{ shop.id }}"
+                                                data-request="onDeleteCompany"
+                                                data-request-data="id:{{ company.id }}"
                                                 data-request-confirm="你确定要删除该店铺 ?"
                                         >
                                             <i class="fa fa-trash"></i> 删除
@@ -64,6 +67,7 @@ if(!Auth::check()) return Redirect::to('/user/login');
                                 </div>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

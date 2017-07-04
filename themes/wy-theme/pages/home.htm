@@ -405,7 +405,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <div class="owl-carousel owl-carousel-v2 m-b-lg">
         {% for post in featuredCompanies %}
         <div class="item">
-            <a href="/company/{{ post.id }}">
+            <a href="/companies/company/{{ post.id }}">
                 <img src="{{ post.getAvatarThumb(300) }}" alt="" class="bg-white">
             </a>
         </div>

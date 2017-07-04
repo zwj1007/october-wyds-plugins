@@ -14,6 +14,9 @@ class Company extends ComponentBase
 {
     public $canCompany = true;
 
+    public $company = null;
+    public $companies = null;
+
     public function componentDetails()
     {
         return [
@@ -46,12 +49,20 @@ class Company extends ComponentBase
 
     public function defineProperties()
     {
-        return [];
+        return [
+            'id' => [
+                'title' => 'ID',
+                'description' => 'ID',
+                'default' => '{{ :id }}',
+                'type' => 'string',
+            ],
+        ];
     }
 
     public function onRun()
     {
-        $this->page['company'] = $this->loadCompany();
+        $this->company = $this->page['company'] = $this->loadCompany();
+        $this->companies = $this->page['companies'] = $this->loadCompanies();
     }
 
 
@@ -60,21 +71,42 @@ class Company extends ComponentBase
      */
     public function loadCompany()
     {
+        $id = $this->property('id');
+        $company = UserCompany::find($id);
+        return $company;
+    }
+
+    public function loadCompanies()
+    {
         if (!Auth::check()) {
             return null;
         }
-        return Auth::getUser()->company()->first();
 
+        $user = Auth::getUser();
+
+        return $user->companies()->orderBy('checked_at')->get();
     }
 
     public function onCreateCompany()
     {
-        $data = post();
+
+
+        if (!Auth::check()) {
+            return null;
+        }
+
+        $user = Auth::getUser();
+
+        if (count($user->companies()->get())) {
+            Flash::error('只允许添加一个公司');
+            return Redirect::refresh();
+        }
+
 
         if (!$this->canCompany) {
             throw new ApplicationException('你的账号不允许提交公司认证信息');
         }
-        $company = Auth::getUser()->company()->create([
+        $company = Auth::getUser()->companies()->create([
             'name' => post('name'),
             'address' => post('address'),
             'contact_phone' => post('contact_phone'),
@@ -98,10 +130,10 @@ class Company extends ComponentBase
         $user = Auth::getUser();
         $company = UserCompany::find(post('id'));
 
-        if($company->avatar){
+        if ($company->avatar) {
             Flash::success('公司信息已经提交,我们将会尽快审核');
-            return Redirect::to('/user/center/company');
-        }else{
+            return Redirect::to('/user/center/companies');
+        } else {
             Flash::error('发生了错误,请重新提交公司信息,店铺缩略图未上传?');
             return Redirect::refresh();
         }
@@ -110,7 +142,10 @@ class Company extends ComponentBase
 
     public function onUpdateCompany()
     {
-        $company = $this->loadCompany();
+        $company=UserCompany::find(post('id'));
+        if (!$company) {
+            throw new ApplicationException('应用发生错误,请稍后再试!');
+        }
         $company->name = post('name');
         $company->address = post('address');
         $company->contact_phone = post('contact_phone');
@@ -120,12 +155,27 @@ class Company extends ComponentBase
         $company->checked = false;
         $company->not_passed_message = null;
         $company->save();
-        Flash::success('信息已经提交');
-        return Redirect::refresh();
+        Flash::success('更新成功');
+        return Redirect::to('/user/center/companies');
     }
 
     public function onDeleteCompany()
     {
+        if (!Auth::check()) {
+            return null;
+        }
+        $user = Auth::getUser();
+
+        $company = UserCompany::find(post('id'));
+
+        if ($user->id == $company->user_id) {
+            $company->delete();
+            Flash::success('成功删除');
+            return Redirect::refresh();
+        } else {
+            Flash::error('你没有权限删除该公司');
+            return Redirect::refresh();
+        }
 
     }
 

@@ -1,5 +1,6 @@
 <div>
     {{ form_ajax(method,{ model: company,'data-request-flash':'true' }) }}
+    <input type="hidden" name="id" value="{{ form_value('id') }}">
     <div class="form-group">
         <label for="companyName">公司名称</label>
         <input type="text" name="name" id="companyName" value="{{ form_value('name') }}" class="form-control">

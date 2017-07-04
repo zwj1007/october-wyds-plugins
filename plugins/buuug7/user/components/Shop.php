@@ -11,6 +11,7 @@ use ApplicationException;
 class Shop extends ComponentBase
 {
     public $shop = null;
+    public $shops = null;
 
     public function componentDetails()
     {
@@ -57,7 +58,7 @@ class Shop extends ComponentBase
 
     public function onRun()
     {
-        $this->page['shops'] = $this->loadShops();
+        $this->shops = $this->page['shops'] = $this->loadShops();
         $this->shop = $this->page['shop'] = $this->loadShop();
     }
 

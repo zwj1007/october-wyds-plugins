@@ -1,10 +1,10 @@
 title = '公司'
 url = '/companies/company/:id'
 layout = 'default'
-
+[b7Company]
 ==
 function onStart(){
-$this['company']=\Buuug7\User\Models\Company::findById($this->param('id'));
+
 }
 ==
 
@@ -16,31 +16,56 @@ $this['company']=\Buuug7\User\Models\Company::findById($this->param('id'));
                     {{ company.name }}
                 </div>
                 <div class="panel-body">
+                    {% if not company.checked %}
+                    {% if company.status == 'committed' %}
+                    <div class="alert alert-info">
+                        <strong>您的公司信息已经提交，我们会尽快审核</strong>
+                    </div>
+                    {% elseif company.status == 'checking' %}
+                    <div class="alert alert-info">
+                        <strong>您提交的信息正在审核中</strong>
+                    </div>
+                    {% elseif company.status == 'passed' %}
+                    <div class="alert alert-success">
+                        <strong>恭喜,您提交的公司信息已经通过审核,我们将会在店铺中心展示您的店铺</strong>
+                    </div>
+                    {% elseif company.status == 'not_passed' %}
+                    <div class="alert alert-info">
+                        <strong>您提交的公司信息未通过审核,具体原因如下,修复后可重新提交进行审核</strong>
+                    </div>
+                    <div class="callout callout-danger">
+                        <h4>需要修复的问题</h4>
+                        <p class="m-t">
+                            {{ company.not_passed_message }}
+                        </p>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+
+                    {% if company.checked %}
+                    <ul class="list-unstyled">
+                        <li>公司地址：{{ company.address }}</li>
+                        <li>联系电话：{{ company.contact_phone }}</li>
+                        <li>推荐企业：{{ company.featured ? '是' : '否' }}</li>
+                    </ul>
+
+                    <h4>公司介绍</h4>
                     {{ company.description }}
-                    <dl class="dl-horizontal margin-top-20">
-                        <dt>公司地址</dt>
-                        <dd>{{ company.address }}</dd>
-                        <dt>联系电话</dt>
-                        <dd>{{ company.contact_phone }}</dd>
-                        <dt>推荐企业</dt>
-                        <dd>{{ company.featured ? '是' : '否' }}</dd>
-                    </dl>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-body">
+                    <h4>公司详情</h4>
                     {{ company.detail|raw }}
+                    {% endif %}
                 </div>
             </div>
         </div>
 
+        {% if company.checked %}
         <div class="col-md-3">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <img src="{{ company.getAvatarThumb(400) }}" alt="" class="img-responsive">
                 </div>
             </div>
-
         </div>
+        {% endif %}
     </div>
 </div>

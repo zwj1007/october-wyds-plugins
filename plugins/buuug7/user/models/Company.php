@@ -105,7 +105,7 @@ class Company extends Model
     /**
      * Returns the public image file path to this user's avatar.
      */
-    public function getAvatarThumb($size = 25, $options = null)
+    public function getAvatarThumb($width = 200,$height=100, $options = null)
     {
         if (is_string($options)) {
             $options = ['default' => $options];
@@ -115,7 +115,7 @@ class Company extends Model
 
 
         if ($this->avatar) {
-            return $this->avatar->getThumb($size, $size, $options);
+            return $this->avatar->getThumb($width, $height, $options);
         } else {
             return 'holder.js/800x400?text=没有缩略图&auto=yes&theme=gray';
         }

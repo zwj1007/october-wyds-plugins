@@ -62,7 +62,7 @@ class Plugin extends PluginBase
                 'b7_address',
             ]);
 
-            $model->hasOne['company'] = ['Buuug7\User\Models\Company', 'table' => 'buuug7_user_companies', 'key' => 'user_id',];
+            $model->hasMany['companies'] = ['Buuug7\User\Models\Company', 'table' => 'buuug7_user_companies'];
             $model->hasMany['needs'] = ['Buuug7\User\Models\Need', 'table' => 'buuug7_user_needs',];
             $model->hasMany['shops'] = ['Buuug7\User\Models\Shop', 'table' => 'buuug7_user_shops',];
         });
