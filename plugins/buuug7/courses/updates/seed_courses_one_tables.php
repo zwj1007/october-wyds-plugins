@@ -148,7 +148,6 @@ class SeedCoursesOneTables extends Seeder
         $courseJiChu01->categories()->attach(2);
 
 
-
         $courseJiChu02 = Course::create([
             'title' => '电子商务的商业模式',
             'published' => true,
@@ -416,7 +415,6 @@ class SeedCoursesOneTables extends Seeder
         ]);
         // attach categories
         $courseJiChu03->categories()->attach(2);
-
 
 
         $courseJiChu04 = Course::create([

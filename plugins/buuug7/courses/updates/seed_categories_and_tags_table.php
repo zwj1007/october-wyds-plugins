@@ -38,7 +38,7 @@ class SeedCategoriesAndTagsTable extends Seeder
             'parent_id' => 1,
             'name' => '电子商务进阶教程',
             'slug' => 'dian-zi-shang-wu-jin-jie-jiao-cheng',
-            'description' => '这个系列的教程中，我将带大家学习一些电子商务高级类的知识',
+            'description' => '这个系列的教程中，我们将学习一些电子商务高级类的知识',
             'image' => '/courses/dian-zi-shang-wu-jin-jie-jiao-cheng.jpg',
         ]);
 
