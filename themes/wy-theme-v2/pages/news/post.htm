@@ -6,10 +6,13 @@ layout="default"
 ==
 function onEnd(){
 // 最新发布
-$this['latestPosts'] = \Buuug7\News\Models\Post::displayLatest(6);
+$this['latestPosts'] = \Buuug7\News\Models\Post::displayLatest(8);
 
 // 推荐 特色
-$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(6);
+$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(8);
+
+// 推荐课程
+$this['courseTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],8);
 
 //var_dump($this->post);
 
@@ -63,13 +66,13 @@ if($this->post){
     <div class="float-right dszx-kjnav">
         <div class="kj-dszx">
             <div class="kj-title">
-                <a href="javascript:void(0);"> <span>最新发布</span></a>
+                <a href="javascript:void(0);"> <span>最新新闻</span></a>
             </div>
             <ul>
                 {% for post in latestPosts %}
                 <li>
                     <i class="aurora__title aurora100"></i>
-                    <a href="/news/post/{{ post.slug }}">
+                    <a href="/news/post/{{ post.id }}">
                         <span>{{ post.title|length > 25 ? post.title|slice(0,25)~'...' :post.title }}</span>
                     </a>
                 </li>
@@ -78,28 +81,34 @@ if($this->post){
         </div>
         <div class="kj-dszx rmkc">
             <div class="kj-title">
-                <a href="xspx-list.html"> <span>推荐</span></a>
+                <a href="xspx-list.html"> <span>推荐新闻</span></a>
             </div>
             <ul>
                 {% for post in featuredPosts %}
                 <li>
                     <em class="topSpan ">{{ loop.index }}</em>
-                    <a href="/news/post/{{ post.slug }}">
+                    <a href="/news/post/{{ post.id }}">
                         <span> {{ post.title|length > 25 ? post.title|slice(0,25)~'...' :post.title }}</span>
                     </a>
                 </li>
                 {% endfor %}
             </ul>
         </div>
-        <div class="kjnav-ggo">
-            <span>广告</span>
-            <embed src="http://imgs.ebrun.com/uploads/2017/04/20170412150338290.swf" quality="high"
-                   pluginspage="#!" width="300" height="200" wmode="transparent">
-        </div>
-        <div class="kjnav-ggo">
-            <span>广告</span>
-            <embed src="/themes/wy-theme-v2/assets/flash/1.swf" quality="high"
-                   pluginspage="#!" width="300" height="250" wmode="transparent">
+
+        <div class="kj-dszx rmkc">
+            <div class="kj-title">
+                <a href="xspx-list.html"> <span>推荐课程</span></a>
+            </div>
+            <ul>
+                {% for post in courseTuiJian %}
+                <li>
+                    <em class="topSpan ">{{ loop.index }}</em>
+                    <a href="/courses/course/{{ post.id }}">
+                        <span> {{ post.title|length > 25 ? post.title|slice(0,25)~'...' :post.title }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 </section>
