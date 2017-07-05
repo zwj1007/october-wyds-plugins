@@ -7,20 +7,26 @@ layout = 'default'
 
 <section class="user dp-see">
     <div class="content">
+        {% if shop.checked %}
         <div class=" see-left">
             <h4>{{ shop.name }}</h4>
+            {% if user.id == shop.user.id %}
+            <p style="color:green">您提交的店铺信息已经通过审核</p>
+            {% endif %}
             {{ shop.description|raw }}
         </div>
-
+        {% endif %}
 
         <div class=" see-right">
+            {% if shop.checked %}
             <div style="text-align: center">
                 <a style="color: #969696" href="">
                     <img class="margin-bottom-10" src="{{ shop.getAvatarThumb(400,200) }}" alt="">
                 </a>
             </div>
+            {% endif %}
             <div class="seeR-content">
-
+                {% if user.id == shop.user.id %}
                 {% if not shop.checked %}
                 <div class="seeR-title">
                     <strong> 店铺审核状态</strong>
@@ -35,7 +41,8 @@ layout = 'default'
                 </div>
                 {% elseif shop.status == 'passed' %}
                 <div class="alert alert-success">
-                    <i class="fa fa-american-sign-language-interpreting margin-left-right-10 "></i> <span>恭喜,您提交的店铺信息已经通过审核,我们将会在店铺中心展示您的店铺</span>
+                    <i class="fa fa-american-sign-language-interpreting margin-left-right-10 "></i>
+                    <span>恭喜,您提交的店铺信息已经通过审核,我们将会在店铺中心展示您的店铺</span>
                 </div>
                 {% elseif shop.status == 'not_passed' %}
 
@@ -53,7 +60,7 @@ layout = 'default'
                         <strong> 进入店铺</strong></a>
                 </div>
                 {% endif %}
-
+                {% endif %}
             </div>
 
         </div>

@@ -70,8 +70,8 @@ class Shop extends Model
             'un_committed' => '未提交',
             'committed' => '已提交',
             'checking' => '审核中',
-            'passed' => '审核通过',
             'not_passed' => '未审核通过',
+            'passed' => '审核通过',
         ];
     }
 

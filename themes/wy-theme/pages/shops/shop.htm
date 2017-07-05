@@ -13,6 +13,7 @@ layout = 'default'
                     {{ shop.name }}
                 </div>
                 <div class="panel-body">
+                    {% if user.id == shop.user.id %}
                     {% if not shop.checked %}
                     {% if shop.status == 'committed' %}
                     <div class="alert alert-info">
@@ -38,6 +39,14 @@ layout = 'default'
                     </div>
                     {% endif %}
                     {% endif %}
+                    {% endif %}
+
+                    {% if shop.checked %}
+                    {% if user.id == shop.user.id %}
+                    <div class="alert alert-success">
+                        您提交的店铺信息已经通过审核
+                    </div>
+                    {% endif %}
                     <p class="lead">店铺描述</p>
                     <p>
                         {{ shop.description|raw }}
@@ -48,9 +57,11 @@ layout = 'default'
                             店铺地址
                         </a>
                     </p>
+                    {% endif %}
                 </div>
             </div>
         </div>
+        {% if shop.checked %}
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -63,5 +74,6 @@ layout = 'default'
                 </div>
             </div>
         </div>
+        {% endif %}
     </div>
 </div>
