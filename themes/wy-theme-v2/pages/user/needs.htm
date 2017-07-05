@@ -10,11 +10,18 @@ function onEnd(){
 }
 ==
 
-<section class=" box user xqfb ">
+<section class=" box user xqfb user-gs  user-dp">
     <div class="mainLeft float-left">
         {% partial 'user/user-left-menu' %}
     </div>
-    <div class="mainRight float-right  lyzx-body xqfb-body ">
+    <div class="mainRight float-right  lyzx-body xqfb-body content ">
+        <div class="panel-heading">
+            我发布的需求
+        </div>
+        <p>
+            <a href="/needs/need/create" class="btn btn-warning margin-right-20"><i class="fa fa-plus"></i> 发布需求</a>
+            <a href="/gong-qiu-xin-xi" class="btn btn-primary margin-right-20">供求信息</a>
+        </p>
         <table class="table table-hover">
             <thead>
             <tr>
@@ -34,13 +41,13 @@ function onEnd(){
                 <td>
 
                     <a href="/needs/need/{{ need.id }}" class="margin-right-20">
-                        <img src="/themes/wy-theme-v2/assets/images/xqfb/xqfb1.png" alt="">
+                        查看
                     </a>
                     <a href="/needs/need/update/{{ need.id }}" class="margin-right-20">
-                        <img src="/themes/wy-theme-v2/assets/images/xqfb/xqfb3.png" alt="">
+                        编辑
                     </a>
                     <a data-request="onDeleteNeed" data-request-data="id:{{ need.id }}" data-request-confirm="你确定要删除?" class="margin-right-10">
-                        <img src="/themes/wy-theme-v2/assets/images/xqfb/xqfb2.png" alt="">
+                        删除
                     </a>
 
                 </td>
