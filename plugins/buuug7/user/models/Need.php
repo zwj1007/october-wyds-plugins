@@ -37,6 +37,15 @@ class Need extends Model
         'description' => 'required',
     ];
 
+    public $customMessages = [
+        'required' => '请填写 :attribute ',
+    ];
+
+    public $attributeNames = [
+        'title' => '标题',
+        'description' => '描述',
+    ];
+
     /**
      * @var array Relations
      */

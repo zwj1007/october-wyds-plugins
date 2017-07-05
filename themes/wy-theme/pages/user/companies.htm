@@ -1,11 +1,10 @@
 title = "公司"
 url = "/user/center/companies"
 layout="default"
-
+[viewBag]
+userActiveMenu = "companies"
 [b7Company]
-
 ==
-
 function onStart()
 {
 
@@ -18,17 +17,7 @@ if(!Auth::check()) return Redirect::to('/user/login');
 <div class="container m-t">
     <div class="row">
         <div class="col-md-3 m-b">
-            <ul class="nav nav-pills nav-stacked ">
-                <li class="bg-white"><a href="/user/center/account"><i class="fa fa-fw fa-user-o"></i> 账号</a></li>
-                <li class="bg-white"><a href="/user/center/avatar"><i class="fa fa-fw fa-user-circle"></i> 头像</a></li>
-                <li class="bg-white active"><a href="/user/center/companies"><i class="fa fa-fw fa-home"></i> 公司</a></li>
-                <li class="bg-white"><a href="/user/center/shops"><i class="fa fa-fw fa-shopping-basket"></i> 我的店铺</a>
-                </li>
-                <li class="bg-white"><a href="/user/center/shoucang"><i class="fa fa-fw fa-folder-open"></i> 收藏课程</a>
-                </li>
-                <li class="bg-white"><a href="/user/center/needs"><i class="fa fa-fw fa-feed"></i> 我的发布</a></li>
-                <li class="bg-white"><a href="/user/center/settings"><i class="fa fa-fw fa-gear"></i> 设置</a></li>
-            </ul>
+            {% partial 'user/user-left-menu' %}
         </div>
         <div class="col-md-9 m-b">
             <div class="panel panel-default">

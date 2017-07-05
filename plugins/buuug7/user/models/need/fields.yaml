@@ -10,10 +10,7 @@ fields:
     category:
         label: 分类
         disabled: true
-    contact_phone:
-        label: 联系电话
-        disabled: true
-        span: left
+        span: auto
     description:
         label: 描述
         disabled: false

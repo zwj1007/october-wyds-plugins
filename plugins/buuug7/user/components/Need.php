@@ -63,23 +63,6 @@ class Need extends ComponentBase
             return null;
         }
 
-        $rules = [
-            'title' => 'required',
-            'description' => 'required',
-        ];
-
-        $data = post();
-        $validation = Validator::make($data, $rules, [
-            'required' => '请填写 :attribute',
-        ], [
-            'title' => '标题',
-            'description' => '描述',
-        ]);
-
-        if ($validation->fails()) {
-            throw new ValidationException($validation);
-        }
-
         $user=Auth::getUser();
         $user->needs()->create([
             'title' => post('title'),
@@ -97,23 +80,6 @@ class Need extends ComponentBase
 
         if (!$need) {
             throw new ApplicationException('应用发生错误,请稍后再试!');
-        }
-
-        $rules = [
-            'title' => 'required',
-            'description' => 'required',
-        ];
-
-        $data = post();
-        $validation = Validator::make($data, $rules, [
-            'required' => '请填写 :attribute',
-        ], [
-            'title' => '标题',
-            'description' => '描述',
-        ]);
-
-        if ($validation->fails()) {
-            throw new ValidationException($validation);
         }
 
         $need->title = post('title');
@@ -136,6 +102,7 @@ class Need extends ComponentBase
         return Redirect::refresh();
     }
 
+    //
     // 严军芳视图需求
     //
     public function onCreateNeedOne(){

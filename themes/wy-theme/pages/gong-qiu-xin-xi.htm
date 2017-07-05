@@ -6,7 +6,6 @@ layout = 'default'
 function onStart(){
 
 $this['categories']=\Buuug7\User\Models\Need::getCategories();
-
 $this['checkedNeeds']=\Buuug7\User\Models\Need::displayChecked(5);
 $this['featuredNeeds']=\Buuug7\User\Models\Need::displayFeatured(8);
 

@@ -9,9 +9,6 @@ columns:
         label: 分类
         type: partial
         path: ~/plugins/buuug7/user/models/need/_category_column.htm
-    contact_phone:
-        label: 联系电话
-        invisible: true
     user:
         label: 发布者
         relation: user

@@ -1,0 +1,34 @@
+title = "收藏课程"
+url = "/user/center/courses"
+layout="default"
+[viewBag]
+userActiveMenu = "courses"
+[shouCang]
+==
+function onEnd(){
+if(!Auth::check()) return Redirect::to('/user/login');
+}
+==
+
+<div class="container m-t">
+    <div class="row">
+        <div class="col-md-3 m-b">
+            {% partial 'user/user-left-menu' %}
+        </div>
+        <div class="col-md-9 m-b">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    已收藏课程
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        {% for course in courses %}
+                        <li class="list-group-item"><a href="/courses/course/{{ course.slug }}">{{ course.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {{ courses.render|raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
