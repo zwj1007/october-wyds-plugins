@@ -331,23 +331,25 @@
         .note-frame {
           border: 1px solid #a9a9a9;
         }
-        .gs-log {
-          img {
-            max-width: 100%;
-            width: 300px;
-            height: 150px;
-          }
-        }
       }
     }
 
   }
 
+  //公司图片
+  .gs-img {
+    .gs-log {
+      max-width: 100%;
+      width: 300px;
+      height: 150px;
+    }
+  }
+
+  //公司——查看
   .content .content-dptp {
     .gs-content {
       text-align: left;
       p {
-        margin: 25px 0;
         font-size: 18px;
         label {
           color: #2d2c89;
@@ -356,9 +358,6 @@
         }
         span {
           line-height: 24px;
-          width: 530px;
-          color: #333;
-          font-weight: 700;
           font-size: 14px;
         }
 
@@ -366,7 +365,10 @@
     }
     .gs-xq {
       text-align: left;
-      padding: 15px;
+      padding: 15px 0;
+      strong {
+        color: #2d2c89;
+      }
       p {
         line-height: 35px;
         color: #5d5d5d;
@@ -492,9 +494,9 @@
   margin-bottom: 20px;
   .content {
     padding: 20px 15px;
+    display: inline-block;
     .see-left {
       width: 600px;
-      //display: inline-block;
       float: left;
       h4 {
         font-size: 22px;
