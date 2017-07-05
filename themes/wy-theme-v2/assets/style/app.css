@@ -2987,6 +2987,16 @@ input {
 .xqfb .xqfb-title a {
   margin-right: 20px;
   font-size: 16px; }
+.xqfb .xqfb-body .panel-heading {
+  border-bottom: 1px solid #CCCCCC;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-color: #ddd; }
+.xqfb .xqfb-body p {
+  text-align: center;
+  margin-top: 10px;
+  border-bottom: 1px #CCCCCC;
+  margin-bottom: 50px; }
 .xqfb .xqfb-body .table {
   width: 100%;
   max-width: 100%;
