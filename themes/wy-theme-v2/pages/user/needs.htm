@@ -1,7 +1,8 @@
 title = '需求'
 url = '/user/center/needs'
 layout = 'default'
-
+[viewBag]
+userActiveMenu = "needs"
 [b7Need]
 ==
 function onEnd(){
@@ -11,50 +12,7 @@ function onEnd(){
 
 <section class=" box user xqfb ">
     <div class="mainLeft float-left">
-        <ul>
-            <li class=" ">
-                <a href="/user/center/account">
-                    <i class="fa fa-drivers-license"></i>
-                    账号
-                </a>
-            </li>
-            <li>
-                <a href="/user/center/avatar">
-                    <i class="fa fa-user-circle-o"></i>
-                    头像
-                </a>
-            </li>
-            <li>
-                <a href="/user/center/companies">
-                    <i class="fa fa-institution"></i>
-                    公司信息
-                </a>
-            </li>
-            <li class=" ">
-                <a href="/user/center/shops">
-                    <i class="fa fa-archive"></i>
-                    我的店铺
-                </a>
-            </li>
-            <li class="">
-                <a href="/user/center/shoucang">
-                    <i class="fa fa-fw fa-folder-open"></i>
-                    收藏课程
-                </a>
-            </li>
-            <li class="active">
-                <a href="/user/center/needs">
-                    <i class="fa fa-fw fa-feed"></i>
-                    我的发布
-                </a>
-            </li>
-            <li class="">
-                <a href="/user/center/settings">
-                    <i class="fa fa-fw fa-gear"></i>
-                    设置
-                </a>
-            </li>
-        </ul>
+        {% partial 'user/user-left-menu' %}
     </div>
     <div class="mainRight float-right  lyzx-body xqfb-body ">
         <table class="table table-hover">

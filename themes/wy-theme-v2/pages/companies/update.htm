@@ -1,36 +1,35 @@
-title = '创建店铺'
-url = '/shops/shop/create'
-layout ='default'
+title = '更新公司'
+url = '/companies/company/update/:id'
+layout = 'default'
 [viewBag]
-userActiveMenu = "shops"
-[b7Shop]
+userActiveMenu = "companies"
+[b7Company]
 ==
-function onStart()
-{
+function onStart(){
 if(!Auth::check()){
 return Redirect::to('/user/login');
 }
-
 $this->addCss('https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css');
 $this->addCss('https://cdn.bootcss.com/summernote/0.8.3/summernote.css');
 $this->addJs('https://cdn.bootcss.com/summernote/0.8.3/summernote.min.js');
 $this->addJs('https://cdn.bootcss.com/summernote/0.8.3/lang/summernote-zh-CN.min.js');
 }
-==
 
-<section class="user user-gs user-dp ">
+==
+<section class=" box user user-gs">
     <div class="mainLeft float-left">
         {% partial 'user/user-left-menu' %}
     </div>
-    <div class="mainRight float-right  ">
+    <div class="mainRight float-right ">
         <div class="panel">
             <div class="panel-heading">
-                添加新店铺信息
+                公司信息
             </div>
             <div class="panel-body">
-                {% partial 'shops/shop-form' method='onCreateShop' %}
+                {% component 'imageUploader' %}
+                {% partial 'companies/company_form' method='onUpdateCompany' %}
             </div>
-
         </div>
     </div>
+
 </section>

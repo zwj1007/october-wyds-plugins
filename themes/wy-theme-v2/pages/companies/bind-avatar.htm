@@ -1,0 +1,51 @@
+title = '上传公司LOGO'
+url = '/companies/company/bind-avatar/:id'
+layout = 'default'
+[viewBag]
+userActiveMenu = "companies"
+[b7Company]
+==
+function onStart(){
+if(!Auth::check()){
+return Redirect::to('/user/login');
+}
+}
+==
+
+<section class="user user-dp user-portr user-gs">
+    <div class="mainLeft float-left">
+        {% partial 'user/user-left-menu' %}
+    </div>
+    <div class="mainRight float-right gs-img ">
+
+        <div class="content-title">
+            <a href="user.html">公司logo图</a>
+            <span></span>
+        </div>
+
+        <div class="content con-img gs-img">
+            <div class="portr gs-log">
+                {% component 'imageUploader' %}
+            </div>
+            <div class="callout callout-info">
+                <p>等待图片上传后在点击提交按钮</p>
+            </div>
+            <form
+                    data-request="onBindAvatar"
+                    data-request-data="id:{{ company.id }}"
+            >
+                <button type="submit" class="btn btn-primary" data-attach-loading>提交</button>
+            </form>
+
+            <div class="callout ">
+                <h4>店铺缩略图上传说明</h4>
+
+                <p>
+                    1、上传图片比例建议长宽比为(2:1)<br>
+                    2、上传图片尺寸建议(400px:200px)<br>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -17,7 +17,7 @@ class CreateCompaniesTable extends Migration
             $table->string('address')->nullable();
             $table->string('contact_phone')->nullable();
             //$table->string('logo')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->longText('detail')->nullable();
             $table->boolean('featured')->default(0);
             $table->boolean('checked')->default(0);

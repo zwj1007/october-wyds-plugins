@@ -16,6 +16,7 @@ function onStart(){
                     {{ company.name }}
                 </div>
                 <div class="panel-body">
+                    {% if user.id == company.user.id %}
                     {% if not company.checked %}
                     {% if company.status == 'committed' %}
                     <div class="alert alert-info">
@@ -27,7 +28,7 @@ function onStart(){
                     </div>
                     {% elseif company.status == 'passed' %}
                     <div class="alert alert-success">
-                        <strong>恭喜,您提交的公司信息已经通过审核,我们将会在店铺中心展示您的店铺</strong>
+                        <strong>您提交的公司信息已经通过审核</strong>
                     </div>
                     {% elseif company.status == 'not_passed' %}
                     <div class="alert alert-info">
@@ -41,8 +42,14 @@ function onStart(){
                     </div>
                     {% endif %}
                     {% endif %}
+                    {% endif %}
 
                     {% if company.checked %}
+                    {% if user.id == company.user.id %}
+                    <div class="alert alert-success">
+                        <strong>您提交的公司信息已经通过审核</strong>
+                    </div>
+                    {% endif %}
                     <ul class="list-unstyled">
                         <li>公司地址：{{ company.address }}</li>
                         <li>联系电话：{{ company.contact_phone }}</li>
@@ -62,7 +69,7 @@ function onStart(){
         <div class="col-md-3">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <img src="{{ company.getAvatarThumb(400) }}" alt="" class="img-responsive">
+                    <img src="{{ company.getAvatarThumb(400,200) }}" alt="" class="img-responsive">
                 </div>
             </div>
         </div>

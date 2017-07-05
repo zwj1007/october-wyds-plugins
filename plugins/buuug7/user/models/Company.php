@@ -36,7 +36,7 @@ class Company extends Model
     */
     public $rules = [
         'name' => 'required',
-        'contact_phone' => 'required|numeric',
+        'contact_phone' => 'required',
         'address' => 'required',
         'description' => 'required',
         'status' => 'required',

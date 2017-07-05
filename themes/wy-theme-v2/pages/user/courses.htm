@@ -1,0 +1,39 @@
+title = "收藏课程"
+url = "/user/center/courses"
+layout="default"
+[viewBag]
+userActiveMenu = "courses"
+[shouCang]
+==
+function onEnd(){
+
+}
+==
+
+<section class="box user user-collect">
+    <div class="mainLeft float-left">
+        {% partial 'user/user-left-menu' %}
+    </div>
+    <div class="mainRight float-right  ">
+        <div class="content-title">
+            <a href="javascript:void(0);">已收藏课程</a>
+            <span></span>
+
+        </div>
+        <div class="content">
+            <ul>
+                {% for course in courses %}
+                <li>
+                    <a href="/courses/course/{{ course.slug }}">{{ course.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+        {{ courses.render|raw }}
+    </div>
+
+</section>
+
+
+

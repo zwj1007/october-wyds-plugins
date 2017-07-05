@@ -1,6 +1,8 @@
 title = '用户设置'
 url = '/user/center/settings'
 layout='default'
+[viewBag]
+userActiveMenu = "settings"
 ==
 function onStart(){
 
@@ -10,44 +12,7 @@ $this->addJs('https://cdn.bootcss.com/jquery.countdown/2.2.0/jquery.countdown.mi
 
 <section class="box user suer-setting ">
     <div class="mainLeft float-left">
-        <ul>
-            <li class=" ">
-                <a href="/user/center/account">
-                    <i class="fa fa-drivers-license"></i>
-                    账号
-                </a>
-            </li>
-            <li>
-                <a href="/user/center/avatar">
-                    <i class="fa fa-user-circle-o"></i>
-                    头像
-                </a>
-            </li>
-            <li>
-                <a href="/user/center/companies">
-                    <i class="fa fa-institution"></i>
-                    公司
-                </a>
-            </li>
-            <li class="">
-                <a href="/user/center/shoucang">
-                    <i class="fa fa-fw fa-folder-open"></i>
-                    收藏课程
-                </a>
-            </li>
-            <li class="">
-                <a href="/user/center/needs">
-                    <i class="fa fa-fw fa-feed"></i>
-                    我的发布
-                </a>
-            </li>
-            <li class="active">
-                <a href="/user/center/settings">
-                    <i class="fa fa-fw fa-gear"></i>
-                    设置
-                </a>
-            </li>
-        </ul>
+        {% partial 'user/user-left-menu' %}
     </div>
     <div class="mainRight float-right">
         <div class="content">

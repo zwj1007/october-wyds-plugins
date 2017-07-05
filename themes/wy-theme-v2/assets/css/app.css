@@ -2765,14 +2765,13 @@ input {
         height: auto; }
       .user-gs .panel .panel-body .form-group .note-frame {
         border: 1px solid #a9a9a9; }
-      .user-gs .panel .panel-body .form-group .gs-log img {
-        max-width: 100%;
-        width: 300px;
-        height: 150px; }
+.user-gs .gs-img .gs-log {
+  max-width: 100%;
+  width: 300px;
+  height: 150px; }
 .user-gs .content .content-dptp .gs-content {
   text-align: left; }
   .user-gs .content .content-dptp .gs-content p {
-    margin: 25px 0;
     font-size: 18px; }
     .user-gs .content .content-dptp .gs-content p label {
       color: #2d2c89;
@@ -2780,13 +2779,12 @@ input {
       font-size: 14px; }
     .user-gs .content .content-dptp .gs-content p span {
       line-height: 24px;
-      width: 530px;
-      color: #333;
-      font-weight: 700;
       font-size: 14px; }
 .user-gs .content .content-dptp .gs-xq {
   text-align: left;
-  padding: 15px; }
+  padding: 15px 0; }
+  .user-gs .content .content-dptp .gs-xq strong {
+    color: #2d2c89; }
   .user-gs .content .content-dptp .gs-xq p {
     line-height: 35px;
     color: #5d5d5d;
@@ -2868,7 +2866,8 @@ input {
   border: 1px solid #CCCCCC;
   margin-bottom: 20px; }
   .dp-see .content {
-    padding: 20px 15px; }
+    padding: 20px 15px;
+    display: inline-block; }
     .dp-see .content .see-left {
       width: 600px;
       float: left; }
