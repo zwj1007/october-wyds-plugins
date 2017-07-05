@@ -29,7 +29,6 @@ class SeedCoursesOneTables extends Seeder
             'user_Id' => 1,
             'files' => [],
             'videos' => [],
-            'stars' => 0,
             'summary' => '经济全球化和网络化这股潮流正引发着一场全球性的新的技术革命。信息技术革命和信息化建设正在使资本经济转变为信息经济、知识经济并将迅速改变人们传统习惯和运作方式，加快了世界经济结构的调整与重组，推动人类全社会的进步 电子商务引发了企业经营战略、组织管理及文化冲突一系列的变革。',
             'content' => '
             <h4 style="color:red;">电子商务基础教程：第一课时</h4>
@@ -159,7 +158,6 @@ class SeedCoursesOneTables extends Seeder
             'user_Id' => 1,
             'files' => [],
             'videos' => [],
-            'stars' => 0,
             'summary' => '大家经常听说的ABC、B2B、B2C、C2C等究竟都代表什么意思？在这一节课程中我们将带大家学习这些常见的电子商务商业模式。',
             'content' => '
             <h4 style="color:red;">电子商务基础教程：第二课时</h4>
@@ -380,7 +378,6 @@ class SeedCoursesOneTables extends Seeder
             'user_Id' => 1,
             'files' => [],
             'videos' => [],
-            'stars' => 0,
             'summary' => '在电子商务环境下,上游供应商､下游分销商､物流运输商､客户和其他的交易市场等各个因素之间都构成了一个互动的多变的供应链网络,使整个供应链对市场需求做出快速反应,帮助供应链中的各层活动提高效率､降低成本,从而给供应链的内部各个结点企业带来了极大的经济效益｡',
             'content' => '
             <h4 style="color:red;">电子商务基础教程：第三课时</h4>
@@ -434,7 +431,6 @@ class SeedCoursesOneTables extends Seeder
             'user_Id' => 1,
             'files' => [],
             'videos' => [],
-            'stars' => 0,
             'summary' => '从电子商务管理的研究对象、职能、构成与定义来探讨电子商务组织的管理机制、组织结构、运营模式、运作流程，认清电子商务组织管理的内涵和规范要求。',
             'content' => '
             <h4 style="color:red;">电子商务基础教程：第四课时</h4>
@@ -508,7 +504,6 @@ class SeedCoursesOneTables extends Seeder
             'user_Id' => 1,
             'files' => [],
             'videos' => [],
-            'stars' => 0,
             'summary' => '从电子商务管理的研究对象、职能、构成与定义来探讨电子商务组织的管理机制、组织结构、运营模式、运作流程，认清电子商务组织管理的内涵和规范要求。',
             'content' => '
             <h4 style="color:red;">电子商务基础教程：第五课时</h4>
@@ -694,7 +689,6 @@ class SeedCoursesOneTables extends Seeder
             'user_Id' => 1,
             'files' => [],
             'videos' => [],
-            'stars' => 0,
             'summary' => '2012年，一系列电商促销活动引爆网购狂欢，年交易总额突破万亿元大关，占据社会零售商品总额的7%。在飞速发展的同时，电商自身存在的一系列问题，如假货水货、网络欺诈、发货迟缓等问题日益凸显，成为制约行业健康持续发展的障碍。',
             'content' => '
             <h4 style="color:red;">电子商务基础教程：第六课时</h4>
@@ -740,7 +734,6 @@ class SeedCoursesOneTables extends Seeder
             'user_Id' => 1,
             'files' => [],
             'videos' => [],
-            'stars' => 0,
             'summary' => '信息安全技术在电子商务系统中的作用非常重要，它守护着商家和客户的重要机密，维护着商务系统的信誉和财产，同时为服务方和被服务方提供极大的方便，因此，只有采取了必要和恰当的技术手段才能充分提高电子商务系统的可用性和可推广性。',
             'content' => '
             <h4 style="color:red;">电子商务基础教程：第七课时</h4>
@@ -845,7 +838,6 @@ class SeedCoursesOneTables extends Seeder
             'user_Id' => 1,
             'files' => [],
             'videos' => [],
-            'stars' => 0,
             'summary' => '2012年，一系列电商促销活动引爆网购狂欢，年交易总额突破万亿元大关，占据社会零售商品总额的7%。在飞速发展的同时，电商自身存在的一系列问题，如假货水货、网络欺诈、发货迟缓等问题日益凸显，成为制约行业健康持续发展的障碍。',
             'content' => '
             <h4 style="color:red;">电子商务基础教程：第八课时</h4>

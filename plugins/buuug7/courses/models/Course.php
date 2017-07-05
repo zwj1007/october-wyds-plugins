@@ -42,7 +42,6 @@ class Course extends Model
         'title' => 'required',
         'content' => 'required',
         'summary' => 'required',
-        'stars' => 'required',
     ];
 
 
@@ -54,7 +53,6 @@ class Course extends Model
         'title' => '标题',
         'content' => '内容',
         'summary' => '概述',
-        'stars' => '星级',
         'published_at' => '提交时间',
     ];
 

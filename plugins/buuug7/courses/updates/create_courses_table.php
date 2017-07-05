@@ -19,7 +19,6 @@ class CreateCoursesTable extends Migration
             $table->text('files');
             $table->text('videos');
             $table->integer('views')->unsigned()->nullable();
-            $table->smallInteger('stars')->default(0);
             $table->timestamp('published_at')->nullable();
             $table->boolean('published')->default(false);
             $table->boolean('featured')->default(false);
