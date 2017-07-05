@@ -146,8 +146,7 @@ class SeedCoursesOneTables extends Seeder
         ]);
         // attach categories
         $courseJiChu01->categories()->attach(2);
-        // attach tags
-        $courseJiChu01->tags()->attach(2);
+
 
 
         $courseJiChu02 = Course::create([
@@ -366,8 +365,6 @@ class SeedCoursesOneTables extends Seeder
         ]);
         // attach categories
         $courseJiChu02->categories()->attach(2);
-        // attach tags
-        $courseJiChu02->tags()->attach(2);
 
 
         $courseJiChu03 = Course::create([
@@ -419,8 +416,7 @@ class SeedCoursesOneTables extends Seeder
         ]);
         // attach categories
         $courseJiChu03->categories()->attach(2);
-        // attach tags
-        $courseJiChu03->tags()->attach(2);
+
 
 
         $courseJiChu04 = Course::create([
