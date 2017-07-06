@@ -4,7 +4,9 @@
     - create_posts_categories_table.php
 1.0.2:
     - update post model and category model
-1.0.3:
-    - add comments
-    - create_comments_table.php
-    - seed_all_tables.php
+    - create_comments_tables.php
+    - seed_posts_one_tables.php
+    - seed_posts_two_tables.php
+    - seed_posts_three_tables.php
+    - seed_posts_four_tables.php
+    - seed_posts_five_tables.php

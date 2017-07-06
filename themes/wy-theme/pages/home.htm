@@ -14,7 +14,6 @@ $this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(5);
 // 置顶 资讯
 $this['topPosts'] = \Buuug7\News\Models\Post::displayTop(5);
 
-
 // 电商动态
 $this['dianShangDongTai'] = \Buuug7\News\Models\Post::displayByCategory('dian-shang-dong-tai',4);
 
@@ -72,24 +71,24 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         <div class="col-sm-6 hidden-xs">
             <div class="row">
                 <div class="col-sm-6 m-b">
-                    <a class="news-wrap" href="/news/post/{{ featuredPosts[1].id }}">
-                        <img src="{{ featuredPosts[1].image|media }}" alt="{{ featuredPosts[1].title }}" class="img-responsive animate-scale-rotate--default">
+                    <a class="news-wrap" href="/news/post/{{ featuredPosts[0].id }}">
+                        <img src="{{ featuredPosts[0].image|media }}" alt="{{ featuredPosts[1].title }}" class="img-responsive animate-scale-rotate--default">
                         <p class="title">{{ featuredPosts[0].title }}</p>
                     </a>
                     <p style="width:5px;height: 5px"></p>
-                    <a class="news-wrap" href="/news/post/{{ featuredPosts[2].id }}">
-                        <img src="{{ featuredPosts[2].image|media }}" alt="{{ featuredPosts[2].title }}" class="img-responsive animate-scale-rotate--default">
+                    <a class="news-wrap" href="/news/post/{{ featuredPosts[1].id }}">
+                        <img src="{{ featuredPosts[1].image|media }}" alt="{{ featuredPosts[2].title }}" class="img-responsive animate-scale-rotate--default">
                         <p class="title">{{ featuredPosts[1].title }}</p>
                     </a>
                 </div>
                 <div class="col-sm-6">
-                    <a class="news-wrap animate-scale-rotate--default" href="/news/post/{{ featuredPosts[3].id }}">
-                        <img src="{{ featuredPosts[3].image|media }}" alt="{{ featuredPosts[3].title }}" class="img-responsive animate-scale-rotate--default">
+                    <a class="news-wrap animate-scale-rotate--default" href="/news/post/{{ featuredPosts[2].id }}">
+                        <img src="{{ featuredPosts[2].image|media }}" alt="{{ featuredPosts[2].title }}" class="img-responsive animate-scale-rotate--default">
                         <p class="title">{{ featuredPosts[2].title }}</p>
                     </a>
                     <p style="width:5px;height: 5px"></p>
-                    <a class="news-wrap animate-scale-rotate--default" href="/news/post/{{ featuredPosts[4].id }}">
-                        <img src="{{ featuredPosts[4].image|media }}" alt="{{ featuredPosts[4].title }}" class="img-responsive ">
+                    <a class="news-wrap animate-scale-rotate--default" href="/news/post/{{ featuredPosts[3].id }}">
+                        <img src="{{ featuredPosts[3].image|media }}" alt="{{ featuredPosts[3].title }}" class="img-responsive ">
                         <p class="title">{{ featuredPosts[3].title }}</p>
                     </a>
                 </div>
@@ -100,13 +99,13 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
     <!--信息公开-->
     <div class="headline">
-        <h2>信息公开</h2>
+        <a href="/news/categories/xin-xi-gong-kai" class="color-555"><h2>信息公开</h2></a>
     </div>
     <div class="row">
         {% for post in xinXiGongKai %}
         <div class="col-md-3 col-sm-6">
             <div class="m-b-md">
-                <a href="/news/post/{{ post.id }}" class="color-777">{{ post.title }}</a>
+                <a href="/news/post/{{ post.id }}" class="color-777">{{ str_limit(post.title,50,'...') }}</a>
                 <small class="color-888">[{{ post.published_at|date('m-d') }}]</small>
             </div>
         </div>
@@ -115,7 +114,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
     <!--通知公告-->
     <div class="headline">
-        <h2>通知公告</h2>
+        <a href="/news/categories/tong-zhi-gong-gao" class="color-555"><h2>通知公告</h2></a>
     </div>
     <div class="owl-carousel owl-carousel-v1">
         {% for post in tongZhiGongGao %}
@@ -129,15 +128,15 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <!--电商动态+政策解读-->
     <div class="tab-v1 m-t-md">
         <ul class="nav nav-tabs">
-            <li class="active"><a href="#tab2" data-toggle="tab" aria-expanded="true" style="font-size: 20px">电商动态</a>
+            <li class="active"><a href="#tab2" data-toggle="tab" aria-expanded="true" style="font-size: 20px">政策解读</a>
             </li>
-            <li class=""><a href="#tab3" data-toggle="tab" aria-expanded="false" style="font-size: 20px">政策解读</a>
+            <li class=""><a href="#tab3" data-toggle="tab" aria-expanded="false" style="font-size: 20px">电商动态</a>
             </li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane fade active in" id="tab2">
                 <div class="row">
-                    {% for post in dianShangDongTai %}
+                    {% for post in zhenCeJieDu %}
                     <div class="col-md-3 col-sm-4">
                         <div class="callout callout-v1">
                             <h4><a href="news/post/{{ post.id }}">{{ str_limit(post.title,40,'...') }}</a></h4>
@@ -149,7 +148,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             </div>
             <div class="tab-pane fade" id="tab3">
                 <div class="row">
-                    {% for post in zhenCeJieDu %}
+                    {% for post in dianShangDongTai %}
                     <div class="col-md-3 col-sm-4">
                         <div class="callout callout-v1">
                             <h4><a href="news/post/{{ post.id }}">{{ str_limit(post.title,40,'...') }}</a></h4>
@@ -165,7 +164,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <!--推荐课程-->
     {% if tagTuiJian %}
     <div class="headline">
-        <h2><a href="/courses/tag/tui-jian">推荐课程</a></h2>
+        <a href="/courses/tag/tui-jian" class="color-555"><h2>推荐课程</h2></a>
     </div>
     {% partial 'courses/block-v1' posts=tagTuiJian s_tag='推荐' %}
     {% endif %}
@@ -330,7 +329,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
     <!--网店-->
     <div class="headline">
-        <h2><a href="/shops">网店展示</a></h2>
+        <a href="/shops" class="color-555"><h2>网店展示</h2></a>
     </div>
     <div class="row">
         {% for shop in featuredShops %}
@@ -351,7 +350,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
     <!--便民服务-->
     <div class="headline ">
-        <h2><a href="/bian-min-fu-wu">便民服务</a></h2>
+        <a href="/bian-min-fu-wu" class="color-555"><h2>便民服务</h2></a>
     </div>
     <div class="row m-b">
         <div class="col-sm-6 col-md-3">
@@ -400,7 +399,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <!--知名企业-->
     {% if featuredCompanies %}
     <div class="headline">
-        <h2><a href="/ben-di-dian-shang">知名企业</a></h2>
+        <a href="/ben-di-dian-shang" class="color-555"><h2>知名企业</h2></a>
     </div>
     <div class="owl-carousel owl-carousel-v2 m-b-lg">
         {% for post in featuredCompanies %}
