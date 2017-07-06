@@ -119,7 +119,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <div class="owl-carousel owl-carousel-v1">
         {% for post in tongZhiGongGao %}
         <div class="callout callout-v1 wow slideInLeft ">
-            <h4><a href="/news/post/{{ post.id }}">{{ str_limit(post.title,40,'...') }}</a></h4>
+            <a href="/news/post/{{ post.id }}"><h4>{{ str_limit(post.title,40,'...') }}</h4></a>
             <p class="color-777">{{ str_limit(post.summary,45,'...') }}</p>
         </div>
         {% endfor %}
@@ -139,7 +139,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                     {% for post in zhenCeJieDu %}
                     <div class="col-md-3 col-sm-4">
                         <div class="callout callout-v1">
-                            <h4><a href="news/post/{{ post.id }}">{{ str_limit(post.title,40,'...') }}</a></h4>
+                            <a href="news/post/{{ post.id }}"><h4>{{ str_limit(post.title,40,'...') }}</h4></a>
                             <p class="color-777">{{ str_limit(post.summary,45,'...') }}</p>
                         </div>
                     </div>
@@ -151,7 +151,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                     {% for post in dianShangDongTai %}
                     <div class="col-md-3 col-sm-4">
                         <div class="callout callout-v1">
-                            <h4><a href="news/post/{{ post.id }}">{{ str_limit(post.title,40,'...') }}</a></h4>
+                            <a href="news/post/{{ post.id }}"><h4>{{ str_limit(post.title,40,'...') }}</h4></a>
                             <p class="color-777">{{ str_limit(post.summary,45,'...') }}</p>
                         </div>
                     </div>
