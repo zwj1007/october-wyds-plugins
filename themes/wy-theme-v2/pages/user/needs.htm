@@ -40,10 +40,10 @@ function onEnd(){
                 <td>{{ need.created_at|time_diff }}</td>
                 <td>
 
-                    <a href="/needs/need/{{ need.id }}" class="margin-right-20">
+                    <a href="/needs/need/{{ need.id }}" class="margin-right-5">
                         查看
                     </a>
-                    <a href="/needs/need/update/{{ need.id }}" class="margin-right-20">
+                    <a href="/needs/need/update/{{ need.id }}" class="margin-right-5">
                         编辑
                     </a>
                     <a data-request="onDeleteNeed" data-request-data="id:{{ need.id }}" data-request-confirm="你确定要删除?" class="margin-right-10">
