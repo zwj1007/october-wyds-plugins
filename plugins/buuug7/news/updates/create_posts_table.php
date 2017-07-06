@@ -15,7 +15,7 @@ class CreatePostsTable extends Migration
             $table->string('slug');
             $table->text('summary')->nullable();
             $table->longText('content')->nullable();
-            $table->text('image');
+            $table->text('image')->nullable();;
             $table->text('files');
             $table->text('images');
             $table->timestamp('published_at')->nullable();

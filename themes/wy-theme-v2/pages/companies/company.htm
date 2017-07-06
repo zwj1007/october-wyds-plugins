@@ -7,7 +7,7 @@ layout = 'default'
 <section class="user dp-see user-gs">
     <div class="content">
 
-        <div class=" see-left content-dptp">
+        <div class=" see-left content-dptp float-left">
             {% if company.checked %}
             <h4> {{ company.name }}</h4>
             {% if user.id == company.user.id %}
@@ -39,7 +39,7 @@ layout = 'default'
             {% endif %}
         </div>
 
-        <div class=" see-right">
+        <div class=" see-right float-right">
             {% if company.checked %}
             <div style="text-align: center">
                 <a style="color: #969696"
