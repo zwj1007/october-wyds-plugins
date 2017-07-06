@@ -15,9 +15,6 @@ fields:
         label: 描述
         disabled: false
         type: richeditor
-    featured:
-        label: 推荐
-        type: checkbox
     checked:
         label: 审核
         type: checkbox
@@ -29,3 +26,11 @@ fields:
             action: enable
             field: checked
             condition: checked
+    featured:
+        label: 推荐
+        type: checkbox
+        trigger:
+            action: enable
+            field: checked
+            condition: checked
+
