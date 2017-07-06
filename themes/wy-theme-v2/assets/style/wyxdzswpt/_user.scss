@@ -347,6 +347,9 @@
 
   //公司——查看
   .content .content-dptp {
+    h4 {
+      font-size: 15px !important;
+    }
     .gs-content {
       text-align: left;
       p {
@@ -368,6 +371,8 @@
       padding: 15px 0;
       strong {
         color: #2d2c89;
+        display: block;
+        margin-bottom: 15px;
       }
       p {
         line-height: 35px;
@@ -381,12 +386,11 @@
 
 //查看
 .gs-user-Su {
-  width: 660px;
+
 }
 
 //店铺
 .user-dp {
-
   .content {
     .btn-warning {
       color: #fff;
@@ -495,14 +499,13 @@
 
 //店铺——查看
 .dp-see {
-  border: 1px solid #CCCCCC;
-  margin-bottom: 20px;
   .content {
+    border: 1px solid #CCCCCC;
+    margin-bottom: 20px;
     padding: 20px 15px;
-    display: inline-block;
+    display: table;
     .see-left {
       width: 600px;
-      float: left;
       h4 {
         font-size: 22px;
         margin-left: 20px;
@@ -515,7 +518,6 @@
     }
     .see-right {
       width: 400px;
-      display: inline-block;
       margin-left: 55px;
       img {
         max-width: 100%;
@@ -528,7 +530,6 @@
           padding: 12px;
           letter-spacing: 4px;
           a {
-            padding: 11px 123px;
           }
         }
         .alert {
