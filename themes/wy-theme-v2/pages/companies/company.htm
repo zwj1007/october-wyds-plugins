@@ -5,9 +5,9 @@ layout = 'default'
 ==
 
 <section class="user dp-see user-gs">
-    <div class="content">
+    <div class="content clearfix">
 
-        <div class=" see-left content-dptp">
+        <div class=" see-left content-dptp float-left">
             {% if company.checked %}
             <h4> {{ company.name }}</h4>
             {% if user.id == company.user.id %}
@@ -18,14 +18,17 @@ layout = 'default'
                     <label>公司名称：</label>
                     <span> {{ company.name }}</span>
                 </p>
+
                 <p>
                     <label>公司电话：</label>
                     <span>{{ company.contact_phone }}</span>
                 </p>
+
                 <p>
                     <label>公司地址：</label>
                     <span>{{ company.address }}</span>
                 </p>
+
                 <p>
                     <label>公司简介：</label>
                     <span>{{ company.description }}</span>
@@ -39,7 +42,7 @@ layout = 'default'
             {% endif %}
         </div>
 
-        <div class=" see-right">
+        <div class=" see-right float-right">
             {% if company.checked %}
             <div style="text-align: center">
                 <a style="color: #969696"
@@ -75,6 +78,7 @@ layout = 'default'
                 </div>
                 <div class="callout callout-danger">
                     <h4>需要修复的问题</h4>
+
                     <p class="m-t">
                         {{ company.not_passed_message }}
                     </p>
