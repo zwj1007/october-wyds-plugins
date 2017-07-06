@@ -58,6 +58,12 @@ a:hover, a:link {
 .float-right {
   float: right; }
 
+/*.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}*/
 .clearfix:before, .clearfix:after {
   content: " ";
   display: table; }
@@ -410,13 +416,13 @@ header {
           padding: 10px 30px;
           color: #fff; }
         header nav ul li ul.ul-xl {
-          width: 124.44px;
+          width: 140px;
           display: none; }
           header nav ul li ul.ul-xl li {
             float: left;
             text-align: center;
             position: relative;
-            width: 124.44px;
+            width: 140px;
             background: #EC2E2C; }
           header nav ul li ul.ul-xl li:hover {
             background: #FF4400; }

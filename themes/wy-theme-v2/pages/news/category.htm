@@ -27,7 +27,8 @@ $this->page->title = $this->category->name;
     <li><a href="/">首页</a></li>
     <li class="active">通知公告</li>
 </ol>
-<section class="box wy-notice">
+<section class="box wy-notice clearfix">
+
     <div class="notice-left float-left">
         <div class="zxtw-title">
             最新图文
@@ -46,7 +47,6 @@ $this->page->title = $this->category->name;
 
         </ul>
     </div>
-
     <div class="notice-right float-right">
         <div class="tzgg-title">
             <i class="fa fa-folder-open-o"></i>
@@ -65,10 +65,11 @@ $this->page->title = $this->category->name;
         </ul>
         {{ posts.render|raw }}
     </div>
+
 </section>
 {% else %}
 <section class="box">
-    <div class="lanmu">
+    <div class="lanmu clearfix">
         <!--左侧-->
         <div class="float-left list-left " id="afix-lanmu">
             <div class="list-left1 kj-dszx">
@@ -101,13 +102,6 @@ $this->page->title = $this->category->name;
                 </ul>
             </div>
 
-            <div class="kjnav-ggo">
-                <span>广告</span>
-                <embed src="/themes/wy-theme-v2/assets/flash/2.swf" quality="high"
-                       pluginspage="#!"
-                       type="application/x-shockwave-flash" width="250" height="100" wmode="transparent"
-                       title="Adobe Flash Player">
-            </div>
         </div>
         <!--右侧-->
         <div class="float-right list-right">
