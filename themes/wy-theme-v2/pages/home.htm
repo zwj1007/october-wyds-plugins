@@ -112,7 +112,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 <!--政策解读-->
 <section class="box zcdx">
     <div class="hd"><i>政策解读</i><a href="/news/categories/zheng-ce-jie-du"><span>更多>></span></a></div>
-    <div class="dd">
+    <div class="dd clearfix">
 
         {% for chunk in zhenCeJieDu.chunk(5) %}
         <ul>
@@ -173,10 +173,10 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 <!--线上培训-->
 <section class="box xspx">
     <div class="hd"><i>线上培训</i><a href="/pei-xun"><span>更多>></span></a></div>
-    <div class="dd">
+    <div class="dd clearfix">
         {% if tagTuiJian.count %}
         <div class="float-left xspx-left">
-            <ul>
+            <ul class="clearfix">
                 {% for post in tagTuiJian %}
                 <li>
                     <a href="/courses/course/{{ post.id }}">
@@ -191,7 +191,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
         {% if courses.count %}
         <div class="float-right xspx-right">
-            <ul>
+            <ul class="clearfix">
                 {% for chunk in courses.chunk(8) %}
                 <li>
                     <ol>
@@ -214,7 +214,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             <a href="/gong-qiu-xin-xi"><span>更多>></span></a>
         </i>
     </div>
-    <div class="dd ">
+    <div class="dd clearfix">
         <ul class="float-left ul-left">
             <li><a href="/needs/tag/newly" class=""><i class="fa fa-cloud-upload"></i><span>最新发布</span></a></li>
             <li class="margin-top-10 ul-li1"><a href="/needs/tag/featured"><i class="fa fa-free-code-camp"></i><span>热门推荐</span></a>
@@ -276,7 +276,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 <section class="box bmfw">
     <div class="hd"><i>便民服务</i><a href="/bian-min-fu-wu"><span>更多>></span></a></div>
     <div class="dd ">
-        <ul>
+        <ul class="clearfix">
             <li>
                 <a href="/bian-min-fu-wu#wu-liu-pei-song"> <img src="/themes/wy-theme-v2/assets/images/fwsc/bm-1.jpg" alt=""></a>
                 <div class="info-box__content">
@@ -328,7 +328,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <div class="hd"><i>品牌企业</i><a href="/ben-di-dian-shang"><span>更多>></span></a></div>
     <div class="dd">
         {% for chunk in featuredCompanies.chunk(5) %}
-        <ul class="margin-bottom-10">
+        <ul class="margin-bottom-10 clearfix">
             {% for post in chunk %}
             <li class="margin-right-5">
                 <a href="/companies/company/{{ post.id }}"><img src="{{ post.getAvatarThumb(300) }}" alt=""></a>
