@@ -75,6 +75,29 @@ a:hover, a:link {
   float: right;
 }
 
+/*.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}*/
+
+//清除浮动
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+.clearfix {
+  @include clearfix;
+}
+
+
 .main {
   width: 1120px;
   margin: 0 auto;
