@@ -58,12 +58,6 @@ a:hover, a:link {
 .float-right {
   float: right; }
 
-.clearfix:before, .clearfix:after {
-  content: " ";
-  display: table; }
-.clearfix:after {
-  clear: both; }
-
 .main {
   width: 1120px;
   margin: 0 auto; }
@@ -775,7 +769,7 @@ header {
       padding-left: 15px;
       padding-right: 15px; }
   .bmfw .dd {
-    height: 234px;
+    height: 220px;
     padding-top: 15px; }
     .bmfw .dd ul li {
       float: left;
@@ -2875,7 +2869,8 @@ input {
 .dp-see .content {
   border: 1px solid #CCCCCC;
   margin-bottom: 20px;
-  padding: 20px 15px; }
+  padding: 20px 15px;
+  display: table; }
   .dp-see .content .see-left {
     width: 600px; }
     .dp-see .content .see-left h4 {
