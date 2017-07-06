@@ -43,7 +43,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <div class="dszx-left float-left ">
         {% if dianShangDongTai.count %}
         <div class="th">
-            <div class="hd">电商动态 <a href="/news/categories/dian-shang-dong-tai"><span>more+</span></a></div>
+            <div class="hd">电商动态 <a href="/news/categories/dian-shang-dong-tai"><span>更多>></span></a></div>
             <div class="dd td">
                 <ul>
                     {% for post in dianShangDongTai %}
@@ -59,7 +59,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
         {% if tongZhiGongGao.count %}
         <div class="th">
-            <div class="hd">通知公告 <a href="/news/categories/tong-zhi-gong-gao"><span>more+</span></a></div>
+            <div class="hd">通知公告 <a href="/news/categories/tong-zhi-gong-gao"><span>更多>></span></a></div>
             <div class="dd td1">
                 <ul>
                     {% for post in tongZhiGongGao %}
@@ -111,7 +111,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
 <!--政策解读-->
 <section class="box zcdx">
-    <div class="hd"><i>政策解读</i><a href="/news/categories/zheng-ce-jie-du"><span>more+</span></a></div>
+    <div class="hd"><i>政策解读</i><a href="/news/categories/zheng-ce-jie-du"><span>更多>></span></a></div>
     <div class="dd">
 
         {% for chunk in zhenCeJieDu.chunk(5) %}
@@ -146,7 +146,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
 <!--优秀网店-->
 <section class="box yxwd">
-    <div class="hd"><i>网店展示</i><a href="/shops"><span>more+</span></a></div>
+    <div class="hd"><i>网店展示</i><a href="/shops"><span>更多>></span></a></div>
     <div class="dd ">
         <div id="img-slider" class="zzsc margin-top-10 ">
             <button id="prev"><i class="fa fa-angle-double-left"></i></button>
@@ -172,7 +172,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
 <!--线上培训-->
 <section class="box xspx">
-    <div class="hd"><i>线上培训</i><a href="/pei-xun"><span>more+</span></a></div>
+    <div class="hd"><i>线上培训</i><a href="/pei-xun"><span>更多>></span></a></div>
     <div class="dd">
         {% if tagTuiJian.count %}
         <div class="float-left xspx-left">
@@ -211,7 +211,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 <section class="box fwsc fwsc1">
     <div class="hd">
         <i class="">服务市场
-            <a href="/gong-qiu-xin-xi"><span>more+</span></a>
+            <a href="/gong-qiu-xin-xi"><span>更多>></span></a>
         </i>
     </div>
     <div class="dd ">
@@ -274,7 +274,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
 <!--便民服务-->
 <section class="box bmfw">
-    <div class="hd"><i>便民服务</i><a href="/bian-min-fu-wu"><span>more+</span></a></div>
+    <div class="hd"><i>便民服务</i><a href="/bian-min-fu-wu"><span>更多>></span></a></div>
     <div class="dd ">
         <ul>
             <li>
@@ -325,7 +325,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
 <!--品牌企业-->
 <section class="box ppqy">
-    <div class="hd"><i>品牌企业</i><a href="/ben-di-dian-shang"><span>more+</span></a></div>
+    <div class="hd"><i>品牌企业</i><a href="/ben-di-dian-shang"><span>更多>></span></a></div>
     <div class="dd">
         {% for chunk in featuredCompanies.chunk(5) %}
         <ul class="margin-bottom-10">

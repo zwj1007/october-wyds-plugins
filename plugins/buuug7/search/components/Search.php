@@ -24,7 +24,9 @@ class Search extends ComponentBase
             'q' => 'required',
         ];
 
-        $validation = Validator::make($data, $rules);
+        $validation = Validator::make($data, $rules,[],[
+            'q' => '关键字',
+        ]);
         if ($validation->fails()) {
             throw new ValidationException($validation);
         } else {

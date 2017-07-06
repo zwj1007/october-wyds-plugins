@@ -56,6 +56,10 @@ secondaryTabs:
             label: 推荐
             type: checkbox
             span: auto
+            trigger:
+                action: enable
+                field: checked
+                condition: checked
 
 
 
