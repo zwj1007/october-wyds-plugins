@@ -14,23 +14,15 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
 </ol>
 <div class="box sjtj-list">
     <div class="jumbotron">
-        <!--     <div class="container">
-                 <h2>数据统计</h2>
-                 <p>
-                     大数据时代，精准定位
-                 </p>
-                 <p>
-                     <a href="xqfb.html">
-                         <button>添加数据</button>
-                     </a>
-                 </p>
-             </div>-->
     </div>
 </div>
 
-{% for chunk in statistics.chunk(2) %}
-{% for post in chunk %}
+
 <section class="sjtj-list clearfix ">
+
+    {% for chunk in statistics.chunk(2) %}
+    {% for post in chunk %}
+
     <div class="sjtj-pos1 {% if loop.index == 1 %} float-left {% else %} float-right {% endif %} margin-bottom-25">
         <header>
             <h3 class="margin-left-25">2016上半年代购统计</h3>
@@ -39,13 +31,17 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
             <canvas id="line-chart-{{ loop.index }}"></canvas>
         </div>
     </div>
-</section>
-{% endfor %}
-{% endfor %}
 
-{% for chunk in statistics.chunk(2) %}
-{% for post in chunk %}
+    {% endfor %}
+    {% endfor %}
+</section>
+
+
+
 <section class="sjtj-list clearfix ">
+
+    {% for chunk in statistics.chunk(2) %}
+    {% for post in chunk %}
     <div class="sjtj-pos1 {% if loop.index == 1 %} float-left {% else %} float-right {% endif %} margin-bottom-25">
         <header>
             <h3 class="margin-left-25">2016上半年代购统计</h3>
@@ -54,13 +50,18 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
             <canvas id="bar-chart-{{loop.index}}"></canvas>
         </div>
     </div>
-</section>
-{% endfor %}
-{% endfor %}
 
-{% for chunk in statistics.chunk(2) %}
-{% for post in chunk %}
+
+    {% endfor %}
+    {% endfor %}
+
+</section>
+
+
+
 <section class="sjtj-list clearfix ">
+    {% for chunk in statistics.chunk(2) %}
+    {% for post in chunk %}
     <div class="sjtj-pos1 {% if loop.index == 1 %} float-left {% else %} float-right {% endif %} margin-bottom-25">
         <header>
             <h3 class="margin-left-25">2016上半年代购统计</h3>
@@ -69,9 +70,10 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
             <canvas id="pie-chart-{{ loop.index }}"></canvas>
         </div>
     </div>
+    {% endfor %}
+    {% endfor %}
 </section>
-{% endfor %}
-{% endfor %}
+
 
 
 
