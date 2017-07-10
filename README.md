@@ -23,15 +23,28 @@ october plugins
     - install buuug7.news `php artisan plugin:refresh Buuug7.News`
     - install buuug7.courses `php artisan plugin:refresh Buuug7.Courses`
     - install buuug7.user `php artisan plugin:refresh Buuug7.User`
+    - install buuug7.statistics `php artisan plugin:refresh Buuug7.Statistics`
 + other settings
     - setting `locale=zh-cn timezone=PRC` in config/app.php
+    - when develop in local,make sure to add `APP_ENV=dev` for use dev config.
+    - if you want the latest Rainlab.User translate with zh-cn, you should copy [zh-cn](https://github.com/rainlab/user-plugin/blob/master/lang/zh-cn/lang.php) override default
+    - if you want the latest modules backend translate with zh-cn, also copy [zh-cn](https://github.com/octobercms/october/blob/develop/modules/backend/lang/zh-cn/lang.php) override default.
 
+#### some setting in phpstorm
+```
+arguments: --no-cache --update $FileName$:../css/$FileNameWithoutExtension$.css
+output paths to refresh: $FileNameWithoutExtension$.css:../css/$FileNameWithoutExtension$.css.map
+
+```
 
 #### Tips
 + 媒体中心上传文件不支持中文名称
 + 媒体中心上传图片不支持相同的名字,会覆盖原有同名的文件
 + 建议所有文章的特色图片的大小为800x400,也包括线上培训课程的特色图片
 + [user-plugin](https://github.com/rainlab/user-plugin)中汉化的我已提交其源码仓库,等待下次插件更新才会起作用,如果想提前使用,请使用[该链接](https://github.com/rainlab/user-plugin/blob/master/lang/zh-cn/lang.php)的文件覆盖源文件
+
+#### 其他
+[其他说明](https://github.com/gansutianqi/october-wyds-plugins/blob/master/docs/1.md)
 
 #### TODO
 + ~~用户中心~~
@@ -59,33 +72,7 @@ october plugins
 + ~~用户模块增加网店(淘宝店)~~
 + ~~重写了供求信息的~~
 + ~~添加主用户界面~~
-
-+ 给用户添加时间轴
-
 + ~~wy-theme2 新闻内容页右侧每个面板列表数量定位8个，下方在放置广告去掉，在添加其他内容，比如（推荐课程，推荐本地信息）~~
-+ 第二套主题wy-theme2 将**网络营销**名字变为其他，待定
-+ ~第二套主题用户中心我的发布中，操作一列在图标添加文字说明~
-+ ~电商学院从导航栏中去掉，第二套~
-
-
-
-#### 其他
-[其他说明](https://github.com/gansutianqi/october-wyds-plugins/blob/master/docs/1.md)
-
-#### Change
-+ 2017-05-27
-    + 简化新闻插件组件中部分功能
-    + 更新新闻插件中搜索处理器`scopeSearch`
-+ 2017-05-03
-    + 添加统计模型
-    + 更新前端视图
-+ 2017-04-28
-    + 完善前端视图
-    + 嵌套第二套主题
-+ 2017-04-25
-    + 完善课程模型
-+ 2017-04-19
-    + 完善新闻模型
-+ 2017-04-14
-    + 新添加了用户插件,扩展了用户profile,暂时添加了**phone,mobile,company,address**,以后有新需求在添加
-    + 新添了表`buuug7_user_users_courses`,用来关联用户跟课程,课程收藏
++ ~~第二套主题wy-theme2 将**网络营销**名字变为其他，待定~~
++ ~~第二套主题用户中心我的发布中，操作一列在图标添加文字说明~~
++ ~~电商学院从导航栏中去掉，第二套~~

@@ -105,7 +105,7 @@ class Company extends Model
     /**
      * Returns the public image file path to this user's avatar.
      */
-    public function getAvatarThumb($width = 200,$height=100, $options = null)
+    public function getAvatarThumb($width = 200, $height = 100, $options = null)
     {
         if (is_string($options)) {
             $options = ['default' => $options];
@@ -131,14 +131,24 @@ class Company extends Model
         $this->avatar && $this->avatar->delete();
     }
 
-    public function scopeDisplayChecked($query, $limit)
+    public function scopeDisplayChecked($query, $limit = null)
     {
-        return $query->isChecked()->orderBy('checked_at', 'desc')->limit($limit)->get();
+        if ($limit) {
+            return $query->isChecked()->orderBy('checked_at', 'desc')->limit($limit)->get();
+        } else {
+            return $query->isChecked()->orderBy('checked_at', 'desc')->get();
+        }
+
     }
 
-    public function scopeDisplayFeatured($query, $limit)
+    public function scopeDisplayFeatured($query, $limit = null)
     {
-        return $query->isChecked()->isFeatured()->orderBy('checked_at', 'desc')->limit($limit)->get();
+        if ($limit) {
+            return $query->isChecked()->isFeatured()->orderBy('checked_at', 'desc')->limit($limit)->get();
+        } else {
+            return $query->isChecked()->isFeatured()->orderBy('checked_at', 'desc')->get();
+        }
+
     }
 
     public static function findById($id)

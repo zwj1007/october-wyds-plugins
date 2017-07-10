@@ -47,7 +47,7 @@ class SeedAllTables extends Seeder
             'status' => 'passed',
             'user_id' => $user01->id,
             'checked' => true,
-            'featured' => true,
+            //'featured' => true,
             'checked_at' => Carbon::now(),
         ]);
         // insert need of this user
@@ -702,7 +702,7 @@ class SeedAllTables extends Seeder
             'status' => 'passed',
             'user_id' => $user05->id,
             'checked' => true,
-            'featured' => true,
+           // 'featured' => true,
             'checked_at' => Carbon::now(),
         ]);
 
@@ -781,7 +781,7 @@ class SeedAllTables extends Seeder
             'status' => 'passed',
             'user_id' => $user06->id,
             'checked' => true,
-            'featured' => true,
+           // 'featured' => true,
             'checked_at' => Carbon::now(),
         ]);
 
@@ -951,7 +951,7 @@ class SeedAllTables extends Seeder
             'status' => 'passed',
             'user_id' => $user09->id,
             'checked' => true,
-            'featured' => true,
+           // 'featured' => true,
             'checked_at' => Carbon::now(),
         ]);
 
