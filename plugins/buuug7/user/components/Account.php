@@ -200,7 +200,7 @@ class Account extends \RainLab\User\Components\Account
         }
     }
 
-    public function onBindPhone(){
+    public function onApprove(){
 
     }
 
