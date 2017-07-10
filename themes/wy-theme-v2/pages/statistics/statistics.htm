@@ -6,73 +6,49 @@ layout = 'default'
 ==
 function onStart(){
 $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
+
 }
 ==
+
 <ol class="box breadcrumb">
     <li><a href="index.html">首页</a></li>
     <li class="active">数据统计</li>
 </ol>
 <div class="box sjtj-list">
     <div class="jumbotron">
-        <!--     <div class="container">
-                 <h2>数据统计</h2>
-                 <p>
-                     大数据时代，精准定位
-                 </p>
-                 <p>
-                     <a href="xqfb.html">
-                         <button>添加数据</button>
-                     </a>
-                 </p>
-             </div>-->
     </div>
 </div>
 
 {% for chunk in statistics.chunk(2) %}
-{% for post in chunk %}
 <section class="sjtj-list clearfix ">
+{% for post in chunk %}
     <div class="sjtj-pos1 {% if loop.index == 1 %} float-left {% else %} float-right {% endif %} margin-bottom-25">
         <header>
-            <h3 class="margin-left-25">2016上半年代购统计</h3>
+            <h3 class="margin-left-25">{{ post.title }}</h3>
         </header>
         <div class="tbody">
             <canvas id="line-chart-{{ loop.index }}"></canvas>
         </div>
     </div>
-</section>
 {% endfor %}
+</section>
 {% endfor %}
 
 {% for chunk in statistics.chunk(2) %}
+<section class="sjtj-list clearfix">
 {% for post in chunk %}
-<section class="sjtj-list clearfix ">
+
     <div class="sjtj-pos1 {% if loop.index == 1 %} float-left {% else %} float-right {% endif %} margin-bottom-25">
         <header>
-            <h3 class="margin-left-25">2016上半年代购统计</h3>
+            <h3 class="margin-left-25">{{ post.title }}</h3>
         </header>
         <div class="tbody">
             <canvas id="bar-chart-{{loop.index}}"></canvas>
         </div>
     </div>
+{% endfor %}
 </section>
 {% endfor %}
-{% endfor %}
-
-{% for chunk in statistics.chunk(2) %}
-{% for post in chunk %}
-<section class="sjtj-list clearfix ">
-    <div class="sjtj-pos1 {% if loop.index == 1 %} float-left {% else %} float-right {% endif %} margin-bottom-25">
-        <header>
-            <h3 class="margin-left-25">2016上半年代购统计</h3>
-        </header>
-        <div class="tbody">
-            <canvas id="pie-chart-{{ loop.index }}"></canvas>
-        </div>
-    </div>
-</section>
-{% endfor %}
-{% endfor %}
-
 
 
 {% put scripts %}
@@ -114,23 +90,7 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
         options: lineChartOptions
     });
    {% endfor %}
-   
-   {% for post in statistics %}
-   // pie chart
-    var ctxPieChart = document.getElementById('pie-chart-{{loop.index}}');
-    var pieChartDate = {
-        datasets: [{
-            data: [{% for item in post.detail%}{{ item.price*item.quantity }},{% endfor %}],
-            backgroundColor: ["#3c8dbc", "#dd4b39", "#00a65a", "#00c0ef", "#f39c12", "#0073b7","#005875"],
-            label: 'My dataset' // for legend
-        }],
-        labels: [{% for item in post.detail %}"{{ item.name }}",{% endfor %}],
-    };
-    var pieChart = new Chart(ctxPieChart, {
-        type: 'pie',
-        data: pieChartDate
-    });
-    {% endfor %}
+
 
    {% for post in statistics %}
     // bar chart
