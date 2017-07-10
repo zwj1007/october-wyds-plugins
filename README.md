@@ -10,15 +10,16 @@ october plugins
 + run `php artisan october:update` the version to latest.
 + this plugin need `guzzlehttp/guzzle`package, install via composer `composer require guzzlehttp/guzzle`
 + remove some files,`rm .gitignore README.md .editorconfig .gitattributes`
++ install plugin before init repository
+    - install rainlab.user `php artisan plugin:install RainLab.User`
+    - install rainlab.pages `php artisan plugin:install RainLab.Pages`
+    - install netsti.uploader `php artisan plugin:install Netsti.Uploader`
 + clone this repository
     - in the project root directory
     - run `git init`
     - run `git remote add origin https://github.com/gansutianqi/october-wyds-plugins.git`
     - run `git pull origin master`
-+ install plugins
-    - install rainlab.user `php artisan plugin:install RainLab.User`
-    - install rainlab.pages `php artisan plugin:install RainLab.Pages`
-    - install netsti.uploader `php artisan plugin:install Netsti.Uploader`
++ install plugins after init repository
     - install buuug7.news `php artisan plugin:refresh Buuug7.News`
     - install buuug7.courses `php artisan plugin:refresh Buuug7.Courses`
     - install buuug7.user `php artisan plugin:refresh Buuug7.User`
