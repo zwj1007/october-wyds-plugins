@@ -1,0 +1,13 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: 名称
+        span: auto
+        placeholder: 省名称
+    code:
+        label: 代码
+        span: auto
+        placeholder: 行政区划代码

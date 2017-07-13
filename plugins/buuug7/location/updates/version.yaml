@@ -1,0 +1,4 @@
+1.0.1:
+    - First version of Location
+    - create_provinces_table.php
+    - create_cities_table.php
