@@ -2956,7 +2956,8 @@ input {
       text-decoration: none; }
 
 .user-collect .mainRight .content ul li {
-  line-height: 50px; }
+  line-height: 50px;
+  border-bottom: dotted 1px #CCCCCC; }
 .user-collect .mainRight .content ul span {
   margin-right: 40px;
   color: #0b7fc6; }
