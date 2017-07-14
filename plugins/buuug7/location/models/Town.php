@@ -3,16 +3,16 @@
 use Model;
 
 /**
- * City Model
+ * Town Model
  */
-class City extends Model
+class Town extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'buuug7_location_cities';
+    public $table = 'buuug7_location_towns';
 
     /**
      * @var array Guarded fields
@@ -23,7 +23,7 @@ class City extends Model
      * @var array Fillable fields
      */
     protected $fillable = [
-        'name', 'code'
+      'name', 'code'
     ];
 
     public $rules = [
@@ -46,21 +46,17 @@ class City extends Model
      * @var array Relations
      */
     public $belongsTo = [
-        'province' => ['Buuug7\Location\Models\Province'],
-    ];
-    public $hasMany = [
-      'county' => ['Buuug7\Location\Models\County'], 
+      'county' => ['Buuug7\Location\Models\County'],
     ];
 
     protected static $nameList = [];
 
-    public static function getNameList($provinceId)
+    public static function getNameList($countyId)
     {
-        if (isset(self::$nameList[$provinceId])) {
-            return self::$nameList[$provinceId];
+        if (isset(self::$nameList[$countyId])) {
+            return self::$nameList[$countyId];
         }
-        return self::$nameList[$provinceId] = self::whereProvinceId($provinceId)->lists('name', 'id');
+        return self::$nameList[$countyId] = self::whereCountyId($countyId)->lists('name', 'id');
     }
-
 
 }

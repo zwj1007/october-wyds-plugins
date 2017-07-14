@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: 位置
+name: 省市
 
 # Model Form Field configuration
 form: $/buuug7/location/models/province/fields.yaml
@@ -12,20 +12,20 @@ form: $/buuug7/location/models/province/fields.yaml
 modelClass: Buuug7\Location\Models\Province
 
 # Default redirect location
-defaultRedirect: buuug7/location/locations
+defaultRedirect: buuug7/location/provincesandcities
 
 # Create page
 create:
-    title: Create Location
-    redirect: buuug7/location/locations/update/:id
-    redirectClose: buuug7/location/locations
+    title: 创建省市
+    redirect: buuug7/location/provincesandcities/update/:id
+    redirectClose: buuug7/location/provincesandcities
 
 # Update page
 update:
-    title: Edit Location
-    redirect: buuug7/location/locations
-    redirectClose: buuug7/location/locations
+    title: 编辑省市
+    redirect: buuug7/location/provincesandcities
+    redirectClose: buuug7/location/provincesandcities
 
 # Preview page
 preview:
-    title: Preview Location
+    title: 预览省市

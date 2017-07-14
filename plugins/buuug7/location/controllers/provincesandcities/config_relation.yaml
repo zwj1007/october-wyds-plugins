@@ -8,4 +8,4 @@ cities:
         form: $/buuug7/location/models/city/fields.yaml
     view:
         list: $/buuug7/location/models/city/columns.yaml
-        toolbarPartial: $/buuug7/location/controllers/locations/_relation_toolbar.htm
+        toolbarPartial: $/buuug7/location/controllers/provincesandcities/_relation_toolbar.htm

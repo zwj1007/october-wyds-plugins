@@ -32,7 +32,7 @@ class Plugin extends PluginBase
     public function registerPermissions()
     {
         return [
-            'buuug7.location.access_permission' => [
+            'buuug7.location.access_settings' => [
                 'tab' => 'B7_Location',
                 'label' => '管理本地位置'
             ],
@@ -43,15 +43,46 @@ class Plugin extends PluginBase
     {
         return [
             'location' => [
-                'label' => '位置信息',
+                'label' => '本地位置',
                 'description' => '管理位置信息',
                 'category' => '本地位置',
                 'icon' => 'icon-globe',
-                'url' => Backend::url('buuug7/location/locations'),
+                'url' => Backend::url('buuug7/location/provincesandcities'),
                 'order' => 500,
                 'permissions' => ['buuug7.location.access_settings'],
                 'keywords' => 'province, city',
+
+                'sideMenu' => [
+                  'provincesandcities' => [
+                    'label' => '省市',
+                    'icon' => 'icon-list-ul',
+                    'url' => Backend::url('buuug7/location/provincesandcities '),
+                    'permissions' => ['buuug7.location.access_settings'],
+                  ],
+                ],
             ],
         ];
+    }
+
+    public function registerNavigation(){
+      return [
+        'location' => [
+          'sideMenu' => [
+            'provincesandcities' => [
+              'label' => '省市',
+              'icon' => 'icon-list-ul',
+              'url' => Backend::url('buuug7/location/provincesandcities '),
+              'permissions' => ['buuug7.location.access_settings'],
+            ],
+
+            'countiesandtowns' => [
+              'label' => '县乡',
+              'icon' => 'icon-list-ul',
+              'url' => Backend::url('buuug7/location/countiesandtowns '),
+              'permissions' => ['buuug7.location.access_settings'],
+            ],
+          ],
+        ],
+      ];
     }
 }

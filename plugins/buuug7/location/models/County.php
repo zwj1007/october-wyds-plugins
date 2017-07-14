@@ -3,16 +3,16 @@
 use Model;
 
 /**
- * City Model
+ * County Model
  */
-class City extends Model
+class County extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'buuug7_location_cities';
+    public $table = 'buuug7_location_counties';
 
     /**
      * @var array Guarded fields
@@ -23,12 +23,12 @@ class City extends Model
      * @var array Fillable fields
      */
     protected $fillable = [
-        'name', 'code'
+      'name', 'code'
     ];
 
     public $rules = [
         'name' => 'required',
-        'code' => 'unique:buuug7_location_cities',
+        'code' => 'unique:buuug7_location_counties',
     ];
 
     public $customMessages = [
@@ -46,21 +46,26 @@ class City extends Model
      * @var array Relations
      */
     public $belongsTo = [
-        'province' => ['Buuug7\Location\Models\Province'],
-    ];
-    public $hasMany = [
-      'county' => ['Buuug7\Location\Models\County'], 
+      'city' =>['Buuug7\Location\Models\City'] ,
     ];
 
     protected static $nameList = [];
 
-    public static function getNameList($provinceId)
-    {
-        if (isset(self::$nameList[$provinceId])) {
-            return self::$nameList[$provinceId];
-        }
-        return self::$nameList[$provinceId] = self::whereProvinceId($provinceId)->lists('name', 'id');
+    public static function getNameList($cityId){
+      if (isset(self::$nameList[$cityId])){
+        return self::$nameList[$cityId];
+      }
+      return self::$nameList[$cityId] = self::whereCityId($cityId)->lists('name', 'id');
     }
 
+    public function beforeValidate(){
+        $city_id=input('city_id');
+        $this->city_id=$city_id;
+        //trace_log($data);
+    }
 
+    public function beforeCreate(){
+        $data=input();
+        trace_log($data);
+    }
 }

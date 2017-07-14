@@ -1,12 +1,14 @@
 <?php namespace Buuug7\Location\Controllers;
 
+use Backend\Facades\Backend;
 use BackendMenu;
 use Backend\Classes\Controller;
+use Illuminate\Support\Facades\Redirect;
 
 /**
  * Locations Back-end Controller
  */
-class Locations extends Controller
+class ProvincesAndCities extends Controller
 {
     public $implement = [
         'Backend.Behaviors.FormController',
@@ -24,11 +26,14 @@ class Locations extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Buuug7.Location', 'location', 'locations');
+        BackendMenu::setContext('Buuug7.Location', 'location', 'provincesandcities');
     }
 
     public function onAddCounty()
     {
-        //TODO
+        trace_log(post('checked'));
+        $checkedIds = post('checked');
+        $url=Backend::url('buuug7/location/countiesandtowns/create?city_id='.$checkedIds[0]);
+        return Redirect::to($url);
     }
 }

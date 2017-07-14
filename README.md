@@ -24,6 +24,7 @@ october plugins
     - install buuug7.courses `php artisan plugin:refresh Buuug7.Courses`
     - install buuug7.user `php artisan plugin:refresh Buuug7.User`
     - install buuug7.statistics `php artisan plugin:refresh Buuug7.Statistics`
+    - install buuug7.location `php artisan plugin:refresh Buuug7.Location`
 + other settings
     - setting `locale=zh-cn timezone=PRC` in config/app.php
     - when develop in local,make sure to add `APP_ENV=dev` for use dev config.
@@ -67,7 +68,7 @@ output paths to refresh: $FileNameWithoutExtension$.css:../css/$FileNameWithoutE
 + ~~便民服务~~
     - 健康医疗 指向 百度或者阿里的医疗站点
     - 生活缴费 修改为 生活服务
-    - 家政服务 修改为 供求市场 
+    - 家政服务 修改为 供求市场
 + ~~需求发布模型中去掉联系手机号码~~
 + ~~用户模块增加网店(淘宝店)~~
 + ~~重写了供求信息的~~

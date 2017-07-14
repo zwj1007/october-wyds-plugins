@@ -1,0 +1,15 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: 名称
+        searchable: true
+    code:
+        label: 代码
+        searchable: true
+    city_id:
+        label: 城市
+        relation: city
+        select: name
