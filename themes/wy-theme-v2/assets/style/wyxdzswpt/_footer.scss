@@ -6,32 +6,39 @@
   font-size: 14px;
   background-color: $footer-background;
   color: $nav-color;
-  ul {
-    width: $page-width;
-    height: 220px;
-    overflow: hidden;
+  .footer-content {
+    width: 1120px;
+    height: 295px;
     margin: 0 auto;
-    li {
-      margin: 40px 0 0 0;
-      float: left;
-      text-align: center;
-      width: $page-width/3;
-      img.footer1-img {
-        width: 180px;
-      }
-      img.footer1-wxH {
-        width: 130px;
+    background-color: #222C38;
+    ul {
+      width: $page-width;
+      height: 220px;
+      overflow: hidden;
+      margin: 0 auto;
+      li {
+        margin: 40px 0 0 0;
+        float: left;
+        text-align: center;
+        width: $page-width/3;
+        img.footer1-img {
+          width: 180px;
+        }
+        img.footer1-wxH {
+          width: 130px;
 
+        }
+      }
+      li.footer3 {
+        font-size: 22px;
+        color: #758995;
       }
     }
-    li.footer3 {
-      font-size: 22px;
-      color: #758995;
+    .footer-bottom {
+      margin-top: 0;
     }
   }
-  .footer-bottom {
-    margin-top: 0;
-  }
+
 }
 
 .footer1 {

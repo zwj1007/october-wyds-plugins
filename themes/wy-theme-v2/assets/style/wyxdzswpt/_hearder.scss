@@ -1,19 +1,15 @@
 @charset "UTF-8";
 header {
+  width: 100%;
+  display: inline-table ;
   box-shadow: 1px 1px 1px 1px #CCCCCC;
   .topbar {
-    width: 100%;
-    height: 36px;
-    line-height: 36px;
     box-shadow: 1px 1px 1px rgba(204, 204, 204, 0.43);
-    //background: rgba(231, 231, 231, 0.28);
-    // background: #474747;
     .inner {
-      width: 1000px;
+      width: 1080px;
       height: 36px;
-      margin-left: auto;
-      margin-right: auto;
-      //font-size: 16px;
+      margin: 0 auto;
+      line-height: 36px;
       .left {
         color: #A0A1A2;
         height: 36px;
@@ -137,9 +133,7 @@ header {
     font-size: 16px;
     position: relative;
     z-index: 999;
-    //overflow: hidden;
     background-color: $nav-background;
-    //color: $nav-color;
     ul {
       width: $page-width;
       overflow: hidden;
@@ -160,7 +154,7 @@ header {
             float: left;
             text-align: center;
             position: relative;
-            width:140px;
+            width: 140px;
             background: $nav-hover;
 
           }

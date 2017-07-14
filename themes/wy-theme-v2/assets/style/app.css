@@ -299,17 +299,16 @@ table th.oc-cell-thick-border {
   border-width: 2px; }
 
 header {
+  width: 100%;
+  display: inline-table;
   box-shadow: 1px 1px 1px 1px #CCCCCC; }
   header .topbar {
-    width: 100%;
-    height: 36px;
-    line-height: 36px;
     box-shadow: 1px 1px 1px rgba(204, 204, 204, 0.43); }
     header .topbar .inner {
-      width: 1000px;
+      width: 1080px;
       height: 36px;
-      margin-left: auto;
-      margin-right: auto; }
+      margin: 0 auto;
+      line-height: 36px; }
       header .topbar .inner .left {
         color: #A0A1A2;
         height: 36px;
@@ -933,25 +932,30 @@ header {
   font-size: 14px;
   background-color: #222C38;
   color: #fff; }
-  .footer ul {
+  .footer .footer-content {
     width: 1120px;
-    height: 220px;
-    overflow: hidden;
-    margin: 0 auto; }
-    .footer ul li {
-      margin: 40px 0 0 0;
-      float: left;
-      text-align: center;
-      width: 373.33333px; }
-      .footer ul li img.footer1-img {
-        width: 180px; }
-      .footer ul li img.footer1-wxH {
-        width: 130px; }
-    .footer ul li.footer3 {
-      font-size: 22px;
-      color: #758995; }
-  .footer .footer-bottom {
-    margin-top: 0; }
+    height: 295px;
+    margin: 0 auto;
+    background-color: #222C38; }
+    .footer .footer-content ul {
+      width: 1120px;
+      height: 220px;
+      overflow: hidden;
+      margin: 0 auto; }
+      .footer .footer-content ul li {
+        margin: 40px 0 0 0;
+        float: left;
+        text-align: center;
+        width: 373.33333px; }
+        .footer .footer-content ul li img.footer1-img {
+          width: 180px; }
+        .footer .footer-content ul li img.footer1-wxH {
+          width: 130px; }
+      .footer .footer-content ul li.footer3 {
+        font-size: 22px;
+        color: #758995; }
+    .footer .footer-content .footer-bottom {
+      margin-top: 0; }
 
 .footer1 {
   padding-top: 40px;
@@ -3066,8 +3070,7 @@ input {
 .xqfb-list1 {
   padding-top: 0; }
   .xqfb-list1 .content-holder {
-    background: 0;
-    height: 100%; }
+    background: 0; }
     .xqfb-list1 .content-holder .content {
       width: 1120px !important;
       height: auto; }
