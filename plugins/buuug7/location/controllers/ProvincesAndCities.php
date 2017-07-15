@@ -31,9 +31,9 @@ class ProvincesAndCities extends Controller
 
     public function onAddCounty()
     {
-        trace_log(post('checked'));
-        $checkedIds = post('checked');
-        $url=Backend::url('buuug7/location/countiesandtowns/create?city_id='.$checkedIds[0]);
+        // only for first selected item
+        $checkedIds = post('checked')[0];
+        $url=Backend::url('buuug7/location/countiesandtowns/create?city_id='.$checkedIds);
         return Redirect::to($url);
     }
 }

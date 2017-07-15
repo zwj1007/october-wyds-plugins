@@ -25,8 +25,4 @@ class CountiesAndTowns extends Controller
         BackendMenu::setContext('Buuug7.Location', 'location', 'countiesandtowns');
     }
 
-    public function sscreate(){
-      $data=input('id');
-      trace_log($data);
-    }
 }

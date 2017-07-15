@@ -64,8 +64,12 @@ class County extends Model
         //trace_log($data);
     }
 
-    public function beforeCreate(){
-        $data=input();
-        trace_log($data);
+    public function beforeSave(){
+        $city_id=input('city_id');
+        if($city_id){
+            $this->city_id = $city_id;
+        }
     }
+
+
 }

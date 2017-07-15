@@ -11,3 +11,8 @@ fields:
         label: 代码
         span: auto
         placeholder: 行政区划代码
+    city_id:
+        label: 城市
+        span: auto
+        placeholder: 所属城市
+        readOnly: true
