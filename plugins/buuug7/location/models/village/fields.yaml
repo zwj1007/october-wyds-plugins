@@ -11,7 +11,4 @@ fields:
         label: 代码
         span: auto
         placeholder: 行政区划代码
-    town_id:
-        label: 乡镇
-        readOnly: true
 
