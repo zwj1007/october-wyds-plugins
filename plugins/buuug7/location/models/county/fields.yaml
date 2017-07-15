@@ -6,13 +6,8 @@ fields:
     name:
         label: 名称
         span: auto
-        placeholder: 县城名称
+        placeholder: 县区名称
     code:
         label: 代码
         span: auto
         placeholder: 行政区划代码
-    city_id:
-        label: 城市
-        span: auto
-        placeholder: 所属城市
-        readOnly: true

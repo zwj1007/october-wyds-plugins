@@ -3,16 +3,16 @@
 use Model;
 
 /**
- * City Model
+ * Village Model
  */
-class City extends Model
+class Village extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'buuug7_location_cities';
+    public $table = 'buuug7_location_villages';
 
     /**
      * @var array Guarded fields
@@ -23,13 +23,17 @@ class City extends Model
      * @var array Fillable fields
      */
     protected $fillable = [
-        'name', 'code'
+        'name', 'code','town_id'
     ];
 
+    /**
+     * Validation
+     */
     public $rules = [
         'name' => 'required',
-        'code' => 'unique:buuug7_location_cities',
+        'code' => 'required|unique:buuug7_location_villages',
     ];
+
 
     public $customMessages = [
         'required' => '请填写 :attribute ',
@@ -42,25 +46,29 @@ class City extends Model
 
     public $timestamps = false;
 
+
     /**
      * @var array Relations
      */
+    public $hasOne = [];
+    public $hasMany = [];
     public $belongsTo = [
-        'province' => ['Buuug7\Location\Models\Province'],
+        'town' => ['Buuug7\Location\Models\Town'],
     ];
-    public $hasMany = [
-      'county' => ['Buuug7\Location\Models\County'], 
-    ];
+    public $belongsToMany = [];
+    public $morphTo = [];
+    public $morphOne = [];
+    public $morphMany = [];
+    public $attachOne = [];
+    public $attachMany = [];
 
     protected static $nameList = [];
 
-    public static function getNameList($provinceId)
+    public static function getNameList($townId)
     {
-        if (isset(self::$nameList[$provinceId])) {
-            return self::$nameList[$provinceId];
+        if (isset(self::$nameList[$townId])) {
+            return self::$nameList[$townId];
         }
-        return self::$nameList[$provinceId] = self::whereProvinceId($provinceId)->lists('name', 'id');
+        return self::$nameList[$townId] = self::whereTownId($townId)->lists('name', 'id');
     }
-
-
 }

@@ -6,8 +6,12 @@ fields:
     name:
         label: 名称
         span: auto
-        placeholder: 乡村名称
+        placeholder: 乡镇名称
     code:
         label: 代码
         span: auto
         placeholder: 行政区划代码
+    villages:
+        label: 村庄
+        type: partial
+        path: field_villages

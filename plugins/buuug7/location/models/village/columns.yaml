@@ -7,4 +7,5 @@ columns:
         label: 名称
         searchable: true
     code:
-        label: 行政区划代码
+        label: 代码
+        searchable: true

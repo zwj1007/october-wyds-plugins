@@ -1,6 +1,6 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('buuug7/location/countiesandtowns') ?>">Counties And Towns</a></li>
+        <li><a href="<?= Backend::url('buuug7/location/locations') ?>">Locations</a></li>
         <li><?= e($this->pageTitle) ?></li>
     </ul>
 <?php Block::endPut() ?>
@@ -9,8 +9,14 @@
 
     <?= Form::open(['class' => 'layout']) ?>
 
-        <div class="layout-row">
+        <div class="layout-row min-size">
             <?= $this->formRender() ?>
+        </div>
+
+        <div class="layout-row">
+            <div class="relation-inset">
+                <?= $this->relationRender('towns') ?>
+            </div>
         </div>
 
         <div class="form-buttons">
@@ -20,7 +26,7 @@
                     data-request="onSave"
                     data-request-data="redirect:0"
                     data-hotkey="ctrl+s, cmd+s"
-                    data-load-indicator="Saving CountiesAndTown..."
+                    data-load-indicator="Saving location..."
                     class="btn btn-primary">
                     <u>S</u>ave
                 </button>
@@ -29,7 +35,7 @@
                     data-request="onSave"
                     data-request-data="close:1"
                     data-hotkey="ctrl+enter, cmd+enter"
-                    data-load-indicator="Saving CountiesAndTown..."
+                    data-load-indicator="Saving location..."
                     class="btn btn-default">
                     Save and Close
                 </button>
@@ -37,11 +43,11 @@
                     type="button"
                     class="oc-icon-trash-o btn-icon danger pull-right"
                     data-request="onDelete"
-                    data-load-indicator="Deleting CountiesAndTown..."
-                    data-request-confirm="Delete this countiesandtown?">
+                    data-load-indicator="Deleting location..."
+                    data-request-confirm="Delete this location?">
                 </button>
                 <span class="btn-text">
-                    or <a href="<?= Backend::url('buuug7/location/countiesandtowns') ?>">Cancel</a>
+                    or <a href="<?= Backend::url('buuug7/location/locations') ?>">Cancel</a>
                 </span>
             </div>
         </div>
@@ -51,6 +57,6 @@
 <?php else: ?>
 
     <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('buuug7/location/countiesandtowns') ?>" class="btn btn-default">Return to counties and towns list</a></p>
+    <p><a href="<?= Backend::url('buuug7/location/locations') ?>" class="btn btn-default">Return to locations list</a></p>
 
 <?php endif ?>

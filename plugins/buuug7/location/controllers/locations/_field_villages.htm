@@ -1,0 +1,16 @@
+<div id="villageList">
+    <?= $this->makePartial('village_list',['villages' => $model->villages]) ?>
+</div>
+
+<p>
+    <a
+            href="javascript:;"
+            class="btn btn-secondary oc-icon-plus"
+            data-control="popup"
+            data-handler="onLoadCreateVillageForm"
+            data-request-data="town_id:<?= $model->id ?>"
+            data-size="large"
+    >
+        添加村庄
+    </a>
+</p>

@@ -1,0 +1,11 @@
+#
+# Relation Behavior Config
+#'
+
+towns:
+    label: 乡镇
+    manage:
+        form: $/buuug7/location/models/town/fields.yaml
+    view:
+        list: $/buuug7/location/models/town/columns.yaml
+        toolbarButtons: create|delete

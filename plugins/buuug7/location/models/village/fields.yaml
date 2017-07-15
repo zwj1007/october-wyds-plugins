@@ -6,8 +6,12 @@ fields:
     name:
         label: 名称
         span: auto
-        placeholder: 市区名称
+        placeholder: 村名称
     code:
         label: 代码
         span: auto
         placeholder: 行政区划代码
+    town_id:
+        label: 乡镇
+        readOnly: true
+

@@ -23,13 +23,17 @@ class County extends Model
      * @var array Fillable fields
      */
     protected $fillable = [
-      'name', 'code'
+        'name', 'code'
     ];
 
+    /**
+     * Validation
+     */
     public $rules = [
         'name' => 'required',
-        'code' => 'unique:buuug7_location_counties',
+        'code' => 'required|unique:buuug7_location_counties',
     ];
+
 
     public $customMessages = [
         'required' => '请填写 :attribute ',
@@ -45,31 +49,40 @@ class County extends Model
     /**
      * @var array Relations
      */
-    public $belongsTo = [
-      'city' =>['Buuug7\Location\Models\City'] ,
+    public $hasOne = [];
+    public $hasMany = [
+        'towns' => ['Buuug7\Location\Models\Town'],
     ];
+    public $hasManyThrough = [
+        'villages' => [
+            'Buuug7\Location\Models\Village',
+            'through' => 'Buuug7\Location\Models\Town',
+        ],
+    ];
+    public $belongsTo = [];
+    public $belongsToMany = [];
+    public $morphTo = [];
+    public $morphOne = [];
+    public $morphMany = [];
+    public $attachOne = [];
+    public $attachMany = [];
 
-    protected static $nameList = [];
 
-    public static function getNameList($cityId){
-      if (isset(self::$nameList[$cityId])){
-        return self::$nameList[$cityId];
-      }
-      return self::$nameList[$cityId] = self::whereCityId($cityId)->lists('name', 'id');
-    }
+    protected static $nameList = null;
 
-    public function beforeValidate(){
-        $city_id=input('city_id');
-        $this->city_id=$city_id;
-        //trace_log($data);
-    }
-
-    public function beforeSave(){
-        $city_id=input('city_id');
-        if($city_id){
-            $this->city_id = $city_id;
+    public static function getNameList()
+    {
+        if (self::$nameList) {
+            return self::$nameList;
         }
+        return self::$nameList = self::orderBy('name', 'desc')->lists('name', 'id');
     }
 
-
+    public function afterDelete()
+    {
+        // delete villages of county
+        $this->villages()->delete();
+        // delete towns of county
+        $this->towns()->delete();
+    }
 }

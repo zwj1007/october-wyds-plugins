@@ -1,0 +1,33 @@
+<?php if (count($villages)) : ?>
+<div class="list-preview list-flush">
+    <div class="control-list">
+        <table class="table data" data-control="rowLink">
+            <thead>
+            <tr>
+                <th><span>名称</span></th>
+                <th><span>代码</span></th>
+                <th style="width:10%"><span></span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($villages as $village) : ?>
+                <tr>
+                    <td><?= e($village->name) ?></td>
+                    <td><?= e($village->code ) ?></td>
+                    <td class="nolink text-right">
+                        <a
+                                href="javascript:;"
+                                data-request="onDeleteVillage"
+                                data-request-data="record_id: '<?= $village->id ?>',town_id:'<?=$village->town_id ?>' "
+                                data-request-confirm="你确定要删除？"
+                                class="oc-icon-remove"
+                                data-toggle="tooltip"
+                                title="移除"></a>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+<?php endif ?>

@@ -23,13 +23,17 @@ class Town extends Model
      * @var array Fillable fields
      */
     protected $fillable = [
-      'name', 'code'
+        'name', 'code',
     ];
 
+    /**
+     * Validation
+     */
     public $rules = [
         'name' => 'required',
-        'code' => 'unique:buuug7_location_cities',
+        'code' => 'required|unique:buuug7_location_towns'
     ];
+
 
     public $customMessages = [
         'required' => '请填写 :attribute ',
@@ -42,12 +46,23 @@ class Town extends Model
 
     public $timestamps = false;
 
+
     /**
      * @var array Relations
      */
-    public $belongsTo = [
-      'county' => ['Buuug7\Location\Models\County'],
+    public $hasOne = [];
+    public $hasMany = [
+        'villages' => ['Buuug7\Location\Models\Village'],
     ];
+    public $belongsTo = [
+        'county' => ['Buuug7\Location\Models\County'],
+    ];
+    public $belongsToMany = [];
+    public $morphTo = [];
+    public $morphOne = [];
+    public $morphMany = [];
+    public $attachOne = [];
+    public $attachMany = [];
 
     protected static $nameList = [];
 
@@ -59,4 +74,8 @@ class Town extends Model
         return self::$nameList[$countyId] = self::whereCountyId($countyId)->lists('name', 'id');
     }
 
+    public function afterDelete()
+    {
+        $this->villages()->delete();
+    }
 }

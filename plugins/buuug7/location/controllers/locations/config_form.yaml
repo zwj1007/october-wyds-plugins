@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Location
+
+# Model Form Field configuration
+form: $/buuug7/location/models/county/fields.yaml
+
+# Model Class name
+modelClass: Buuug7\Location\Models\County
+
+# Default redirect location
+defaultRedirect: buuug7/location/locations
+
+# Create page
+create:
+    title: Create Location
+    redirect: buuug7/location/locations/update/:id
+    redirectClose: buuug7/location/locations
+
+# Update page
+update:
+    title: Edit Location
+    redirect: buuug7/location/locations
+    redirectClose: buuug7/location/locations
+
+# Preview page
+preview:
+    title: Preview Location

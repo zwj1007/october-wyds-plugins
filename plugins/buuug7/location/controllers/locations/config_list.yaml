@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/buuug7/location/models/County/columns.yaml
+list: $/buuug7/location/models/county/columns.yaml
 
 # Model Class name
 modelClass: Buuug7\Location\Models\County
 
 # List Title
-title: Manage Counties And Towns
+title: Manage Locations
 
 # Link URL for each record
-recordUrl: buuug7/location/countiesandtowns/update/:id
+recordUrl: buuug7/location/locations/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

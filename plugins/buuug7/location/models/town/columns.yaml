@@ -3,6 +3,9 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
+    name:
+        label: 名称
+        searchable: true
+    code:
+        label: 代码
         searchable: true

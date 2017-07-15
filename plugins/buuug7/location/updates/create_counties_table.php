@@ -11,7 +11,6 @@ class CreateCountiesTable extends Migration
         Schema::create('buuug7_location_counties', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('city_id')->unsigned()->index();
             $table->string('name')->index();
             $table->string('code');
         });
