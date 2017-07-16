@@ -57,10 +57,13 @@ class Plugin extends PluginBase
 
         Carbon::setLocale('zh');
         UserModel::extend(function ($model) {
-            $model->addFillable([
-                'b7_mobile',
-                'b7_address',
-            ]);
+            /*$model->addFillable([
+                'county_id',
+                'town_id',
+                'village_id'
+            ]);*/
+
+            $model->implement[] = 'Buuug7.Location.Behaviors.LocationModel';
 
             $model->hasMany['companies'] = ['Buuug7\User\Models\Company', 'table' => 'buuug7_user_companies'];
             $model->hasMany['needs'] = ['Buuug7\User\Models\Need', 'table' => 'buuug7_user_needs',];

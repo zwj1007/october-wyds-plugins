@@ -11,18 +11,13 @@ use Redirect;
 use Validator;
 use ValidationException;
 use ApplicationException;
-use Cms\Classes\Page;
-use Cms\Classes\ComponentBase;
 use RainLab\User\Models\Settings as UserSettings;
 use Exception;
+use Buuug7\Statistics\Models\StatisticOne;
 
-use GuzzleHttp\Client;
-use Illuminate\Support\Facades\Log;
 
 class Account extends \RainLab\User\Components\Account
 {
-
-
 
 
     public function init()
@@ -70,11 +65,11 @@ class Account extends \RainLab\User\Components\Account
             if ($this->loginAttribute() == UserSettings::LOGIN_USERNAME) {
                 $rules['username'] = 'required|between:2,255';
             }
-            $validation = Validator::make($data, $rules,[
+            $validation = Validator::make($data, $rules, [
                 'required' => '请输入:attribute',
                 'confirmed' => '密码确认不一致',
-                
-            ],[
+
+            ], [
                 'name' => '用户名',
                 'email' => '电子邮箱',
                 'password' => '密码',
@@ -114,8 +109,7 @@ class Account extends \RainLab\User\Components\Account
             if ($redirectUrl = post('redirect', $redirectUrl)) {
                 return Redirect::intended($redirectUrl);
             }
-        }
-        catch (Exception $ex) {
+        } catch (Exception $ex) {
             if (Request::ajax()) throw $ex;
             else Flash::error($ex->getMessage());
         }
@@ -141,9 +135,9 @@ class Account extends \RainLab\User\Components\Account
             if (!array_key_exists('login', $data)) {
                 $data['login'] = post('username', post('email'));
             }
-            $validation = Validator::make($data, $rules,[
+            $validation = Validator::make($data, $rules, [
                 'required' => '请输入:attribute',
-            ],[
+            ], [
                 'login' => '电子邮箱',
                 'password' => '密码',
             ]);
@@ -154,7 +148,7 @@ class Account extends \RainLab\User\Components\Account
              * Authenticate user
              */
             $credentials = [
-                'login'    => array_get($data, 'login'),
+                'login' => array_get($data, 'login'),
                 'password' => array_get($data, 'password')
             ];
             Event::fire('rainlab.user.beforeAuthenticate', [$this, $credentials]);
@@ -168,14 +162,14 @@ class Account extends \RainLab\User\Components\Account
             if ($redirectUrl = input('redirect', $redirectUrl)) {
                 return Redirect::intended($redirectUrl);
             }
-        }
-        catch (Exception $ex) {
+        } catch (Exception $ex) {
             if (Request::ajax()) throw $ex;
             else Flash::error($ex->getMessage());
         }
     }
 
-    public function onUpdate(){
+    public function onUpdate()
+    {
         if (!$user = $this->user()) {
             return;
         }
@@ -200,8 +194,40 @@ class Account extends \RainLab\User\Components\Account
         }
     }
 
-    public function onApprove(){
+    public function onAddStatistic()
+    {
+        if (!Auth::check()) {
+            return;
+        }
 
+        $total = $this->getStatisticTotal(post('buy'), post('sales'));
+
+        // make sure poverty_total  less than buy+sales
+        if (post('buy') + post('sales') < post('poverty_total')) {
+            Flash::error('贫困电商交易额不能大于购进和外销的和');
+            return Redirect::refresh();
+        }
+
+        StatisticOne::create([
+            'buy' => post('buy'),
+            'sales' => post('sales'),
+            'poverty_total' => post('poverty_total'),
+            'total' => $total,
+            'published_at' => post('published_at'),
+            'user_id' => post('user_id'),
+        ]);
+        Flash::success('统计数据提交成功');
+    }
+
+    function getStatisticTotal($buy, $sales)
+    {
+        if (!$buy) {
+            $buy = 0;
+        }
+        if (!$sales) {
+            $sales = 0;
+        }
+        return $buy + $sales;
     }
 
 }

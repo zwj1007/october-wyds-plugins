@@ -1,0 +1,52 @@
+title = '提交统计数据'
+url = '/user/center/statistics/add'
+layout = 'default'
+[b7Account]
+==
+function onStart(){
+if(!Auth::check()){
+return Redirect::to('/user/login');
+}
+
+$this->addCss('https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css');
+$this->addJs('https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js');
+$this->addJs('https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.zh-CN.min.js');
+}
+==
+<div class="container m-t">
+    <div class="row">
+        <div class="col-md-8">
+            <ol class="breadcrumb" style="">
+                <li><a href="/">首页</a></li>
+                <li><a href="/user/center/account">用户</a></li>
+                <li class="active">添加统计数据</li>
+            </ol>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    提交数据统计加数
+                </div>
+                <div class="panel-body">
+                    {% partial 'statistics/add-form' %}
+                    <div class="callout callout-danger">
+                        <p>
+                            其中贫困电商交易额不能大于购进和外销的和
+                        </p>
+                        <p>
+                            <code>
+                               贫困电商交易额 < 购进+外销
+                            </code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% put scripts %}
+<script>
+    $('.date').datepicker({
+        language: 'zh-CN'
+    });
+</script>
+{% endput %}

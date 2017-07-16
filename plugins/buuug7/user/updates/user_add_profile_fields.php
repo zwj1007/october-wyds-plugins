@@ -7,12 +7,13 @@ class UserAddProfileFields extends Migration
 {
     public function up()
     {
-        if (Schema::hasColumns('users', ['b7_mobile', 'b7_address'])) {
+        if (Schema::hasColumns('users', ['county_id', 'town_id','village_id'])) {
             return;
         }
         Schema::table('users', function ($table) {
-            $table->string('b7_mobile')->nullable();
-            $table->string('b7_address')->nullable();
+            $table->integer('county_id')->unsigned()->nullable()->index();
+            $table->integer('town_id')->unsigned()->nullable()->index();
+            $table->integer('village_id')->unsigned()->nullable()->index();
         });
     }
 
@@ -20,7 +21,7 @@ class UserAddProfileFields extends Migration
     {
         if (Schema::hasTable('users')) {
             Schema::table('users', function ($table) {
-                $table->dropColumn(['b7_mobile', 'b7_address']);
+                $table->dropColumn(['county_id','town_id','village_id']);
             });
         }
     }

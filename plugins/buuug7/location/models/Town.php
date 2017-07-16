@@ -78,5 +78,5 @@ class Town extends Model
     {
         $this->villages()->delete();
     }
-    
+
 }

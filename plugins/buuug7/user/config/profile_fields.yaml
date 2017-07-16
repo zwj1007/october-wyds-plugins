@@ -2,11 +2,23 @@
 #  Extended Profile Field Definitions
 # ===================================
 
-b7_mobile:
-    label: 手机号码
+county:
+    label: 县城
+    placeholder: 选择县城
+    type: dropdown
     tab: 个人资料
     span: auto
-b7_address:
-    label: 地址
+town:
+    label: 乡镇
+    placeholder: 选择乡镇
+    type: dropdown
     tab: 个人资料
     span: auto
+    dependsOn: county
+village:
+    label: 村庄
+    placeholder: 选择村庄
+    type: dropdown
+    tab: 个人资料
+    span: auto
+    dependsOn: town

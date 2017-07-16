@@ -20,7 +20,7 @@ class StatisticOne extends Model
         'sales' => 'required|numeric',
         'poverty_total' => 'required|numeric',
         'total' => 'required|numeric',
-        'published_at' => 'required',
+        'published_at' => 'required|unique_with:buuug7_statistics_statistic_ones,user_id',
     ];
 
     public $customMessages = [
@@ -34,7 +34,6 @@ class StatisticOne extends Model
         'poverty_total' => '贫困村电商交易额',
         'total' => '电商交易额',
         'published_at' => '提交时间',
-        'unique_with' => '你今天已经提交过了,一天内不能提交两次统计信息',
     ];
 
 
@@ -51,9 +50,16 @@ class StatisticOne extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'buy',
+        'sales',
+        'poverty_total',
+        'total',
+        'published_at',
+        'user_id'
+    ];
 
-    protected $dates = ['created_at', 'updated_at', 'published_at'];
+    protected $dates = ['created_at', 'updated_at'];
 
     /**
      * @var array Relations
@@ -84,18 +90,11 @@ class StatisticOne extends Model
         }
     }
 
+
     public function beforeValidate()
     {
-
-        $this->published_at = Carbon::parse($this->published_at)->toDateString();
-        $flag = DB::table('buuug7_statistics_statistic_ones')->where([
-            'user_id' => $this->user_id,
-            'published_at' => $this->published_at,
-        ])->exists();
-        if ($flag) {
-
-            $this->validationErrors->add('published_at', 'sfjlsdjflsd');
-            $this->rules['unique_with'] = 'required';
+        if ($this->published_at) {
+            $this->published_at = Carbon::parse($this->published_at)->toDateString();
         }
     }
 

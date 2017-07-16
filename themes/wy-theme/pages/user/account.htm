@@ -13,13 +13,23 @@ if(!Auth::check()) return Redirect::to('/user/login');
 
 }
 ==
-
 <div class="container m-t">
     <div class="row">
         <div class="col-md-3 m-b">
             {% partial 'user/user-left-menu' %}
         </div>
         <div class="col-md-9 m-b">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    提交统计数据
+                </div>
+                <div class="panel-body">
+                    <p>
+                        <a href="/user/center/statistics/add" class="btn btn-success">提交统计数据</a>
+                        <a href="/user/center/statistics/list" class="btn btn-default">查看统计数据</a>
+                    </p>
+                </div>
+            </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     修改个人信息
@@ -38,13 +48,6 @@ if(!Auth::check()) return Redirect::to('/user/login');
                         <label for="accountEmail" class="control-label col-sm-2">邮箱</label>
                         <div class="col-sm-10">
                             <input name="email" type="email" class="form-control" id="accountEmail" value="{{ form_value('email') }}" disabled>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="accountB7address" class="control-label col-sm-2">地址</label>
-                        <div class="col-sm-10">
-                            <input name="b7_address" type="text" class="form-control" id="accountB7address" value="{{ form_value('b7_address') }}">
                         </div>
                     </div>
 

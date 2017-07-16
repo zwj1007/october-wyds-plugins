@@ -14,3 +14,4 @@
     - add shop model
     - create_shops_table.php
     - seed_all_tables.php
+    - seed_user_groups_table.php

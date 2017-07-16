@@ -1,9 +1,12 @@
 <?php namespace Buuug7\Statistics;
 
 use Backend;
+use October\Rain\Halcyon\Traits\Validation;
 use System\Classes\PluginBase;
 use Validator;
 use DB;
+use RainLab\User\Models\User as UserModel;
+
 /**
  * Statistics Plugin Information File
  */
@@ -17,10 +20,10 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Statistics',
+            'name' => 'Statistics',
             'description' => 'No description provided yet...',
-            'author'      => 'Buuug7',
-            'icon'        => 'icon-leaf'
+            'author' => 'Buuug7',
+            'icon' => 'icon-leaf'
         ];
     }
 
@@ -41,8 +44,18 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
+        //trace_sql();
+
         Validator::extend('unique_with', function ($attribute, $value, $parameters, $validator) {
             $request = request()->all();
+
+            trace_log($request);
+
+            // 由于设置了october关联关系，request过来的数据包含user而没有user_id
+            // 而验证中使用了user_id，进行了转换，否则无法工作
+            if (!isset($request['user_id'])) {
+                $request['user_id'] =$request['StatisticOne']['user'];
+            }
 
             // $table is always the first parameter
             // You can extend it to use dots in order to specify: connection.database.table
@@ -58,14 +71,21 @@ class Plugin extends PluginBase
                 if (isset($request[$column])) {
                     $clauses[$column] = $request[$column];
                 }
+
             }
 
             // Query for existence.
-            return ! DB::table($table)
+            return !DB::table($table)
                 ->where($clauses)
                 ->exists();
-        });
+        },'composite unique validation error !');
 
+        UserModel::extend(function($model){
+            $model->hasMany['statisticOnes']=[
+                'Buuug7\Statistics\Models\StatisticOne',
+                'table' => 'buuug7_statistics_statistic_ones',
+            ];
+        });
     }
 
     /**
@@ -76,7 +96,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Buuug7\Statistics\Components\Statistics'=>'b7Statistics',
+            'Buuug7\Statistics\Components\Statistics' => 'b7Statistics',
         ];
     }
 
@@ -104,11 +124,11 @@ class Plugin extends PluginBase
     {
         return [
             'statistics' => [
-                'label'       => '统计',
-                'url'         => Backend::url('buuug7/statistics/statistics'),
-                'icon'        => 'icon-area-chart',
+                'label' => '统计',
+                'url' => Backend::url('buuug7/statistics/statistics'),
+                'icon' => 'icon-area-chart',
                 'permissions' => ['buuug7.statistics.*'],
-                'order'       => 500,
+                'order' => 500,
                 'sideMenu' => [
                     'statisticones' => [
                         'label' => '统计(one)',
@@ -119,7 +139,7 @@ class Plugin extends PluginBase
                     'statistics' => [
                         'label' => '统计(test)',
                         'icon' => 'icon-area-chart',
-                        'url'         => Backend::url('buuug7/statistics/statistics'),
+                        'url' => Backend::url('buuug7/statistics/statistics'),
                         'permissions' => ['buuug7.statistics.access_statistics.*'],
                     ],
                 ],
