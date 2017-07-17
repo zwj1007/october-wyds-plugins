@@ -1,10 +1,13 @@
 <?php namespace Buuug7\User\Updates;
 
 
+use Buuug7\Statistics\Models\StatisticOne;
 use Buuug7\User\Models\Company;
 use Buuug7\User\Models\Need;
 use Buuug7\User\Models\Shop;
 use Carbon\Carbon;
+use Faker\Factory;
+use Faker\Generator;
 use October\Rain\Database\Updates\Seeder;
 use RainLab\User\Facades\Auth;
 
@@ -534,7 +537,6 @@ class SeedAllTables extends Seeder
         ]);
 
 
-
         // insert need of this user
         Need::create([
             'user_id' => $user03->id,
@@ -702,7 +704,7 @@ class SeedAllTables extends Seeder
             'status' => 'passed',
             'user_id' => $user05->id,
             'checked' => true,
-           // 'featured' => true,
+            // 'featured' => true,
             'checked_at' => Carbon::now(),
         ]);
 
@@ -781,7 +783,7 @@ class SeedAllTables extends Seeder
             'status' => 'passed',
             'user_id' => $user06->id,
             'checked' => true,
-           // 'featured' => true,
+            // 'featured' => true,
             'checked_at' => Carbon::now(),
         ]);
 
@@ -951,7 +953,7 @@ class SeedAllTables extends Seeder
             'status' => 'passed',
             'user_id' => $user09->id,
             'checked' => true,
-           // 'featured' => true,
+            // 'featured' => true,
             'checked_at' => Carbon::now(),
         ]);
 
@@ -994,6 +996,10 @@ class SeedAllTables extends Seeder
             'checked_at' => Carbon::now(),
         ]);
 
+
+        //
+        // seed StatisticOne Model
+        //
 
     }
 }
