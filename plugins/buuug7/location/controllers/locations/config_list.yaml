@@ -9,7 +9,7 @@ list: $/buuug7/location/models/county/columns.yaml
 modelClass: Buuug7\Location\Models\County
 
 # List Title
-title: Manage Locations
+title: 管理本地位置
 
 # Link URL for each record
 recordUrl: buuug7/location/locations/update/:id

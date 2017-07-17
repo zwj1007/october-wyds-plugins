@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Location
+name: 本地位置
 
 # Model Form Field configuration
 form: $/buuug7/location/models/county/fields.yaml
@@ -16,13 +16,13 @@ defaultRedirect: buuug7/location/locations
 
 # Create page
 create:
-    title: Create Location
+    title: 创建位置
     redirect: buuug7/location/locations/update/:id
     redirectClose: buuug7/location/locations
 
 # Update page
 update:
-    title: Edit Location
+    title: 编辑位置
     redirect: buuug7/location/locations
     redirectClose: buuug7/location/locations
 
