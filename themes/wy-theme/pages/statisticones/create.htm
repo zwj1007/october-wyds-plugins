@@ -1,6 +1,7 @@
 title = '提交统计数据'
-url = '/user/center/statistics/add'
+url = '/statisticones/create'
 layout = 'default'
+[b7StatisticOnes]
 [b7Account]
 ==
 function onStart(){
@@ -15,6 +16,7 @@ $this->addJs('https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/locales/bootstr
 ==
 <div class="container m-t">
     <div class="row">
+        {% if userGroupTongJiShuJuYongHuZuExists %}
         <div class="col-md-8">
             <ol class="breadcrumb" style="">
                 <li><a href="/">首页</a></li>
@@ -40,6 +42,13 @@ $this->addJs('https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/locales/bootstr
                 </div>
             </div>
         </div>
+        {% else %}
+        <div class="col-md-8">
+            <div class="callout callout-danger">
+                <p>不允许，你没有权限操作</p>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>
 

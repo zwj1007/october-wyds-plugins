@@ -97,6 +97,7 @@ class Plugin extends PluginBase
     {
         return [
             'Buuug7\Statistics\Components\Statistics' => 'b7Statistics',
+            'Buuug7\Statistics\Components\StatisticOnes' => 'b7StatisticOnes',
         ];
     }
 

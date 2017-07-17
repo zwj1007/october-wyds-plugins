@@ -1,0 +1,163 @@
+title = '我的数据统计'
+url = '/user/center/statisticones'
+layout = 'default'
+[b7StatisticOnes]
+[b7Account]
+==
+function onStart(){
+$this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
+}
+==
+<div class="container m-t">
+    <div class="row">
+        {% if userGroupTongJiShuJuYongHuZuExists %}
+        <div class="col-md-7">
+            <ol class="breadcrumb">
+                <li><a href="/">首页</a></li>
+                <li><a href="/user/center/account">用户中心</a></li>
+                <li class="active">数据统计</li>
+            </ol>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <ol class="breadcrumb m-b-sm">
+                        <li class="active">{{ user.county.name }}</li>
+                        <li class="active">{{ user.town.name }}</li>
+                        <li class="active">{{ user.village.name }}</li>
+                        <li class="active">{{ user.name }}</li>
+                    </ol>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>时间</th>
+                                <th>购进(万元)</th>
+                                <th>外销(万元)</th>
+                                <th>贫困电商交易额(万元)</th>
+                                <th>电商交易额(万元)</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for item in statisticOnes %}
+                            <tr>
+                                <td>{{ item.published_at }}</td>
+                                <td>{{ item.buy }}</td>
+                                <td>{{ item.sales }}</td>
+                                <td>{{ item.poverty_total }}</td>
+                                <td>{{ item.total }}</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {{ statisticOnes.render|raw }}
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-5 m-t-lg">
+            <div class="panel panel-default">
+                <div class="panel-heading">本月份数据统计</div>
+                <div class="panel-body">
+                    <canvas id="line-chart-latest-month"></canvas>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">本年数据统计</div>
+                <div class="panel-body">
+                    <canvas id="line-chart-latest-year"></canvas>
+                </div>
+            </div>
+            </div>
+        {% else %}
+        <div class="col-md-8">
+            <div class="callout callout-danger">
+                <p>不允许，你没有权限操作</p>
+            </div>
+        </div>
+        {% endif %}
+        </div>
+    </div>
+</div>
+
+{% put scripts %}
+<script>
+    //
+    // line chart for latest month
+    //
+    var ctxLineChartLatestMonth = document.getElementById('line-chart-latest-month');
+    var lineChartDataLatestMonth = {
+        labels: [{% for item in currentMonthStatisticOnes %}"{{ item.published_at }}",{% endfor %}],
+        datasets:[
+            {
+                label:'本月份数据统计',
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: "rgba(75,192,192,0.4)",
+                borderColor: "rgba(75,192,192,1)",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "rgba(75,192,192,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [{% for item in currentMonthStatisticOnes %}{{ item.total }},{% endfor%}],
+                spanGaps: false,
+            }
+        ]
+    };
+    var lineChartOptionsLatestMonth = {};
+    var lineChartLatestMonth = new Chart(ctxLineChartLatestMonth, {
+        type: 'line',
+        data: lineChartDataLatestMonth,
+        options: lineChartOptionsLatestMonth
+    });
+
+    //
+    // line chart for latest year
+    //
+    var ctxLineChartLatestYear = document.getElementById('line-chart-latest-year');
+    var lineChartDataLatestYear = {
+        labels: [{% for item in currentYearStatisticOnes %}"{{ item.published_at }}",{% endfor %}],
+        datasets:[
+            {
+                label:'本年度数据统计',
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: "rgba(75,192,192,0.4)",
+                borderColor: "rgba(75,192,192,0.7)",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "rgba(75,192,192,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [{% for item in currentYearStatisticOnes %}{{ item.total }},{% endfor%}],
+                spanGaps: false,
+            }
+        ]
+    };
+    var lineChartOptionsLatestYear = {};
+    var lineChartLatestYear = new Chart(ctxLineChartLatestYear, {
+        type: 'line',
+        data: lineChartDataLatestYear,
+        options: lineChartOptionsLatestYear
+    });
+</script>
+{% endput  %}

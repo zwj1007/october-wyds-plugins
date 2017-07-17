@@ -6,6 +6,7 @@ use Mail;
 use Event;
 use Flash;
 use Input;
+use RainLab\User\Models\UserGroup;
 use Request;
 use Redirect;
 use Validator;
@@ -13,7 +14,6 @@ use ValidationException;
 use ApplicationException;
 use RainLab\User\Models\Settings as UserSettings;
 use Exception;
-use Buuug7\Statistics\Models\StatisticOne;
 
 
 class Account extends \RainLab\User\Components\Account
@@ -38,6 +38,20 @@ class Account extends \RainLab\User\Components\Account
             $component->bindModel('avatar', $user);
         }
     }
+
+    public function onRun()
+    {
+        parent::onRun();
+
+        $user=Auth::getUser();
+
+        $userGroupTongJiShuJuYongHuZuExists=UserGroup::where('code','tong-ji-shu-ju-yong-hu-zu')->whereHas('users',function($q) use ($user){
+            $q->where('id',$user->id);
+            })->exists();
+        $this->page['userGroupTongJiShuJuYongHuZuExists']=$userGroupTongJiShuJuYongHuZuExists;
+        //trace_log($userGroupTongJiShuJuYongHuZuExists);
+    }
+
 
     /**
      * Override default onRegister method
@@ -193,41 +207,4 @@ class Account extends \RainLab\User\Components\Account
             return $redirect;
         }
     }
-
-    public function onAddStatistic()
-    {
-        if (!Auth::check()) {
-            return;
-        }
-
-        $total = $this->getStatisticTotal(post('buy'), post('sales'));
-
-        // make sure poverty_total  less than buy+sales
-        if (post('buy') + post('sales') < post('poverty_total')) {
-            Flash::error('贫困电商交易额不能大于购进和外销的和');
-            return Redirect::refresh();
-        }
-
-        StatisticOne::create([
-            'buy' => post('buy'),
-            'sales' => post('sales'),
-            'poverty_total' => post('poverty_total'),
-            'total' => $total,
-            'published_at' => post('published_at'),
-            'user_id' => post('user_id'),
-        ]);
-        Flash::success('统计数据提交成功');
-    }
-
-    function getStatisticTotal($buy, $sales)
-    {
-        if (!$buy) {
-            $buy = 0;
-        }
-        if (!$sales) {
-            $sales = 0;
-        }
-        return $buy + $sales;
-    }
-
 }
