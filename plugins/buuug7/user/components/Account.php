@@ -43,13 +43,15 @@ class Account extends \RainLab\User\Components\Account
     {
         parent::onRun();
 
-        $user=Auth::getUser();
+        if(Auth::check()){
+            $user=Auth::getUser();
 
-        $userGroupTongJiShuJuYongHuZuExists=UserGroup::where('code','tong-ji-shu-ju-yong-hu-zu')->whereHas('users',function($q) use ($user){
-            $q->where('id',$user->id);
+            $userGroupTongJiShuJuYongHuZuExists=UserGroup::where('code','tong-ji-shu-ju-yong-hu-zu')->whereHas('users',function($q) use ($user){
+                $q->where('id',$user->id);
             })->exists();
-        $this->page['userGroupTongJiShuJuYongHuZuExists']=$userGroupTongJiShuJuYongHuZuExists;
-        //trace_log($userGroupTongJiShuJuYongHuZuExists);
+            $this->page['userGroupTongJiShuJuYongHuZuExists']=$userGroupTongJiShuJuYongHuZuExists;
+            //trace_log($userGroupTongJiShuJuYongHuZuExists);
+        }
     }
 
 
