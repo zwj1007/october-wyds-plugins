@@ -3,3 +3,4 @@
     - create_counties_table.php
     - create_towns_table.php
     - create_villages_table.php
+    - seed_all_tables.php

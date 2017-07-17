@@ -89,7 +89,7 @@ class StatisticOnes extends ComponentBase
             'user_id' => post('user_id'),
         ]);
         Flash::success('统计数据提交成功');
-        //s  return Redirect::to('/user/center/statisticones');
+        return Redirect::to('/user/center/statisticones');
     }
 
     /*
