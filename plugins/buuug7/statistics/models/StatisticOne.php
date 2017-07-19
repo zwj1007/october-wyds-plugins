@@ -160,4 +160,20 @@ class StatisticOne extends Model
     }
 
 
+    /**
+     * @param $from
+     * @param $to
+     * @param $groupBy %Y%m or %Y
+     * @return mixed
+     */
+    public static function getAnalysisByDateRange($from, $to, $groupBy){
+        $result=DB::select("
+          SELECT DATE_FORMAT(published_at,'$groupBy') month,
+          avg(buy) avgBuy,avg(sales) avgSales,avg(poverty_total) avgPovertyTotal,avg(total) avgTotal,
+          sum(buy) sumBuy,sum(sales) sumSales,sum(poverty_total) sumPovertyTotal,sum(total) sumTotal
+          from buuug7_statistics_statistic_ones WHERE published_at >= '$from' and published_at <= '$to' GROUP BY  month;
+          ");
+       return $result;
+    }
+
 }
