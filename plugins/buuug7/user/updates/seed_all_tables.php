@@ -995,11 +995,5 @@ class SeedAllTables extends Seeder
             'featured' => true,
             'checked_at' => Carbon::now(),
         ]);
-
-
-        //
-        // seed StatisticOne Model
-        //
-
     }
 }

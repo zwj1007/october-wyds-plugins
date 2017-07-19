@@ -64,23 +64,20 @@ class StatisticOne extends Model
     /**
      * @var array Relations
      */
-    public $hasOne = [];
-    public $hasMany = [];
     public $belongsTo = [
         'user' => ['RainLab\User\Models\User'],
     ];
     public $belongsToMany = [];
-    public $morphTo = [];
-    public $morphOne = [];
-    public $morphMany = [];
-    public $attachOne = [];
-    public $attachMany = [];
 
     public function scopeFilterUser($query, $user)
     {
         return $query->whereHas('user', function ($q) use ($user) {
             $q->whereIn('id', $user);
         });
+    }
+
+    public function scopeFilterA(){
+        return 1;
     }
 
     public function filterFields($fields, $context = null)
@@ -109,4 +106,52 @@ class StatisticOne extends Model
             return [];
         }
     }
+
+    public function  scopeListAnalysis($query,$options){
+
+        extract(array_merge([
+            'year' => Carbon::now()->year,
+            'month' => Carbon::now()->month,
+            'from' => null,
+            'to' => null,
+            'users' => null,
+        ],$options));
+
+        /*$query->whereHas('user',function ($q){
+            $q->whereHas('groups',function($q){
+                $q->where('code','tong-ji-shu-ju-yong-hu-zu');
+            });
+        });*/
+
+        if($year){
+            $query->whereYear('published_at','=',$year);
+        }
+        if($month){
+            $query->whereMonth('published_at','=',$month);
+        }
+
+        if($from){
+            $query->where('published_at','>=',$from);
+        }
+
+        if($to){
+            $query->where('published_at','<=',$to);
+        }
+
+        if($users !== null){
+            if(!is_array($users)){
+                $users=[$users];
+            }
+            $query->whereHas('user',function($q) use ($users){
+                $q->whereIn('id',$users);
+            });
+        }
+
+        $query->orderBy('published_at','asc');
+
+        return $query->get()->toArray();
+
+    }
+
+
 }

@@ -44,7 +44,7 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        //trace_sql();
+        trace_sql();
 
         Validator::extend('unique_with', function ($attribute, $value, $parameters, $validator) {
             $request = request()->all();
@@ -126,7 +126,7 @@ class Plugin extends PluginBase
         return [
             'statistics' => [
                 'label' => '统计',
-                'url' => Backend::url('buuug7/statistics/statistics'),
+                'url' => Backend::url('buuug7/statistics/statisticones'),
                 'icon' => 'icon-area-chart',
                 'permissions' => ['buuug7.statistics.*'],
                 'order' => 500,
@@ -146,6 +146,16 @@ class Plugin extends PluginBase
                 ],
             ],
 
+        ];
+    }
+
+    public function registerReportWidgets()
+    {
+        return [
+            'Buuug7\Statistics\ReportWidgets\Test' => [
+                'label' => 'TestWidget',
+                'context' => 'dashboard',
+            ],
         ];
     }
 }

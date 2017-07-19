@@ -5,11 +5,11 @@
 scopes:
     user:
         label: 用户过滤
-        modelClass: RainLab\User\Models\User
+        modelClass: Buuug7\User\Models\User
         nameFrom: name
         scope: FilterUser
     published_at:
-        label: 提交日期
+        label: 提交时间
         type: daterange
-        conditions: created_at >= ':after' AND created_at <= ':before'
+        conditions: published_at >= ':after' AND published_at <= ':before'
 
