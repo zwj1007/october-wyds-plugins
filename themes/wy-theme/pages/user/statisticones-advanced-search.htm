@@ -1,0 +1,145 @@
+title = '数据统计高级查询'
+url = '/user/center/statisticones-advanced-search'
+layout = 'default'
+[b7StatisticOnes]
+[b7Account]
+==
+function onStart(){
+$this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
+$this->addCss('https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css');
+$this->addJs('https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js');
+$this->addJs('https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.zh-CN.min.js');
+
+$this['usersTJ']=\RainLab\User\Models\User::whereHas('groups',function($q){
+    $q->where('code','tong-ji-shu-ju-yong-hu-zu');
+})->get();
+
+$this['towns']=\Buuug7\Location\Models\Town::get();
+
+//var_dump($this['towns']);
+}
+==
+
+
+<div class="container m-t">
+    <div class="row">
+        <div class="col-md-9">
+            <ol class="breadcrumb">
+                <li><a href="/">首页</a></li>
+                <li><a href="/user/center/account">用户中心</a></li>
+                <li><a href="/user/center/statisticones">数据统计</a></li>
+                <li class="active">高级查询</li>
+            </ol>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="year" class="control-label col-sm-2">根据年份</label>
+                                    <div class="col-sm-10">
+                                        <div class="input-group date date-year" data-provide="datepicker" data-date-format="yyyy">
+                                            <input type="text" name="year" class="form-control" id="year">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-th"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="month" class="control-label col-sm-2">根据月份</label>
+                                    <div class="col-sm-10">
+                                        <div class="input-group date date-month" data-provide="datepicker" data-date-format="mm">
+                                            <input type="text" name="month" class="form-control" id="month">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-th"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">根据时间段</label>
+                                    <div class="col-sm-10">
+                                        <div class="input-group input-daterange">
+                                            <input type="text" class="form-control" name="from" value="">
+                                            <div class="input-group-addon">到</div>
+                                            <input type="text" class="form-control" name="to" value="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="locations" class="control-label col-sm-2">根据位置</label>
+                                    <div class="col-sm-10">
+
+                                        {% for town in towns.chunk(5) %}
+                                        <div class="checkbox">
+                                            {% for item in town %}
+                                            <label class="w-100">
+                                                <input type="checkbox" name="towns[]" value="{{ item.id }}">
+                                                {{ item.name }}
+                                            </label>
+                                            {% endfor %}
+                                        </div>
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="users" class="control-label col-sm-2">根据用户</label>
+                                    <div class="col-sm-10">
+                                        {% for users in usersTJ.chunk(2) %}
+                                        <div class="checkbox">
+                                            {% for item in users %}
+                                            <label class="w-300">
+                                                <input type="checkbox"  name="users[]" value="{{ item.id }}">
+                                                {{ item.name }}
+                                                <span class="color-999">{{ item.town.name }} / {{ item.village.name }}</span>
+                                            </label>
+                                            {% endfor %}
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-10 col-sm-offset-2">
+                                        <button type="submit" class="btn btn-default">搜索</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% put scripts %}
+<script>
+    $('.date-year').datepicker({
+        startView: 2,
+        maxViewMode: 2,
+        minViewMode: 2,
+        language: 'zh-CN'
+    });
+
+    $('.date-month').datepicker({
+        startView: 2,
+        maxViewMode: 1,
+        minViewMode: 1,
+        language: 'zh-CN'
+    });
+
+    $('.input-daterange input').each(function () {
+        $(this).datepicker({
+            format:'yyyy-mm-dd',
+            language: 'zh-CN'
+        });
+    });
+</script>
+{% endput %}

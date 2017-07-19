@@ -76,7 +76,8 @@ class StatisticOne extends Model
         });
     }
 
-    public function scopeFilterA(){
+    public function scopeFilterA()
+    {
         return 1;
     }
 
@@ -107,7 +108,8 @@ class StatisticOne extends Model
         }
     }
 
-    public function  scopeListAnalysis($query,$options){
+    public function scopeListAnalysis($query, $options)
+    {
 
         extract(array_merge([
             'year' => Carbon::now()->year,
@@ -115,7 +117,8 @@ class StatisticOne extends Model
             'from' => null,
             'to' => null,
             'users' => null,
-        ],$options));
+            'locations' => null,
+        ], $options));
 
         /*$query->whereHas('user',function ($q){
             $q->whereHas('groups',function($q){
@@ -123,31 +126,31 @@ class StatisticOne extends Model
             });
         });*/
 
-        if($year){
-            $query->whereYear('published_at','=',$year);
+        if ($year) {
+            $query->whereYear('published_at', '=', $year);
         }
-        if($month){
-            $query->whereMonth('published_at','=',$month);
-        }
-
-        if($from){
-            $query->where('published_at','>=',$from);
+        if ($month) {
+            $query->whereMonth('published_at', '=', $month);
         }
 
-        if($to){
-            $query->where('published_at','<=',$to);
+        if ($from) {
+            $query->where('published_at', '>=', $from);
         }
 
-        if($users !== null){
-            if(!is_array($users)){
-                $users=[$users];
+        if ($to) {
+            $query->where('published_at', '<=', $to);
+        }
+
+        if ($users !== null) {
+            if (!is_array($users)) {
+                $users = [$users];
             }
-            $query->whereHas('user',function($q) use ($users){
-                $q->whereIn('id',$users);
+            $query->whereHas('user', function ($q) use ($users) {
+                $q->whereIn('id', $users);
             });
         }
 
-        $query->orderBy('published_at','asc');
+        $query->orderBy('published_at', 'asc');
 
         return $query->get()->toArray();
 

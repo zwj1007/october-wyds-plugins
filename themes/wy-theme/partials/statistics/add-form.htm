@@ -39,3 +39,11 @@
     </div>
 </div>
 {{ form_close() }}
+
+{% put scripts %}
+<script>
+    $('.date').datepicker({
+        language: 'zh-CN'
+    });
+</script>
+{% endput %}
