@@ -1,0 +1,72 @@
+/*
+|--------------------------------------------------------------------------
+| _buttons
+|--------------------------------------------------------------------------
+|
+| Created by buuug7 on 2017/5/6.
+|
+|
+*/
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  border: 1px solid $border-color;
+}
+
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  &:hover {
+    background: $border-color;
+  }
+}
+
+.btn-line-primary {
+  // border:1px solid $brand-primary;
+  //color:$brand-primary;
+  &:hover {
+    color: #fff;
+    //background-color: $brand-primary;
+  }
+}
+
+.btn-line-success {
+  //border:1px solid $brand-success;
+  //color:$brand-success;
+  &:hover {
+    color: #fff;
+    //background-color: $brand-success;
+  }
+}
+
+.btn-line-info {
+  border: 1px solid #00c0ef;
+  color: #00c0ef;
+  &:hover {
+    color: #fff;
+    background: #00c0ef;
+  }
+}
+
+.btn-line-danger {
+  //border:1px solid $brand-danger;
+  //color:$brand-danger;
+  &:hover {
+    color: #fff;
+    //background-color: $brand-danger;
+  }
+}
+
+.btn-line-warning {
+  border: 1px solid #f39c12;
+  color: #f39c12;
+  &:hover {
+    color: #fff;
+    background: #f39c12;
+
+  }
+}
+
+

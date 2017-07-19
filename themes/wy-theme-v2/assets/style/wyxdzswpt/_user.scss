@@ -293,6 +293,22 @@
 
 }
 
+//数据统计
+.user-sjtj {
+
+  .sjtj-ol {
+    margin: 25px;
+    background: #FDFDFD;
+    padding-left: 10px;
+    > li:last-child {
+      color: #0b7fc6;
+    }
+  }
+  p > a > i {
+    margin-right: 5px;
+  }
+}
+
 //公司
 .user-gs {
   .panel {
