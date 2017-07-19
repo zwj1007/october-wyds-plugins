@@ -98,7 +98,7 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
                 borderColor: "rgba(75,192,192,1)",
                 pointBorderColor: "rgba(75,192,192,1)",
                 pointBackgroundColor: "#fff",
-                pointRadius: 1,
+                pointRadius: 2,
                 data: [{% for item in currentMonthStatisticOnes %}{{ item.total }},{% endfor%}],
             }
         ]
