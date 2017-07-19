@@ -1,5 +1,6 @@
 <?php namespace Buuug7\Statistics\Components;
 
+use Buuug7\Statistics\Models\StatisticOne;
 use Carbon\Carbon;
 use Cms\Classes\ComponentBase;
 use Buuug7\Statistics\Models\StatisticOne as StatisticOneModel;

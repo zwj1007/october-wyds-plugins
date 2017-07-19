@@ -1,0 +1,98 @@
+<form
+        method="post"
+        action="/statisticones/search"
+        class=""
+>
+    <div class="form-group">
+        <label for="year" class="control-label">年份</label>
+        <div class="input-group date date-year" data-provide="datepicker" data-date-format="yyyy">
+            <input type="text" name="year" class="form-control" id="year">
+            <div class="input-group-addon">
+                <i class="fa fa-th"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="month" class="control-label">月份</label>
+        <div class="input-group date date-month" data-provide="datepicker" data-date-format="mm">
+            <input type="text" name="month" class="form-control" id="month">
+            <div class="input-group-addon">
+                <i class="fa fa-th"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">时间段</label>
+        <div class="input-group input-daterange">
+            <input type="text" class="form-control" name="from" value="">
+            <div class="input-group-addon">到</div>
+            <input type="text" class="form-control" name="to" value="">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="locations" class="control-label">位置</label>
+        {% for town in towns.chunk(3) %}
+        <div class="checkbox">
+            {% for item in town %}
+            <label class="w-100">
+                <input type="checkbox" name="towns[]" value="{{ item.id }}">
+                {{ item.name }}
+            </label>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        <label for="users" class="control-label">用户</label>
+        {% for users in usersTJ.chunk(2) %}
+        <div class="checkbox">
+            {% for item in users %}
+            <label class="">
+                <input type="checkbox" name="users[]" value="{{ item.id }}">
+                <span class="small">{{ item.name }}</span>
+                <span class="color-999 small">{{ item.town.name }} / {{ item.village.name }}</span>
+            </label>
+            {% endfor %}
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <div class="form-group">
+        <button
+                type="submit"
+                class="btn btn-default">
+            查询
+        </button>
+    </div>
+</form>
+
+
+{% put scripts %}
+<script>
+    $('.date-year').datepicker({
+        startView: 2,
+        maxViewMode: 2,
+        minViewMode: 2,
+        language: 'zh-CN'
+    });
+
+    $('.date-month').datepicker({
+        startView: 2,
+        maxViewMode: 1,
+        minViewMode: 1,
+        language: 'zh-CN'
+    });
+
+    $('.input-daterange input').each(function () {
+        $(this).datepicker({
+            format: 'yyyy-mm-dd',
+            language: 'zh-CN'
+        });
+    });
+</script>
+{% endput %}

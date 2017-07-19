@@ -1,0 +1,62 @@
+title = '数据统计高级查询'
+url = '/statisticones/search'
+layout = 'default'
+[b7StatisticOnes]
+[b7Account]
+==
+function onStart(){
+
+$this->addCss('https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css');
+$this->addJs('https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js');
+$this->addJs('https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.zh-CN.min.js');
+
+$this['usersTJ']=\RainLab\User\Models\User::whereHas('groups',function($q){
+    $q->where('code','tong-ji-shu-ju-yong-hu-zu');
+})->get();
+
+$this['towns']=\Buuug7\Location\Models\Town::get();
+
+//var_dump(post());
+
+$this['result']=\Buuug7\Statistics\Models\StatisticOne::listAnalysis([
+    'year'=>post('year'),
+    'month'=>post('month'),
+    'from'=>post('from'),
+    'to'=>post('to'),
+],25);
+
+
+}
+==
+
+
+<div class="container m-t">
+    <div class="row">
+        <div class="col-md-8">
+            <ol class="breadcrumb">
+                <li><a href="/">首页</a></li>
+                <li><a href="/user/center/account">用户中心</a></li>
+                <li><a href="/user/center/statisticones">数据统计</a></li>
+                <li class="active">高级查询</li>
+            </ol>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    搜索结果
+                </div>
+                <div class="panel-body">
+                    {% partial 'statistics/search-result' result=result %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 m-t-lg">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    搜索选项
+                </div>
+                <div class="panel-body">
+                    {% partial 'statistics/search-form' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

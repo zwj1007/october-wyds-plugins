@@ -108,16 +108,15 @@ class StatisticOne extends Model
         }
     }
 
-    public function scopeListAnalysis($query, $options)
+    public function scopeListAnalysis($query, $options,$limit=null)
     {
 
         extract(array_merge([
-            'year' => Carbon::now()->year,
-            'month' => Carbon::now()->month,
+            'year' => null,
+            'month' => null,
             'from' => null,
             'to' => null,
             'users' => null,
-            'locations' => null,
         ], $options));
 
         /*$query->whereHas('user',function ($q){
@@ -152,7 +151,11 @@ class StatisticOne extends Model
 
         $query->orderBy('published_at', 'asc');
 
-        return $query->get()->toArray();
+        if($limit){
+            return $query->paginate($limit);
+        }else{
+            return $query->get();
+        }
 
     }
 
