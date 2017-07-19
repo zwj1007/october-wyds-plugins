@@ -2750,6 +2750,15 @@ input {
     font-size: 16px;
     margin-bottom: 10px; }
 
+.user-sjtj .sjtj-ol {
+  margin: 25px;
+  background: #FDFDFD;
+  padding-left: 10px; }
+  .user-sjtj .sjtj-ol > li:last-child {
+    color: #0b7fc6; }
+.user-sjtj p > a > i {
+  margin-right: 5px; }
+
 .user-gs .panel {
   margin-bottom: 20px;
   background-color: #fff;
@@ -3013,7 +3022,9 @@ input {
 .xqfb .xqfb-body .table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  border-collapse: collapse;
+  border-spacing: 0; }
   .xqfb .xqfb-body .table thead th {
     padding: 10px;
     width: 160px;
@@ -3607,5 +3618,165 @@ input {
             font-size: 12px;
             margin-right: 5px;
             color: #7e7a7a; }
+
+.dats-stat > .mainRight {
+  width: 700px; }
+  .dats-stat > .mainRight > .panel-heading {
+    padding: 0 15px;
+    background: #ffffff; }
+    .dats-stat > .mainRight > .panel-heading > .sjtj-ol {
+      border: 0;
+      margin: 8px; }
+      .dats-stat > .mainRight > .panel-heading > .sjtj-ol li:last-child {
+        color: #0b7fc6; }
+  .dats-stat > .mainRight .table > thead > tr > th {
+    padding: 15px 5px; }
+  .dats-stat > .mainRight .table > tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9; }
+  .dats-stat > .mainRight .table > tbody tr:hover {
+    background: rgba(90, 196, 255, 0.19); }
+.dats-stat > .mainLeft {
+  width: 400px;
+  padding: 5px 3px; }
+  .dats-stat > .mainLeft > .panel > .panel-body a {
+    margin-left: 8px; }
+
+.submit-data > .mainRight {
+  width: 750px; }
+  .submit-data > .mainRight > .content-title {
+    margin: 25px auto; }
+  .submit-data > .mainRight > .content {
+    margin: auto; }
+    .submit-data > .mainRight > .content > .rightBar {
+      margin: 0; }
+      .submit-data > .mainRight > .content > .rightBar #submitData div {
+        width: 685px;
+        height: 55px;
+        line-height: 55px;
+        border-bottom: 0;
+        font-size: 14px;
+        color: #444;
+        text-align: center; }
+        .submit-data > .mainRight > .content > .rightBar #submitData div label {
+          display: inline-block;
+          width: 200px;
+          text-align: right;
+          margin-right: 20px; }
+    .submit-data > .mainRight > .content .callout {
+      padding: 20px;
+      margin: 30px;
+      border-left: 3px solid #ebccd1; }
+    .submit-data > .mainRight > .content .callout-danger {
+      background-color: #fdf7f7;
+      border-color: #ebccd1; }
+      .submit-data > .mainRight > .content .callout-danger > p {
+        margin: 0 0 11px; }
+        .submit-data > .mainRight > .content .callout-danger > p > code {
+          padding: 2px 4px;
+          font-size: 90%;
+          color: #c7254e;
+          background-color: #f9f2f4;
+          border-radius: 0; }
+
+.data-high-select > .mainRight {
+  width: 750px; }
+  .data-high-select > .mainRight > .panel-heading {
+    padding: 15px;
+    background-color: #f5f5f5; }
+.data-high-select > .mainLeft {
+  width: 350px; }
+  .data-high-select > .mainLeft .panel .panel-body form .form-group > .checkbox .w-100 {
+    width: 100px !important; }
+  .data-high-select > .mainLeft .panel .panel-body form .form-group > .checkbox label {
+    font-weight: normal; }
+  .data-high-select > .mainLeft .panel .panel-body form .form-group .radio, .data-high-select > .mainLeft .panel .panel-body form .form-group .checkbox {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  .data-high-select > .mainLeft .panel .panel-body form .form-group .input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate; }
+    .data-high-select > .mainLeft .panel .panel-body form .form-group .input-group .form-control {
+      display: block;
+      width: 100%;
+      height: 36px;
+      padding: 6px 12px;
+      font-size: 16px;
+      line-height: 1.42857;
+      color: #555555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 0;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+      -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+      transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
+    .data-high-select > .mainLeft .panel .panel-body form .form-group .input-group .input-group-addon {
+      padding: 6px 12px;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 1;
+      color: #555555;
+      text-align: center;
+      background-color: #eeeeee;
+      border: 1px solid #ccc;
+      border-radius: 0; }
+    .data-high-select > .mainLeft .panel .panel-body form .form-group .input-group .input-group-addon:last-child {
+      border-left: 0; }
+    .data-high-select > .mainLeft .panel .panel-body form .form-group .input-group .input-group-addon, .data-high-select > .mainLeft .panel .panel-body form .form-group .input-group .input-group-btn {
+      width: 1%;
+      white-space: nowrap;
+      vertical-align: middle; }
+  .data-high-select > .mainLeft .panel .panel-body form .form-group .input-group-addon, .data-high-select > .mainLeft .panel .panel-body form .form-group .input-group-btn, .data-high-select > .mainLeft .panel .panel-body form .form-group .input-group .form-control {
+    display: table-cell; }
+
+/*
+|--------------------------------------------------------------------------
+| _buttons
+|--------------------------------------------------------------------------
+|
+| Created by buuug7 on 2017/5/6.
+|
+|
+*/
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  border: 1px solid #CCCCCC; }
+
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc; }
+  .btn-default:hover {
+    background: #CCCCCC; }
+
+.btn-line-primary:hover {
+  color: #fff; }
+
+.btn-line-success:hover {
+  color: #fff; }
+
+.btn-line-info {
+  border: 1px solid #00c0ef;
+  color: #00c0ef; }
+  .btn-line-info:hover {
+    color: #fff;
+    background: #00c0ef; }
+
+.btn-line-danger:hover {
+  color: #fff; }
+
+.btn-line-warning {
+  border: 1px solid #f39c12;
+  color: #f39c12; }
+  .btn-line-warning:hover {
+    color: #fff;
+    background: #f39c12; }
 
 /*# sourceMappingURL=app.css.map */
