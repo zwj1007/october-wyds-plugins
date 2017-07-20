@@ -26,7 +26,7 @@ $this['social_avatar']=Auth::getUser()->social_avatar;
 
             </div>
             <div class="content">
-                <a href="/shops/shop/create" class="btn btn-warning m-b m-t"><i class="fa fa-plus"></i> 添加店铺</a>
+                <a href="/shops/shop/create" class="btn btn-lg btn-primary"><i class="fa fa-plus"></i> 添加店铺</a>
 
                 <div class="headline">
                     <h3>已添加店铺</h3>
@@ -43,13 +43,13 @@ $this['social_avatar']=Auth::getUser()->social_avatar;
                     </div>
 
 
-                    <a class="btn" href="/shops/shop/{{ shop.id }}">
+                    <a class="btn btn-lg btn-success" href="/shops/shop/{{ shop.id }}">
                         <i class="fa fa-eye"></i> 查看
                     </a>
-                    <a class="btn" href="/shops/shop/update/{{ shop.id }}">
+                    <a class="btn btn-lg btn-warning" href="/shops/shop/update/{{ shop.id }}">
                         <i class="fa fa-pencil"></i> 更新
                     </a>
-                    <a class="btn" href="#"
+                    <a class="btn btn-lg btn-danger" href="#"
                        class="btn btn-danger btn-xs"
                        href="#"
                        data-request="onDeleteShop"

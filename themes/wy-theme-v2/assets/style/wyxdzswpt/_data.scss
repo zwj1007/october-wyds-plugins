@@ -1,6 +1,6 @@
 @charset "UTF-8";
 //数据统计
-.dats-stat {
+.data-stat {
   > .mainRight {
     width: 700px;
     > .panel-heading {
@@ -173,4 +173,32 @@
 
   }
 
+}
+
+//数据分析
+.data-analyze {
+  > .mainRight {
+    width: 100% !important;
+    > .panel-heading {
+      > span {
+        font-size: 12px;
+        color: #9c9c9c;
+      }
+    }
+    .table {
+      > thead {
+        > tr > th {
+          padding: 15px 5px;
+        }
+      }
+      > tbody {
+        tr:nth-of-type(odd) {
+          background-color: #f9f9f9;
+        }
+        tr:hover {
+          background: rgba(90, 196, 255, 0.19);
+        }
+      }
+    }
+  }
 }

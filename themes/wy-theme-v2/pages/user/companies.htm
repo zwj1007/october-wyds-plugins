@@ -30,7 +30,7 @@ $this->addJs('assets/vendor/summernote-0.8.3-dist/dist/lang/summernote-zh-CN.js'
             <span></span>
         </div>
         <div class="content">
-            <a href="/companies/company/create" class="btn btn-warning m-b m-t"><i class="fa fa-plus"></i> 添加公司</a>
+            <a href="/companies/company/create" class="btn  btn-primary btn-lg"><i class="fa fa-plus"></i> 添加公司</a>
 
             <div class="headline">
                 <h3>已添加公司信息</h3>
@@ -41,13 +41,13 @@ $this->addJs('assets/vendor/summernote-0.8.3-dist/dist/lang/summernote-zh-CN.js'
                 <img src="{{ company.getAvatarThumb(400,200) }}" alt="">
 
                 <div class="margin-top-10">
-                    <a class="btn" href="/companies/company/{{ company.id }}">
+                    <a class="btn btn-success btn-lg" href="/companies/company/{{ company.id }}">
                         <i class="fa fa-eye"></i> 查看
                     </a>
-                    <a class="btn" href="/companies/company/update/{{ company.id }}">
+                    <a class="btn btn-warning btn-lg" href="/companies/company/update/{{ company.id }}">
                         <i class="fa fa-pencil"></i> 更新
                     </a>
-                    <a class="btn"
+                    <a class="btn btn-danger btn-lg"
                        href="#"
                        data-request="onDeleteCompany"
                        data-request-data="id:{{ company.id }}"

@@ -1,43 +1,99 @@
-/*
-|--------------------------------------------------------------------------
-| _buttons
-|--------------------------------------------------------------------------
-|
-| Created by buuug7 on 2017/5/6.
-|
-|
+/*buttons
 */
 .btn {
   display: inline-block;
   padding: 6px 12px;
   font-size: 14px;
   border: 1px solid $border-color;
+  border-radius: 4px;
+  a{
+    color: #fff;
+  }
+}
+
+.btn-primary {
+  color: #fff;
+  background: #0b7fc6;
+  border-color: #0a74b4;
+  &:hover {
+    color: #fff;
+    background: #286090;
+    border-color: #204d74;
+  }
+}
+
+.btn-success {
+  color: #fff;
+  background: #5cb85c;
+  border: #4cae4c;
+  &:hover {
+    color: #fff;
+    background: #449D44;
+    border: #3c883c;
+  }
+}
+
+.btn-info {
+  color: #fff;
+  background: #00c0ef;
+  border-color: #2eb0d6;
+  &:hover {
+    color: #fff;
+    background: #00a0c7;
+    border-color: #2eb0d6;
+  }
+}
+
+.btn-warning {
+  color: #fff;
+  background: $nav-background;
+  border: 1px solid darken($nav-background, 5%);
+  &:hover {
+    color: #fff;
+    background: darken($nav-background, 5%);
+    border: 1px solid darken($nav-background, 8%);
+
+  }
+}
+
+.btn-danger {
+  color: #fff;
+  background: #d9534f;
+  border-color: #d43f3a;
+  &:hover {
+    color: #fff;
+    background: #C9302C;
+    border-color: #ac2925;
+
+  }
 }
 
 .btn-default {
-  color: #333;
-  background-color: #fff;
+  color: #2b2b2b;
   border-color: #ccc;
+  a{
+    color: #2b2b2b;
+  }
   &:hover {
     background: $border-color;
   }
 }
 
 .btn-line-primary {
-  // border:1px solid $brand-primary;
-  //color:$brand-primary;
+  border: 1px solid #0b7fc6;
+  color: #0b7fc6;
   &:hover {
     color: #fff;
-    //background-color: $brand-primary;
+    background-color: #0b7fc6;
   }
 }
 
 .btn-line-success {
-  //border:1px solid $brand-success;
-  //color:$brand-success;
+  border: 1px solid #5cb85c;
+  color: #5cb85c;
   &:hover {
     color: #fff;
-    //background-color: $brand-success;
+    background-color: #5cb85c;
   }
 }
 
@@ -50,15 +106,6 @@
   }
 }
 
-.btn-line-danger {
-  //border:1px solid $brand-danger;
-  //color:$brand-danger;
-  &:hover {
-    color: #fff;
-    //background-color: $brand-danger;
-  }
-}
-
 .btn-line-warning {
   border: 1px solid #f39c12;
   color: #f39c12;
@@ -68,5 +115,32 @@
 
   }
 }
+
+.btn-line-danger {
+  border: 1px solid #d9534f;
+  color: #d9534f;
+  &:hover {
+    color: #fff;
+    background-color: #d9534f;
+  }
+}
+
+/* lg*/
+
+.btn-lg {
+  padding: 8px 35px;
+}
+
+.btn-md {
+  padding: 6px 24px;
+}
+
+
+
+
+
+
+
+
 
 
