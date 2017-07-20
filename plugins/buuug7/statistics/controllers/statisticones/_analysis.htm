@@ -6,4 +6,33 @@
 </div>
 
 
-<?= $this->widget->testWidget->render(); ?>
+<?= Form::open(['class'=>'layout']) ?>
+<div class="layout-row">
+    <div class="form-group  widget-field span-left" data-field-name="from">
+        <label>开始日期</label>
+        <!-- Widget -->
+        <div class="field-datepicker" data-control="datepicker" data-disposable="">
+            <!-- Date -->
+            <div class="input-with-icon right-align">
+                <i class="icon icon-calendar-o"></i>
+                <input type="text" name="from"  class="form-control align-right" autocomplete="off" data-datepicker="">
+            </div>
+        </div>
+    </div>
+    <div class="form-group  widget-field span-left" data-field-name="to">
+        <label>结束日期</label>
+        <!-- Widget -->
+        <div class="field-datepicker" data-control="datepicker" data-disposable="">
+            <!-- Date -->
+            <div class="input-with-icon right-align">
+                <i class="icon icon-calendar-o"></i>
+                <input type="text" name="to"  class="form-control align-right" autocomplete="off" data-datepicker="">
+            </div>
+        </div>
+    </div>
+    <div class="form-group span-left">
+        <button type="submit" class="btn btn-default">确定</button>
+    </div>
+</div>
+
+<?= Form::close() ?>

@@ -152,8 +152,8 @@ class Plugin extends PluginBase
     public function registerReportWidgets()
     {
         return [
-            'Buuug7\Statistics\ReportWidgets\Test' => [
-                'label' => 'TestWidget',
+            'Buuug7\Statistics\ReportWidgets\LatestYearLineChart' => [
+                'label' => 'Latest Year Line Widget',
                 'context' => 'dashboard',
             ],
         ];

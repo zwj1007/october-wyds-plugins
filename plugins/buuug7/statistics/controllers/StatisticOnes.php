@@ -2,7 +2,7 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
-use Buuug7\Statistics\ReportWidgets\Test;
+use Buuug7\Statistics\ReportWidgets\LatestYearLineChart;
 /**
  * Statistic Ones Back-end Controller
  */
@@ -22,9 +22,9 @@ class StatisticOnes extends Controller
         parent::__construct();
 
         BackendMenu::setContext('Buuug7.Statistics', 'statistics', 'statisticones');
-        $testWidget=new Test($this);
-        $testWidget->alias='testWidget';
-        $testWidget->bindToController();
+        $latestYearLineChart=new LatestYearLineChart($this);
+        $latestYearLineChart->alias='latestYearLIneChart';
+        $latestYearLineChart->bindToController();
     }
 
     public function update($recordId = null){

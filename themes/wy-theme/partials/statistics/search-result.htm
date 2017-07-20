@@ -26,7 +26,7 @@
         </tbody>
     </table>
 </div>
-{{ result.render()|raw }}
+{{ result.appends({ year:get('year'),month:get('month'),from:get('from'),to:get('to'),users:get('users'),towns:get('towns') }).render()|raw }}
 {% else %}
 <h4>没有结果</h4>
 {% endif %}

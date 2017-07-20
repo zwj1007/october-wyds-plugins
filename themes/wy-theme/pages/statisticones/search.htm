@@ -16,16 +16,14 @@ $this['usersTJ']=\RainLab\User\Models\User::whereHas('groups',function($q){
 
 $this['towns']=\Buuug7\Location\Models\Town::get();
 
-//var_dump(post());
-
 $this['result']=\Buuug7\Statistics\Models\StatisticOne::listAnalysis([
-    'year'=>post('year'),
-    'month'=>post('month'),
-    'from'=>post('from'),
-    'to'=>post('to'),
+'year'=>get('year'),
+'month'=>get('month'),
+'from'=>get('from'),
+'to'=>get('to'),
+'users'=>get('users'),
+'towns'=>get('towns'),
 ],25);
-
-
 }
 ==
 

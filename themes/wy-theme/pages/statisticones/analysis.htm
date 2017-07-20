@@ -6,7 +6,7 @@ function onStart(){
 
 $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
 
-$this['analysisByMonth']=\Buuug7\Statistics\Models\StatisticOne::getAnalysisByDateRange('2016-04-30','2017-12-31','%Y%m');
+$this['analysisByMonth']=\Buuug7\Statistics\Models\StatisticOne::getAnalysisByDateRange('2016-04-30','2017-12-31','%Y-%m');
 
 $this['analysisByYear']=\Buuug7\Statistics\Models\StatisticOne::getAnalysisByDateRange('2016-04-30','2017-12-31','%Y');
 
@@ -120,7 +120,7 @@ $this['analysisByYear']=\Buuug7\Statistics\Models\StatisticOne::getAnalysisByDat
         datasets:[
             {
                 label:'电商交易额(万元)(总和)',
-                fill: false,
+                fill: true,
                 backgroundColor: "rgba(75,192,192,0.4)",
                 borderColor: "rgba(75,192,192,1)",
                 pointBorderColor: "rgba(75,192,192,1)",
@@ -130,9 +130,9 @@ $this['analysisByYear']=\Buuug7\Statistics\Models\StatisticOne::getAnalysisByDat
             },
             {
                 label:'贫困电商交易额(万元)(总和)',
-                    fill: false,
-                backgroundColor: "rgba(52,42,32,0.4)",
-                borderColor: "rgba(5,192,192,1)",
+                fill: true,
+                backgroundColor: "rgba(153,51,0,0.4)",
+                borderColor: "rgba(153,51,0,1)",
                 pointBorderColor: "rgba(5,192,192,1)",
                 pointBackgroundColor: "#fff",
                 pointRadius: 3,
@@ -140,9 +140,9 @@ $this['analysisByYear']=\Buuug7\Statistics\Models\StatisticOne::getAnalysisByDat
             },
             {
                 label:'外销(万元)(总和)',
-                    fill: false,
-                backgroundColor: "rgba(52,42,32,0.4)",
-                borderColor: "rgba(5,192,192,1)",
+                fill: true,
+                backgroundColor: "rgba(0,51,204,0.4)",
+                borderColor: "rgba(0,51,204,1)",
                 pointBorderColor: "rgba(5,192,192,1)",
                 pointBackgroundColor: "#fff",
                 pointRadius: 3,
@@ -150,9 +150,9 @@ $this['analysisByYear']=\Buuug7\Statistics\Models\StatisticOne::getAnalysisByDat
             },
             {
                 label:'购进(万元)(总和)',
-                    fill: false,
-                backgroundColor: "rgba(52,42,32,0.4)",
-                borderColor: "rgba(5,192,192,1)",
+                fill: true,
+                backgroundColor: "rgba(0,204,0,0.4)",
+                borderColor: "rgba(0,204,0,1)",
                 pointBorderColor: "rgba(5,192,192,1)",
                 pointBackgroundColor: "#fff",
                 pointRadius: 3,

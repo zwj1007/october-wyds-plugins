@@ -116,8 +116,9 @@ class StatisticOne extends Model
             'month' => null,
             'from' => null,
             'to' => null,
+            'towns'=>null,
             'users' => null,
-        ], $options));
+         ], $options));
 
         /*$query->whereHas('user',function ($q){
             $q->whereHas('groups',function($q){
@@ -140,6 +141,14 @@ class StatisticOne extends Model
             $query->where('published_at', '<=', $to);
         }
 
+        if($towns !== null){
+            $query->whereHas('user',function ($q) use ($towns){
+                $q->whereHas('town',function($q) use($towns){
+                    $q->whereIn('id',$towns);
+                });
+            });
+        }
+
         if ($users !== null) {
             if (!is_array($users)) {
                 $users = [$users];
@@ -149,7 +158,7 @@ class StatisticOne extends Model
             });
         }
 
-        $query->orderBy('published_at', 'asc');
+        $query->orderBy('published_at', 'desc');
 
         if($limit){
             return $query->paginate($limit);
@@ -163,13 +172,13 @@ class StatisticOne extends Model
     /**
      * @param $from
      * @param $to
-     * @param $groupBy %Y%m or %Y
+     * @param $groupBy, the value is  %Y, %Y%m, %Y%m%d
      * @return mixed
      */
     public static function getAnalysisByDateRange($from, $to, $groupBy){
         $result=DB::select("
           SELECT DATE_FORMAT(published_at,'$groupBy') month,
-          avg(buy) avgBuy,avg(sales) avgSales,avg(poverty_total) avgPovertyTotal,avg(total) avgTotal,
+          round(avg(buy),4) avgBuy,round(avg(sales),4) avgSales,round(avg(poverty_total),4) avgPovertyTotal,round(avg(total),4) avgTotal,
           sum(buy) sumBuy,sum(sales) sumSales,sum(poverty_total) sumPovertyTotal,sum(total) sumTotal
           from buuug7_statistics_statistic_ones WHERE published_at >= '$from' and published_at <= '$to' GROUP BY  month;
           ");
