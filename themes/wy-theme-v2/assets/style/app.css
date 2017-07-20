@@ -3619,26 +3619,26 @@ input {
             margin-right: 5px;
             color: #7e7a7a; }
 
-.dats-stat > .mainRight {
+.data-stat > .mainRight {
   width: 700px; }
-  .dats-stat > .mainRight > .panel-heading {
+  .data-stat > .mainRight > .panel-heading {
     padding: 0 15px;
     background: #ffffff; }
-    .dats-stat > .mainRight > .panel-heading > .sjtj-ol {
+    .data-stat > .mainRight > .panel-heading > .sjtj-ol {
       border: 0;
       margin: 8px; }
-      .dats-stat > .mainRight > .panel-heading > .sjtj-ol li:last-child {
+      .data-stat > .mainRight > .panel-heading > .sjtj-ol li:last-child {
         color: #0b7fc6; }
-  .dats-stat > .mainRight .table > thead > tr > th {
+  .data-stat > .mainRight .table > thead > tr > th {
     padding: 15px 5px; }
-  .dats-stat > .mainRight .table > tbody tr:nth-of-type(odd) {
+  .data-stat > .mainRight .table > tbody tr:nth-of-type(odd) {
     background-color: #f9f9f9; }
-  .dats-stat > .mainRight .table > tbody tr:hover {
+  .data-stat > .mainRight .table > tbody tr:hover {
     background: rgba(90, 196, 255, 0.19); }
-.dats-stat > .mainLeft {
+.data-stat > .mainLeft {
   width: 400px;
   padding: 5px 3px; }
-  .dats-stat > .mainLeft > .panel > .panel-body a {
+  .data-stat > .mainLeft > .panel > .panel-body a {
     margin-left: 8px; }
 
 .submit-data > .mainRight {
@@ -3733,6 +3733,18 @@ input {
       vertical-align: middle; }
   .data-high-select > .mainLeft .panel .panel-body form .form-group .input-group-addon, .data-high-select > .mainLeft .panel .panel-body form .form-group .input-group-btn, .data-high-select > .mainLeft .panel .panel-body form .form-group .input-group .form-control {
     display: table-cell; }
+
+.data-analyze > .mainRight {
+  width: 100% !important; }
+  .data-analyze > .mainRight > .panel-heading > span {
+    font-size: 12px;
+    color: #9c9c9c; }
+  .data-analyze > .mainRight .table > thead > tr > th {
+    padding: 15px 5px; }
+  .data-analyze > .mainRight .table > tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9; }
+  .data-analyze > .mainRight .table > tbody tr:hover {
+    background: rgba(90, 196, 255, 0.19); }
 
 /*
 |--------------------------------------------------------------------------
