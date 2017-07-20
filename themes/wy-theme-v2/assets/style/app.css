@@ -2527,15 +2527,6 @@ input {
         text-align: center;
         height: 38px;
         padding: 20px 0; }
-        .index-lyzx .lyzx-body .liuyan_box01 .box02 .t05 i input {
-          width: 160px;
-          height: 38px;
-          background: #ce1c00;
-          color: #fff;
-          line-height: 38px;
-          font-size: 16px;
-          text-align: center;
-          border: none; }
 
 .user {
   margin-top: 30px; }
@@ -2589,15 +2580,7 @@ input {
       margin: 0 75px 50px;
       overflow: hidden; }
       .user .mainRight .content .imgFile {
-        display: block;
         width: 105px;
-        line-height: 35px;
-        text-align: center;
-        height: 35px;
-        background: #0b7fc6;
-        color: #fff;
-        font-size: 12px;
-        border-radius: 3px;
         margin: 20px 43px;
         position: relative; }
       .user .mainRight .content .leftBar {
@@ -2709,12 +2692,8 @@ input {
     width: 70px;
     text-align: right;
     margin-right: 20px; }
-.user-pwd input[type="submit"] {
+.user-pwd .fl {
   padding: 6px 55px;
-  border-radius: 3px;
-  background: #0b7fc6;
-  color: #fff;
-  font-size: 14px;
   display: block;
   margin: 30px auto; }
 
@@ -2819,19 +2798,6 @@ input {
     color: #5d5d5d;
     text-indent: 2em; }
 
-.user-dp .content .btn-warning {
-  color: #fff;
-  background-color: #f39c12;
-  border-color: #e08e0b; }
-.user-dp .content .btn {
-  display: inline-block;
-  padding: 8px 25px;
-  border: 1px solid #ff6218;
-  background: #FF4400;
-  color: #FFFFFF; }
-  .user-dp .content .btn a {
-    color: #FFFFFF;
-    padding: 10px 25px; }
 .user-dp .content .headline {
   display: block;
   margin: 35px 0 20px 0;
@@ -2856,16 +2822,6 @@ input {
     text-align: left; }
     .user-dp .content .content-dptp .dptp-xx p {
       line-height: 35px; }
-.user-dp .panel .dp-but {
-  padding: 8px 15px;
-  border: 1px solid #ff6218;
-  background: #FF4400;
-  color: #FFFFFF;
-  margin: 0 auto;
-  display: -webkit-box; }
-  .user-dp .panel .dp-but a {
-    color: #FFFFFF;
-    padding: 10px 25px; }
 .user-dp .con-img {
   text-align: center; }
   .user-dp .con-img .portr .portr-img {
@@ -2998,13 +2954,6 @@ input {
       font-weight: normal;
       font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
       padding: 5px 10px; }
-    .suer-setting .mainRight .content p .btn {
-      color: #fff;
-      background: #ff4400;
-      border: 1px solid rgba(247, 194, 194, 0.27);
-      padding: 10px 20px;
-      margin-left: 25px;
-      border-radius: 60px; }
 
 .xqfb .xqfb-title a {
   margin-right: 20px;
@@ -3746,33 +3695,83 @@ input {
   .data-analyze > .mainRight .table > tbody tr:hover {
     background: rgba(90, 196, 255, 0.19); }
 
-/*
-|--------------------------------------------------------------------------
-| _buttons
-|--------------------------------------------------------------------------
-|
-| Created by buuug7 on 2017/5/6.
-|
-|
+/*buttons
 */
 .btn {
   display: inline-block;
   padding: 6px 12px;
   font-size: 14px;
-  border: 1px solid #CCCCCC; }
+  border: 1px solid #CCCCCC;
+  border-radius: 4px; }
+  .btn a {
+    color: #fff; }
+
+.btn-primary {
+  color: #fff;
+  background: #0b7fc6;
+  border-color: #0a74b4; }
+  .btn-primary:hover {
+    color: #fff;
+    background: #286090;
+    border-color: #204d74; }
+
+.btn-success {
+  color: #fff;
+  background: #5cb85c;
+  border: #4cae4c; }
+  .btn-success:hover {
+    color: #fff;
+    background: #449D44;
+    border: #3c883c; }
+
+.btn-info {
+  color: #fff;
+  background: #00c0ef;
+  border-color: #269abc; }
+  .btn-info:hover {
+    color: #fff;
+    background: #00a0c7;
+    border-color: #269abc; }
+
+.btn-warning {
+  color: #fff;
+  background: #FF4400;
+  border: 1px solid #e63d00; }
+  .btn-warning:hover {
+    color: #fff;
+    background: #e63d00;
+    border: 1px solid #d63900; }
+
+.btn-danger {
+  color: #fff;
+  background: #d9534f;
+  border-color: #d43f3a; }
+  .btn-danger:hover {
+    color: #fff;
+    background: #C9302C;
+    border-color: #ac2925; }
 
 .btn-default {
-  color: #333;
-  background-color: #fff;
+  color: #2b2b2b;
   border-color: #ccc; }
+  .btn-default a {
+    color: #2b2b2b; }
   .btn-default:hover {
     background: #CCCCCC; }
 
-.btn-line-primary:hover {
-  color: #fff; }
+.btn-line-primary {
+  border: 1px solid #0b7fc6;
+  color: #0b7fc6; }
+  .btn-line-primary:hover {
+    color: #fff;
+    background-color: #0b7fc6; }
 
-.btn-line-success:hover {
-  color: #fff; }
+.btn-line-success {
+  border: 1px solid #5cb85c;
+  color: #5cb85c; }
+  .btn-line-success:hover {
+    color: #fff;
+    background-color: #5cb85c; }
 
 .btn-line-info {
   border: 1px solid #00c0ef;
@@ -3781,14 +3780,25 @@ input {
     color: #fff;
     background: #00c0ef; }
 
-.btn-line-danger:hover {
-  color: #fff; }
-
 .btn-line-warning {
   border: 1px solid #f39c12;
   color: #f39c12; }
   .btn-line-warning:hover {
     color: #fff;
     background: #f39c12; }
+
+.btn-line-danger {
+  border: 1px solid #d9534f;
+  color: #d9534f; }
+  .btn-line-danger:hover {
+    color: #fff;
+    background-color: #d9534f; }
+
+/* lg*/
+.btn-lg {
+  padding: 8px 35px; }
+
+.btn-md {
+  padding: 6px 24px; }
 
 /*# sourceMappingURL=app.css.map */

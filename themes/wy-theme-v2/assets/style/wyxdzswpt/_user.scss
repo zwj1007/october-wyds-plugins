@@ -68,15 +68,7 @@
       margin: 0 75px 50px;
       overflow: hidden;
       .imgFile {
-        display: block;
         width: 105px;
-        line-height: 35px;
-        text-align: center;
-        height: 35px;
-        background: #0b7fc6;
-        color: #fff;
-        font-size: 12px;
-        border-radius: 3px;
         margin: 20px 43px;
         position: relative;
       }
@@ -237,13 +229,8 @@
       }
     }
   }
-
-  input[type="submit"] {
+  .fl {
     padding: 6px 55px;
-    border-radius: 3px;
-    background: #0b7fc6;
-    color: #fff;
-    font-size: 14px;
     display: block;
     margin: 30px auto;
   }
@@ -408,25 +395,6 @@
 //店铺
 .user-dp {
   .content {
-    .btn-warning {
-      color: #fff;
-      background-color: #f39c12;
-      border-color: #e08e0b;
-    }
-    .btn {
-      display: inline-block;
-      padding: 8px 25px;
-      border: 1px solid #ff6218;
-      background: #FF4400;
-      color: #FFFFFF;
-
-      a {
-        color: #FFFFFF;
-        padding: 10px 25px;
-      }
-
-    }
-
     .headline {
       display: block;
       margin: 35px 0 20px 0;
@@ -465,19 +433,6 @@
   }
 
   .panel {
-    .dp-but {
-      padding: 8px 15px;
-      border: 1px solid #ff6218;
-      background: $nav-background;
-      color: #FFFFFF;
-      margin: 0 auto;
-      display: -webkit-box;
-      a {
-        color: #FFFFFF;
-        padding: 10px 25px;
-
-      }
-    }
   }
 
   .con-img {
@@ -673,15 +628,7 @@
         font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
         padding: 5px 10px;
       }
-      p .btn {
-        color: #fff;
-        background: rgb(255, 68, 0);
-        border: 1px solid rgba(247, 194, 194, 0.27);
-        padding: 10px 20px;
-        margin-left: 25px;
-        border-radius: 60px;
 
-      }
     }
   }
 }
