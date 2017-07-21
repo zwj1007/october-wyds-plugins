@@ -13,7 +13,6 @@ use Redirect;
 class StatisticOne extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-
     public $rules = [
         'user_id' => 'required',
         'buy' => 'required|numeric',
@@ -76,10 +75,6 @@ class StatisticOne extends Model
         });
     }
 
-    public function scopeFilterA()
-    {
-        return 1;
-    }
 
     public function filterFields($fields, $context = null)
     {
@@ -177,10 +172,10 @@ class StatisticOne extends Model
      */
     public static function getAnalysisByDateRange($from, $to, $groupBy){
         $result=DB::select("
-          SELECT DATE_FORMAT(published_at,'$groupBy') month,
+          SELECT DATE_FORMAT(published_at,'$groupBy') dates,
           round(avg(buy),4) avgBuy,round(avg(sales),4) avgSales,round(avg(poverty_total),4) avgPovertyTotal,round(avg(total),4) avgTotal,
           sum(buy) sumBuy,sum(sales) sumSales,sum(poverty_total) sumPovertyTotal,sum(total) sumTotal
-          from buuug7_statistics_statistic_ones WHERE published_at >= '$from' and published_at <= '$to' GROUP BY  month;
+          from buuug7_statistics_statistic_ones WHERE published_at >= '$from' and published_at <= '$to' GROUP BY  dates;
           ");
        return $result;
     }

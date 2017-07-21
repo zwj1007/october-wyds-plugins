@@ -1,37 +1,74 @@
 <div data-control="toolbar">
     <a href="<?= Backend::url('buuug7/statistics/statisticones') ?>"
-        class="btn btn-primary oc-icon-mail-reply">
+       class="btn btn-primary oc-icon-mail-reply">
         返回
     </a>
 </div>
 
-
-<?= Form::open(['class'=>'layout']) ?>
-<div class="layout-row">
-    <div class="form-group  widget-field span-left" data-field-name="from">
-        <label>开始日期</label>
-        <!-- Widget -->
-        <div class="field-datepicker" data-control="datepicker" data-disposable="">
-            <!-- Date -->
-            <div class="input-with-icon right-align">
-                <i class="icon icon-calendar-o"></i>
-                <input type="text" name="from"  class="form-control align-right" autocomplete="off" data-datepicker="">
-            </div>
+<?= Form::ajax('onAnalysis',['class'=>'clearfix m-t']) ?>
+<div class="form-group span-left is-required" data-field-name="from">
+    <label>开始日期</label>
+    <!-- Widget -->
+    <div class="field-datepicker" data-control="datepicker" data-disposable="">
+        <!-- Date -->
+        <div class="input-with-icon right-align">
+            <i class="icon icon-calendar-o"></i>
+            <input type="text" name="from" class="form-control align-right" autocomplete="off" data-datepicker="">
         </div>
     </div>
-    <div class="form-group  widget-field span-left" data-field-name="to">
-        <label>结束日期</label>
-        <!-- Widget -->
-        <div class="field-datepicker" data-control="datepicker" data-disposable="">
-            <!-- Date -->
-            <div class="input-with-icon right-align">
-                <i class="icon icon-calendar-o"></i>
-                <input type="text" name="to"  class="form-control align-right" autocomplete="off" data-datepicker="">
-            </div>
+</div>
+<div class="form-group span-right is-required" data-field-name="to">
+    <label>结束日期</label>
+    <!-- Widget -->
+    <div class="field-datepicker" data-control="datepicker" data-disposable="">
+        <!-- Date -->
+        <div class="input-with-icon right-align">
+            <i class="icon icon-calendar-o"></i>
+            <input type="text" name="to" class="form-control align-right" autocomplete="off" data-datepicker="">
         </div>
     </div>
-    <div class="form-group span-left">
-        <button type="submit" class="btn btn-default">确定</button>
+</div>
+<div class="form-group radio-field span-left is-required">
+    <label>数据分组方式</label>
+    <p class="help-block before-field">选择以何种方式来分组数据</p>
+    <div class="radio custom-radio">
+        <input name="groupby" value="%Y-%m-%d" type="radio" id="radio_1"/>
+        <label for="radio_1">按天分组</label>
+    </div>
+    <div class="radio custom-radio">
+        <input checked="checked" name="groupby" value="%Y-%m" type="radio" id="radio_2"/>
+        <label for="radio_2">按月分组</label>
+    </div>
+    <div class="radio custom-radio">
+        <input name="groupby" value="%Y" type="radio" id="radio_3"/>
+        <label for="radio_3">按年分组</label>
+    </div>
+</div>
+<div class="form-group radio-field span-right is-required">
+    <label>显示类型</label>
+    <p class="help-block before-field">用来确定显示统计数据的那些方面,比如平均值或者总和</p>
+    <div class="radio custom-radio">
+        <input checked="checked" name="type" value="avg" type="radio" id="radio_type_1"/>
+        <label for="radio_type_1">平均值</label>
+    </div>
+    <div class="radio custom-radio">
+        <input name="type" value="sum" type="radio" id="radio_type_2"/>
+        <label for="radio_type_2">总和</label>
+    </div>
+</div>
+<div class="form-group span-left">
+    <div class="loading-indicator-container">
+        <button
+                type="submit"
+                data-request="onAnalysis"
+                data-request-data="redirect:0"
+                data-hotkey="ctrl+s, cmd+s"
+                data-load-indicator="搜索中..."
+                class="btn btn-primary">
+            搜索
+        </button>
     </div>
 </div>
 <?= Form::close() ?>
+
+<div id="result"></div>

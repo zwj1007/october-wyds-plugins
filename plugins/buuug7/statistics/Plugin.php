@@ -44,7 +44,7 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        trace_sql();
+        //trace_sql();
 
         Validator::extend('unique_with', function ($attribute, $value, $parameters, $validator) {
             $request = request()->all();
