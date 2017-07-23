@@ -16,7 +16,7 @@ $this->addJs('https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/locales/bootstr
 ==
 <div class="container m-t">
     <div class="row">
-        {% if userGroupTongJiShuJuYongHuZuExists %}
+        {% if user.hasAccess('buuug7.statistics.statistic_one.create')  %}
         <div class="col-md-8">
             <ol class="breadcrumb" style="">
                 <li><a href="/">首页</a></li>

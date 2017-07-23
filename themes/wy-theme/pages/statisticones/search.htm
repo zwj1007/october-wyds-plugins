@@ -37,6 +37,7 @@ $this['result']=\Buuug7\Statistics\Models\StatisticOne::listAnalysis([
                 <li><a href="/user/center/statisticones">数据统计</a></li>
                 <li class="active">高级查询</li>
             </ol>
+            {% if user.hasAccess('buuug7.statistics.statistic_one.search')  %}
             <div class="panel panel-default">
                 <div class="panel-heading">
                     搜索结果
@@ -45,7 +46,13 @@ $this['result']=\Buuug7\Statistics\Models\StatisticOne::listAnalysis([
                     {% partial 'statistics/search-result' result=result %}
                 </div>
             </div>
+            {% else %}
+            <div class="callout callout-danger">
+                <p>不允许，你没有权限操作</p>
+            </div>
+            {% endif %}
         </div>
+        {% if user.hasAccess('buuug7.statistics.statistic_one.search')  %}
         <div class="col-md-4 m-t-lg">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -56,5 +63,6 @@ $this['result']=\Buuug7\Statistics\Models\StatisticOne::listAnalysis([
                 </div>
             </div>
         </div>
+        {% endif %}
     </div>
 </div>

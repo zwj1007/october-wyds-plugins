@@ -43,11 +43,11 @@ class Account extends \RainLab\User\Components\Account
     {
         parent::onRun();
 
-        if(Auth::check()){
+  /*      if(Auth::check()){
             $user=Auth::getUser();
             $userGroup=UserGroup::where('code','tong-ji-shu-ju-yong-hu-zu')->first();
             $this->page['userGroupTongJiShuJuYongHuZuExists']=$user->inGroup($userGroup);
-        }
+        }*/
     }
 
 

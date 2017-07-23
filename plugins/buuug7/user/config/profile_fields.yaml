@@ -22,3 +22,8 @@ village:
     tab: 个人资料
     span: auto
     dependsOn: town
+permissions:
+    tab: '权限'
+    type: 'Backend\FormWidgets\PermissionEditor'
+
+

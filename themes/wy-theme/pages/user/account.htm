@@ -20,26 +20,7 @@ if(!Auth::check()) return Redirect::to('/user/login');
             {% partial 'user/user-left-menu' %}
         </div>
         <div class="col-md-9 m-b">
-            {% if userGroupTongJiShuJuYongHuZuExists %}
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    提交统计数据
-                </div>
-                <div class="panel-body">
 
-                    <ol class="breadcrumb m-b-sm">
-                        <li class="active">{{ user.county.name }}</li>
-                        <li class="active">{{ user.town.name }}</li>
-                        <li class="active">{{ user.village.name }}</li>
-                        <li class="active">{{ user.name }}</li>
-                    </ol>
-                    <p>
-                        <a href="/statisticones/create" class="btn btn-success">提交统计数据</a>
-                        <a href="/user/center/statisticones" class="btn btn-default">查看统计数据</a>
-                    </p>
-                </div>
-            </div>
-            {% endif %}
             <div class="panel panel-default">
                 <div class="panel-heading">
                     修改个人信息

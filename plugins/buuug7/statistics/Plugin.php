@@ -110,9 +110,26 @@ class Plugin extends PluginBase
     {
         return [
             'buuug7.statistics.access_statistic_one' => [
-                'tab' => '统计',
-                'label' => '统计一'
+                'tab' => '数据统计(后台)',
+                'label' => '管理数据统计一'
             ],
+            'buuug7.statistics.statistic_one.create' => [
+                'tab' => '数据统计(前台)',
+                'label' => '提交数据统计',
+            ],
+            'buuug7.statistics.statistic_one.view' => [
+                'tab' => '数据统计(前台)',
+                'label' => '查看数据统计',
+            ],
+            'buuug7.statistics.statistic_one.search' => [
+                'tab' => '数据统计(前台)',
+                'label' => '搜索数据',
+            ],
+            'buuug7.statistics.statistic_one.analysis' => [
+                'tab' => '数据统计(前台)',
+                'label' => '分析数据统计',
+            ],
+
         ];
     }
 

@@ -1,6 +1,8 @@
 title = '我的数据统计'
 url = '/user/center/statisticones'
 layout = 'default'
+[viewBag]
+userActiveMenu = "statisticones"
 [b7StatisticOnes]
 [b7Account]
 ==
@@ -11,7 +13,8 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
 ==
 <div class="container m-t">
     <div class="row">
-        {% if userGroupTongJiShuJuYongHuZuExists %}
+
+        {% if user.hasAccess('buuug7.statistics.statistic_one.view')  %}
         <div class="col-md-7">
             <ol class="breadcrumb">
                 <li><a href="/">首页</a></li>
@@ -63,9 +66,16 @@ $this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
                     高级查询
                 </div>
                 <div class="panel-body">
-                    <a href="/statisticones/search" class="btn btn-default"><i class="fa fa-search"></i> 高级查询</a>
-                    <a href="/statisticones/analysis" class="btn btn-line-warning"><i class="fa fa-area-chart"></i> 数据分析</a>
-                    <a href="/statisticones/year-report" class="btn btn-line-info"><i class="fa fa-pie-chart"></i> 年度报表</a>
+                    {% if user.hasAccess('buuug7.statistics.statistic_one.create')  %}
+                    <a href="/statisticones/create" class="btn btn-line-warning m-b-sm"><i class="fa fa-plus"></i> 添加数据</a>
+                    {% endif %}
+                    {% if user.hasAccess('buuug7.statistics.statistic_one.search')  %}
+                    <a href="/statisticones/search" class="btn btn-default m-b-sm"><i class="fa fa-search"></i> 高级查询</a>
+                    {% endif  %}
+                    {% if user.hasAccess('buuug7.statistics.statistic_one.analysis')  %}
+                    <a href="/statisticones/analysis" class="btn btn-default m-b-sm"><i class="fa fa-area-chart"></i> 数据分析</a>
+                    {% endif %}
+                    <a href="/statisticones/year-report" class="btn btn-default m-b-sm"><i class="fa fa-pie-chart"></i> 年度报表</a>
                 </div>
             </div>
             <div class="panel panel-default">
