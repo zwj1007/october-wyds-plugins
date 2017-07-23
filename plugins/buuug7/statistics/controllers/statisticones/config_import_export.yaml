@@ -1,0 +1,34 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+import:
+    # Page title
+    title: 电商交易统计导入
+
+    # Import List Column configuration
+    list: $/buuug7/statistics/models/statisticoneimport/columns.yaml
+
+    # Import Form Field configuration
+    form: $/buuug7/statistics/models/statisticoneimport/fields.yaml
+
+    # Import Model class
+    modelClass: Buuug7\Statistics\Models\StatisticOneImport
+
+    # Redirect when finished
+    redirect: buuug7/statistics/statisticones
+
+export:
+    # Page title
+    title: 电商交易统计导出
+
+    # Output file name
+    fileName: statistic_ones.csv
+
+    # Export List Column configuration
+    list: $/buuug7/statistics/models/statisticoneexport/columns.yaml
+
+    # Export Model class
+    modelClass: Buuug7\Statistics\Models\StatisticOneExport
+
+    # Redirect when finished
+    redirect: buuug7/statistics/statisticones

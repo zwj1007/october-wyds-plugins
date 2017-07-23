@@ -1,0 +1,13 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id: ID
+    user_id: 用户ID
+    buy: 购进(万元)
+    sales: 外销(万元)
+    poverty_total: 贫困电商交易额(万元)
+    total: 电商交易额(万元)
+    published_at: 日期

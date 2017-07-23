@@ -149,7 +149,7 @@ class Plugin extends PluginBase
                 'order' => 500,
                 'sideMenu' => [
                     'statisticones' => [
-                        'label' => '统计(one)',
+                        'label' => '电商交易统计',
                         'icon' => 'icon-bar-chart',
                         'url' => Backend::url('buuug7/statistics/statisticones'),
                         'permissions' => ['buuug7.statistics.access_statistics.*'],
