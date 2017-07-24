@@ -3588,7 +3588,8 @@ input {
   width: 400px;
   padding: 5px 3px; }
   .data-stat > .mainLeft > .panel > .panel-body a {
-    margin-left: 8px; }
+    margin-left: 8px;
+    margin-top: 15px; }
 
 .submit-data > .mainRight {
   width: 750px; }
@@ -3731,7 +3732,7 @@ input {
   .btn-info:hover {
     color: #fff;
     background: #00a0c7;
-    border-color: #269abc; }
+    border-color: #2eb0d6; }
 
 .btn-warning {
   color: #fff;
