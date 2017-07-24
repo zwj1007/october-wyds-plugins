@@ -5,7 +5,7 @@ layout = 'default'
 [b7Account]
 ==
 function onStart(){
-
+$this->addCss('https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css');
 $this->addCss('https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css');
 $this->addJs('https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js');
 $this->addJs('https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.zh-CN.min.js');
@@ -28,41 +28,34 @@ $this['result']=\Buuug7\Statistics\Models\StatisticOne::listAnalysis([
 ==
 
 
-<div class="container m-t">
-    <div class="row">
-        <div class="col-md-8">
-            <ol class="breadcrumb">
-                <li><a href="/">首页</a></li>
-                <li><a href="/user/center/account">用户中心</a></li>
-                <li><a href="/user/center/statisticones">数据统计</a></li>
-                <li class="active">高级查询</li>
-            </ol>
-            {% if user.hasAccess('buuug7.statistics.statistic_one.search')  %}
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    搜索结果
-                </div>
-                <div class="panel-body">
-                    {% partial 'statistics/search-result' result=result %}
-                </div>
-            </div>
-            {% else %}
-            <div class="callout callout-danger">
-                <p>不允许，你没有权限操作</p>
-            </div>
-            {% endif %}
+
+<ol class="box breadcrumb">
+    <li><a href="/">首页</a></li>
+    <li><a href="/user/center/account">用户中心</a></li>
+    <li><a href="/user/center/statisticones">数据统计</a></li>
+    <li class="active">高级查询</li>
+</ol>
+{% if user.hasAccess('buuug7.statistics.statistic_one.search')  %}
+<section class="box user xqfb data-stat data-high-select clearfix">
+    <div class="mainRight float-left xqfb-body ">
+        <div class="panel-heading">
+            搜索结果
         </div>
-        {% if user.hasAccess('buuug7.statistics.statistic_one.search')  %}
-        <div class="col-md-4 m-t-lg">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    搜索选项
-                </div>
-                <div class="panel-body">
-                    {% partial 'statistics/search-form' %}
-                </div>
-            </div>
-        </div>
-        {% endif %}
+        {% partial 'statistics/search-result' result=result %}
     </div>
+    <div class="mainLeft float-right user-gs ">
+        <div class="panel">
+            <div class="panel-heading">
+                查询选项
+            </div>
+            <div class="panel-body">
+                {% partial 'statistics/search-form' %}
+            </div>
+        </div>
+    </div>
+</section>
+{% else %}
+<div class="callout callout-danger">
+    <p>不允许，你没有权限操作</p>
 </div>
+{% endif %}

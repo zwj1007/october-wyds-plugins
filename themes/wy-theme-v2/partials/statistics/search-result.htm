@@ -1,31 +1,29 @@
-
 {% if result.count %}
-<div class="table-responsive">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>时间</th>
-            <th>购进(万元)</th>
-            <th>外销(万元)</th>
-            <th>贫困电商交易额(万元)</th>
-            <th>电商交易额(万元)</th>
-            <th>用户</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for item in result %}
-        <tr>
-            <td>{{ item.published_at }}</td>
-            <td>{{ item.buy }}</td>
-            <td>{{ item.sales }}</td>
-            <td>{{ item.poverty_total }}</td>
-            <td>{{ item.total }}</td>
-            <td>{{ item.user.name }}</td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th>时间</th>
+        <th>购进(万元)</th>
+        <th>外销(万元)</th>
+        <th>贫困电商交易额(万元)</th>
+        <th>电商交易额(万元)</th>
+        <th>用户</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in result %}
+    <tr>
+        <td>{{ item.published_at }}</td>
+        <td>{{ item.buy }}</td>
+        <td>{{ item.sales }}</td>
+        <td>{{ item.poverty_total }}</td>
+        <td>{{ item.total }}</td>
+        <td>{{ item.user.name }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
 {{ result.appends({ year:get('year'),month:get('month'),from:get('from'),to:get('to'),users:get('users'),towns:get('towns') }).render()|raw }}
 {% else %}
 <h4>没有结果</h4>
