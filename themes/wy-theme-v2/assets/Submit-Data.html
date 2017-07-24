@@ -5,6 +5,10 @@
     <title>用户中心</title>
     <link rel="icon" type="image/png" href="http://6.jq2.com/themes/wy-theme-v2/assets/images/october.png">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="http://6.jq2.com/plugins/netsti/uploader/assets/css/uploader.css">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" >
     <link rel="stylesheet" href="style/app.css">
 </head>
 <body>
@@ -38,11 +42,20 @@
         </form>
         <div class="float-right head-right">
             <ul>
+                <!--      <li>
+                          <a href="login.html"> <img src="images/icon4.png" alt=""></a>
+                          <p> 注册登录</p>
+
+                      </li>-->
                 <li>
                     <a href="index-lxwm.html"> <img src="images/icon2.png" alt=""></a>
                     <p> 联系我们</p>
 
                 </li>
+                <!--<li>
+                    <a href="index-lyzx.html"> <img src="images/icon3.png" alt=""></a>
+                    <p>留言咨询</p>
+                </li>-->
                 <li>
                     <a href="index-mzsm.html"> <img src="images/icon5.png" alt=""></a>
                     <p>免责声明</p>
@@ -91,35 +104,69 @@
         <li><a href="user.html">用户中心</a></li>
         <li class="active">添加数据统计</li>
     </ol>
-    <section class="box user user-pwd submit-data clearfix ">
+    <section class="box user submit-data clearfix ">
         <div class="mainRight float-left">
             <div class="content-title">
                 <a href="user.html">提交数据统计加数</a>
                 <span></span>
 
             </div>
-
             <div class="content">
                 <div class="rightBar">
-                    <form id="submitData" method="post" action="Data-Statistics.html">
-                        <div>
-                            <label>购进(万元)</label>
-                            <input type="text">
+                    <form method="POST" action="http://6.jq2.com/statisticones/create" accept-charset="UTF-8" data-request="onAddStatistic" class="form-horizontal" data-request-flash="true"><input name="_session_key" type="hidden" value="GDMlUt3Io3Okd9ZTLd3oRIQSUxw8ZrmA2x6pd5jq"><input name="_token" type="hidden" value="rghOY7xGEpSvQfvvjOEHBBDrnKDO6VCs5Ox8vCd7">
+                        <input type="hidden" name="user_id" value="33">
+                        <div class="form-group">
+                            <label for="statisticBuy" class="control-label col-sm-4">购进(万元)</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="buy" id="statisticBuy" class="form-control">
+                            </div>
                         </div>
-                        <div>
-                            <label id="newPwdTips">外销(万元)</label>
-                            <input type="text" name="newPwd"><b></b>
+
+                        <div class="form-group">
+                            <label for="statisticSales" class="control-label col-sm-4">外销(万元)</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="sales" id="statisticSales" class="form-control">
+                            </div>
                         </div>
-                        <div>
-                            <label>贫困村电商交易额(万元)</label>
-                            <input type="text" name="confirmPwd"><b></b>
+
+                        <div class="form-group">
+                            <label for="statisticPovertyTotal" class="control-label col-sm-4">贫困村电商交易额(万元)</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="poverty_total" id="statisticPovertyTotal" class="form-control">
+                            </div>
                         </div>
-                        <div>
-                            <label>日期</label>
-                            <input type="month" value="2014/5/8"/>
+
+                        <div class="form-group">
+                            <label for="statisticPublishedAt" class="control-label col-sm-4">日期</label>
+                            <div class="col-sm-8">
+                                <div class="input-group date" data-provide="datepicker" data-date-format="yyyy-mm-dd" data-language="zh-cn">
+                                    <input type="text" name="published_at" id="statisticPublishedAt" class="form-control">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-th"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <input id="confirmChange" class=" btn btn-primary fl" type="submit" value="提交数据">
+
+<!--                        <div class="form-group">
+                            <label for="statisticPublishedAt" class="control-label col-sm-4">日期</label>
+                            <div class="col-sm-8">
+                                <div class="input-group date" data-provide="datepicker" data-date-format="yyyy-mm-dd" data-language="zh-cn">
+                                    <input type="text" name="published_at" id="statisticPublishedAt" class="form-control">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-th"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-4">
+                                <button type="submit" class=" btn btn-primary" data-attach-loading="">提交数据</button>
+                            </div>
+                        </div>
                     </form>
+
                 </div>
                 <div class="callout callout-danger">
                     <p>
@@ -132,7 +179,6 @@
                     </p>
                 </div>
             </div>
-
         </div>
     </section>
 </div>
