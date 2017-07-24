@@ -3651,8 +3651,9 @@ input {
     .data-high-select > .mainRight > .panel-heading {
       padding: 15px;
       background-color: #f5f5f5; }
-    .data-high-select > .mainRight h4 {
-      padding: 30px; }
+    .data-high-select > .mainRight h2, .data-high-select > .mainRight h4 {
+      padding: 30px;
+      text-align: center; }
   .data-high-select > .mainLeft {
     width: 350px; }
     .data-high-select > .mainLeft .panel .panel-body form .form-group > .checkbox .w-100 {
