@@ -1,0 +1,171 @@
+title = '我的数据统计'
+url = '/user/center/statisticones'
+layout = 'default'
+[viewBag]
+userActiveMenu = "statisticones"
+[b7StatisticOnes]
+[b7Account]
+==
+function onStart(){
+$this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
+// var_dump($t);
+}
+==
+
+<ol class="box breadcrumb">
+    <li><a href="/">首页</a></li>
+    <li><a href="/user/center/account">用户中心</a></li>
+    <li class="active">数据统计</li>
+</ol>
+{% if user.hasAccess('buuug7.statistics.statistic_one.view')  %}
+<section class="box user xqfb data-stat clearfix">
+    <div class="mainRight float-left xqfb-body ">
+        <div class="panel-heading">
+            <ol class="breadcrumb sjtj-ol">
+                <li class="active">{{ user.county.name }}</li>
+                <li class="active">{{ user.town.name }}</li>
+                <li class="active">{{ user.village.name }}</li>
+                <li class="active">{{ user.name }}</li>
+            </ol>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>日期</th>
+                <th>购进(万元)</th>
+                <th>外销(万元)</th>
+                <th>贫困电商交易额(万元)</th>
+                <th>电商交易额(万元)</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in statisticOnes %}
+            <tr>
+                <td>{{ item.published_at }}</td>
+                <td>{{ item.buy }}</td>
+                <td>{{ item.sales }}</td>
+                <td>{{ item.poverty_total }}</td>
+                <td>{{ item.total }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {{ statisticOnes.render|raw }}
+    </div>
+    <div class="mainLeft float-right user-gs ">
+        <div class="panel">
+            <div class="panel-heading">
+                高级查询
+            </div>
+            <div class="panel-body">
+                {% if user.hasAccess('buuug7.statistics.statistic_one.create')  %}
+                <a href="/statisticones/create" class="btn btn-line-success"><i class="fa fa-plus"></i> 添加数据</a>
+                {% endif %}
+                {% if user.hasAccess('buuug7.statistics.statistic_one.search')  %}
+                <a href="/statisticones/search" class="btn btn-default"><i class="fa fa-search"></i> 高级查询</a>
+                {% endif  %}
+                {% if user.hasAccess('buuug7.statistics.statistic_one.analysis')  %}
+                <a href="/statisticones/analysis" class="btn btn-line-warning"><i class="fa fa-area-chart"></i> 数据分析</a>
+                {% endif %}
+                <a href="/statisticones/year-report" class="btn btn-line-info"><i class="fa fa-pie-chart"></i> 年度报表</a>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">本月份数据统计</div>
+            <div class="panel-body">
+                <canvas id="line-chart-latest-month"></canvas>
+            </div>
+        </div>
+        <div class="panel ">
+            <div class="panel-heading">本年度数据统计</div>
+            <div class="panel-body">
+                <canvas id="line-chart-latest-year"></canvas>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% else %}
+<div class="col-md-8">
+    <div class="callout callout-danger">
+        <p>不允许，你没有权限操作</p>
+    </div>
+</div>
+{% endif %}
+
+
+{% put scripts %}
+<script>
+    //
+    // line chart for latest month
+    //
+    var ctxLineChartLatestMonth = document.getElementById('line-chart-latest-month');
+    var lineChartDataLatestMonth = {
+        labels: [{% for item in currentMonthStatisticOnes %}"{{ item.published_at }}",{% endfor %}],
+    datasets:[
+        {
+            label:'电商交易额',
+            fill: false,
+            backgroundColor: "rgba(75,192,192,0.4)",
+            borderColor: "rgba(75,192,192,1)",
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointRadius: 2,
+            data: [{% for item in currentMonthStatisticOnes %}{{ item.total }},{% endfor%}],
+    }
+    ]
+    };
+    var lineChartOptionsLatestMonth = {};
+    var lineChartLatestMonth = new Chart(ctxLineChartLatestMonth, {
+        type: 'line',
+        data: lineChartDataLatestMonth,
+        options: lineChartOptionsLatestMonth
+    });
+
+    //
+    // line chart for latest year
+    //
+    var ctxLineChartLatestYear = document.getElementById('line-chart-latest-year');
+    var lineChartDataLatestYear = {
+        labels: [{% for item in currentYearStatisticOnes %}"{{ item.published_at }}",{% endfor %}],
+    datasets:[
+        {
+            label:'电商交易额',
+            fill: true,
+            backgroundColor: "rgba(75,192,192,0.5)",
+            borderColor: "rgba(75,192,192,1)",
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointRadius: 1,
+            data: [{% for item in currentYearStatisticOnes %}{{ item.total }},{% endfor%}],
+    },
+    {
+        label:'购进',
+            fill: true,
+        backgroundColor: "rgba(255,109,0,0.5)",
+        borderColor: "rgba(255,109,0,1)",
+        pointBorderColor: "rgba(255,109,0,1)",
+        pointBackgroundColor: "#fff",
+        pointRadius: 1,
+        data: [{% for item in currentYearStatisticOnes %}{{ item.buy }},{% endfor%}],
+    },
+    {
+        label:'外销',
+            fill: true,
+        backgroundColor: "rgba(1,87,155,0.5)",
+        borderColor: "rgba(1,87,155,1)",
+        pointBorderColor: "rgba(1,87,155,1)",
+        pointBackgroundColor: "#fff",
+        pointRadius: 1,
+        data: [{% for item in currentYearStatisticOnes %}{{ item.sales }},{% endfor%}],
+    },
+    ]
+    };
+    var lineChartOptionsLatestYear = {};
+    var lineChartLatestYear = new Chart(ctxLineChartLatestYear, {
+        type: 'line',
+        data: lineChartDataLatestYear,
+        options: lineChartOptionsLatestYear
+    });
+</script>
+{% endput  %}

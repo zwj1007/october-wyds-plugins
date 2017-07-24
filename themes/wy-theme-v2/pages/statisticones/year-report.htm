@@ -1,0 +1,40 @@
+title = '年度报表'
+url = '/statisticones/year-report'
+layout = 'default'
+==
+function onStart(){
+
+$this->addJs('https://cdn.bootcss.com/jquery.countdown/2.2.0/jquery.countdown.min.js');
+
+}
+==
+<div class="container m-t">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    年度报表
+                </div>
+                <div class="panel-body">
+                    <h4>即将来临</h4>
+                    <p id="countdown" class="count"></p>
+                    <p>
+                        <a href="javascript:history.go(-1)" class="btn btn-default">返回</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% put scripts %}
+<script>
+    $('#countdown').countdown('2017-12-15',function (event) {
+        var $this=$(this).html(event.strftime(''
+            + '<span>%D</span> 天 '
+            + '<span>%H</span> 小时 '
+            + '<span>%M</span> 分钟 '
+            + '<span>%S</span> 秒'));
+    });
+</script>
+{% endput %}

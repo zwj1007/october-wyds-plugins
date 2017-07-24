@@ -5,10 +5,16 @@
             账号
         </a>
     </li>
-    <li class="{% if viewBag.userActiveMenu == 'avatar' %}active{% endif %} ">
+    <li class="{% if viewBag.userActiveMenu == 'avatar' %}active{% endif %}">
         <a href="/user/center/avatar">
             <i class="fa fa-user-circle-o"></i>
             头像
+        </a>
+    </li>
+    <li class="{% if viewBag.userActiveMenu == 'statisticones' %}active{% endif %}">
+        <a href="/user/center/statisticones">
+            <i class="fa fa-area-chart"></i>
+            数据统计
         </a>
     </li>
     <li class="{% if viewBag.userActiveMenu == 'companies' %}active{% endif %} ">

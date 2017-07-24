@@ -53,38 +53,40 @@
     background-color: #254A5F;
     padding-top: 50px;
     .from-latest-news {
-        h4,a{
-            color:#fff;
-        }
-        a{
+        h4, a {
+            color: #fff;
             text-decoration: none;
         }
-        .post-excerpt{
-            color:#fff;
+
+        .post-excerpt {
+            color: #fff;
             font-size: 18px;
         }
-        .link{
-            a{
+        .link {
+            margin-bottom: 25px;
+            a {
                 color: white;
                 text-decoration: underline;
             }
         }
         h3 {
             font-weight: normal;
-            font-size: 16px;
+            font-size: 18px;
             margin-bottom: 10px;
+            margin-top: 0;
             color: #8DA6A6;
         }
         h4 {
-            font-size: 24px;
+            margin-top: 0;
+            font-size: 22px;
             margin-bottom: 20px;
         }
     }
-    .social{
+    .social {
         @include clearfix;
-        .icons{
+        .icons {
             float: right;
-            a{
+            a {
                 font-size: 30px;
                 color: #95a5a6;
                 text-decoration: none;
@@ -92,16 +94,16 @@
             }
         }
     }
-    .subscribe{
+    .subscribe {
         margin-top: 40px;
     }
-    .menu{
+    .menu {
         background-color: #1F3F50;
         padding-top: 50px;
-        .container{
+        .container {
             position: relative;
 
-            .home-link{
+            .home-link {
                 font: 0/0 a;
                 color: transparent;
                 text-shadow: none;
@@ -114,35 +116,35 @@
                 background-image: url(/themes/wy-theme/assets/images/icons-sprite.png?3);
                 background-position: -343px 0;
             }
-            
+
             @media (max-width: 991px) {
-                .home-link{
+                .home-link {
                     display: block;
                     position: static;
                     float: left;
                 }
             }
-            .partner-banners{
-                a{
+            .partner-banners {
+                a {
                     display: inline-block;
                 }
                 float: right;
                 width: 256px;
                 margin-top: 80px;
                 text-align: center;
-                h5{
+                h5 {
                     color: #5d7989;
                     font-size: 16px;
                     margin-bottom: 20px;
                     text-align: center;
-                    a{
+                    a {
                         color: #5d7989;
                         text-decoration: none;
                     }
                 }
             }
             @media (max-width: 991px) {
-                .partner-banners{
+                .partner-banners {
                     float: none;
                     display: block;
                     text-align: left;
@@ -150,47 +152,47 @@
                     top: 0;
                     margin-top: 100px;
                     margin-bottom: 30px;
-                    h5{
+                    h5 {
                         text-align: left;
                     }
                 }
             }
         }
-        ul{
+        ul {
             display: inline-block;
             padding: 0;
             margin-bottom: 40px;
             margin-right: 60px;
             vertical-align: top;
             list-style: none;
-            li.title{
+            li.title {
                 color: white;
                 margin-bottom: 20px;
             }
-            li{
+            li {
                 margin-bottom: 5px;
             }
-            li a{
+            li a {
                 color: #BAC3C7;
                 text-decoration: none;
             }
         }
         @media (max-width: 1199px) {
-            ul{
+            ul {
                 margin-right: 20px;
             }
         }
         @media (max-width: 767px) {
-            ul:first-child{
-                margin-top:-15px;
+            ul:first-child {
+                margin-top: -15px;
             }
-            ul{
+            ul {
                 display: block;
                 margin-bottom: 15px;
-                li.title{
+                li.title {
                     margin-bottom: 0;
                 }
-                li{
+                li {
                     display: inline-block;
                     margin-right: 15px;
                 }

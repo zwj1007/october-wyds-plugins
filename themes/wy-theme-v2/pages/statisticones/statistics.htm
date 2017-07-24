@@ -1,0 +1,161 @@
+title = '统计'
+url = '/statistics'
+layout = 'default'
+
+[b7Statistics]
+==
+function onStart(){
+$this->addJs('https://cdn.bootcss.com/Chart.js/2.5.0/Chart.bundle.min.js');
+
+
+}
+==
+
+<div class="jumbotron">
+    <div class="container">
+        <h2>数据统计</h2>
+        <p>平台数据统计</p>
+    </div>
+</div>
+<div class="container m-t">
+  <div class="row">
+    {% for post in statistics %}
+    <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{ post.title }}</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="chart">
+                        <canvas id="line-chart-{{ loop.index }}"></canvas>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    {% endfor %}
+  </div>
+    
+  <div class="row">
+    {% for post in statistics %}
+    <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{ post.title }}</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="chart">
+                        <canvas id="bar-chart-{{loop.index}}"></canvas>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        {% endfor %}
+  </div>
+</div>
+
+{% put scripts %}
+<script>
+  {% for post in statistics %}
+    // line chart
+    var ctxLineChart = document.getElementById('line-chart-{{ loop.index }}');
+    var lineChartData = {
+        labels: [{% for item in post.detail %}"{{ item.name }}",{% endfor %}],
+        datasets: [
+            {
+                label: "{{ post.title }}",
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: "rgba(75,192,192,0.4)",
+                borderColor: "rgba(75,192,192,1)",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "rgba(75,192,192,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [{% for item in post.detail%}{{ item.price*item.quantity }},{% endfor %}],
+                spanGaps: false,
+            }
+        ]
+    };
+    var lineChartOptions = {};
+    var lineChart = new Chart(ctxLineChart, {
+        type: 'line',
+        data: lineChartData,
+        options: lineChartOptions
+    });
+   {% endfor %}
+
+   {% for post in statistics %}
+    // bar chart
+    var ctxBarChart = document.getElementById('bar-chart-{{loop.index}}');
+    var barChartData = {
+        datasets: [
+            {
+                label: '2016前半年销售统计',// for legend
+                borderWidth: 1,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+            data: [{% for item in post.detail%}{{ item.price*item.quantity }},{% endfor %}],
+            }
+        ],
+                labels: [{% for item in post.detail %}"{{ item.name }}",{% endfor %}],
+    };
+    var barChartOptions = {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    };
+    var barChart = new Chart(ctxBarChart, {
+        type: 'bar',
+        data: barChartData,
+        options: barChartOptions
+    });
+    {% endfor %}
+</script>
+{% endput %}
