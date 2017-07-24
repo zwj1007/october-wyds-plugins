@@ -400,7 +400,7 @@ header {
     line-height: 40px;
     font-size: 16px;
     position: relative;
-    z-index: 999;
+    z-index: 99;
     background-color: #FF4400; }
     header nav ul {
       width: 1120px;
