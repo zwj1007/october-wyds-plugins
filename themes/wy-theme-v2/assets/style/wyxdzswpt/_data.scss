@@ -1,6 +1,7 @@
 @charset "UTF-8";
 //数据统计
 .data-stat {
+  margin-top: 15px!important;
   > .mainRight {
     width: 700px;
     > .panel-heading {
@@ -43,6 +44,7 @@
 
 //提交数据
 .submit-data {
+  margin-top: 15px!important;
   > .mainRight {
     width: 750px;
     > .content-title {
@@ -52,8 +54,8 @@
       margin: auto;
       > .rightBar {
         margin: 0;
-        #submitData {
-          div {
+        .form-horizontal {
+          .form-group {
             width: 685px;
             height: 55px;
             line-height: 55px;
@@ -96,6 +98,7 @@
 
 //数据查询
 .data-high-select {
+  margin-top: 15px!important;
   > .mainRight {
     width: 750px;
     > .panel-heading {
@@ -178,6 +181,7 @@
 
 //数据分析
 .data-analyze {
+  margin-top: 15px!important;
   > .mainRight {
     width: 100% !important;
     > .panel-heading {
