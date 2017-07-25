@@ -114,7 +114,7 @@
     display: inline-block;
     margin-left: 5px;
 
-    >li {
+    > li {
       float: left;
       width: ($page-width - 125) /4;
       line-height: 25px;
@@ -131,7 +131,8 @@
 
 //政策咨询
 .zcdx {
-  height: 300px;
+  height: 250px;
+  //height: 300px;
   .hd {
     padding-left: 0;
     height: 40px;
@@ -150,12 +151,16 @@
   .dd {
     ul {
       float: left;
-      width: ($page-width - 60) /3;
-      height: 240px;
+      width: ($page-width - 80) /3;
+      height: 180px;
       overflow: hidden;
+      margin-right: 40px;
+      border-right: 1px dashed #dddddd;
+      margin-top: 10px;
+
       li {
-        height: 30px;
-        line-height: 30px;
+        height: 38px;
+        line-height: 38px;
         a {
           color: #494546;
           display: inline-block;
@@ -177,36 +182,11 @@
         }
       }
     }
-    ul > li:first-child {
-      height: 113px;
-      line-height: 22px;
-      a {
-        display: initial;
-        float: left;
-        img {
-          width: 180px;
-          height: 100px;
-          padding-right: 15px;
-        }
-      }
-      p {
-        font-size: 15px;
-        color: #20102A;
-        font-weight: 600;
-        margin-top: $margin-10;
-      }
-      span {
-        font-size: 12px;
-        display: block;
-        height: 40px;
-        overflow: hidden;
-      }
-      border-bottom: 1px dashed $border-color;
+    ul:last-child{
+      margin-right: 0;
+      border-right: 0;
+    }
 
-    }
-    ul:nth-child(2) {
-      margin: 0 30px;
-    }
   }
 }
 
