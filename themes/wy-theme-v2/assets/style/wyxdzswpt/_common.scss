@@ -93,10 +93,10 @@ a:hover, a:link {
     clear: both;
   }
 }
+
 .clearfix {
   @include clearfix;
 }
-
 
 .main {
   width: 1120px;
@@ -163,12 +163,12 @@ a:hover, a:link {
 }
 
 .breadcrumb {
-  margin: $margin-15 auto!important;
-  height: 36px!important;
-  border-top: 1px solid #EDEDED;
-  border-bottom: 1px solid #EDEDED;
-  padding: 0;
-  background-color: #fff!important;
+  margin: $margin-15 auto !important;
+  height: 36px !important;
+  border-top: 1px solid #EDEDED !important;
+  border-bottom: 1px solid #EDEDED !important;
+  padding: 0 !important;
+  background-color: #fff !important;
   /* border-radius: 4px; */
 
   li {
@@ -188,49 +188,40 @@ a:hover, a:link {
 }
 
 .pagination {
-  margin: 0 auto;
-  padding: 20px 0 30px 0;
-  display: table;
-  text-align: center;
-  li {
-    float: left;
-    margin: 5px;
-  }
-}
-
-.pagination {
-  margin: 0 auto;
-  padding: 20px 0 30px 0;
-  display: table;
-  text-align: center;
+  margin: 0 auto !important;
+  padding: 20px 0 30px 0 !important;
+  display: table !important;
+  text-align: center !important;
 
   > li {
-    display: inline; // Remove list-style and block-level defaults
+    float: left !important;
+    margin: 5px !important;
+    display: inline !important; // Remove list-style and block-level defaults
     > a,
     > span {
-      position: relative;
-      float: left; // Collapse white-space
-      padding: 6px 12px;
-      line-height: 1.4;
-      text-decoration: none;
-      color: #337ab7;
+      position: relative !important;
+      float: left !important; // Collapse white-space
+      padding: 6px 12px !important;
+      line-height: 1.4 !important;
+      text-decoration: none !important;
+      color: #337ab7 !important;
       background-color: #fff;
       //border: 1px solid #ddd;
-      margin-left: -1px;
+      margin-left: -1px !important;
     }
     &:first-child {
       > a,
       > span {
-        margin-left: 0;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
+        margin-left: 0 !important;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
       }
     }
     &:last-child {
       > a,
       > span {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
       }
     }
   }
@@ -239,10 +230,10 @@ a:hover, a:link {
   > li > span {
     &:hover,
     &:focus {
-      z-index: 2;
-      color: #23527c;
-      background-color: #eee;
-      border-color: #ddd;
+      z-index: 2 !important;
+      color: #23527c !important;
+      background-color: #eee !important;
+      border-color: #ddd !important;
     }
   }
 
@@ -251,11 +242,11 @@ a:hover, a:link {
     &,
     &:hover,
     &:focus {
-      z-index: 3;
-      color: #fff;
-      background-color: $nav-background;
-      border-color: $nav-background;
-      cursor: default;
+      z-index: 3 !important;
+      color: #fff !important;
+      background-color: $nav-background !important;
+      border-color: $nav-background !important;
+      cursor: default !important;
     }
   }
 
@@ -266,10 +257,10 @@ a:hover, a:link {
     > a,
     > a:hover,
     > a:focus {
-      color: lighten(#000, 46.7%);
-      background-color: #fff;
-      border-color: #ddd;
-      cursor: not-allowed;
+      color: lighten(#000, 46.7%) !important;
+      background-color: #fff !important;
+      border-color: #ddd !important;
+      cursor: not-allowed !important;
     }
   }
 }
