@@ -45,8 +45,8 @@ output paths to refresh: $FileNameWithoutExtension$.css:../css/$FileNameWithoutE
 + [user-plugin](https://github.com/rainlab/user-plugin)中汉化的我已提交其源码仓库,等待下次插件更新才会起作用,如果想提前使用,请使用[该链接](https://github.com/rainlab/user-plugin/blob/master/lang/zh-cn/lang.php)的文件覆盖源文件
 
 #### 文档
-[额外说明](https://github.com/gansutianqi/october-wyds-plugins/blob/master/docs/1.md)
-[数据统计](https://github.com/gansutianqi/october-wyds-plugins/blob/master/docs/2.md)
++ [额外说明](https://github.com/gansutianqi/october-wyds-plugins/blob/master/docs/1.md)
++ [数据统计](https://github.com/gansutianqi/october-wyds-plugins/blob/master/docs/2.md)
 
 #### TODO
 + ~~用户中心~~
