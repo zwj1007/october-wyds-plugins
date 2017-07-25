@@ -11,6 +11,7 @@ class Shop extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
+
     public $rules = [
         'name' => 'required',
         'links' => 'required|url',
@@ -112,7 +113,7 @@ class Shop extends Model
     /**
      * Returns the public image file path to this user's avatar.
      */
-    public function getAvatarThumb($width = 400,$height=200, $options = null)
+    public function getAvatarThumb($width = 400, $height = 200, $options = null)
     {
         if (is_string($options)) {
             $options = ['default' => $options];
@@ -128,21 +129,22 @@ class Shop extends Model
         }
     }
 
-    public function scopeDisplayChecked($query, $limit=null)
+    public function scopeDisplayChecked($query, $limit = null)
     {
-        if($limit){
-            return $query->isChecked()->orderBy('checked_at', 'desc')->limit($limit)->get();
-        }else{
-            return $query->isChecked()->orderBy('checked_at','desc')->get();
+        if ($limit) {
+            $str = 'checked_at';
+            return $query->isChecked()->orderBy('' . $str . '', 'desc')->limit($limit)->get();
+        } else {
+            return $query->isChecked()->orderBy('checked_at', 'desc')->get();
         }
 
     }
 
-    public function scopeDisplayFeatured($query, $limit=null)
+    public function scopeDisplayFeatured($query, $limit = null)
     {
-        if($limit){
+        if ($limit) {
             return $query->isChecked()->isFeatured()->orderBy('checked_at', 'desc')->limit($limit)->get();
-        }else{
+        } else {
             return $query->isChecked()->isFeatured()->orderBy('checked_at', 'desc')->get();
         }
 

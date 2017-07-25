@@ -6,8 +6,9 @@ use October\Rain\Support\Facades\Config;
 class User extends \RainLab\User\Models\User
 {
 
-    public static function getTianQiUserToken($code){
-        $http= new Client();
+    public static function getTianQiUserToken($code)
+    {
+        $http = new Client();
         $response = $http->post('http://7.jq2.com/oauth/token', [
             'form_params' => [
                 'grant_type' => 'authorization_code',
@@ -21,10 +22,11 @@ class User extends \RainLab\User\Models\User
         return $accessToken;
     }
 
-    public static function getTianQiUserByToken($token){
-        $userApi='http://7.jq2.com/api/user';
-        $http=new Client();
-        $response=$http->get($userApi,[
+    public static function getTianQiUserByToken($token)
+    {
+        $userApi = 'http://7.jq2.com/api/user';
+        $http = new Client();
+        $response = $http->get($userApi, [
             'headers' => [
                 'Accept' => 'application/json',
                 'Authorization' => 'Bearer ' . $token,
@@ -34,9 +36,10 @@ class User extends \RainLab\User\Models\User
         return json_decode($response->getBody());
     }
 
-    public static function getGithubUserToken($code){
-        $tokenUri='https://github.com/login/oauth/access_token';
-        $http=new Client();
+    public static function getGithubUserToken($code)
+    {
+        $tokenUri = 'https://github.com/login/oauth/access_token';
+        $http = new Client();
         $response = $http->post($tokenUri, [
             'headers' => [
                 'Accept' => 'application/json',
@@ -51,9 +54,10 @@ class User extends \RainLab\User\Models\User
         return json_decode($response->getBody())->access_token;
     }
 
-    public static function getGithubUserEmailByToken($token){
-        $emailsUri='https://api.github.com/user/emails';
-        $http=new Client();
+    public static function getGithubUserEmailByToken($token)
+    {
+        $emailsUri = 'https://api.github.com/user/emails';
+        $http = new Client();
         $response = $http->get($emailsUri, [
             'headers' => [
                 'Accept' => 'application/json',
@@ -68,9 +72,10 @@ class User extends \RainLab\User\Models\User
         }
     }
 
-    public static function getGithubUserByToken($token){
-        $userUri='https://api.github.com/user';
-        $http=new Client();
+    public static function getGithubUserByToken($token)
+    {
+        $userUri = 'https://api.github.com/user';
+        $http = new Client();
         $response = $http->get($userUri, [
             'headers' => [
                 'Accept' => 'application/json',
@@ -79,7 +84,6 @@ class User extends \RainLab\User\Models\User
         ]);
         return json_decode($response->getBody());
     }
-
 
 
 }
