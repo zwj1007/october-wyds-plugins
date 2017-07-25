@@ -293,6 +293,7 @@ class Course extends Model
     public function afterDelete()
     {
         DB::table('buuug7_courses_tags_courses')->where('course_id', $this->id)->delete();
+        DB::table('buuug7_courses_courses_categories')->where('course_id',$this->id)->delete();
     }
 
     public function scopeFilterTags($query, $tags)
