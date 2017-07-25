@@ -14,34 +14,77 @@ class LatestYearLineChart extends ReportWidgetBase
 
     protected function loadData()
     {
-        $rowsTotal = null;
-        $rowsPovertyTotal = null;
-        $statisticOnes = StatisticOne::listAnalysis([
-            'year' => Carbon::now()->year,
-            'month' => '',
-            'from' => '',
-            'to' => '',
-            'towns' => null,
-            'users' => null,
-        ])->toArray();
 
-        $last = end($statisticOnes);
-        foreach ($statisticOnes as $k => $v) {
-            $time = strtotime($v['published_at']) * 1000;
-            $total = $v['total'];
-            $poverty_total=$v['poverty_total'];
-            $buy = $v['buy'];
-            $sales = $v['sales'];
+        $from = '2017-01-01';
+        $to = '2017-12-31';
+        $groupBy = '%Y-%m-%d';
+        $type = 'sum';
+
+        $result = StatisticOne::getAnalysisByDateRange($from, $to, $groupBy);
+
+        // average of each data
+        $rowAvgBuy = null;
+        $rowAvgSales = null;
+        $rowAvgPovertyTotal = null;
+        $rowAvgTotal = null;
+
+        // sum of each data
+        $rowSumBuy = null;
+        $rowSumSales = null;
+        $rowSumPovertyTotal = null;
+        $rowSumTotal = null;
+
+        $last = end($result);
+
+        foreach ($result as $k => $v) {
+            $time = strtotime($v->dates) * 1000;
             if ($last == $v) {
-                $rowsTotal .= '[' . $time . ', ' . $total . ']';
-                $rowsPovertyTotal .= '[' . $time . ', ' . $poverty_total . ']';
+                if ($type == 'avg') {
+                    $rowAvgBuy .= '[' . $time . ',' . $v->avgBuy . ']';
+                    $rowAvgSales .= '[' . $time . ',' . $v->avgSales . ']';
+                    $rowAvgPovertyTotal .= '[' . $time . ',' . $v->avgPovertyTotal . ']';
+                    $rowAvgTotal .= '[' . $time . ',' . $v->avgTotal . ']';
+                }
+                if ($type == 'sum') {
+                    $rowSumBuy .= '[' . $time . ',' . $v->sumBuy . ']';
+                    $rowSumSales .= '[' . $time . ',' . $v->sumSales . ']';
+                    $rowSumPovertyTotal .= '[' . $time . ',' . $v->sumPovertyTotal . ']';
+                    $rowSumTotal .= '[' . $time . ',' . $v->sumTotal . ']';
+                }
+
             } else {
-                $rowsTotal .= '[' . $time . ', ' . $total . '],';
-                $rowsPovertyTotal .= '[' . $time . ', ' . $poverty_total . '],';
+                if ($type == 'avg') {
+                    $rowAvgBuy .= '[' . $time . ',' . $v->avgBuy . '],';
+                    $rowAvgSales .= '[' . $time . ',' . $v->avgSales . '],';
+                    $rowAvgPovertyTotal .= '[' . $time . ',' . $v->avgPovertyTotal . '],';
+                    $rowAvgTotal .= '[' . $time . ',' . $v->avgTotal . '],';
+                }
+                if ($type == 'sum') {
+                    $rowSumBuy .= '[' . $time . ',' . $v->sumBuy . '],';
+                    $rowSumSales .= '[' . $time . ',' . $v->sumSales . '],';
+                    $rowSumPovertyTotal .= '[' . $time . ',' . $v->sumPovertyTotal . '],';
+                    $rowSumTotal .= '[' . $time . ',' . $v->sumTotal . '],';
+                }
+
             }
         }
-        $this->vars['rowsTotal'] = $rowsTotal;
-        $this->vars['rowsPovertyTotal']=$rowsPovertyTotal;
+
+        $this->vars['type']=$type;
+
+        if($type == 'avg'){
+            $this->vars['rowAvgBuy'] = $rowAvgBuy;
+            $this->vars['rowAvgSales'] = $rowAvgSales;
+            $this->vars['rowAvgPovertyTotal'] = $rowAvgPovertyTotal;
+            $this->vars['rowAvgTotal'] = $rowAvgTotal;
+        }
+
+        if($type == 'sum'){
+            $this->vars['rowSumBuy'] = $rowSumBuy;
+            $this->vars['rowSumSales'] = $rowSumSales;
+            $this->vars['rowSumPovertyTotal'] = $rowSumPovertyTotal;
+            $this->vars['rowSumTotal'] = $rowSumTotal;
+        }
+
     }
 }
 
