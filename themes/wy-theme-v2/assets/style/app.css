@@ -3575,7 +3575,8 @@ input {
         .data-stat > .mainRight > .panel-heading > .sjtj-ol li:last-child {
           color: #0b7fc6; }
     .data-stat > .mainRight .table > thead > tr > th {
-      padding: 15px 5px; }
+      padding: 15px 5px;
+      text-align: center; }
     .data-stat > .mainRight .table > tbody tr:nth-of-type(odd) {
       background-color: #f9f9f9; }
     .data-stat > .mainRight .table > tbody tr:hover {
