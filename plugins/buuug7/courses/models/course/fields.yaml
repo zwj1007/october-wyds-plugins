@@ -87,7 +87,7 @@ secondaryTabs:
         published_at:
             label: 发布日期
             type: datepicker
-            model: datetime
+            mode: datetime
             trigger:
                 action: enable
                 field: published
