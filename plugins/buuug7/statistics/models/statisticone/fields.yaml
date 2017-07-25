@@ -37,4 +37,3 @@ fields:
         type: relation
         nameFrom: name
         span: auto
-        searchable: true
