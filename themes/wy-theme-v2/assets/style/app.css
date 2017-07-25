@@ -156,6 +156,8 @@ a:hover, a:link {
       text-decoration: none !important;
       color: #337ab7 !important;
       background-color: #fff;
+      border: 1px solid #ddd;
+      border: 1px solid #ddd;
       margin-left: -1px !important; }
     .pagination > li:first-child > a,
     .pagination > li:first-child > span {
