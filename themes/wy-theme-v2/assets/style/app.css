@@ -668,27 +668,29 @@ header {
     overflow: hidden;
     margin: 10px 0; }
     .fwsc .dd ul li {
-      text-align: center; }
+      text-align: center;
+      transition: all 0.3s ease-in-out; }
       .fwsc .dd ul li a {
         text-align: center;
         line-height: 50px;
         margin: 50px 0;
-        color: #c6c6c6;
+        color: #ffffff;
         display: inline-block; }
         .fwsc .dd ul li a span {
           font-size: 30px; }
         .fwsc .dd ul li a i {
           font-size: 60px;
           margin-right: 20px; }
-    .fwsc .dd ul li:hover a {
-      color: #FFFFFF; }
     .fwsc .dd .ul-left {
       width: 360px; }
       .fwsc .dd .ul-left li {
         width: 360px;
         height: 150px;
+        background: #C8C8C8; }
+      .fwsc .dd .ul-left li:hover {
+        color: #FFFFFF;
         background: #707bba; }
-      .fwsc .dd .ul-left .ul-li1 {
+      .fwsc .dd .ul-left .ul-li1:hover {
         background: #ff4400; }
     .fwsc .dd .ul-center li {
       background: #009944;
@@ -763,10 +765,7 @@ header {
       float: left;
       background: #5b40a3;
       width: 275px;
-      margin-right: 5px;
-      /*    a.bm-fw-img {
-            transition: all 2s;
-          }*/ }
+      margin-right: 5px; }
       .bmfw .dd ul li .info-box__content {
         text-align: center;
         display: block;
@@ -882,7 +881,7 @@ header {
       padding-left: 15px;
       padding-right: 15px; }
   .ppqy .dd {
-    height: 10;
+    height: 100%;
     overflow: hidden;
     margin: 10px 0; }
     .ppqy .dd ul {
