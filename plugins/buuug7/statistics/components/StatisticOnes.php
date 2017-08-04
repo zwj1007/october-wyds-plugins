@@ -75,6 +75,11 @@ class StatisticOnes extends ComponentBase
 
         $total = $this->parseValue(post('buy')) + $this->parseValue(post('sales'));
 
+        if((post('published_at')) > Carbon::now()){
+            Flash::success('日期不能大于当前时间');
+            return;
+        }
+
         // make sure poverty_total  less than buy+sales
         if ($this->parseValue(post('buy')) + $this->parseValue(post('sales')) < $this->parseValue(post('poverty_total'))) {
             Flash::error('贫困电商交易额不能大于购进和外销的和');
