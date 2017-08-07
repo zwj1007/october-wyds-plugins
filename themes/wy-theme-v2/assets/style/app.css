@@ -520,6 +520,14 @@ header {
       margin-right: 40px;
       height: 50px;
       overflow: hidden; }
+      .xxgk .dd ul > li > a {
+        display: block;
+        width: 240px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+    .xxgk .dd ul li:hover {
+      color: #265a87; }
     .xxgk .dd ul li:last-child {
       margin-right: 0; }
 
