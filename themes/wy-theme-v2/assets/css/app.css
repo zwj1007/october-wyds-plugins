@@ -520,6 +520,14 @@ header {
       margin-right: 40px;
       height: 50px;
       overflow: hidden; }
+      .xxgk .dd ul > li > a {
+        display: block;
+        width: 240px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+    .xxgk .dd ul li:hover {
+      color: #265a87; }
     .xxgk .dd ul li:last-child {
       margin-right: 0; }
 
@@ -540,7 +548,7 @@ header {
       padding-right: 15px; }
   .zcdx .dd ul {
     float: left;
-    width: 346.66667px;
+    width: 346.6666666667px;
     height: 170px;
     overflow: hidden;
     margin-right: 40px;
@@ -922,7 +930,7 @@ header {
         margin: 40px 0 0 0;
         float: left;
         text-align: center;
-        width: 373.33333px; }
+        width: 373.3333333333px; }
         .footer .footer-content ul li img.footer1-img {
           width: 180px; }
         .footer .footer-content ul li img.footer1-wxH {
