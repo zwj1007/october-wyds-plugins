@@ -6,6 +6,87 @@
     height: 260px;
   }
 
+  .bmfw-wrapper {
+    margin: 25px 0;
+    .a-btn {
+      height: 120px;
+      margin-right: 13px;
+      width: 267px;
+      background: #e9ecef;
+      border: 1px solid #c6ced6;
+      padding-left: 180px;
+      display: inline-block;
+      position: relative;
+      box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8) inset, 1px 1px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      clear: both;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease-in-out;
+      img {
+        left: 5px;
+        top: 12px;
+        width: 190px;
+        max-width: 100%;
+        position: absolute;
+        border: none;
+        transition: all 0.3s ease-in-out;
+      }
+      .a-btn-slide-text {
+        position: absolute;
+        font-size: 36px;
+        top: 30px;
+        left: 25px;
+        color: #e2348b;
+        //color: #bc3532;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+        transform: scale(0);
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+      }
+      .a-btn-icon-right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 65px;
+        border-left: 1px solid #babbbb;
+        box-shadow: 1px 0 1px rgba(160, 152, 152, 0.4) inset;
+        span {
+          width: 38px;
+          height: 38px;
+          opacity: 0.7;
+          -webkit-border-radius: 20px;
+          -moz-border-radius: 20px;
+          border-radius: 20px;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          margin: -20px 0px 0px -20px;
+          border: 1px solid rgba(0, 0, 0, 0.5);
+          background: #5b5b5b;
+          box-shadow: 0 1px 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(255, 255, 255, 0.5);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+
+    }
+    .a-btn:last-child {
+      margin-right: 0;
+    }
+    .a-btn:hover img {
+      opacity: 0;
+    }
+    .a-btn:hover .a-btn-slide-text {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .a-btn:hover .a-btn-icon-right span {
+      opacity: 1;
+      //background-color: #bc3532;
+      background: #e2348b;
+    }
+  }
+
   .hd {
     border-bottom: 1px solid #CCCCCC;
     border-radius: 0;
@@ -29,7 +110,7 @@
     overflow: hidden;
     color: #494546;
     .info-box-v3 {
-      a.info-box-v3{
+      a.info-box-v3 {
         border: 1px solid rgba(204, 204, 204, 0.64);
       }
       float: left;
@@ -77,4 +158,5 @@
   }
 
 }
+
 
