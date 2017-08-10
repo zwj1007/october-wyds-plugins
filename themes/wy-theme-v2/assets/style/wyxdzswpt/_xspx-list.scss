@@ -153,7 +153,7 @@
     .cbp-l-grid-work-title {
       border-bottom: 1px solid darken(#F4F4F4, 5%);
     }
-    u{
+    u {
       width: 100px;
       height: 100px;
       position: absolute;
@@ -170,11 +170,10 @@
     i.xb {
       //transform: rotate(-45deg) translateX(-21px) translateY(16px);
       transform: rotate(-45deg) translateX(-2px) translateY(28px);
-      letter-spacing:10px;
+      letter-spacing: 10px;
       color: #ffffff;
       display: inline-block;
     }
-
 
   }
   //更多
@@ -184,7 +183,7 @@
 
 }
 
-//线上培训内容页 热门课程
+//线上培训内容页 热门课程 xspx-content.html
 .xspx-rmkc {
   height: 631px;
   overflow: hidden;
@@ -390,7 +389,7 @@
 
 }
 
-//线上培训内容页 视频页面
+//线上培训内容页 视频页面 xspx-content1.html
 .xspx-video {
   .vid-wrapper {
     border: 1px solid $border-color;
@@ -413,25 +412,6 @@
       width: 850px;
 
       display: inline-block;
-      .c-right {
-        background: rgba(0, 0, 0, 0.63);
-        height: 50px;
-        li {
-          float: left;
-          line-height: 50px; //width: 25%;git
-          margin: 0 $margin-35;
-          i {
-            margin: 0 $margin-10;
-            font-size: 16px;
-          }
-          a {
-            color: #f4f4f4;
-          }
-          a:hover {
-            color: blue;
-          }
-        }
-      }
       .vid-body {
         margin: $margin-35;
         line-height: 40px;
@@ -473,6 +453,32 @@
       }
     }
     .dszx-kjnav {
+      .vid-message {
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        box-shadow: 1px 1px 1px 1px #CCCCCC;
+        border: 1px solid #f3f3f3;
+
+        text-align: center;
+        display: inline-block;
+        .btn {
+          width: 150px;
+          text-align: center;
+          margin: 15px auto;
+
+        }
+        p {
+          i, a {
+            color: #f39c12 !important;
+            margin: 0 8px;
+
+          }
+          a:hover {
+            color: #0b7fc6 !important;
+          }
+        }
+
+      }
       width: 250px;
       margin: 0 0 40px 20px;
     }

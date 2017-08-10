@@ -331,13 +331,14 @@
     margin: $margin-10 0;
     ul li {
       text-align: center;
-      transition: all 0.3s ease-in-out;
       a {
+        width: 100%;
         text-align: center;
         line-height: 50px;
-        margin: 50px 0;
-        color: #ffffff;
+        margin: 40px 0;
+        color: #C8C8C8;
         display: inline-block;
+        transition: all 0.2s ease-in-out;
         span {
           font-size: 30px;
         }
@@ -346,6 +347,9 @@
           margin-right: 20px;
         }
       }
+      a:hover {
+        color: #fff;
+      }
     }
 
     .ul-left {
@@ -353,14 +357,9 @@
       li {
         width: 360px;
         height: 150px;
-        background: #C8C8C8;
-      }
-      li:hover {
-        color: #FFFFFF;
         background: #707bba;
       }
-
-      .ul-li1:hover {
+      .ul-li1 {
         background: #ff4400;
       }
     }

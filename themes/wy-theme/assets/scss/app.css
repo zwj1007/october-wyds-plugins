@@ -6554,6 +6554,70 @@ a:hover, a:visited {
   background-image: url("../images/jkyl_60_1.png") !important;
   background-position: 0 -360px; }
 
+.bm__icon64 {
+  background-image: url("../images/dnwl_60_0.png") !important;
+  background-position: 0 0; }
+
+.bm__icon65 {
+  background-image: url("../images/dnwl_60_0.png") !important;
+  background-position: 0 -60px; }
+
+.bm__icon66 {
+  background-image: url("../images/dnwl_60_0.png") !important;
+  background-position: 0 -120px; }
+
+.bm__icon67 {
+  background-image: url("../images/dnwl_60_0.png") !important;
+  background-position: 0 -180px; }
+
+.bm__icon68 {
+  background-image: url("../images/dnwl_60_0.png") !important;
+  background-position: 0 -240px; }
+
+.bm__icon69 {
+  background-image: url("../images/dnwl_60_0.png") !important;
+  background-position: 0 -300px; }
+
+.bm__icon70 {
+  background-image: url("../images/dnwl_60_0.png") !important;
+  background-position: 0 -360px; }
+
+.bm__icon71 {
+  background-image: url("../images/dnwl_60_0.png") !important;
+  background-position: 0 -420px; }
+
+.bm__icon72 {
+  background-image: url("../images/dnwl_60_0.png") !important;
+  background-position: 0 -480px; }
+
+.bm__icon73 {
+  background-image: url("../images/dnwl_60_0.png") !important;
+  background-position: 0 -540px; }
+
+.bm__icon74 {
+  background-image: url("../images/dnwl_60_0.png") !important;
+  background-position: 0 -600px; }
+
+.bm__icon75 {
+  background-image: url("../images/dnwl_60_0.png") !important;
+  background-position: 0 -660px; }
+
+.bm__icon76 {
+  background-image: url("../images/dnwl_60_0.png") !important;
+  background-position: 0 -720px; }
+
+.bm__icon77 {
+  background-image: url("../images/dnwl_60_0.png") !important;
+  background-position: 0 -780px; }
+
+.bm__icon78 {
+  background-image: url("../images/dnwl_60_0.png") !important;
+  background-position: 0 -840px; }
+
+.bm__icon79 {
+  background-image: url("../images/dnwl_60_0.png") !important;
+  background-position: 0 -900px; }
+
 .nav-cat__icon {
   height: 45px;
   width: 45px;
@@ -7611,6 +7675,13 @@ figure {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   margin-bottom: 15px;
   min-height: 60px; }
+  .info-box-v3 .info-box__img {
+    isplay: block;
+    float: left;
+    line-height: 60px;
+    height: 60px;
+    width: 60px;
+    border-radius: 0; }
   .info-box-v3 .info-box__icon {
     color: #fff;
     border-top-right-radius: 0;

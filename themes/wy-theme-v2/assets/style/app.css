@@ -676,29 +676,29 @@ header {
     overflow: hidden;
     margin: 10px 0; }
     .fwsc .dd ul li {
-      text-align: center;
-      transition: all 0.3s ease-in-out; }
+      text-align: center; }
       .fwsc .dd ul li a {
+        width: 100%;
         text-align: center;
         line-height: 50px;
-        margin: 50px 0;
-        color: #ffffff;
-        display: inline-block; }
+        margin: 40px 0;
+        color: #C8C8C8;
+        display: inline-block;
+        transition: all 0.2s ease-in-out; }
         .fwsc .dd ul li a span {
           font-size: 30px; }
         .fwsc .dd ul li a i {
           font-size: 60px;
           margin-right: 20px; }
+      .fwsc .dd ul li a:hover {
+        color: #fff; }
     .fwsc .dd .ul-left {
       width: 360px; }
       .fwsc .dd .ul-left li {
         width: 360px;
         height: 150px;
-        background: #C8C8C8; }
-      .fwsc .dd .ul-left li:hover {
-        color: #FFFFFF;
         background: #707bba; }
-      .fwsc .dd .ul-left .ul-li1:hover {
+      .fwsc .dd .ul-left .ul-li1 {
         background: #ff4400; }
     .fwsc .dd .ul-center li {
       background: #009944;
@@ -1704,20 +1704,6 @@ header {
   border: 1px solid #CCCCCC;
   width: 850px;
   display: inline-block; }
-  .xspx-video .vid-cont .divfelt .c-right {
-    background: rgba(0, 0, 0, 0.63);
-    height: 50px; }
-    .xspx-video .vid-cont .divfelt .c-right li {
-      float: left;
-      line-height: 50px;
-      margin: 0 35px; }
-      .xspx-video .vid-cont .divfelt .c-right li i {
-        margin: 0 10px;
-        font-size: 16px; }
-      .xspx-video .vid-cont .divfelt .c-right li a {
-        color: #f4f4f4; }
-      .xspx-video .vid-cont .divfelt .c-right li a:hover {
-        color: blue; }
   .xspx-video .vid-cont .divfelt .vid-body {
     margin: 35px;
     line-height: 40px; }
@@ -1746,6 +1732,22 @@ header {
 .xspx-video .vid-cont .dszx-kjnav {
   width: 250px;
   margin: 0 0 40px 20px; }
+  .xspx-video .vid-cont .dszx-kjnav .vid-message {
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 1px 1px #CCCCCC;
+    border: 1px solid #f3f3f3;
+    text-align: center;
+    display: inline-block; }
+    .xspx-video .vid-cont .dszx-kjnav .vid-message .btn {
+      width: 150px;
+      text-align: center;
+      margin: 15px auto; }
+    .xspx-video .vid-cont .dszx-kjnav .vid-message p i, .xspx-video .vid-cont .dszx-kjnav .vid-message p a {
+      color: #f39c12 !important;
+      margin: 0 8px; }
+    .xspx-video .vid-cont .dszx-kjnav .vid-message p a:hover {
+      color: #0b7fc6 !important; }
 
 .syjc-list {
   box-shadow: 1px 1px 10px 1px rgba(204, 204, 204, 0.33);
