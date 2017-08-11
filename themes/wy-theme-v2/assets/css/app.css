@@ -676,29 +676,29 @@ header {
     overflow: hidden;
     margin: 10px 0; }
     .fwsc .dd ul li {
-      text-align: center;
-      transition: all 0.3s ease-in-out; }
+      text-align: center; }
       .fwsc .dd ul li a {
+        width: 100%;
         text-align: center;
         line-height: 50px;
-        margin: 50px 0;
-        color: #ffffff;
-        display: inline-block; }
+        margin: 40px 0;
+        color: #C8C8C8;
+        display: inline-block;
+        transition: all 0.2s ease-in-out; }
         .fwsc .dd ul li a span {
           font-size: 30px; }
         .fwsc .dd ul li a i {
           font-size: 60px;
           margin-right: 20px; }
+      .fwsc .dd ul li a:hover {
+        color: #fff; }
     .fwsc .dd .ul-left {
       width: 360px; }
       .fwsc .dd .ul-left li {
         width: 360px;
         height: 150px;
-        background: #C8C8C8; }
-      .fwsc .dd .ul-left li:hover {
-        color: #FFFFFF;
         background: #707bba; }
-      .fwsc .dd .ul-left .ul-li1:hover {
+      .fwsc .dd .ul-left .ul-li1 {
         background: #ff4400; }
     .fwsc .dd .ul-center li {
       background: #009944;
@@ -1704,20 +1704,6 @@ header {
   border: 1px solid #CCCCCC;
   width: 850px;
   display: inline-block; }
-  .xspx-video .vid-cont .divfelt .c-right {
-    background: rgba(0, 0, 0, 0.63);
-    height: 50px; }
-    .xspx-video .vid-cont .divfelt .c-right li {
-      float: left;
-      line-height: 50px;
-      margin: 0 35px; }
-      .xspx-video .vid-cont .divfelt .c-right li i {
-        margin: 0 10px;
-        font-size: 16px; }
-      .xspx-video .vid-cont .divfelt .c-right li a {
-        color: #f4f4f4; }
-      .xspx-video .vid-cont .divfelt .c-right li a:hover {
-        color: blue; }
   .xspx-video .vid-cont .divfelt .vid-body {
     margin: 35px;
     line-height: 40px; }
@@ -1746,6 +1732,22 @@ header {
 .xspx-video .vid-cont .dszx-kjnav {
   width: 250px;
   margin: 0 0 40px 20px; }
+  .xspx-video .vid-cont .dszx-kjnav .vid-message {
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 1px 1px #CCCCCC;
+    border: 1px solid #f3f3f3;
+    text-align: center;
+    display: inline-block; }
+    .xspx-video .vid-cont .dszx-kjnav .vid-message .btn {
+      width: 150px;
+      text-align: center;
+      margin: 15px auto; }
+    .xspx-video .vid-cont .dszx-kjnav .vid-message p i, .xspx-video .vid-cont .dszx-kjnav .vid-message p a {
+      color: #f39c12 !important;
+      margin: 0 8px; }
+    .xspx-video .vid-cont .dszx-kjnav .vid-message p a:hover {
+      color: #0b7fc6 !important; }
 
 .syjc-list {
   box-shadow: 1px 1px 10px 1px rgba(204, 204, 204, 0.33);
@@ -3498,6 +3500,73 @@ input {
   .bmfw-list .jumbotron {
     background: url(../images/fwsc/bm-header.jpg) !important;
     height: 260px; }
+  .bmfw-list .bmfw-wrapper {
+    margin: 25px 0; }
+    .bmfw-list .bmfw-wrapper .a-btn {
+      height: 120px;
+      margin-right: 13px;
+      width: 267px;
+      background: #e9ecef;
+      border: 1px solid #c6ced6;
+      padding-left: 180px;
+      display: inline-block;
+      position: relative;
+      box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8) inset, 1px 1px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      clear: both;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease-in-out; }
+      .bmfw-list .bmfw-wrapper .a-btn img {
+        left: 5px;
+        top: 12px;
+        width: 190px;
+        max-width: 100%;
+        position: absolute;
+        border: none;
+        transition: all 0.3s ease-in-out; }
+      .bmfw-list .bmfw-wrapper .a-btn .a-btn-slide-text {
+        position: absolute;
+        font-size: 36px;
+        top: 30px;
+        left: 25px;
+        color: #e2348b;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+        transform: scale(0);
+        opacity: 0;
+        transition: all 0.3s ease-in-out; }
+      .bmfw-list .bmfw-wrapper .a-btn .a-btn-icon-right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 65px;
+        border-left: 1px solid #babbbb;
+        box-shadow: 1px 0 1px rgba(160, 152, 152, 0.4) inset; }
+        .bmfw-list .bmfw-wrapper .a-btn .a-btn-icon-right span {
+          width: 38px;
+          height: 38px;
+          opacity: 0.7;
+          -webkit-border-radius: 20px;
+          -moz-border-radius: 20px;
+          border-radius: 20px;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          margin: -20px 0px 0px -20px;
+          border: 1px solid rgba(0, 0, 0, 0.5);
+          background: #5b5b5b;
+          box-shadow: 0 1px 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(255, 255, 255, 0.5);
+          transition: all 0.3s ease-in-out; }
+    .bmfw-list .bmfw-wrapper .a-btn:last-child {
+      margin-right: 0; }
+    .bmfw-list .bmfw-wrapper .a-btn:hover img {
+      opacity: 0; }
+    .bmfw-list .bmfw-wrapper .a-btn:hover .a-btn-slide-text {
+      opacity: 1;
+      transform: scale(1); }
+    .bmfw-list .bmfw-wrapper .a-btn:hover .a-btn-icon-right span {
+      opacity: 1;
+      background: #e2348b; }
   .bmfw-list .hd {
     border-bottom: 1px solid #CCCCCC;
     border-radius: 0;
