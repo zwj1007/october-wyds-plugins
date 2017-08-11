@@ -3500,12 +3500,25 @@ input {
   .bmfw-list .jumbotron {
     background: url(../images/fwsc/bm-header.jpg) !important;
     height: 260px; }
+  .bmfw-list .jumbotron-net {
+    background: url(../images/fwsc/bmfw/bm-wl.jpg) !important;
+    height: 260px; }
+  .bmfw-list .jumbotron-life {
+    background: url(../images/fwsc/bmfw/bm-sh.jpg) !important;
+    height: 260px; }
+  .bmfw-list .jumbotron-medical {
+    background: url(../images/fwsc/bmfw/bm-yl.jpg) !important;
+    height: 260px; }
+  .bmfw-list .jumbotron-distrbution {
+    background: url(../images/fwsc/bmfw/bm-ps.jpg) !important;
+    height: 260px; }
   .bmfw-list .bmfw-wrapper {
     margin: 25px 0; }
     .bmfw-list .bmfw-wrapper .a-btn {
       height: 120px;
-      margin-right: 13px;
-      width: 267px;
+      margin-left: 15px;
+      margin-right: -3px;
+      width: 268px;
       background: #e9ecef;
       border: 1px solid #c6ced6;
       padding-left: 180px;
@@ -3557,8 +3570,8 @@ input {
           background: #5b5b5b;
           box-shadow: 0 1px 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(255, 255, 255, 0.5);
           transition: all 0.3s ease-in-out; }
-    .bmfw-list .bmfw-wrapper .a-btn:last-child {
-      margin-right: 0; }
+    .bmfw-list .bmfw-wrapper .a-btn:first-child {
+      margin-left: 0; }
     .bmfw-list .bmfw-wrapper .a-btn:hover img {
       opacity: 0; }
     .bmfw-list .bmfw-wrapper .a-btn:hover .a-btn-slide-text {

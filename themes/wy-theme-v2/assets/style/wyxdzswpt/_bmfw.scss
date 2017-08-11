@@ -6,12 +6,33 @@
     height: 260px;
   }
 
+  .jumbotron-net {
+    background: url(../images/fwsc/bmfw/bm-wl.jpg) !important;
+    height: 260px;
+  }
+
+  .jumbotron-life {
+    background: url(../images/fwsc/bmfw/bm-sh.jpg) !important;
+    height: 260px;
+  }
+
+  .jumbotron-medical {
+    background: url(../images/fwsc/bmfw/bm-yl.jpg) !important;
+    height: 260px;
+  }
+
+  .jumbotron-distrbution {
+    background: url(../images/fwsc/bmfw/bm-ps.jpg) !important;
+    height: 260px;
+  }
+
   .bmfw-wrapper {
     margin: 25px 0;
     .a-btn {
       height: 120px;
-      margin-right: 13px;
-      width: 267px;
+      margin-left: 15px;
+      margin-right: -3px;
+      width: 268px;
       background: #e9ecef;
       border: 1px solid #c6ced6;
       padding-left: 180px;
@@ -70,8 +91,8 @@
       }
 
     }
-    .a-btn:last-child {
-      margin-right: 0;
+    .a-btn:first-child {
+      margin-left: 0;
     }
     .a-btn:hover img {
       opacity: 0;
