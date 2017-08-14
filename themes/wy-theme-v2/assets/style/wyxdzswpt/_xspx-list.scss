@@ -1,5 +1,5 @@
 @charset "UTF-8";
-// 线上培训
+// 线上培训——列表页
 .xspx-list {
   margin: 30px auto;
   border-left: 1px solid $border-color;
@@ -61,59 +61,6 @@
 
     }
   }
-}
-
-.bzfw {
-  margin: 50px auto;
-  .dd {
-    height: auto;
-    margin: 25px 15px;
-    ul {
-      li {
-        margin-top: 10px;
-        box-shadow: 2px 4px 15px rgba(93, 93, 93, 0.4);
-        padding: 15px 0 0 20px;
-        border-radius: 5px;
-        height: 145px;
-        margin-left: 10px;
-        a {
-          display: block;
-          width: 72px;
-          margin-top: 20px;
-          border: 1px solid #CCCCCC;
-          border-radius: 50%;
-          padding: 3px 10px;
-          text-align: center;
-        }
-        a:hover {
-          box-shadow: 1px 2px 20px 1px #CCCCCC;
-          border: 1px solid #f3f3f3;
-          transition: all 0.5s ease;
-
-        }
-        span {
-          font-size: 22px;
-          color: #444;
-          font-weight: bold;
-          margin-top: 25px;
-          display: block;
-        }
-      }
-      .fwbz-1 {
-        background: #fff url(../images/fwbz1.png) no-repeat right center;
-      }
-      .fwbz-2 {
-        background: #fff url(../images/fwbz2.png) no-repeat right center;
-      }
-      .fwbz-3 {
-        background: #fff url(../images/fwbz3.png) no-repeat right center;
-      }
-      .fwbz-4 {
-        background: #fff url(../images/fwbz4.jpg) no-repeat right center;
-      }
-    }
-  }
-
 }
 
 //线上培训-列表
@@ -183,7 +130,7 @@
 
 }
 
-//线上培训内容页 视频页面 xspx-content1.html
+//线上培训内容页 视频页面 xspx-content.html
 .xspx-video {
   .vid-wrapper {
     border: 1px solid $border-color;

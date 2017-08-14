@@ -1,0 +1,112 @@
+.index-lyzx {
+  box-shadow: 1px 1px 5px 1px #CCCCCC;
+  margin-bottom: 30px;
+}
+
+.index-lyzx .lyzx-body {
+
+  /*liuyan*/
+
+  .liuyan_box01 {
+    .box02 {
+      padding: 30px 15px;
+    }
+
+    .box02 .t01 input {
+      width: 810px;
+      color: #939393;
+      text-indent: 1em;
+      padding: 5px 0;
+    }
+    .box02 .t01 select {
+      width: 117px;
+      height: 33px;
+      margin-left: 12px;
+    }
+    .box02 .t01 input, .box02 .t01 select {
+      border: #d5d5d5 1px solid;
+      vertical-align: middle;
+      background: #fff;
+      height: 31px;
+      line-height: 31px;
+    }
+
+    .box02 .t02 {
+      padding: 10px 0 0;
+      height: 350px;
+      overflow: hidden;
+    }
+    .box02 .t02 textarea {
+      color: #939393;
+      width: 1068px;
+      height: 328px;
+      padding: 10px;
+      border: #d5d5d5 1px solid;
+    }
+    .box02 .t03 {
+      clear: both;
+      height: 64px;
+      padding-bottom: 15px;
+      padding-top: 15px;
+      background: #fff;
+      border: #d5d5d5 1px solid;
+      border-top: none;
+    }
+
+    .box02 .t03 em {
+      float: left;
+      padding-left: 20px;
+      margin-right: 25px;
+      font-size: 18px;
+      color: #e29760;
+      line-height: 64px;
+      font-style: normal;
+    }
+    .box02 .t03 div {
+      width: 65px;
+      height: 64px;
+      background: url(../images/add_attchment.png);
+      cursor: pointer;
+      float: left;
+      margin-right: 20px;
+    }
+    .box02 .t03 i {
+      padding-top: 10px;
+      float: left;
+    }
+    .box02 .t04 {
+      text-align: center;
+      height: 64px;
+      background: #fff;
+      border-top: none;
+    }
+
+    .box02 .t04 em {
+      float: left;
+      padding-left: 20px;
+      margin-right: 25px;
+      color: #e29760;
+      line-height: 64px;
+      font-style: normal;
+    }
+    .box02 .t04 em input {
+      /* vertical-align: middle; */
+      margin-left: 12px;
+      margin-right: 12px;
+      background: #fff;
+      /* width: 115px; */
+      /* height: 30px; */
+      border: #d5d5d5 1px solid;
+      color: #9c9c9c;
+      padding-left: 5px;
+      line-height: 30px;
+    }
+    .box02 .t05 {
+      text-align: center;
+      height: 38px;
+      padding: 20px 0;
+    }
+
+  }
+}
+
