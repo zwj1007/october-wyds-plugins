@@ -59,21 +59,17 @@
 }
 
 //需求发布——填写需求
-
 .xqfb-txxq {
   width: 800px;
-
-
-
-/*  .panel{
-    .panel-body{
+  .panel {
+    .panel-body {
       .liuyan_box01 {
         .box02 {
-          padding: 30px 15px;
+          padding: 15px 15px 30px 15px;
         }
 
         .box02 .t01 input {
-          width: 810px;
+          width: 310px;
           color: #939393;
           text-indent: 1em;
           padding: 5px 0;
@@ -98,41 +94,10 @@
         }
         .box02 .t02 textarea {
           color: #939393;
-          width: 1068px;
+          width: 730px;
           height: 328px;
           padding: 10px;
           border: #d5d5d5 1px solid;
-        }
-        .box02 .t03 {
-          clear: both;
-          height: 64px;
-          padding-bottom: 15px;
-          padding-top: 15px;
-          background: #fff;
-          border: #d5d5d5 1px solid;
-          border-top: none;
-        }
-
-        .box02 .t03 em {
-          float: left;
-          padding-left: 20px;
-          margin-right: 25px;
-          font-size: 18px;
-          color: #e29760;
-          line-height: 64px;
-          font-style: normal;
-        }
-        .box02 .t03 div {
-          width: 65px;
-          height: 64px;
-          background: url(../images/add_attchment.png);
-          cursor: pointer;
-          float: left;
-          margin-right: 20px;
-        }
-        .box02 .t03 i {
-          padding-top: 10px;
-          float: left;
         }
         .box02 .t04 {
           text-align: center;
@@ -150,12 +115,12 @@
           font-style: normal;
         }
         .box02 .t04 em input {
-          !* vertical-align: middle; *!
+          /* vertical-align: middle; */
           margin-left: 12px;
           margin-right: 12px;
           background: #fff;
-          !* width: 115px; *!
-          !* height: 30px; *!
+          /* width: 115px; */
+          /* height: 30px; */
           border: #d5d5d5 1px solid;
           color: #9c9c9c;
           padding-left: 5px;
@@ -170,7 +135,7 @@
       }
 
     }
-  }*/
+  }
 
 }
 
