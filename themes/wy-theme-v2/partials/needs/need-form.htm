@@ -33,9 +33,7 @@
 <div class="form-group">
     <label for="needDescription">需求描述</label>
     <textarea name="description" rows="8" id="needDescription"
-              class="form-control"  onfocus="if(this.value.substring(0, 3) == '请输入') {this.value='';}this.style.color='#333';"
-              onblur="if(this.value=='') {this.value='请输入需求内容（字数不得少于20字，不得超过1000字）';
-                                                  this.style.color='#ccc';}">请输入需求内容（字数不得少于20字，不得超过1000字）{{ form_value('description') }}</textarea>
+              class="form-control" >{{ form_value('description') }}</textarea>
 
 </div>
 
