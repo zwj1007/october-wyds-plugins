@@ -23,8 +23,8 @@
       width: 100%;
       max-width: 100%;
       margin-bottom: 25px;
-      border-collapse:collapse;
-      border-spacing:0;
+      border-collapse: collapse;
+      border-spacing: 0;
       thead th {
         padding: 10px;
         width: 160px;
@@ -59,6 +59,7 @@
 
 //需求发布的浏览
 .xqfb-browse {
+  border: 1px solid #EDEDED;
   .xqfb-browse-title {
     margin: 0 80px;
     border-bottom: 1px solid #dddddd;
