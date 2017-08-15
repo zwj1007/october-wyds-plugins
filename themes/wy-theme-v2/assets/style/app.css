@@ -2240,6 +2240,15 @@ input {
         line-height: 40px;
         margin: 30px 0;
         border-bottom: 1px dashed rgba(191, 191, 191, 0.4); }
+        .index-sysm .sysm-contend ul li ol {
+          list-style: lower-roman;
+          padding-left: 50px; }
+          .index-sysm .sysm-contend ul li ol li {
+            line-height: 30px;
+            margin: 20px 0;
+            border-bottom: 0; }
+    .index-sysm .sysm-contend ul + ul {
+      list-style: cjk-ideographic; }
 
 .user {
   margin-top: 30px; }
