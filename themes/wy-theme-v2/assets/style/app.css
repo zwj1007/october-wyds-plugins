@@ -1416,17 +1416,16 @@ header {
   border: 0 !important;
   margin-left: 16px;
   margin-right: 0 !important; }
-  .xspx-list .dd ul li a {
-    margin-left: 8px; }
-    .xspx-list .dd ul li a img {
-      max-width: 100%;
-      margin-bottom: 5px; }
+  .xspx-list .dd ul li a img {
+    max-width: 100%;
+    margin: 5px 0; }
   .xspx-list .dd ul li p {
     letter-spacing: 2px;
     margin-bottom: 20px; }
     .xspx-list .dd ul li p a {
       display: block;
-      width: 240px;
+      width: 220px;
+      margin: 0 8px;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis; }
