@@ -9,26 +9,23 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured();
 }
 ==
 
-<section class="box cpyx-list ">
-    <div class="cpyx-qypp">
-        <div class="hd"><i>推荐电商</i></div>
-        <div class="dd">
-            <ul>
-                {% for post in featuredCompanies %}
-                <li>
-                    <a href="/companies/company/{{ post.id }}">
-                        <img src="{{ post.getAvatarThumb(200) }}" alt="">
-                        <p>{{ post.name }}</p>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
+<section class="box bdds-list ">
+    <div class="hd"><i>推荐电商</i></div>
+    <div class="dd">
+        <ul>
+            {% for post in featuredCompanies %}
+            <li>
+                <a href="/companies/company/{{ post.id }}">
+                    <img src="{{ post.getAvatarThumb(200) }}" alt="">
+                    <p>{{ post.name }}</p>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
     </div>
 </section>
 
-<section class="box cpyx-list ">
-    <div class="cpyx-qypp">
+<section class="box bdds-list ">
         <div class="hd"><i>本地电商</i></div>
         <div class="dd">
             <ul>
@@ -42,5 +39,4 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured();
                 {% endfor %}
             </ul>
         </div>
-    </div>
 </section>
