@@ -210,32 +210,6 @@
   }
 }
 
-//修改密码
-.user-pwd {
-  #changeCode {
-    div {
-      width: 685px;
-      height: 55px;
-      line-height: 55px;
-      border-bottom: 0;
-      font-size: 14px;
-      color: #444;
-      text-align: center;
-      label {
-        display: inline-block;
-        width: 70px;
-        text-align: right;
-        margin-right: 20px;
-      }
-    }
-  }
-  .fl {
-    padding: 6px 55px;
-    display: block;
-    margin: 30px auto;
-  }
-}
-
 //用户头像
 .user-portr {
   .portr {

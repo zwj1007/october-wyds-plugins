@@ -1,75 +1,51 @@
 @charset "UTF-8";
-// 线上培训——列表页
+// 线上培训列表页的相关课程
 .xspx-list {
-  margin: 30px auto;
-  border-left: 1px solid $border-color;
-  border-right: 1px solid $border-color;
-  border-bottom: 1px solid $border-color;
-  border-radius: 5px;
-  .hd {
-    text-align: left;
-    padding-left: 0;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 5px;
-    background: url(../images/title-1.png) no-repeat center;
-    border-bottom: 0;
-    i {
-      padding: 10px 15px;
-      color: #ffffff;
-      background: $page-color;
-      border-radius: 3px;
-    }
-  }
   .dd {
-    height: auto;
-    text-align: left;
-    overflow: hidden;
-    margin: 25px 0;
-    color: #494546;
-    ul li {
-      width: 260px;
-      float: left;
-      margin-bottom: 15px;
-      margin-left: 16px;
-      a {
-        img {
-          width: 260px;
-          margin-bottom: 5px;
-        }
-      }
-      p {
-        text-align: center;
-        font-size: 14px;
-        letter-spacing: 2px;
-        margin-bottom: 20px;
+    ul {
+      li {
+        border: 0 !important;
+        margin-left: 16px;
+        margin-right: 0 !important;
         a {
-          display: block;
-          width: 260px;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis
+          margin-left: 8px;
+          img {
+            max-width: 100%;
+            margin-bottom: 5px;
+          }
         }
-        a:hover {
-          color: rgba(11, 99, 159, 0.91);
-        }
+        p {
+          letter-spacing: 2px;
+          margin-bottom: 20px;
+          a {
+            display: block;
+            width: 240px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis
+          }
+          a:hover {
+            color: rgba(11, 99, 159, 0.91);
+          }
 
+        }
       }
-    }
-    li:hover {
-      box-shadow: 1px 2px 10px 1px #CCCCCC;
-
+      li:hover {
+        box-shadow: 1px 1px 8px 1px rgba(93, 93, 93, 0.4) !important;
+      }
     }
   }
 }
 
-//线上培训-列表
+//线上培训-列表1
 .xspx-list-wy-v1 {
-  //padding: 0 15px;
-  //box-shadow: 1px 2px 5px 1px #CCCCCC;
+  border: 1px solid #f3f3f3;
+  box-shadow: 1px 1px 4px 1px #d7d7d7;
+  padding: 15px;
+
   //标题按钮
   .cbp-l-filters-alignCenter {
-    padding-top: 22px;
+    padding-top: 12px;
     text-align: left !important;
     .cbp-filter-counter {
       padding: 0;
@@ -225,7 +201,7 @@
   }
 }
 
-//线上培训-使用教材的列表页
+//线上培训-分类列表页
 .syjc-list {
   box-shadow: 1px 1px 10px 1px rgba(204, 204, 204, 0.33);
   border: 1px solid #ededed;
@@ -278,97 +254,6 @@
 
 }
 
-//线上培训-使用教材的内容页
-.syjc-contend {
-  .book-desc {
-    padding: 15px 40px;
-    .book-top {
-      height: 350px;
-      .book-left {
-        width: 500px;
-        height: 350px;
-        img {
-          float: left;
-          width: 260px;
-          height: 350px;
-          margin-right: 20px;
-        }
-        .des {
-          margin: 30px 0;
-          a {
-            h2 {
-              font-size: 16px;
-              color: #444;
-              margin: 8px 0;
-              line-height: 18px;
-              height: 18px;
-              width: 202px;
-              overflow: hidden;
-              white-space: nowrap;
-              text-overflow: ellipsis;
-            }
-          }
-          p {
-            line-height: 30px;
-            font-size: 14px;
-            color: #a4a3a3;
-          }
-        }
-      }
-      .book-right {
-        height: 320px;
-        overflow: hidden;
-        padding-top: 20px;
-        width: 500px;
-        p {
-          line-height: 38px;
-          margin-top: 15px;
-          text-indent: 2em;
-          text-align: justify;
-          color: #636363;
-        }
-
-      }
-    }
-    .book-contend {
-      height: 550px;
-      overflow: hidden;
-      margin-top: 30px;
-      .header {
-        border-bottom: 1px solid #eaeaea;
-        .header-inner {
-          border-left: 3px solid #498d99;
-          padding: 0 15px;
-          line-height: 32px;
-          font-weight: bold;
-          background-color: #eaeaea;
-          display: inline-block;
-        }
-
-      }
-      .book-body {
-        margin: 20px 50px;
-        .headline {
-          margin: 15px 0;
-          font-size: 15px;
-          letter-spacing: 3px;
-          color: #000000;
-        }
-        ul {
-          margin-left: 40px;
-          li {
-            line-height: 40px;
-            width: 800px;
-            overflow: hidden;
-            a {
-              color: #444444;
-            }
-          }
-        }
-      }
-    }
-  }
-}
 
 
 

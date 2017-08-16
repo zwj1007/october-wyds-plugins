@@ -941,14 +941,6 @@ header {
     .footer .footer-content .footer-bottom {
       margin-top: 0; }
 
-.footer1 {
-  padding-top: 40px;
-  text-align: center;
-  color: #3d413c;
-  border-bottom: 1px #CCCCCC;
-  line-height: 30px;
-  color: #545454; }
-
 .lanmu #afix-lanmu.affix {
   top: 0;
   position: fixed; }
@@ -1420,95 +1412,73 @@ header {
         letter-spacing: -0.11em;
         margin-right: 30px; }
 
-.xspx-list {
-  margin: 30px auto;
-  border-left: 1px solid #CCCCCC;
-  border-right: 1px solid #CCCCCC;
-  border-bottom: 1px solid #CCCCCC;
-  border-radius: 5px; }
-  .xspx-list .hd {
-    text-align: left;
-    padding-left: 0;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 5px;
-    background: url(../images/title-1.png) no-repeat center;
-    border-bottom: 0; }
-    .xspx-list .hd i {
-      padding: 10px 15px;
-      color: #ffffff;
-      background: #FF4400;
-      border-radius: 3px; }
-  .xspx-list .dd {
-    height: auto;
-    text-align: left;
-    overflow: hidden;
-    margin: 25px 0;
-    color: #494546; }
-    .xspx-list .dd ul li {
-      width: 260px;
-      float: left;
-      margin-bottom: 15px;
-      margin-left: 16px; }
-      .xspx-list .dd ul li a img {
-        width: 260px;
-        margin-bottom: 5px; }
-      .xspx-list .dd ul li p {
-        text-align: center;
-        font-size: 14px;
-        letter-spacing: 2px;
-        margin-bottom: 20px; }
-        .xspx-list .dd ul li p a {
-          display: block;
-          width: 260px;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis; }
-        .xspx-list .dd ul li p a:hover {
-          color: rgba(11, 99, 159, 0.91); }
-    .xspx-list .dd li:hover {
-      box-shadow: 1px 2px 10px 1px #CCCCCC; }
-
-.xspx-list-wy-v1 .cbp-l-filters-alignCenter {
-  padding-top: 22px;
-  text-align: left !important; }
-  .xspx-list-wy-v1 .cbp-l-filters-alignCenter .cbp-filter-counter {
-    padding: 0; }
-  .xspx-list-wy-v1 .cbp-l-filters-alignCenter .cbp-filter-item:hover .cbp-filter-counter {
-    bottom: -5px; }
-.xspx-list-wy-v1 .cbp-l-grid-work .cbp-item-wrapper {
-  padding-bottom: 0; }
-  .xspx-list-wy-v1 .cbp-l-grid-work .cbp-item-wrapper .cbp-l-grid-work-desc {
-    padding: 15px 0;
-    text-align: left; }
-    .xspx-list-wy-v1 .cbp-l-grid-work .cbp-item-wrapper .cbp-l-grid-work-desc p {
-      padding-bottom: 20px;
-      font-size: 14px;
-      width: 310px;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+.xspx-list .dd ul li {
+  border: 0 !important;
+  margin-left: 16px;
+  margin-right: 0 !important; }
+  .xspx-list .dd ul li a {
+    margin-left: 8px; }
+    .xspx-list .dd ul li a img {
+      max-width: 100%;
+      margin-bottom: 5px; }
+  .xspx-list .dd ul li p {
+    letter-spacing: 2px;
+    margin-bottom: 20px; }
+    .xspx-list .dd ul li p a {
+      display: block;
+      width: 240px;
       overflow: hidden;
-      color: #000; }
-.xspx-list-wy-v1 .cbp-l-grid-work .cbp-l-grid-work-title {
-  border-bottom: 1px solid #e7e7e7; }
-.xspx-list-wy-v1 .cbp-l-grid-work u {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: -7px;
-  left: -8px;
-  z-index: 1; }
-.xspx-list-wy-v1 .cbp-l-grid-work u.re-men {
-  background: url("../images/xspx/hot.png"); }
-.xspx-list-wy-v1 .cbp-l-grid-work u.tui-jian {
-  background-image: url("../images/xspx/recommend.png"); }
-.xspx-list-wy-v1 .cbp-l-grid-work i.xb {
-  transform: rotate(-45deg) translateX(-2px) translateY(28px);
-  letter-spacing: 10px;
-  color: #ffffff;
-  display: inline-block; }
-.xspx-list-wy-v1 .cbp-l-loadMore-button .cbp-l-loadMore-link {
-  margin: 20px 0; }
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+    .xspx-list .dd ul li p a:hover {
+      color: rgba(11, 99, 159, 0.91); }
+.xspx-list .dd ul li:hover {
+  box-shadow: 1px 1px 8px 1px rgba(93, 93, 93, 0.4) !important; }
+
+.xspx-list-wy-v1 {
+  border: 1px solid #f3f3f3;
+  box-shadow: 1px 1px 4px 1px #d7d7d7;
+  padding: 15px; }
+  .xspx-list-wy-v1 .cbp-l-filters-alignCenter {
+    padding-top: 12px;
+    text-align: left !important; }
+    .xspx-list-wy-v1 .cbp-l-filters-alignCenter .cbp-filter-counter {
+      padding: 0; }
+    .xspx-list-wy-v1 .cbp-l-filters-alignCenter .cbp-filter-item:hover .cbp-filter-counter {
+      bottom: -5px; }
+  .xspx-list-wy-v1 .cbp-l-grid-work .cbp-item-wrapper {
+    padding-bottom: 0; }
+    .xspx-list-wy-v1 .cbp-l-grid-work .cbp-item-wrapper .cbp-l-grid-work-desc {
+      padding: 15px 0;
+      text-align: left; }
+      .xspx-list-wy-v1 .cbp-l-grid-work .cbp-item-wrapper .cbp-l-grid-work-desc p {
+        padding-bottom: 20px;
+        font-size: 14px;
+        width: 310px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color: #000; }
+  .xspx-list-wy-v1 .cbp-l-grid-work .cbp-l-grid-work-title {
+    border-bottom: 1px solid #e7e7e7; }
+  .xspx-list-wy-v1 .cbp-l-grid-work u {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -7px;
+    left: -8px;
+    z-index: 1; }
+  .xspx-list-wy-v1 .cbp-l-grid-work u.re-men {
+    background: url("../images/xspx/hot.png"); }
+  .xspx-list-wy-v1 .cbp-l-grid-work u.tui-jian {
+    background-image: url("../images/xspx/recommend.png"); }
+  .xspx-list-wy-v1 .cbp-l-grid-work i.xb {
+    transform: rotate(-45deg) translateX(-2px) translateY(28px);
+    letter-spacing: 10px;
+    color: #ffffff;
+    display: inline-block; }
+  .xspx-list-wy-v1 .cbp-l-loadMore-button .cbp-l-loadMore-link {
+    margin: 20px 0; }
 
 .xspx-video .vid-wrapper {
   border: 1px solid #CCCCCC;
@@ -1608,118 +1578,50 @@ header {
   .syjc-list .pagination {
     margin-top: 30px; }
 
-.syjc-contend .book-desc {
-  padding: 15px 40px; }
-  .syjc-contend .book-desc .book-top {
-    height: 350px; }
-    .syjc-contend .book-desc .book-top .book-left {
-      width: 500px;
-      height: 350px; }
-      .syjc-contend .book-desc .book-top .book-left img {
-        float: left;
-        width: 260px;
-        height: 350px;
-        margin-right: 20px; }
-      .syjc-contend .book-desc .book-top .book-left .des {
-        margin: 30px 0; }
-        .syjc-contend .book-desc .book-top .book-left .des a h2 {
-          font-size: 16px;
-          color: #444;
-          margin: 8px 0;
-          line-height: 18px;
-          height: 18px;
-          width: 202px;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis; }
-        .syjc-contend .book-desc .book-top .book-left .des p {
-          line-height: 30px;
-          font-size: 14px;
-          color: #a4a3a3; }
-    .syjc-contend .book-desc .book-top .book-right {
-      height: 320px;
-      overflow: hidden;
-      padding-top: 20px;
-      width: 500px; }
-      .syjc-contend .book-desc .book-top .book-right p {
-        line-height: 38px;
-        margin-top: 15px;
-        text-indent: 2em;
-        text-align: justify;
-        color: #636363; }
-  .syjc-contend .book-desc .book-contend {
-    height: 550px;
-    overflow: hidden;
-    margin-top: 30px; }
-    .syjc-contend .book-desc .book-contend .header {
-      border-bottom: 1px solid #eaeaea; }
-      .syjc-contend .book-desc .book-contend .header .header-inner {
-        border-left: 3px solid #498d99;
-        padding: 0 15px;
-        line-height: 32px;
-        font-weight: bold;
-        background-color: #eaeaea;
-        display: inline-block; }
-    .syjc-contend .book-desc .book-contend .book-body {
-      margin: 20px 50px; }
-      .syjc-contend .book-desc .book-contend .book-body .headline {
-        margin: 15px 0;
-        font-size: 15px;
-        letter-spacing: 3px;
-        color: #000000; }
-      .syjc-contend .book-desc .book-contend .book-body ul {
-        margin-left: 40px; }
-        .syjc-contend .book-desc .book-contend .book-body ul li {
-          line-height: 40px;
-          width: 800px;
-          overflow: hidden; }
-          .syjc-contend .book-desc .book-contend .book-body ul li a {
-            color: #444444; }
-
-.cpyx-list .hd {
-  text-align: left;
-  padding-left: 0;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 5px;
-  background: url(../images/title-1.png) no-repeat center;
-  border-bottom: 0; }
-  .cpyx-list .hd i {
-    padding: 8px 15px;
-    color: #ffffff;
-    background: #FF4400;
-    border-radius: 3px; }
-.cpyx-list .cpyx-qypp {
+.bdds-list {
   margin-top: 30px;
   margin-bottom: 50px;
   overflow: hidden;
-  border-bottom: 1px solid #CCCCCC;
-  border-left: 1px solid #CCCCCC;
-  border-right: 1px solid #CCCCCC;
+  border-bottom: 1px solid #E2E2E2;
+  border-left: 1px solid #E2E2E2;
+  border-right: 1px solid #E2E2E2;
   border-radius: 4px; }
-  .cpyx-list .cpyx-qypp .dd ul {
+  .bdds-list .hd {
+    text-align: left;
+    padding-left: 0;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    background: url(../images/title-1.png) no-repeat center;
+    border-bottom: 0; }
+    .bdds-list .hd i {
+      padding: 8px 15px;
+      color: #ffffff;
+      background: #FF4400;
+      border-radius: 3px; }
+  .bdds-list .dd ul {
     margin-top: 20px;
     margin-bottom: 30px;
     padding-top: 10px;
     overflow: hidden;
     padding-left: 20px; }
-    .cpyx-list .cpyx-qypp .dd ul li {
+    .bdds-list .dd ul li {
       float: left;
       border: 1px solid #CCCCCC;
       margin-bottom: 20px;
       width: 250px;
       margin-right: 20px;
       text-align: center; }
-      .cpyx-list .cpyx-qypp .dd ul li a img {
+      .bdds-list .dd ul li a img {
         width: 240px;
         height: 120px; }
-      .cpyx-list .cpyx-qypp .dd ul li a p {
+      .bdds-list .dd ul li a p {
         color: #CCCCCC; }
-    .cpyx-list .cpyx-qypp .dd ul li:hover {
+    .bdds-list .dd ul li:hover {
       border: 1px solid #ffffff;
       box-shadow: 3px 3px 8px 8px rgba(93, 93, 93, 0.4);
       transition: all 0.5s ease; }
-      .cpyx-list .cpyx-qypp .dd ul li:hover a p {
+      .bdds-list .dd ul li:hover a p {
         color: #333333; }
 
 /*品牌企业列表页*/
@@ -2208,24 +2110,6 @@ input {
     color: #FFFFFF;
     letter-spacing: 5px; }
 
-.user-pwd #changeCode div {
-  width: 685px;
-  height: 55px;
-  line-height: 55px;
-  border-bottom: 0;
-  font-size: 14px;
-  color: #444;
-  text-align: center; }
-  .user-pwd #changeCode div label {
-    display: inline-block;
-    width: 70px;
-    text-align: right;
-    margin-right: 20px; }
-.user-pwd .fl {
-  padding: 6px 55px;
-  display: block;
-  margin: 30px auto; }
-
 .user-portr .portr {
   margin: 0 auto;
   display: table; }
@@ -2615,80 +2499,6 @@ input {
       margin: 10px 0; }
     .xqfb-browse .xqfb-browse-body ul li {
       line-height: 35px; }
-
-.xqfb-list1 {
-  padding-top: 0; }
-  .xqfb-list1 .content-holder {
-    background: 0; }
-    .xqfb-list1 .content-holder .content {
-      width: 1120px !important;
-      height: auto; }
-      .xqfb-list1 .content-holder .content .signup-center .signup-main {
-        height: auto;
-        border-right: 0;
-        border-left: 0; }
-        .xqfb-list1 .content-holder .content .signup-center .signup-main .step-contain .step {
-          width: 264px; }
-          .xqfb-list1 .content-holder .content .signup-center .signup-main .step-contain .step a {
-            color: #4d4c4d; }
-        .xqfb-list1 .content-holder .content .signup-center .signup-main .step-contain .active a {
-          color: #FFFFFF; }
-        .xqfb-list1 .content-holder .content .signup-center .signup-main .xqfb-fl {
-          width: 823px;
-          margin: 70px auto; }
-          .xqfb-list1 .content-holder .content .signup-center .signup-main .xqfb-fl li {
-            display: inline-block;
-            width: 270px;
-            padding-left: 80px;
-            line-height: 50px; }
-            .xqfb-list1 .content-holder .content .signup-center .signup-main .xqfb-fl li i {
-              margin-right: 15px;
-              font-size: 25px;
-              color: #FF4400; }
-            .xqfb-list1 .content-holder .content .signup-center .signup-main .xqfb-fl li a:hover {
-              color: #FF4400; }
-        .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form {
-          width: 823px;
-          margin: 40px auto;
-          line-height: 60px;
-          padding-left: 25px; }
-          .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .form-group .label-title {
-            display: inline-block;
-            margin-bottom: 5px;
-            font-weight: 700; }
-          .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .form-group .note-frame {
-            border-bottom: 1px solid #afa1a1; }
-          .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .form-group label {
-            margin-right: 15px; }
-            .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .form-group label input {
-              margin-right: 10px; }
-          .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .form-group .form-control {
-            width: 400px;
-            padding: 6px 12px;
-            line-height: 1.42857143;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
-            .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .form-group .form-control input {
-              margin-right: 15px; }
-          .xqfb-list1 .content-holder .content .signup-center .signup-main .fb-form .button-fb {
-            width: 100px;
-            line-height: 30px;
-            height: 30px;
-            margin: 0 auto;
-            border: 0;
-            box-shadow: 1px 1px 1px #7e6e68;
-            background: #ff4400;
-            color: #fff; }
-        .xqfb-list1 .content-holder .content .signup-center .signup-main .xqfb-cg li {
-          width: 400px;
-          text-align: center; }
-          .xqfb-list1 .content-holder .content .signup-center .signup-main .xqfb-cg li i {
-            font-size: 35px; }
 
 .toast a {
   color: #337ab7; }
