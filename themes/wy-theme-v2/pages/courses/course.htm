@@ -57,7 +57,7 @@ $course->save();
                    data-request-data="id:{{post.id}}"
                    data-attach-loading
                 >
-                    <i class="fa fa-star-o"></i>取消收藏
+                    <i class="fa fa-star-o margin-right-5"></i>取消收藏
                 </a>
 
                 {% else %}
@@ -67,17 +67,17 @@ $course->save();
                    data-request-data="id:{{post.id}}"
                    data-attach-loading
                 >
-                    <i class="fa fa-star-o"></i>收藏
+                    <i class="fa fa-star-o margin-right-5"></i>收藏
                 </a>
                 {% endif %}
 
                 {% if post.previousPost %}
                 <a class="btn btn-line-primary" href="/courses/course/{{ post.previousPost.id }}"><i
-                        class="fa fa-fast-backward"></i> 上一课</a>
+                        class="fa fa-fast-backward margin-right-5"></i>上一课</a>
                 {% endif %}
                 {% if post.nextPost %}
                 <a class="btn btn-line-primary" href="/courses/course/{{ post.nextPost.id }}"><i
-                        class=" fa fa-fast-forward"></i> 下一课</a>
+                        class=" fa fa-fast-forward margin-right-5"></i>下一课</a>
                 {% endif %}
                 <p>
                     {% if post.categories.count %}
