@@ -24,7 +24,7 @@ function onEnd(){
             <ul>
                 {% for course in courses %}
                 <li>
-                    <a href="/courses/course/{{ course.slug }}">{{ course.title }}</a>
+                    <a href="/courses/course/{{ post.id }} ">{{ course.title }}</a><!--/courses/course/{{ course.slug }}-->
                 </li>
                 {% endfor %}
             </ul>
