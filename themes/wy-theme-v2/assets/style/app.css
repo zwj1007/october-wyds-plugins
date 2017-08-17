@@ -1515,13 +1515,14 @@ header {
     .xspx-video .vid-cont .divfelt .vid-body .ul-h5 {
       margin: 10px 25px; }
     .xspx-video .vid-cont .divfelt .vid-body ul li {
-      margin: 0 50px; }
+      margin: 10px 40px;
+      list-style: square; }
     .xspx-video .vid-cont .divfelt .vid-body ol {
       list-style: trad-chinese-informal;
       margin-left: 40px; }
     .xspx-video .vid-cont .divfelt .vid-body p {
       text-indent: 2em;
-      margin: 10px 25px; }
+      margin: 10px 0; }
 .xspx-video .vid-cont .dszx-kjnav {
   width: 250px;
   margin: 0 0 40px 20px; }

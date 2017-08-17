@@ -156,10 +156,10 @@
         }
         .ul-h5 {
           margin: $margin-10 $margin-25;
-
         }
         ul li {
-          margin: 0 $margin-25 +25;
+          margin: 10px 40px;
+          list-style: square;
         }
         ol {
           list-style: trad-chinese-informal;
@@ -167,7 +167,7 @@
         }
         p {
           text-indent: 2em;
-          margin: $margin-10 $margin-25;
+          margin: $margin-10 0;
 
         }
       }
