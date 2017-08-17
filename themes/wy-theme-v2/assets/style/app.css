@@ -2214,6 +2214,16 @@ input {
     color: #5d5d5d;
     text-indent: 2em; }
 
+.gs-user-Su .see-left {
+  width: 100% !important; }
+  .gs-user-Su .see-left .see-right {
+    width: 400px;
+    margin-left: 55px; }
+    .gs-user-Su .see-left .see-right img {
+      max-width: 100%; }
+    .gs-user-Su .see-left .see-right .seeR-content .callout-danger p {
+      line-height: 25px; }
+
 .user-dp .content .headline {
   display: block;
   margin: 35px 0 20px 0;

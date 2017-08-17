@@ -363,7 +363,21 @@
 
 //查看
 .gs-user-Su {
+  .see-left {
+    width: 100%!important;
+    .see-right {
+      .seeR-content {
+        .callout-danger {
+          p {
+            line-height: 25px;
 
+          }
+        }
+      }
+
+    }
+
+  }
 }
 
 //店铺
