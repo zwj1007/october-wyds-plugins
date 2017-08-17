@@ -1516,6 +1516,9 @@ header {
       margin: 10px 25px; }
     .xspx-video .vid-cont .divfelt .vid-body ul li {
       margin: 0 50px; }
+    .xspx-video .vid-cont .divfelt .vid-body ol {
+      list-style: trad-chinese-informal;
+      margin-left: 40px; }
     .xspx-video .vid-cont .divfelt .vid-body p {
       text-indent: 2em;
       margin: 10px 25px; }
