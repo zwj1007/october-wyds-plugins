@@ -2216,13 +2216,8 @@ input {
 
 .gs-user-Su .see-left {
   width: 100% !important; }
-  .gs-user-Su .see-left .see-right {
-    width: 400px;
-    margin-left: 55px; }
-    .gs-user-Su .see-left .see-right img {
-      max-width: 100%; }
-    .gs-user-Su .see-left .see-right .seeR-content .callout-danger p {
-      line-height: 25px; }
+  .gs-user-Su .see-left .see-right .seeR-content .callout-danger p {
+    line-height: 25px; }
 
 .user-dp .content .headline {
   display: block;
@@ -2281,8 +2276,7 @@ input {
     width: 600px; }
     .dp-see .content .see-left h4 {
       font-size: 22px;
-      margin-left: 20px;
-      margin-bottom: 20px; }
+      margin: 10px 0 18px 20px; }
     .dp-see .content .see-left p {
       line-height: 40px;
       font-size: 14px; }
