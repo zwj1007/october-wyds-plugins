@@ -59,9 +59,13 @@
         width: 80%;
         display: block;
       }
+      a:hover{
+        color: #1a6480;
+      }
       span {
         float: right;
         font-size: 12px;
+        margin-right: 15px;
       }
 
     }
