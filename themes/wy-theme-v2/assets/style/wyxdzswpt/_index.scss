@@ -15,21 +15,11 @@
         ul li {
           height: 35px;
           line-height: 35px;
+          margin-right: 5px;
           a {
-            color: #494546;
-            display: inline-block;
             width: 180px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
+          }
 
-          }
-          span.time {
-            float: right;
-            color: #777;
-            font-size: 12px;
-            letter-spacing: -0.11em;
-          }
         }
 
       }
@@ -94,26 +84,10 @@
 .xxgk {
   height: 170px;
   overflow: hidden;
-  .hd {
-    padding-left: 0;
-    height: 40px;
-    line-height: 40px;
-    border-top: 2px solid $border-color;
-    border-right: 1px solid $border-color;
-    border-left: 1px solid $border-color;
-    border-bottom: 1px solid $border-color;
-    i {
-      border-bottom: 3px solid $nav-background;
-      padding-bottom: 6px;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }
   .dd ul {
     margin-top: 10px;
     display: inline-block;
     margin-left: 5px;
-
     > li {
       float: left;
       width: ($page-width - 125) /4;
@@ -124,9 +98,6 @@
       > a {
         display: block;
         width: 240px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
       }
     }
     li:hover {
@@ -142,22 +113,6 @@
 //政策咨询
 .zcdx {
   height: 250px;
-  //height: 300px;
-  .hd {
-    padding-left: 0;
-    height: 40px;
-    line-height: 40px;
-    border-top: 2px solid $border-color;
-    border-right: 1px solid $border-color;
-    border-left: 1px solid $border-color;
-    border-bottom: 1px solid $border-color;
-    i {
-      border-bottom: 3px solid $nav-background;
-      padding-bottom: 6px;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }
   .dd {
     ul {
       float: left;
@@ -167,27 +122,17 @@
       margin-right: 40px;
       border-right: 1px dashed #dddddd;
       margin-top: 10px;
-
       li {
         height: 45px;
         line-height: 45px;
         a {
-          color: #494546;
-          display: inline-block;
           width: 200px;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
         }
         a:hover {
           color: $nav-background;
           /*color: #0844B6*/
         }
         span.time {
-          float: right;
-          color: #777;
-          font-size: 12px;
-          letter-spacing: -0.11em;
           margin-right: 25px;
         }
       }
@@ -203,22 +148,6 @@
 //线上培训
 .xspx {
   height: 385px;
-  .hd {
-    text-align: left;
-    padding-left: 0;
-    height: 40px;
-    line-height: 40px;
-    border-top: 2px solid $border-color;
-    border-right: 1px solid $border-color;
-    border-left: 1px solid $border-color;
-    border-bottom: 1px solid $border-color;
-    i {
-      border-bottom: 3px solid $nav-background;
-      padding-bottom: 6px;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }
   .dd {
     height: 340px;
     padding-top: $margin-5;
@@ -289,42 +218,6 @@
 .fwsc {
   height: 350px !important;
   overflow: hidden;
-  .hd {
-    text-align: left;
-    padding-left: 0;
-    height: 40px;
-    line-height: 40px;
-    border: 1px solid $border-color;
-    i {
-      border-bottom: 3px solid $nav-background;
-      padding-bottom: 6px;
-      padding-left: 15px;
-      padding-right: 15px;
-      width: 300px;
-    }
-    ul {
-      display: inline;
-      li {
-        //width: 80px;
-        margin-right: 20px;
-        float: left;
-        text-align: center;
-        a {
-          font-size: 14px;
-          letter-spacing: 3px;
-          color: #999999;
-        }
-
-      }
-      .active {
-        a {
-          color: #3e3e3e;
-        }
-        border: none;
-      }
-
-    }
-  }
   .dd {
     height: 300px !important;
     overflow: hidden;
@@ -337,7 +230,6 @@
         line-height: 50px;
         margin: 40px 0;
         color: #C8C8C8;
-        display: inline-block;
         transition: all 0.2s ease-in-out;
         span {
           font-size: 30px;
@@ -445,22 +337,6 @@
 //便民服务
 .bmfw {
   height: 280px;
-  .hd {
-    text-align: left;
-    padding-left: 0;
-    height: 40px;
-    line-height: 40px;
-    border-top: 2px solid $border-color;
-    border-right: 1px solid $border-color;
-    border-left: 1px solid $border-color;
-    border-bottom: 1px solid $border-color;
-    i {
-      border-bottom: 3px solid $nav-background;
-      padding-bottom: 6px;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }
   .dd {
     height: 234px;
     padding-top: $margin-15;
@@ -499,27 +375,9 @@
 
 //优秀网站
 .yxwd {
-  .hd {
-    text-align: left;
-    padding-left: 0;
-    height: 40px;
-    line-height: 40px;
-    border-top: 2px solid $border-color;
-    border-right: 1px solid $border-color;
-    border-left: 1px solid $border-color;
-    border-bottom: 1px solid $border-color;
-    i {
-      border-bottom: 3px solid $nav-background;
-      padding-bottom: 6px;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }
   .dd {
-
     .zzsc {
       overflow: hidden;
-
       .rotatesimg {
         -webkit-animation: transform-5 2s ease 500ms alternate none 1;
         animation: transform-5 2s ease 500ms alternate none 1;
@@ -595,7 +453,7 @@
       #prev, #next {
         position: absolute;
         top: 40px;
-        left: 0px;
+        left: 0;
         width: 25px;
         padding: 25px 0;
         background: $nav-background;
@@ -605,7 +463,7 @@
 
       #next {
         left: auto;
-        right: 0px
+        right: 0;
       }
     }
 
@@ -620,24 +478,7 @@
 
 //品牌企业
 .ppqy {
-  //height: 300px;
   height: 100%;
-  .hd {
-    text-align: left;
-    padding-left: 0;
-    height: 40px;
-    line-height: 40px;
-    border-top: 2px solid $border-color;
-    border-right: 1px solid $border-color;
-    border-left: 1px solid $border-color;
-    border-bottom: 1px solid $border-color;
-    i {
-      border-bottom: 3px solid $nav-background;
-      padding-bottom: 6px;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }
   .dd {
     height: 100%;
     overflow: hidden;

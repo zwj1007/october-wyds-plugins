@@ -122,6 +122,45 @@ a:hover, a:link {
       color: #337ab7;
     }
   }
+
+  .dd {
+    ul li {
+      a {
+        color: #494546;
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      a:hover {
+        color: #1a6480;
+      }
+      span.time {
+        float: right;
+        color: #777;
+        font-size: 12px;
+        letter-spacing: -0.11em;
+      }
+    }
+  }
+}
+
+.xxgk, .zcdx, .xspx, .fwsc, .bmfw, .yxwd, .ppqy {
+  .hd {
+    padding-left: 0;
+    height: 40px;
+    line-height: 40px;
+    border-top: 2px solid $border-color;
+    border-right: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    i {
+      border-bottom: 3px solid $nav-background;
+      padding-bottom: 6px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
 }
 
 .margin-left-right-5 {
