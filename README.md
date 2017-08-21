@@ -12,6 +12,7 @@ october plugins
 + this plugin need `guzzlehttp/guzzle`package, install via composer `composer require guzzlehttp/guzzle`
 + remove some files,`rm .gitignore README.md .editorconfig .gitattributes`
 + install plugin before init repository
+    - install october.driver `php artisan plugin:install October.Drivers`
     - install rainlab.user `php artisan plugin:install RainLab.User`
     - install rainlab.pages `php artisan plugin:install RainLab.Pages`
     - install netsti.uploader `php artisan plugin:install Netsti.Uploader`
