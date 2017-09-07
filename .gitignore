@@ -37,7 +37,9 @@ gen
 /storage
 /tests
 /themes/demo
+
 .htaccess
+.gitattributes
 artisan
 index.php
 composer.json

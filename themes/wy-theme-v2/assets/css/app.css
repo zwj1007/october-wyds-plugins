@@ -90,6 +90,33 @@ a:hover, a:link {
       margin-right: 10px; }
     .box .hd span:hover {
       color: #337ab7; }
+  .box .dd ul li a {
+    color: #494546;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .box .dd ul li a:hover {
+    color: #1a6480; }
+  .box .dd ul li span.time {
+    float: right;
+    color: #777;
+    font-size: 12px;
+    letter-spacing: -0.11em; }
+
+.xxgk .hd, .zcdx .hd, .xspx .hd, .fwsc .hd, .bmfw .hd, .yxwd .hd, .ppqy .hd {
+  padding-left: 0;
+  height: 40px;
+  line-height: 40px;
+  border-top: 2px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+  border-left: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC; }
+  .xxgk .hd i, .zcdx .hd i, .xspx .hd i, .fwsc .hd i, .bmfw .hd i, .yxwd .hd i, .ppqy .hd i {
+    border-bottom: 3px solid #FF4400;
+    padding-bottom: 6px;
+    padding-left: 15px;
+    padding-right: 15px; }
 
 .margin-left-right-5 {
   margin: 0 5px; }
@@ -439,19 +466,10 @@ header {
       margin: 5px; }
       .dszx .dszx-left .th .dd ul li {
         height: 35px;
-        line-height: 35px; }
+        line-height: 35px;
+        margin-right: 5px; }
         .dszx .dszx-left .th .dd ul li a {
-          color: #494546;
-          display: inline-block;
-          width: 180px;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis; }
-        .dszx .dszx-left .th .dd ul li span.time {
-          float: right;
-          color: #777;
-          font-size: 12px;
-          letter-spacing: -0.11em; }
+          width: 180px; }
     .dszx .dszx-left .th .td {
       height: 174px; }
       .dszx .dszx-left .th .td a:hover {
@@ -496,19 +514,6 @@ header {
 .xxgk {
   height: 170px;
   overflow: hidden; }
-  .xxgk .hd {
-    padding-left: 0;
-    height: 40px;
-    line-height: 40px;
-    border-top: 2px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
-    border-left: 1px solid #CCCCCC;
-    border-bottom: 1px solid #CCCCCC; }
-    .xxgk .hd i {
-      border-bottom: 3px solid #FF4400;
-      padding-bottom: 6px;
-      padding-left: 15px;
-      padding-right: 15px; }
   .xxgk .dd ul {
     margin-top: 10px;
     display: inline-block;
@@ -522,10 +527,7 @@ header {
       overflow: hidden; }
       .xxgk .dd ul > li > a {
         display: block;
-        width: 240px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis; }
+        width: 240px; }
     .xxgk .dd ul li:hover {
       color: #265a87; }
     .xxgk .dd ul li:last-child {
@@ -533,22 +535,9 @@ header {
 
 .zcdx {
   height: 250px; }
-  .zcdx .hd {
-    padding-left: 0;
-    height: 40px;
-    line-height: 40px;
-    border-top: 2px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
-    border-left: 1px solid #CCCCCC;
-    border-bottom: 1px solid #CCCCCC; }
-    .zcdx .hd i {
-      border-bottom: 3px solid #FF4400;
-      padding-bottom: 6px;
-      padding-left: 15px;
-      padding-right: 15px; }
   .zcdx .dd ul {
     float: left;
-    width: 346.6666666667px;
+    width: 346.66667px;
     height: 170px;
     overflow: hidden;
     margin-right: 40px;
@@ -558,20 +547,11 @@ header {
       height: 45px;
       line-height: 45px; }
       .zcdx .dd ul li a {
-        color: #494546;
-        display: inline-block;
-        width: 200px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis; }
+        width: 200px; }
       .zcdx .dd ul li a:hover {
         color: #FF4400;
         /*color: #0844B6*/ }
       .zcdx .dd ul li span.time {
-        float: right;
-        color: #777;
-        font-size: 12px;
-        letter-spacing: -0.11em;
         margin-right: 25px; }
   .zcdx .dd ul:last-child {
     margin-right: 0;
@@ -579,20 +559,6 @@ header {
 
 .xspx {
   height: 385px; }
-  .xspx .hd {
-    text-align: left;
-    padding-left: 0;
-    height: 40px;
-    line-height: 40px;
-    border-top: 2px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
-    border-left: 1px solid #CCCCCC;
-    border-bottom: 1px solid #CCCCCC; }
-    .xspx .hd i {
-      border-bottom: 3px solid #FF4400;
-      padding-bottom: 6px;
-      padding-left: 15px;
-      padding-right: 15px; }
   .xspx .dd {
     height: 340px;
     padding-top: 5px; }
@@ -645,32 +611,6 @@ header {
 .fwsc {
   height: 350px !important;
   overflow: hidden; }
-  .fwsc .hd {
-    text-align: left;
-    padding-left: 0;
-    height: 40px;
-    line-height: 40px;
-    border: 1px solid #CCCCCC; }
-    .fwsc .hd i {
-      border-bottom: 3px solid #FF4400;
-      padding-bottom: 6px;
-      padding-left: 15px;
-      padding-right: 15px;
-      width: 300px; }
-    .fwsc .hd ul {
-      display: inline; }
-      .fwsc .hd ul li {
-        margin-right: 20px;
-        float: left;
-        text-align: center; }
-        .fwsc .hd ul li a {
-          font-size: 14px;
-          letter-spacing: 3px;
-          color: #999999; }
-      .fwsc .hd ul .active {
-        border: none; }
-        .fwsc .hd ul .active a {
-          color: #3e3e3e; }
   .fwsc .dd {
     height: 300px !important;
     overflow: hidden;
@@ -683,7 +623,6 @@ header {
         line-height: 50px;
         margin: 40px 0;
         color: #C8C8C8;
-        display: inline-block;
         transition: all 0.2s ease-in-out; }
         .fwsc .dd ul li a span {
           font-size: 30px; }
@@ -752,20 +691,6 @@ header {
 
 .bmfw {
   height: 280px; }
-  .bmfw .hd {
-    text-align: left;
-    padding-left: 0;
-    height: 40px;
-    line-height: 40px;
-    border-top: 2px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
-    border-left: 1px solid #CCCCCC;
-    border-bottom: 1px solid #CCCCCC; }
-    .bmfw .hd i {
-      border-bottom: 3px solid #FF4400;
-      padding-bottom: 6px;
-      padding-left: 15px;
-      padding-right: 15px; }
   .bmfw .dd {
     height: 234px;
     padding-top: 15px; }
@@ -790,20 +715,6 @@ header {
       .bmfw .dd ul li ul li:last-child {
         margin-right: 0; }
 
-.yxwd .hd {
-  text-align: left;
-  padding-left: 0;
-  height: 40px;
-  line-height: 40px;
-  border-top: 2px solid #CCCCCC;
-  border-right: 1px solid #CCCCCC;
-  border-left: 1px solid #CCCCCC;
-  border-bottom: 1px solid #CCCCCC; }
-  .yxwd .hd i {
-    border-bottom: 3px solid #FF4400;
-    padding-bottom: 6px;
-    padding-left: 15px;
-    padding-right: 15px; }
 .yxwd .dd .zzsc {
   overflow: hidden; }
   .yxwd .dd .zzsc .rotatesimg {
@@ -859,7 +770,7 @@ header {
   .yxwd .dd .zzsc #prev, .yxwd .dd .zzsc #next {
     position: absolute;
     top: 40px;
-    left: 0px;
+    left: 0;
     width: 25px;
     padding: 25px 0;
     background: #FF4400;
@@ -867,27 +778,13 @@ header {
     border: 0; }
   .yxwd .dd .zzsc #next {
     left: auto;
-    right: 0px; }
+    right: 0; }
 .yxwd .dd #img-slider {
   position: relative;
   width: 1120px; }
 
 .ppqy {
   height: 100%; }
-  .ppqy .hd {
-    text-align: left;
-    padding-left: 0;
-    height: 40px;
-    line-height: 40px;
-    border-top: 2px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
-    border-left: 1px solid #CCCCCC;
-    border-bottom: 1px solid #CCCCCC; }
-    .ppqy .hd i {
-      border-bottom: 3px solid #FF4400;
-      padding-bottom: 6px;
-      padding-left: 15px;
-      padding-right: 15px; }
   .ppqy .dd {
     height: 100%;
     overflow: hidden;
@@ -930,7 +827,7 @@ header {
         margin: 40px 0 0 0;
         float: left;
         text-align: center;
-        width: 373.3333333333px; }
+        width: 373.33333px; }
         .footer .footer-content ul li img.footer1-img {
           width: 180px; }
         .footer .footer-content ul li img.footer1-wxH {
@@ -2598,10 +2495,6 @@ input {
       .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-body a {
         float: left;
         width: 300px;
-        display: block;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
         margin-right: 20px;
         color: #797676; }
       .fwsc-fl-list .fl-Lfet .dd ul.fl-dd-post li .post-body .label {
@@ -2627,7 +2520,8 @@ input {
       margin-top: 20px;
       padding: 8px 35px;
       background: #a5a5a5;
-      color: #fff; }
+      color: #fff;
+      display: initial; }
 .fwsc-fl-list .fl-Right {
   width: 330px; }
   .fwsc-fl-list .fl-Right .Publish-button {
@@ -2877,9 +2771,12 @@ input {
       .wy-notice .notice-right ul li a {
         width: 80%;
         display: block; }
+      .wy-notice .notice-right ul li a:hover {
+        color: #1a6480; }
       .wy-notice .notice-right ul li span {
         float: right;
-        font-size: 12px; }
+        font-size: 12px;
+        margin-right: 15px; }
 
 .wy-notice-content .notice-content {
   padding: 20px 50px;
