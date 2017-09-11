@@ -5,6 +5,7 @@
 + [额外说明](https://github.com/gansutianqi/october-wyds-plugins/blob/master/docs/1.md)
 + [数据统计](https://github.com/gansutianqi/october-wyds-plugins/blob/master/docs/2.md)
 + [TODO](https://github.com/gansutianqi/october-wyds-plugins/blob/master/docs/todo.md)
++ [email](https://github.com/gansutianqi/october-wyds-plugins/blob/master/docs/email.md)
 
 
 #### Tips
