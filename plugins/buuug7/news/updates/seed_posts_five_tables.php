@@ -270,6 +270,28 @@ class SeedPostsFiveTables extends Seeder
         // attach with category
         $xinXiGongKai11->categories()->attach(5);
 
+
+        $xinXiGongKai12 = Post::create([
+            'title' => '【电商选点】你刚好需要，我们正好专业，渭源县电商选点工作继续进行中',
+            'slug' => '【电商选点】你刚好需要，我们正好专业，渭源县电商选点工作继续进行中',
+            'summary' => '时光荏苒，三个月的时光很快过去了，我终于踏进了梦寐以求的电商大军。一个月前，当我参与到这个仰望已久的新家庭，满是亲和的笑脸。这里潮气蓬勃，令人心旷神怡。这是一位已定村级服务点电商合伙人发出的真实感叹！是呀，时间是最好的证人，你付出什么就会收获什么，时间——它见证着你的一切····如果没有收获，那只能说明你没有全力投入！',
+            'published' => true,
+            'published_at' => Carbon::create(2017, 9, 10, 0, 0, 0),
+            //'featured' => true,
+            // 'image' => '/news/01.jpg',
+            'user_id' => 1,
+            'images' => [],
+            'files' => [],
+            'content' => '
+            <p><img src="/storage/app/media/uploaded-files/zy-1.jpg" style="width: 600px;" class="fr-fic fr-dib" data-result="success"></p>
+            <p style="text-indent:2em">时光荏苒，三个月的时光很快过去了，我终于踏进了梦寐以求的电商大军。一个月前，当我参与到这个仰望已久的新家庭，满是亲和的笑脸。这里潮气蓬勃，令人心旷神怡。这是一位已定村级服务点电商合伙人发出的真实感叹！是呀，时间是最好的证人，你付出什么就会收获什么，时间——它见证着你的一切····如果没有收获，那只能说明你没有全力投入！<img src="/storage/app/media/uploaded-files/zy-2.jpg" style="width: 600px;" class="fr-fic fr-dib" data-result="success"></p>
+            <p style="text-indent:2em">随着“国家电子商务进农村综合示范县项目”在渭源县的继续深入推进，渭源县电子商务公共服务中心的工作人员依然在各自的岗位上继续努力着，他们不求最好，但求更好。这不，虽然近日又下起了萧萧瑟瑟的秋雨，但中心专门负责选点的工作人员又背起行囊继续前行在“寻找智慧电商合伙人“的道路上。<img src="/storage/app/media/uploaded-files/zy-3.jpg" style="width: 600px;" class="fr-fic fr-dib" data-result="success"></p>
+            <p style="text-indent:2em">马云曾经说过：“推荐好项目给别人时，不要太低三下四的委屈自己，能合作就合作，不能合作就下次合作！这是个合作共赢的时代，你若信任我，三言两语就可成交；你若不信任我，说的再多也是徒劳！“所以干事<span>业，就要把时间分给靠谱的人和事，你刚好需要，我们正好专业，就是这么简单。<img src="/storage/app/media/uploaded-files/zy-4.jpg" style="width: 600px;" class="fr-fic fr-dib" data-result="success"><img src="/storage/app/media/uploaded-files/zy-5.jpg" style="width: 600px;" class="fr-fic fr-dib" data-result="success"></span></p>
+            ',
+        ]);
+        // attach with category
+        $xinXiGongKai12->categories()->attach(5);
+
         //
         // 信息公开 end
         //
