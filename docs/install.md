@@ -35,3 +35,13 @@
 arguments: --no-cache --update $FileName$:../css/$FileNameWithoutExtension$.css
 output paths to refresh: $FileNameWithoutExtension$.css:../css/$FileNameWithoutExtension$.css.map
 ```
+
+#### issue
+if upload two same name files into media manager, the files uploaded later will auto overwrite the previous file without prompt. what did i do for prevent auto overwrite? i have many files in one directory,about 5000, when i upload new files into media manager, i must check the file name first, but this become more difficulty when the numbers of files getting more and more .  
+ but now this have no best solutions, i issued a [issue]() with this problem wait for solve, it seems only by modifying the source code of modules/cms/widgets/MediaManager.php line 1098 ,as follows
+ ```
+ // remove this line
+$fileName = $uploadedFile->getClientOriginalName();
+// add this line 
+$fileName = str_random(40);
+ ```
