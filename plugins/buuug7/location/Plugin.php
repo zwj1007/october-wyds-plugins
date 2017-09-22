@@ -51,10 +51,6 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return []; // Remove this line to activate
-
-        return [
-            'Buuug7\Location\Components\MyComponent' => 'myComponent',
-        ];
     }
 
     /**
@@ -80,16 +76,6 @@ class Plugin extends PluginBase
     public function registerNavigation()
     {
         return []; // Remove this line to activate
-
-        return [
-            'location' => [
-                'label'       => 'Location',
-                'url'         => Backend::url('buuug7/location/mycontroller'),
-                'icon'        => 'icon-leaf',
-                'permissions' => ['buuug7.location.*'],
-                'order'       => 500,
-            ],
-        ];
     }
     
     public function registerSettings()

@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use Buuug7\User\Models\User;
 use RainLab\User\Facades\Auth;
@@ -12,7 +13,7 @@ use Illuminate\Support\Str;
 //
 
 // redirect to tianqi login
-Route::get('/login/tianqi',function (){
+Route::get('/login/tianqi', function () {
     $query = http_build_query([
         'client_id' => Config::get('buuug7.user::tianqi.client_id'),
         'redirect_uri' => Config::get('buuug7.user::tianqi.redirect_uri'),
@@ -20,24 +21,24 @@ Route::get('/login/tianqi',function (){
         'scope' => '',
     ]);
 
-    $authorize_uri='http://7.jq2.com/oauth/authorize?'.$query;
+    $authorize_uri = 'http://7.jq2.com/oauth/authorize?' . $query;
     return Redirect::to($authorize_uri);
 });
 
 // handle tianqi callback
-Route::get('/login/tianqi/callback',function(){
-    $code=input('code');
-    $accessToken=User::getTianQiUserToken($code);
-    $tianQiUser=User::getTianQiUserByToken($accessToken);
+Route::get('/login/tianqi/callback', function () {
+    $code = input('code');
+    $accessToken = User::getTianQiUserToken($code);
+    $tianQiUser = User::getTianQiUserByToken($accessToken);
 
-    if(!User::where('tianqi_id',$tianQiUser->id)->first()){
-        if(User::where('email',$tianQiUser->email)->first()){
-            $user=User::where('email',$tianQiUser->email)->first();
-            $user->tianqi_id=$tianQiUser->id;
-            $user->social_avatar=$tianQiUser->avatar_url;
+    if (!User::where('tianqi_id', $tianQiUser->id)->first()) {
+        if (User::where('email', $tianQiUser->email)->first()) {
+            $user = User::where('email', $tianQiUser->email)->first();
+            $user->tianqi_id = $tianQiUser->id;
+            $user->social_avatar = $tianQiUser->avatar_url;
             $user->save();
             Auth::login($user);
-        }else{
+        } else {
             $password = bcrypt(Str::random(6));
             $user = Auth::register([
                 'name' => $tianQiUser->name,
@@ -46,20 +47,20 @@ Route::get('/login/tianqi/callback',function(){
                 'password_confirmation' => $password,
             ], true);
             $user->tianqi_id = $tianQiUser->id;
-            $user->social_avatar=$tianQiUser->avatar_url;
+            $user->social_avatar = $tianQiUser->avatar_url;
             $user->save();
             Auth::login($user);
         }
-    }else{
+    } else {
         $userInstance = User::where('tianqi_id', $tianQiUser->id)->firstOrFail();
         // synchronization user avatar
-        $userInstance->social_avatar=$tianQiUser->avatar_url;
+        $userInstance->social_avatar = $tianQiUser->avatar_url;
         $userInstance->save();
-        Auth::login($userInstance);
+        Auth::login($userInstance, true);
+
     }
     return Redirect::to('/user/center/account');
 });
-
 
 
 //
@@ -95,7 +96,7 @@ Route::get('/login/github/callback', function () {
         if (User::where('email', $githubUserEmail)->first()) {
             $user = User::where('email', $githubUserEmail)->first();
             $user->github_id = $githubUser->id;
-            $user->social_avatar=$githubUser->avatar_url;
+            $user->social_avatar = $githubUser->avatar_url;
             $user->save();
             Auth::login($user);
         } else {
@@ -108,13 +109,13 @@ Route::get('/login/github/callback', function () {
                 'password_confirmation' => $password,
             ], true);
             $user->github_id = $githubUser->id;
-            $user->social_avatar=$githubUser->avatar_url;
+            $user->social_avatar = $githubUser->avatar_url;
             $user->save();
             Auth::login($user);
         }
     } else {
         $userInstance = User::where('github_id', $githubUser->id)->firstOrFail();
-        $userInstance->social_avatar=$githubUser->avatar_url;
+        $userInstance->social_avatar = $githubUser->avatar_url;
         $userInstance->save();
         Auth::login($userInstance);
     }
@@ -127,11 +128,11 @@ Route::get('/login/github/callback', function () {
 //
 
 // redirect to qq login
-Route::get('/login/qq',function (){
+Route::get('/login/qq', function () {
     return Redirect::to('/coming-soon');
 });
 // handle qq callback
-Route::get('login/qq/callback',function(){
+Route::get('login/qq/callback', function () {
     return Redirect::to('/coming-soon');
 });
 
@@ -141,11 +142,11 @@ Route::get('login/qq/callback',function(){
 //
 
 // redirect to weixin login
-Route::get('login/weixin',function(){
+Route::get('login/weixin', function () {
     return Redirect::to('/coming-soon');
 });
 // handle weixin callback
-Route::get('login/weixin/callback',function(){
+Route::get('login/weixin/callback', function () {
     return Redirect::to('/coming-soon');
 });
 
