@@ -55,7 +55,7 @@ class Account extends \RainLab\User\Components\Account
      * Override default onRegister method
      * only add custom validation message
      */
-    public function onRegister()
+    public function onRegisterBack()
     {
         try {
             if (!$this->canRegister) {

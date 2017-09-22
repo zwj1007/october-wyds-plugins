@@ -15,3 +15,6 @@
     - create_shops_table.php
     - seed_all_tables.php
     - seed_user_groups_table.php
+1.0.6:
+    - fix upgrade problem
+    - create_user_roles_table.php

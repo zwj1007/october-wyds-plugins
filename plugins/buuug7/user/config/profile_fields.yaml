@@ -25,5 +25,3 @@ village:
 permissions:
     tab: '权限'
     type: 'Backend\FormWidgets\PermissionEditor'
-
-
