@@ -1,23 +1,20 @@
 #### Install
 + install october via composer `composer create-project october/october myprojectName`
-+ make `storage` and `themes` directory write permission
++ make `storage` and `themes` directory write permission `chmod -R 777 storage themes`
 + run `php artisan october:install` in project root directory
 + before run `php artisan ocotber:update`, you need run `composer update` first
-+ remove some files,`rm .gitignore README.md .editorconfig `
-
++ remove some files,`rm .gitignore README.md .editorconfig .gitattributes`
++ install dependencies plugins
+    - install october.driver `php artisan plugin:install October.Drivers`
+    - install rainlab.user `php artisan plugin:install RainLab.User`
+    - install rainlab.pages `php artisan plugin:install RainLab.Pages`
+    - install netsti.uploader `php artisan plugin:install Netsti.Uploader`
 + clone this repository
     - in the project root directory
     - run `git init`
     - run `git remote add origin https://github.com/gansutianqi/october-wyds-plugins.git`
     - run `git pull origin master`
-    
 + after pull complete
-    + install depend plugins
-        - install october.driver `php artisan plugin:install October.Drivers`
-        - install rainlab.user `php artisan plugin:install RainLab.User`
-        - install rainlab.pages `php artisan plugin:install RainLab.Pages`
-        - install netsti.uploader `php artisan plugin:install Netsti.Uploader`
-        - install october.drivers `php artisan plugin:install October.Drivers`
     + install self plugins    
         - install buuug7.news `php artisan plugin:refresh Buuug7.News`
         - install buuug7.courses `php artisan plugin:refresh Buuug7.Courses`
@@ -25,7 +22,6 @@
         - install buuug7.statistics `php artisan plugin:refresh Buuug7.Statistics`
         - install buuug7.location `php artisan plugin:refresh Buuug7.Location`
 + other settings
-    - setting `locale=zh-cn timezone=PRC` in config/app.php
     - when develop in local,make sure to add `APP_ENV=dev` for use dev config.
     - if you want the latest Rainlab.User translate with zh-cn, you should copy [zh-cn](https://github.com/rainlab/user-plugin/blob/master/lang/zh-cn/lang.php) override default
     - if you want the latest modules backend translate with zh-cn, also copy [zh-cn](https://github.com/octobercms/october/blob/develop/modules/backend/lang/zh-cn/lang.php) override default.
