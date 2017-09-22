@@ -1,29 +1,29 @@
 #### Install
 + install october via composer `composer create-project october/october myprojectName`
-+ setting `'disabledCoreUpdates' => true` in config/cms.php
-+ run `php artisan october:install` in project root directory
-+ run `php artisan october:env` generate a `.env` file for common config
 + make `storage` and `themes` directory write permission
++ run `php artisan october:install` in project root directory
 + before run `php artisan ocotber:update`, you need run `composer update` first
 + remove some files,`rm .gitignore README.md .editorconfig `
 
-+ install plugin before init repository
-    - install october.driver `php artisan plugin:install October.Drivers`
-    - install rainlab.user `php artisan plugin:install RainLab.User`
-    - install rainlab.pages `php artisan plugin:install RainLab.Pages`
-    - install netsti.uploader `php artisan plugin:install Netsti.Uploader`
-    - install october.drivers `php artisan plugin:install October.Drivers`
 + clone this repository
     - in the project root directory
     - run `git init`
     - run `git remote add origin https://github.com/gansutianqi/october-wyds-plugins.git`
     - run `git pull origin master`
+    
 + after pull complete
-    - install buuug7.news `php artisan plugin:refresh Buuug7.News`
-    - install buuug7.courses `php artisan plugin:refresh Buuug7.Courses`
-    - install buuug7.user `php artisan plugin:refresh Buuug7.User`
-    - install buuug7.statistics `php artisan plugin:refresh Buuug7.Statistics`
-    - install buuug7.location `php artisan plugin:refresh Buuug7.Location`
+    + install depend plugins
+        - install october.driver `php artisan plugin:install October.Drivers`
+        - install rainlab.user `php artisan plugin:install RainLab.User`
+        - install rainlab.pages `php artisan plugin:install RainLab.Pages`
+        - install netsti.uploader `php artisan plugin:install Netsti.Uploader`
+        - install october.drivers `php artisan plugin:install October.Drivers`
+    + install self plugins    
+        - install buuug7.news `php artisan plugin:refresh Buuug7.News`
+        - install buuug7.courses `php artisan plugin:refresh Buuug7.Courses`
+        - install buuug7.user `php artisan plugin:refresh Buuug7.User`
+        - install buuug7.statistics `php artisan plugin:refresh Buuug7.Statistics`
+        - install buuug7.location `php artisan plugin:refresh Buuug7.Location`
 + other settings
     - setting `locale=zh-cn timezone=PRC` in config/app.php
     - when develop in local,make sure to add `APP_ENV=dev` for use dev config.
