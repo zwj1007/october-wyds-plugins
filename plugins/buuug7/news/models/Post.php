@@ -296,7 +296,7 @@ class Post extends Model
     public function scopeDisplayFeatured($query, $limit)
     {
         $query->isPublished();
-        return $query->where('featured', 1)->limit($limit)->get();
+        return $query->where('featured', 1)->orderBy('published_at', 'desc')->limit($limit)->get();
     }
 
     /**
@@ -308,7 +308,7 @@ class Post extends Model
     public function scopeDisplayTop($query, $limit)
     {
         $query->isPublished();
-        return $query->where('top', 1)->limit($limit)->get();
+        return $query->where('top', 1)->orderBy('published_at', 'desc')->limit($limit)->get();
     }
 
     public function scopeDisplayLatest($query, $limit)
