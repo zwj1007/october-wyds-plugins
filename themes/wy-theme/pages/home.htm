@@ -138,7 +138,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                     {% for post in zhenCeJieDu %}
                     <div class="col-md-3 col-sm-4">
                         <div class="callout callout-v1">
-                            <a href="news/post/{{ post.id }}"><h4>{{ str_limit(post.title,40,'...') }}</h4></a>
+                            <a href="news/post/{{ post.id }}"><h4 style="height: 50px;line-height: 25px;overflow: hidden">{{ str_limit(post.title,40,'...') }}</h4></a>
                             <p class="color-777">{{ str_limit(post.summary,45,'...') }}</p>
                         </div>
                     </div>
@@ -150,7 +150,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                     {% for post in dianShangDongTai %}
                     <div class="col-md-3 col-sm-4">
                         <div class="callout callout-v1">
-                            <a href="news/post/{{ post.id }}"><h4>{{ str_limit(post.title,40,'...') }}</h4></a>
+                            <a href="news/post/{{ post.id }}"><h4 style="height: 50px;line-height: 25px;overflow: hidden">{{ str_limit(post.title,40,'...') }}</h4></a>
                             <p class="color-777">{{ str_limit(post.summary,45,'...') }}</p>
                         </div>
                     </div>

@@ -74,11 +74,11 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         {% endif %}
     </div>
 
-    {% if topPosts.count %}
+    {% if featuredPosts.count %}
     <div class="dszx-right float-right">
         <div id="slide">
             <ul class="list">
-                {% for post in topPosts %}
+                {% for post in featuredPosts %}
                 <li>
                     <a href="/news/post/{{ post.id }}"><img src="{{ post.image|media }}" alt="{{ post.title }}"></a>
                     <div class="title"><p>{{ post.title }}</p></div>
