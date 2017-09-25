@@ -8,11 +8,11 @@ function onStart()
 $this->addCss('https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css');
 $this->addJs('https://cdn.bootcss.com/wow/1.1.2/wow.min.js');
 
-// 推荐 特色
-$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(5);
-
 // 置顶 资讯
 $this['topPosts'] = \Buuug7\News\Models\Post::displayTop(5);
+
+// 推荐 特色
+$this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(5);
 
 // 电商动态
 $this['dianShangDongTai'] = \Buuug7\News\Models\Post::displayByCategory('dian-shang-dong-tai',4);
@@ -49,13 +49,12 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 }
 
 ==
-{{ user.hasAccess('sdfsdf') }}
 <div class="container m-t-md">
     <!--置顶资讯-->
     <div class="row">
         <div class="col-sm-6 m-b">
             <div class="owl-carousel owl-carousel-v3">
-                {% for post in topPosts %}
+                {% for post in featuredPosts %}
                 <a class="item" href="/news/post/{{ post.id }}">
                     <img src="{{ post.image|media }}" alt="{{ post.title }}">
                     <p class="title">
@@ -65,31 +64,31 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                 {% endfor %}
             </div>
         </div>
-        {% if featuredPosts %}
 
+        {% if topPosts %}
         <!--推荐资讯-->
         <div class="col-sm-6 hidden-xs">
             <div class="row">
                 <div class="col-sm-6 m-b">
                     <a class="news-wrap" href="/news/post/{{ featuredPosts[0].id }}">
                         <img src="{{ featuredPosts[0].image|media }}" alt="{{ featuredPosts[1].title }}" class="img-responsive animate-scale-rotate--default">
-                        <p class="title">{{ featuredPosts[0].title }}</p>
+                        <p class="title">{{ topPosts[0].title }}</p>
                     </a>
                     <p style="width:5px;height: 5px"></p>
                     <a class="news-wrap" href="/news/post/{{ featuredPosts[1].id }}">
                         <img src="{{ featuredPosts[1].image|media }}" alt="{{ featuredPosts[2].title }}" class="img-responsive animate-scale-rotate--default">
-                        <p class="title">{{ featuredPosts[1].title }}</p>
+                        <p class="title">{{ topPosts[1].title }}</p>
                     </a>
                 </div>
                 <div class="col-sm-6">
                     <a class="news-wrap animate-scale-rotate--default" href="/news/post/{{ featuredPosts[2].id }}">
                         <img src="{{ featuredPosts[2].image|media }}" alt="{{ featuredPosts[2].title }}" class="img-responsive animate-scale-rotate--default">
-                        <p class="title">{{ featuredPosts[2].title }}</p>
+                        <p class="title">{{ topPosts[2].title }}</p>
                     </a>
                     <p style="width:5px;height: 5px"></p>
                     <a class="news-wrap animate-scale-rotate--default" href="/news/post/{{ featuredPosts[3].id }}">
                         <img src="{{ featuredPosts[3].image|media }}" alt="{{ featuredPosts[3].title }}" class="img-responsive ">
-                        <p class="title">{{ featuredPosts[3].title }}</p>
+                        <p class="title">{{ topPosts[3].title }}</p>
                     </a>
                 </div>
             </div>
