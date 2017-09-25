@@ -8,11 +8,11 @@ function onStart()
 $this->addCss('https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css');
 $this->addJs('https://cdn.bootcss.com/wow/1.1.2/wow.min.js');
 
-// 置顶 资讯
-$this['topPosts'] = \Buuug7\News\Models\Post::displayTop(5);
-
 // 推荐 特色
 $this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(5);
+
+// 置顶 资讯
+$this['topPosts'] = \Buuug7\News\Models\Post::displayTop(5);
 
 // 电商动态
 $this['dianShangDongTai'] = \Buuug7\News\Models\Post::displayByCategory('dian-shang-dong-tai',4);
