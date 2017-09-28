@@ -127,15 +127,15 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <!--电商动态+政策解读-->
     <div class="tab-v1 m-t-md">
         <ul class="nav nav-tabs">
-            <li class="active"><a href="#tab2" data-toggle="tab" aria-expanded="true" style="font-size: 20px">政策解读</a>
+            <li class="active"><a href="#tab2" data-toggle="tab" aria-expanded="true" style="font-size: 20px">电商动态</a>
             </li>
-            <li class=""><a href="#tab3" data-toggle="tab" aria-expanded="false" style="font-size: 20px">电商动态</a>
+            <li class=""><a href="#tab3" data-toggle="tab" aria-expanded="false" style="font-size: 20px">政策解读</a>
             </li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane fade active in" id="tab2">
                 <div class="row">
-                    {% for post in zhenCeJieDu %}
+                    {% for post in dianShangDongTai %}
                     <div class="col-md-3 col-sm-4">
                         <div class="callout callout-v1">
                             <a href="news/post/{{ post.id }}"><h4 style="height: 50px;line-height: 25px;overflow: hidden">{{ str_limit(post.title,40,'...') }}</h4></a>
@@ -147,7 +147,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             </div>
             <div class="tab-pane fade" id="tab3">
                 <div class="row">
-                    {% for post in dianShangDongTai %}
+                    {% for post in zhenCeJieDu %}
                     <div class="col-md-3 col-sm-4">
                         <div class="callout callout-v1">
                             <a href="news/post/{{ post.id }}"><h4 style="height: 50px;line-height: 25px;overflow: hidden">{{ str_limit(post.title,40,'...') }}</h4></a>
