@@ -44,7 +44,7 @@ class ResetPassword extends \RainLab\User\Components\ResetPassword
             'code' => $code
         ];
 
-        Mail::send('rainlab.user::mail.restore', $data, function ($message) use ($user) {
+        Mail::send('buuug7.user::mail.restore', $data, function ($message) use ($user) {
             $message->to($user->email, $user->full_name);
         });
     }
@@ -60,7 +60,9 @@ class ResetPassword extends \RainLab\User\Components\ResetPassword
             'password' => 'required|between:4,255'
         ];
 
-        $validation = Validator::make(post(), $rules,[],[
+        $validation = Validator::make(post(), $rules,[
+            'required' => '请输入新密码',
+        ],[
             'password' => '密码',
         ]);
         if ($validation->fails()) {

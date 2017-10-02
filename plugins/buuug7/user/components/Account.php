@@ -188,4 +188,22 @@ class Account extends \RainLab\User\Components\Account
             else Flash::error($ex->getMessage());
         }
     }
+
+    protected function sendActivationEmail($user)
+    {
+        $code = implode('!', [$user->id, $user->getActivationCode()]);
+        $link = $this->currentPageUrl([
+            $this->property('paramCode') => $code
+        ]);
+
+        $data = [
+            'name' => $user->name,
+            'link' => $link,
+            'code' => $code
+        ];
+
+        Mail::send('buuug7.user::mail.activate', $data, function($message) use ($user) {
+            $message->to($user->email, $user->name);
+        });
+    }
 }

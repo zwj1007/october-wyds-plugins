@@ -1,0 +1,12 @@
+subject = "确认您的帐户"
+description = "激活新用户"
+==
+你好 {{ name }}
+
+我们需要确认这是您的电子邮件地址。
+
+请点击下面的链接确认您的帐户：
+
+{% partial 'button' url=link type='positive' body %}
+确认账号
+{% endpartial %}

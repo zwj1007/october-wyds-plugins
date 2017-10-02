@@ -1,0 +1,22 @@
+subject = "请求重置密码"
+description = "用户请求重置密码"
+==
+你好 {{ name }}
+
+有人要求重置你帐户的密码，如果这不是你本人，请忽略此电子邮件。
+
+使用此激活码来恢复您的密码：
+
+{% partial 'promotion' body %}
+{{ code }}
+{% endpartial %}
+
+或者你可以使用以下链接：
+
+{% partial 'button' url=link type='positive' body %}
+恢复密码
+{% endpartial %}
+
+{% partial 'subcopy' body %}
+    **这是一条自动信息，请不要回复它。**
+{% endpartial %}
