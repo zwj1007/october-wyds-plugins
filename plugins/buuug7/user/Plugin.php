@@ -68,16 +68,21 @@ class Plugin extends PluginBase
                 return Lang::get('buuug7.user::lang.exception_not_found_user');
             } elseif (strpos($message, 'as they are not activated')) {
                 return Lang::get('buuug7.user::lang.exception_not_activated');
+            } elseif(strpos($message,'has been suspended')){
+                return Lang::get('buuug7.user::lang.exception_suspended');
             }
         });
 
         Carbon::setLocale('zh');
+
         UserModel::extend(function ($model) {
             /*$model->addFillable([
                 'county_id',
                 'town_id',
                 'village_id'
             ]);*/
+            $model->attributeNames['email'] = '电子邮箱';
+            $model->attributeNames['password'] = '密码';
 
             $model->implement[] = 'Buuug7.Location.Behaviors.LocationModel';
             $model->hasMany['companies'] = ['Buuug7\User\Models\Company', 'table' => 'buuug7_user_companies'];
