@@ -14,7 +14,7 @@ $this['topPosts'] = \Buuug7\News\Models\Post::displayTop(5);
 $this['dianShangDongTai'] = \Buuug7\News\Models\Post::displayByCategory('dian-shang-dong-tai',6);
 
 // 政策解读
-$this['zhenCeJieDu'] = \Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie-du',15);
+$this['zhenCeJieDu'] = \Buuug7\News\Models\Post::displayByCategory('zheng-ce-jie-du',12);
 
 // 通知公告
 $this['tongZhiGongGao'] = \Buuug7\News\Models\Post::displayByCategory('tong-zhi-gong-gao',9);
@@ -74,11 +74,11 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         {% endif %}
     </div>
 
-    {% if topPosts.count %}
+    {% if featuredPosts.count %}
     <div class="dszx-right float-right">
         <div id="slide">
             <ul class="list">
-                {% for post in topPosts %}
+                {% for post in featuredPosts %}
                 <li>
                     <a href="/news/post/{{ post.id }}"><img src="{{ post.image|media }}" alt="{{ post.title }}"></a>
                     <div class="title"><p>{{ post.title }}</p></div>
