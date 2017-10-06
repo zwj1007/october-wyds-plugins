@@ -42,7 +42,7 @@ gen
 .gitattributes
 artisan
 index.php
-composer.json
+/composer.json
 composer.lock
 .travis.yml
 CHANGELOG.md
