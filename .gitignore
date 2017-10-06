@@ -46,7 +46,7 @@ composer.json
 composer.lock
 .travis.yml
 CHANGELOG.md
-CONTRIBUTING.md
+/CONTRIBUTING.md
 ISSUE_TEMPLATE.md
 phpunit.xml
 server.php
