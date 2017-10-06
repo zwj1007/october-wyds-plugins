@@ -128,7 +128,7 @@ $this['categories']=\Buuug7\News\Models\Category::getNested();
                             {{ post.summary}}
                         </p>
                     </div>
-                    <a href="{{ post.url }}"> <span class="xq">【详情】</span></a>
+                    <a href="{{ post.url }}"> <span class="xq"> [{{ post.published_at|date('Y-m-d')}}]</span></a>
                 </div>
             </div>
             {% else %}
@@ -142,7 +142,7 @@ $this['categories']=\Buuug7\News\Models\Category::getNested();
                             {{ post.summary }}
                         </p>
                     </div>
-                    <a href="{{ post.url }}"> <span class="xq">【详情】</span></a>
+                    <a href="{{ post.url }}"> <span class="xq"> [{{ post.published_at|date('Y-m-d')}}]</span></a>
                 </div>
             </div>
             {% endif %}

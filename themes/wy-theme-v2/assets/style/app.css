@@ -925,7 +925,7 @@ header {
   .lanmu .list-right .list-right-v1 {
     margin-top: 20px;
     text-align: left;
-    height: 160px;
+    padding-bottom: 10px;
     overflow: hidden;
     border-bottom: 1px dashed #CCCCCC; }
     .lanmu .list-right .list-right-v1 .post-img-wrap {
@@ -957,10 +957,10 @@ header {
           color: rgba(56, 73, 94, 0.72); }
       .lanmu .list-right .list-right-v1 .list-post .xq {
         float: right;
-        color: #FF4400;
+        color: #a5a2a1;
         position: absolute;
         right: 20px;
-        top: 10px; }
+        top: 5px; }
     .lanmu .list-right .list-right-v1 .list-post1 {
       width: 835px; }
       .lanmu .list-right .list-right-v1 .list-post1 .list-post-title {
@@ -997,6 +997,13 @@ header {
     /*  margin: 0 auto;*/
     max-width: 100%;
     padding-bottom: 15px; }
+  .dszx-content ul {
+    padding-left: 40px;
+    list-style-type: disc; }
+  .dszx-content .title-time {
+    text-align: center;
+    padding: 10px 0;
+    background: #fafafa; }
 
 .comment_tontainer {
   height: auto;

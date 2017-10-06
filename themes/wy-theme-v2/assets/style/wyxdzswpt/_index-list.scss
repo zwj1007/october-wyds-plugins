@@ -122,7 +122,8 @@
     .list-right-v1 {
       margin-top: 20px;
       text-align: left;
-      height: 160px;
+      //height: 160px;
+      padding-bottom: 10px;
       overflow: hidden;
       border-bottom: 1px dashed $border-color;
       .post-img-wrap {
@@ -162,10 +163,10 @@
         }
         .xq {
           float: right;
-          color: $page-color;
+          color: #a5a2a1;
           position: absolute;
           right: 20px;
-          top: 10px;
+          top: 5px;
         }
       }
       .list-post1 {
