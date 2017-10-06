@@ -23,6 +23,7 @@ tabs:
         content:
             tab: 内容
             type: richeditor
+            toolbarButtons: fullscreen|paragraphFormat|paragraphStyle|quote|bold|italic|align|formatOL|formatUL|insertTable|insertLink|insertImage|insertVideo|insertFile|insertHR|-|fontFamily|fontSize|color|outdent|indent|underline|strikeThrough|clearFormatting|html
             size: giant
 
         images:
