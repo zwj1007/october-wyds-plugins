@@ -344,7 +344,7 @@
     ul li {
       float: left;
       background: #5b40a3;
-      width: $page-width/4-5;
+      width: ($page-width - 15)/4;
       margin-right: 5px;
       .info-box__content {
         text-align: center;
@@ -362,13 +362,11 @@
       }
       img {
         max-width: 100%;
-
+        width: ($page-width - 15)/4;
       }
-      ul li:last-child {
-
-        margin-right: 0;
-
-      }
+    }
+    ul li:last-child {
+      margin-right: 0;
     }
   }
 }

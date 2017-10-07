@@ -37,6 +37,10 @@ if($this->post){
 
     <div class="float-left dszx-content">
         <h4 class="title">{{ post.title }}</h4>
+        <div class="title-time">
+            <span class="margin-right-20">发布时间：{{ post.published_at|date('Y-m-d')}}</span>
+            <span>信息来源：<a href="">渭源县电子商务公共服务中心</a> </span>
+        </div>
         {{ post.content|raw }}
 
         {% if post.images %}
