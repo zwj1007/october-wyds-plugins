@@ -22,9 +22,8 @@
         - install buuug7.statistics `php artisan plugin:refresh Buuug7.Statistics`
         - install buuug7.location `php artisan plugin:refresh Buuug7.Location`
 + other settings
+    - run `php artisan october:env` generate common configuration
     - when develop in local,make sure to add `APP_ENV=dev` for use dev config.
-    - if you want the latest Rainlab.User translate with zh-cn, you should copy [zh-cn](https://github.com/rainlab/user-plugin/blob/master/lang/zh-cn/lang.php) override default
-    - if you want the latest modules backend translate with zh-cn, also copy [zh-cn](https://github.com/octobercms/october/blob/develop/modules/backend/lang/zh-cn/lang.php) override default.
 
 #### some setting in phpstorm
 ```
