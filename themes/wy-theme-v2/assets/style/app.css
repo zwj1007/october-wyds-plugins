@@ -697,7 +697,7 @@ header {
     .bmfw .dd ul li {
       float: left;
       background: #5b40a3;
-      width: 275px;
+      width: 276.25px;
       margin-right: 5px; }
       .bmfw .dd ul li .info-box__content {
         text-align: center;
@@ -711,9 +711,10 @@ header {
         .bmfw .dd ul li .info-box__content p {
           font-size: 14px; }
       .bmfw .dd ul li img {
-        max-width: 100%; }
-      .bmfw .dd ul li ul li:last-child {
-        margin-right: 0; }
+        max-width: 100%;
+        width: 276.25px; }
+    .bmfw .dd ul li:last-child {
+      margin-right: 0; }
 
 .yxwd .dd .zzsc {
   overflow: hidden; }
