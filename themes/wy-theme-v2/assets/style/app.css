@@ -988,9 +988,9 @@ header {
     font-size: 21px;
     font-weight: normal; }
   .dszx-content p {
-    line-height: 35px;
+    line-height: 32px;
     font-size: 15px;
-    margin: 10px 0;
+    margin: 4px 0;
     color: #333;
     word-wrap: break-word;
     padding: 8px 0 0; }
@@ -999,8 +999,8 @@ header {
     max-width: 100%;
     padding-bottom: 15px; }
   .dszx-content ul {
-    padding-left: 40px;
-    list-style-type: disc; }
+    padding-left: 40px !important;
+    list-style-type: disc !important; }
   .dszx-content .title-time {
     text-align: center;
     padding: 10px 0;
