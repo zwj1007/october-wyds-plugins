@@ -1001,7 +1001,7 @@ header {
   .dszx-content ul, .dszx-content ol {
     padding-left: 40px !important;
     list-style-type: disc !important;
-    line-height: px; }
+    line-height: 30px; }
   .dszx-content .title-time {
     text-align: center;
     padding: 10px 0;
