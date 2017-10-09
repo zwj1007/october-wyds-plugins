@@ -1000,7 +1000,8 @@ header {
     padding-bottom: 15px; }
   .dszx-content ul, .dszx-content ol {
     padding-left: 40px !important;
-    list-style-type: disc !important; }
+    list-style-type: disc !important;
+    line-height: 25px; }
   .dszx-content .title-time {
     text-align: center;
     padding: 10px 0;
