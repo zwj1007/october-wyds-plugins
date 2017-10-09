@@ -998,7 +998,7 @@ header {
     /*  margin: 0 auto;*/
     max-width: 100%;
     padding-bottom: 15px; }
-  .dszx-content ul {
+  .dszx-content ul, .dszx-content ol {
     padding-left: 40px !important;
     list-style-type: disc !important; }
   .dszx-content .title-time {
