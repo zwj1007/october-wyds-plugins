@@ -50,24 +50,26 @@
       letter-spacing: 5px;
       font-weight: 600;
     }
-    ul li {
-      list-style: disc;
-      margin: 15px 0 15px 30px;
-      line-height: 35px;
-      border-bottom: 1px dashed rgba(191, 191, 191, 0.4);
-      a {
-        width: 80%;
-        display: block;
-      }
-      a:hover{
-        color: #1a6480;
-      }
-      span {
-        float: right;
-        font-size: 12px;
-        margin-right: 15px;
-      }
+    .tzgg-body{
+      li {
+        list-style: disc;
+        margin: 15px 0 15px 30px;
+        line-height: 35px;
+        border-bottom: 1px dashed rgba(191, 191, 191, 0.4);
+        a {
+          width: 80%;
+          display: block;
+        }
+        a:hover{
+          color: #1a6480;
+        }
+        span {
+          float: right;
+          font-size: 12px;
+          margin-right: 15px;
+        }
 
+      }
     }
   }
 }

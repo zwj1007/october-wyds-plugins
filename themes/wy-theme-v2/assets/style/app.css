@@ -2771,17 +2771,17 @@ input {
       margin-top: 5px;
       letter-spacing: 5px;
       font-weight: 600; }
-    .wy-notice .notice-right ul li {
+    .wy-notice .notice-right .tzgg-body li {
       list-style: disc;
       margin: 15px 0 15px 30px;
       line-height: 35px;
       border-bottom: 1px dashed rgba(191, 191, 191, 0.4); }
-      .wy-notice .notice-right ul li a {
+      .wy-notice .notice-right .tzgg-body li a {
         width: 80%;
         display: block; }
-      .wy-notice .notice-right ul li a:hover {
+      .wy-notice .notice-right .tzgg-body li a:hover {
         color: #1a6480; }
-      .wy-notice .notice-right ul li span {
+      .wy-notice .notice-right .tzgg-body li span {
         float: right;
         font-size: 12px;
         margin-right: 15px; }
