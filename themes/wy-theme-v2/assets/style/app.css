@@ -979,7 +979,7 @@ header {
   float: left;
   border: 1px solid #ededed;
   margin: 0 0 20px 0;
-  padding: 5px 15px 10px 15px; }
+  padding: 5px 15px 0px 15px; }
   .dszx-content h4.title {
     border-bottom: 1px dashed #B2B2B2;
     margin: 5px 0;
