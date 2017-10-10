@@ -1003,7 +1003,8 @@ header {
   .dszx-content .title-time {
     text-align: center;
     padding: 10px 0;
-    background: #fafafa; }
+    background: #fafafa;
+    margin-bottom: 15px; }
 
 .comment_tontainer {
   height: auto;
