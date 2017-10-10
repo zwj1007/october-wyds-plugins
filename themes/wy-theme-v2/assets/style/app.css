@@ -990,14 +990,12 @@ header {
   .dszx-content p {
     line-height: 32px;
     font-size: 15px;
-    margin: 4px 0;
+    margin: 4px 0 8px 0;
     color: #333;
-    word-wrap: break-word;
-    padding: 8px 0 0; }
+    word-wrap: break-word; }
   .dszx-content img {
     /*  margin: 0 auto;*/
-    max-width: 100%;
-    padding-bottom: 15px; }
+    max-width: 100%; }
   .dszx-content ul, .dszx-content ol {
     padding-left: 40px !important;
     list-style-type: disc !important;
