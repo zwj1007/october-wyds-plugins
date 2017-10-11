@@ -1009,8 +1009,6 @@ header {
   .dszx-content h3 {
     font-size: 1.17em;
     margin: 0.83em 0; }
-  .dszx-content h4, .dszx-content p, .dszx-content blockquote, .dszx-content ul, .dszx-content fieldset, .dszx-content form, .dszx-content ol, .dszx-content dl, .dszx-content dir, .dszx-content menu {
-    margin: 1.12em 0; }
   .dszx-content h5 {
     font-size: .83em;
     margin: 1.5em 0; }
