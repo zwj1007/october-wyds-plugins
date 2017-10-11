@@ -1000,6 +1000,25 @@ header {
     padding-left: 40px !important;
     list-style-type: disc !important;
     line-height: 30px; }
+  .dszx-content h1 {
+    font-size: 2em;
+    margin: 0.67em 0; }
+  .dszx-content h2 {
+    font-size: 1.5em;
+    margin: 0.75em 0; }
+  .dszx-content h3 {
+    font-size: 1.17em;
+    margin: 0.83em 0; }
+  .dszx-content h4, .dszx-content p, .dszx-content blockquote, .dszx-content ul, .dszx-content fieldset, .dszx-content form, .dszx-content ol, .dszx-content dl, .dszx-content dir, .dszx-content menu {
+    margin: 1.12em 0; }
+  .dszx-content h5 {
+    font-size: .83em;
+    margin: 1.5em 0; }
+  .dszx-content h6 {
+    font-size: .75em;
+    margin: 1.67em 0; }
+  .dszx-content h1, .dszx-content h2, .dszx-content h3, .dszx-content h4, .dszx-content h5, .dszx-content h6, .dszx-content b, .dszx-content strong {
+    font-weight: bolder; }
   .dszx-content .title-time {
     text-align: center;
     padding: 10px 0;
