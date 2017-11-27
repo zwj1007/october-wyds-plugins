@@ -20,16 +20,22 @@
                     data-request="onSave"
                     data-request-data="redirect:0"
                     data-hotkey="ctrl+s, cmd+s"
-                    data-load-indicator="保存课程..."
+                    data-load-indicator="保存中..."
                     class="btn btn-primary">
                     <?= e(trans('backend::lang.form.save')) ?>
                 </button>
+                <a
+                    href="/courses/course/<?=$this->vars['formModel']->id ?>"
+                    target="_blank"
+                    class="btn btn-default">
+                    预览
+                </a>
                 <button
                     type="button"
                     data-request="onSave"
                     data-request-data="close:1"
                     data-hotkey="ctrl+enter, cmd+enter"
-                    data-load-indicator="保存课程..."
+                    data-load-indicator="保存中..."
                     class="btn btn-default">
                     <?= e(trans('backend::lang.form.save_and_close')) ?>
                 </button>
@@ -37,8 +43,8 @@
                     type="button"
                     class="oc-icon-trash-o btn-icon danger pull-right"
                     data-request="onDelete"
-                    data-load-indicator="删除课程..."
-                    data-request-confirm="你确定删除该课程?">
+                    data-load-indicator="删除..."
+                    data-request-confirm="你确定要删除?">
                 </button>
                 <span class="btn-text">
                     <?= e(trans('backend::lang.form.or')) ?> <a href="<?= Backend::url('buuug7/courses/courses') ?>"><?= e(trans('backend::lang.form.cancel')) ?></a>

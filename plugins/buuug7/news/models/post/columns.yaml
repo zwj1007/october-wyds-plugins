@@ -12,6 +12,10 @@ columns:
         select: name
         searchable: true
         sortable: false
+    user_id:
+        label: 用户
+        relation: user
+        select: login
     created_at:
         label: 创建日期
         type: date
