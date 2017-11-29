@@ -1000,6 +1000,8 @@ header {
     padding-left: 40px !important;
     list-style-type: disc !important;
     line-height: 30px; }
+  .dszx-content ol {
+    display: list-item; }
   .dszx-content h1 {
     font-size: 2em;
     margin: 0.67em 0; }
