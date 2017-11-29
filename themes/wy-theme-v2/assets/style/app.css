@@ -1418,6 +1418,8 @@ header {
         .xspx-list-wy-v2 .xspx-list-body .xspx-list-body-post .des p {
           margin: 0 10px 10px 10px;
           font-size: 12px; }
+          .xspx-list-wy-v2 .xspx-list-body .xspx-list-body-post .des p i {
+            cursor: pointer; }
     .xspx-list-wy-v2 .xspx-list-body .ribbon {
       display: inline-block;
       background-size: cover;
