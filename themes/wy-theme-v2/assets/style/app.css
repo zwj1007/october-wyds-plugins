@@ -1472,6 +1472,7 @@ header {
       .xspx-list-wy-v2 .xspx-list-title-classify ul > li a {
         color: #8d8d8d; }
     .xspx-list-wy-v2 .xspx-list-title-classify ul > .active {
+      border-radius: 3px 3px 0 0;
       border-top: 2px solid #FF4400;
       border-bottom: none;
       border-left: 1px solid #CCCCCC;

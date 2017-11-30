@@ -184,11 +184,13 @@
         padding: 5px 10px;
         border-bottom: 1px solid $border-color;
         margin-bottom: 20px;
+
         a {
           color: #8d8d8d;
         }
       }
       .active {
+        border-radius:3px 3px 0 0;
         border-top: 2px solid $page-color;
         border-bottom: none;
         border-left: 1px solid $border-color;
@@ -228,7 +230,7 @@
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
       width: 254.5px;
       margin: 10px;
-      >a {
+      > a {
         display: block;
         width: 252.5px;
         height: 126.25px;
