@@ -8,8 +8,8 @@ form:
     site_name:
       label: 网站名称
       comment: 网站的名称
-      default: 渭源电商服务平台
-    theme-color:
-      label: 主题色
-      type: colorpicker
-      assetVar: 'theme-color'
+      default: 渭源县电子商务公共服务中心
+    icp_number:
+      label: 备案号
+      comment: 备案号
+      default: 陇ICP备15000155号-4

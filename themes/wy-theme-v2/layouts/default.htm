@@ -13,7 +13,7 @@ default = 0
 <head>
     <meta name="renderer" content="webkit">
     <meta charset="utf-8">
-    <title>渭源 | {{ this.page.title }}</title>
+    <title>{{ this.page.title }} | {{ this.theme.site_name }}</title>
     <meta name="keywords" content="渭源县电子商务公共服务平台,渭源县,电子商务公共服务平台,电子商务">
     <meta name="description" content="{{ this.page.meta_description }}">
     <meta name="title" content="{{ this.page.meta_title }}">
@@ -26,10 +26,7 @@ default = 0
 <body>
 
 {% partial 'site/header' %}
-
 <!-- Content -->
-
-
 <div class="main">
     {% flash %}
     <section class="box toast">
@@ -41,11 +38,8 @@ default = 0
     {% endflash %}
     {% page %}
 </div>
-
-
 <!-- Footer -->
 {% partial 'site/footer' %}
-
 
 <!-- Scripts -->
 <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
