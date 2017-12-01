@@ -3,117 +3,74 @@ url = "/pei-xun"
 layout = "default"
 ==
 function onStart(){
-
-$this->addCss('assets/style/cubeportfolio.min.css');
-$this->addJs('assets/script/jquery.cubeportfolio.min.js');
-
 if(!Auth::check()) return Redirect::to('/user/login');
 
 // filter by tags
 $this['tagTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],4);
-$this['tagReMen']=\Buuug7\Courses\Models\Course::displayByTags(['re-men'],8);
+$this['tagReMen']=\Buuug7\Courses\Models\Course::displayByTags(['re-men'],4);
 
 // filter by categories
-$this['courses']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-zi-shang-wu-ji-chu-jiao-cheng','dian-zi-shang-wu-jin-jie-jiao-cheng','dian-shang-yun-ying-za-tan']);
+$this['categoryDianShangJiChuZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-ji-chu-zhi-shi'],8);
+$this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByCategories(['dian-shang-jin-jie-zhi-shi'],8);
 
+$this['categories']=\Buuug7\Courses\Models\Category::getNested();
+
+//var_dump($this['categories']);
 }
-
 ==
 
-<ol class="box breadcrumb">
-    <li><a href="/">首页</a></li>
-    <li class="active">线上培训</li>
-</ol>
+<section class="box xspx-list-classify-wy-v1 clearfix ">
+    <ol class=" breadcrumb">
+        <li><a href="/">首页</a></li>
+        <li class="active">线上培训</li>
+    </ol>
 
-<!--活动项目-->
-<section class="xspx-list-wy-v1 margin-bottom-25">
-    <!--标题按钮-->
-    <div id="js-xspx-title-wy-v1" class="cbp-l-filters-alignCenter  ">
-        <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">
-            全部
-            <div class="cbp-filter-counter"></div>
-        </div>
-        /
-        <div data-filter=".dian-zi-shang-wu-ji-chu-jiao-cheng" class="cbp-filter-item">
-            电子商务基础教程
-            <div class="cbp-filter-counter"></div>
-        </div>
-        /
-        <div data-filter=".dian-zi-shang-wu-jin-jie-jiao-cheng" class="cbp-filter-item">
-            电子商务进阶教程
-            <div class="cbp-filter-counter"></div>
-        </div>
-        /
-        <div data-filter=".dian-shang-yun-ying-za-tan" class="cbp-filter-item">
-            电商运营杂谈
-            <div class="cbp-filter-counter"></div>
-        </div>
-    </div>
-    <!--正文-->
-    <div id="js-xspx-work-wy-v1" class="cbp cbp-l-grid-work">
-        <!--title u-->
-        {% for post in courses %}
-        <div class="cbp-item {% for category in post.categories %} {{ category.slug }} {% endfor %} ">
-            <a href="/courses/course/{{ post.id }}" class="cbp-caption " rel="nofollow">
-                <div class="cbp-caption-defaultWrap">
-                    <img src="{{ post.getImage() }}" alt="">
-                </div>
-            </a>
-            <a href="#!" class="cbp-l-grid-work-title " rel="nofollow">{{ post.categories[0].name }}</a>
-            <div class="cbp-l-grid-work-desc">
-                <p><a href="#!" class="">{{ post.title }}</a></p>
-                <i class="fa fa-hourglass-1" title="课时"><span class="margin-left-5">{{ post.published_at|date('Y,m月 d') }}</span></i>
-                <i class="fa fa-binoculars float-right" title="学习人数">
-                    <span class="margin-left-right-10">{{ post.views ? post.views: 0 }} 浏览次数</span>
-                </i>
-            </div>
-            {% if post.tags.count %}
-            <u class="{{ post.tags[0].slug}}"><i class="xb">{{ post.tags[0].name}}</i></u>
+    {% for category in categories %}
+    {% for child in category.children %}
+    <div class="thumbnail ">
+        <a href="/courses/categories/{{ child.slug }}">
+            {% if child.image %}
+            <img src="{{ child.image|media }}" style="max-width: 100%" alt="">
+            {% else %}
+            <img src="http://placehold.it/800x400?text=No Image" alt="">
             {% endif %}
+        </a>
+        <div class="caption">
+            <h3>{{ child.name }}</h3>
+            <p class="color-999" style="height: 44px;line-height: 22px;">
+                {{ str_limit(child.description,70,'...') }}
+            </p>
+            <p class="color-888">
+                共包含 {{ child.courses.count }} 课时
+            </p>
+            <p>
+                <a href="/courses/categories/{{ child.slug }}" class="btn btn-warning margin-bottom-10"><i class="fa fa-book margin-right-5"></i>开始学习</a>
+                <a href="/courses/categories/{{ child.slug }}" class="btn btn-line-success margin-bottom-10"><i class="fa fa-star-o margin-right-5"></i>点击收藏</a>
+            </p>
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
+    {% endfor %}
 </section>
 
-{% put scripts %}
-<script>
-    //线上培训-列表
-    $('#js-xspx-work-wy-v1').cubeportfolio({
-        filters: '#js-xspx-title-wy-v1',
-        loadMore: '#js-xspx-gengduo-wy-v1',
-        loadMoreAction: 'click',
-        layoutMode: 'grid',
-        defaultFilter: '*',
-        animationType: 'scaleSides',
-        gapHorizontal: 30,
-        gapVertical: 30,
-        gridAdjustment: 'responsive',
-        mediaQueries: [{
-            width: 1500,
-            cols: 5,
-        }, {
-            width: 1100,
-            cols: 3,
-        }, {
-            width: 800,
-            cols: 3,
-        }, {
-            width: 480,
-            cols: 2,
-            options: {
-                caption: '',
-            },
-        }, {
-            width: 320,
-            cols: 1,
-            options: {
-                caption: '',
-            },
-        },],
-        caption: 'zoom',
-        displayType: 'fadeIn',
-        displayTypeSpeed: 400,
+<section class="box xspx-list-wy-v2">
+    <!--推荐课程-->
+    {% if tagTuiJian %}
+    <div class="xspx-list-title ">
+        <p><span>推荐课程</span></p>
+    </div>
+    <div class="xspx-list-body clearfix ">
+        {% partial 'courses/block-v1' posts=tagTuiJian s_tag="推荐" %}
+    </div>
+    {% endif %}
 
-    });
-</script>
-{% endput %}
+    <!--热门课程-->
+    {% if tagReMen %}
+    <div class="xspx-list-title ">
+        <p><span>热门课程</span></p>
+    </div>
+    <div class="xspx-list-body clearfix ">
+        {% partial 'courses/block-v1' posts=tagReMen s_tag="热门" %}
+    </div>
+    {% endif %}
+</section>

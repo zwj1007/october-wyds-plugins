@@ -8,7 +8,7 @@ form:
     site_name:
       label: 网站名称
       comment: 网站的名称
-      default: 渭源县电子商务公共服务中心
+      default: 渭源县电子商务公共服务平台
     icp_number:
       label: 备案号
       comment: 备案号

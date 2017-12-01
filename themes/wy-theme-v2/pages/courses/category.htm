@@ -1,42 +1,31 @@
-title = "课程"
-url = "/courses/categories/:slug/:page?"
+title = "Courses Category"
+url = "/courses/categories/:categorySlug/:page?"
 layout="default"
 
 [coursesCourses]
-slug = "{{ :slug }}"
-
-[coursesCourses]
-categoryFilter = "{{ :slug }}"
-postsPerPage = 6
+categoryFilter = "{{ :categorySlug }}"
+postsPerPage = 8
 
 ==
 function onEnd()
 {
-if ($this->category)
-$this->page->title = $this->category->name;
+if ($this->category) $this->page->title = $this->category->name;
+
 }
 ==
-<section class="box syjc-list">
-    <ol class="box breadcrumb">
+
+<section class="box xspx-list-wy-v2">
+    <ol class=" breadcrumb">
         <li class="li-left25"><a href="/">首页</a></li>
-        <li><a href="/xian-shang-pei-xun">线上培训</a></li>
-        <li class="active">{{ category .name}}</li>
+        <li><a href="/pei-xun">线上培训</a></li>
+        <li class="active">电子商务基础教程</li>
     </ol>
-    <ul class="book-list ">
-        {% for post in courses %}
-        <li>
-            <a href="{{ post.url }}">
-                <img src="{{ post.getImage() }}" alt="">
-            </a>
-            <div class="des">
-                <a href="/courses/courses/{{ post.id}}"><h2>{{ post.title }}</h2></a>
-                <p>{{ post.user.first_name }}</p>
-                <p>{{ post.checked_at|date('Y ,m月d') }}</p>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
+
+    <div class="xspx-list-body clearfix ">
+        {% partial 'courses/block-v1' posts=courses %}
+    </div>
     {{ courses.render|raw }}
 
 </section>
+
 
