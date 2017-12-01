@@ -38,22 +38,145 @@
   }
 }
 
+//线上培训-列表——版本1 优秀店铺
+.xspx-list-wy-v1 {
+  border: 1px solid #f3f3f3;
+  box-shadow: 1px 1px 4px 1px #d7d7d7;
+  padding: 15px;
+  .cbp-l-filters-alignCenter {
+    padding-top: 12px;
+    text-align: left !important;
+    .cbp-filter-counter {
+      padding: 0;
+    }
+    .cbp-filter-item:hover .cbp-filter-counter {
+      bottom: -5px;
+    }
+  }
+
+  .cbp-l-grid-work {
+    .cbp-item-wrapper {
+      padding-bottom: 0;
+      .cbp-l-grid-work-desc {
+        padding: 15px 0;
+        text-align: left;
+        p {
+          padding-bottom: 20px;
+          font-size: 14px;
+          width: 310px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          color: #000;
+        }
+      }
+    }
+    .cbp-l-grid-work-title {
+      border-bottom: 1px solid #e7e7e7;
+    }
+    u {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: -7px;
+      left: -8px;
+      z-index: 1;
+    }
+    u.re-men {
+      background: url("../images/xspx/hot.png");
+    }
+    u.tui-jian {
+      background-image: url("../images/xspx/recommend.png");
+    }
+    i.xb {
+      transform: rotate(-45deg) translateX(-2px) translateY(28px);
+      letter-spacing: 10px;
+      color: #ffffff;
+      display: inline-block;
+    }
+  }
+  .cbp-l-loadMore-button .cbp-l-loadMore-link {
+    margin: 20px 0;
+  }
+}
+
+//线上培训-列表-分类——版本1
+.xspx-list-classify-wy-v1 {
+  border: 1px solid #f3f3f3;
+  box-shadow: 1px 1px 4px 1px #d7d7d7;
+  padding: 0 10px;
+  .thumbnail {
+    float: left;
+    margin: 10px 5px 35px 5px;
+    width: 356px;
+    display: block;
+    padding: 4px;
+    line-height: 1.42857;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    -webkit-transition: border 0.2s ease-in-out;
+    -o-transition: border 0.2s ease-in-out;
+    transition: border 0.2s ease-in-out;
+    a {
+      display: block;
+      overflow: hidden;
+      text-align: center;
+      letter-spacing: 4px;
+    }
+    img, a > img {
+      display: block;
+      max-width: 100%;
+      transition: all 0.8s ease-in-out;
+    }
+    img:hover, a > img:hover {
+      opacity: 0.8;
+      transform: scale(0.9);
+
+    }
+    .caption {
+      padding: 9px;
+      color: #555;
+
+      h3 {
+        margin-bottom: 10px;
+
+      }
+      .color-999 {
+        color: #999 !important;
+        height: 44px;
+        line-height: 22px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+      }
+      .color-888 {
+        line-height: 35px;
+        font-size: 15px;
+        color: #484848;
+      }
+    }
+  }
+}
+
 //线上培训-列表——版本2
 .xspx-list-wy-v2 {
   box-shadow: 1px 1px 10px 1px rgba(204, 204, 204, 0.33);
   border: 1px solid #ededed;
   overflow: hidden;
   margin-top: 25px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
+  padding-bottom: 30px;
   .breadcrumb {
     border-top: 0;
-    .li-left25 {
-      margin: 8px 5px 8px 35px;
-    }
+    margin: 15px 25px !important;
   }
 
-  .xspx-list-title {
-    padding: 10px 20px 0 20px;
+  .xspx-list-title-classify {
+    padding: 10px 25px 0 25px;
     ul > {
       li {
         height: 30px;
@@ -61,11 +184,13 @@
         padding: 5px 10px;
         border-bottom: 1px solid $border-color;
         margin-bottom: 20px;
+
         a {
           color: #8d8d8d;
         }
       }
       .active {
+        border-radius:3px 3px 0 0;
         border-top: 2px solid $page-color;
         border-bottom: none;
         border-left: 1px solid $border-color;
@@ -78,18 +203,37 @@
 
   }
 
+  .xspx-list-title {
+    padding: 20px;
+
+    p {
+      border-bottom: 2px solid $border-color;
+      padding: 10px 0;
+    }
+    span {
+
+      padding: 10px 25px;
+      border-bottom: 2px solid $page-color;
+      font-size: 22px;
+      color: #4a4848cf;
+      font-weight: 600;
+    }
+
+  }
+
   .xspx-list-body {
     overflow: hidden;
-    padding: 0 20px;
+    padding: 0 10px;
     .xspx-list-body-post {
       float: left;
       border: 1px solid #e4e2e2;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-      width: 339.3px;
+      width: 254.5px;
       margin: 10px;
-      a {
+      > a {
         display: block;
-        overflow: hidden;
+        width: 252.5px;
+        height: 126.25px;
         img {
           max-width: 100%;
         }
@@ -104,7 +248,7 @@
           margin-bottom: 12px;
 
         }
-        a {
+        > a {
           display: block;
           width: 247px;
           white-space: nowrap;
@@ -115,8 +259,8 @@
         p {
           margin: 0 10px 10px 10px;
           font-size: 12px;
-          i{
-            cursor:pointer
+          i {
+            cursor: pointer
           }
         }
       }
@@ -262,57 +406,13 @@
   }
 }
 
-//线上培训-分类列表页
-.syjc-list {
-  box-shadow: 1px 1px 10px 1px rgba(204, 204, 204, 0.33);
-  border: 1px solid #ededed;
-  overflow: hidden;
-  margin-top: 25px;
-  margin-bottom: 50px;
-  .breadcrumb {
-    border-top: 0;
-    .li-left25 {
-      margin: 8px 5px 8px 35px;
-    }
-  }
-  .book-list {
-    overflow: hidden;
-    li {
-      float: left;
-      border: 1px solid $border-color;
-      margin: 20px;
-      img {
-        margin: 40px 35px;
-        width: 260px;
 
-      }
-      .des {
-        margin: 0 35px 15px 35px;
-        a {
-          h2 {
-            font-size: 16px;
-            color: #444;
-            margin: 8px 0;
-            line-height: 18px;
-            height: 18px;
-            width: 202px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-          }
-        }
-        p {
-          line-height: 25px;
-          font-size: 14px;
-          color: #a4a3a3;
-        }
-      }
-    }
-  }
-  .pagination {
-    margin-top: 30px;
-  }
 
-}
+
+
+
+
+
+
 
 
