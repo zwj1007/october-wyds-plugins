@@ -2437,7 +2437,7 @@ input {
     width: 160px;
     border-top: 0; }
   .xqfb .xqfb-body .table tbody tr > th, .xqfb .xqfb-body .table tbody td {
-    padding: 18px 0;
+    padding: 18px 10px;
     line-height: 1.6;
     vertical-align: top;
     border-top: 1px solid #ddd;
