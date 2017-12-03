@@ -3,7 +3,7 @@
 return [
     'debug' => true,
 
-    'url' => 'http://6.jq2.com',
+    'url' => 'http://ds8.com.cn',
 
     'timezone' => 'PRC',
 

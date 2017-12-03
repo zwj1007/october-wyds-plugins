@@ -2,15 +2,15 @@
 
 return [
     'github' => [
-        'client_id' => '48c3892f207d8e87dec4',
-        'client_secret' => '02af115b9148ecffcb53e6a824f8cc8d17bf98b6',
-        'redirect_uri' => 'http://6.jq2.com/login/github/callback',
+        'client_id' => 'a3dd8d9f8c9e4b5b5768',
+        'client_secret' => 'db28c39eff8021339a1d634e7ab4ae4c31ae96a0',
+        'redirect_uri' => 'http://ds8.com.cn/login/github/callback',
     ],
     
     'tianqi' => [
-        'client_id' => '2',
-        'client_secret' => 'BzXQ9q5G9kdYYsUuvjEFUOMw1V56cQt1H4EEcLj2',
-        'redirect_uri' => 'http://6.jq2.com/login/tianqi/callback',
+        'client_id' => '4',
+        'client_secret' => '8LJ8kfOETYIN8UedpqvF3bOfGwjZpbJ8wg9JBzwF',
+        'redirect_uri' => 'http://ds8.com.cn/login/tianqi/callback',
     ],
     'packages' => [
         'jenssegers/agent' => [
