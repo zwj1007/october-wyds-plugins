@@ -32,29 +32,27 @@ $this['categories']=\Buuug7\Courses\Models\Category::getNested();
 
 <div class="container">
 
-    <div class="row">
+    <div class="owl-carousel owl-carousel-v4 owl-theme">
         {% for category in categories %}
         {% for child in category.children %}
-        <div class="col-md-4 col-sm-6">
-            <div class="thumbnail">
-                {% if child.image %}
-                <img src="{{ child.image|media }}" style="max-width: 100%" alt="">
-                {% else %}
-                <img src="http://placehold.it/800x400?text=No Image" alt="">
-                {% endif %}
-                <div class="caption">
-                    <h4>{{ child.name }}</h4>
-                    <p class="color-999" style="height: 44px;line-height: 22px;">
-                        {{ str_limit(child.description,70,'...') }}
-                    </p>
-                    <P class="color-999">
-                        共包含 {{ child.courses.count }} 课时
-                    </P>
-                    <p>
-                        <a href="/courses/categories/{{ child.slug }}" class="btn btn-warning">学习</a>
-                        <a href="/courses/categories/{{ child.slug }}" class="btn btn-line-warning">收藏</a>
-                    </p>
-                </div>
+        <div class="thumbnail m-b-sm">
+            {% if child.image %}
+            <img src="{{ child.image|media }}" style="max-width: 100%" alt="">
+            {% else %}
+            <img src="http://placehold.it/800x400?text=No Image" alt="">
+            {% endif %}
+            <div class="caption">
+                <h4>{{ child.name }}</h4>
+                <p class="color-999" style="height: 44px;line-height: 22px;">
+                    {{ str_limit(child.description,70,'...') }}
+                </p>
+                <P class="color-999">
+                    共包含 {{ child.courses.count }} 课时
+                </P>
+                <p>
+                    <a href="/courses/categories/{{ child.slug }}" class="btn btn-warning">学习</a>
+                    <a href="/courses/categories/{{ child.slug }}" class="btn btn-line-warning">收藏</a>
+                </p>
             </div>
         </div>
         {% endfor %}
@@ -76,3 +74,30 @@ $this['categories']=\Buuug7\Courses\Models\Category::getNested();
     {% partial 'courses/block-v1' posts=tagReMen s_tag="热门" %}
     {% endif %}
 </div>
+
+{% put scripts %}
+<script>
+    $(function () {
+        $('.owl-carousel-v4').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: false,
+            navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+            animateOut: 'fadeOut',
+            autoplay: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+    });
+</script>
+{% endput %}
