@@ -21,15 +21,15 @@ class User extends \RainLab\User\Models\User
             ],
         ]);
         $result = $response->getBody();
-        $accessToken = explode('&',explode('=',$result)[1])[0];
+        $accessToken = explode('&', explode('=', $result)[1])[0];
         return $accessToken;
     }
 
     public static function getQQUserOpenId($token)
     {
-        $openID_API='https://graph.qq.com/oauth2.0/me';
+        $openID_API = 'https://graph.qq.com/oauth2.0/me';
         $http = new Client();
-        $response = $http->post($openID_API,[
+        $response = $http->post($openID_API, [
             'form_params' => [
                 'access_token' => $token,
             ],
@@ -38,19 +38,20 @@ class User extends \RainLab\User\Models\User
         $str = $response->getBody();
         $lpos = strpos($str, "(");
         $rpos = strrpos($str, ")");
-        $str = substr($str, $lpos+1, $rpos-$lpos-1);
+        $str = substr($str, $lpos + 1, $rpos - $lpos - 1);
         $json = json_decode($str);
 
         $openid = $json->openid;
         return $openid;
     }
 
-    public static function getQQUser($token,$appID,$openID)
+    public static function getQQUser($token, $appID, $openID)
     {
         $userApi = 'https://graph.qq.com/user/get_user_info';
         $http = new Client();
-        $response = $http->get($userApi, [
-            'form_params' => [
+
+        $response = $http->request('GET', $userApi, [
+            'query' => [
                 'access_token' => $token,
                 'oauth_consumer_key' => $appID,
                 'openid' => $openID,
