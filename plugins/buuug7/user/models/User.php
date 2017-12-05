@@ -20,7 +20,8 @@ class User extends \RainLab\User\Models\User
                 'code' => $code,
             ],
         ]);
-        $accessToken = json_decode($response->getBody())->access_token;
+        $result = json_decode($response->getBody());
+        $accessToken = explode('=',$result)[0];
         return $accessToken;
     }
 
