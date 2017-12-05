@@ -148,6 +148,7 @@ Route::middleware(['web'])->group(function (){
         $accessToken = User::getQQUserToken($code);
 
         $appID = User::getQQUserOpenId($accessToken);
+        return $appID;
         $openID = User::getQQUserOpenId($accessToken)->openid;
 
         $qqUser = User::getQQUser($accessToken,$appID,$openID);
