@@ -21,8 +21,8 @@ class User extends \RainLab\User\Models\User
             ],
         ]);
         $result = json_decode($response->getBody());
-        $accessToken = explode('=',$result)[0];
-        return $accessToken;
+        //$accessToken = explode('=',$result)[0];
+        return $result;
     }
 
     public static function getQQUserOpenId($token)
