@@ -13,7 +13,7 @@
     background-color: #222C38;
     ul {
       width: $page-width;
-      height: 220px;
+      height: 205px;
       overflow: hidden;
       margin: 0 auto;
       li {
@@ -36,6 +36,9 @@
     }
     .footer-bottom {
       margin-top: 0;
+      p {
+        margin-bottom: 5px;
+      }
     }
   }
 
