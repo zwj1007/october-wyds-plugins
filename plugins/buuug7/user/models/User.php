@@ -36,6 +36,7 @@ class User extends \RainLab\User\Models\User
         ]);
 
         $result = $response->getBody();
+        return $result;
         $lpos= strpos($result,'(');
         $rpos = strrpos($result,')');
         $result=substr($result,$lpos+1,$rpos-$lpos-1);
