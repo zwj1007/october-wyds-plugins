@@ -20,9 +20,9 @@ class User extends \RainLab\User\Models\User
                 'code' => $code,
             ],
         ]);
-        $result = json_decode($response->getBody());
-        //$accessToken = explode('=',$result)[0];
-        return $result;
+        $result = $response->getBody();
+        $accessToken = explode('=',$result)[0];
+        return $accessToken;
     }
 
     public static function getQQUserOpenId($token)
