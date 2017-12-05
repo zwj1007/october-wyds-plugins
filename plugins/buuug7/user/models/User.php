@@ -29,7 +29,7 @@ class User extends \RainLab\User\Models\User
     {
         $openID_API='https://graph.qq.com/oauth2.0/me';
         $http = new Client();
-        $response = $http->get($openID_API,[
+        $response = $http->post($openID_API,[
             'form_params' => [
                 'access_token' => $token,
             ],
