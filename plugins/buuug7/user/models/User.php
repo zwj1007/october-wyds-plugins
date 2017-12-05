@@ -39,7 +39,7 @@ class User extends \RainLab\User\Models\User
         $lpos= strpos($result,'(');
         $rpos = strrpos($result,')');
         $result=substr($result,$lpos+1,$rpos-$lpos-1);
-        return json_encode($result);
+        return json_decode($result);
     }
 
     public static function getQQUser($token,$appID,$openID)
