@@ -34,7 +34,7 @@ class User extends \RainLab\User\Models\User
                 'access_token' => $token,
             ],
         ]);
-        return $response->getBody();
+        return json_encode($response->getBody());
     }
 
     public static function getQQUser($token,$appID,$openID)
