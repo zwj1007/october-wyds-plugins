@@ -56,7 +56,7 @@ class User extends \RainLab\User\Models\User
                 'openid' => $openID,
             ],
         ]);
-        return json_decode($response->getBody());
+        return $response->getBody();
     }
 
     public static function getTianQiUserToken($code)
