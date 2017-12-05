@@ -821,7 +821,7 @@ header {
     background-color: #222C38; }
     .footer .footer-content ul {
       width: 1120px;
-      height: 220px;
+      height: 205px;
       overflow: hidden;
       margin: 0 auto; }
       .footer .footer-content ul li {
@@ -838,6 +838,8 @@ header {
         color: #758995; }
     .footer .footer-content .footer-bottom {
       margin-top: 0; }
+      .footer .footer-content .footer-bottom p {
+        margin-bottom: 5px; }
 
 .lanmu #afix-lanmu.affix {
   top: 0;
