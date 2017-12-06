@@ -144,6 +144,7 @@ Route::middleware(['web'])->group(function (){
     });
     // handle qq callback
     Route::get('login/qq/callback', function () {
+
         $code = input('code');
 
         $accessToken = User::getQQUserToken($code);

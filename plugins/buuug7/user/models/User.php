@@ -29,8 +29,9 @@ class User extends \RainLab\User\Models\User
     {
         $openID_API = 'https://graph.qq.com/oauth2.0/me';
         $http = new Client();
-        $response = $http->post($openID_API, [
-            'form_params' => [
+
+        $response = $http->request('GET',$openID_API,[
+            'query' => [
                 'access_token' => $token,
             ],
         ]);
@@ -57,8 +58,9 @@ class User extends \RainLab\User\Models\User
                 'openid' => $openID,
             ],
         ]);
+        $json = json_decode($response->getBody());
 
-        return json_decode((string)($response->getBody()));
+        return json_decode($json);
     }
 
     public static function getTianQiUserToken($code)
