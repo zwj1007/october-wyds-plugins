@@ -17,7 +17,7 @@ use Session;
 class BindQQ extends ComponentBase
 {
     public $accessToken;
-    public $openId;
+    public $openID;
     public $qqUser;
 
 
@@ -50,7 +50,7 @@ class BindQQ extends ComponentBase
     public function loadAuthInfo()
     {
         $this->accessToken = Session::pull('accessToken');
-        $this->openId = Session::pull('openId');
+        $this->openID = Session::pull('openID');
         $this->qqUser = Session::pull('qqUser');
     }
 
@@ -82,7 +82,7 @@ class BindQQ extends ComponentBase
         $user = Auth::register($data, $automaticActivation);
 
         //$user->name = $this->qqUser->nickname;
-        $user->qq_id = $this->openId;
+        $user->qq_id = $this->openID;
 
         $user->save();
 
