@@ -6,17 +6,19 @@ use October\Rain\Support\Facades\Config;
 class User extends \RainLab\User\Models\User
 {
     //
-    // qq
+    // qq auth
     //
     public static function getQQUserToken($code)
     {
         $http = new Client();
-        $response = $http->post('https://graph.qq.com/oauth2.0/token', [
-            'form_params' => [
+        $tokenAPI = 'https://graph.qq.com/oauth2.0/token';
+
+        $response = $http->request('GET', $tokenAPI, [
+            'query' => [
                 'grant_type' => 'authorization_code',
-                'client_id' => '101441921',
-                'client_secret' => '0b51fea80164a1c697b8e1663f1d9da2',
-                'redirect_uri' => 'http://ds8.com.cn/login/qq/callback',
+                'client_id' => Config::get('buuug7.user::qq.client_id'),
+                'client_secret' => Config::get('buuug7.user::qq.client_secret'),
+                'redirect_uri' => Config::get('buuug7.user::qq.redirect_uri'),
                 'code' => $code,
             ],
         ]);
@@ -30,7 +32,7 @@ class User extends \RainLab\User\Models\User
         $openID_API = 'https://graph.qq.com/oauth2.0/me';
         $http = new Client();
 
-        $response = $http->request('GET',$openID_API,[
+        $response = $http->request('GET', $openID_API, [
             'query' => [
                 'access_token' => $token,
             ],
@@ -43,6 +45,7 @@ class User extends \RainLab\User\Models\User
         $json = json_decode($str);
 
         $openid = $json->openid;
+
         return $openid;
     }
 
@@ -58,9 +61,8 @@ class User extends \RainLab\User\Models\User
                 'openid' => $openID,
             ],
         ]);
-        $json = json_decode($response->getBody());
 
-        return $json;
+        return json_decode($response->getBody());
     }
 
     public static function getTianQiUserToken($code)

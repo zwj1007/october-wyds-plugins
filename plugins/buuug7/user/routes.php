@@ -134,14 +134,15 @@ Route::middleware(['web'])->group(function (){
     Route::get('/login/qq', function () {
         $query = http_build_query([
             'response_type' => 'code',
-            'client_id' => '101441921',
-            'redirect_uri' => 'http://ds8.com.cn/login/qq/callback',
-            'state' => 'qqlinginstate',
+            'client_id' => Config::get('buuug7.user::qq.client_id'),
+            'redirect_uri' => Config::get('buuug7.user::qq.redirect_uri'),
+            'state' => 'tianqiqqauth',
             'scope' => 'get_user_info',
         ]);
         $authorize_uri = 'https://graph.qq.com/oauth2.0/authorize?' . $query;
         return Redirect::to($authorize_uri);
     });
+
     // handle qq callback
     Route::get('login/qq/callback', function () {
 
@@ -153,39 +154,7 @@ Route::middleware(['web'])->group(function (){
 
         $qqUser = User::getQQUser($accessToken,'101441921',$openID);
 
-        var_dump($qqUser);
-
-        die();
         return $qqUser;
-
-        if (!User::where('qq_id', $qqUser->id)->first()) {
-            if (User::where('email', $qqUser->email)->first()) {
-                $user = User::where('email', $qqUser->email)->first();
-                $user->tianqi_id = $qqUser->id;
-                $user->social_avatar = $qqUser->avatar_url;
-                $user->save();
-                Auth::login($user);
-            } else {
-                $password = bcrypt(Str::random(6));
-                $user = Auth::register([
-                    'name' => $qqUser->name,
-                    'email' => $qqUser->email,
-                    'password' => $password,
-                    'password_confirmation' => $password,
-                ], true);
-                $user->tianqi_id = $qqUser->id;
-                $user->social_avatar = $qqUser->avatar_url;
-                $user->save();
-                Auth::login($user);
-            }
-        } else {
-            $userInstance = User::where('qq_id', $qqUser->id)->firstOrFail();
-            // synchronization user avatar
-            $userInstance->social_avatar = $qqUser->avatar_url;
-            $userInstance->save();
-            Auth::login($userInstance, true);
-
-        }
     });
 
 

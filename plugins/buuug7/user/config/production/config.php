@@ -6,12 +6,19 @@ return [
         'client_secret' => 'db28c39eff8021339a1d634e7ab4ae4c31ae96a0',
         'redirect_uri' => 'http://ds8.com.cn/login/github/callback',
     ],
-    
+
     'tianqi' => [
         'client_id' => '4',
         'client_secret' => '8LJ8kfOETYIN8UedpqvF3bOfGwjZpbJ8wg9JBzwF',
         'redirect_uri' => 'http://ds8.com.cn/login/tianqi/callback',
     ],
+
+    'qq' => [
+        'client_id' => '101441921',
+        'client_secret' => '0b51fea80164a1c697b8e1663f1d9da2',
+        'redirect_uri' => 'http://ds8.com.cn/login/qq/callback',
+    ],
+
     'packages' => [
         'jenssegers/agent' => [
             // Service providers to be registered by your plugin
