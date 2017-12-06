@@ -153,6 +153,9 @@ Route::middleware(['web'])->group(function (){
 
         $qqUser = User::getQQUser($accessToken,'101441921',$openID);
 
+        var_dump($qqUser);
+
+        die();
         return $qqUser;
 
         if (!User::where('qq_id', $qqUser->id)->first()) {
