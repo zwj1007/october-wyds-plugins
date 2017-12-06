@@ -29,10 +29,15 @@ class BindQQ extends ComponentBase
         ];
     }
 
+    public function init()
+    {
+        $this->accessToken = Session::get('accessToken');
+        $this->openID = Session::get('openID');
+        $this->qqUser = Session::get('qqUser');
+    }
 
     public function onRun()
     {
-        $this->loadAuthInfo();
         /*
          * Activation code supplied
          * */
@@ -41,13 +46,6 @@ class BindQQ extends ComponentBase
         if ($activationCode = $this->param($routeParameter)) {
             $this->onActivate($activationCode);
         }
-    }
-
-    public function loadAuthInfo()
-    {
-        $this->accessToken = Session::get('accessToken');
-        $this->openID = Session::get('openID');
-        $this->qqUser = Session::get('qqUser');
     }
 
     public function onBind()
@@ -65,9 +63,6 @@ class BindQQ extends ComponentBase
         $data['password'] = Str::random(6);
         $data['password_confirmation'] = $data['password'];
         $data['name'] = $this->openID;
-
-        var_dump(Session::all());
-        die();
 
         /*
          *  Register user
