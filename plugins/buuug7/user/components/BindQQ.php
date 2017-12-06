@@ -68,7 +68,7 @@ class BindQQ extends ComponentBase
 
         $data['password'] = Str::random(6);
         $data['password_confirmation'] = $data['password'];
-        $data['name'] = Session::pull('qqUser')->nickname;
+        $data['name'] = Session::pull('openID');
 
         /*
          *  Register user
