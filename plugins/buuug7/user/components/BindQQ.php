@@ -81,10 +81,8 @@ class BindQQ extends ComponentBase
 
         $user = Auth::register($data, $automaticActivation);
 
-        //$user->name = $this->qqUser->nickname;
-        $user->qq_id = $this->qqUser->nickname;
-
-        $user->save();
+        print_r($this->qqUser->nickname);
+        die();
 
         trace_log($user);
 
