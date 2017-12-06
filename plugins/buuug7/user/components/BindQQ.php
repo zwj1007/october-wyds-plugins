@@ -37,6 +37,9 @@ class BindQQ extends ComponentBase
     public function onRun()
     {
         $this->loadAuthInfo();
+
+        var_dump($this->qqUser);
+        die();
         /*
          * Activation code supplied
          * */

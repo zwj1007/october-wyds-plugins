@@ -152,9 +152,6 @@ Route::middleware(['web'])->group(function () {
 
         $qqUser = User::getQQUser($accessToken, Config::get('buuug7.user::qq.client_id'), $openID);
 
-        print_r($qqUser);
-        die();
-
         if (!User::where('qq_id', $openID)->first()) {
 
             Session::flash('accessToken', $accessToken);
