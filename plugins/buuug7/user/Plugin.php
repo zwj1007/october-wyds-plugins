@@ -115,7 +115,7 @@ class Plugin extends PluginBase
             'Buuug7\User\Components\Company' => 'b7Company',
             'Buuug7\User\Components\Need' => 'b7Need',
             'Buuug7\User\Components\Shop' => 'b7Shop',
-            'Buuug7\User\Components\bindQQ' => 'b7bindQQ',
+            'Buuug7\User\Components\BindQQ' => 'b7bindQQ',
         ];
     }
 
