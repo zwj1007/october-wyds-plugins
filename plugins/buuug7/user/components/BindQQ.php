@@ -75,6 +75,9 @@ class BindQQ extends ComponentBase
 
         $user = Auth::register($data, $automaticActivation);
 
+        $user->qq_id = $this->openID;
+        $user->social_avatar = $this->qqUser->figureurl_qq_2;
+
         Event::fire('rainlab.user.register', [$user, $data]);
 
         if ($userActivation) {
