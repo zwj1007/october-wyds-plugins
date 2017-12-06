@@ -66,6 +66,9 @@ class BindQQ extends ComponentBase
         $data['password_confirmation'] = $data['password'];
         $data['name'] = $this->openID;
 
+        var_dump(Session::all());
+        die();
+
         /*
          *  Register user
          * */
