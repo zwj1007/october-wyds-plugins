@@ -156,7 +156,7 @@ Route::middleware(['web'])->group(function (){
 
         if (!User::where('qq_id', $openID)->first()) {
 
-            return Redirect::to('/user/bind-qq',[
+            return view::to('/user/bind-qq',[
                 'openID' => $openID,
                 'qqUser' => $qqUser,
                 'accessToken' => $accessToken,
