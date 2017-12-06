@@ -154,9 +154,9 @@ Route::middleware(['web'])->group(function () {
 
         if (!User::where('qq_id', $openID)->first()) {
 
-            Session::flash('accessToken', $accessToken);
-            Session::flash('openID', $openID);
-            Session::flash('qqUser', $qqUser);
+            Session::put('accessToken', $accessToken);
+            Session::put('openID', $openID);
+            Session::put('qqUser', $qqUser);
             return Redirect::to('/user/bind-qq');
 
         } else {
