@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'debug' => true,
+    'debug' => false,
 
     'url' => 'http://ds8.com.cn',
 
