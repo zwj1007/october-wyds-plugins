@@ -13,6 +13,7 @@ use Mail;
 use Lang;
 use Request;
 use Session;
+use ApplicationException;
 
 class BindQQ extends ComponentBase
 {
@@ -45,6 +46,7 @@ class BindQQ extends ComponentBase
 
         if ($activationCode = $this->param($routeParameter)) {
             $this->onActivate($activationCode);
+            return Redirect::to('/');
         }
     }
 
@@ -153,9 +155,7 @@ class BindQQ extends ComponentBase
             /*
              * Sign in the user
              */
-            if(Auth::login($user)){
-                return Redirect::to('/');
-            };
+            Auth::login($user);
 
         } catch (Exception $ex) {
             if (Request::ajax()) throw $ex;
