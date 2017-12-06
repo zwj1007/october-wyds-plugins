@@ -156,7 +156,10 @@ Route::middleware(['web'])->group(function (){
 
         if (!User::where('qq_id', $openID)->first()) {
 
-            return Redirect::to('/user/bind-qq')->with(compact('accessToken','openID','qqUser'));
+            Session::flash('accessToken',$accessToken);
+            Session::flash('openId',$openID);
+            Session::flash('qqUser',$qqUser);
+            return Redirect::to('/user/bind-qq');
 
         } else {
             return 'already existed !';

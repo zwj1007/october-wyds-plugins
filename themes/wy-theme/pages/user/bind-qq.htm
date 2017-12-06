@@ -3,10 +3,8 @@ url = '/user/bind-qq'
 layout = 'default'
 ==
 function onStart(){
-//var_dump(Config::get('buuug7.user::github.client_id', 50));
+var_dump(Session::pull('qqUser'));
+die();
 }
 ==
 
-{{ session('accessToken') }}
-{{ session('openID') }}
-{{ session('qqUser') }}
