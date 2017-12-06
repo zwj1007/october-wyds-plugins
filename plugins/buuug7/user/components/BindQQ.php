@@ -98,7 +98,7 @@ class BindQQ extends ComponentBase
             Auth::login($user);
         }
 
-        return Redirect::to('/');
+        return redirect('/');
 
     }
 
