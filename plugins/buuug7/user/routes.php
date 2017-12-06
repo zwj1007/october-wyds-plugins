@@ -60,7 +60,7 @@ Route::middleware(['web'])->group(function () {
             Auth::login($userInstance, true);
 
         }
-        return Redirect::to('/user/center/account');
+        return Redirect::to('/');
     });
 
 
@@ -120,7 +120,7 @@ Route::middleware(['web'])->group(function () {
             $userInstance->save();
             Auth::login($userInstance);
         }
-        return Redirect::to('/user/center/account');
+        return Redirect::to('/');
     });
 
 
@@ -160,7 +160,16 @@ Route::middleware(['web'])->group(function () {
             return Redirect::to('/user/bind-qq');
 
         } else {
-            return 'already existed !';
+
+            $userInstance = User::where('qq_id', $openID)->first();
+            // update user avatar
+            $userInstance->social_avatar = $qqUser->figureurl_qq_2;
+            // update nickname
+            $userInstance->name = $qqUser->nickname;
+            $userInstance->save();
+
+            Auth::login($userInstance);
+            return Redirect::to('/');
         }
 
         return Redirect::to('/user/center/account');

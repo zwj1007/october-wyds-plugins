@@ -9,10 +9,10 @@ function onStart(){
 }
 ==
 
-
 <div class="container m-t">
     <div class="row">
         <div class="col-md-6">
+            {% if not user %}
             <div class="panel panel-default">
                 <div class="panel-heading">
                     绑定邮箱
@@ -36,6 +36,11 @@ function onStart(){
                     </form>
                 </div>
             </div>
+            {% else %}
+            <div class="callout callout-warning">
+                <p>你已经绑定了邮箱</p>
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>
