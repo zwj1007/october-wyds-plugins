@@ -46,7 +46,7 @@ class BindQQ extends ComponentBase
 
         if ($activationCode = $this->param($routeParameter)) {
             $this->onActivate($activationCode);
-            return Redirect::to('/');
+            return redirect('/');
         }
     }
 
