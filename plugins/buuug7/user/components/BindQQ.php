@@ -154,10 +154,13 @@ class BindQQ extends ComponentBase
              */
             Auth::login($user);
 
+            return Redirect::to('/');
+
         } catch (Exception $ex) {
             if (Request::ajax()) throw $ex;
             else Flash::error($ex->getMessage());
         }
+        return Redirect::to('/');
     }
 
 
