@@ -46,6 +46,7 @@ class BindQQ extends ComponentBase
 
         if ($activationCode = $this->param($routeParameter)) {
             $this->onActivate($activationCode);
+            return redirect('/');
         }
     }
 
@@ -157,8 +158,6 @@ class BindQQ extends ComponentBase
              * Sign in the user
              */
             Auth::login($user);
-
-            return redirect('/');
 
         } catch (Exception $ex) {
             if (Request::ajax()) throw $ex;
