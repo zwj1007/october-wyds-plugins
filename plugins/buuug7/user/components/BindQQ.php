@@ -49,9 +49,9 @@ class BindQQ extends ComponentBase
 
     public function loadAuthInfo()
     {
-        $this->accessToken = Session::pull('accessToken');
-        $this->openID = Session::pull('openID');
-        $this->qqUser = Session::pull('qqUser');
+        //$this->accessToken = Session::pull('accessToken');
+        //$this->openID = Session::pull('openID');
+       // $this->qqUser = Session::pull('qqUser');
     }
 
     public function onBind()
@@ -68,7 +68,7 @@ class BindQQ extends ComponentBase
 
         $data['password'] = Str::random(6);
         $data['password_confirmation'] = $data['password'];
-        $data['name'] = 'test';
+        $data['name'] = Session::pull('qqUser')->nickname;
 
         /*
          *  Register user
@@ -80,11 +80,6 @@ class BindQQ extends ComponentBase
         $userActivation = UserSettings::get('activate_mode') == UserSettings::ACTIVATE_USER;
 
         $user = Auth::register($data, $automaticActivation);
-
-        print_r($this->qqUser->nickname);
-        die();
-
-        trace_log($user);
 
         Event::fire('rainlab.user.register', [$user, $data]);
 
