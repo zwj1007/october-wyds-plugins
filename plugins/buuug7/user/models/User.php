@@ -60,7 +60,7 @@ class User extends \RainLab\User\Models\User
         ]);
         $json = json_decode($response->getBody());
 
-        return json_decode($json);
+        return $json;
     }
 
     public static function getTianQiUserToken($code)
