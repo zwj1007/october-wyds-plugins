@@ -29,17 +29,6 @@ class BindQQ extends ComponentBase
         ];
     }
 
-    public function defineProperties()
-    {
-        return [];
-    }
-
-    public function init()
-    {
-        $this->accessToken = Session::pull('accessToken');
-        $this->openID = Session::pull('openID');
-        $this->qqUser = Session::pull('qqUser');
-    }
 
     public function onRun()
     {
@@ -56,9 +45,9 @@ class BindQQ extends ComponentBase
 
     public function loadAuthInfo()
     {
-        //$this->accessToken = Session::pull('accessToken');
-        //$this->openID = Session::pull('openID');
-       // $this->qqUser = Session::pull('qqUser');
+        $this->accessToken = Session::get('accessToken');
+        $this->openID = Session::get('openID');
+        $this->qqUser = Session::get('qqUser');
     }
 
     public function onBind()
