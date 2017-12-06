@@ -34,6 +34,13 @@ class BindQQ extends ComponentBase
         return [];
     }
 
+    public function init()
+    {
+        $this->accessToken = Session::pull('accessToken');
+        $this->openID = Session::pull('openID');
+        $this->qqUser = Session::pull('qqUser');
+    }
+
     public function onRun()
     {
         $this->loadAuthInfo();
@@ -68,7 +75,7 @@ class BindQQ extends ComponentBase
 
         $data['password'] = Str::random(6);
         $data['password_confirmation'] = $data['password'];
-        $data['name'] = Session::pull('openID');
+        $data['name'] = $this->openID;
 
         /*
          *  Register user
