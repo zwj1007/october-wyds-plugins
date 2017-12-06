@@ -1,10 +1,42 @@
 title = '绑定账号'
-url = '/user/bind-qq'
+url = '/user/bind-qq/:code?'
 layout = 'default'
+[b7bindQQ]
+paramCode = "code"
 ==
 function onStart(){
-var_dump(Session::pull('qqUser'));
-die();
+
 }
 ==
+
+
+<div class="container m-t">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    绑定邮箱
+                </div>
+                <div class="panel-body">
+                    <div class="callout callout-danger">
+                        <p>绑定邮箱</p>
+                    </div>
+                    <form
+                        data-request="onBind"
+                        data-request-flash>
+                        <div class="form-group">
+                            <label for="email">电子邮箱</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="email" name="email"
+                                   placeholder="请输入你的电子邮箱">
+                        </div>
+
+                        <button class="btn btn-default" data-attach-loading>确认</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 

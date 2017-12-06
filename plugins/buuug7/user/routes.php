@@ -8,8 +8,7 @@ use October\Rain\Support\Facades\Config;
 use Illuminate\Support\Str;
 
 
-
-Route::middleware(['web'])->group(function (){
+Route::middleware(['web'])->group(function () {
     //
     // login with tianqi user center
     //
@@ -63,7 +62,6 @@ Route::middleware(['web'])->group(function (){
         }
         return Redirect::to('/user/center/account');
     });
-
 
 
     //
@@ -152,13 +150,13 @@ Route::middleware(['web'])->group(function (){
 
         $openID = User::getQQUserOpenId($accessToken);
 
-        $qqUser = User::getQQUser($accessToken,Config::get('buuug7.user::qq.client_id'),$openID);
+        $qqUser = User::getQQUser($accessToken, Config::get('buuug7.user::qq.client_id'), $openID);
 
         if (!User::where('qq_id', $openID)->first()) {
 
-            Session::flash('accessToken',$accessToken);
-            Session::flash('openId',$openID);
-            Session::flash('qqUser',$qqUser);
+            Session::flash('accessToken', $accessToken);
+            Session::flash('openId', $openID);
+            Session::flash('qqUser', $qqUser);
             return Redirect::to('/user/bind-qq');
 
         } else {
@@ -170,7 +168,6 @@ Route::middleware(['web'])->group(function (){
         /*
          * object(stdClass)#320 (18) { ["ret"]=> int(0) ["msg"]=> string(0) "" ["is_lost"]=> int(0) ["nickname"]=> string(6) "晴天" ["gender"]=> string(3) "男" ["province"]=> string(0) "" ["city"]=> string(0) "" ["year"]=> string(4) "2010" ["figureurl"]=> string(73) "http://qzapp.qlogo.cn/qzapp/101441921/52F630AB6B7A2B3321D17168813FB040/30" ["figureurl_1"]=> string(73) "http://qzapp.qlogo.cn/qzapp/101441921/52F630AB6B7A2B3321D17168813FB040/50" ["figureurl_2"]=> string(74) "http://qzapp.qlogo.cn/qzapp/101441921/52F630AB6B7A2B3321D17168813FB040/100" ["figureurl_qq_1"]=> string(69) "http://q.qlogo.cn/qqapp/101441921/52F630AB6B7A2B3321D17168813FB040/40" ["figureurl_qq_2"]=> string(70) "http://q.qlogo.cn/qqapp/101441921/52F630AB6B7A2B3321D17168813FB040/100" ["is_yellow_vip"]=> string(1) "0" ["vip"]=> string(1) "0" ["yellow_vip_level"]=> string(1) "0" ["level"]=> string(1) "0" ["is_yellow_year_vip"]=> string(1) "0" }
          * */
-
 
 
     });
