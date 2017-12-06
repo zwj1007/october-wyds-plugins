@@ -81,6 +81,13 @@ class BindQQ extends ComponentBase
 
         $user = Auth::register($data, $automaticActivation);
 
+        $user->name = $this->qqUser->nickname;
+        $user->qq_id = $this->openId;
+
+        $user->save();
+
+        trace_log($user);
+
         Event::fire('rainlab.user.register', [$user, $data]);
 
         if ($userActivation) {
