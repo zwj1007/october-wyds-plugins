@@ -38,7 +38,7 @@ class BindQQ extends ComponentBase
     {
         $this->loadAuthInfo();
 
-        var_dump($this->qqUser);
+        var_dump($this->qqUser->nickname);
         die();
         /*
          * Activation code supplied
