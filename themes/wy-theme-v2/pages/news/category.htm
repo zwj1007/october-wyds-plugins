@@ -82,7 +82,7 @@ $this['categories']=\Buuug7\News\Models\Category::getNested();
                     <ul>
                         {% for category in categories %}
                             {% for child in category.children %}
-                            <li><a href="/news/categories/{{ child.slug }}">{{ child.name }}</a></li>
+                            <li><a href="/news/categories/{{ child.slug }}" target="_blank">{{ child.name }}</a></li>
                             {% endfor %}
                         {%  endfor %}
                     </ul>
