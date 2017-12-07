@@ -3,14 +3,14 @@
         <div class="inner">
             <div class="left">
                 {% if user %}
-                <span>欢迎归来 : <a href="/user/center/account">{{ user.name }}</a></span>
+                <span>欢迎归来 : <a href="/user/center/account" target="_blank">{{ user.name }}</a></span>
                 {% endif %}
                 {{ this.theme.site_name }}
                 <span class="time" id="current-time"></span>
             </div>
             <ul class="right">
                 {% if user %}
-                <li><a href="/user/center/account">用户中心</a></li>
+                <li><a href="/user/center/account" target="_blank">用户中心</a></li>
                 <li><a data-request="onLogout" data-request-data="redirect: '/user/login'">退出</a></li>
                 {% else %}
                 <li><a href="/user/login">登陆</a></li>
@@ -41,16 +41,16 @@
                 {% if not user %}
                 {% endif %}
                 <li>
-                    <a href="/lian-xi-wo-men"> <img src="/themes/wy-theme-v2/assets/images/icon2.png" alt=""></a>
+                    <a href="/lian-xi-wo-men" target="_blank"> <img src="/themes/wy-theme-v2/assets/images/icon2.png" alt=""></a>
                     <p> 联系我们</p>
 
                 </li>
                 <li>
-                    <a href="/mian-ze-sheng-ming"> <img src="/themes/wy-theme-v2/assets/images/icon5.png" alt=""></a>
+                    <a href="/mian-ze-sheng-ming" target="_blank"> <img src="/themes/wy-theme-v2/assets/images/icon5.png" alt=""></a>
                     <p>免责声明</p>
                 </li>
                 <li>
-                    <a href="/shi-yong-shuo-ming2"> <img src="/themes/wy-theme-v2/assets/images/icon1.png" alt=""></a>
+                    <a href="/shi-yong-shuo-ming2" target="_blank"> <img src="/themes/wy-theme-v2/assets/images/icon1.png" alt=""></a>
                     <p>使用说明</p>
 
                 </li>
@@ -59,24 +59,24 @@
     </div>
     <nav>
         <ul>
-            <li><a href="/">首页</a></li>
-            <li><a href="/news/categories/dian-shang-dong-tai">电商动态</a></li>
-            <li><a href="/news/categories/zheng-ce-jie-du">政策解读</a></li>
-            <li><a href="/news/categories/tong-zhi-gong-gao">通知公告</a></li>
-            <li><a href="/news/categories/xin-xi-gong-kai">信息公开</a></li>
-            <li><a href="/pei-xun">线上培训</a></li>
+            <li><a href="/" target="_blank">首页</a></li>
+            <li><a href="/news/categories/dian-shang-dong-tai" target="_blank">电商动态</a></li>
+            <li><a href="/news/categories/zheng-ce-jie-du" target="_blank">政策解读</a></li>
+            <li><a href="/news/categories/tong-zhi-gong-gao" target="_blank">通知公告</a></li>
+            <li><a href="/news/categories/xin-xi-gong-kai" target="_blank">信息公开</a></li>
+            <li><a href="/pei-xun" target="_blank">线上培训</a></li>
             <li>
-                <a href="javascript:void(0);">营销推广</a>
+                <a href="javascript:void(0);" target="_blank">营销推广</a>
                 <ul class="ul-xl">
-                    <li><a href="/ben-di-dian-shang">本地电商</a></li>
-                    <li><a href="/shops">店铺展示</a></li>
+                    <li><a href="/ben-di-dian-shang" target="_blank">本地电商</a></li>
+                    <li><a href="/shops" target="_blank">店铺展示</a></li>
                 </ul>
             </li>
             <li>
-                <a href="javascript:void(0);">生活&服务</a>
+                <a href="javascript:void(0);" target="_blank">生活&服务</a>
                 <ul class="ul-xl">
-                    <li><a href="/gong-qiu-xin-xi">生活信息</a></li>
-                    <li><a href="/bian-min-fu-wu">便民服务</a></li>
+                    <li><a href="/gong-qiu-xin-xi" target="_blank">生活信息</a></li>
+                    <li><a href="/bian-min-fu-wu" target="_blank">便民服务</a></li>
                 </ul>
             </li>
         </ul>

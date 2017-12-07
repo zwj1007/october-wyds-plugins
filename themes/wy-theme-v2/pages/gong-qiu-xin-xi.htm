@@ -28,7 +28,7 @@ $this['offset']=$result[0];
 <section class="box fwsc-fl-list ">
     <div class="fwsc-fl-header">
         {% for key,category in categories %}
-        <a class="nav-cat" href="/needs/category/{{ key }}">
+        <a class="nav-cat" href="/needs/category/{{ key }}" target="_blank">
             <i class="nav-cat__icon nav-cat_icon-{{ key }}"></i>
             <h4 class="nav-cat__name">{{ category }}</h4>
         </a>
@@ -60,7 +60,7 @@ $this['offset']=$result[0];
 
     <div class="float-right fl-Right">
         <div class="Publish-button">
-            <a href="/needs/need/create"> <i class="fa fa-hand-pointer-o "></i> 点我发布新需求</a>
+            <a href="/needs/need/create"> <i class="fa fa-hand-pointer-o " target="_blank"></i> 点我发布新需求</a>
         </div>
         <div class=" Column ">
             <div>
@@ -72,7 +72,7 @@ $this['offset']=$result[0];
                 <ul class="Column-body">
                     {% for need in featuredNeeds %}
                     <li>
-                        <a href="/needs/need/{{ need.id }}" class="item">
+                        <a href="/needs/need/{{ need.id }}" class="item" target="_blank">
                             <i class="fa fa-sun-o"></i>
                             <span class="">{{ need.title }}</span>
                         </a>
@@ -89,12 +89,12 @@ $this['offset']=$result[0];
                 </div>
                 <div class="Column-body">
                     {% for key,category in categories %}
-                    <a href="/needs/category/{{ key }}" class="item">{{ category }}</a>
+                    <a href="/needs/category/{{ key }}" class="item" target="_blank">{{ category }}</a>
                     {% endfor %}
 
                     <p>
-                        <a href="/needs/tag/featured" class="item">推荐</a>
-                        <a href="/needs/tag/newly" class="item">最新</a>
+                        <a href="/needs/tag/featured" class="item" target="_blank">推荐</a>
+                        <a href="/needs/tag/newly" class="item" target="_blank">最新</a>
                     </p>
                 </div>
 

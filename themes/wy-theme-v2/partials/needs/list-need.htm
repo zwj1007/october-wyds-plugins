@@ -5,9 +5,9 @@
     </div>
     <div class="post-body">
         <strong>
-            <a href="/show/user/{{ need.user.email }}" class="">{{ need.user.name }}</a>
+            <a href="/show/user/{{ need.user.email }}" class="" target="_blank">{{ need.user.name }}</a>
         </strong>
-        <a href="/needs/need/{{ need.id }}"> {{ need.title }}</a>
+        <a href="/needs/need/{{ need.id }}" target="_blank"> {{ need.title }}</a>
         {% if need.featured %}
         <span class="label label-tj">推荐</span>
         {% endif %}

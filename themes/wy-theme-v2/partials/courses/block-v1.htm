@@ -1,11 +1,11 @@
 {% for post in posts %}
 <div class="xspx-list-body-post ribbon">
-    <a href="/courses/course/{{ post.id }}">
+    <a href="/courses/course/{{ post.id }}" target="_blank">
         <img src="{{ post.getImage() }}" alt="">
     </a>
     <div class="des ">
         <h3>{{ post.categories[0].name }}</h3>
-        <a href="/courses/course/{{ post.id }}" class="">{{ str_limit(post.title, 60, '...') }}</a>
+        <a href="/courses/course/{{ post.id }}" class="" target="_blank">{{ str_limit(post.title, 60, '...') }}</a>
         <p class="clearfix">
             <i class="fa fa-clock-o" title="时间"><span class="margin-left-5">{{ post.published_at|date('Y-m-d') }}</span></i>
             <i class="fa fa-eye float-right" title="浏览次数">
