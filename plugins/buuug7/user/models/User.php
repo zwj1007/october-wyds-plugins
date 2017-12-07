@@ -68,7 +68,7 @@ class User extends \RainLab\User\Models\User
     public static function getTianQiUserToken($code)
     {
         $http = new Client();
-        $response = $http->post('http://7.jq2.com/oauth/token', [
+        $response = $http->post('http://user.tq0.com/oauth/token', [
             'form_params' => [
                 'grant_type' => 'authorization_code',
                 'client_id' => Config::get('buuug7.user::tianqi.client_id'),
@@ -83,7 +83,7 @@ class User extends \RainLab\User\Models\User
 
     public static function getTianQiUserByToken($token)
     {
-        $userApi = 'http://7.jq2.com/api/user';
+        $userApi = 'http://user.tq0.com/api/user';
         $http = new Client();
         $response = $http->get($userApi, [
             'headers' => [

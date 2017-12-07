@@ -22,7 +22,7 @@ Route::middleware(['web'])->group(function () {
             'scope' => '',
         ]);
 
-        $authorize_uri = 'http://7.jq2.com/oauth/authorize?' . $query;
+        $authorize_uri = 'http://user.tq0.com/oauth/authorize?' . $query;
         return Redirect::to($authorize_uri);
     });
 
