@@ -15,12 +15,13 @@
     - run `git remote add origin https://github.com/gansutianqi/october-wyds-plugins.git`
     - run `git pull origin master`
 + after pull complete
+    + run `composer require jenssegers/agent`
     + install self plugins    
         - install buuug7.news `php artisan plugin:refresh Buuug7.News`
         - install buuug7.courses `php artisan plugin:refresh Buuug7.Courses`
         - install buuug7.user `php artisan plugin:refresh Buuug7.User`
         - install buuug7.statistics `php artisan plugin:refresh Buuug7.Statistics`
-        - install buuug7.location `php artisan plugin:refresh Buuug7.Location`
+        - install buuug7.location `php artisan plugin:refresh Buuug7.Statistics`
 + other settings
     - run `php artisan october:env` generate common configuration
     - when develop in local,make sure to add `APP_ENV=dev` for use dev config.
