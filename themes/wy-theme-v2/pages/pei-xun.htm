@@ -21,14 +21,14 @@ $this['categories']=\Buuug7\Courses\Models\Category::getNested();
 
 <section class="box xspx-list-classify-wy-v1 clearfix ">
     <ol class=" breadcrumb">
-        <li><a href="/">首页</a></li>
+        <li><a href="/" target="_blank">首页</a></li>
         <li class="active">线上培训</li>
     </ol>
 
     {% for category in categories %}
     {% for child in category.children %}
     <div class="thumbnail ">
-        <a href="/courses/categories/{{ child.slug }}">
+        <a href="/courses/categories/{{ child.slug }}" target="_blank">
             {% if child.image %}
             <img src="{{ child.image|media }}" style="max-width: 100%" alt="">
             {% else %}

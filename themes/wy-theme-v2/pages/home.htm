@@ -82,7 +82,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             <ul class="list">
                 {% for post in featuredPosts %}
                 <li>
-                    <a href="/news/post/{{ post.id }}"><img src="{{ post.image|media }}" alt="{{ post.title }}"
+                    <a href="/news/post/{{ post.id }}" target="_blank"><img src="{{ post.image|media }}" alt="{{ post.title }}"
                                                             target="_blank"></a>
                     <div class="title"><p>{{ post.title }}</p></div>
                 </li>
