@@ -48,5 +48,6 @@ composer.lock
 /CHANGELOG.md
 CONTRIBUTING.md
 ISSUE_TEMPLATE.md
+LICENSE
 phpunit.xml
 server.php
