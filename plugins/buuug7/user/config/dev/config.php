@@ -6,11 +6,11 @@ return [
         'client_secret' => 'ee139b1e7398b4db10627569e4284f47720ba7ac',
         'redirect_uri' => 'http://october-wyds.app/login/github/callback',
     ],
-    
+
     'tianqi' => [
         'client_id' => '1',
-        'client_secret' => 'lBYgPepGpNVwRrR7VePqQrvFC9WFAs3BYRJS0NOw',
-        'redirect_uri' => 'http://october-wyds.app/login/tianqi/callback',
+        'client_secret' => 'qaOaV3qoEctXneGoynH3DetZcl0zgnKzLDxFF53G',
+        'redirect_uri' => 'http://ds8.com.cn/login/tianqi/callback',
     ],
     'packages' => [
         'jenssegers/agent' => [
