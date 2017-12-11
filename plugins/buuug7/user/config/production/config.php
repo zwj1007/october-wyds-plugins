@@ -8,8 +8,8 @@ return [
     ],
 
     'tianqi' => [
-        'client_id' => '4',
-        'client_secret' => '	CP5TOrPSggbc9ls1uAFSqS3t2Y7NUhIeX2sn2Wlo',
+        'client_id' => '6',
+        'client_secret' => '	bm5UmxU4oqlJqsaO1RfCJ6o5QL4Sk0uCzkgOCEHT',
         'redirect_uri' => 'http://ds8.com.cn/login/tianqi/callback',
     ],
 
