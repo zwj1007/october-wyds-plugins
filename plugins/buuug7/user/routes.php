@@ -56,6 +56,7 @@ Route::middleware(['web'])->group(function () {
             $userInstance = User::where('tianqi_id', $tianQiUser->id)->firstOrFail();
             // synchronization user avatar
             $userInstance->social_avatar = $tianQiUser->avatar_url;
+            $userInstance->name = $tianQiUser->name;
             $userInstance->save();
             Auth::login($userInstance, true);
 
@@ -117,6 +118,7 @@ Route::middleware(['web'])->group(function () {
         } else {
             $userInstance = User::where('github_id', $githubUser->id)->firstOrFail();
             $userInstance->social_avatar = $githubUser->avatar_url;
+            $userInstance->name = $githubUser->name;
             $userInstance->save();
             Auth::login($userInstance);
         }
