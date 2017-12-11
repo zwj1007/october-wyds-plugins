@@ -10,7 +10,7 @@ return [
     'tianqi' => [
         'client_id' => '1',
         'client_secret' => 'qaOaV3qoEctXneGoynH3DetZcl0zgnKzLDxFF53G',
-        'redirect_uri' => 'http://ds8.com.cn/login/tianqi/callback',
+        'redirect_uri' => 'http://october-wyds.test/login/tianqi/callback',
     ],
     'packages' => [
         'jenssegers/agent' => [

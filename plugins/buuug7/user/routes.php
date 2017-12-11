@@ -19,7 +19,7 @@ Route::middleware(['web'])->group(function () {
             'client_id' => Config::get('buuug7.user::tianqi.client_id'),
             'redirect_uri' => Config::get('buuug7.user::tianqi.redirect_uri'),
             'response_type' => 'code',
-            'scope' => '',
+            'scope' => 'user_info',
         ]);
 
         $authorize_uri = 'http://user.tq0.com/oauth/authorize?' . $query;
