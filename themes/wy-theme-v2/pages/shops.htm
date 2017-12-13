@@ -14,7 +14,7 @@ $this->addJs('assets/script/jquery.cubeportfolio.min.js');
 ==
 
 <ol class="box breadcrumb">
-    <li><a href="index.html">首页</a></li>
+    <li><a href="index.html" target="_blank">首页</a></li>
     <li class="active">店铺</li>
 </ol>
 <!--活动项目-->
@@ -38,13 +38,13 @@ $this->addJs('assets/script/jquery.cubeportfolio.min.js');
 
         {% for shop in shops %}
         <div class="cbp-item {% if shop.featured %}featured{% endif %}">
-            <a href="/shops/shop/{{ shop.id }}" class="cbp-caption " rel="nofollow">
+            <a href="/shops/shop/{{ shop.id }}" class="cbp-caption " rel="nofollow" target="_blank">
                 <div class="cbp-caption-defaultWrap">
                     <img src="{{ shop.getAvatarThumb(400,200) }}" alt="">
                 </div>
             </a>
             <a href="#!" class="cbp-l-grid-work-title huodong-title-a"
-               rel="nofollow">{{ shop.name }}</a>
+               rel="nofollow" target="_blank">{{ shop.name }}</a>
 
             <div class="cbp-l-grid-work-desc">
                 <p>{{ str_limit(shop.description, 40, '...') }}</p>

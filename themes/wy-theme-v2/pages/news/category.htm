@@ -26,7 +26,7 @@ $this['categories']=\Buuug7\News\Models\Category::getNested();
 
 {% if category.slug == 'tong-zhi-gong-gao' %}
 <ol class="box breadcrumb">
-    <li><a href="/">首页</a></li>
+    <li><a href="/" target="_blank">首页</a></li>
     <li class="active">通知公告</li>
 </ol>
 <section class="box wy-notice clearfix">
@@ -39,7 +39,7 @@ $this['categories']=\Buuug7\News\Models\Category::getNested();
             {% for post in latestPosts %}
             {% if post.image %}
             <li>
-                <a href="/news/post/{{post.id}}" class="">
+                <a href="/news/post/{{post.id}}" class="" target="_blank">
                     <img src="{{ post.image|media }}" alt="">
                     <p>{{ post.title }}</p>
                 </a>
@@ -60,7 +60,7 @@ $this['categories']=\Buuug7\News\Models\Category::getNested();
                        <span>
                            [{{ post.published_at|date('Y-m-d')}}]
                     </span>
-                <a href="{{ post.url }}">{{ post.title }}</a>
+                <a href="{{ post.url }}" target="_blank">{{ post.title }}</a>
 
             </li>
             {% endfor %}
@@ -82,7 +82,7 @@ $this['categories']=\Buuug7\News\Models\Category::getNested();
                     <ul>
                         {% for category in categories %}
                             {% for child in category.children %}
-                            <li><a href="/news/categories/{{ child.slug }}">{{ child.name }}</a></li>
+                            <li><a href="/news/categories/{{ child.slug }}" target="_blank">{{ child.name }}</a></li>
                             {% endfor %}
                         {%  endfor %}
                     </ul>
@@ -90,13 +90,13 @@ $this['categories']=\Buuug7\News\Models\Category::getNested();
             </div>
             <div class="kj-dszx">
                 <div class="kj-title">
-                    <a href="javascript:void(0);"> <span>最新发布</span></a>
+                    <a href="javascript:void(0);" target="_blank"> <span>最新发布</span></a>
                 </div>
                 <ul>
                     {% for post in latestPosts %}
                     <li>
                         <i class="aurora__title aurora100"></i>
-                        <a href="/news/post/{{ post.id }}">
+                        <a href="/news/post/{{ post.id }}" target="_blank">
                             <span>{{ post.title|length > 25 ? post.title|slice(0,25)~'...' :post.title }}</span>
                         </a>
                     </li>
@@ -108,41 +108,41 @@ $this['categories']=\Buuug7\News\Models\Category::getNested();
         <!--右侧-->
         <div class="float-right list-right">
             <ol class="breadcrumb">
-                <li><a href="/">首页</a></li>
+                <li><a href="/" target="_blank">首页</a></li>
                 <li class="active">{{ this.page.title }}</li>
             </ol>
             {% for post in posts %}
             {% if post.image %}
             <div class="list-right-v1 margin-top-10">
                 <div class="post-img-wrap">
-                    <a href="#!">
+                    <a href="#!" target="_blank">
                         <img src="{{ post.image|media }}" alt="">
                     </a>
                 </div>
                 <div class="list-post">
                     <div class="list-post-title">
-                        <a href="{{ post.url }}" rel="bookmark"><span>{{ post.title }}</span></a>
+                        <a href="{{ post.url }}" rel="bookmark" target="_blank"><span>{{ post.title }}</span></a>
                     </div>
                     <div class="list-post-body">
                         <p>
                             {{ post.summary}}
                         </p>
                     </div>
-                    <a href="{{ post.url }}"> <span class="xq"> [{{ post.published_at|date('Y-m-d')}}]</span></a>
+                    <a href="{{ post.url }}" target="_blank"> <span class="xq"> [{{ post.published_at|date('Y-m-d')}}]</span></a>
                 </div>
             </div>
             {% else %}
             <div class="list-right-v1 margin-top-10">
                 <div class="list-post list-post1">
                     <div class="list-post-title">
-                        <a href="{{ post.url }}" rel="bookmark"><span>{{ post.title }}</span></a>
+                        <a href="{{ post.url }}" rel="bookmark" target="_blank"><span>{{ post.title }}</span></a>
                     </div>
                     <div class="list-post-body">
                         <p>
                             {{ post.summary }}
                         </p>
                     </div>
-                    <a href="{{ post.url }}"> <span class="xq"> [{{ post.published_at|date('Y-m-d')}}]</span></a>
+                    <a href="{{ post.url }}" target="_blank"> <span class="xq"> [{{ post.published_at|date('Y-m-d')}}]</span></a>
                 </div>
             </div>
             {% endif %}

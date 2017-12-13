@@ -43,7 +43,8 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <div class="dszx-left float-left ">
         {% if dianShangDongTai.count %}
         <div class="th">
-            <div class="hd">电商动态 <a href="/news/categories/dian-shang-dong-tai"><span>更多>></span></a></div>
+            <div class="hd">电商动态 <a href="/news/categories/dian-shang-dong-tai" target="_blank"><span>更多>></span></a>
+            </div>
             <div class="dd td">
                 <ul>
                     {% for post in dianShangDongTai %}
@@ -59,7 +60,8 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
         {% if tongZhiGongGao.count %}
         <div class="th">
-            <div class="hd">通知公告 <a href="/news/categories/tong-zhi-gong-gao"><span>更多>></span></a></div>
+            <div class="hd">通知公告 <a href="/news/categories/tong-zhi-gong-gao" target="_blank"><span>更多>></span></a>
+            </div>
             <div class="dd td1">
                 <ul>
                     {% for post in tongZhiGongGao %}
@@ -80,7 +82,8 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
             <ul class="list">
                 {% for post in featuredPosts %}
                 <li>
-                    <a href="/news/post/{{ post.id }}"><img src="{{ post.image|media }}" alt="{{ post.title }}"></a>
+                    <a href="/news/post/{{ post.id }}" target="_blank"><img src="{{ post.image|media }}" alt="{{ post.title }}"
+                                                            target="_blank"></a>
                     <div class="title"><p>{{ post.title }}</p></div>
                 </li>
                 {% endfor %}
@@ -99,7 +102,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         <ul>
             {% for post in chunk %}
             <li>
-                <a href="/news/post/{{ post.id }}">{{ post.title }}</a>
+                <a href="/news/post/{{ post.id }}" target="_blank">{{ post.title }}</a>
                 <small>[{{ post.published_at|date('m-d') }}]</small>
             </li>
             {% endfor %}
@@ -111,7 +114,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
 <!--政策解读-->
 <section class="box zcdx">
-    <div class="hd"><i>政策解读</i><a href="/news/categories/zheng-ce-jie-du"><span>更多>></span></a></div>
+    <div class="hd"><i>政策解读</i><a href="/news/categories/zheng-ce-jie-du" target="_blank"><span>更多>></span></a></div>
     <div class="dd clearfix">
 
         {% for chunk in zhenCeJieDu.chunk(4) %}
@@ -130,16 +133,16 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     </div>
 </section>
 
-<!--优秀网店-->
+<!--网店展示-->
 <section class="box yxwd">
-    <div class="hd"><i>网店展示</i><a href="/shops"><span>更多>></span></a></div>
+    <div class="hd"><i>网店展示</i><a href="/shops" target="_blank"><span>更多>></span></a></div>
     <div class="dd ">
         <div id="img-slider" class="zzsc margin-top-10 ">
             <button id="prev"><i class="fa fa-angle-double-left"></i></button>
             <div class="slider-wrap">
                 <ul>
                     {% for shop in featuredShops %}
-                    <li><a href="/shops/shop/{{ shop.id }}">
+                    <li><a href="/shops/shop/{{ shop.id }}" target="_blank">
                         <img src="{{ shop.getAvatarThumb(400,200) }}" class="rotates rotatesimg"/>
                         <p>{{ shop.name }}</p>
                     </a></li>
@@ -153,19 +156,19 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
 <!--广告位-->
 <section class="box">
-    <a href="#"><img src="/themes/wy-theme-v2/assets/images/gog-1.png" alt=""></a>
+    <a href="#"><img src="/themes/wy-theme-v2/assets/images/gog-1.png" alt="" target="_blank"></a>
 </section>
 
 <!--线上培训-->
 <section class="box xspx">
-    <div class="hd"><i>线上培训</i><a href="/pei-xun"><span>更多>></span></a></div>
+    <div class="hd"><i>线上培训</i><a href="/pei-xun" target="_blank"><span>更多>></span></a></div>
     <div class="dd clearfix">
         {% if tagTuiJian.count %}
         <div class="float-left xspx-left">
             <ul class="clearfix">
                 {% for post in tagTuiJian %}
                 <li>
-                    <a href="/courses/course/{{ post.id }}">
+                    <a href="/courses/course/{{ post.id }}" target="_blank">
                         <img class="" src="{{ post.image|media }}" alt="">
                         <p>{{ post.title }}</p>
                     </a>
@@ -182,7 +185,8 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                 <li>
                     <ol>
                         {% for post in chunk %}
-                        <li><a href="/courses/course/{{ post.id }}"><span>{{ post.title }}</span></a></li>
+                        <li><a href="/courses/course/{{ post.id }}" target="_blank"><span>{{ post.title }}</span></a>
+                        </li>
                         {% endfor %}
                     </ol>
                 </li>
@@ -193,33 +197,37 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     </div>
 </section>
 
-<!--服务市场-->
+<!--生活信息-->
 <section class="box fwsc fwsc1">
     <div class="hd">
         <i class="">生活信息
-            <a href="/gong-qiu-xin-xi"><span>更多>></span></a>
+            <a href="/gong-qiu-xin-xi" target="_blank"><span>更多>></span></a>
         </i>
     </div>
     <div class="dd clearfix">
         <ul class="float-left ul-left">
-            <li><a href="/needs/tag/newly" class=""><i class="fa fa-cloud-upload"></i><span>最新发布</span></a></li>
+            <li><a href="/needs/tag/newly" class="" target="_blank"><i class="fa fa-cloud-upload"></i><span>最新发布</span></a>
+            </li>
             <li class="margin-top-10 ul-li1"><a href="/needs/tag/featured"><i class="fa fa-free-code-camp"></i><span>热门推荐</span></a>
             </li>
         </ul>
         <ul class="float-left ul-center">
             <li class="margin-left-right-10 float-left cen-li">
                 <div class="cen-li-top">
-                    <a href="/needs/category/fangchan"> <img src="/themes/wy-theme-v2/assets/images/fwsc/fc.png" alt="" class=""></a>
+                    <a href="/needs/category/fangchan" target="_blank"> <img
+                            src="/themes/wy-theme-v2/assets/images/fwsc/fc.png" alt="" class=""></a>
                 </div>
                 <div class="cen-li-top">
-                    <a href="/needs/category/ershou" class=""> <img src="/themes/wy-theme-v2/assets/images/fwsc/es.png" alt="" class=""></a>
+                    <a href="/needs/category/ershou" target="_blank"> <img
+                            src="/themes/wy-theme-v2/assets/images/fwsc/es.png" alt="" class=""></a>
 
                 </div>
             </li>
             <li class=" float-left">
                 <div class="cen-li-top cen-li-chang">
 
-                    <a href="/needs/category/zhaopin"><img src="/themes/wy-theme-v2/assets/images/fwsc/zp.png" alt="" class="list-zp-img"></a>
+                    <a href="/needs/category/zhaopin" target="_blank"><img
+                            src="/themes/wy-theme-v2/assets/images/fwsc/zp.png" alt="" class="list-zp-img"></a>
                 </div>
 
             </li>
@@ -228,28 +236,28 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         <ul class="float-left ul-right" style="">
             <li class="float-left ">
 
-                <a href="/needs/category/jiaoyou" class=""> <span>交友</span>
+                <a href="/needs/category/jiaoyou" target="_blank"> <span>交友</span>
                     <i class="fa fa-heartbeat"
                        style="color: red;-webkit-text-stroke-width: 2px;-webkit-text-stroke-color: #ffffff; text-shadow: 1px 2px 3px #fff;"></i>
                 </a>
             </li>
             <li class="float-left li1">
 
-                <a href="/needs/category/chongwu" class="">
+                <a href="/needs/category/chongwu" target="_blank">
                     <span>宠物</span>
                     <i class="fa fa-tripadvisor"></i>
                 </a>
 
             </li>
             <li class="float-left  li2 ">
-                <a href="/needs/category/bendifuwu" class="">
+                <a href="/needs/category/bendifuwu" target="_blank">
                     <span>本地服务</span>
                     <i class="fa fa-eercast"></i>
                 </a>
             </li>
             <li class="float-left li3">
 
-                <a href="/needs/category/qita" class=""> <span>其他</span>
+                <a href="/needs/category/qita" target="_blank"> <span>其他</span>
                     <i class="fa  fa-google-wallet"></i></a>
             </li>
         </ul>
@@ -260,43 +268,46 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
 <!--便民服务-->
 <section class="box bmfw">
-    <div class="hd"><i>便民服务</i><a href="/bian-min-fu-wu"><span>更多>></span></a></div>
+    <div class="hd"><i>便民服务</i><a href="/bian-min-fu-wu" target="_blank"><span>更多>></span></a></div>
     <div class="dd ">
         <ul class="clearfix">
             <li>
-                <a href="/bian-min-fu-wu/wu-liu-pei-song"> <img src="/themes/wy-theme-v2/assets/images/fwsc/bm-1.jpg" alt=""></a>
+                <a href="/bian-min-fu-wu/wu-liu-pei-song" target="_blank"> <img src="/themes/wy-theme-v2/assets/images/fwsc/bm-1.jpg"
+                                                                alt=""></a>
                 <div class="info-box__content">
-                    <a href="/bian-min-fu-wu#wu-liu-pei-song" class="color-666 m-b-sm">物流配送</a>
+                    <a href="/bian-min-fu-wu#wu-liu-pei-song" class="color-666 m-b-sm" target="_blank">物流配送</a>
                     <p>Logistics Distribution</p>
                 </div>
             </li>
             <li>
-                <a href="/bian-min-fu-wu/jian-kang-yi-liao"><img src="/themes/wy-theme-v2/assets/images/fwsc/bm-2.jpg" alt=""></a>
+                <a href="/bian-min-fu-wu/jian-kang-yi-liao" target="_blank"><img src="/themes/wy-theme-v2/assets/images/fwsc/bm-2.jpg"
+                                                                 alt=""></a>
 
                 <div class="info-box__content">
-                    <a href="/bian-min-fu-wu#jian-kang-yi-liao" class="color-666 m-b-sm">健康医疗</a>
+                    <a href="/bian-min-fu-wu#jian-kang-yi-liao" class="color-666 m-b-sm" target="_blank">健康医疗</a>
 
                     <p>Health Care</p>
                 </div>
             </li>
             <li>
 
-                <a href="/bian-min-fu-wu/sheng-huo-fu-wu"> <img src="/themes/wy-theme-v2/assets/images/fwsc/bm-3.jpg" alt=""></a>
+                <a href="/bian-min-fu-wu/sheng-huo-fu-wu" target="_blank"> <img src="/themes/wy-theme-v2/assets/images/fwsc/bm-3.jpg"
+                                                                alt=""></a>
 
                 <div class="info-box__content">
-                    <a href="/bian-min-fu-wu#sheng-huo-fu-wu" class="color-666 m-b-sm">生活服务</a>
+                    <a href="/bian-min-fu-wu#sheng-huo-fu-wu" class="color-666 m-b-sm" target="_blank">生活服务</a>
 
                     <p>Convenience Payment</p>
                 </div>
             </li>
             <li>
 
-                <a class="bm-fw-img" href="/bian-min-fu-wu/dian-nao-wang-luo">
+                <a class="bm-fw-img" href="/bian-min-fu-wu/dian-nao-wang-luo" target="_blank">
                     <img src="/themes/wy-theme-v2/assets/images/fwsc/bm-4.jpg" alt="">
                 </a>
 
                 <div class="info-box__content">
-                    <a href="/fu-wu-shi-chang" class="color-666 m-b-sm">电脑网络</a>
+                    <a href="/fu-wu-shi-chang" class="color-666 m-b-sm" target="_blank">电脑网络</a>
 
                     <p>Computer Network</p>
                 </div>
@@ -311,13 +322,13 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
 <!--品牌企业-->
 <section class="box ppqy">
-    <div class="hd"><i>品牌企业</i><a href="/ben-di-dian-shang"><span>更多>></span></a></div>
+    <div class="hd"><i>品牌企业</i><a href="/ben-di-dian-shang" target="_blank"><span>更多>></span></a></div>
     <div class="dd">
         {% for chunk in featuredCompanies.chunk(5) %}
         <ul class="margin-bottom-10 clearfix">
             {% for post in chunk %}
             <li class="margin-right-5">
-                <a href="/companies/company/{{ post.id }}"><img src="{{ post.getAvatarThumb(300) }}" alt=""></a>
+                <a href="/companies/company/{{ post.id }}" target="_blank"><img src="{{ post.getAvatarThumb(300) }}" alt=""></a>
             </li>
             {% endfor %}
         </ul>

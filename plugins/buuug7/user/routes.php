@@ -8,26 +8,25 @@ use October\Rain\Support\Facades\Config;
 use Illuminate\Support\Str;
 
 
-
-Route::middleware(['web'])->group(function (){
+Route::middleware(['web'])->group(function () {
     //
-// login with tianqi user center
-//
+    // login with tianqi user center
+    //
 
-// redirect to tianqi login
+    // redirect to tianqi login
     Route::get('/login/tianqi', function () {
         $query = http_build_query([
             'client_id' => Config::get('buuug7.user::tianqi.client_id'),
             'redirect_uri' => Config::get('buuug7.user::tianqi.redirect_uri'),
             'response_type' => 'code',
-            'scope' => '',
+            'scope' => 'user_info',
         ]);
 
-        $authorize_uri = 'http://7.jq2.com/oauth/authorize?' . $query;
+        $authorize_uri = 'http://user.tq0.com/oauth/authorize?' . $query;
         return Redirect::to($authorize_uri);
     });
 
-// handle tianqi callback
+    // handle tianqi callback
     Route::get('/login/tianqi/callback', function () {
         $code = input('code');
         $accessToken = User::getTianQiUserToken($code);
@@ -57,20 +56,20 @@ Route::middleware(['web'])->group(function (){
             $userInstance = User::where('tianqi_id', $tianQiUser->id)->firstOrFail();
             // synchronization user avatar
             $userInstance->social_avatar = $tianQiUser->avatar_url;
+            $userInstance->name = $tianQiUser->name;
             $userInstance->save();
             Auth::login($userInstance, true);
 
         }
-        return Redirect::to('/user/center/account');
+        return Redirect::to('/');
     });
 
 
+    //
+    // login with github
+    //
 
-//
-// login with github
-//
-
-// redirect to github login
+    // redirect to github login
     Route::get('/login/github', function () {
         $query = http_build_query([
             'client_id' => Config::get('buuug7.user::github.client_id'),
@@ -81,7 +80,7 @@ Route::middleware(['web'])->group(function (){
         return Redirect::to($authorize_uri);
     });
 
-// handle github callback
+    // handle github callback
     Route::get('/login/github/callback', function () {
         // exchange access_token with code
         // get github user info
@@ -119,40 +118,76 @@ Route::middleware(['web'])->group(function (){
         } else {
             $userInstance = User::where('github_id', $githubUser->id)->firstOrFail();
             $userInstance->social_avatar = $githubUser->avatar_url;
+            $userInstance->name = $githubUser->name;
             $userInstance->save();
             Auth::login($userInstance);
         }
-        return Redirect::to('/user/center/account');
+        return Redirect::to('/');
     });
 
 
-//
-// login with qq
-//
+    //
+    // login with qq
+    //
 
-// redirect to qq login
+    // redirect to qq login
     Route::get('/login/qq', function () {
-        return Redirect::to('/coming-soon');
+        $query = http_build_query([
+            'response_type' => 'code',
+            'client_id' => Config::get('buuug7.user::qq.client_id'),
+            'redirect_uri' => Config::get('buuug7.user::qq.redirect_uri'),
+            'state' => 'tianqiqqauth',
+            'scope' => 'get_user_info',
+        ]);
+        $authorize_uri = 'https://graph.qq.com/oauth2.0/authorize?' . $query;
+        return Redirect::to($authorize_uri);
     });
-// handle qq callback
+
+    // handle qq callback
     Route::get('login/qq/callback', function () {
-        return Redirect::to('/coming-soon');
+
+        $code = input('code');
+
+        $accessToken = User::getQQUserToken($code);
+
+        $openID = User::getQQUserOpenId($accessToken);
+
+        $qqUser = User::getQQUser($accessToken, Config::get('buuug7.user::qq.client_id'), $openID);
+
+        if (!User::where('qq_id', $openID)->first()) {
+
+            Session::put('accessToken', $accessToken);
+            Session::put('openID', $openID);
+            Session::put('qqUser', $qqUser);
+            return Redirect::to('/user/bind-qq');
+
+        } else {
+
+            $userInstance = User::where('qq_id', $openID)->first();
+            // update user avatar
+            $userInstance->social_avatar = $qqUser->figureurl_qq_2;
+            // update nickname
+            $userInstance->name = $qqUser->nickname;
+            $userInstance->save();
+
+            Auth::login($userInstance);
+        }
+        return Redirect::to('/');
     });
 
 
-//
-// login with weixin
-//
+    //
+    // login with weixin
+    //
 
-// redirect to weixin login
+    // redirect to weixin login
     Route::get('login/weixin', function () {
         return Redirect::to('/coming-soon');
     });
-// handle weixin callback
+    // handle weixin callback
     Route::get('login/weixin/callback', function () {
         return Redirect::to('/coming-soon');
     });
-
 
 
 });

@@ -28,7 +28,11 @@ $this['categories']=\Buuug7\User\Models\Need::getCategories();
 
                         <li class="list-group-item">
                             <div class="list-group-item__info">
+                                {% if need.user.social_avatar %}
+                                <img src="{{ need.user.social_avatar }}" alt="" class="list-group-item__avatar">
+                                {% else %}
                                 <img src="{{ need.user.getAvatarThumb(50)}}" alt="" class="list-group-item__avatar">
+                                {% endif %}
                                 <a href="/show/user/{{ need.user.email }}" class="list-group-item__name color-777">{{ need.user.name }}</a>
                                 <ul class="list-inline-after-slash">
                                     <li><a href="/needs/category/{{ need.category}}">{{ categories[need.category]}}</a></li>

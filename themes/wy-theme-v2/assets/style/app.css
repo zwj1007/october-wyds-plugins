@@ -1759,17 +1759,21 @@ input {
       background-color: #F3F8FB;
       height: 40px; }
       .belogin-page-home .content-holder .content .signup-title h1 {
-        padding-top: 9px; }
+        height: 40px;
+        line-height: 1;
+        position: relative; }
         .belogin-page-home .content-holder .content .signup-title h1 span.do-tips {
           color: #333;
           font-weight: normal;
           font-size: 16px;
           margin-left: 20px; }
         .belogin-page-home .content-holder .content .signup-title h1 .nav_sub {
-          float: right;
           color: #48A8E7;
-          margin-right: 20px;
-          font-size: 14px; }
+          font-size: 14px;
+          top: 50%;
+          right: 10px;
+          position: absolute;
+          transform: translateY(-50%); }
           .belogin-page-home .content-holder .content .signup-title h1 .nav_sub a {
             color: #0580D1;
             font-size: 14px; }

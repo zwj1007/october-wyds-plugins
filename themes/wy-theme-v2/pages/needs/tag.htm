@@ -27,8 +27,8 @@ $this['breadcrumb']='最新信息';
 }
 ==
 <ol class="box breadcrumb ">
-    <li><a href="/">首页</a></li>
-    <li><a href="/gong-qiu-xin-xi">生活信息</a></li>
+    <li><a href="/" target="_blank">首页</a></li>
+    <li><a href="/gong-qiu-xin-xi" target="_blank">生活信息</a></li>
     <li class="">{{ breadcrumb }}</li>
 </ol>
 
@@ -46,7 +46,7 @@ $this['breadcrumb']='最新信息';
 
     <div class="fl-Right float-right">
         <div class="Publish-button">
-            <a href="/needs/need/create"> <i class="fa fa-hand-pointer-o "></i> 点我发布新需求</a>
+            <a href="/needs/need/create" target="_blank"> <i class="fa fa-hand-pointer-o "></i> 点我发布新需求</a>
         </div>
 
         <div class="Column">
@@ -54,12 +54,12 @@ $this['breadcrumb']='最新信息';
                 <div class="Column-header">
                     <i class="fa fa-user-plus"></i>
 
-                    <h3 class="box-title"><a href="#!">招聘信息</a></h3>
+                    <h3 class="box-title"><a href="#!" target="_blank">招聘信息</a></h3>
                 </div>
                 <ul class="Column-body">
                     {% for need in zhaoPin %}
                     <li>
-                        <a href="/needs/need/{{ need.id }}" class="item">
+                        <a href="/needs/need/{{ need.id }}" class="item" target="_blank">
                             <i class="fa fa-sun-o"></i>
                             <span class="">{{ need.title }}</span>
                         </a>
@@ -71,12 +71,12 @@ $this['breadcrumb']='最新信息';
                     <div class="Column-header">
                         <i class="fa fa-user-plus"></i>
 
-                        <h3><a href="#!">二手信息</a></h3>
+                        <h3><a href="#!" target="_blank">二手信息</a></h3>
                     </div>
                     <ul class="Column-body">
                         {% for need in zhaoPin %}
                         <li>
-                            <a href="/needs/need/{{ need.id }}" class="item">
+                            <a href="/needs/need/{{ need.id }}" class="item" target="_blank">
                                 <i class="fa fa-sun-o"></i>
                                 <span class="">{{ need.title }}</span>
                             </a>

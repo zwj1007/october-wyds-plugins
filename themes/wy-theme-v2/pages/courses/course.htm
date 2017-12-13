@@ -91,13 +91,13 @@ $course->save();
             </div>
             <div class="kj-dszx rmkc">
                 <div class="kj-title">
-                    <a href="xspx-list.html"> <span>课程列表</span></a>
+                    <a href="xspx-list.html" target="_blank"> <span>课程列表</span></a>
                 </div>
                 <ul>
                     {% for post in post.relatedPostsAll %}
                     <li>
                         <em class="{% if loop.index <= 5 %}topSpan{% endif %}">{{ loop.index }}</em>
-                        <a href="/courses/course/{{ post.id }}"> <span> {{ post.title }}</span> </a>
+                        <a href="/courses/course/{{ post.id }}" target="_blank"> <span> {{ post.title }}</span> </a>
                     </li>
                     {% endfor %}
                 </ul>
@@ -116,7 +116,7 @@ $course->save();
                 <a href="/courses/course/{{ post.id }}" target="_blank">
                     <img src="{{ post.image|media }}" alt="">
                 </a>
-                <p><a href="/courses/course/{{ post.id }}">{{ post.title }}</a></p>
+                <p><a href="/courses/course/{{ post.id }}" target="_blank">{{ post.title }}</a></p>
             </li>
             {% endfor %}
         </ul>

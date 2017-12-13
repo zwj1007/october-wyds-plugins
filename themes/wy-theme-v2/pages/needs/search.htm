@@ -22,7 +22,7 @@ $this['needs']=\Buuug7\User\Models\Need::search($search);
     <ul class="sou-list margin-bottom-25">
         {% for post in needs %}
         <li>
-            <a class="sou-list-title" href="/needs/need/{{ post.id }}">{{ post.title }}</a>
+            <a class="sou-list-title" href="/needs/need/{{ post.id }}" target="_blank">{{ post.title }}</a>
             <p class="sou-list-des">
                 <small>{{ post.checked_at|time_diff }} / {{ post.user.name }}</small>
             </p>

@@ -144,6 +144,8 @@ class Account extends \RainLab\User\Components\Account
                 throw new ValidationException($validation);
             }
 
+            //trace_log($data);
+
             /*
              * Register user
              */

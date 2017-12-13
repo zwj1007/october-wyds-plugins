@@ -38,7 +38,7 @@
         <div class="checkbox">
             {% for item in town %}
             <label class="w-100">
-                <input type="checkbox" name="towns[]" value="{{ item.id }}">
+                <input type="checkbox" id="locations" name="towns[]" value="{{ item.id }}">
                 {{ item.name }}
             </label>
             {% endfor %}
@@ -52,7 +52,7 @@
         <div class="checkbox">
             {% for item in users %}
             <label class="">
-                <input type="checkbox" name="users[]" value="{{ item.id }}">
+                <input type="checkbox" id="users" name="users[]" value="{{ item.id }}">
                 <span class="small">{{ item.name }}</span>
                 <span class="color-999 small">{{ item.town.name }} / {{ item.village.name }}</span>
             </label>
@@ -63,11 +63,7 @@
     </div>
 
     <div class="form-group">
-        <button
-                type="submit"
-                class="btn btn-default">
-            查询
-        </button>
+        <button type="submit" class="btn btn-default">查询</button>
     </div>
 </form>
 

@@ -11,7 +11,7 @@ function onStart(){
 }
 ==
 <div class="container m-t">
-    
+
     <div class="row">
         <div class="col-md-6">
             {% if not user %}
@@ -51,22 +51,21 @@ function onStart(){
                         <p>
                             <a class="btn btn-social-icon btn-tq m-r-sm" href="/login/tianqi"><i>TQ</i></a>
                             <a class="btn btn-social-icon btn-github m-r-sm" href="/login/github"><i class="fa fa-github"></i></a>
-                            <!--<a class="btn btn-social-icon btn-qq m-r-sm" href="/login/qq"><i class="fa fa-qq"></i></a>
-                            <a class="btn btn-social-icon btn-wechat m-r-sm" href="/login/weixin"><i class="fa fa-wechat"></i></a>-->
+                            <a class="btn btn-social-icon btn-qq m-r-sm" href="/login/qq"><i class="fa fa-qq"></i></a>
+                            <!--<a class="btn btn-social-icon btn-wechat m-r-sm" href="/login/weixin"><i class="fa fa-wechat"></i></a>-->
                         </p>
                     </form>
                 </div>
             </div>
             {% else %}
             <div class="callout callout-danger">
-                <h4>您已经登陆啦!</h4>
-                <p class="m-t">你可以返回 <a href="/">首页</a> , 或者 <a href="/user/center/account">用户中心</a></p>
+                <p>你已经登录了, 点击返回 <a href="/"><i class="fa  fa-mail-reply"></i></a></p>
             </div>
             {% endif %}
         </div>
     </div>
 
-    
+
 
 
 </div>

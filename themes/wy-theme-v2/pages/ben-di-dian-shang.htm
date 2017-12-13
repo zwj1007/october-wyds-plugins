@@ -15,7 +15,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured();
         <ul>
             {% for post in featuredCompanies %}
             <li>
-                <a href="/companies/company/{{ post.id }}">
+                <a href="/companies/company/{{ post.id }}" target="_blank">
                     <img src="{{ post.getAvatarThumb(200) }}" alt="">
                     <p>{{ post.name }}</p>
                 </a>
@@ -31,7 +31,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured();
             <ul>
                 {% for post in companies %}
                 <li>
-                    <a href="/companies/company/{{ post.id }}">
+                    <a href="/companies/company/{{ post.id }}" target="_blank">
                         <img src="{{ post.getAvatarThumb(200) }}" alt="">
                         <p>{{ post.name }}</p>
                     </a>

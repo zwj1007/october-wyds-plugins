@@ -21,14 +21,14 @@ $this['categories']=\Buuug7\Courses\Models\Category::getNested();
 
 <section class="box xspx-list-classify-wy-v1 clearfix ">
     <ol class=" breadcrumb">
-        <li><a href="/">首页</a></li>
+        <li><a href="/" target="_blank">首页</a></li>
         <li class="active">线上培训</li>
     </ol>
 
     {% for category in categories %}
     {% for child in category.children %}
     <div class="thumbnail ">
-        <a href="/courses/categories/{{ child.slug }}">
+        <a href="/courses/categories/{{ child.slug }}" target="_blank">
             {% if child.image %}
             <img src="{{ child.image|media }}" style="max-width: 100%" alt="">
             {% else %}
@@ -44,8 +44,8 @@ $this['categories']=\Buuug7\Courses\Models\Category::getNested();
                 共包含 {{ child.courses.count }} 课时
             </p>
             <p>
-                <a href="/courses/categories/{{ child.slug }}" class="btn btn-warning margin-bottom-10"><i class="fa fa-book margin-right-5"></i>开始学习</a>
-                <a href="/courses/categories/{{ child.slug }}" class="btn btn-line-success margin-bottom-10"><i class="fa fa-star-o margin-right-5"></i>点击收藏</a>
+                <a href="/courses/categories/{{ child.slug }}" class="btn btn-warning margin-bottom-10" target="_blank"><i class="fa fa-book margin-right-5"></i>开始学习</a>
+                <a href="/courses/categories/{{ child.slug }}" class="btn btn-line-success margin-bottom-10" target="_blank"><i class="fa fa-star-o margin-right-5"></i>点击收藏</a>
             </p>
         </div>
     </div>

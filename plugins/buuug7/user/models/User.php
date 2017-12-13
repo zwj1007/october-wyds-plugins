@@ -5,11 +5,70 @@ use October\Rain\Support\Facades\Config;
 
 class User extends \RainLab\User\Models\User
 {
+    //
+    // qq auth
+    //
+    public static function getQQUserToken($code)
+    {
+        $http = new Client();
+        $tokenAPI = 'https://graph.qq.com/oauth2.0/token';
+
+        $response = $http->request('GET', $tokenAPI, [
+            'query' => [
+                'grant_type' => 'authorization_code',
+                'client_id' => Config::get('buuug7.user::qq.client_id'),
+                'client_secret' => Config::get('buuug7.user::qq.client_secret'),
+                'redirect_uri' => Config::get('buuug7.user::qq.redirect_uri'),
+                'code' => $code,
+            ],
+        ]);
+        $result = $response->getBody();
+        $accessToken = explode('&', explode('=', $result)[1])[0];
+        return $accessToken;
+    }
+
+    public static function getQQUserOpenId($token)
+    {
+        $openID_API = 'https://graph.qq.com/oauth2.0/me';
+        $http = new Client();
+
+        $response = $http->request('GET', $openID_API, [
+            'query' => [
+                'access_token' => $token,
+            ],
+        ]);
+
+        $str = $response->getBody();
+        $lpos = strpos($str, "(");
+        $rpos = strrpos($str, ")");
+        $str = substr($str, $lpos + 1, $rpos - $lpos - 1);
+        $json = json_decode($str);
+
+        $openid = $json->openid;
+
+        return $openid;
+    }
+
+    public static function getQQUser($token, $appID, $openID)
+    {
+        $userApi = 'https://graph.qq.com/user/get_user_info';
+        $http = new Client();
+
+        $response = $http->request('GET', $userApi, [
+            'query' => [
+                'access_token' => $token,
+                'oauth_consumer_key' => $appID,
+                'openid' => $openID,
+            ],
+        ]);
+
+        return json_decode($response->getBody());
+    }
 
     public static function getTianQiUserToken($code)
     {
         $http = new Client();
-        $response = $http->post('http://7.jq2.com/oauth/token', [
+        $response = $http->post('http://user.tq0.com/oauth/token', [
             'form_params' => [
                 'grant_type' => 'authorization_code',
                 'client_id' => Config::get('buuug7.user::tianqi.client_id'),
@@ -24,7 +83,7 @@ class User extends \RainLab\User\Models\User
 
     public static function getTianQiUserByToken($token)
     {
-        $userApi = 'http://7.jq2.com/api/user';
+        $userApi = 'http://user.tq0.com/api/user';
         $http = new Client();
         $response = $http->get($userApi, [
             'headers' => [
