@@ -14,7 +14,6 @@ fields:
     description:
         label: 店铺描述
         type: richeditor
-        size: large
 
 secondaryTabs:
     fields:

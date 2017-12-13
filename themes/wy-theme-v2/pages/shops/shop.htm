@@ -10,8 +10,10 @@ layout = 'default'
         {% if shop.checked %}
         <div class=" see-left float-left">
             <h4>{{ shop.name }}</h4>
+            {% if user %}
             {% if user.id == shop.user.id %}
             <p style="color:green">您提交的店铺信息已经通过审核</p>
+            {% endif %}
             {% endif %}
             {{ shop.description|raw }}
         </div>
@@ -32,33 +34,33 @@ layout = 'default'
                 </div>
                 {% endif %}
                 {% if user.id == shop.user.id %}
-                    {% if not shop.checked %}
-                        <div class="seeR-title">
-                            <strong> 店铺审核状态</strong>
-                        </div>
-                        {% if shop.status == 'committed' %}
-                        <div class="alert alert-info">
-                            <i class="fa fa-spinner fa-pulse margin-left-right-10"></i> <span>您的店铺信息已经提交,我们将尽快审核.</span>
-                        </div>
-                        {% elseif shop.status == 'checking' %}
-                        <div class="alert alert-info">
-                            <i class="fa fa-spinner fa-pulse margin-left-right-10"></i> <span>审核进行中，请注意查看。</span>
-                        </div>
-                        {% elseif shop.status == 'passed' %}
-                        <div class="alert alert-success">
-                            <i class="fa fa-american-sign-language-interpreting margin-left-right-10 "></i>
-                            <span>恭喜,您提交的店铺信息已经通过审核,我们将会在店铺中心展示您的店铺</span>
-                        </div>
-                        {% elseif shop.status == 'not_passed' %}
-                        <div class="callout callout-danger">
-                            <h4>审核未通过</h4>
-                            <p>
-                                <strong>原因:</strong>
-                                {{ shop.not_passed_message }}
-                            </p>
-                        </div>
-                        {% endif %}
-                    {% endif %}
+                {% if not shop.checked %}
+                <div class="seeR-title">
+                    <strong> 店铺审核状态</strong>
+                </div>
+                {% if shop.status == 'committed' %}
+                <div class="alert alert-info">
+                    <i class="fa fa-spinner fa-pulse margin-left-right-10"></i> <span>您的店铺信息已经提交,我们将尽快审核.</span>
+                </div>
+                {% elseif shop.status == 'checking' %}
+                <div class="alert alert-info">
+                    <i class="fa fa-spinner fa-pulse margin-left-right-10"></i> <span>审核进行中，请注意查看。</span>
+                </div>
+                {% elseif shop.status == 'passed' %}
+                <div class="alert alert-success">
+                    <i class="fa fa-american-sign-language-interpreting margin-left-right-10 "></i>
+                    <span>恭喜,您提交的店铺信息已经通过审核,我们将会在店铺中心展示您的店铺</span>
+                </div>
+                {% elseif shop.status == 'not_passed' %}
+                <div class="callout callout-danger">
+                    <h4>审核未通过</h4>
+                    <p>
+                        <strong>原因:</strong>
+                        {{ shop.not_passed_message }}
+                    </p>
+                </div>
+                {% endif %}
+                {% endif %}
                 {% endif %}
             </div>
 
