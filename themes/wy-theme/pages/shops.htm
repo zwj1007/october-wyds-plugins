@@ -31,7 +31,6 @@ $this['featuredShops']=\Buuug7\User\Models\Shop::displayFeatured();
                 <img src="{{ shop.getAvatarThumb(400,200) }}" alt="">
                 <div class="caption">
                     <h4>{{ shop.name }}</h4>
-                    <p class="color-777">{{ str_limit(shop.description, 56, '...') }}</p>
                     <p>
                         <a href="/shops/shop/{{ shop.id }}" class="btn btn-primary">查看</a>
                     </p>
@@ -50,7 +49,6 @@ $this['featuredShops']=\Buuug7\User\Models\Shop::displayFeatured();
                 <img src="{{ shop.getAvatarThumb(400,200) }}" alt="">
                 <div class="caption">
                     <h4>{{ shop.name }}</h4>
-                    <p>{{ str_limit(shop.description, 30, '...') }}</p>
                     <p>
                         <a href="/shops/shop/{{ shop.id }}" class="btn btn-primary">查看</a>
                     </p>
