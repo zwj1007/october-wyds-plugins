@@ -13,8 +13,7 @@ fields:
         placeholder: 店铺地址
     description:
         label: 店铺描述
-        type: textarea
-        size: large
+        type: richeditor
 
 secondaryTabs:
     fields:
