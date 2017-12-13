@@ -13,6 +13,7 @@ layout = 'default'
                     {{ shop.name }}
                 </div>
                 <div class="panel-body">
+                    {% if user %}
                     {% if user.id == shop.user.id %}
                     {% if not shop.checked %}
                     {% if shop.status == 'committed' %}
@@ -37,6 +38,7 @@ layout = 'default'
                             {{ shop.not_passed_message }}
                         </p>
                     </div>
+                    {% endif %}
                     {% endif %}
                     {% endif %}
                     {% endif %}
