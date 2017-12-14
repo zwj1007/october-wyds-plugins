@@ -477,10 +477,12 @@
       ul li {
         margin: 10px 40px;
         list-style: square;
+        line-height: 22px;
       }
-      ol {
+      ol li {
         list-style: decimal;
-        margin-left: 40px;
+        margin: 10px 40px;
+        line-height: 22px;
       }
 
     }
