@@ -2305,7 +2305,14 @@ input {
       margin: 10px 0 18px 20px; }
     .dp-see .content .see-left p {
       line-height: 40px;
-      font-size: 14px; }
+      font-size: 14px;
+      text-indent: 2em; }
+    .dp-see .content .see-left ul li {
+      margin: 10px 40px;
+      list-style: square; }
+    .dp-see .content .see-left ol {
+      list-style: decimal;
+      margin-left: 40px; }
   .dp-see .content .see-right {
     width: 400px;
     margin-left: 55px; }

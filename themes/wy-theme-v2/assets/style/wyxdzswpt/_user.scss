@@ -370,7 +370,6 @@
         .callout-danger {
           p {
             line-height: 25px;
-
           }
         }
       }
@@ -473,7 +472,17 @@
       p {
         line-height: 40px;
         font-size: 14px;
+        text-indent: 2em
       }
+      ul li {
+        margin: 10px 40px;
+        list-style: square;
+      }
+      ol {
+        list-style: decimal;
+        margin-left: 40px;
+      }
+
     }
     .see-right {
       width: 400px;
