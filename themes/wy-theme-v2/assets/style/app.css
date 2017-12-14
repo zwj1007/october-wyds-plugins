@@ -1365,12 +1365,11 @@ header {
   box-shadow: 1px 1px 4px 1px #d7d7d7;
   padding: 15px; }
   .xspx-list-wy-v1 .cbp-l-filters-alignCenter {
-    padding-top: 12px;
-    text-align: left !important; }
+    padding-top: 15px;
+    text-align: left !important;
+    margin-bottom: 20px !important; }
     .xspx-list-wy-v1 .cbp-l-filters-alignCenter .cbp-filter-counter {
       padding: 0; }
-    .xspx-list-wy-v1 .cbp-l-filters-alignCenter .cbp-filter-item:hover .cbp-filter-counter {
-      bottom: 4px; }
   .xspx-list-wy-v1 .cbp-l-grid-work .cbp-item-wrapper {
     padding-bottom: 0; }
     .xspx-list-wy-v1 .cbp-l-grid-work .cbp-item-wrapper .cbp-l-grid-work-desc {

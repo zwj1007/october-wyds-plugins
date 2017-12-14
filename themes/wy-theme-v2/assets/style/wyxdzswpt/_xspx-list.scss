@@ -44,15 +44,13 @@
   box-shadow: 1px 1px 4px 1px #d7d7d7;
   padding: 15px;
   .cbp-l-filters-alignCenter {
-    padding-top: 12px;
+    padding-top: 15px;
     text-align: left !important;
+    margin-bottom: 20px!important;
     .cbp-filter-counter {
       padding: 0;
     }
-    .cbp-filter-item:hover .cbp-filter-counter {
-      bottom: 4px;
-      //bottom:26px
-    }
+
   }
 
   .cbp-l-grid-work {
