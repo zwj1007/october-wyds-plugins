@@ -49,23 +49,7 @@
                     float: left;
                     margin: 5px;
 
-                    .form-type {
-                        height: 29px;
-                        margin: 5px;
-                        border-bottom: 1px solid #BAD0DB;
-                        .btn-per, .btn-org {
-                            width: 100px;
-                            height: 30px;
-                            float: left;
-                        }
-                        .btn-per:hover, .btn-org:hover, .btn-per-hover, .btn-org-hover {
-                            background: #55C6E4;
-                            border: 1px solid #55C6E4;
-                            background-color: #23b2da;
-                            color: #fff;
-                            font-size: 14px;
-                        }
-                    }
+
                 }
                 .tip-box-contain {
                     width: 25%;
@@ -175,7 +159,7 @@
     }
 
     .form-body {
-        padding: 10px 0px;
+        padding: 10px 0;
     }
 
     .form-body dl {

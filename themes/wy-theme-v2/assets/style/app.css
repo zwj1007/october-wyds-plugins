@@ -1786,20 +1786,6 @@ input {
         width: 70%;
         float: left;
         margin: 5px; }
-        .belogin-page-home .content-holder .content .signup-main .form-contain .form-type {
-          height: 29px;
-          margin: 5px;
-          border-bottom: 1px solid #BAD0DB; }
-          .belogin-page-home .content-holder .content .signup-main .form-contain .form-type .btn-per, .belogin-page-home .content-holder .content .signup-main .form-contain .form-type .btn-org {
-            width: 100px;
-            height: 30px;
-            float: left; }
-          .belogin-page-home .content-holder .content .signup-main .form-contain .form-type .btn-per:hover, .belogin-page-home .content-holder .content .signup-main .form-contain .form-type .btn-org:hover, .belogin-page-home .content-holder .content .signup-main .form-contain .form-type .btn-per-hover, .belogin-page-home .content-holder .content .signup-main .form-contain .form-type .btn-org-hover {
-            background: #55C6E4;
-            border: 1px solid #55C6E4;
-            background-color: #23b2da;
-            color: #fff;
-            font-size: 14px; }
       .belogin-page-home .content-holder .content .signup-main .tip-box-contain {
         width: 25%;
         _width: 200px;
@@ -1878,7 +1864,7 @@ input {
     background: #FF4400;
     color: #ffffff; }
   .belogin-page-home .form-body {
-    padding: 10px 0px; }
+    padding: 10px 0; }
   .belogin-page-home .form-body dl {
     display: inline-block;
     margin: 0;

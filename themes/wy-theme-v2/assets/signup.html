@@ -32,203 +32,6 @@
                 </div>
                 <div class="signup-main">
                     <div class="form-contain">
-                        <div class="form-type">
-                            <input type="button" class="btn-per" id="btn-per" style="margin-left: 40px;"
-                                   value="企业注册"> <input type="button" class="btn-org" id="btn-org" value="园区注册">
-                            <input type="button" class="btn-org btn-org-hover" id="btn-peo" value="个人注册">
-                        </div>
-
-                        <div class="form_per_contain" id="form_per_contain" style="display: none;">
-                            <form action="#" method="post" id="register_form_per" novalidate="novalidate">
-                                <div class="form-body form-signup-body">
-
-                                    <dl>
-                                        <dt>
-                                            <em>*</em>&nbsp;组织机构代码：
-                                        </dt>
-                                        <dd>
-                                            <input id="login_name_per" name="login_name" type="text"
-                                                   maxlength="25"
-                                                   class="input">
-                                        </dd>
-                                        <dd class="check_rule">如无组织机构代码证号，请填写统一社会信用代码。</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>
-                                            <em>*</em>&nbsp;企业名称：
-                                        </dt>
-                                        <dd>
-                                            <input id="nickname_per" name="nickname" type="text" class="input">
-                                        </dd>
-                                        <dd class="check_rule">不能超过20个字符串，汉字算一个字符</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>
-                                            <em>*</em>&nbsp;邮箱：
-                                        </dt>
-                                        <dd>
-                                            <input id="email_per" name="login_email" type="text" class="input">
-                                        </dd>
-                                        <dd class="check_rule">该邮箱用于账号激活及登录。</dd>
-                                    </dl>
-                                    <dl style="width: 640px;">
-                                        <dt>
-                                            <em>*</em>&nbsp;登录密码：
-                                        </dt>
-                                        <dd>
-                                            <input id="password_per" name="password" type="password"
-                                                   class="input ">
-                                        </dd>
-                                        <dd class="check_rule">密码由6-15位字母、数字或特殊符号组成</dd>
-                                    </dl>
-
-                                    <dl>
-                                        <dt>
-                                            <em>*</em>&nbsp;确认密码：
-                                        </dt>
-                                        <dd>
-                                            <input id="confirm_password_per" name="confirm_password"
-                                                   type="password"
-                                                   class="input">
-                                        </dd>
-                                        <dd class="check_rule">请再次输入您设置的密码</dd>
-                                    </dl>
-
-                                    <dl style="display: none;">
-                                        <select name="user_type" id="user_type_per" class="select">
-                                            <option value="80" checked="true">企业</option>
-                                        </select>
-                                    </dl>
-                                    <dl>
-                                        <dt>
-                                            <em>*</em>&nbsp;验证码：
-                                        </dt>
-                                        <dd>
-                                            <input id="checknum_per" name="checknum" type="text" class="input"
-                                                   style="width: 100px; padding: 0px 0px 0px 2px;" value="">
-                                            &nbsp;
-                                            <a href="javascript:changeVerify_per();" hidefocus="hidefocus"> <img
-                                                    src="http://www.sdec.gov.cn/ucweb/index/verify.htm&amp;_=1491979813433"
-                                                    id="verifyImg_per" alt="换一张">
-                                            </a>&nbsp; <a href="javascript:changeVerify_per();"
-                                                          style="font-size: 12px;"
-                                                          hidefocus="hidefocus">看不清楚可换一个</a> <input
-                                                id="verifycode_hid_p" type="hidden" value="1955">
-                                        </dd>
-                                    </dl>
-
-                                    <dl>
-                                        <dt></dt>
-                                        <input id="passwordStrength_per" name="passwordStrength" type="text"
-                                               class="input" style="display: none" value="1">
-                                    </dl>
-                                </div>
-                                <div class="form-submit">
-                                    <dl>
-                                        <dd style="text-align: center;">
-                                            <input type="button" value="立&nbsp;即&nbsp;注&nbsp;册" class="btn-reg"
-                                                   id="btn-submit_per">
-                                        </dd>
-                                    </dl>
-                                </div>
-                            </form>
-                        </div>
-
-                        <div class="form_org_contain" style="display: none;" id="form_org_contain">
-                            <form action="#" method="post" id="register_form_org" novalidate="novalidate">
-                                <div class="form-body form-signup-body">
-                                    <dl>
-                                        <dt>
-                                            <em>*</em>&nbsp;组织机构代码：
-                                        </dt>
-                                        <dd>
-                                            <input id="login_name_org" name="login_name" type="text"
-                                                   maxlength="25"
-                                                   class="input">
-                                        </dd>
-                                        <dd class="check_rule">如无组织机构代码证号，请填写统一社会信用代码。</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>
-                                            <em>*</em>&nbsp;园区名称：
-                                        </dt>
-                                        <dd>
-                                            <input id="nickname_org" name="nickname" type="text" class="input">
-                                        </dd>
-                                        <dd class="check_rule">不能超过20个字符串，汉字算一个字符</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>
-                                            <em>*</em>&nbsp;邮箱：
-                                        </dt>
-                                        <dd>
-                                            <input id="email_org" name="login_email" type="text" class="input">
-                                        </dd>
-                                        <dd class="check_rule">该邮箱用于账号激活及登录。</dd>
-                                    </dl>
-                                    <dl style="width: 640px;">
-                                        <dt>
-                                            <em>*</em>&nbsp;登录密码：
-                                        </dt>
-                                        <dd>
-                                            <input id="password_org" name="password" type="password"
-                                                   class="input ">
-                                        </dd>
-                                        <dd class="check_rule">密码由6-15位字母、数字或特殊符号组成</dd>
-                                    </dl>
-
-                                    <dl>
-                                        <dt>
-                                            <em>*</em>&nbsp;确认密码：
-                                        </dt>
-                                        <dd>
-                                            <input id="confirm_password_org" name="confirm_password"
-                                                   type="password"
-                                                   class="input">
-                                        </dd>
-                                        <dd class="check_rule">请再次输入您设置的密码</dd>
-                                    </dl>
-
-                                    <dl style="display: none;">
-                                        <select name="user_type" id="user_type_org" class="select">
-                                            <option value="81" checked="true">园区</option>
-                                        </select>
-                                    </dl>
-                                    <dl>
-                                        <dt>
-                                            <em>*</em>&nbsp;验证码：
-                                        </dt>
-                                        <dd>
-                                            <input id="checknum_org" name="checknum" type="text" class="input"
-                                                   style="width: 100px; padding: 0px 0px 0px 2px;" value="">
-                                            &nbsp;
-                                            <a href="javascript:changeVerify_org();" hidefocus="hidefocus"> <img
-                                                    src="http://www.sdec.gov.cn/ucweb/index/verify.htm&amp;_=1491979818420"
-                                                    id="verifyImg_org" alt="换一张">
-                                            </a>&nbsp; <a href="javascript:changeVerify_org();"
-                                                          style="font-size: 12px;"
-                                                          hidefocus="hidefocus">看不清楚可换一个</a> <input
-                                                id="verifycode_hid_o" type="hidden" value="8293">
-                                        </dd>
-                                    </dl>
-
-                                    <dl>
-                                        <dt></dt>
-                                        <input id="passwordStrength_org" name="passwordStrength" type="text"
-                                               class="input" style="display: none" value="1">
-                                    </dl>
-                                </div>
-                                <div class="form-submit">
-                                    <dl>
-                                        <dd style="text-align: center;">
-                                            <input type="button" value="立&nbsp;即&nbsp;注&nbsp;册" class="btn-reg"
-                                                   id="btn-submit_org">
-                                        </dd>
-                                    </dl>
-                                </div>
-                            </form>
-                        </div>
-
                         <div class="form_org_contain" id="form_peo_contain" style="display: block;">
                             <form action="#" method="post" id="register_form_peo" novalidate="novalidate">
                                 <div class="form-body form-signup-body">
@@ -242,16 +45,6 @@
                                                    class="input">
                                         </dd>
                                         <dd class="check_rule">以字母开头，允许使用字母数字下划线，5-20位组成</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>
-                                            <em>*</em>&nbsp;昵称：
-                                        </dt>
-                                        <dd>
-                                            <input id="nickname_peo" name="nickname" type="text" class="input">
-                                        </dd>
-
-                                        <dd class="check_rule">不能超过20个字符串，汉字算一个字符</dd>
                                     </dl>
                                     <dl>
                                         <dt>
@@ -324,7 +117,6 @@
                                 </div>
                             </form>
                         </div>
-
                     </div>
                     <div class="tip-box-contain">
                         <div class="title">
@@ -336,11 +128,9 @@
                             <ul>
                                 <li><span>1. 注册的账号需要通过邮件激活之后才能使用，请正确填写您的邮箱。</span>
                                 </li>
-                                <li><span>2. 可以使用用户名、手机号、邮箱任意一个进行登录。</span>
+                                <li><span>2. 注册账号信息显示成功后请用户根据注册的邮箱号进行登录。</span>
                                 </li>
-                                <li><span>3. 昵称是登录后显示的用户名，账号申请成功后可以修改昵称。 </span>
-                                </li>
-                                <li><span>4. 以上信息对于保护您的账号安全极为重要，请您慎重填写并牢记。 </span>
+                                <li><span>3. 以上信息对于保护您的账号安全极为重要，请您慎重填写并牢记。 </span>
                                 </li>
                             </ul>
                         </div>
