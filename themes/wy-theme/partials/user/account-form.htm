@@ -1,7 +1,7 @@
 {{ form_ajax('onUpdate', { model: user, class: 'form-horizontal' }) }}
 
 <div class="form-group">
-    <label for="accountName" class="control-label col-sm-2">名称</label>
+    <label for="accountName" class="control-label col-sm-2">昵称</label>
     <div class="col-sm-10">
         <input name="name" type="text" class="form-control" id="accountName" value="{{ form_value('name') }}">
     </div>
@@ -11,6 +11,27 @@
     <label for="accountEmail" class="control-label col-sm-2">邮箱</label>
     <div class="col-sm-10">
         <input name="email" type="email" class="form-control" id="accountEmail" value="{{ form_value('email') }}" disabled>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="accountIdCardNumber" class="control-label col-sm-2">身份证号码</label>
+    <div class="col-sm-10">
+        <input name="id_card_number" type="text" class="form-control" id="accountIdCardNumber" value="{{ form_value('id_card_number') }}">
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="accountPhoneNumber" class="control-label col-sm-2">手机号码</label>
+    <div class="col-sm-10">
+        <input name="phone_number" type="text" class="form-control" id="accountPhoneNumber" value="{{ form_value('phone_number') }}">
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="accountHomeAddress" class="control-label col-sm-2">家庭住址</label>
+    <div class="col-sm-10">
+        <input name="home_address" type="text" class="form-control" id="accountHomeAddress" value="{{ form_value('home_address') }}">
     </div>
 </div>
 
