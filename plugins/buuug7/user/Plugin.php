@@ -76,13 +76,27 @@ class Plugin extends PluginBase
         Carbon::setLocale('zh');
 
         UserModel::extend(function ($model) {
-            /*$model->addFillable([
+            $model->addFillable([
                 'county_id',
                 'town_id',
-                'village_id'
-            ]);*/
+                'village_id',
+                'id_card_number',
+                'phone_number',
+                'home_address'
+            ]);
             $model->attributeNames['email'] = '电子邮箱';
             $model->attributeNames['password'] = '密码';
+            $model->attributeNames['username'] = '用户名';
+
+            $model->attributeNames['id_card_number'] = '身份证号码';
+            $model->attributeNames['phone_number'] = '手机号码';
+            $model->attributeNames['home_address'] = '家庭住址';
+
+            $model->rules = array_merge($model->rules,[
+                'id_card_number' => 'nullable|string|size:18',
+                'phone_number' => 'nullable|string|size:11',
+                'home_address' => 'nullable|max:100',
+            ]);
 
             $model->implement[] = 'Buuug7.Location.Behaviors.LocationModel';
             $model->hasMany['companies'] = ['Buuug7\User\Models\Company', 'table' => 'buuug7_user_companies'];

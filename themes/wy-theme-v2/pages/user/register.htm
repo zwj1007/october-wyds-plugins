@@ -35,52 +35,68 @@ paramCode = "code"
                         {% if not user %}
                         <div class="form_org_contain" id="form_peo_contain" style="display: block;">
                             <form
-                                    data-request="onRegister"
-                                    data-request-flash
+                                data-request="onRegister"
+                                data-request-flash
                             >
                                 <div class="form-body form-signup-body">
 
-                                    <dl>
-                                        <dt>
-                                            <em>*</em>&nbsp;用户名：
-                                        </dt>
-                                        <dd>
-                                            <input
-                                                    name="name"
-                                                    type="text"
-                                                    class="input"
-                                                    id="registerName"
-                                                    placeholder="输入你的用户名">
-                                        </dd>
-                                        <dd class="form-tip"></dd>
-                                        <dd class="check_rule">以字母开头，允许使用字母数字下划线，5-20位组成</dd>
-                                    </dl>
                                     <dl>
                                         <dt>
                                             <em>*</em>&nbsp;邮箱：
                                         </dt>
                                         <dd>
                                             <input
-                                                    name="email"
-                                                    type="email"
-                                                    class="input"
-                                                    id="registerEmail"
-                                                    placeholder="输入你的电子邮箱"/>
+                                                name="email"
+                                                type="email"
+                                                class="input"
+                                                id="registerEmail"
+                                                placeholder="输入你的电子邮箱"/>
                                         </dd>
                                         <dd class="form-tip"></dd>
                                         <dd class="check_rule">该邮箱用于账号激活及登录。</dd>
                                     </dl>
+                                    <dl>
+                                        <dt>
+                                            <em>*</em>用户名：
+                                        </dt>
+                                        <dd>
+                                            <input
+                                                name="username"
+                                                type="text"
+                                                class="input"
+                                                id="registerUsername"
+                                                placeholder="输入你的用户名">
+                                        </dd>
+                                        <dd class="form-tip"></dd>
+                                        <dd class="check_rule">以字母开头，允许使用字母数字下划线，5-20位组成</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>
+                                            昵称：
+                                        </dt>
+                                        <dd>
+                                            <input
+                                                name="name"
+                                                type="text"
+                                                class="input"
+                                                id="registerName"
+                                                placeholder="输入你的用户名">
+                                        </dd>
+                                        <dd class="form-tip"></dd>
+                                        <dd class="check_rule">以字母开头，允许使用字母数字下划线，5-20位组成</dd>
+                                    </dl>
+
                                     <dl style="width: 640px;">
                                         <dt>
                                             <em>*</em>&nbsp;登录密码：
                                         </dt>
                                         <dd>
                                             <input
-                                                    name="password"
-                                                    type="password"
-                                                    class="input"
-                                                    id="registerPassword"
-                                                    placeholder="输入密码"/>
+                                                name="password"
+                                                type="password"
+                                                class="input"
+                                                id="registerPassword"
+                                                placeholder="输入密码"/>
                                         </dd>
                                         <dd class="form-tip" style=" line-height: 20px;"></dd>
                                         <dd class="check_rule">密码由6-15位字母、数字或特殊符号组成</dd>
@@ -92,11 +108,11 @@ paramCode = "code"
                                         </dt>
                                         <dd>
                                             <input
-                                                    name="password_confirmation"
-                                                    type="password"
-                                                    class="input"
-                                                    id="registerPasswordConfirmation"
-                                                    placeholder="输入密码"/>
+                                                name="password_confirmation"
+                                                type="password"
+                                                class="input"
+                                                id="registerPasswordConfirmation"
+                                                placeholder="输入密码"/>
                                         </dd>
                                         <dd class="form-tip"></dd>
                                         <dd class="check_rule">请再次输入您设置的密码</dd>

@@ -18,3 +18,6 @@
 1.0.6:
     - fix upgrade problem
     - create_user_roles_table.php
+1.0.7:
+    - user add more fields
+    - user_add_more_fields.php

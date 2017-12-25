@@ -2,24 +2,40 @@
 #  Extended Profile Field Definitions
 # ===================================
 
+id_card_number:
+    label: 身份证号码
+    placeholder: 身份证号码
+    tab: 个人资料
+    span: auto
+phone_number:
+    label: 手机号码
+    placeholder: 手机号码
+    tab: 个人资料
+    span: auto
+home_address:
+    label: 家庭住址
+    placeholder: 家庭住址
+    tab: 个人资料
+    span: auto
+
 county:
     label: 县城
     placeholder: 选择县城
     type: dropdown
-    tab: 个人资料
+    tab: 位置
     span: auto
 town:
     label: 乡镇
     placeholder: 选择乡镇
     type: dropdown
-    tab: 个人资料
+    tab: 位置
     span: auto
     dependsOn: county
 village:
     label: 村庄
     placeholder: 选择村庄
     type: dropdown
-    tab: 个人资料
+    tab: 位置
     span: auto
     dependsOn: town
 permissions:
