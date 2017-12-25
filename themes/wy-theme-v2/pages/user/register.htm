@@ -8,12 +8,6 @@ paramCode = "code"
 ==
 
 <div class=" belogin-page-home">
-    <div class="header-holder">
-        <div class="common-header">
-
-        </div>
-
-    </div>
     <div class="content-holder">
         <div class="content">
             <div class="signup-center">
@@ -33,7 +27,7 @@ paramCode = "code"
 
                     <div class="form-contain">
                         {% if not user %}
-                        <div class="form_org_contain" id="form_peo_contain" style="display: block;">
+                      <!--  <div class="form_org_contain" id="form_peo_contain" style="display: block;">-->
                             <form
                                 data-request="onRegister"
                                 data-request-flash
@@ -128,7 +122,7 @@ paramCode = "code"
                                     </dl>
                                 </div>
                             </form>
-                        </div>
+                      <!--  </div>-->
                         {% else %}
                         <h4 style="color:red;">您已经登陆啦!</h4>
                         <p class="m-t">你可以返回 <a href="/">首页</a> , 或者 <a href="/user/center/account">用户中心</a></p>
@@ -144,11 +138,9 @@ paramCode = "code"
                             <ul>
                                 <li><span>1. 注册的账号需要通过邮件激活之后才能使用，请正确填写您的邮箱。</span>
                                 </li>
-                                <li><span>2. 可以使用用户名、手机号、邮箱任意一个进行登录。</span>
+                                <li><span>2. 注册显示成功后用户可以使用用户名、邮箱任意一个进行登录。</span>
                                 </li>
-                                <li><span>3. 昵称是登录后显示的用户名，账号申请成功后可以修改昵称。 </span>
-                                </li>
-                                <li><span>4. 以上信息对于保护您的账号安全极为重要，请您慎重填写并牢记。 </span>
+                                <li><span>3. 以上信息对于保护您的账号安全极为重要，请您慎重填写并牢记。 </span>
                                 </li>
                             </ul>
                         </div>
