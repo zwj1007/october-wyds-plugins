@@ -3,7 +3,9 @@
 use Backend\Models\ImportModel;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Storage;
 use League\Csv\Reader;
+use League\Csv\Writer;
 use October\Rain\Exception\ValidationException;
 use RainLab\User\Facades\Auth;
 use RainLab\User\Models\UserGroup;
@@ -39,11 +41,23 @@ class ImportUsers extends Command
 
         $created_at = Carbon::now();
 
-        $nbInsert = $csv->each(function ($row) use ($bar, $created_at) {
+        // writer
+        $writer = Writer::createFromFileObject(new \SplTempFileObject()); //the CSV file will be created using a temporary File
+        $writer->setDelimiter("\t"); //the delimiter will be the tab character
+        $writer->setNewline("\r\n"); //use windows line endings for compatibility with some csv libraries
+        $writer->setOutputBOM(Writer::BOM_UTF8); //adding the BOM sequence on output
+        $header = ["序号", "姓名", "家庭住址", "身份证号", "联系电话", "是否建档立卡户", "是否从业或创业", "", "", "错误消息"];
+        $writer->insertOne($header);
+
+
+        $nbInsert = $csv->each(function ($row) use ($bar, $created_at, $writer) {
             $created_at = $created_at->subHour(1);
             $bar->advance();
-            return $this->createUser($row, $created_at);
+            return $this->createUser($row, $created_at, $writer);
         });
+
+        $file =$writer->toHTML('table-csv-data with-header');
+        Storage::put('error.html',$file);
     }
 
 
@@ -53,12 +67,12 @@ class ImportUsers extends Command
      * @param $created_at user created time
      * @return bool
      */
-    protected function createUser($row, $created_at)
+    protected function createUser($row, $created_at, $writer)
     {
         $name = $row[1];
         $home_address = $row[2];
         $id_card_number = $row[3];
-        $phone_number = $row[4] ? $row[4] : null;
+        $phone_number = trim($row[4]) ? trim($row[4]) : null;
         // 邮箱基于手机号码，格式为 手机号码@qq.com
         $email = $phone_number ? $phone_number . '@qq.com' : null;
         // 手机号码后六位
@@ -67,23 +81,24 @@ class ImportUsers extends Command
         // 邮箱不存在直接跳过
         if (!$email) {
             $this->output->writeln('');
-            $this->error(' 邮箱为空，跳过添加！');
-            $row[] = ' 邮箱为空，跳过添加！';
-            trace_log($row);
+            $this->error(' 手机号码为空，跳过添加！');
+            $row[] = ' 手机号码为空，跳过添加！';
+            $writer->insertOne($row);
             return true;
         } else {
 
             $user = Auth::findUserByLogin($email);
             // 如果用户存在，直接跳过
             if ($user) {
-                $this->error(' 邮箱已经存在，跳过添加！');
-                $row[] = ' 邮箱已经存在，跳过添加！';
-                trace_log($row);
+                $this->error(' 手机号码已经存在，跳过添加！');
+                $row[] = ' 手机号码已经存在，跳过添加！';
+                $writer->insertOne($row);
                 return true;
             } else {
                 try {
                     $u = Auth::register([
                         'name' => $name,
+                        'username' => $phone_number,
                         'email' => $email,
                         'password' => $password,
                         'password_confirmation' => $password,
@@ -94,13 +109,14 @@ class ImportUsers extends Command
                     $u->created_at = $created_at;
                     $u->activated_at = $created_at->addMinute(30);
                     $u->save();
+
                     $peiXunGroup = UserGroup::where('code', 'pei-xun-yong-hu-zu')->first();
                     if ($peiXunGroup) {
                         $u->groups()->attach($peiXunGroup->id);
                     }
                 } catch (ValidationException $e) {
                     $row[] = $e->getMessage();
-                    trace_log($row);
+                    $writer->insertOne($row);
                     return true;
                 }
 
