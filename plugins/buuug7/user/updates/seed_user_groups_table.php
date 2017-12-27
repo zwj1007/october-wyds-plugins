@@ -16,6 +16,14 @@ class SeedUserGroupsTable extends Seeder
             ]);
         }
 
+        if(!UserGroup::where('code','pei-xun-yong-hu-zu')->exists()){
+            UserGroup::create([
+                'name' => '培训用户组',
+                'code' => 'pei-xun-yong-hu-zu',
+                'description' => '培训用户组',
+            ]);
+        }
+
     }
 }
 

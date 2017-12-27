@@ -1,5 +1,6 @@
 <?php namespace Buuug7\User;
 
+use Buuug7\User\Console\ImportUsers;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 use System\Classes\PluginBase;
@@ -51,10 +52,10 @@ class Plugin extends PluginBase
 
         // Listen
         // 切换主题 如果客户端从手机访问，将主题设置为手机端主题
-        Event::listen('cms.theme.getActiveTheme',function(){
-            if(Agent::isDesktop()){
+        Event::listen('cms.theme.getActiveTheme', function () {
+            if (Agent::isDesktop()) {
                 return "wy-theme-v2";
-            }else{
+            } else {
                 return "wy-theme";
             }
         });
@@ -68,7 +69,7 @@ class Plugin extends PluginBase
                 return Lang::get('buuug7.user::lang.exception_not_found_user');
             } elseif (strpos($message, 'as they are not activated')) {
                 return Lang::get('buuug7.user::lang.exception_not_activated');
-            } elseif(strpos($message,'has been suspended')){
+            } elseif (strpos($message, 'has been suspended')) {
                 return Lang::get('buuug7.user::lang.exception_suspended');
             }
         });
@@ -92,7 +93,7 @@ class Plugin extends PluginBase
             $model->attributeNames['phone_number'] = '手机号码';
             $model->attributeNames['home_address'] = '家庭住址';
 
-            $model->rules = array_merge($model->rules,[
+            $model->rules = array_merge($model->rules, [
                 'id_card_number' => 'nullable|string|size:18',
                 'phone_number' => 'nullable|string|size:11',
                 'home_address' => 'nullable|max:100',
@@ -263,5 +264,10 @@ class Plugin extends PluginBase
             'buuug7.user::mail.reactivate',
             'buuug7.user::mail.invite',
         ];
+    }
+
+    public function register()
+    {
+        $this->registerConsoleCommand('user.importusers', ImportUsers::class);
     }
 }
