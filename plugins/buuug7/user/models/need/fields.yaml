@@ -5,16 +5,18 @@
 fields:
     title:
         label: 需求名称
-        disabled: true
         span: left
     category:
         label: 分类
-        disabled: true
         span: auto
     description:
         label: 描述
-        disabled: false
         type: richeditor
+    user:
+        label: 用户
+        type: relation
+        nameFrom: name
+        span: auto
     checked:
         label: 审核
         type: checkbox
