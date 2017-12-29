@@ -16,6 +16,11 @@ fields:
     contact_phone:
         label: 联系电话
         span: left
+    user:
+        label: 用户
+        span: left
+        type: relation
+        nameFrom: name
 tabs:
     fields:
         description:
