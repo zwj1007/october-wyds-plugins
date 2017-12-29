@@ -13,9 +13,6 @@ $this['need']=\Buuug7\User\Models\Need::findById($this->param('id'));
         <h3> {{ need.title }}</h3>
     </div>
     <div class="xqfb-browse-body ">
-
-
-        <p class="p-ct"> 联系电话:<span> {{ need.contact_phone }}</span></p>
         {{ need.description|raw }}
     </div>
     {% else %}
