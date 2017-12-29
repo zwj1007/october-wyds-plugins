@@ -11,34 +11,35 @@ fields:
     address:
         label: 地址
         disabled: false
-        span: auto
         placeholder: 公司地址
+        span: left
     contact_phone:
         label: 联系电话
-        span: auto
+        span: left
 tabs:
     fields:
         description:
             tab: 公司简介
             placeholder: 公司简介
             type: textarea
-            size: large
+            size: small
         detail:
             tab: 公司详情
             type: richeditor
-            size: giant
 secondaryTabs:
     fields:
         avatar:
-            label: 公司LOGO
+            label: Logo
             type: fileupload
             mode: image
+            imageHeight: 150
+            imageWidth: 300
         status:
             label: 状态
             type: balloon-selector
         not_passed_message:
             label: 退回消息
-            placeholder: 如何审核不通过,退回用户的反馈消息
+            placeholder: 审核不通过,退回用户的反馈消息
             type: textarea
         checked:
             label: 审核
@@ -47,7 +48,7 @@ secondaryTabs:
         checked_at:
             label: 审核时间
             type: datepicker
-            model: datetime
+            model: date
             trigger:
                 action: enable
                 field: checked
@@ -60,9 +61,3 @@ secondaryTabs:
                 action: enable
                 field: checked
                 condition: checked
-
-
-
-
-
-
