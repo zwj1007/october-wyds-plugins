@@ -56,8 +56,8 @@ class ImportUsers extends Command
             return $this->createUser($row, $created_at, $writer);
         });
 
-        $file =$writer->toHTML('table-csv-data with-header');
-        Storage::put('error.html',$file);
+        $file = $writer->toHTML('table-csv-data with-header');
+        Storage::put('error.html', $file);
     }
 
 

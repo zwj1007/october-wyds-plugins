@@ -96,20 +96,19 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
 
 <!--信息公开-->
 <section class="box xxgk">
-    <div class="hd"><i>信息公开</i></div>
+    <div class="hd"><i>信息公开</i><a href="/news/categories/xin-xi-gong-kai" target="_blank"><span>更多>></span></a></div>
     <div class="dd">
         {% for chunk in xinXiGongKai.chunk(4) %}
         <ul>
             {% for post in chunk %}
             <li>
-                <a href="/news/post/{{ post.id }}" target="_blank">{{ post.title }}</a>
-                <small>[{{ post.published_at|date('m-d') }}]</small>
+                <a href="/news/post/{{ post.id }}" target="_blank">{{ str_limit(post.title,30) }}</a>
+                <small>[{{ post.published_at|date('Y-m-d') }}]</small>
             </li>
             {% endfor %}
         </ul>
         {% endfor %}
     </div>
-
 </section>
 
 <!--政策解读-->
