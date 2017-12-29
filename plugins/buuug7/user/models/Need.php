@@ -78,7 +78,7 @@ class Need extends Model
         }
     }
 
-    public function scopeDisplayFeatured($query, $limit=null)
+    public function scopeDisplayFeatured($query, $limit = null)
     {
         if ($limit) {
             return $query->isChecked()->isFeatured()->orderBy('checked_at', 'desc')->limit($limit)->get();
@@ -126,6 +126,11 @@ class Need extends Model
             'jiaoyou' => '交友',
             'qita' => '其他',
         ];
+    }
+
+    public function getCategoryOptions()
+    {
+        return self::getCategories();
     }
 
     /**

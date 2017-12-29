@@ -9,6 +9,7 @@ fields:
     category:
         label: 分类
         span: auto
+        type: dropdown
     description:
         label: 描述
         type: richeditor
