@@ -7,28 +7,7 @@ function onStart(){
 $this['need']=\Buuug7\User\Models\Need::findById($this->param('id'));
 }
 ==
-
-<section class="box user-gs xqfb-txxq float-left ">
-    {% if need %}
-  <div class="panel">
-      <div class="panel-heading">
-          <h3> {{ need.title }}</h3>
-      </div>
-      <div class="panel-body ">
-          <p class="p-ct"> 联系电话:<span> {{ need.contact_phone }}</span></p>
-          {{ need.description|raw }}
-      </div>
-  </div>
-    {% else %}
-    <section class="box wy-audit ">
-        <!-- <i class="fa fa-universal-access"></i>-->
-        <p class="audit"><i class="fa fa-pied-piper-alt fa-flip-horizontal margin-right-20"></i>您的信息正在审核当中,请耐心等待……</p>
-    </section>
-    {% endif %}
-</section>
-
-
-<!--<section class="box index-sysm xqfb-browse ">
+<section class="box index-sysm xqfb-browse ">
     {% if need %}
     <div class="xqfb-browse-title">
         <h3> {{ need.title }}</h3>
@@ -41,9 +20,9 @@ $this['need']=\Buuug7\User\Models\Need::findById($this->param('id'));
     </div>
     {% else %}
     <section class="box wy-audit ">
-        &lt;!&ndash; <i class="fa fa-universal-access"></i>&ndash;&gt;
+        <!-- <i class="fa fa-universal-access"></i>-->
         <p class="audit"><i class="fa fa-pied-piper-alt fa-flip-horizontal margin-right-20"></i>您的信息正在审核当中,请耐心等待……</p>
     </section>
     {% endif %}
-</section>-->
+</section>
 
