@@ -48,7 +48,7 @@ $this['categories']=\Buuug7\News\Models\Category::getNested();
                     {% for post in latestPosts %}
                     <li>
                         <i class="aurora__title aurora100"></i>
-                        <a href="/news/post/{{ post.id }}" target="_blank">
+                        <a href="/news/post/{{ post.slug }}" target="_blank">
                             <span>{{ post.title|length > 25 ? post.title|slice(0,25)~'...' :post.title }}</span>
                         </a>
                     </li>

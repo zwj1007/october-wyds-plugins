@@ -62,7 +62,7 @@ $this['nestedCategory']=\Buuug7\News\Models\Category::where('slug',$categorySlug
             <ul class="list-unstyled latest-news m-b-md">
                 {% for post in latestPosts %}
                 <li class="m-b">
-                    <a class="color-444" href="/news/post/{{ post.id }}">
+                    <a class="color-444" href="/news/post/{{ post.slug }}">
                         <h3> {{ str_limit(post.title, 60, '...') }}</h3>
                     </a>
                     <small class="color-777">{{ post.published_at|date('Y,m月 d')}} / {{ post.user.first_name }}</small>
@@ -80,7 +80,7 @@ $this['nestedCategory']=\Buuug7\News\Models\Category::where('slug',$categorySlug
                 {% for post in featuredPosts %}
                 <li class="m-b">
                     <h3>
-                        <a class="color-444" href="/news/post/{{ post.id }}">
+                        <a class="color-444" href="/news/post/{{ post.slug }}">
                             {{ str_limit(post.title, 60, '...') }}
                         </a>
                     </h3>
