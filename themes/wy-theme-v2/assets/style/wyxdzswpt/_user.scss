@@ -147,16 +147,14 @@
 
 .widget-user {
   //zenjia
-  border: 1px solid #000000;
-  background-image: url("../images/user/66.png");
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #40aeca;
   border-radius: 3px;
 
+
   .widget-user-header {
-    padding: 20px;
-    height: 120px;
-
-    //background: #00a7d0;
-
+    padding: 40px;
+    height: 180px;
     color: #fff;
     .user-name {
       margin-top: 0;
@@ -204,9 +202,12 @@
   }
 
   .box-footer {
-    padding-top: 30px;
-    color: #FFFFFF;
     letter-spacing: 5px;
+    padding: 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #ded5d5bf;
+    border-left: 1px solid #ded5d5bf;
+    border-right: 1px solid #ded5d5bf;
   }
 }
 

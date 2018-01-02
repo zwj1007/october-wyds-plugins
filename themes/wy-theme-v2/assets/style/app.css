@@ -2052,12 +2052,12 @@ input {
   position: relative; }
 
 .widget-user {
-  border: 1px solid #000000;
-  background-image: url("../images/user/66.png");
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #40aeca;
   border-radius: 3px; }
   .widget-user .widget-user-header {
-    padding: 20px;
-    height: 120px;
+    padding: 40px;
+    height: 180px;
     color: #fff; }
     .widget-user .widget-user-header .user-name {
       margin-top: 0;
@@ -2091,9 +2091,12 @@ input {
       .widget-user .description-block > .description-text > i {
         font-size: 20px; }
   .widget-user .box-footer {
-    padding-top: 30px;
-    color: #FFFFFF;
-    letter-spacing: 5px; }
+    letter-spacing: 5px;
+    padding: 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #ded5d5bf;
+    border-left: 1px solid #ded5d5bf;
+    border-right: 1px solid #ded5d5bf; }
 
 .user-portr .portr {
   margin: 0 auto;
@@ -2474,8 +2477,9 @@ input {
     margin: 30px 180px;
     padding-bottom: 50px; }
     .xqfb-browse .xqfb-browse-body p {
-      margin: 10px 0 25px 25px;
-      line-height: 36px;
+      margin-top: 10px;
+      line-height: 30px;
+      text-indent: 2em;
       color: #656565;
       font-size: 14px; }
     .xqfb-browse .xqfb-browse-body span {

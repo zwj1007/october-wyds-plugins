@@ -133,7 +133,6 @@
         }
 
       }
-
     }
   }
 
@@ -154,8 +153,9 @@
     margin: 30px 180px;
     padding-bottom: 50px;
     p {
-      margin: $margin-10 0 $margin-25 $margin-25;
-      line-height: 36px;
+      margin-top: $margin-10 ;
+      line-height: 30px;
+      text-indent: 2em;
       color: #656565;
       font-size: 14px;
     }
