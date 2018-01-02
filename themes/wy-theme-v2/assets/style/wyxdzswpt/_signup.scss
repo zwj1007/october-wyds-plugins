@@ -42,19 +42,35 @@
             .signup-main {
                 background: #fff;
                 padding: 15px 0;
-                height: 500px;
+                height: 600px;
                 border: 1px solid #DDF3F8;
                 .form-contain {
                     width: 70%;
                     float: left;
                     margin: 5px;
 
-
+                    .form-type {
+                        height: 29px;
+                        margin: 5px;
+                        border-bottom: 1px solid #BAD0DB;
+                        .btn-per, .btn-org {
+                            width: 100px;
+                            height: 30px;
+                            float: left;
+                        }
+                        .btn-per:hover, .btn-org:hover, .btn-per-hover, .btn-org-hover {
+                            background: #55C6E4;
+                            border: 1px solid #55C6E4;
+                            background-color: #23b2da;
+                            color: #fff;
+                            font-size: 14px;
+                        }
+                    }
                 }
                 .tip-box-contain {
                     width: 25%;
                     _width: 200px;
-                    height: 460px;
+                    height: 500px;
                     float: right;
                     margin: 5px;
                     border-left: 1px solid #D9EEF8;
@@ -75,6 +91,33 @@
                             padding-top: 10px;
                             margin-bottom: 20px;
                         }
+                    }
+                }
+                .step-contain {
+                    width: 823px;
+                    height: 40px;
+                    margin: 35px auto 45px;
+                    .step {
+                        font-size: 15px;
+                        text-align: center;
+                        display: inline-block;
+                        width: 195px;
+                        background: #EAF4FE;
+                        padding: 12px 0;
+                    }
+                    .active {
+                        background: #48A8E7;
+                        color: #ffffff;
+                        border-bottom-right-radius: 35%;
+                    }
+
+                }
+                .form-containR {
+                    width: 400px;
+                    margin: 0 auto;
+                    span {
+                        display: -webkit-box;
+                        line-height: 50px;
                     }
                 }
                 .form {
@@ -106,6 +149,19 @@
                     }
 
                 }
+                .sip-bottom {
+                    margin: 60px auto;
+                    width: 500px;
+                    .title-sp {
+                        text-align: center;
+                        color: $page-color;
+                    }
+                    span {
+                        display: -webkit-box;
+                        line-height: 30px;
+                    }
+                }
+
             }
 
         }
