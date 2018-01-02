@@ -76,7 +76,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         // attach categories
-        $course01->categories()->attach(3);
+        $course01->categories()->attach(2);
         // attach tags
         $course01->tags()->attach(1);
         $course01->tags()->attach(2);
@@ -120,7 +120,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         // attach categories
-        $course02->categories()->attach(3);
+        $course02->categories()->attach(2);
         // attach tags
         $course02->tags()->attach(1);
         $course02->tags()->attach(2);
@@ -169,7 +169,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         // attach categories
-        $course03->categories()->attach(3);
+        $course03->categories()->attach(2);
         // attach tags
         $course03->tags()->attach(1);
         $course03->tags()->attach(2);
@@ -226,7 +226,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         // attach categories
-        $course04->categories()->attach(3);
+        $course04->categories()->attach(2);
         // attach tags
         $course04->tags()->attach(1);
         $course04->tags()->attach(2);
@@ -269,7 +269,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         // attach categories
-        $course05->categories()->attach(3);
+        $course05->categories()->attach(2);
         // attach tags
         $course05->tags()->attach(1);
         $course05->tags()->attach(2);
@@ -324,7 +324,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         // attach categories
-        $course06->categories()->attach(3);
+        $course06->categories()->attach(2);
         // attach tags
         $course06->tags()->attach(1);
         $course06->tags()->attach(2);
@@ -380,7 +380,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         // attach categories
-        $course07->categories()->attach(3);
+        $course07->categories()->attach(2);
         // attach tags
         $course07->tags()->attach(1);
         $course07->tags()->attach(2);
@@ -423,7 +423,7 @@ class SeedCoursesTwoTables extends Seeder
             ',
         ]);
         // attach categories
-        $course08->categories()->attach(3);
+        $course08->categories()->attach(2);
         // attach tags
         $course08->tags()->attach(1);
         $course08->tags()->attach(2);

@@ -1,7 +1,6 @@
 <?php namespace Buuug7\Courses\Models;
 
 use Model;
-use Illuminate\Support\Facades\Log;
 
 /**
  * Category Model
@@ -68,20 +67,6 @@ class Category extends Model
     public function getCourseCountAttribute()
     {
         return $this->courses()->count();
-    }
-
-    public function getParentIdOptions()
-    {
-        $output = Category::get();
-        $output = array_pluck($output, 'name', 'id');
-        return $output;
-    }
-
-    public function beforeSave()
-    {
-        if ($this->parent_id === '') {
-            $this->parent_id = null;
-        }
     }
 
     public function setUrl($pageName, $controller)

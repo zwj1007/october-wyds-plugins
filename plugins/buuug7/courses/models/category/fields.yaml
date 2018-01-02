@@ -3,9 +3,6 @@
 # ===================================
 
 fields:
-    parent_id:
-        label: 父节点
-        type: dropdown
     name:
         label: 名称
         placeholder: 分类名称
@@ -20,7 +17,6 @@ tabs:
         description:
             tab: 描述
             label: 描述
-            oc.commentPosition: ''
             span: full
             type: textarea
             size: small
@@ -33,5 +29,5 @@ tabs:
             tab: 特色图片
             label: 特色图片
             type: mediafinder
-            model: image
+            mode: image
 

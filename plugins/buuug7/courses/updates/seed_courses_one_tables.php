@@ -145,7 +145,7 @@ class SeedCoursesOneTables extends Seeder
             ',
         ]);
         // attach categories
-        $courseJiChu01->categories()->attach(2);
+        $courseJiChu01->categories()->attach(1);
 
 
         $courseJiChu02 = Course::create([
@@ -363,7 +363,7 @@ class SeedCoursesOneTables extends Seeder
             ',
         ]);
         // attach categories
-        $courseJiChu02->categories()->attach(2);
+        $courseJiChu02->categories()->attach(1);
 
 
         $courseJiChu03 = Course::create([
@@ -414,7 +414,7 @@ class SeedCoursesOneTables extends Seeder
             ',
         ]);
         // attach categories
-        $courseJiChu03->categories()->attach(2);
+        $courseJiChu03->categories()->attach(1);
 
 
         $courseJiChu04 = Course::create([
@@ -485,7 +485,7 @@ class SeedCoursesOneTables extends Seeder
             ',
         ]);
         // attach categories
-        $courseJiChu04->categories()->attach(2);
+        $courseJiChu04->categories()->attach(1);
         // attach tags
         $courseJiChu04->tags()->attach(2);
 
@@ -715,7 +715,7 @@ class SeedCoursesOneTables extends Seeder
             ',
         ]);
         // attach categories
-        $courseJiChu06->categories()->attach(2);
+        $courseJiChu06->categories()->attach(1);
         // attach tags
         $courseJiChu06->tags()->attach(2);
 
@@ -822,7 +822,7 @@ class SeedCoursesOneTables extends Seeder
             ',
         ]);
         // attach categories
-        $courseJiChu07->categories()->attach(2);
+        $courseJiChu07->categories()->attach(1);
 
         $courseJiChu08 = Course::create([
             'title' => '盘点常见的电商商城平台支付方式',
@@ -874,7 +874,7 @@ class SeedCoursesOneTables extends Seeder
             ',
         ]);
         // attach categories
-        $courseJiChu08->categories()->attach(2);
+        $courseJiChu08->categories()->attach(1);
         // attach tags
         $courseJiChu08->tags()->attach(2);
 
