@@ -52,13 +52,13 @@ class Plugin extends PluginBase
 
         // Listen
         // 切换主题 如果客户端从手机访问，将主题设置为手机端主题
-        /*Event::listen('cms.theme.getActiveTheme', function () {
+        Event::listen('cms.theme.getActiveTheme', function () {
             if (Agent::isDesktop()) {
                 return "wy-theme-v2";
             } else {
                 return "wy-theme";
             }
-        });*/
+        });
 
         // 翻译用户验证的问题
         App::error(function (AuthException $exception) {
