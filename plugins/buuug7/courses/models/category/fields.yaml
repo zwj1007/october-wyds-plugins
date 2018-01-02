@@ -30,4 +30,6 @@ tabs:
             label: 特色图片
             type: mediafinder
             mode: image
+            imageWidth: 400
+            imageHeight: 200
 
