@@ -12,24 +12,21 @@ fields:
         span: right
         placeholder: 分类别名
         preset: name
-tabs:
-    fields:
-        description:
-            tab: 描述
-            label: 描述
-            span: full
-            type: textarea
-            size: small
-        tags:
-            tab: 标签
-            label: 标签
-            type: relation
-            span: auto
-        image:
-            tab: 特色图片
-            label: 特色图片
-            type: mediafinder
-            mode: image
-            imageWidth: 400
-            imageHeight: 200
-
+    description:
+        tab: 描述
+        label: 描述
+        span: full
+        type: textarea
+        size: small
+    tags:
+        tab: 标签
+        label: 标签
+        type: relation
+        span: auto
+    image:
+        tab: 特色图片
+        label: 特色图片
+        type: mediafinder
+        mode: image
+        imageWidth: 400
+        imageHeight: 200
