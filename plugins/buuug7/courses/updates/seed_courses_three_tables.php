@@ -55,7 +55,7 @@ class SeedCoursesThreeTables extends Seeder
             ',
         ]);
         // attach categories
-        $courseTaoBao01->categories()->attach(4);
+        $courseTaoBao01->categories()->attach(3);
 
 
         $courseTaoBao02 = Course::create([
@@ -144,7 +144,7 @@ class SeedCoursesThreeTables extends Seeder
             ',
         ]);
         // attach categories
-        $courseTaoBao02->categories()->attach(4);
+        $courseTaoBao02->categories()->attach(3);
 
 
         $courseTaoBao03 = Course::create([
@@ -217,7 +217,7 @@ class SeedCoursesThreeTables extends Seeder
             ',
         ]);
         // attach categories
-        $courseTaoBao03->categories()->attach(4);
+        $courseTaoBao03->categories()->attach(3);
 
 
         $courseTaoBao04 = Course::create([
@@ -273,7 +273,7 @@ class SeedCoursesThreeTables extends Seeder
             ',
         ]);
         // attach categories
-        $courseTaoBao04->categories()->attach(4);
+        $courseTaoBao04->categories()->attach(3);
 
     }
 

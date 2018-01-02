@@ -55,7 +55,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         <div class="col-sm-6 m-b">
             <div class="owl-carousel owl-carousel-v3">
                 {% for post in featuredPosts %}
-                <a class="item" href="/news/post/{{ post.id }}">
+                <a class="item" href="/news/post/{{ post.slug }}">
                     <img src="{{ post.image|media }}" alt="{{ post.title }}">
                     <p class="title">
                         {{ post.title }}
@@ -70,23 +70,23 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         <div class="col-sm-6 hidden-xs">
             <div class="row">
                 <div class="col-sm-6 m-b">
-                    <a class="news-wrap" href="/news/post/{{ topPosts[0].id }}">
+                    <a class="news-wrap" href="/news/post/{{ topPosts[0].slug }}">
                         <img src="{{ topPosts[0].image|media }}" alt="{{ topPosts[1].title }}" class="img-responsive animate-scale-rotate--default">
                         <!--<p class="title">{{ topPosts[0].title }}</p>-->
                     </a>
                     <p style="width:5px;height: 5px"></p>
-                    <a class="news-wrap" href="/news/post/{{ topPosts[1].id }}">
+                    <a class="news-wrap" href="/news/post/{{ topPosts[1].slug }}">
                         <img src="{{ topPosts[1].image|media }}" alt="{{ topPosts[2].title }}" class="img-responsive animate-scale-rotate--default">
                         <!--<p class="title">{{ topPosts[1].title }}</p>-->
                     </a>
                 </div>
                 <div class="col-sm-6">
-                    <a class="news-wrap animate-scale-rotate--default" href="/news/post/{{ topPosts[2].id }}">
+                    <a class="news-wrap animate-scale-rotate--default" href="/news/post/{{ topPosts[2].slug }}">
                         <img src="{{ topPosts[2].image|media }}" alt="{{ topPosts[2].title }}" class="img-responsive animate-scale-rotate--default">
                         <!--<p class="title">{{ topPosts[2].title }}</p>-->
                     </a>
                     <p style="width:5px;height: 5px"></p>
-                    <a class="news-wrap animate-scale-rotate--default" href="/news/post/{{ topPosts[3].id }}">
+                    <a class="news-wrap animate-scale-rotate--default" href="/news/post/{{ topPosts[3].slug }}">
                         <img src="{{ topPosts[3].image|media }}" alt="{{ topPosts[3].title }}" class="img-responsive ">
                         <!--<p class="title">{{ topPosts[3].title }}</p>-->
                     </a>
@@ -104,7 +104,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
         {% for post in xinXiGongKai %}
         <div class="col-md-3 col-sm-6">
             <div class="m-b-md">
-                <a href="/news/post/{{ post.id }}" class="color-777">{{ str_limit(post.title,50,'...') }}</a>
+                <a href="/news/post/{{ post.slug }}" class="color-777">{{ str_limit(post.title,50,'...') }}</a>
                 <small class="color-888">[{{ post.published_at|date('m-d') }}]</small>
             </div>
         </div>
@@ -118,7 +118,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
     <div class="owl-carousel owl-carousel-v1">
         {% for post in tongZhiGongGao %}
         <div class="callout callout-v1 wow slideInLeft ">
-            <a href="/news/post/{{ post.id }}"><h4>{{ str_limit(post.title,40,'...') }}</h4></a>
+            <a href="/news/post/{{ post.slug }}"><h4>{{ str_limit(post.title,40,'...') }}</h4></a>
             <p class="color-777">{{ str_limit(post.summary,45,'...') }}</p>
         </div>
         {% endfor %}
@@ -138,7 +138,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                     {% for post in dianShangDongTai %}
                     <div class="col-md-3 col-sm-4">
                         <div class="callout callout-v1">
-                            <a href="news/post/{{ post.id }}"><h4 style="height: 50px;line-height: 25px;overflow: hidden">{{ str_limit(post.title,40,'...') }}</h4></a>
+                            <a href="news/post/{{ post.slug }}"><h4 style="height: 50px;line-height: 25px;overflow: hidden">{{ str_limit(post.title,40,'...') }}</h4></a>
                             <p class="color-777">{{ str_limit(post.summary,45,'...') }}</p>
                         </div>
                     </div>
@@ -150,7 +150,7 @@ $this['featuredCompanies']=\Buuug7\User\Models\Company::displayFeatured(10);
                     {% for post in zhenCeJieDu %}
                     <div class="col-md-3 col-sm-4">
                         <div class="callout callout-v1">
-                            <a href="news/post/{{ post.id }}"><h4 style="height: 50px;line-height: 25px;overflow: hidden">{{ str_limit(post.title,40,'...') }}</h4></a>
+                            <a href="news/post/{{ post.slug }}"><h4 style="height: 50px;line-height: 25px;overflow: hidden">{{ str_limit(post.title,40,'...') }}</h4></a>
                             <p class="color-777">{{ str_limit(post.summary,45,'...') }}</p>
                         </div>
                     </div>

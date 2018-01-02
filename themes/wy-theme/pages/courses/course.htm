@@ -11,17 +11,17 @@ function onEnd(){
 // count views++
 $id=$this->param('id');
 if($id){
-$course=\Buuug7\Courses\Models\Course::where('id', $id)->isPublished()->first();
-if(!$course){
-return Redirect::to('/404');
-}
-if(!$course->views){
-$course->views=1;
-$course->save();
-}else{
-$course->views=$course->views+1;
-$course->save();
-}
+    $course=\Buuug7\Courses\Models\Course::where('id', $id)->isPublished()->first();
+    if(!$course){
+        return Redirect::to('/404');
+    }
+    if(!$course->views){
+        $course->views=1;
+        $course->save();
+    }else{
+        $course->views=$course->views+1;
+        $course->save();
+    }
 }
 
 }

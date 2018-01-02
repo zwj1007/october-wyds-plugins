@@ -5,15 +5,12 @@
 fields:
     title:
         label: 标题
-        span: left
+        span: full
         placeholder: 新闻标题
-    slug:
-        label: 别名
-        span: right
-        placeholder: 新闻别名
-        preset:
-            field: title
-            type: slug
+    categories:
+        label: 分类
+        type: relation
+        span: auto
 tabs:
     fields:
         summary:
@@ -23,7 +20,7 @@ tabs:
         content:
             tab: 内容
             type: richeditor
-            toolbarButtons: fullscreen|paragraphFormat|paragraphStyle|quote|bold|italic|align|formatOL|formatUL|insertTable|insertLink|insertImage|insertVideo|insertFile|insertHR|-|fontFamily|fontSize|color|outdent|indent|underline|strikeThrough|clearFormatting|html
+            toolbarButtons: fullscreen|paragraphFormat|paragraphStyle|quote|bold|italic|align|formatOL|formatUL|insertTable|insertLink|insertImage|insertVideo|insertFile|insertHR|fontFamily|fontSize|color|outdent|indent|underline|strikeThrough|clearFormatting|html
             size: giant
 
         images:
@@ -55,13 +52,6 @@ tabs:
                     file_name:
                         label: 文件名称
                         span: auto
-
-        categories:
-            tab: 分类
-            label: 分类
-            type: relation
-            span: auto
-
 secondaryTabs:
     fields:
         image:
@@ -91,4 +81,3 @@ secondaryTabs:
             label: 置顶新闻
             type: checkbox
             span: auto
-

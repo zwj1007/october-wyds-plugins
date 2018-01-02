@@ -15,7 +15,6 @@ $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByC
 
 $this['categories']=\Buuug7\Courses\Models\Category::getNested();
 
-//var_dump($this['categories']);
 }
 ==
 
@@ -26,30 +25,27 @@ $this['categories']=\Buuug7\Courses\Models\Category::getNested();
     </ol>
 
     {% for category in categories %}
-    {% for child in category.children %}
     <div class="thumbnail ">
-        <a href="/courses/categories/{{ child.slug }}" target="_blank">
-            {% if child.image %}
-            <img src="{{ child.image|media }}" style="max-width: 100%" alt="">
+        <a href="/courses/categories/{{ category.slug }}" target="_blank">
+            {% if category.image %}
+            <img src="{{ category.image|media }}" style="max-width: 100%" alt="">
             {% else %}
             <img src="http://placehold.it/800x400?text=No Image" alt="">
             {% endif %}
         </a>
         <div class="caption">
-            <h3>{{ child.name }}</h3>
+            <h3>{{ category.name }}</h3>
             <p class="color-999" style="height: 44px;line-height: 22px;">
-                {{ str_limit(child.description,70,'...') }}
+                {{ str_limit(category.description,70,'...') }}
             </p>
             <p class="color-888">
-                共包含 {{ child.courses.count }} 课时
+                共包含 {{ category.courses.count }} 课时
             </p>
             <p>
-                <a href="/courses/categories/{{ child.slug }}" class="btn btn-warning margin-bottom-10" target="_blank"><i class="fa fa-book margin-right-5"></i>开始学习</a>
-                <a href="/courses/categories/{{ child.slug }}" class="btn btn-line-success margin-bottom-10" target="_blank"><i class="fa fa-star-o margin-right-5"></i>点击收藏</a>
+                <a href="/courses/categories/{{ category.slug }}" class="btn btn-warning margin-bottom-10" target="_blank"><i class="fa fa-book margin-right-5"></i>开始学习</a>
             </p>
         </div>
     </div>
-    {% endfor %}
     {% endfor %}
 </section>
 

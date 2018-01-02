@@ -47,7 +47,7 @@ $this['nestedCategory']=\Buuug7\News\Models\Category::where('slug',$categorySlug
                 <h2>子分类</h2>
             </div>
 
-            <ul class="list-inline tags-v2">
+            <ul class="list-inline tags-v2 m-b-md">
                 {% for child in nestedCategory %}
                 <li><a href="/news/categories/{{ child.slug }}">{{ child.name }}</a></li>
                 {% endfor %}
@@ -59,10 +59,10 @@ $this['nestedCategory']=\Buuug7\News\Models\Category::where('slug',$categorySlug
             <div class="headline-v2">
                 <h2>最新发布</h2>
             </div>
-            <ul class="list-unstyled latest-news margin-bottom-50">
+            <ul class="list-unstyled latest-news m-b-md">
                 {% for post in latestPosts %}
                 <li class="m-b">
-                    <a class="color-444" href="/news/post/{{ post.id }}">
+                    <a class="color-444" href="/news/post/{{ post.slug }}">
                         <h3> {{ str_limit(post.title, 60, '...') }}</h3>
                     </a>
                     <small class="color-777">{{ post.published_at|date('Y,m月 d')}} / {{ post.user.first_name }}</small>
@@ -76,11 +76,11 @@ $this['nestedCategory']=\Buuug7\News\Models\Category::where('slug',$categorySlug
             <div class="headline-v2">
                 <h2>推荐</h2>
             </div>
-            <ul class="list-unstyled latest-news margin-bottom-50">
+            <ul class="list-unstyled latest-news m-b-md">
                 {% for post in featuredPosts %}
                 <li class="m-b">
                     <h3>
-                        <a class="color-444" href="/news/post/{{ post.id }}">
+                        <a class="color-444" href="/news/post/{{ post.slug }}">
                             {{ str_limit(post.title, 60, '...') }}
                         </a>
                     </h3>

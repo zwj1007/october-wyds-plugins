@@ -3,10 +3,8 @@ url = "/news"
 layout = "default"
 ==
 function onEnd(){
-
-    //$this['categoryLevelOne'] = \Buuug7\News\Models\Category::where('parent_id','1')->listsNested('slug',null,'');
     $this['categories']=\Buuug7\News\Models\Category::getNested();
-
+//dd($this['categories']);
 }
 ==
 
@@ -29,21 +27,19 @@ function onEnd(){
 <div class="container">
     <div class="row">
         {% for category in categories %}
-        {% for child in category.children %}
         <div class="col-md-6 col-sm-6 m-b">
             <div class="block-v1">
                 <i class="fa fa-rss"></i>
                 <div class="block-body">
                     <h3 class="title">
-                        <a href="/news/categories/{{ child.slug }}" class="color-444">{{ child.name }}</a>
+                        <a href="/news/categories/{{ category.slug }}" class="color-444">{{ category.name }}</a>
                     </h3>
                     <p class="desc color-777">
-                        {{ child.description }}
+                        {{ category.description }}
                     </p>
                 </div>
             </div>
         </div>
-        {% endfor %}
         {% endfor %}
     </div>
 </div>

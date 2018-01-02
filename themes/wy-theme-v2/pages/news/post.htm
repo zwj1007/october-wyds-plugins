@@ -1,5 +1,5 @@
-title = "News Post"
-url = "/news/post/:id"
+title = "资讯"
+url = "/news/post/:slug"
 layout="default"
 
 [newsPost]
@@ -13,13 +13,6 @@ $this['featuredPosts'] = \Buuug7\News\Models\Post::displayFeatured(8);
 
 // 推荐课程
 $this['courseTuiJian']=\Buuug7\Courses\Models\Course::displayByTags(['tui-jian'],8);
-
-//var_dump($this->post);
-
-if($this->post){
-    $this->page->title=$this->post->title;
-    $this->page->summary=$this->post->summary;
-}
 
 }
 ==
@@ -39,7 +32,7 @@ if($this->post){
         <h4 class="title">{{ post.title }}</h4>
         <div class="title-time">
             <span class="margin-right-20">发布时间：{{ post.published_at|date('Y-m-d')}}</span>
-            <span>信息来源：<a href="">渭源县电子商务公共服务中心</a> </span>
+            <span>发布者：<a href="javascript:;">{{ post.user.first_name}}</a> </span>
         </div>
         {{ post.content|raw }}
 
@@ -77,7 +70,7 @@ if($this->post){
                 <li>
                     <i class="aurora__title aurora100"></i>
                     <a href="/news/post/{{ post.id }}" target="_blank">
-                        <span>{{ post.title|length > 25 ? post.title|slice(0,25)~'...' :post.title }}</span>
+                        <span>{{ str_limit(post.title,25) }}</span>
                     </a>
                 </li>
                 {% endfor %}
@@ -92,7 +85,7 @@ if($this->post){
                 <li>
                     <em class="topSpan ">{{ loop.index }}</em>
                     <a href="/news/post/{{ post.id }}" target="_blank">
-                        <span> {{ post.title|length > 25 ? post.title|slice(0,25)~'...' :post.title }}</span>
+                        <span>{{ str_limit(post.title,25) }}</span>
                     </a>
                 </li>
                 {% endfor %}
@@ -107,7 +100,7 @@ if($this->post){
                 <li>
                     <em class="topSpan ">{{ loop.index }}</em>
                     <a href="/courses/course/{{ post.id }}" target="_blank">
-                        <span> {{ post.title|length > 25 ? post.title|slice(0,25)~'...' :post.title }}</span>
+                        <span>{{ str_limit(post.title,25) }}</span>
                     </a>
                 </li>
                 {% endfor %}

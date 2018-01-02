@@ -16,6 +16,7 @@
     - run `git pull origin master`
 + after pull complete
     + run `composer require jenssegers/agent`
+    + run `composer require ausi/slug-generator`
     + install self plugins    
         - install buuug7.news `php artisan plugin:refresh Buuug7.News`
         - install buuug7.courses `php artisan plugin:refresh Buuug7.Courses`

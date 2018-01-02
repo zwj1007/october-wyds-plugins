@@ -62,6 +62,8 @@ tabs:
             label: 特色图像
             type: mediafinder
             mode: image
+            imageWidth: 400
+            imageHeight: 200
         videos:
               tab: 视频
               type: repeater

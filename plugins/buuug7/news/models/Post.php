@@ -1,11 +1,14 @@
 <?php namespace Buuug7\News\Models;
 
+use Ausi\SlugGenerator\SlugGenerator;
 use Backend\Facades\BackendAuth;
 use Buuug7\News\Components\Posts;
 use Carbon\Carbon;
 use Cms\Classes\Controller;
 use Model;
 use Backend\Models\User;
+use October\Rain\Database\Traits\Sluggable;
+use October\Rain\Database\Traits\Validation;
 use ValidationException;
 use Lang;
 use Db;
@@ -15,11 +18,17 @@ use Db;
  */
 class Post extends Model
 {
-    use \October\Rain\Database\Traits\Validation;
+    use Validation;
+    use Sluggable;
     /**
      * @var string The database table used by the model.
      */
     public $table = 'buuug7_news_posts';
+
+
+    protected $slugs = [
+        'slug' => 'title',
+    ];
 
     /**
      * @var array Guarded fields
@@ -42,7 +51,6 @@ class Post extends Model
  */
     public $rules = [
         'title' => 'required',
-        'slug' => ['required', 'unique:buuug7_news_posts'],
         'content' => 'required',
         'summary' => 'required',
     ];
@@ -69,11 +77,6 @@ class Post extends Model
     ];
 
     public $hasMany = [
-        'comments' => [
-            'Buuug7\News\Models\Comment',
-            'table' => 'buuug7_news_comments',
-            'order' => 'created_at DESC',
-        ],
     ];
 
 
@@ -350,6 +353,31 @@ class Post extends Model
             });
         });
         return $posts;
+    }
+
+
+    // Override the Sluggable trait method
+    public function setSluggedValue($slugAttribute, $sourceAttributes, $maxLength = 240)
+    {
+        if (!isset($this->$slugAttribute) || !strlen($this->{$slugAttribute})) {
+            if (!is_array($sourceAttributes)) {
+                $sourceAttributes = [$sourceAttributes];
+            }
+
+            $slugArr = [];
+
+            foreach ($sourceAttributes as $attribute) {
+                $slugArr[] = $this->getSluggableSourceAttributeValue($attribute);
+            }
+
+            $slug = implode(' ', $slugArr);
+            $slug = substr($slug, 0, $maxLength);
+            $generator = new SlugGenerator();
+            $slug = $generator->generate($slug);
+        } else {
+            $slug = $this->{$slugAttribute};
+        }
+        return $this->{$slugAttribute} = $this->getSluggableUniqueAttributeValue($slugAttribute, $slug);
     }
 
 

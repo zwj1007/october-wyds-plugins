@@ -1,0 +1,5 @@
+{
+    "require": {
+        "ausi/slug-generator": "~1.0.0"
+    }
+}
