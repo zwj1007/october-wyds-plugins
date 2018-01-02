@@ -15,7 +15,6 @@ $this['categoryDianShangJinJieZhiShi']=\Buuug7\Courses\Models\Course::displayByC
 
 $this['categories']=\Buuug7\Courses\Models\Category::getNested();
 
-//var_dump($this['categories']);
 }
 
 ==
@@ -34,28 +33,25 @@ $this['categories']=\Buuug7\Courses\Models\Category::getNested();
 
     <div class="owl-carousel owl-carousel-v4 owl-theme">
         {% for category in categories %}
-        {% for child in category.children %}
         <div class="thumbnail m-b-sm">
-            {% if child.image %}
-            <img src="{{ child.image|media }}" style="max-width: 100%" alt="">
+            {% if category.image %}
+            <img src="{{ category.image|media }}" style="max-width: 100%" alt="">
             {% else %}
             <img src="http://placehold.it/800x400?text=No Image" alt="">
             {% endif %}
             <div class="caption">
-                <h4>{{ child.name }}</h4>
+                <h4>{{ category.name }}</h4>
                 <p class="color-999" style="height: 44px;line-height: 22px;">
-                    {{ str_limit(child.description,70,'...') }}
+                    {{ str_limit(category.description,70,'...') }}
                 </p>
                 <P class="color-999">
-                    共包含 {{ child.courses.count }} 课时
+                    共包含 {{ category.courses.count }} 课时
                 </P>
                 <p>
-                    <a href="/courses/categories/{{ child.slug }}" class="btn btn-warning">学习</a>
-                    <a href="/courses/categories/{{ child.slug }}" class="btn btn-line-warning">收藏</a>
+                    <a href="/courses/categories/{{ category.slug }}" class="btn btn-warning">学习</a>
                 </p>
             </div>
         </div>
-        {% endfor %}
         {% endfor %}
     </div>
 
