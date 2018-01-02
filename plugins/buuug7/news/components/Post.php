@@ -45,11 +45,11 @@ class Post extends ComponentBase
     public function defineProperties()
     {
         return [
-            'id' => [
+            'slug' => [
                 'title' => '新闻别名',
                 'description' => '新闻别名',
                 'type' => 'string',
-                'default' => '{{ :id }}',
+                'default' => '{{ :slug }}',
             ],
             'categoryPage' => [
                 'title' => '新闻分类页',
@@ -75,9 +75,9 @@ class Post extends ComponentBase
 
     public function loadPost()
     {
-        $id = $this->property('id');
+        $slug = $this->property('slug');
         $post = new NewsPost();
-        $post = $post->where('id', $id)->isPublished()->first();
+        $post = $post->where('slug', $slug)->isPublished()->first();
 
         if ($post && $post->categories->count()) {
             $post->categories->each(function ($category) {
@@ -85,46 +85,6 @@ class Post extends ComponentBase
             });
         }
         return $post;
-    }
-
-    public function onPostNewComment()
-    {
-        if (!Auth::check()) {
-            return null;
-        }
-        $user = Auth::getUser();
-
-        $conent = post('content');
-        $post_id = post('id');
-
-
-        $comment = new Comment([
-            'content' => $conent,
-            'user_id' => $user->id,
-        ]);
-
-        NewsPost::find($post_id)->comments()->save($comment);
-
-        $this->page['comments'] = [$comment];
-
-        Flash::success('成功发表评论');
-
-    }
-
-    public function onLikeCount()
-    {
-        $comment_id = post('id');
-        $comment=Comment::find($comment_id);
-
-        $like_count = $comment->like_count;
-        if (!$like_count) {
-            $comment->like_count=1;
-            $comment->save();
-        }else{
-            $comment->like_count=$like_count+1;
-            $comment->save();
-        }
-        Flash::success("成功点赞");
     }
 
 }

@@ -4,8 +4,10 @@
     - create_posts_categories_table.php
 1.0.2:
     - update post model and category model
-    - create_comments_tables.php
     - seed_posts_one_tables.php
     - seed_posts_two_tables.php
     - seed_posts_three_tables.php
     - seed_posts_four_tables.php
+1.0.3:
+    - regenerate posts slug column
+    - regenerate_posts_slug_column.php

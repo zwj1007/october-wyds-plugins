@@ -3,9 +3,6 @@
 # ===================================
 
 fields:
-    parent_id:
-        label: 父节点
-        type: dropdown
     name:
         label: 名称
         placeholder: 分类名称
@@ -15,10 +12,8 @@ fields:
         span: right
         placeholder: 分类别名
         preset: name
-
     description:
         label: 描述
-        size: large
-        oc.commentPosition: ''
+        size: small
         span: full
         type: textarea

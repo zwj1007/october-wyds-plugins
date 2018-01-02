@@ -1,15 +1,16 @@
 <?php namespace Buuug7\News\Models;
 
-use Illuminate\Support\Facades\Log;
 use Model;
+use October\Rain\Database\Traits\NestedTree;
+use October\Rain\Database\Traits\Validation;
 
 /**
  * Category Model
  */
 class Category extends Model
 {
-    use \October\Rain\Database\Traits\Validation;
-    use \October\Rain\Database\Traits\NestedTree;
+    use Validation;
+    use NestedTree;
     /**
      * @var string The database table used by the model.
      */
@@ -61,21 +62,6 @@ class Category extends Model
     public function getPostCountAttribute()
     {
         return $this->posts()->count();
-    }
-
-    public function getParentIdOptions()
-    {
-        $output = Category::get();
-        $output = array_pluck($output, 'name', 'id');
-        return $output;
-    }
-
-
-    public function beforeSave()
-    {
-        if ($this->parent_id === '') {
-            $this->parent_id = null;
-        }
     }
 
     public function setUrl($pageName, $controller)

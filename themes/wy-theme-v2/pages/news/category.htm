@@ -24,52 +24,6 @@ $this['categories']=\Buuug7\News\Models\Category::getNested();
 
 ==
 
-{% if category.slug == 'tong-zhi-gong-gao' %}
-<ol class="box breadcrumb">
-    <li><a href="/" target="_blank">首页</a></li>
-    <li class="active">通知公告</li>
-</ol>
-<section class="box wy-notice clearfix">
-
-    <div class="notice-left float-left">
-        <div class="zxtw-title">
-            最新图文
-        </div>
-        <ul>
-            {% for post in latestPosts %}
-            {% if post.image %}
-            <li>
-                <a href="/news/post/{{post.id}}" class="" target="_blank">
-                    <img src="{{ post.image|media }}" alt="">
-                    <p>{{ post.title }}</p>
-                </a>
-            </li>
-            {% endif %}
-            {% endfor %}
-
-        </ul>
-    </div>
-    <div class="notice-right float-right">
-        <div class="tzgg-title">
-            <i class="fa fa-folder-open-o"></i>
-            通知公告
-        </div>
-        <ul class="tzgg-body">
-            {% for post in posts %}
-            <li>
-                       <span>
-                           [{{ post.published_at|date('Y-m-d')}}]
-                    </span>
-                <a href="{{ post.url }}" target="_blank">{{ post.title }}</a>
-
-            </li>
-            {% endfor %}
-        </ul>
-        {{ posts.render|raw }}
-    </div>
-
-</section>
-{% else %}
 <section class="box">
     <div class="lanmu clearfix">
         <!--左侧-->
@@ -81,9 +35,7 @@ $this['categories']=\Buuug7\News\Models\Category::getNested();
                 <div class="dd">
                     <ul>
                         {% for category in categories %}
-                            {% for child in category.children %}
-                            <li><a href="/news/categories/{{ child.slug }}" target="_blank">{{ child.name }}</a></li>
-                            {% endfor %}
+                            <li><a href="/news/categories/{{ category.slug }}" target="_blank">{{ category.name }}</a></li>
                         {%  endfor %}
                     </ul>
                 </div>
@@ -149,11 +101,9 @@ $this['categories']=\Buuug7\News\Models\Category::getNested();
             {% endfor %}
 
             {{ posts.render|raw }}
-
         </div>
 
     </div>
 </section>
-{% endif %}
 
 

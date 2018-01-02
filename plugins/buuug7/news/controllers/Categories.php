@@ -3,7 +3,6 @@
 use BackendMenu;
 use Backend\Classes\Controller;
 use Buuug7\News\Models\Category;
-use Illuminate\Support\Facades\Log;
 use October\Rain\Support\Facades\Flash;
 
 /**
@@ -13,11 +12,14 @@ class Categories extends Controller
 {
     public $implement = [
         'Backend.Behaviors.FormController',
-        'Backend.Behaviors.ListController'
+        'Backend.Behaviors.ListController',
+        'Backend.Behaviors.ReorderController',
     ];
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
+    public $reorderConfig = 'config_reorder.yaml';
+
     public $requiredPermissions = ['buuug7.news.access_categories'];
 
     public function __construct()
