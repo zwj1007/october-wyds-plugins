@@ -8,7 +8,6 @@ fields:
         span: full
         placeholder: 新闻标题
     categories:
-        tab: 分类
         label: 分类
         type: relation
         span: auto
@@ -82,4 +81,3 @@ secondaryTabs:
             label: 置顶新闻
             type: checkbox
             span: auto
-
