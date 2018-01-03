@@ -2084,7 +2084,7 @@ input {
 
 .widget-user {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background: #40aeca;
+  background-image: url("../images/user/true.jpg");
   border-radius: 3px; }
   .widget-user .widget-user-header {
     padding: 40px;
