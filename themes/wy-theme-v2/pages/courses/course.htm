@@ -9,23 +9,23 @@ function onEnd(){
 if(!Auth::check()) return Redirect::to('/user/login');
 
 if(!$this['post']){
-    return Redirect::to('/404');
+return Redirect::to('/404');
 }
 
 // count views++
 $id=$this->param('id');
 if($id){
-    $course=\Buuug7\Courses\Models\Course::where('id', $id)->isPublished()->first();
-    if(!$course){
-        return Redirect::to('/404');
-    }
-    if(!$course->views){
-        $course->views=1;
-        $course->save();
-    }else{
-        $course->views=$course->views+1;
-        $course->save();
-    }
+$course=\Buuug7\Courses\Models\Course::where('id', $id)->isPublished()->first();
+if(!$course){
+return Redirect::to('/404');
+}
+if(!$course->views){
+$course->views=1;
+$course->save();
+}else{
+$course->views=$course->views+1;
+$course->save();
+}
 }
 
 }
@@ -47,8 +47,9 @@ if($id){
                 <div class="vid-title">
                     <h3> {{ post.title }}</h3>
                 </div>
-                {{ post.content|raw }}
-
+                <div class="vid-content">
+                    {{ post.content|raw }}
+                </div>
             </div>
         </div>
         <div class="float-right dszx-kjnav">
@@ -75,11 +76,11 @@ if($id){
 
                 {% if post.previousPost %}
                 <a class="btn btn-line-primary" href="/courses/course/{{ post.previousPost.id }}"><i
-                        class="fa fa-fast-backward margin-right-5"></i>上一课</a>
+                    class="fa fa-fast-backward margin-right-5"></i>上一课</a>
                 {% endif %}
                 {% if post.nextPost %}
                 <a class="btn btn-line-primary" href="/courses/course/{{ post.nextPost.id }}"><i
-                        class=" fa fa-fast-forward margin-right-5"></i>下一课</a>
+                    class=" fa fa-fast-forward margin-right-5"></i>下一课</a>
                 {% endif %}
                 <p>
                     {% if post.categories.count %}
