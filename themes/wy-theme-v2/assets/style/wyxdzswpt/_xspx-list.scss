@@ -292,7 +292,9 @@
         margin: 25px 35px 45px 35px;
         line-height: 40px;
         .vid-content {
-          text-indent: 0 !important;
+            p{
+                text-indent: 0 !important;
+            }
         }
 
         .vid-title {

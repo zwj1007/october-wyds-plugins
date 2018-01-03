@@ -1546,8 +1546,6 @@ header {
   .xspx-video .vid-cont .divfelt .vid-body {
     margin: 25px 35px 45px 35px;
     line-height: 40px; }
-    .xspx-video .vid-cont .divfelt .vid-body .vid-content {
-      text-indent: 0 !important; }
     .xspx-video .vid-cont .divfelt .vid-body .vid-title h3 {
       text-align: center; }
     .xspx-video .vid-cont .divfelt .vid-body .vid-title span {
