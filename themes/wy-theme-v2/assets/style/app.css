@@ -1152,8 +1152,7 @@ header {
           color: #FF4400; }
 
 .dszx-kjnav {
-  width: 300px;
-  margin: 0 0 40px 20px; }
+  width: 300px; }
   .dszx-kjnav .kj-dszx {
     padding-bottom: 15px;
     margin-bottom: 20px;
@@ -1540,31 +1539,20 @@ header {
   .xspx-list-wy-v2 .pagination {
     margin-top: 30px; }
 
-.xspx-video .vid-wrapper {
-  border: 1px solid #CCCCCC;
-  overflow: hidden;
-  background: #000000; }
-  .xspx-video .vid-wrapper .title {
-    color: #ffffff;
-    margin: 15px 20px 10px 20px;
-    letter-spacing: 3px; }
-  .xspx-video .vid-wrapper video {
-    width: 1120px;
-    margin: 0 auto; }
 .xspx-video .vid-cont .divfelt {
   border: 1px solid #CCCCCC;
   width: 850px;
   display: inline-block; }
   .xspx-video .vid-cont .divfelt .vid-body {
-    margin: 35px;
+    margin: 25px 35px 45px 35px;
     line-height: 40px; }
-    .xspx-video .vid-cont .divfelt .vid-body .vid-title {
-      height: 85px; }
-      .xspx-video .vid-cont .divfelt .vid-body .vid-title h3 {
-        text-align: center; }
-      .xspx-video .vid-cont .divfelt .vid-body .vid-title span {
-        float: right;
-        margin-right: 30%; }
+    .xspx-video .vid-cont .divfelt .vid-body .vid-content {
+      text-indent: 0 !important; }
+    .xspx-video .vid-cont .divfelt .vid-body .vid-title h3 {
+      text-align: center; }
+    .xspx-video .vid-cont .divfelt .vid-body .vid-title span {
+      float: right;
+      margin-right: 30%; }
     .xspx-video .vid-cont .divfelt .vid-body h5 {
       border-bottom: 1px solid #eaeaea; }
       .xspx-video .vid-cont .divfelt .vid-body h5 span {
@@ -1585,8 +1573,7 @@ header {
       text-indent: 2em;
       margin: 10px 0; }
 .xspx-video .vid-cont .dszx-kjnav {
-  width: 250px;
-  margin: 0 0 40px 20px; }
+  width: 250px; }
   .xspx-video .vid-cont .dszx-kjnav .vid-message {
     padding-bottom: 30px;
     margin-bottom: 20px;
@@ -2097,7 +2084,7 @@ input {
 
 .widget-user {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background: #40aeca;
+  background-image: url("../images/user/true.jpg");
   border-radius: 3px; }
   .widget-user .widget-user-header {
     padding: 40px;
