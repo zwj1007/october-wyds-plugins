@@ -79,6 +79,14 @@ class ImportUsers extends Command
         // 手机号码后六位
         $password = substr($phone_number, -6);
 
+        // 身份证过滤大于45岁的
+        // 622426198809270013
+        $id_card_number_age = (int)substr($id_card_number, 6, 4);
+
+        if (2018 - $id_card_number_age >= 45) {
+            return true;
+        }
+
         // 邮箱不存在直接跳过
         if (!$email) {
             $this->output->writeln('');
